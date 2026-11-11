@@ -70,7 +70,8 @@ export const revealPackOpening = createServerFn({ method: "POST" })
     // Openings keep the algorithm (card pools) they were committed with, so ones started before a catalog update still open fairly.
     if (!isPackAlgorithm(o.algorithm)) return { ok: false, error: "This opening uses an unknown pack algorithm." };
     const algorithm = o.algorithm;
-    const { data: secret } = await admin.from("pack_opening_secrets").select("server_seed").eq("opening_id", o.id).maybeSingle();
+    const { data: secret } = await admin.from("game_secrets").select("server_seed")
+      .eq("action_type", "pack_opening").eq("target_id", o.id).eq("status", "committed").maybeSingle();
     if (!secret && o.status !== "revealed") return { ok: false, error: "Opening not found." };
     const pack = o.set_id as PackId;
     const pulls = secret ? openPack(pack, secret.server_seed, data.clientSeed, o.id, algorithm) : [];
