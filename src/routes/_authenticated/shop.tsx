@@ -14,6 +14,7 @@ import { OwnedCard, cardName, isSummoner } from "@/components/packs/OwnedCard";
 import { PACK_ART } from "@/components/packs/packArt";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { PACK_IDS, PACK_INFO, PACK_RULES, RARITY_ORDER, type Foil, type PackId } from "@/game/packs";
+import { CE_REQUIREMENTS } from "@/game/combining";
 import { formatAmount } from "@/lib/economy/currency";
 import { walletQuery } from "@/lib/economy/wallet.queries";
 import { buyPacks } from "@/lib/packs/packs.functions";
@@ -123,6 +124,41 @@ function OddsTable() {
   );
 }
 
+function LevelsTable() {
+  const supply = useQuery(cardSupplyQuery());
+  const levels = Array.from({ length: 10 }, (_, i) => i + 1);
+  return (
+    <div className="panel-ornate mx-auto max-w-3xl p-5">
+      <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Card levels &amp; combining</h2>
+      <p className="mt-1 text-xs text-muted-foreground">Total Card Essence (CE) needed for each level. Every opened copy is 1 CE. Combining is permanent.</p>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        {(["regular", "gold"] as const).map((foil) => (
+          <table key={foil} className="w-full text-xs">
+            <caption className="mb-1 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{foil === "gold" ? "Gold" : "Regular"}</caption>
+            <thead className="text-[10px] uppercase text-muted-foreground">
+              <tr><th className="py-0.5 text-left">Lv</th>{RARITY_ORDER.map((r) => <th key={r} className="py-0.5 text-right" style={{ color: `var(--rarity-${r})` }}>{r.slice(0, 3)}</th>)}</tr>
+            </thead>
+            <tbody className="tabular-nums">
+              {levels.map((lv) => (
+                <tr key={lv} className="border-t border-border/50">
+                  <td className="py-0.5">{lv}</td>
+                  {RARITY_ORDER.map((r) => <td key={r} className="py-0.5 text-right">{CE_REQUIREMENTS[foil][r][lv - 1] ?? "—"}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ))}
+      </div>
+      {supply.data && (
+        <p className="mt-3 text-xs text-muted-foreground">
+          {fmt(supply.data.minted)} cards opened so far · {fmt(supply.data.activeAssets)} separate cards today · {fmt(supply.data.combinedAssets)} combined into others · {fmt(supply.data.existingEssence)} CE in play
+          {supply.data.burnedEssence > 0 && <> · {fmt(supply.data.burnedEssence)} CE burned</>}
+        </p>
+      )}
+    </div>
+  );
+}
+
 type Group = { key: string; cardId: string; foil: Foil; assets: OwnedAsset[]; best: OwnedAsset; free: number };
 
 function Collection() {
@@ -194,6 +230,7 @@ function ShopPage() {
           <>
             <div className="grid gap-6 md:grid-cols-3">{PACK_IDS.map((p) => <PackTile key={p} pack={p} onOpen={setOpening} />)}</div>
             <OddsTable />
+            <LevelsTable />
           </>
         ) : <Collection />}
       </main>
