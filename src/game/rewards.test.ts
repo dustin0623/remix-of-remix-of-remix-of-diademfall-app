@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
-import economy from "../../docs/diademfall-complete-v4/economy/economy-config.json";
-import treasury from "../../docs/diademfall-complete-v4/economy/treasury-config.json";
+import economy from "../../docs/diademfall-complete-v5/economy/economy-config.json";
+import treasury from "../../docs/diademfall-complete-v5/economy/treasury-config.json";
 import { activityPoints, activityShares, BUDGET_SPLIT, DAILY_ACTIVITY, energyAt, foilBonus, MISSIONS, opponentFactor, REWARD_ENERGY, SHARE_FORMULA, streakBonus, winShares } from "./rewards";
 
 const none = { eligibleWins: 0, bannersUsed: 0, rulesetsWon: 0, lowManaWin: false };
 
 describe("ranked reward rules", () => {
-  it("match docs/diademfall-complete-v4 economy and treasury config", () => {
+  it("match docs/diademfall-complete-v5 economy and treasury config", () => {
     expect(REWARD_ENERGY).toEqual(economy.rewardEnergy);
     expect(SHARE_FORMULA).toEqual(economy.rewardShareFormula);
     expect(DAILY_ACTIVITY).toEqual(economy.dailyActivity);

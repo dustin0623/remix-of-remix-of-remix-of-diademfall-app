@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import treasury from "../../docs/diademfall-complete-v4/economy/treasury-config.json";
+import treasury from "../../docs/diademfall-complete-v5/economy/treasury-config.json";
 import { isValidPrice, rentalTotal, splitTradingFee, TRADING_FEES } from "./market";
 
 describe("market fees", () => {

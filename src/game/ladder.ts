@@ -1,7 +1,7 @@
 /**
  * Pure ladder helpers: v4 league bands + reward multipliers, win rate and streaks.
  * Shared by the UI and server functions. Values come from
- * docs/diademfall-complete-v4/economy/economy-config.json (a test keeps them in sync).
+ * docs/diademfall-complete-v5/economy/economy-config.json (a test keeps them in sync).
  * Leagues are derived from the stored rating at read time — no league is ever stored.
  */
 export type LeagueId = "wood" | "bronze" | "silver" | "gold" | "diamond" | "champion";
