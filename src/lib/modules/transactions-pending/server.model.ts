@@ -86,6 +86,8 @@ export const PendingTransactionDocumentSchema = z.object({
   walletAddress: z.string().nullable(),
   type: TransactionTypeSchema,
   status: PendingTransactionStatusSchema,
+  /** External reference that may be queued once (e.g. a deposit's Solana signature). */
+  onChainRef: z.string().nullable(),
   metadata: z.record(z.string(), z.unknown()),
   attempts: z.number().int().nonnegative(),
   maxAttempts: z.number().int().positive(),

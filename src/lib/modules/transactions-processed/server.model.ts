@@ -12,6 +12,7 @@ export const ProcessedTransactionDocumentSchema = PendingTransactionDocumentSche
   playerId: true,
   walletAddress: true,
   type: true,
+  onChainRef: true,
   metadata: true,
   attempts: true,
 }).extend({
