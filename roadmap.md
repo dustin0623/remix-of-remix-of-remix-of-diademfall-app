@@ -77,3 +77,11 @@
 - [x] Home portal page
 - [x] Sign-in, Ranked lobby (Play screen), Leaderboard, Codex, Practice conditions
 - [ ] Ranked draft room and battle replay restyle (next, on request)
+
+## Deposits, withdrawals & currency activity
+- [ ] Cloud-backed transactions-pending / transactions-processed queue (copied from /ref: atomic withdrawal debit + queue row, deposit once per signature)
+- [ ] Deposit handler (USDC → Credits at 1,000 per USDC, Coins → Coins) verified on Solana with the player's memo tag; test deposits in the preview only
+- [ ] Withdrawal handler (Coins to a Solana address, refund when the payout never left)
+- [ ] Wallet page (Deposit / Withdraw / Transfers) and Currency Activity page (Balance History + Exchange History, filters, CSV)
+- [ ] Header wallet, menu and footer links
+- [ ] Withdrawal minimum/fee/daily limit and the Coin token address (needs user decision; token not launched)

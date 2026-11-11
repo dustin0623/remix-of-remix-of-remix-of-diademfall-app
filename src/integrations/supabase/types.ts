@@ -1684,6 +1684,111 @@ export type Database = {
           },
         ]
       }
+      transactions_pending: {
+        Row: {
+          attempts: number
+          claimed_at: string | null
+          claimed_by: string | null
+          created_at: string
+          last_error: string | null
+          max_attempts: number
+          metadata: Json
+          on_chain_ref: string | null
+          player_id: string
+          status: string
+          transaction_id: string
+          type: string
+          updated_at: string
+          wallet_address: string | null
+        }
+        Insert: {
+          attempts?: number
+          claimed_at?: string | null
+          claimed_by?: string | null
+          created_at?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          on_chain_ref?: string | null
+          player_id: string
+          status?: string
+          transaction_id?: string
+          type: string
+          updated_at?: string
+          wallet_address?: string | null
+        }
+        Update: {
+          attempts?: number
+          claimed_at?: string | null
+          claimed_by?: string | null
+          created_at?: string
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          on_chain_ref?: string | null
+          player_id?: string
+          status?: string
+          transaction_id?: string
+          type?: string
+          updated_at?: string
+          wallet_address?: string | null
+        }
+        Relationships: []
+      }
+      transactions_processed: {
+        Row: {
+          attempts: number
+          block_number: number | null
+          error: string | null
+          metadata: Json
+          on_chain_ref: string | null
+          on_chain_tx_id: string | null
+          player_id: string
+          processed_at: string
+          processed_by: string
+          queued_at: string
+          result: Json | null
+          status: string
+          transaction_id: string
+          type: string
+          wallet_address: string | null
+        }
+        Insert: {
+          attempts?: number
+          block_number?: number | null
+          error?: string | null
+          metadata?: Json
+          on_chain_ref?: string | null
+          on_chain_tx_id?: string | null
+          player_id: string
+          processed_at?: string
+          processed_by: string
+          queued_at: string
+          result?: Json | null
+          status: string
+          transaction_id: string
+          type: string
+          wallet_address?: string | null
+        }
+        Update: {
+          attempts?: number
+          block_number?: number | null
+          error?: string | null
+          metadata?: Json
+          on_chain_ref?: string | null
+          on_chain_tx_id?: string | null
+          player_id?: string
+          processed_at?: string
+          processed_by?: string
+          queued_at?: string
+          result?: Json | null
+          status?: string
+          transaction_id?: string
+          type?: string
+          wallet_address?: string | null
+        }
+        Relationships: []
+      }
       treasury_flows: {
         Row: {
           account: string
@@ -1826,6 +1931,31 @@ export type Database = {
       calculate_reward_budget: { Args: { p_month: string }; Returns: Json }
       cancel_matchmaking: { Args: never; Returns: undefined }
       card_supply_summary: { Args: never; Returns: Json }
+      claim_pending_transactions: {
+        Args: { p_limit?: number; p_worker: string }
+        Returns: {
+          attempts: number
+          claimed_at: string | null
+          claimed_by: string | null
+          created_at: string
+          last_error: string | null
+          max_attempts: number
+          metadata: Json
+          on_chain_ref: string | null
+          player_id: string
+          status: string
+          transaction_id: string
+          type: string
+          updated_at: string
+          wallet_address: string | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "transactions_pending"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
       close_ranked_season: {
         Args: { p_key: string; p_pool_share: number }
         Returns: Json
@@ -2007,6 +2137,10 @@ export type Database = {
         Args: { p_card_id: string; p_player_id: string }
         Returns: undefined
       }
+      refund_withdrawal: {
+        Args: { p_reason: string; p_transaction_id: string }
+        Returns: Json
+      }
       rental_cancel_listing: {
         Args: { p_listing_id: string; p_player_id: string }
         Returns: boolean
@@ -2023,6 +2157,17 @@ export type Database = {
       }
       rental_rent: {
         Args: { p_days: number; p_listing_id: string; p_renter_id: string }
+        Returns: Json
+      }
+      request_withdrawal: {
+        Args: {
+          p_address: string
+          p_amount: number
+          p_player_id: string
+          p_symbol: string
+          p_test?: boolean
+          p_transaction_id: string
+        }
         Returns: Json
       }
       retry_matchmaking: { Args: never; Returns: Json }

@@ -25,6 +25,16 @@ export function getDatabaseMode(): DatabaseMode {
   return process.env[databaseEnv.uri] ? "mongodb" : "mock";
 }
 
+/**
+ * Where the transaction queue (transactions-pending / transactions-processed) lives:
+ * Lovable Cloud tables when the service-role key is available (dev server and published app),
+ * otherwise the in-memory mock store (unit tests pick the mock repositories explicitly).
+ */
+export type TransactionStore = "mock" | "cloud";
+export function getTransactionStore(): TransactionStore {
+  return process.env["SUPABASE_URL"] && process.env["SUPABASE_SERVICE_ROLE_KEY"] ? "cloud" : "mock";
+}
+
 export function getDatabaseName(): string {
   return process.env[databaseEnv.dbName] ?? DEFAULT_DB_NAME;
 }

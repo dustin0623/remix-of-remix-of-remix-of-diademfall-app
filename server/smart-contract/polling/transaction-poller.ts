@@ -26,6 +26,7 @@ export async function pollOnce(ctx: PollingContext, handle: TransactionHandler) 
       playerId: tx.playerId,
       walletAddress: tx.walletAddress,
       type: tx.type,
+      onChainRef: tx.onChainRef,
       metadata: tx.metadata,
       attempts: tx.attempts,
       status: result.ok ? "SUCCESS" : "FAILED",
