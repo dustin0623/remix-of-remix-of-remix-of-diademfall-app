@@ -7,7 +7,8 @@ import { useAuthStore } from "@/features/stores/auth.store";
 import { BANNER_BY_ID } from "@/game/banners";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { LEAGUES, leagueIdFor, multiplierLabel, streakLabel, winRate, type LeagueId } from "@/game/ladder";
-import { divisionFor } from "@/game/divisions";
+import { DIVISIONS, divisionFor, divisionOf } from "@/game/divisions";
+import { CHESTS } from "@/game/chests";
 import { getLeaderboard, getSummonerStats, type LeaderRow } from "@/lib/ranked/ranked.functions";
 import { cn } from "@/lib/utils";
 import arena from "@/assets/portal/arena.jpg";
@@ -125,6 +126,24 @@ function LeaderboardPage() {
             </tbody>
           </table>
           <p className="text-[10px] text-muted-foreground">Everyone starts at 1,000 rating (Bronze). Wood earns no ranked rewards. Your league always follows your current rating.</p>
+        </aside>
+        <aside className="space-y-3 rounded-xl border border-primary/30 bg-card/60 p-4">
+          <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Divisions &amp; chests</h2>
+          <table className="w-full text-sm">
+            <thead className="text-left text-[10px] uppercase tracking-wider text-muted-foreground">
+              <tr><th className="py-1">Division</th><th className="py-1 text-right">Rating</th><th className="py-1 text-right">Chests</th></tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {DIVISIONS.map((d) => (
+                <tr key={d.id} className={cn(mine && divisionOf(mine.rating).id === d.id && "text-primary")}>
+                  <td className="py-1 font-semibold">{d.name}</td>
+                  <td className="py-1 text-right tabular-nums text-muted-foreground">{d.minRating.toLocaleString()}</td>
+                  <td className="py-1 text-right text-xs">{d.chests.length ? d.chests.map((c) => `${c.count} ${CHESTS[c.type].name.replace(" Chest", "")}`).join(" + ") : "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-[10px] text-muted-foreground">Win +20, loss −20; from your 3rd win in a row each win gives +10 more (not in Champion). Chests are earned the first time you reach a division each 14-day season. At season end ratings reset by league.</p>
         </aside>
         <aside className="space-y-3 rounded-xl border border-primary/30 bg-card/60 p-4">
           <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Most-played summoners</h2>
