@@ -37,6 +37,7 @@
 - [x] Credits + Coins balances and ledger (server-only writes, idempotent) + header wallet
 - [x] Packs: supply caps, buy with Credits, commit-reveal opening, 5 card assets with Regular/Gold foil, Shop + My cards page
 - [x] Card combining (Card Essence): Regular/Gold CE tables, permanent server-side combine + audit, summoner-gated troop levels in ranked, CE/level/price-per-CE on market listings, card supply line in the Shop
+- [x] Unique card copies: player_cards holds one row per copy (is_combined / combined_to when merged), 5-card packs enforced, per-card supply (printed, combined, in circulation, optional max) shown on My Cards
 - [x] Restored the sign-up setup (profile, rating, wallet) that the remix had lost
 - [ ] A way for new players to get their first Credits or packs (Coin conversion needs an oracle; needs user decision)
 - [x] Ranked reward shares + Reward Energy; daily settlement of match and daily-activity pools (Today's rewards panel, match reward line, daily job)

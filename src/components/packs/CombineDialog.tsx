@@ -50,7 +50,7 @@ export function CombineDialog({ cardId, foil, assets, onClose }: { cardId: strin
     if (!plan?.ok || !keep) return;
     setBusy(true);
     try {
-      const r = await combine({ data: { targetAssetId: keep.id, sourceAssetIds: sources.map((s) => s.id) } });
+      const r = await combine({ data: { targetCardId: keep.id, sourceCardIds: sources.map((s) => s.id) } });
       if (!r.ok) { toast.error(r.error); return; }
       toast.success(r.levelAfter > r.levelBefore ? `${cardName(cardId!)} is now level ${r.levelAfter}!` : `${cardName(cardId!)} now has ${r.essenceAfter} CE.`);
       await qc.invalidateQueries({ queryKey: ["packs"] });

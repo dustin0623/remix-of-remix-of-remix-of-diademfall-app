@@ -18,7 +18,7 @@ export type MarketState = {
 };
 type Result = { ok: true } | { ok: false; error: string };
 
-/** CE and level of the listed asset (embedded card_assets row). */
+/** CE and level of the listed asset (embedded player_cards row). */
 const ce = (a: unknown) => {
   const v = (Array.isArray(a) ? a[0] : a) as { essence: number; level: number } | null;
   return { essence: v?.essence ?? 1, level: v?.level ?? 1 };
@@ -37,13 +37,13 @@ export const getMarketState = createServerFn({ method: "POST" })
     const admin = await loadAdmin();
     const { error: expErr } = await admin.rpc("expire_rentals");
     if (expErr) console.error("[market] expire_rentals failed", expErr);
-    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id, created_at, asset:card_assets(essence, level), profiles!market_listings_seller_id_fkey(username, display_name)";
-    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, asset:card_assets(essence, level), profiles!rental_listings_owner_id_fkey(username, display_name)";
-    const contractCols = "id, card_id, foil, days, ends_at, gross_coins::text, asset:card_assets(essence, level), owner:profiles!rental_contracts_owner_id_fkey(username, display_name), renter:profiles!rental_contracts_renter_id_fkey(username, display_name)";
+    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id, created_at, asset:player_cards(essence, level), profiles!market_listings_seller_id_fkey(username, display_name)";
+    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, asset:player_cards(essence, level), profiles!rental_listings_owner_id_fkey(username, display_name)";
+    const contractCols = "id, card_id, foil, days, ends_at, gross_coins::text, asset:player_cards(essence, level), owner:profiles!rental_contracts_owner_id_fkey(username, display_name), renter:profiles!rental_contracts_renter_id_fkey(username, display_name)";
     const [sales, rentals, assets, mySales, myRentals, renting, rentedOut] = await Promise.all([
       supabase.from("market_listings").select(saleCols).eq("status", "active").neq("seller_id", userId).order("created_at", { ascending: false }).limit(200),
       supabase.from("rental_listings").select(rentCols).eq("status", "active").neq("owner_id", userId).order("created_at", { ascending: false }).limit(200),
-      supabase.from("card_assets").select("id, card_id, foil, essence, level, status").eq("owner_id", userId).not("status", "in", "(burned,combined)").order("created_at", { ascending: false }).limit(1000),
+      supabase.from("player_cards").select("id, card_id, foil, essence, level, status").eq("player_id", userId).eq("is_combined", false).neq("status", "burned").order("created_at", { ascending: false }).limit(1000),
       supabase.from("market_listings").select(saleCols).eq("status", "active").eq("seller_id", userId).order("created_at", { ascending: false }),
       supabase.from("rental_listings").select(rentCols).in("status", ["active", "rented"]).eq("owner_id", userId).order("created_at", { ascending: false }),
       supabase.from("rental_contracts").select(contractCols).eq("status", "active").eq("renter_id", userId).order("ends_at"),

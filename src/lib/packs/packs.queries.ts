@@ -46,8 +46,8 @@ export const myCardsQuery = (userId: string | undefined) =>
     queryKey: ["packs", "cards", userId],
     enabled: !!userId,
     queryFn: async (): Promise<OwnedAsset[]> => {
-      const { data, error } = await supabase.from("card_assets").select("id, card_id, foil, level, essence, status, created_at")
-        .eq("owner_id", userId!).not("status", "in", "(burned,combined)").order("created_at", { ascending: false }).limit(1000);
+      const { data, error } = await supabase.from("player_cards").select("id, card_id, foil, level, essence, status, created_at")
+        .eq("player_id", userId!).eq("is_combined", false).neq("status", "burned").order("created_at", { ascending: false }).limit(1000);
       if (error) throw error;
       return (data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, level: a.level, essence: a.essence, status: a.status, createdAt: a.created_at }));
     },
@@ -67,5 +67,20 @@ export const cardSupplyQuery = () =>
         minted: Number(v.minted ?? 0), activeAssets: Number(v.activeAssets ?? 0), combinedAssets: Number(v.combinedAssets ?? 0),
         existingEssence: Number(v.existingEssence ?? 0), burnedEssence: Number(v.burnedEssence ?? 0),
       };
+    },
+  });
+
+export interface CardSupplyRow { printed: number; combined: number; circulating: number; maxSupply: number | null }
+
+/** Per-card supply from the catalog: copies printed (packs + chests), absorbed by combining, and still in circulation. */
+export const cardSuppliesQuery = () =>
+  queryOptions({
+    queryKey: ["packs", "card-supplies"],
+    queryFn: async (): Promise<Record<string, CardSupplyRow>> => {
+      const { data, error } = await supabase.from("cards").select("id, total_printed, total_combined, circulating_supply, max_supply").eq("active", true);
+      if (error) throw error;
+      return Object.fromEntries((data ?? []).map((c) => [c.id, {
+        printed: c.total_printed, combined: c.total_combined, circulating: c.circulating_supply ?? c.total_printed - c.total_combined, maxSupply: c.max_supply,
+      }]));
     },
   });

@@ -15,6 +15,13 @@
       "when": 1794422187734,
       "tag": "0001_drop_retired_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794423285658,
+      "tag": "0002_unique_player_cards_and_card_supply",
+      "breakpoints": true
     }
   ]
 }

@@ -14,90 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      card_assets: {
-        Row: {
-          card_id: string
-          chest_id: string | null
-          combined_at: string | null
-          combined_into: string | null
-          created_at: string
-          essence: number
-          foil: string
-          id: string
-          level: number
-          opening_id: string | null
-          owner_id: string
-          slot: number | null
-          status: string
-        }
-        Insert: {
-          card_id: string
-          chest_id?: string | null
-          combined_at?: string | null
-          combined_into?: string | null
-          created_at?: string
-          essence?: number
-          foil?: string
-          id?: string
-          level?: number
-          opening_id?: string | null
-          owner_id: string
-          slot?: number | null
-          status?: string
-        }
-        Update: {
-          card_id?: string
-          chest_id?: string | null
-          combined_at?: string | null
-          combined_into?: string | null
-          created_at?: string
-          essence?: number
-          foil?: string
-          id?: string
-          level?: number
-          opening_id?: string | null
-          owner_id?: string
-          slot?: number | null
-          status?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "card_assets_card_id_fkey"
-            columns: ["card_id"]
-            isOneToOne: false
-            referencedRelation: "cards"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "card_assets_chest_id_fkey"
-            columns: ["chest_id"]
-            isOneToOne: false
-            referencedRelation: "division_chests"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "card_assets_combined_into_fkey"
-            columns: ["combined_into"]
-            isOneToOne: false
-            referencedRelation: "card_assets"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "card_assets_opening_id_fkey"
-            columns: ["opening_id"]
-            isOneToOne: false
-            referencedRelation: "pack_openings"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "card_assets_owner_id_fkey"
-            columns: ["owner_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       card_combinations: {
         Row: {
           card_id: string
@@ -110,8 +26,8 @@ export type Database = {
           level_after: number
           level_before: number
           player_id: string
-          source_asset_ids: string[]
-          target_asset_id: string
+          source_card_ids: string[]
+          target_card_id: string
         }
         Insert: {
           card_id: string
@@ -124,8 +40,8 @@ export type Database = {
           level_after: number
           level_before: number
           player_id: string
-          source_asset_ids: string[]
-          target_asset_id: string
+          source_card_ids: string[]
+          target_card_id: string
         }
         Update: {
           card_id?: string
@@ -138,8 +54,8 @@ export type Database = {
           level_after?: number
           level_before?: number
           player_id?: string
-          source_asset_ids?: string[]
-          target_asset_id?: string
+          source_card_ids?: string[]
+          target_card_id?: string
         }
         Relationships: [
           {
@@ -157,10 +73,10 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "card_combinations_target_asset_id_fkey"
-            columns: ["target_asset_id"]
+            foreignKeyName: "card_combinations_target_card_id_fkey"
+            columns: ["target_card_id"]
             isOneToOne: false
-            referencedRelation: "card_assets"
+            referencedRelation: "player_cards"
             referencedColumns: ["id"]
           },
         ]
@@ -172,15 +88,19 @@ export type Database = {
           art_path: string | null
           banner_id: string | null
           card_type: string
+          circulating_supply: number | null
           created_at: string
           definition: Json
           game_version_id: string
           id: string
           level_cap: number
           mana: number
+          max_supply: number | null
           name: string
           rarity: string
           set_id: string
+          total_combined: number
+          total_printed: number
         }
         Insert: {
           active?: boolean
@@ -188,15 +108,19 @@ export type Database = {
           art_path?: string | null
           banner_id?: string | null
           card_type: string
+          circulating_supply?: number | null
           created_at?: string
           definition?: Json
           game_version_id: string
           id: string
           level_cap: number
           mana: number
+          max_supply?: number | null
           name: string
           rarity: string
           set_id: string
+          total_combined?: number
+          total_printed?: number
         }
         Update: {
           active?: boolean
@@ -204,15 +128,19 @@ export type Database = {
           art_path?: string | null
           banner_id?: string | null
           card_type?: string
+          circulating_supply?: number | null
           created_at?: string
           definition?: Json
           game_version_id?: string
           id?: string
           level_cap?: number
           mana?: number
+          max_supply?: number | null
           name?: string
           rarity?: string
           set_id?: string
+          total_combined?: number
+          total_printed?: number
         }
         Relationships: [
           {
@@ -529,7 +457,7 @@ export type Database = {
             foreignKeyName: "market_listings_asset_id_fkey"
             columns: ["asset_id"]
             isOneToOne: false
-            referencedRelation: "card_assets"
+            referencedRelation: "player_cards"
             referencedColumns: ["id"]
           },
           {
@@ -1031,30 +959,54 @@ export type Database = {
       }
       player_cards: {
         Row: {
-          acquired_at: string
           card_id: string
-          copies: number
-          experience: number
+          chest_id: string | null
+          combined_at: string | null
+          combined_to: string | null
+          created_at: string
+          essence: number
+          foil: string
+          id: string
+          is_combined: boolean
           level: number
+          opening_id: string | null
           player_id: string
+          slot: number | null
+          status: string
           updated_at: string
         }
         Insert: {
-          acquired_at?: string
           card_id: string
-          copies?: number
-          experience?: number
+          chest_id?: string | null
+          combined_at?: string | null
+          combined_to?: string | null
+          created_at?: string
+          essence?: number
+          foil?: string
+          id?: string
+          is_combined?: boolean
           level?: number
+          opening_id?: string | null
           player_id: string
+          slot?: number | null
+          status?: string
           updated_at?: string
         }
         Update: {
-          acquired_at?: string
           card_id?: string
-          copies?: number
-          experience?: number
+          chest_id?: string | null
+          combined_at?: string | null
+          combined_to?: string | null
+          created_at?: string
+          essence?: number
+          foil?: string
+          id?: string
+          is_combined?: boolean
           level?: number
+          opening_id?: string | null
           player_id?: string
+          slot?: number | null
+          status?: string
           updated_at?: string
         }
         Relationships: [
@@ -1063,6 +1015,27 @@ export type Database = {
             columns: ["card_id"]
             isOneToOne: false
             referencedRelation: "cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_cards_chest_id_fkey"
+            columns: ["chest_id"]
+            isOneToOne: false
+            referencedRelation: "division_chests"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_cards_combined_to_fkey"
+            columns: ["combined_to"]
+            isOneToOne: false
+            referencedRelation: "player_cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_cards_opening_id_fkey"
+            columns: ["opening_id"]
+            isOneToOne: false
+            referencedRelation: "pack_openings"
             referencedColumns: ["id"]
           },
           {
@@ -1342,7 +1315,7 @@ export type Database = {
             foreignKeyName: "rental_contracts_asset_id_fkey"
             columns: ["asset_id"]
             isOneToOne: false
-            referencedRelation: "card_assets"
+            referencedRelation: "player_cards"
             referencedColumns: ["id"]
           },
           {
@@ -1410,7 +1383,7 @@ export type Database = {
             foreignKeyName: "rental_listings_asset_id_fkey"
             columns: ["asset_id"]
             isOneToOne: false
-            referencedRelation: "card_assets"
+            referencedRelation: "player_cards"
             referencedColumns: ["id"]
           },
           {
@@ -1749,7 +1722,16 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      player_card_stacks: {
+        Row: {
+          card_id: string | null
+          copies: number | null
+          gold_copies: number | null
+          level: number | null
+          player_id: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       _new_division_chest: {
@@ -1808,11 +1790,11 @@ export type Database = {
         Args: { p_key: string; p_pool_share: number }
         Returns: Json
       }
-      combine_card_assets: {
+      combine_player_cards: {
         Args: {
           p_player_id: string
-          p_source_asset_ids: string[]
-          p_target_asset_id: string
+          p_source_card_ids: string[]
+          p_target_card_id: string
         }
         Returns: Json
       }
@@ -2003,10 +1985,6 @@ export type Database = {
       record_trading_fee: {
         Args: { p_flow_type: string; p_gross: number; p_reference_id: string }
         Returns: number
-      }
-      refresh_player_card: {
-        Args: { p_card_id: string; p_player_id: string }
-        Returns: undefined
       }
       refund_withdrawal: {
         Args: { p_reason: string; p_transaction_id: string }

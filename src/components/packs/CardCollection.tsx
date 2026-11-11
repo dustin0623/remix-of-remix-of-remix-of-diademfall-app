@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { RARITY_ORDER, type Foil } from "@/game/packs";
 import { CE_REQUIREMENTS } from "@/game/combining";
-import { cardSupplyQuery, myCardsQuery, type OwnedAsset } from "@/lib/packs/packs.queries";
+import { cardSuppliesQuery, cardSupplyQuery, myCardsQuery, type CardSupplyRow, type OwnedAsset } from "@/lib/packs/packs.queries";
 const fmt = (n: number) => n.toLocaleString("en-US");
 export function CardCollection() {
   return (
@@ -75,6 +75,20 @@ function LevelsTable() {
   );
 }
 
+/** How many copies of a card exist across all players (printed minus combined). */
+function SupplyLine({ supply }: { supply: CardSupplyRow | undefined }) {
+  if (!supply) return null;
+  return (
+    <div
+      className="text-center text-[10px] text-muted-foreground"
+      title={`${fmt(supply.printed)} printed · ${fmt(supply.combined)} combined`}
+    >
+      {fmt(supply.circulating)} in circulation
+      {supply.maxSupply !== null && <> / {fmt(supply.maxSupply)} max</>}
+    </div>
+  );
+}
+
 type Group = {
   key: string;
   cardId: string;
@@ -87,6 +101,7 @@ type Group = {
 function Collection() {
   const userId = useAuthStore((s) => s.user?.id);
   const cards = useQuery(myCardsQuery(userId));
+  const supplies = useQuery(cardSuppliesQuery());
   const [filter, setFilter] = useState<"all" | "summoners" | "troops">("all");
   const [combining, setCombining] = useState<{ cardId: string; foil: Foil } | null>(null);
   const groups = useMemo(() => {
@@ -166,6 +181,7 @@ function Collection() {
               ×{g.assets.length}{" "}
               {g.foil === "gold" ? <span className="font-bold text-primary">Gold</span> : "Regular"}
             </div>
+            <SupplyLine supply={supplies.data?.[g.cardId]} />
             {g.free >= 2 && (
               <Button
                 size="sm"
