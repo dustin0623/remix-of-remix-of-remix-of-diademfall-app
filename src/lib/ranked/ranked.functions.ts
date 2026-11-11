@@ -2,7 +2,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { BattleInput } from "@/game/battle-contract";
-import type { Json } from "@/integrations/supabase/types";
+import type { Database, Json } from "@/integrations/supabase/types";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { lockedTeam, rankedConfig, validateRankedTeam } from "@/game/ranked";
 import { SUMMONERS } from "@/game/catalog/summoners";
 
@@ -14,7 +15,7 @@ const RATING_DELTA = 200;
 const loadAdmin = async () => (await import("@/integrations/supabase/client.server")).supabaseAdmin;
 
 /** Key of the active ranked season (ratings are stored per season). */
-async function activeSeasonKey(supabase: { from: typeof import("@/integrations/supabase/client").supabase.from }) {
+async function activeSeasonKey(supabase: SupabaseClient<Database>) {
   const { data } = await supabase.from("ranked_seasons").select("key").eq("status", "active").maybeSingle();
   return data?.key ?? "season-1";
 }
