@@ -112,8 +112,14 @@ describe("Wayfarer abilities fire in battle", () => {
   it("Last Pay spurs neighbours when the bearer falls", () => {
     expect(fires({ summonerId: bastion, unitIds: ["ashen_page", "greycloak_duelist", "lantern_squire"] }, "Last Pay")).toBe(true);
   });
-  it("Roadwise reacts to an enemy ability", () => {
-    expect(fires({ summonerId: bastion, unitIds: ["ruin_jackal", "hedge_crossbowman", "granite_bailiff"] }, "Roadwise", "wild_courts")).toBe(true);
+  it("Roadwise reacts to an enemy ability (Pounce on the rearmost unit)", () => {
+    const wild = UNIT_BY_ID["needlewing_hunter"]!;
+    const enemyFront = ["moss_oracle"].concat(Object.values(UNIT_BY_ID).filter((u) => u.banner === "wild_courts" && u.id !== wild.id && u.id !== "moss_oracle").slice(0, 2).map((u) => u.id));
+    const enemy: TeamPick = { summonerId: summonerOf("wild_courts"), unitIds: [...enemyFront, wild.id] };
+    const player: TeamPick = { summonerId: bastion, unitIds: ["granite_bailiff", "citadel_behemoth", "ruin_jackal"] };
+    const r = simulateBattle(cfgWith([], 60), [player, enemy]);
+    expect(r.events.some((e) => e.text.includes("pounces on Ruin Jackal"))).toBe(true);
+    expect(r.events.some((e) => e.text.includes("Ruin Jackal sidesteps the trap (Roadwise"))).toBe(true);
   });
 });
 
