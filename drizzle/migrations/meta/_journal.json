@@ -36,6 +36,13 @@
       "when": 1794424292435,
       "tag": "0004_drop_old_seed_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794425238530,
+      "tag": "0005_consolidate_transfers_openings_listings",
+      "breakpoints": true
     }
   ]
 }
