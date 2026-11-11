@@ -1,0 +1,78 @@
+/* Shop is a full-width summoning scene, independent of the panel system. */
+.hud-layout:has(> .hud-content-viewport > .hud-summoning) { width: 100%; padding: 0 0 calc(var(--nav-height) + env(safe-area-inset-bottom, 0px)); }
+.hud-world .hud-layout .hud-content-viewport:has(> .hud-summoning) { padding: 0; scrollbar-gutter: auto; overflow: hidden; }
+.hud-summoning { width: 100%; height: 100%; min-height: 0; overflow: auto; scrollbar-width: thin; scrollbar-color: #9d763b transparent; color: var(--hero-ink); font-family: "Trebuchet MS", Arial, sans-serif; }
+.mh-summoning { min-height: 100%; display: flex; flex-direction: column; background: radial-gradient(ellipse at 50% 45%, #397a3820, transparent 62%); }
+.mh-odds { display: flex; align-items: center; justify-content: center; gap: 36px; padding: 12px 24px; background: #1b140dbb; border-bottom: 1px solid #b68c4944; }
+.mh-odds h2 { color: #cbb38a; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.mh-odds ul { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(16px, 3vw, 48px); }
+.mh-odds li { display: flex; align-items: center; gap: 7px; }
+.mh-odds li > img { width: 32px; height: 32px; object-fit: contain; }
+.mh-odds li > span { display: grid; gap: 2px; }
+.mh-odds strong { font-size: 12px; color: #e5d7bb; }
+.mh-odds small { color: #ffe09a; font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.mh-ritual { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 22px 24px 36px; text-align: center; }
+.mh-ritual-heading > p { color: #dbbd7d; font-size: 12px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
+.mh-ritual-heading h1 { margin: 4px 0; color: #fff0c8; font-size: clamp(24px, 3vw, 38px); font-weight: 900; line-height: 1.15; text-shadow: 0 3px 8px #000; }
+.mh-ritual-heading > span { color: #d0c2a5; font-size: 13px; }
+.mh-gate { position: relative; width: min(43svh, 420px, 75vw); flex-shrink: 0; filter: drop-shadow(0 0 24px #d8a63533); }
+.mh-gate::before { content: ""; position: absolute; inset: 10%; border-radius: 50%; background: #bd9b2a30; box-shadow: 0 0 90px 12px #d7b74733; z-index: -1; }
+.mh-gate > img { display: block; width: 100%; height: auto; }
+.mh-gate-active { animation: mh-gate-pulse 1.2s ease-in-out infinite alternate; }
+@keyframes mh-gate-pulse { to { filter: drop-shadow(0 0 40px #e2be5966); transform: scale(1.025); } }
+.mh-summon-dock { width: min(100%, 480px); }
+.mh-summon-summary { display: flex; justify-content: space-between; gap: 16px; text-align: left; margin-bottom: 12px; }
+.mh-summon-summary > span { display: grid; gap: 4px; color: #c9bba0; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.mh-summon-summary > span:last-child { text-align: right; }
+.mh-summon-summary strong { display: flex; align-items: center; gap: 5px; font-size: 13px; color: #f2ddb4; letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.mh-summon-summary strong img { width: 16px; height: 16px; object-fit: contain; }
+.mh-summon-actions { display: flex; align-items: flex-end; gap: 16px; }
+.mh-quantity { flex-shrink: 0; text-align: left; }
+.mh-quantity > span { display: block; margin-bottom: 5px; font-size: 12px; color: #c9bba0; text-transform: uppercase; letter-spacing: .06em; }
+.mh-stepper { display: flex; align-items: center; height: 52px; border: 1px solid #a98148; border-radius: 8px; background: #19130de6; overflow: hidden; }
+.mh-stepper button { width: 34px; height: 100%; padding: 0; border-radius: 0; background: transparent; color: #e4c689; }
+.mh-stepper button:hover:not(:disabled) { background: #66491e66; }
+.mh-stepper button:disabled { opacity: .35; }
+.mh-stepper strong { min-width: 42px; font-size: 20px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; }
+.mh-mint { width: 100%; height: auto; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 16px; border: 1px solid #f0ca77; border-radius: 8px; background: linear-gradient(#ffe49c, #e2a334); box-shadow: inset 0 2px 0 #fff3c777, 0 4px 0 #704016, 0 6px 16px #0005; color: #452706; font-size: 16px; font-weight: 900; }
+.mh-mint:hover:not(:disabled) { filter: brightness(1.08); }
+.mh-mint:disabled { opacity: .5; cursor: not-allowed; }
+.mh-mint img { width: 28px; height: 28px; object-fit: contain; }
+.mh-summon-button { flex: 1; min-width: 0; height: 52px; }
+.mh-summon-button > span { display: grid; gap: 3px; }
+.mh-summon-button small { font-size: 12px; font-weight: 700; }
+.mh-note { display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 12px; font-size: 12px; color: #d2c6ae; }
+.mh-note svg { width: 13px; height: 13px; flex-shrink: 0; color: #a1d598; }
+.mh-back { margin-top: 8px; background: #271b11cc; color: #ffe09a; }
+@media (max-width: 800px) {
+  .mh-odds { flex-direction: column; gap: 10px; padding: 10px 12px; }
+  .mh-odds ul { gap: 16px; }
+  .mh-odds li { gap: 4px; }
+  .mh-odds li > img { width: 24px; height: 24px; }
+  .mh-odds strong { font-size: 12px; }
+  .mh-odds small { font-size: 12px; }
+}
+@media (max-width: 480px) { .mh-ritual { padding: 20px 16px 32px; } .mh-summon-actions { gap: 10px; } .mh-mint { font-size: 13px; padding: 8px; } .mh-stepper strong { min-width: 32px; } .mh-stepper button { width: 30px; } }
+@media (max-height: 600px) and (orientation: landscape) {
+  .mh-odds { flex-direction: row; gap: 18px; padding: 8px 12px; }
+  .mh-odds h2 { font-size: 12px; }
+  .mh-odds ul { gap: 14px; }
+  .mh-ritual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 360px); column-gap: 24px; row-gap: 6px; padding: 16px max(24px, 6vw); }
+  .mh-ritual-heading { grid-column: 2; grid-row: 1; }
+  .mh-ritual-heading h1 { font-size: 24px; }
+  .mh-gate { grid-column: 1; grid-row: 1 / 3; width: min(58svh, 100%); justify-self: center; }
+  .mh-summon-dock { grid-column: 2; grid-row: 2; }
+  .mh-summon-summary { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .mh-gate-active { animation: none; } }
+
+.mh-stepper button { width: 44px; }
+.mh-note { line-height: 1.5; }
+@media (max-width: 600px) {
+ .mh-odds ul { gap: 10px 16px; }
+ .mh-odds li { min-width: 82px; }
+ .mh-gate { width: min(30svh, 280px, 70vw); }
+ .mh-summon-summary { flex-wrap: wrap; }
+ .mh-summon-button { min-height: 52px; height: auto; }
+}
+@media (max-width: 360px) { .mh-summon-actions { flex-wrap: wrap; } .mh-summon-button { flex-basis: 100%; } }

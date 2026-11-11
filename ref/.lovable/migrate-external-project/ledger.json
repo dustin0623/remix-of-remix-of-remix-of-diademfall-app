@@ -1,0 +1,37 @@
+[
+  {
+    "capability": "repository code",
+    "source": "github:dustin0623/boom-game@ef45088",
+    "outcome": "replace",
+    "status": "verified",
+    "next_action": "None: copied source, build OK, 90 tests passed, desktop/phone render and offline hero recall/deploy verified; authenticated flow blocked by missing provider configuration"
+  },
+  {
+    "capability": "database schema and RPC definitions",
+    "source": "source typed schema; original SQL absent",
+    "outcome": "migrate",
+    "status": "verified",
+    "next_action": "Five private tables and five atomic RPCs applied; integration tests verify persistence, guards and browser access denial."
+  },
+  {
+    "capability": "existing records and wallet accounts",
+    "source": "not included",
+    "outcome": "migrate",
+    "status": "pending",
+    "next_action": "Provide existing record export"
+  },
+  {
+    "capability": "Xaman wallet login",
+    "source": "API_KEY and API_SECRET env names",
+    "outcome": "preserve",
+    "status": "partially_verified",
+    "next_action": "Xaman QR creation verified; user must approve wallet sign-in to verify authenticated UI."
+  },
+  {
+    "capability": "withdrawal payouts, deposit detection, marketplace, leaderboard",
+    "source": "source roadmap lists these as unfinished",
+    "outcome": "preserve",
+    "status": "source_incomplete",
+    "next_action": "Not implemented in source repository"
+  }
+]

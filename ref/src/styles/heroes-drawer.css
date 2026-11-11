@@ -1,0 +1,44 @@
+/* Open collection drawer: one gallery scroller and stationary shared selectors. */
+.hd-sheet.hd-sheet {
+  position: fixed; inset: 0;
+  width: 100vw; max-width: none; height: 100dvh;
+  display: flex; flex-direction: column; gap: 0;
+  padding: 0; border: 0;
+  background: transparent;
+  color: var(--hero-ink); box-shadow: none;
+  transition: none;
+  transform: none;
+}
+/* Fade the transparent gallery instead of sliding a screen full of card artwork. */
+.hd-overlay.hd-overlay { background: rgb(0 0 0 / .65); }
+.hd-sheet.hd-sheet[data-state="open"], .hd-overlay.hd-overlay[data-state="open"] {
+  animation: hd-fade-in 140ms ease-out both;
+}
+.hd-sheet.hd-sheet[data-state="closed"], .hd-overlay.hd-overlay[data-state="closed"] {
+  animation: hd-fade-out 100ms ease-in both;
+}
+@keyframes hd-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hd-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .hd-sheet.hd-sheet[data-state], .hd-overlay.hd-overlay[data-state] { animation: none; }
+}
+.hd-sheet > button.absolute { display: none; }
+.hd-head { display: flex; align-items: center; justify-content: flex-end; gap: 18px; flex-shrink: 0; padding: max(16px, env(safe-area-inset-top, 0px)) max(4%, env(safe-area-inset-right, 0px)) 16px max(4%, env(safe-area-inset-left, 0px)); }
+.hd-head .hc-collection-controls { margin-left: auto; }
+.hd-close { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid #bf914e; border-radius: 50%; color: #ffe4aa; background: #241b13; }
+.hd-close svg { width: 20px; height: 20px; }
+.hd-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 36px max(4%, env(safe-area-inset-right, 0px)) max(40px, env(safe-area-inset-bottom, 0px)) max(4%, env(safe-area-inset-left, 0px)); scrollbar-width: thin; scrollbar-color: #9d763b transparent; }
+.hd-empty { padding: 40px 0; text-align: center; color: #cdbb9b; }
+.hd-error { color: #ff9292; font-size: 13px; }
+@media (max-width: 767px) {
+  .hd-head { gap: 10px; padding-left: 12px; padding-right: 12px; }
+  .hd-head .hc-collection-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hd-scroll { padding: 24px 0 max(32px, env(safe-area-inset-bottom, 0px)); }
+  .hd-head .hc-selector { min-width: 0; }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .hd-head { padding-top: max(8px, env(safe-area-inset-top, 0px)); padding-bottom: 10px; }
+}
+
+.hd-close { width: 44px; height: 44px; }
+.hd-head { align-items: flex-end; }

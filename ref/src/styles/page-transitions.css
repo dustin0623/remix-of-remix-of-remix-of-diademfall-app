@@ -1,0 +1,70 @@
+.pt-fade {
+  display: contents;
+}
+.pt-fade > * {
+  animation: pt-enter 220ms ease-out both;
+}
+@keyframes pt-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.pt-loader {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  min-height: 50vh;
+  flex: 1;
+  width: 100%;
+  animation: pt-enter 200ms ease-out both;
+}
+.pt-loader-gem {
+  width: 34px;
+  height: 34px;
+  transform: rotate(45deg);
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffe08a, #e29412 60%, #8a4b0c);
+  box-shadow: 0 0 0 2px #45200d, 0 0 22px #ffcf5c88;
+  animation: pt-gem 1.1s ease-in-out infinite;
+}
+.pt-loader-label {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #f3dfb0;
+  text-shadow: 0 1px 2px #000;
+}
+@keyframes pt-gem {
+  0%, 100% { transform: rotate(45deg) scale(0.85); opacity: 0.7; }
+  50% { transform: rotate(225deg) scale(1.05); opacity: 1; }
+}
+
+.pt-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #8a4b0c, #ffd25e, #fff3c4, #ffd25e);
+  box-shadow: 0 0 10px #ffd25e;
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+.pt-progress[data-active] {
+  opacity: 1;
+  animation: pt-progress 1.6s ease-out forwards;
+}
+@keyframes pt-progress {
+  from { transform: scaleX(0.05); }
+  to { transform: scaleX(0.85); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-fade > *, .pt-loader, .pt-loader-gem, .pt-progress[data-active] { animation: none; }
+}

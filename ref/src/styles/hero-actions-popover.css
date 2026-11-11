@@ -1,0 +1,168 @@
+.hc-action-anchor {
+  width: 200px;
+  max-width: 100%;
+  justify-self: center;
+}
+.ha-popover.ha-popover {
+  width: min(230px, calc(100vw - 24px));
+  max-height: min(calc(100dvh - 24px), var(--radix-popover-content-available-height));
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid #c59b53;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #352313f7, #17120ffb);
+  color: #fff0cf;
+  box-shadow:
+    0 12px 35px #0009,
+    inset 0 0 0 2px #d4a35a15;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #9d763b transparent;
+  transform-origin: bottom left;
+}
+.ha-popover[data-state="open"] {
+  animation: ha-rise 0.18s ease-out;
+}
+.ha-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0b25ccc;
+  box-shadow: 0 1px 0 #00000080;
+  margin-bottom: 6px;
+}
+.ha-heading > div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.ha-heading strong {
+  font-size: 17px;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+.ha-heading span {
+  font-size: 12px;
+  color: #cdb58b;
+  text-transform: capitalize;
+}
+.ha-heading > button {
+  color: #dfc18c;
+  padding: 2px;
+}
+.ha-heading svg {
+  width: 16px;
+  height: 16px;
+}
+.ha-energy {
+  padding: 10px 0 12px;
+  border-block: 1px solid #b28a4844;
+  margin-bottom: 6px;
+}
+.ha-energy > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #d0bea0;
+}
+.ha-energy svg {
+  width: 13px;
+  height: 13px;
+  color: #ffcf72;
+}
+.ha-energy strong {
+  margin-left: auto;
+  color: #ffe09a;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.ha-energy > div {
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0e0b09;
+}
+.ha-energy > div > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #bb852e, #ffe099);
+}
+.ha-action-list {
+  display: grid;
+  gap: 3px;
+}
+.ha-action-list > button {
+  width: 100%;
+  min-height: 37px;
+  height: auto;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #f5e1ba;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: none;
+}
+.ha-action-list > button:hover:not(:disabled) {
+  background: #b1874233;
+}
+.ha-action-list > button:first-child {
+  background: linear-gradient(#f6d58c, #c78c31);
+  color: #382307;
+}
+.ha-action-list > button:disabled {
+  opacity: 0.42;
+}
+.ha-action-list > button > svg {
+  width: 15px;
+  height: 15px;
+}
+.ha-action-list small {
+  margin-left: auto;
+  color: #bfa884;
+  font-size: 12px;
+  font-weight: 400;
+}
+@keyframes ha-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .hc-action-anchor {
+    width: 100px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ha-popover[data-state="open"] {
+    animation: none;
+  }
+}
+.ha-action-list > .mk-seller {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 2px 8px;
+  font-size: 13px;
+  color: #cdb58b;
+}
+.ha-action-list > .mk-seller strong { color: #fff0cf; }
+.ha-action-list > .mk-buy-big {
+  justify-content: center;
+  background: linear-gradient(#f6d58c, #c78c31);
+  color: #382307;
+}
+
+.ha-heading > button { min-width: 44px; min-height: 44px; display: grid; place-items: center; }
+.ha-action-list button { min-height: 44px; }
