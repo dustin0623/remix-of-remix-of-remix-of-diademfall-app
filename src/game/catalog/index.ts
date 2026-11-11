@@ -5,3 +5,4 @@ export * from './summoners';
 export * from './troops';
 export * from './abilities';
 export * from './rulesets';
+export * from './team-composition';

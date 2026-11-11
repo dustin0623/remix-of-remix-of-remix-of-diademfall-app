@@ -7,7 +7,7 @@ import type { BattleEvent as ContractEvent, BattleInput, BattleOutput, Formation
 import { SUMMONERS } from "./catalog/summoners";
 import { catalogFor } from "./catalogs";
 import { simulateBattle, type BattleResult, type SnapUnit } from "./engine";
-import { cardLegal, teamMana, validateTeam, type MatchConfig, type TeamPick } from "./match";
+import { cardLegal, recruitable, teamMana, validateTeam, type MatchConfig, type TeamPick } from "./match";
 import { hash } from "./rng";
 import { hashCanonical } from "./sha256";
 import { UNIT_BY_ID } from "./units";
@@ -26,7 +26,7 @@ export function rankedConfig(m: { seed: string; manaCap: number; rulesetIds: str
   return { seed: seedToNumber(m.seed), manaCap: m.manaCap, rulesets: [...m.rulesetIds], banners: [...RANKED_BANNERS] };
 }
 
-/** Full ranked legality: base draft rules plus Banner, set, duplicate and unknown-card checks. */
+/** Full ranked legality: base draft rules (incl. the Wayfarer limit) plus Banner, set, duplicate and unknown-card checks. */
 export function validateRankedTeam(pick: TeamPick, cfg: MatchConfig): string | null {
   const s = SUMMONERS.find((x) => x.id === pick.summonerId);
   if (!s) return "Choose a summoner.";
@@ -38,7 +38,7 @@ export function validateRankedTeam(pick: TeamPick, cfg: MatchConfig): string | n
   if (!cardLegal(s, cfg.rulesets)) return `${s.name} is not allowed by this match's rules.`;
   for (const id of pick.unitIds) {
     const u = UNIT_BY_ID[id]!;
-    if (u.banner !== s.banner) return `${u.name} is not from the ${BANNER_BY_ID[s.banner].name}.`;
+    if (!recruitable(u, s.banner)) return `${u.name} is not from the ${BANNER_BY_ID[s.banner].name}.`;
     if (!cardLegal(u, cfg.rulesets)) return `${u.name} is not allowed by this match's rules.`;
   }
   return null;

@@ -1,10 +1,12 @@
 /**
  * Deterministic Diademfall battle engine (local v1).
- * Implements the combat contract from docs/diademfall-complete-v4/battle-rules.md
- * with a practical subset of abilities and rulesets. Produces a full replay.
+ * Implements the combat contract from docs/diademfall-complete-v5/battle-rules.md
+ * with a practical subset of abilities and rulesets, including the 6 Wayfarer abilities.
+ * Produces a full replay. Wayfarer code paths only run for Wayfarer abilities, so battles
+ * without them replay exactly as before (see the three-packs replay fixture test).
  */
 import { CURRENT_CATALOG, type CardCatalog } from "./catalogs";
-import { unitAtLevel, type UnitCard } from "./units";
+import { isWayfarer, unitAtLevel, type UnitCard } from "./units";
 import type { MatchConfig, TeamPick } from "./match";
 import { Rng, hash } from "./rng";
 
@@ -24,6 +26,8 @@ export interface BUnit {
   hexIdx: number; hexRound: number; hexSpeed: number; hexPower: number; healLock: number;
   doom?: number | undefined; debtors: string[]; debtRound: number; marked: number; spotted: number;
   healMod: number; link?: string | undefined; noRestore: boolean; spotRound: number;
+  /** Wayfarer abilities: Salvager use round, Roadwise used/speed bonus, Last Pay bonuses (one entry per bonus: last round it lasts) */
+  salvRound: number; roadUsed: boolean; roadSpd: number; lastPay: number[];
 }
 
 export interface SnapUnit { uid: string; cardId: string; name: string; hp: number; maxHp: number; armor: number; alive: boolean; buffs: string[] }
@@ -51,9 +55,12 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
   const snap = (): [SnapUnit[], SnapUnit[]] => teams.map((t) => t.map((u) => ({
     uid: u.uid, cardId: u.cardId, name: u.name, hp: u.hp, maxHp: u.maxHp, armor: u.armor + u.tempArmor, alive: u.alive,
     buffs: [u.brace > 0 ? "brace" : "", u.marked >= round && u.marked > 0 ? "marked" : "", u.spotted >= round && u.spotted > 0 ? "spotted" : "",
-      u.doom !== undefined ? `doom ${u.doom}` : "", u.hexSpeed || u.hexPower ? "hexed" : "", u.vanishUntil >= round && u.vanishUntil > 0 ? "vanished" : ""].filter(Boolean),
+      u.doom !== undefined ? `doom ${u.doom}` : "", u.hexSpeed || u.hexPower ? "hexed" : "", u.vanishUntil >= round && u.vanishUntil > 0 ? "vanished" : "",
+      u.roadSpd > 0 ? "roadwise" : "", lastPayActive(u) > 0 ? "last pay" : ""].filter(Boolean),
   }))) as [SnapUnit[], SnapUnit[]];
   const log = (e: Omit<BattleEvent, "teams" | "round">) => events.push({ ...e, round, teams: snap() });
+  /** Last Pay bonuses still running this round (each = +1 speed, +5 accuracy). */
+  const lastPayActive = (u: BUnit) => u.lastPay.filter((until) => round <= until).length;
 
   // ---- create units
   picks.forEach((p, side) => {
@@ -70,6 +77,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
         forgeUsed: false, graveUsed: false, vanishUsed: false, vanishUntil: 0, oathUsed: false, misleadRound: 0, scaleRound: 0,
         roarUsed: false, killRound: 0, runeIdx: 0, hexIdx: 0, hexRound: 0, hexSpeed: 0, hexPower: 0, healLock: 0,
         debtors: [], debtRound: 0, marked: 0, spotted: 0, healMod: 0, noRestore: has("gilded_march"), spotRound: 0,
+        salvRound: 0, roadUsed: false, roadSpd: 0, lastPay: [],
       });
     });
   });
@@ -154,6 +162,14 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
         if (n) { u.link = n.uid; n.link = u.uid; }
       }
     }
+    // Contract Bond: exactly 2 Wayfarers on the team -> both +1 max health (resolves once per team).
+    if (T(side).some((u) => u.abil.has("contract_bond"))) {
+      const wf = T(side).filter((u) => isWayfarer(u.card));
+      if (wf.length === 2) {
+        wf.forEach((u) => { u.maxHp += 1; u.hp += 1; });
+        log({ kind: "ability", text: `${wf[0]!.name} and ${wf[1]!.name} honor their contract (+1 health).` });
+      }
+    }
     if (has("crown_favor") && T(side).length) {
       const top = [...T(side)].sort((a, b) => b.card.mana - a.card.mana)[0]!;
       top.maxHp += 1; top.hp += 1; top.abil.add("_crown");
@@ -163,6 +179,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
   const curSpeed = (u: BUnit) => {
     let s = u.speed + u.spdRound - u.hexSpeed;
     if (round <= u.spdUntil) s += u.spdUntilBonus;
+    s += u.roadSpd + lastPayActive(u);
     if (u.abil.has("windread") && posOf(u) >= 4) s += 1;
     return Math.max(1, s);
   };
@@ -174,7 +191,12 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
   };
 
   const defeat = (u: BUnit, killer?: BUnit) => {
+    const payees = u.abil.has("last_pay") ? adjacent(u) : [];
     u.alive = false;
+    if (payees.length) {
+      payees.forEach((a) => a.lastPay.push(round + 1));
+      log({ kind: "ability", text: `${u.name}'s Last Pay spurs ${payees.map((a) => a.name).join(" and ")}.`, actor: u.uid });
+    }
     log({ kind: "death", text: `${u.name} falls.`, target: u.uid });
     if (killer && killer.alive) {
       if (killer.abil.has("primal_mend") && killer.killRound !== round) {
@@ -217,6 +239,25 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
     if (u.hp <= 0) defeat(u);
   };
 
+  /** Roadwise: the first time an enemy ability (not an attack) selects this unit, +2 speed until after its next action. */
+  const abilityTargeted = (t: BUnit) => {
+    if (!t.alive || !t.abil.has("roadwise") || t.roadUsed) return;
+    t.roadUsed = true; t.roadSpd = 2;
+    log({ kind: "ability", text: `${t.name} sidesteps the trap (Roadwise, +2 speed).`, actor: t.uid });
+  };
+  /** Salvager: once per round, when another unit loses its last armor, the bearer regains 1 armor (up to printed armor). */
+  const armorBroken = (broken: BUnit) => {
+    for (const o of [...living(0), ...living(1)]) {
+      if (o === broken || !o.abil.has("salvager") || o.salvRound === round) continue;
+      const cap = Math.min(o.card.armor, o.maxArmor);
+      if (cap <= 0) continue;
+      o.salvRound = round;
+      if (o.noRestore || o.armor >= cap) continue;
+      o.armor += 1;
+      log({ kind: "ability", text: `${o.name} salvages 1 armor.`, actor: o.uid });
+    }
+  };
+
   /** Apply an attack hit; returns damage to health. */
   const applyHit = (att: BUnit, tgt: BUnit, ch: Channel, power: number) => {
     let dmg = power;
@@ -232,6 +273,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
       if (hadArmor && tgt.armor === 0) {
         if (tgt.abil.has("forgeheart") && !tgt.forgeUsed && !tgt.noRestore) { tgt.forgeUsed = true; tgt.armor = Math.min(2, tgt.maxArmor); log({ kind: "ability", text: `${tgt.name}'s Forgeheart reforges 2 armor.`, actor: tgt.uid }); }
         if (tgt.abil.has("vanish") && !tgt.vanishUsed) { tgt.vanishUsed = true; tgt.vanishUntil = round + 1; log({ kind: "ability", text: `${tgt.name} slips behind the veil (Vanish).`, actor: tgt.uid }); }
+        if (tgt.armor === 0) armorBroken(tgt);
       }
       const shield = Math.min(2, adjacent(tgt).filter((a) => a.abil.has("shieldwall") && a.armor > 0).length);
       dmg = Math.max(0, dmg - shield);
@@ -295,7 +337,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
     let power = a.power;
     if (u.abil.has("bloodscent") && t.hp < t.maxHp) power += 1;
     if (t.marked >= round && t.marked > 0 && u.card.banner === "wild_courts") power += 1;
-    let acc = u.acc + (u.abil.has("windread") && posOf(u) >= 4 ? 10 : 0) + (has("open_flanks") && posOf(u) >= 4 ? 10 : 0);
+    let acc = u.acc + (u.abil.has("windread") && posOf(u) >= 4 ? 10 : 0) + (has("open_flanks") && posOf(u) >= 4 ? 10 : 0) + 5 * lastPayActive(u);
     if (a.ch === "shot" && has("steel_tempest")) acc -= 5;
     if (a.ch === "shot" && t.spotted >= round && t.spotted > 0) acc += 5;
     const chance = Math.max(10, Math.min(100, 90 + acc + 5 * (curSpeed(u) - curSpeed(t))));
@@ -310,10 +352,11 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
     if (t.alive && u.card.banner === "wild_courts" && u.abil.has("packmark") && !(t.marked >= round)) t.marked = round;
     if (t.alive && u.abil.has("spotter") && u.spotRound !== round) { u.spotRound = round; t.spotted = round; }
     if (t.alive && u.abil.has("hexweave") && u.hexRound !== round) {
+      abilityTargeted(t);
       u.hexRound = round; const k = u.hexIdx++ % 3;
       if (k === 0) t.hexSpeed = 1; else if (k === 1) t.hexPower = 1; else t.healLock = round + 1;
     }
-    if (t.alive && u.abil.has("doom_count") && t.doom === undefined) t.doom = 3;
+    if (t.alive && u.abil.has("doom_count") && t.doom === undefined) { abilityTargeted(t); t.doom = 3; }
     if (t.hp <= 0 && t.alive) defeat(t, u);
   };
 
@@ -321,7 +364,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
   for (const side of [0, 1] as const) for (const u of living(side)) {
     if (u.abil.has("pounce") && posOf(u) >= 4) {
       const enemy = living(1 - side).at(-1);
-      if (enemy) { enemy.hp -= 1; log({ kind: "ability", text: `${u.name} pounces on ${enemy.name} for 1.`, actor: u.uid, target: enemy.uid, amount: 1 }); if (enemy.hp <= 0) defeat(enemy, u); }
+      if (enemy) { abilityTargeted(enemy); enemy.hp -= 1; log({ kind: "ability", text: `${u.name} pounces on ${enemy.name} for 1.`, actor: u.uid, target: enemy.uid, amount: 1 }); if (enemy.hp <= 0) defeat(enemy, u); }
     }
   }
 
@@ -337,7 +380,12 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
         if (u.abil.has("_crown")) u.brace = Math.max(u.brace, 1);
         if (u.abil.has("retinue") && !has("broken_formation")) {
           const l = living(side); const i = l.indexOf(u);
-          if (l[i - 1] && l[i + 1]) [u, l[i - 1]!, l[i + 1]!].forEach((x) => (x.tempArmor = 1));
+          if (l[i - 1] && l[i + 1]) [u, l[i - 1]!, l[i + 1]!].forEach((x) => (x.tempArmor = Math.max(x.tempArmor, 1)));
+        }
+        // Makeshift Guard: frontmost adjacent ally with 0 armor gets 1 temporary armor (max 2 from all bearers).
+        if (u.abil.has("makeshift_guard")) {
+          const g = adjacent(u).find((a) => a.armor === 0);
+          if (g && g.tempArmor < 2) { g.tempArmor += 1; log({ kind: "ability", text: `${u.name} props up ${g.name} (Makeshift Guard).`, actor: u.uid, target: g.uid }); }
         }
         if (u.abil.has("mirrorcraft")) { const top = Math.max(...living(1 - side).map(curSpeed), 0); u.spdRound += Math.max(0, top - curSpeed(u)); }
       }
@@ -350,6 +398,7 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
       const a = chooseAction(u);
       if (!a) continue;
       doAttack(u, a);
+      u.roadSpd = 0;
       if (u.abil.has("runebreath")) u.runeIdx++;
       if (u.alive && u.abil.has("moonrush") && round % 3 === 0) {
         const again = chooseAction(u);
@@ -364,11 +413,17 @@ export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], ca
     if (winner !== null) break;
     // round end
     for (const u of [...living(0), ...living(1)]) {
-      for (const d of u.debtors) { const e = byUid(d); if (e) directDamage(e, 2, `Death Debt of ${u.name}`); }
+      for (const d of u.debtors) { const e = byUid(d); if (e) { abilityTargeted(e); directDamage(e, 2, `Death Debt of ${u.name}`); } }
       u.debtors = [];
       if (u.doom !== undefined) { u.doom--; if (u.doom <= 0) { u.doom = undefined; directDamage(u, 3, "Doom Count"); } }
       u.tempArmor = 0;
       if (u.hexRound < round) { u.hexSpeed = 0; u.hexPower = 0; }
+    }
+    // Field Ration: every 3rd round, each bearer (formation order) heals the most-wounded ally by 1; ties favor the front.
+    if (round % 3 === 0) for (const s of [0, 1] as const) for (const u of living(s)) {
+      if (!u.abil.has("field_ration")) continue;
+      const w = living(s).filter((x) => x.hp < x.maxHp).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0];
+      if (w) heal(w, 1, "Field Ration");
     }
     if (has("last_light")) for (const s of [0, 1]) { const r = living(s).at(-1); if (r) directDamage(r, 1, "Last Light"); }
     const fatigueStart = has("closing_chapter") ? 8 : 20;

@@ -1,6 +1,7 @@
 /**
- * Versioned card catalogs. New play uses the v2 catalog; ranked replays re-simulate with the
- * catalog of the game version they were played on, so old result hashes keep verifying.
+ * Versioned card catalogs. New play uses the current (Wayfarers) catalog; ranked replays re-simulate
+ * with the catalog of the game version they were played on, so old result hashes keep verifying.
+ * three-packs-1.0.0 is the same 138 cards without the 12 Wayfarers (v5 left every existing card unchanged).
  */
 import { ABILITIES } from "./catalog/abilities";
 import { BANNERS as CATALOG_BANNERS } from "./catalog/banners";
@@ -15,7 +16,9 @@ import { hashCanonical } from "./sha256";
 import { UNIT_BY_ID, type UnitCard } from "./units";
 import type { BannerId } from "./catalog/types";
 
-export const CATALOG_VERSION = "three-packs-1.0.0";
+export const CATALOG_VERSION = "three-packs-economy-wayfarers-1.0.0";
+/** Catalog before Wayfarers (138 cards). */
+export const THREE_PACKS_CATALOG_VERSION = "three-packs-1.0.0";
 export const LEGACY_CATALOG_VERSION = "alpha-beta-1.0.0";
 
 export interface SummonerCard { id: string; name: string; banner: BannerId; set: string; rarity: string; mana: number; effects: SummonerEffect[] }
@@ -30,11 +33,18 @@ const SUMMONER_BY_ID = Object.fromEntries(SUMMONERS.map((s) => [s.id, s])) as Re
 const LEGACY_SUMMONER_BY_ID = Object.fromEntries(LEGACY_SUMMONERS.map((s) => [s.id, s as SummonerCard])) as Record<string, SummonerCard>;
 
 export const CURRENT_CATALOG: CardCatalog = { version: CATALOG_VERSION, unit: (id) => UNIT_BY_ID[id], summoner: (id) => SUMMONER_BY_ID[id] };
+export const THREE_PACKS_CATALOG: CardCatalog = {
+  version: THREE_PACKS_CATALOG_VERSION,
+  unit: (id) => { const u = UNIT_BY_ID[id]; return u && u.affiliation !== "wayfarer" ? u : undefined; },
+  summoner: (id) => SUMMONER_BY_ID[id],
+};
 export const LEGACY_CATALOG: CardCatalog = { version: LEGACY_CATALOG_VERSION, unit: (id) => LEGACY_UNIT_BY_ID[id], summoner: (id) => LEGACY_SUMMONER_BY_ID[id] };
 
 /** Catalog for a game version; unknown versions use the current catalog. */
 export function catalogFor(gameVersion: string | undefined): CardCatalog {
-  return gameVersion === LEGACY_CATALOG_VERSION ? LEGACY_CATALOG : CURRENT_CATALOG;
+  if (gameVersion === LEGACY_CATALOG_VERSION) return LEGACY_CATALOG;
+  if (gameVersion === THREE_PACKS_CATALOG_VERSION) return THREE_PACKS_CATALOG;
+  return CURRENT_CATALOG;
 }
 
 /** Card info for display (names/art) in replays: current card first, then retired Alpha/Beta cards. */
@@ -54,7 +64,7 @@ export function rulesetName(id: string): string {
   return RULE_NAME[id] ?? LEGACY_RULE_NAMES[id] ?? id;
 }
 
-/** Fingerprint of the v2 catalog stored on game_versions.catalog_hash. */
+/** Fingerprint of the current catalog stored on game_versions.catalog_hash. */
 export function catalogHash(rulesetWeight: (id: string) => number): string {
   return hashCanonical({
     version: CATALOG_VERSION, sets: SETS, banners: CATALOG_BANNERS, summoners: SUMMONERS, troops: TROOPS, abilities: ABILITIES,

@@ -394,5 +394,31 @@ export const RULESETS: RulesetDefinition[] = [
       "rng": "seeded"
     },
     "incompatibleWith": []
+  },
+  {
+    "id": "closed_ranks",
+    "name": "Closed Ranks",
+    "category": "draft",
+    "phase": "team_build",
+    "text": "Wayfarer troops cannot be selected.",
+    "values": {
+      "maximumWayfarers": 0
+    },
+    "incompatibleWith": [
+      "open_contract"
+    ]
+  },
+  {
+    "id": "open_contract",
+    "name": "Open Contract",
+    "category": "draft",
+    "phase": "team_build",
+    "text": "A team may select up to 4 Wayfarer troops instead of the normal limit of 2.",
+    "values": {
+      "maximumWayfarers": 4
+    },
+    "incompatibleWith": [
+      "closed_ranks"
+    ]
   }
 ];

@@ -118,7 +118,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "stoneward_hound",
@@ -237,7 +238,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "oathcarver_acolyte",
@@ -338,7 +340,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "rampart_arbalist",
@@ -421,7 +424,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "granite_bailiff",
@@ -490,7 +494,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "colossus_of_the_first_wall",
@@ -550,7 +555,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "lantern_squire",
@@ -669,7 +675,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "moat_runner",
@@ -770,7 +777,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "crown_pike",
@@ -889,7 +897,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "chapel_thaumaturge",
@@ -990,7 +999,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "banner_chirurgeon",
@@ -1073,7 +1083,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "gilded_castellan",
@@ -1142,7 +1153,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "levy_drummer",
@@ -1261,7 +1273,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "shield_clerk",
@@ -1380,7 +1393,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "gatebolt_archer",
@@ -1481,7 +1495,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "chain_magistrate",
@@ -1564,7 +1579,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "iron_vow_captain",
@@ -1633,7 +1649,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "citadel_behemoth",
@@ -1693,7 +1710,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "seedling_wisp",
@@ -1812,7 +1830,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "fangroot_cub",
@@ -1931,7 +1950,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "moss_oracle",
@@ -2032,7 +2052,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "briar_dartling",
@@ -2115,7 +2136,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "antler_guardian",
@@ -2184,7 +2206,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "elderhorn_colossus",
@@ -2244,7 +2267,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "burrow_mouse",
@@ -2363,7 +2387,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "thistle_runner",
@@ -2464,7 +2489,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "moonclaw_stalker",
@@ -2583,7 +2609,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "spore_witch",
@@ -2684,7 +2711,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "grove_tender",
@@ -2767,7 +2795,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "whitehart_ravager",
@@ -2836,7 +2865,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "twig_scout",
@@ -2955,7 +2985,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "pack_pup",
@@ -3074,7 +3105,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "needlewing_hunter",
@@ -3175,7 +3207,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "rootsnare_druid",
@@ -3258,7 +3291,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "greatpaw_warden",
@@ -3327,7 +3361,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "crowned_mammoth",
@@ -3387,7 +3422,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "paper_moth",
@@ -3506,7 +3542,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "glass_imp",
@@ -3625,7 +3662,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "threadling_seer",
@@ -3726,7 +3764,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "prism_needler",
@@ -3809,7 +3848,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "lacquered_sentinel",
@@ -3878,7 +3918,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "the_unremembered_face",
@@ -3938,7 +3979,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "whisper_sprite",
@@ -4057,7 +4099,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ribbon_fox",
@@ -4158,7 +4201,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "masked_duelist",
@@ -4277,7 +4321,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "moon_mirror_adept",
@@ -4378,7 +4423,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "fate_stitcher",
@@ -4461,7 +4507,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "gloam_courtier",
@@ -4530,7 +4577,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "inkcap_familiar",
@@ -4649,7 +4697,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "silkknife_agent",
@@ -4768,7 +4817,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "glimmerbow_spy",
@@ -4869,7 +4919,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "knotwitch",
@@ -4952,7 +5003,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "mirrorblade_envoy",
@@ -5021,7 +5073,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "palace_of_one",
@@ -5081,7 +5134,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "candle_remnant",
@@ -5200,7 +5254,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bone_rat",
@@ -5319,7 +5374,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "grave_cantor",
@@ -5420,7 +5476,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "coffin_dart",
@@ -5503,7 +5560,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ossuary_guard",
@@ -5572,7 +5630,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "the_bell_beneath",
@@ -5632,7 +5691,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "tallow_wisp",
@@ -5751,7 +5811,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "crypt_scrabbler",
@@ -5852,7 +5913,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "mourning_pike",
@@ -5971,7 +6033,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "pale_medium",
@@ -6072,7 +6135,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "marrow_surgeon",
@@ -6155,7 +6219,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "sepulcher_knight",
@@ -6224,7 +6289,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "grave_levy",
@@ -6343,7 +6409,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "rattleblade",
@@ -6462,7 +6529,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ash_bolt_deadeye",
@@ -6563,7 +6631,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "debt_collector",
@@ -6646,7 +6715,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "black_bell_centurion",
@@ -6715,7 +6785,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "catacomb_sovereign",
@@ -6775,7 +6846,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "loose_feather",
@@ -6894,7 +6966,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "cliff_marten",
@@ -7013,7 +7086,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "cloud_reader",
@@ -7114,7 +7188,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "rookbow_scout",
@@ -7197,7 +7272,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "griffin_warden",
@@ -7266,7 +7342,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "thunder_roc_ancient",
@@ -7326,7 +7403,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "kite_squire",
@@ -7445,7 +7523,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "eyrie_runner",
@@ -7546,7 +7625,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "gale_lancer",
@@ -7665,7 +7745,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "mistcaller",
@@ -7766,7 +7847,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "wingmender",
@@ -7849,7 +7931,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "cloudhouse_champion",
@@ -7918,7 +8001,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "pennant_swift",
@@ -8037,7 +8121,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "hookwing_recruit",
@@ -8156,7 +8241,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "stormglass_archer",
@@ -8257,7 +8343,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "wind_magistrate",
@@ -8340,7 +8427,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "griffin_legionary",
@@ -8409,7 +8497,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "tempest_crown_roc",
@@ -8469,7 +8558,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "shed_scale",
@@ -8588,7 +8678,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "cinder_gecko",
@@ -8707,7 +8798,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "rune_hatchling",
@@ -8808,7 +8900,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "hoard_slinger",
@@ -8891,7 +8984,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "basalt_drake",
@@ -8960,7 +9054,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "first_blood_wyrm",
@@ -9020,7 +9115,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 4
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ember_newt",
@@ -9139,7 +9235,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "copper_kobold",
@@ -9240,7 +9337,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "scaleclaw_raider",
@@ -9359,7 +9457,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "runespark_adept",
@@ -9460,7 +9559,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 3
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "hoard_tender",
@@ -9543,7 +9643,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 1,
         "spell": 1
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ashen_drakeguard",
@@ -9612,7 +9713,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "coal_snout_recruit",
@@ -9731,7 +9833,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ironscale_skulk",
@@ -9850,7 +9953,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "runebow_clansman",
@@ -9951,7 +10055,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 3,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bloodline_seer",
@@ -10034,7 +10139,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 2
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "elder_scale_guard",
@@ -10103,7 +10209,8 @@ export const TROOPS: TroopDefinition[] = [
         "shot": 0,
         "spell": 0
       }
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "worldcoil_heir",
@@ -10157,6 +10264,1162 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 11,
+        "armor": 3,
+        "speed": 1,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "pebble_familiar",
+    "name": "Pebble Familiar",
+    "originalName": "Pebble Familiar",
+    "set": "ancient",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "ruin_jackal",
+    "name": "Ruin Jackal",
+    "originalName": "Ruin Jackal",
+    "set": "ancient",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "bronze_pilgrim",
+    "name": "Bronze Pilgrim",
+    "originalName": "Bronze Pilgrim",
+    "set": "ancient",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 2,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 2,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 2,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 8,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "nameless_colossus",
+    "name": "Nameless Colossus",
+    "originalName": "Nameless Colossus",
+    "set": "ancient",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 9,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "roadside_tinker",
+    "name": "Roadside Tinker",
+    "originalName": "Roadside Tinker",
+    "set": "oath",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "support",
+    "channel": "none",
+    "baseStats": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 3,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 4,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "hedge_crossbowman",
+    "name": "Hedge Crossbowman",
+    "originalName": "Hedge Crossbowman",
+    "set": "oath",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "contract_mender",
+    "name": "Contract Mender",
+    "originalName": "Contract Mender",
+    "set": "oath",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "greycloak_duelist",
+    "name": "Greycloak Duelist",
+    "originalName": "Greycloak Duelist",
+    "set": "oath",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "duelist",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 1,
+      "speed": 4,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 1,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 1,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 1,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 2,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "camp_scavenger",
+    "name": "Camp Scavenger",
+    "originalName": "Camp Scavenger",
+    "set": "legionnaire",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "free_lance_archer",
+    "name": "Free-Lance Archer",
+    "originalName": "Free-Lance Archer",
+    "set": "legionnaire",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 4,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 4,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 4,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 4,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "bannerless_veteran",
+    "name": "Bannerless Veteran",
+    "originalName": "Bannerless Veteran",
+    "set": "legionnaire",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 9,
+        "armor": 3,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 10,
+        "armor": 3,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 10,
+        "armor": 4,
+        "speed": 3,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 11,
+        "armor": 4,
+        "speed": 3,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "crownless_giant",
+    "name": "Crownless Giant",
+    "originalName": "Crownless Giant",
+    "set": "legionnaire",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 11,
+      "armor": 2,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 11,
+        "armor": 2,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 12,
+        "armor": 2,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 12,
+        "armor": 2,
+        "speed": 1,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 13,
         "armor": 3,
         "speed": 1,
         "steel": 5,

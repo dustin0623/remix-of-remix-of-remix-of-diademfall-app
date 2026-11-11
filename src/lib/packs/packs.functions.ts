@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { CATALOG_VERSION } from "@/game/catalogs";
-import { openPack, PACK_ALGORITHM, PACK_IDS, PACK_RULES, randomSeed, type Foil, type PackId, type Rarity } from "@/game/packs";
+import { isPackAlgorithm, openPack, PACK_ALGORITHM, PACK_IDS, PACK_RULES, randomSeed, type Foil, type PackAlgorithm, type PackId, type Rarity } from "@/game/packs";
 import { ledgerKey } from "@/lib/economy/currency";
 
 const loadAdmin = async () => (await import("@/integrations/supabase/client.server")).supabaseAdmin;
@@ -55,7 +55,7 @@ export const commitPackOpening = createServerFn({ method: "POST" })
 
 export interface RevealedCard { assetId: string; cardId: string; foil: Foil; rarity: Rarity; slot: number }
 export type RevealResult =
-  | { ok: true; cards: RevealedCard[]; serverSeed: string; clientSeed: string; commitHash: string; openingId: string; pack: PackId }
+  | { ok: true; cards: RevealedCard[]; serverSeed: string; clientSeed: string; commitHash: string; openingId: string; pack: PackId; algorithm: PackAlgorithm }
   | { ok: false; error: string };
 
 /** Step 2: combine the hidden seed with the player's seed, burn the pack and mint five cards. */
@@ -64,14 +64,16 @@ export const revealPackOpening = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => z.object({ openingId: z.string().uuid(), clientSeed: z.string().min(8).max(128) }).parse(d))
   .handler(async ({ data, context }): Promise<RevealResult> => {
     const admin = await loadAdmin();
-    const { data: o } = await admin.from("pack_openings").select("id, player_id, set_id, status, commit_hash, catalog_version")
+    const { data: o } = await admin.from("pack_openings").select("id, player_id, set_id, status, commit_hash, algorithm")
       .eq("id", data.openingId).eq("player_id", context.userId).maybeSingle();
     if (!o) return { ok: false, error: "Opening not found." };
-    if (o.catalog_version !== CATALOG_VERSION) return { ok: false, error: "This opening was started on an older card catalog." };
+    // Openings keep the algorithm (card pools) they were committed with, so ones started before a catalog update still open fairly.
+    if (!isPackAlgorithm(o.algorithm)) return { ok: false, error: "This opening uses an unknown pack algorithm." };
+    const algorithm = o.algorithm;
     const { data: secret } = await admin.from("pack_opening_secrets").select("server_seed").eq("opening_id", o.id).maybeSingle();
     if (!secret && o.status !== "revealed") return { ok: false, error: "Opening not found." };
     const pack = o.set_id as PackId;
-    const pulls = secret ? openPack(pack, secret.server_seed, data.clientSeed, o.id) : [];
+    const pulls = secret ? openPack(pack, secret.server_seed, data.clientSeed, o.id, algorithm) : [];
     const { data: r, error } = await admin.rpc("reveal_pack_opening", {
       p_player_id: context.userId, p_opening_id: o.id, p_client_seed: data.clientSeed, p_results: pulls as never,
     });
@@ -80,5 +82,5 @@ export const revealPackOpening = createServerFn({ method: "POST" })
       return { ok: false, error: (error.message ?? "").includes("No unopened pack") ? "You have no unopened pack of this kind." : "Opening failed. Try again." };
     }
     const res = r as unknown as { results: RevealedCard[]; serverSeed: string; clientSeed: string };
-    return { ok: true, cards: res.results, serverSeed: res.serverSeed, clientSeed: res.clientSeed, commitHash: o.commit_hash, openingId: o.id, pack };
+    return { ok: true, cards: res.results, serverSeed: res.serverSeed, clientSeed: res.clientSeed, commitHash: o.commit_hash, openingId: o.id, pack, algorithm };
   });

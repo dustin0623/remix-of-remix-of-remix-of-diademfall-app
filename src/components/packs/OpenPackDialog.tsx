@@ -52,7 +52,7 @@ export function OpenPackDialog({ pack, open, onOpenChange }: { pack: PackId | nu
     void qc.invalidateQueries({ queryKey: ["account"] });
   };
 
-  const verified = result ? verifyOpening({ pack: result.pack, commitHash: result.commitHash, serverSeed: result.serverSeed, clientSeed: result.clientSeed, openingId: result.openingId, cards: result.cards }) : null;
+  const verified = result ? verifyOpening({ pack: result.pack, algorithm: result.algorithm, commitHash: result.commitHash, serverSeed: result.serverSeed, clientSeed: result.clientSeed, openingId: result.openingId, cards: result.cards }) : null;
   const allShown = result ? flipped >= result.cards.length : false;
 
   return (

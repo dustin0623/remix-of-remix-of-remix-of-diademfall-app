@@ -20,7 +20,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Does not prevent Spell or direct damage.",
       "Damage reduced to 0 does not trigger on-damage effects.",
       "A stunned unit still loses unspent points at its skipped turn."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "shieldwall",
@@ -38,7 +39,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Broken Formation disables adjacency benefits.",
       "Does not protect the bearer.",
       "Reduction applies after armor absorption but before brace points."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "forgeheart",
@@ -56,7 +58,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "A lethal hit still defeats the unit before armor is restored.",
       "An armor purge that deals no damage can trigger it.",
       "The restored armor cannot exceed printed maximum armor."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bannerhold",
@@ -77,7 +80,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Does not increase ability-grant effects.",
       "Recalculates immediately after position changes.",
       "A +0 or conditional effect remains unchanged."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "retinue",
@@ -95,7 +99,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Temporary armor is lost at round end before damage-over-time resolves.",
       "Broken Formation suppresses this ability.",
       "Summoned units can satisfy the neighbor check next round."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "oathkeeper",
@@ -112,7 +117,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Cannot intercept fatigue, Doom Count, or other indirect damage.",
       "If the bearer is defeated, excess damage does not return to the ally.",
       "Does not trigger if displacement has broken adjacency."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bloodscent",
@@ -129,7 +135,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Checked before the attack roll, not after reflected or linked damage.",
       "Applies to Steel, Shot, and Spell attacks.",
       "Temporary maximum-health loss can make a target wounded."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "packmark",
@@ -147,7 +154,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Misses do not place the mark.",
       "The marking attack does not receive the bonus.",
       "A copied or stolen Packmark still keys from the attacker’s current Banner."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "pounce",
@@ -169,7 +177,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Uses normal accuracy and can be intercepted.",
       "Does not count as the unit’s round action.",
       "Battle-start defeats are removed before round 1 initiative is built."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "moonrush",
@@ -187,7 +196,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The repeat performs a fresh accuracy roll.",
       "On-attack effects can trigger on both attacks unless limited per round.",
       "A defeated original target is retargeted normally."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "trailblazer",
@@ -204,7 +214,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Voluntary swaps do not trigger it.",
       "The speed change affects any remaining action this round.",
       "No Retreat prevents the movement and therefore the trigger."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "primal_mend",
@@ -222,7 +233,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Cannot target the bearer if another eligible ally has a lower percentage.",
       "Overhealing is lost.",
       "Healing modifiers apply after target selection."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "mislead",
@@ -245,7 +257,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Does not redirect attacks already aimed at position 1.",
       "Area and random-target actions cannot be redirected.",
       "The attacker does not reroll accuracy after redirection."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "fate_knot",
@@ -263,7 +276,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Shifted damage cannot trigger another Fate Knot.",
       "The link ends when either unit is defeated.",
       "Oathkeeper resolves before the knot."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "hexweave",
@@ -282,7 +296,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The sequence is stored per bearer.",
       "Attack power reduces all three attack channels, minimum 0.",
       "Cleanse removes the active hex but does not reset the sequence."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "echo_sigil",
@@ -300,7 +315,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Cannot repeat resurrection, ability grants, displacement, or another Echo Sigil.",
       "The repeat is a new event for triggers.",
       "Echoing Hall modifies the original action before this repeat is calculated."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "vanish",
@@ -323,7 +339,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Does not cancel the action that broke the armor.",
       "Area, indirect, and front-rank attacks remain legal.",
       "If stunned, Vanish lasts until after the skipped action resolves."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "mirrorcraft",
@@ -340,7 +357,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Reads enemy speed after round-start penalties but before initiative ordering.",
       "Later speed changes still apply to the copied value.",
       "If there are no enemies, no change occurs."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "soul_tithe",
@@ -359,7 +377,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Battle-start defeats grant souls.",
       "Cannot trigger after the bearer is defeated.",
       "If at full health with no removable status, souls remain stored."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "grave_recall",
@@ -378,7 +397,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The return is the same unit identity and keeps once-per-battle usage.",
       "Cannot trigger if its position was filled by a summon.",
       "Victory is checked after pending returns resolve."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "death_debt",
@@ -396,7 +416,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The debt persists if the bearer is defeated.",
       "Direct damage ignores armor and Brace.",
       "A defeated debtor is removed before the debt resolves."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bone_harvest",
@@ -414,7 +435,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "A Grave Recall return begins a new life and resets the cap.",
       "Cannot exceed printed maximum armor plus 3.",
       "Simultaneous defeats resolve front to back, ally before enemy."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "doom_count",
@@ -432,7 +454,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Cleanse removes the counter.",
       "The source need not remain alive.",
       "The count ticks after Death Debt and before fatigue."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "pale_exchange",
@@ -451,7 +474,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The health cost is direct and cannot be prevented.",
       "If the action is canceled, the cost is refunded.",
       "Echo Sigil repeats the increased final value at half strength."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "windread",
@@ -474,7 +498,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Recalculates immediately after movement.",
       "Accuracy is on a 0–100 scale.",
       "Open Flanks adds after Windread."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "dive_pass",
@@ -497,7 +522,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The swap occurs after all hit triggers.",
       "No Retreat disables the swap.",
       "Trailblazer does not trigger because the movement was not caused by a defeat."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "spotter",
@@ -516,7 +542,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Ignored armor is not removed; that portion of damage reaches health.",
       "A miss does not spot.",
       "Packmark and Spotter bonuses may coexist."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "volley_line",
@@ -533,7 +560,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Broken Formation suppresses the bonus.",
       "The bonus ends immediately when adjacency changes.",
       "A unit whose Shot value was granted rather than printed does not qualify."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "crosswind",
@@ -551,7 +579,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Does not change the current queue.",
       "If no enemy remains in the queue, target the fastest living enemy.",
       "Mirrorcraft reads the penalty at the next round start."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "skyhook",
@@ -568,7 +597,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Anchor and No Retreat prevent the pull.",
       "A target already in position 1 does not move.",
       "Formation closes normally after the displaced unit changes position."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "ancient_scale",
@@ -587,7 +617,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Rage is a resource used by other Wyrm effects and persists between rounds.",
       "Checked after armor but before direct damage conversion.",
       "Damage reduced below 1 still counts as damage."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "hoardfire",
@@ -605,7 +636,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Blood Price changes card costs before unspent mana is calculated.",
       "The bonus is fixed for the battle.",
       "A unit with printed Spell 0 may gain Spell power but still needs legal Spell targeting."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "devour_oath",
@@ -622,7 +654,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Printed stats, summoner effects, and abilities cannot be stolen.",
       "If no legal status exists, nothing happens.",
       "The defeated unit’s after-defeat effects resolve after the theft."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "runebreath",
@@ -643,7 +676,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "The cycle advances even on a miss.",
       "Target legality is recalculated for the chosen channel.",
       "Moonrush repeats use the next channel in sequence."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "colossus_wake",
@@ -660,7 +694,8 @@ export const ABILITIES: AbilityDefinition[] = [
       "Broken Formation suppresses both effects.",
       "Current health rises and falls with maximum health, but never below 1 when the aura ends.",
       "Allied voluntary movement remains legal."
-    ]
+    ],
+    "affiliation": "banner"
   },
   {
     "id": "bloodline_roar",
@@ -678,6 +713,122 @@ export const ABILITIES: AbilityDefinition[] = [
       "A unit already below half at battle start triggers after the first health change.",
       "Grave Recall creates a new life and can trigger again.",
       "Attack power affects Steel, Shot, and Spell values above 0."
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "makeshift_guard",
+    "name": "Makeshift Guard",
+    "originalName": "Makeshift Guard",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "round_start",
+    "mechanics": "If an adjacent ally has 0 current armor, grant the frontmost such ally 1 temporary armor until round end.",
+    "values": {
+      "temporaryArmor": 1,
+      "targetsPerRound": 1
+    },
+    "stacking": "Different bearers may protect the same ally, to a maximum of 2 temporary armor.",
+    "interactions": [
+      "Broken Formation suppresses this ability.",
+      "Temporary armor is removed before round-end damage.",
+      "An ally whose printed maximum armor is 0 remains eligible."
+    ]
+  },
+  {
+    "id": "roadwise",
+    "name": "Roadwise",
+    "originalName": "Roadwise",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "after_targeted",
+    "mechanics": "The first time each battle this unit is selected by an enemy ability rather than an attack, clear Pin and gain +2 speed until after its next action.",
+    "values": {
+      "speedBonus": 2,
+      "usesPerBattle": 1
+    },
+    "stacking": "Additional copies add no uses or speed.",
+    "interactions": [
+      "Direct attacks do not trigger it.",
+      "If the ability is cancelled, Roadwise still counts as used.",
+      "The speed bonus applies to the following round if the unit has already acted."
+    ]
+  },
+  {
+    "id": "contract_bond",
+    "name": "Contract Bond",
+    "originalName": "Contract Bond",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "battle_start",
+    "mechanics": "If the team contains exactly 2 Wayfarer troops, both gain +1 maximum health for the battle.",
+    "values": {
+      "requiredWayfarers": 2,
+      "maximumHealthBonus": 1
+    },
+    "stacking": "The team condition resolves once; multiple copies do not add more health.",
+    "interactions": [
+      "Open Contract teams with 3 or 4 Wayfarers do not qualify.",
+      "Current health increases with maximum health.",
+      "A later defeat does not remove the bonus from the survivor."
+    ]
+  },
+  {
+    "id": "salvager",
+    "name": "Salvager",
+    "originalName": "Salvager",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "after_armor_break",
+    "mechanics": "The first time any other unit loses its last armor each round, restore 1 armor to this unit, not exceeding printed maximum armor.",
+    "values": {
+      "armorRestored": 1,
+      "usesPerRound": 1
+    },
+    "stacking": "Each bearer tracks its own use.",
+    "interactions": [
+      "The broken unit may be allied or enemy.",
+      "An armor purge can trigger it.",
+      "A bearer with printed maximum armor 0 gains nothing and does not spend the use."
+    ]
+  },
+  {
+    "id": "field_ration",
+    "name": "Field Ration",
+    "originalName": "Field Ration",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "round_end",
+    "mechanics": "At the end of rounds 3, 6, 9, and so on, restore 1 health to the wounded ally with the lowest health percentage; ties favor the frontmost.",
+    "values": {
+      "healing": 1,
+      "everyNthRound": 3
+    },
+    "stacking": "Every bearer resolves separately in formation order.",
+    "interactions": [
+      "The bearer may heal itself.",
+      "Healing lock reduces the result to 0.",
+      "Resolve before fatigue."
+    ]
+  },
+  {
+    "id": "last_pay",
+    "name": "Last Pay",
+    "originalName": "Last Pay",
+    "banner": null,
+    "affiliation": "wayfarer",
+    "timing": "after_self_defeated",
+    "mechanics": "Adjacent allies gain +1 speed and +5 accuracy through the end of the next round.",
+    "values": {
+      "speedBonus": 1,
+      "accuracyBonus": 5,
+      "durationRounds": 1
+    },
+    "stacking": "Bonuses from different defeated bearers stack to +2 speed and +10 accuracy.",
+    "interactions": [
+      "Broken Formation does not cancel a bonus already granted.",
+      "A Grave Recall return does not remove the bonus.",
+      "If no adjacent ally survives, nothing happens."
     ]
   }
 ];

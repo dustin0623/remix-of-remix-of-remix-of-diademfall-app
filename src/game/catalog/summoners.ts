@@ -19,7 +19,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A field captain who carries the last lawful standard.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "lady_serane_vale",
@@ -38,7 +39,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A court duelist who turns a narrow line into a fortress.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "torvane_crownshield",
@@ -63,7 +65,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "The vanished king’s shield, still obeying an unfinished oath.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "bram_forgewarden",
@@ -84,7 +87,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A practical armorer who improves only what can bear the weight.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "maelor_ironhand",
@@ -108,7 +112,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A queen without a throne who refuses to lose another soldier.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "eira_thornpath",
@@ -128,7 +133,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "The quickest guide through the moving briar roads.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "rowan_packmother",
@@ -147,7 +153,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "She teaches rival beasts to hunt as one court.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "garran_moonfang",
@@ -172,7 +179,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A moon-crowned warlord who times every charge to the old sky.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "pip_briarwhistle",
@@ -193,7 +201,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A hedge scout whose whistle always arrives before the ambush.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "ysilde_whitehart",
@@ -217,7 +226,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "The antlered judge of every hunt taken without need.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "oris_glassmoth",
@@ -237,7 +247,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A soft-spoken envoy whose wings remember every lie.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "miravel_threadseer",
@@ -262,7 +273,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "She knots two possible futures and cuts the one she dislikes.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "veyra_nine_masks",
@@ -286,7 +298,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "No witness agrees on which face led the battle.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "fen_quill",
@@ -307,7 +320,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A contract witch who writes the weakness after seeing it.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "the_lacquered_oracle",
@@ -331,7 +345,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "Its painted prophecies speak twice, never quite the same way.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "morcant_bellkeeper",
@@ -351,7 +366,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "Each toll reminds the dead which side of the gate they chose.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "abbess_nhal",
@@ -370,7 +386,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "She collects no coin, only promises left at graves.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "king_ossuary",
@@ -394,7 +411,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A monarch assembled from the bones of those who broke faith.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "tallow_jack",
@@ -415,7 +433,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A candle bearer who makes small ghosts surprisingly difficult to extinguish.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "vel_mourningstar",
@@ -439,7 +458,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "The general who schedules revenge with funeral precision.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "cael_rookwing",
@@ -459,7 +479,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A cliff-born captain with a rook’s eye for weak seams.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "maris_cloudreel",
@@ -478,7 +499,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "She measures battle lines as if they were weather fronts.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "duke_avorran",
@@ -503,7 +525,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "Aerial nobility distilled into ruthless coordination.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "tess_kestrel",
@@ -524,7 +547,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "The youngest courier ever to outrun a storm drake.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "saint_orien_of_the_gale",
@@ -548,7 +572,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A canonized hunter who believes every tyrant can be moved.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "vaelor_runeclaw",
@@ -568,7 +593,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A rune-carver who reads ancestry in every scale.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "syrra_hoardseer",
@@ -587,7 +613,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "She values the mana deliberately left unspent.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "orrun_the_first_scale",
@@ -612,7 +639,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "An elder whose first scar predates the current crown.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "kiva_emberledger",
@@ -633,7 +661,8 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A hoard accountant who turns restraint into certainty.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   },
   {
     "id": "thalor_worldcoil",
@@ -657,6 +686,7 @@ export const SUMMONERS: SummonerDefinition[] = [
       }
     ],
     "lore": "A sleeping giant whose breath makes old blood remember itself.",
-    "cardType": "summoner"
+    "cardType": "summoner",
+    "affiliation": "banner"
   }
 ];

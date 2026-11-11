@@ -6,8 +6,8 @@ export const SETS = [
     "releaseOrder": 1,
     "status": "launch",
     "summoners": 6,
-    "troops": 36,
-    "total": 42
+    "troops": 40,
+    "total": 46
   },
   {
     "id": "oath",
@@ -16,8 +16,8 @@ export const SETS = [
     "releaseOrder": 2,
     "status": "launch",
     "summoners": 12,
-    "troops": 36,
-    "total": 48
+    "troops": 40,
+    "total": 52
   },
   {
     "id": "legionnaire",
@@ -26,7 +26,7 @@ export const SETS = [
     "releaseOrder": 3,
     "status": "launch",
     "summoners": 12,
-    "troops": 36,
-    "total": 48
+    "troops": 40,
+    "total": 52
   }
 ] as const;
