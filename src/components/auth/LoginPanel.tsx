@@ -3,7 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAccount } from "@/hooks/use-account";
 import { usernameError } from "@/lib/account/username";
-import { leagueFor } from "@/game/profile";
+import { divisionFor } from "@/game/divisions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -39,7 +39,7 @@ export function LoginPanel({ onDone }: { onDone?: () => void }) {
         {account && <p className="text-xs text-muted-foreground">@{account.username} · {user.email}</p>}
         {account && (
           <div className="grid grid-cols-3 gap-2 text-center">
-            {[["League", leagueFor(account.rating)], ["Rating", account.rating], ["Cards", account.cardsOwned]].map(([k, v]) => (
+            {[["Division", divisionFor(account.rating)], ["Rating", account.rating], ["Cards", account.cardsOwned]].map(([k, v]) => (
               <div key={k} className="rounded-lg border border-border bg-background/50 p-2">
                 <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{k}</div>
                 <div className="font-display text-sm font-bold text-primary">{v}</div>

@@ -61,3 +61,6 @@ Nothing from v6 is in the game yet. The open tasks are tracked in `roadmap.md` â
 ## Legal note
 
 Chests are randomized rewards that can contain tradeable cards and Coin shares with market value. Get jurisdiction-specific legal advice and publish chest odds before launch, as with packs.
+
+## Implementation status
+Built in the app (database update `ranked_divisions` instead of the package's `005_ranked_divisions.sql`): 16 divisions, fixed Â±20 rating with streak bonus, rules per match by division, 14-day seasons (Season 1 started with ratings carried over), division chests with provably fair opening, the 100,000-card Legionnaire reward reserve, and season-close Coin-share settlement. The chest Coin pool is a placeholder 20% of the season's League pool slice until the operator decides.

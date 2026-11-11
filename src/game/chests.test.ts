@@ -63,3 +63,12 @@ describe("Legionnaire reward reserve", () => {
     expect(r.legendary).toBeGreaterThan(0);
   });
 });
+
+describe("Verifying a stored chest", () => {
+  it("still verifies when the database returns the rolls with reordered keys and an assetId", () => {
+    const serverSeed = "stored-server-seed";
+    const rolls = rollChest("crown", serverSeed, "client-seed", "chest-1", FULL);
+    const stored = rolls.map((r) => ({ assetId: "a", ...Object.fromEntries(Object.entries(r).reverse()) }) as unknown as typeof r);
+    expect(verifyChest({ chest: "crown", commitHash: sha256Hex(serverSeed), serverSeed, clientSeed: "client-seed", chestId: "chest-1", reserve: FULL, rolls: stored })).toBe(true);
+  });
+});

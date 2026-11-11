@@ -1,0 +1,240 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Inter", sans-serif;
+  --color-primary-glow: var(--primary-glow);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-rarity-common: var(--rarity-common);
+  --color-rarity-uncommon: var(--rarity-uncommon);
+  --color-rarity-rare: var(--rarity-rare);
+  --color-rarity-epic: var(--rarity-epic);
+  --color-rarity-legendary: var(--rarity-legendary);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Account History surfaces and status tones, shared across themes. */
+  --history-tone-1: #9d763b;
+  --history-tone-2: #ebcc8d;
+  --history-tone-3: #21180dcc;
+  --history-tone-4: #b38a4966;
+  --history-tone-5: #dbb572;
+  --history-tone-6: #ffe09a;
+  --history-tone-7: #cfad70;
+  --history-tone-8: #fff0cd;
+  --history-tone-9: #000;
+  --history-tone-10: #d2b57e;
+  --history-tone-11: #b9945755;
+  --history-tone-12: #c79a4c88;
+  --history-tone-13: #2a1b0cee;
+  --history-tone-14: #170e06ee;
+  --history-tone-15: #f6d18d33;
+  --history-tone-16: #0006;
+  --history-tone-17: #cdb68c;
+  --history-tone-18: #ffe29a;
+  --history-tone-19: #5a3307;
+  --history-tone-20: #fff1b0;
+  --history-tone-21: #f2bb3c;
+  --history-tone-22: #b9761a;
+  --history-tone-23: #6b3e17;
+  --history-tone-24: #140c06cc;
+  --history-tone-25: #b68b4844;
+  --history-tone-26: #c7b393;
+  --history-tone-27: #f3dfb0;
+  --history-tone-28: #3b2308;
+  --history-tone-29: #d99a32;
+  --history-tone-30: #fff1ba88;
+  --history-tone-31: #cbb99c;
+  --history-tone-32: #21180d;
+  --history-tone-33: #ffd25e;
+  --history-tone-34: #d9b56f;
+  --history-tone-35: #d8c4a0;
+  --history-tone-36: #1a1108d9;
+  --history-tone-37: #b68b4833;
+  --history-tone-38: #7ee08f;
+  --history-tone-39: #ff8f7a;
+  --history-tone-40: #2a1b0ce6;
+  --history-tone-41: #1a1007e6;
+  --history-tone-42: #d9b56f99;
+  --history-tone-43: #ffffff08;
+  --history-tone-44: #ffd97d;
+  --history-tone-45: #6d4718;
+  --history-tone-46: #2a1809;
+  --history-tone-47: #8fe3ff;
+  --history-tone-48: #f0b4ff;
+  --history-tone-49: #b8a382;
+  --history-tone-50: #a6f0b2;
+  --history-tone-51: #1f5a2a99;
+  --history-tone-52: #4fbf6688;
+  --history-tone-53: #a8d8ff;
+  --history-tone-54: #1d3e6199;
+  --history-tone-55: #5a9fe088;
+  --history-tone-56: #ffb3a6;
+  --history-tone-57: #6a221999;
+  --history-tone-58: #e0655088;
+  --history-tone-59: #e9d8b6;
+  --history-tone-60: #c9a562;
+  --history-tone-61: #f0dfbd;
+  --history-tone-62: #eacb89;
+  --history-tone-63: #1a1108b3;
+  --history-tone-64: #b68b4855;
+  --history-tone-65: #6a221955;
+  --history-tone-66: #e0655066;
+
+  --hero-panel: oklch(0.23 0.044 48);
+  --hero-inset: oklch(0.17 0.023 48);
+  --hero-wood-edge: oklch(0.53 0.12 61);
+  --hero-gold: oklch(0.86 0.16 88);
+  --hero-ink: oklch(0.97 0.016 86);
+  --hero-muted: oklch(0.76 0.033 72);
+  --hero-crew: oklch(0.45 0.12 148);
+  --hero-frame-shadow: inset 0 0 0 2px oklch(0.8 0.13 74), 0 7px 0 oklch(0.15 0.032 48), 0 14px 28px oklch(0.1 0 0 / 40%);
+  --hero-card-shadow: inset 0 0 0 1px oklch(0.84 0.13 79 / 45%), 0 3px 0 oklch(0.1 0.02 48);
+  --hero-icon-shadow: 0 2px 1px oklch(0.12 0.02 48);
+  --hero-character-shadow: 0 5px 2px oklch(0.1 0 0 / 65%);
+  --hero-stat-fill: oklch(1 0 0);
+  --hero-stat-outline: oklch(0.08 0 0);
+  --hero-stat-number-shadow: 1px 2px 1px oklch(0 0 0 / 85%);
+  /* Magnetic Dashboard palette — dark navy/black + HIVE red */
+  --radius: 0.75rem;
+  --background: oklch(0.13 0.006 250);
+  --foreground: oklch(0.94 0.005 250);
+  --card: oklch(0.17 0.008 250);
+  --card-foreground: oklch(0.94 0.005 250);
+  --popover: oklch(0.17 0.008 250);
+  --popover-foreground: oklch(0.94 0.005 250);
+
+  --primary: oklch(0.8 0.15 80);
+  --primary-foreground: oklch(0.25 0.07 50);
+  --primary-glow: oklch(0.88 0.14 90);
+
+  --secondary: oklch(0.22 0.008 250);
+  --secondary-foreground: oklch(0.94 0.005 250);
+  --muted: oklch(0.22 0.008 250);
+  --muted-foreground: oklch(0.74 0.04 70);
+  --accent: oklch(0.24 0.012 250);
+  --accent-foreground: oklch(0.94 0.005 250);
+
+  --success: oklch(0.72 0.17 155);
+  --success-foreground: oklch(0.13 0.006 250);
+  --warning: oklch(0.78 0.15 75);
+  --warning-foreground: oklch(0.13 0.006 250);
+  --destructive: oklch(0.65 0.22 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --danger: oklch(0.65 0.22 15);
+  --danger-foreground: oklch(0.98 0 0);
+
+  --border: oklch(1 0 0 / 6%);
+  --input: oklch(1 0 0 / 8%);
+  --ring: oklch(0.8 0.15 80);
+
+  --rarity-common: oklch(0.7 0.012 250);
+  --rarity-uncommon: oklch(0.72 0.17 155);
+  --rarity-rare: oklch(0.7 0.18 250);
+  --rarity-epic: oklch(0.65 0.2 300);
+  --rarity-legendary: oklch(0.78 0.15 75);
+
+  --chart-1: oklch(0.58 0.22 22);
+  --chart-2: oklch(0.72 0.17 155);
+  --chart-3: oklch(0.78 0.15 75);
+  --chart-4: oklch(0.65 0.22 15);
+  --chart-5: oklch(0.7 0.18 250);
+
+  --sidebar: oklch(0.17 0.008 250);
+  --sidebar-foreground: oklch(0.94 0.005 250);
+  --sidebar-primary: oklch(0.8 0.15 80);
+  --sidebar-primary-foreground: oklch(0.25 0.07 50);
+  --sidebar-accent: oklch(0.24 0.012 250);
+  --sidebar-accent-foreground: oklch(0.94 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 6%);
+  --sidebar-ring: oklch(0.58 0.22 22);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body { height: 100%; font-family: var(--font-sans); }
+  body {
+    background-color: var(--color-background);
+    background-image:
+      linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(to right, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+/* ui-8bit retro helpers (font loaded in __root head) */
+.retro {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

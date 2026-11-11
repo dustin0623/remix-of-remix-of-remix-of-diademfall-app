@@ -5,7 +5,7 @@ import { HudIcon } from "@/components/portal/HudIcon";
 import { PortalFooter } from "@/components/portal/PortalFooter";
 import { BannerReel } from "@/components/portal/BannerReel";
 import { useAccount } from "@/hooks/use-account";
-import { leagueFor } from "@/game/profile";
+import { divisionFor } from "@/game/divisions";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { UNITS } from "@/game/units";
 import { SummonerCardView, UnitCardView } from "@/components/game/cards";
@@ -54,7 +54,7 @@ function Index() {
             />
             <div className="home-hero-copy">
               <div className="portal-eyebrow">
-                <span className="live-dot" /> Preseason is live
+                <span className="live-dot" /> {account?.season ? `Season ${account.season.number} is live` : "Ranked season is live"}
               </div>
               <h1 className="title-portal">Six Banners. One Crown.</h1>
               <p>
@@ -112,7 +112,7 @@ function Index() {
           <div className="home-stats">
             {(account
               ? [
-                  ["Your league", leagueFor(account.rating)],
+                  ["Your division", divisionFor(account.rating)],
                   ["Rating", account.rating],
                   ["Battle record", `${account.wins}W / ${account.losses}L`],
                   ["Cards owned", account.cardsOwned],

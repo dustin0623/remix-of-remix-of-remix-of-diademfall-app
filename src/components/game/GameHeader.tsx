@@ -6,7 +6,7 @@ import { WalletBadge } from "@/components/economy/WalletBadge";
 import { HudIcon } from "@/components/portal/HudIcon";
 import { ChallengeDialog } from "@/components/portal/ChallengeDialog";
 import { useAccount } from "@/hooks/use-account";
-import { leagueFor } from "@/game/profile";
+import { divisionFor } from "@/game/divisions";
 
 export function GameHeader() {
   const { user, account } = useAccount();
@@ -114,7 +114,7 @@ export function GameHeader() {
                 <strong>{account?.displayName ?? (user ? "Adventurer" : "Log In")}</strong>
                 <span>
                   {account
-                    ? `${leagueFor(account.rating)} · ${account.rating}`
+                    ? `${divisionFor(account.rating)} · ${account.rating}`
                     : "Begin your legend"}
                 </span>
               </div>

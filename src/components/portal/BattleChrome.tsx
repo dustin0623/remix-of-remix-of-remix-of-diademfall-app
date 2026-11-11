@@ -1,15 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { useAccount } from "@/hooks/use-account";
 import { HudIcon } from "./HudIcon";
 import { ChallengeDialog } from "./ChallengeDialog";
 
 export function BattleChrome({ mode }: { mode: "practice" | "ranked" }) {
   const [challenge, setChallenge] = useState(false);
+  const { account } = useAccount();
   return (
     <>
       <div className="battle-subnav battle-subnav-v2">
         <div className="battle-season-label">
-          <span>Preseason</span>
+          <span>{account?.season ? `Season ${account.season.number}` : "Ranked Season"}</span>
           <strong>{mode === "ranked" ? "Ranked Battles" : "Practice Battles"}</strong>
         </div>
         <nav aria-label="Battle mode" className="battle-format-tabs">

@@ -1,0 +1,93 @@
+/* Shared filter window: wooden 9-slice frame (see hud.css), sectioned body, chip rows and actions.
+   Used by the Marketplace listings and the Heroes collection. */
+
+/* Primary filter actions: same pill + 3D bevel as the mint CTA (hud.css .hc-mint-cta / .hud-red), gold themed. */
+.fm-btn, .fm-apply {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  color: #4a2507;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  background: linear-gradient(#ffe08a, #f0a92c);
+  border: 2px solid #7a4a12;
+  box-shadow: inset 0 3px 0 #fff3c4, 0 4px 0 #7a4a12;
+  text-shadow: 0 1px 0 #fff6d5;
+  transition: transform .15s, filter .15s;
+}
+.fm-btn:hover, .fm-apply:hover {
+  color: #4a2507;
+  background: linear-gradient(#ffe08a, #f0a92c);
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+  box-shadow: inset 0 3px 0 #fff3c4, 0 4px 0 #7a4a12;
+}
+.fm-btn:active, .fm-apply:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 3px 0 #fff3c4, 0 2px 0 #7a4a12;
+}
+
+/* Collection trigger keeps the shared gold pill design, sized to the selectors. */
+.fm-btn.fm-btn-collection { height: 38px; }
+@media (max-width: 480px) {
+  .fm-btn.fm-btn-collection { padding: 0 10px; gap: 5px; font-size: 12px; }
+  .fm-btn.fm-btn-collection svg { width: 14px; height: 14px; }
+}
+
+.fm-modal.fm-modal {
+  width: min(560px, calc(100vw - 32px));
+  max-width: min(560px, calc(100vw - 32px));
+  max-height: calc(100dvh - 96px);
+  display: flex; flex-direction: column; gap: 0;
+  overflow: visible;
+  padding: 0 !important;
+  color: var(--hero-ink);
+  box-shadow: var(--hero-frame-shadow);
+}
+.fm-head { padding: 16px 20px 0; }
+.fm-title { display: flex; align-items: center; gap: 8px; font-size: 24px; font-weight: 900; }
+.fm-title svg { color: var(--hero-gold); }
+.fm-body {
+  min-height: 0; overflow-y: auto; padding: 4px 20px 18px;
+  display: grid; gap: 14px;
+  scrollbar-width: thin; scrollbar-color: var(--hero-wood-edge) transparent;
+}
+.fm-section { display: grid; gap: 8px; }
+.fm-section h3 { font-weight: 900; }
+.fm-sub { color: var(--hero-gold); font-weight: 700; }
+.fm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fm-hero-select { width: 100%; max-width: 280px; font-size: 15px; }
+.fm-row .fm-hero-select { max-width: none; }
+.fm-select { width: 100%; height: 38px; padding: 0 10px; border-radius: 6px; font-weight: 700; background: var(--hero-inset); border: 2px solid var(--hero-wood-edge); color: var(--hero-ink); }
+.fm-modal input { background: var(--hero-inset); border: 2px solid var(--hero-wood-edge); color: var(--hero-ink); }
+.fm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fm-chip { --r: var(--hero-gold); display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 8px; border: 2px solid var(--hero-wood-edge); background: var(--hero-inset); font-weight: 800; text-transform: capitalize; cursor: pointer; }
+.fm-chip[data-rarity="common"] { --r: var(--rarity-common); }
+.fm-chip[data-rarity="uncommon"] { --r: var(--rarity-uncommon); }
+.fm-chip[data-rarity="rare"] { --r: var(--rarity-rare); }
+.fm-chip[data-rarity="epic"] { --r: var(--rarity-epic); }
+.fm-chip[data-rarity="legendary"] { --r: var(--rarity-legendary); }
+.fm-chip[aria-pressed="true"] { border-color: var(--r); color: var(--r); }
+.fm-chip:not([data-rarity])[aria-pressed="true"] { background: var(--hero-gold); color: var(--hero-panel); }
+.fm-emblem { width: 22px; height: 22px; object-fit: contain; }
+.fm-price { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.fm-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+.fm-stat-row { display: grid; grid-template-columns: 22px 1fr 96px; align-items: center; gap: 8px; font-weight: 800; }
+.fm-stat-row .fm-select { width: 100%; height: 34px; padding: 0 6px; }
+.fm-actions { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; margin-top: 6px; }
+.fm-clear { border: 2px solid var(--hero-wood-edge); background: var(--hero-inset); color: var(--hero-ink); font-weight: 800; }
+
+@media (max-width: 760px) { .fm-row { grid-template-columns: 1fr; } }
+@media (max-width: 500px) { .fm-stat-grid { grid-template-columns: 1fr; } }
+
+/* Space for the protruding close control and comfortable touch controls. */
+.fm-modal.fm-modal { width: min(560px, calc(100vw - 48px)); max-width: min(560px, calc(100vw - 48px)); }
+.fm-btn.fm-btn-collection, .fm-select, .fm-stat-row .fm-select, .fm-chip, .fm-clear, .fm-apply { min-height: 44px; height: auto; }
+@media (max-width: 500px) {
+ .fm-head { padding-inline: 10px; }
+ .fm-body { padding-inline: 10px; }
+ .fm-chip { padding-inline: 10px; font-size: 13px; }
+ .fm-stat-row { grid-template-columns: 22px minmax(0, 1fr) 72px; }
+ .fm-actions { grid-template-columns: 1fr; }
+}

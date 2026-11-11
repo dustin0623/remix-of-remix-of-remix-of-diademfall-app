@@ -13,7 +13,9 @@ import { PortalFooter } from "@/components/portal/PortalFooter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LadderTeaser } from "@/components/portal/LadderTeaser";
 
-import { leagueProgress, multiplierLabel, winRate } from "@/game/ladder";
+import { leagueById, multiplierLabel, winRate } from "@/game/ladder";
+import { divisionProgress, rulesetCountFor, timeLeft } from "@/game/divisions";
+import { ChestsPanel, useSeasonStatus } from "@/components/ranked/ChestsPanel";
 import { useAccount } from "@/hooks/use-account";
 import { cancelRankedQueue, joinRankedQueue, pollRankedQueue } from "@/lib/ranked/ranked.functions";
 import { RankedHistory } from "@/components/game/RankedHistory";
@@ -47,6 +49,7 @@ function RankedLobby() {
   const cancel = useServerFn(cancelRankedQueue);
   const poll = useServerFn(pollRankedQueue);
   const rewards = useRewardsToday();
+  const season = useSeasonStatus();
   const [busy, setBusy] = useState(false);
   const [now, setNow] = useState(() => Date.now());
 
@@ -61,8 +64,7 @@ function RankedLobby() {
   const activeMatchId = status.data?.activeMatchId ?? null;
 
   useEffect(() => {
-    if (!searching) return;
-    const t = setInterval(() => setNow(Date.now()), 1000);
+    const t = setInterval(() => setNow(Date.now()), searching ? 1000 : 30_000);
     return () => clearInterval(t);
   }, [searching]);
   // Opponent found while searching -> go to the draft room.
@@ -103,7 +105,10 @@ function RankedLobby() {
     : 0;
 
   const [tab, setTab] = useState("battles");
-  const prog = account ? leagueProgress(account.rating) : null;
+  const prog = account ? divisionProgress(account.rating) : null;
+  const unopened = season.data?.chests.filter((c) => c.status === "unopened").length ?? 0;
+  const seasonNo = season.data?.season.number ?? account?.season?.number ?? null;
+  const endsAt = season.data?.season.endsAt ?? account?.season?.endsAt ?? null;
   const rate = account ? winRate(account.wins, account.losses, account.draws) : null;
   const sections = [
     {
@@ -119,14 +124,14 @@ function RankedLobby() {
       label: "Rewards",
       icon: "rewards",
       left: `${rewards.data?.eligibleWins ?? 0} rewarded wins`,
-      right: "Daily",
+      right: unopened > 0 ? `${unopened} chest${unopened > 1 ? "s" : ""} to open` : "Daily",
       art: "/assets/home/hero.jpg",
     },
     {
       id: "ladder",
       label: "Ladder",
       icon: "ladder",
-      left: prog?.league.name ?? "League",
+      left: prog?.division.name ?? "Division",
       right: `Rating ${account?.rating ?? "—"}`,
       art: "/assets/battle/camp.jpg",
     },
@@ -183,12 +188,12 @@ function RankedLobby() {
               <HudIcon name="ranked" className="play-league-medal" />
               <div className="play-league-heading">
                 <div>
-                  <span>Current league</span>
-                  <h2>{prog?.league.name ?? "Loading"}</h2>
+                  <span>{seasonNo ? `Season ${seasonNo}` : "Current division"}{endsAt ? ` · ends in ${timeLeft(endsAt, now)}` : ""}</span>
+                  <h2>{prog?.division.name ?? "Loading"}</h2>
                 </div>
                 <div className="play-league-rating">
                   <strong>{account?.rating ?? "—"}</strong>
-                  <Link to="/leaderboard">Leagues</Link>
+                  <Link to="/leaderboard">Ladder</Link>
                 </div>
               </div>
               {prog && (
@@ -199,8 +204,12 @@ function RankedLobby() {
                   <p>
                     {prog.next
                       ? `${prog.toNext} rating to ${prog.next.name}`
-                      : "Top league reached"}
-                    <span>Win rewards {multiplierLabel(prog.league.winMultiplier)}</span>
+                      : "Top division reached"}
+                    <span>Win rewards {multiplierLabel(leagueById(prog.division.league).winMultiplier)}</span>
+                  </p>
+                  <p>
+                    {account && account.winStreak > 0 ? `${account.winStreak} win streak${account.winStreak >= 2 && prog.division.league !== "champion" ? " · next win +30" : ""}` : "Win +20 · Loss −20"}
+                    <span>{rulesetCountFor(account?.rating ?? 0)} battle rule{rulesetCountFor(account?.rating ?? 0) === 1 ? "" : "s"} per match</span>
                   </p>
                 </div>
               )}
@@ -254,6 +263,18 @@ function RankedLobby() {
           </section>
 
           <aside className="play-format-panel">
+            {unopened > 0 && (
+              <button
+                type="button"
+                className="btn-ornate btn-ornate-verdant mb-3 w-full"
+                onClick={() => {
+                  setTab("rewards");
+                  document.getElementById("play-dashboard")?.scrollIntoView({ block: "start", behavior: "smooth" });
+                }}
+              >
+                Open {unopened} chest{unopened > 1 ? "s" : ""}
+              </button>
+            )}
             <h2>Format Rules</h2>
             <p>Only cards in your collection are playable.</p>
             <span>Same mana cap. Same Banners. Same rules.</span>
@@ -308,11 +329,12 @@ function RankedLobby() {
           <TabsContent value="battles" className="play-dashboard-content">
             <div className="play-panel-heading">
               <h2>Battle History</h2>
-              <span>Preseason · Ranked</span>
+              <span>{seasonNo ? `Season ${seasonNo}` : "Season"} · Ranked</span>
             </div>
             <RankedHistory />
           </TabsContent>
-          <TabsContent value="rewards" className="play-dashboard-content">
+          <TabsContent value="rewards" className="play-dashboard-content space-y-5">
+            <ChestsPanel s={season.data} />
             <RewardsPanel r={rewards.data} />
             {!rewards.data && (
               <p className="text-sm text-muted-foreground">Loading your daily rewards…</p>
