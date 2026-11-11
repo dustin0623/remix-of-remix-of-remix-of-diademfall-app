@@ -59,10 +59,9 @@ describe("Wayfarer team limit", () => {
     expect(validateTeam(team(five), cfgWith(["open_contract"]))).toMatch(/At most 4 Wayfarers/);
   });
   it("any summoner can recruit Wayfarers in ranked, but not another Banner's troops", () => {
-    const owned = Object.fromEntries([summonerOf("wild_courts"), ...two, "ashen_page"].map((id) => [id, 1]));
-    const ok = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: two }, cfgWith([]), owned);
+    const ok = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: two }, cfgWith([]));
     expect(ok).toBeNull();
-    const bad = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: ["ashen_page"] }, cfgWith([]), owned);
+    const bad = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: ["ashen_page"] }, cfgWith([]));
     expect(bad).toMatch(/not from/);
   });
   it("the computer opponent never breaks the Wayfarer limit", () => {
