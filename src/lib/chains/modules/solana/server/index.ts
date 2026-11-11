@@ -1,6 +1,6 @@
 /** Solana server API: login verification, treasury payouts and chain reads. Mainnet only. */
 export { verifySolanaSignature } from "./events/login/action";
-export { transferToken, TransferTokenInput, type ServerTransferResult } from "./events/transfer-token/action";
+export { transferToken, TransferTokenInput, TRANSFER_NOT_SENT, type ServerTransferResult } from "./events/transfer-token/action";
 export { getTokenBalance, GetTokenBalanceInput, type SolanaTokenBalance } from "./events/get-token-balance/action";
 export {
   getTransaction,

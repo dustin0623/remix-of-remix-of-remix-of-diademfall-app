@@ -51,14 +51,27 @@ export async function transferToken(input: TransferTokenInput): Promise<SolanaAc
   const { alias, to, amount, symbol, action, metadata } = parsed.data;
   const solana = parsed.data.client ?? getSolanaClient();
 
+  let broadcast = false;
   try {
     const keypair = treasuryKeypair(alias);
     const from = keypair.publicKey.toString();
     const tx = await buildTransferTransaction(solana, { payer: from, to, amount, symbol, action, metadata });
     tx.sign(keypair);
+    broadcast = true;
     const signature = await solana.sendRawTransaction(tx.serialize(), { preflightCommitment: "confirmed" });
     return ok({ signature, symbol, amount, from, to });
   } catch (error) {
-    return fail(error);
+    const r = fail<ServerTransferResult>(error);
+    // NOT_SENT = the payout certainly never reached the chain (failed before broadcast or in preflight
+    // simulation), so callers may refund. Any other failure is uncertain and must not be refunded blindly.
+    if (!r.ok && (!broadcast || isPreflightFailure(error))) return { ok: false, error: r.error, code: TRANSFER_NOT_SENT };
+    return r;
   }
+}
+
+export const TRANSFER_NOT_SENT = "NOT_SENT";
+
+function isPreflightFailure(error: unknown): boolean {
+  const msg = error instanceof Error ? error.message : String(error);
+  return /simulation failed/i.test(msg);
 }

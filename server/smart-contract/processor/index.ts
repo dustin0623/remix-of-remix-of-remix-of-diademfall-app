@@ -1,5 +1,7 @@
 import type { PendingTransactionDocument, TransactionType } from "@/lib/modules/transactions-pending/server.model";
 import type { HandlerResult, TransactionHandler } from "../polling/transaction-poller";
+import { createDepositHandler, type DepositDeps, type TransferSettings } from "./deposit";
+import { createWithdrawHandler, type WithdrawDeps } from "./withdraw";
 
 /**
  * Action router: maps a pending transaction's `type` to the code that executes it.
@@ -23,5 +25,10 @@ export function createProcessor(registry: ActionRegistry, fallback?: ActionHandl
   };
 }
 
-/** Live handlers are registered here as they are implemented (e.g. withdraw). */
-export const liveRegistry: ActionRegistry = {};
+/** Live handlers: deposits (verified on Solana, credited via the ledger) and Coin withdrawals. */
+export function createLiveRegistry(deps: { settings: () => TransferSettings } & Omit<DepositDeps, "settings"> & Omit<WithdrawDeps, "settings">): ActionRegistry {
+  return {
+    deposit: createDepositHandler(deps),
+    withdraw: createWithdrawHandler(deps),
+  };
+}
