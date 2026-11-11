@@ -91,4 +91,4 @@
 - [x] player_items for Credits/Coins, unopened packs and unopened chests (wallet, pack and chest screens read it)
 - [x] Reward Energy on profiles; players can only edit display name and avatar
 - [x] Divisions, Card Essence levels and the ranked rule pool as code constants (no tables), with a drift test
-- [ ] Delete the retired tables (needs the user's OK for destructive database changes)
+- [x] Delete the retired tables
