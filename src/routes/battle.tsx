@@ -1,28 +1,50 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Swords } from "lucide-react";
+import { ArrowRight, RotateCcw, Swords } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { GameHeader } from "@/components/game/GameHeader";
 import { BattleArena } from "@/components/game/BattleArena";
 import { RulesetPills, TeamBuilder } from "@/components/game/TeamBuilder";
 import { SavedTeams } from "@/components/game/SavedTeams";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { BANNERS } from "@/game/banners";
 import { simulateBattle, type BattleResult } from "@/game/engine";
-import { aiDraft, maxUnits, rollMatch, validateTeam, type MatchConfig, type TeamPick } from "@/game/match";
+import {
+  aiDraft,
+  maxUnits,
+  rollMatch,
+  validateTeam,
+  type MatchConfig,
+  type TeamPick,
+} from "@/game/match";
 import { recordPractice } from "@/game/profile";
 import { cn } from "@/lib/utils";
-import arena from "@/assets/portal/arena.jpg";
 import { PageHero } from "@/components/portal/PageHero";
+import { BattleChrome } from "@/components/portal/BattleChrome";
+import { HudIcon } from "@/components/portal/HudIcon";
+import { PortalFooter } from "@/components/portal/PortalFooter";
 
 export const Route = createFileRoute("/battle")({
   head: () => ({
     meta: [
       { title: "Battle — Diademfall" },
-      { name: "description", content: "Read the match rules, draft a summoner and warband within the mana cap, and watch the battle unfold." },
+      {
+        name: "description",
+        content:
+          "Read the match rules, draft a summoner and warband within the mana cap, and watch the battle unfold.",
+      },
       { property: "og:title", content: "Battle — Diademfall" },
-      { property: "og:description", content: "Draft your warband and fight a practice match against the AI." },
+      {
+        property: "og:description",
+        content: "Draft your warband and fight a practice match against the AI.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -42,7 +64,13 @@ function BattlePage() {
 
   useEffect(() => setCfg(rollMatch()), []);
 
-  const newMatch = () => { setCfg(rollMatch()); setStep("reveal"); setPick({ summonerId: "", unitIds: [] }); setResult(null); setShowResult(false); };
+  const newMatch = () => {
+    setCfg(rollMatch());
+    setStep("reveal");
+    setPick({ summonerId: "", unitIds: [] });
+    setResult(null);
+    setShowResult(false);
+  };
 
   const error = cfg ? validateTeam(pick, cfg) : "";
 
@@ -62,46 +90,160 @@ function BattlePage() {
     setTimeout(() => setShowResult(true), 600);
   }, [result, picks, showResult]);
 
-
-  if (!cfg) return <div className="min-h-screen"><GameHeader /></div>;
-
+  if (!cfg)
+    return (
+      <div className="min-h-screen">
+        <GameHeader />
+      </div>
+    );
 
   return (
-    <div className="min-h-screen">
+    <div className="portal-page practice-page">
       <GameHeader />
+      <BattleChrome mode="practice" />
       {step === "reveal" && (
-        <PageHero art={arena} eyebrow="Practice match vs AI" title="Battle Conditions" className="min-h-[calc(100vh-4rem)]">
-          <section className="panel-ornate mx-auto max-w-3xl space-y-6 p-8 text-center">
-            <div className="flex items-center justify-center gap-10">
-              <div><div className="font-display text-5xl font-black text-primary">{cfg.manaCap}</div><div className="text-xs uppercase tracking-wider text-muted-foreground">Mana cap</div></div>
-              <div><div className="font-display text-5xl font-black text-primary">{maxUnits(cfg.rulesets)}</div><div className="text-xs uppercase tracking-wider text-muted-foreground">Max units</div></div>
-            </div>
-            <div className="flex justify-center"><RulesetPills ids={cfg.rulesets} /></div>
-            <div>
-              <div className="mb-2 text-xs uppercase tracking-wider text-muted-foreground">Active banners</div>
-              <div className="flex flex-wrap justify-center gap-2">
-                {BANNERS.map((b) => (
-                  <span key={b.id} className={cn("rounded-full border px-3 py-1 text-xs font-semibold", cfg.banners.includes(b.id) ? "text-foreground" : "text-muted-foreground line-through opacity-50")} style={{ borderColor: b.color }}>{b.name}</span>
-                ))}
+        <PageHero
+          art="/assets/battle/camp.jpg"
+          eyebrow="Learn. Experiment. Conquer."
+          title="Training Grounds"
+          subtitle="Master your warband against an AI rival. No rating on the line."
+          className="battle-painted-stage practice-stage"
+        >
+          <div className="practice-layout">
+            <aside className="practice-intro">
+              <HudIcon name="practice" />
+              <h2>
+                A sharper strategy
+                <br />
+                starts here.
+              </h2>
+              <p>
+                Every battle brings a new mana cap, active Banners, and rules. Read the field before
+                you choose your team.
+              </p>
+              <div className="practice-safe">
+                <span className="live-dot" /> Free to play · No rating changes
               </div>
-            </div>
-            <div className="flex justify-center gap-3">
-              <Button variant="secondary" size="lg" onClick={newMatch}>Reroll</Button>
-              <button type="button" className="btn-ornate btn-ornate-verdant" onClick={() => setStep("draft")}>Create Team</button>
-            </div>
-          </section>
+            </aside>
+            <section className="panel-ornate conditions-panel">
+              <div className="panel-heading">
+                <span className="portal-eyebrow">Your next match</span>
+                <h2>Battle Conditions</h2>
+              </div>
+              <div className="condition-stats">
+                <div>
+                  <HudIcon name="credits" />
+                  <strong>{cfg.manaCap}</strong>
+                  <span>Mana cap</span>
+                </div>
+                <div>
+                  <HudIcon name="ranked" />
+                  <strong>{maxUnits(cfg.rulesets)}</strong>
+                  <span>Max units</span>
+                </div>
+              </div>
+              <div className="condition-block">
+                <h3>Battle rules</h3>
+                <div className="flex justify-center">
+                  <RulesetPills ids={cfg.rulesets} />
+                </div>
+              </div>
+              <div className="condition-block">
+                <h3>Available Banners</h3>
+                <div className="practice-banners">
+                  {BANNERS.map((b) => (
+                    <span
+                      key={b.id}
+                      className={cn(
+                        "practice-banner",
+                        !cfg.banners.includes(b.id) && "unavailable",
+                      )}
+                      style={{ borderColor: b.color }}
+                    >
+                      <img src={b.art} alt="" />
+                      <span>{b.name}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn-ornate btn-ornate-verdant w-full"
+                onClick={() => setStep("draft")}
+              >
+                Create Team <ArrowRight className="size-4" />
+              </button>
+              <button type="button" className="reroll-button" onClick={newMatch}>
+                <RotateCcw className="size-3.5" /> Reroll conditions
+              </button>
+            </section>
+          </div>
         </PageHero>
       )}
-      <main className="mx-auto max-w-7xl px-4 py-6">
+      {step !== "reveal" && (
+        <main className="mx-auto max-w-7xl px-4 py-6">
+          {step === "draft" && (
+            <div className="practice-draft-heading">
+              <div>
+                <p className="portal-eyebrow">Practice · Team selection</p>
+                <h1 className="title-portal">Assemble Your Warband</h1>
+              </div>
+              <button type="button" className="portal-back" onClick={() => setStep("reveal")}>
+                Conditions
+              </button>
+            </div>
+          )}
+          {step === "draft" && (
+            <TeamBuilder
+              cfg={cfg}
+              pick={pick}
+              setPick={setPick}
+              error={error}
+              extra={
+                <SavedTeams
+                  cfg={cfg}
+                  pick={pick}
+                  setPick={setPick}
+                  check={(p) => validateTeam(p, cfg)}
+                />
+              }
+              action={
+                <Button
+                  className="w-full bg-gold font-display font-bold"
+                  size="lg"
+                  disabled={!!error}
+                  onClick={fight}
+                >
+                  <Swords /> Battle
+                </Button>
+              }
+            />
+          )}
 
-        {step === "draft" && (
-          <TeamBuilder cfg={cfg} pick={pick} setPick={setPick} error={error}
-            extra={<SavedTeams cfg={cfg} pick={pick} setPick={setPick} check={(p) => validateTeam(p, cfg)} />}
-            action={<Button className="w-full bg-gold font-display font-bold" size="lg" disabled={!!error} onClick={fight}><Swords /> Battle</Button>} />
-        )}
+          {step === "battle" && result && picks && (
+            <BattleArena result={result} picks={picks} onFinish={onFinish} />
+          )}
+        </main>
+      )}
 
-        {step === "battle" && result && picks && <BattleArena result={result} picks={picks} onFinish={onFinish} />}
-      </main>
+      {step === "reveal" && (
+        <section className="practice-steps">
+          {[
+            ["01", "Read the field", "Check the mana cap, Banners, and battle rules."],
+            ["02", "Build your warband", "Choose a summoner and position your troops."],
+            ["03", "Watch & learn", "Replay each attack and refine your strategy."],
+          ].map(([number, title, text]) => (
+            <div key={number}>
+              <span>{number}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
+      <PortalFooter />
 
       <Dialog open={showResult} onOpenChange={setShowResult}>
         <DialogContent>
@@ -110,14 +252,21 @@ function BattlePage() {
               {result?.winner === 0 ? "Victory" : result?.winner === 1 ? "Defeat" : "Draw"}
             </DialogTitle>
             <DialogDescription className="text-center">
-              Battle lasted {result?.rounds} rounds. Practice battles don't change your ranked rating.
+              Battle lasted {result?.rounds} rounds. Practice battles don't change your ranked
+              rating.
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center gap-3">
-            <Button variant="secondary" onClick={() => setShowResult(false)}>View Battle Log</Button>
-            <Button className="bg-gold font-display font-bold" onClick={newMatch}>Next Match</Button>
+            <Button variant="secondary" onClick={() => setShowResult(false)}>
+              View Battle Log
+            </Button>
+            <Button className="bg-gold font-display font-bold" onClick={newMatch}>
+              Next Match
+            </Button>
           </div>
-          <Link to="/" className="text-center text-xs text-muted-foreground hover:text-foreground">Back to home</Link>
+          <Link to="/" className="text-center text-xs text-muted-foreground hover:text-foreground">
+            Back to home
+          </Link>
         </DialogContent>
       </Dialog>
     </div>

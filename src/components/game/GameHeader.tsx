@@ -1,50 +1,129 @@
-import { Link } from "@tanstack/react-router";
-import { BookOpen, Crown, Home, Landmark, Store, ShoppingBag, Swords, Trophy } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { useState } from "react";
 import { LoginDialog } from "@/components/auth/LoginDialog";
 import { WalletBadge } from "@/components/economy/WalletBadge";
+import { HudIcon } from "@/components/portal/HudIcon";
+import { ChallengeDialog } from "@/components/portal/ChallengeDialog";
 import { useAccount } from "@/hooks/use-account";
 import { leagueFor } from "@/game/profile";
-import logo from "@/assets/portal/logo.png";
 
 export function GameHeader() {
   const { user, account } = useAccount();
+  const [menu, setMenu] = useState("");
+  const [challenge, setChallenge] = useState(false);
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const playing = path === "/battle" || path.startsWith("/ranked");
+  const inMarket = path === "/shop" || path === "/market";
   const items = [
-    { to: "/", label: "Home", icon: Home, exact: true, show: true },
-    { to: "/battle", label: "Practice", icon: Swords, show: true },
-    { to: "/ranked", label: "Ranked", icon: Trophy, show: !!user },
-    { to: "/leaderboard", label: "Ladder", icon: Crown, show: !!user },
-    { to: "/shop", label: "Shop", icon: ShoppingBag, show: !!user },
-    { to: "/market", label: "Market", icon: Store, show: !!user },
-    { to: "/treasury", label: "Treasury", icon: Landmark, show: true },
-    { to: "/codex", label: "Codex", icon: BookOpen, show: true },
+    { to: "/open", label: "Open", icon: "rewards", show: !!user },
+    { to: "/leaderboard", label: "Ladder", icon: "ladder", show: !!user },
+    { to: "/treasury", label: "Treasury", icon: "treasury", show: true },
+    { to: "/codex", label: "Codex", icon: "codex", show: true },
   ] as const;
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-night/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-1.5">
-        <Link to="/" className="shrink-0" aria-label="Diademfall home">
-          <img src={logo} alt="Diademfall" width={900} height={450} className="h-11 w-auto" />
-        </Link>
-        <nav className="flex items-center">
-          {items.filter((i) => i.show).map(({ to, label, icon: Icon, ...i }) => (
-            <Link key={to} to={to} activeOptions={{ exact: "exact" in i }}
-              className="group flex flex-col items-center gap-0.5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground transition hover:text-primary"
-              activeProps={{ className: "text-primary" }}>
-              <Icon className="h-5 w-5 transition group-hover:-translate-y-0.5" />
-              {label}
-            </Link>
-          ))}
-        </nav>
-        <div className="ml-auto flex items-center gap-3">
-          {account && (
-            <div className="hidden text-right text-xs sm:block">
-              <div className="font-display font-bold text-primary">{account.displayName} · {leagueFor(account.rating)}</div>
-              <div className="text-muted-foreground">Rating {account.rating} · {account.wins}W {account.losses}L</div>
+    <>
+      <header className="game-header">
+        <div className="game-header-main">
+          <Link to="/" className="hud-brand" aria-label="Diademfall home">
+            <img src="/assets/HUD/crown-logo-v1.png" alt="Diademfall" width={1280} height={1280} />
+          </Link>
+          <NavigationMenu.Root
+            className="hud-navigation"
+            aria-label="Main navigation"
+            value={menu}
+            onValueChange={setMenu}
+            delayDuration={80}
+            skipDelayDuration={250}
+          >
+            <NavigationMenu.List className="hud-nav-list">
+              <NavigationMenu.Item value="play" className="hud-play-item">
+                <NavigationMenu.Trigger
+                  className={`hud-nav-link hud-play-trigger ${playing ? "hud-nav-active" : ""}`}
+                >
+                  <HudIcon name="play" />
+                  <span>Play</span>
+                </NavigationMenu.Trigger>
+                <NavigationMenu.Content className="hud-play-dropdown">
+                  <NavigationMenu.Link asChild>
+                    <Link to="/ranked" onClick={() => setMenu("")}>
+                      Ranked
+                    </Link>
+                  </NavigationMenu.Link>
+                  <NavigationMenu.Link asChild>
+                    <Link to="/battle" onClick={() => setMenu("")}>
+                      Practice
+                    </Link>
+                  </NavigationMenu.Link>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenu("");
+                      setChallenge(true);
+                    }}
+                  >
+                    Challenge <span>Soon</span>
+                  </button>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+              {user && (
+                <NavigationMenu.Item value="market">
+                  <NavigationMenu.Trigger
+                    className={`hud-nav-link hud-play-trigger ${inMarket ? "hud-nav-active" : ""}`}
+                  >
+                    <HudIcon name="market" />
+                    <span>Market</span>
+                  </NavigationMenu.Trigger>
+                  <NavigationMenu.Content className="hud-play-dropdown">
+                    <NavigationMenu.Link asChild>
+                      <Link to="/shop" onClick={() => setMenu("")}>
+                        Packs
+                      </Link>
+                    </NavigationMenu.Link>
+                    <NavigationMenu.Link asChild>
+                      <Link to="/market" onClick={() => setMenu("")}>
+                        Cards
+                      </Link>
+                    </NavigationMenu.Link>
+                  </NavigationMenu.Content>
+                </NavigationMenu.Item>
+              )}
+              {items
+                .filter((i) => i.show)
+                .map(({ to, label, icon }) => (
+                  <NavigationMenu.Item key={to}>
+                    <NavigationMenu.Link asChild>
+                      <Link
+                        to={to}
+                        className="hud-nav-link"
+                        activeProps={{ className: "hud-nav-active" }}
+                      >
+                        <HudIcon name={icon} />
+                        <span>{label}</span>
+                      </Link>
+                    </NavigationMenu.Link>
+                  </NavigationMenu.Item>
+                ))}
+            </NavigationMenu.List>
+          </NavigationMenu.Root>
+          <div className="hud-account-area">
+            <WalletBadge />
+            <div className="hud-profile">
+              <HudIcon name="ranked" className="hud-profile-emblem" />
+              <div className="hud-profile-name">
+                <strong>{account?.displayName ?? (user ? "Adventurer" : "Log In")}</strong>
+                <span>
+                  {account
+                    ? `${leagueFor(account.rating)} · ${account.rating}`
+                    : "Begin your legend"}
+                </span>
+              </div>
+              <LoginDialog triggerClassName="hud-account-trigger" label="Log in" />
             </div>
-          )}
-          <WalletBadge />
-          <LoginDialog triggerClassName="rounded-md bg-ember px-6 py-2 font-display text-sm font-black uppercase italic tracking-wider text-primary-foreground shadow-glow transition hover:brightness-110" label="Log In" />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <ChallengeDialog open={challenge} onOpenChange={setChallenge} />
+    </>
   );
 }

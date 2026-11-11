@@ -1,14 +1,19 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { BookOpen, Crown, Loader2, ScrollText, Shield, Swords, X } from "lucide-react";
+import { ArrowRight, Loader2, Swords, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
 import { Button } from "@/components/ui/button";
-import camp from "@/assets/portal/camp.jpg";
-import { BANNER_BY_ID } from "@/game/banners";
-import { leagueProgress, multiplierLabel } from "@/game/ladder";
+import { PageHero } from "@/components/portal/PageHero";
+import { BattleChrome } from "@/components/portal/BattleChrome";
+import { HudIcon } from "@/components/portal/HudIcon";
+import { PortalFooter } from "@/components/portal/PortalFooter";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LadderTeaser } from "@/components/portal/LadderTeaser";
+
+import { leagueProgress, multiplierLabel, winRate } from "@/game/ladder";
 import { useAccount } from "@/hooks/use-account";
 import { cancelRankedQueue, joinRankedQueue, pollRankedQueue } from "@/lib/ranked/ranked.functions";
 import { RankedHistory } from "@/components/game/RankedHistory";
@@ -18,9 +23,15 @@ export const Route = createFileRoute("/_authenticated/ranked/")({
   head: () => ({
     meta: [
       { title: "Ranked — Diademfall" },
-      { name: "description", content: "Queue for a ranked Diademfall match against another player and climb the ladder." },
+      {
+        name: "description",
+        content: "Queue for a ranked Diademfall match against another player and climb the ladder.",
+      },
       { property: "og:title", content: "Ranked — Diademfall" },
-      { property: "og:description", content: "Find an opponent, lock in your warband, and win rating." },
+      {
+        property: "og:description",
+        content: "Find an opponent, lock in your warband, and win rating.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -56,154 +67,288 @@ function RankedLobby() {
   }, [searching]);
   // Opponent found while searching -> go to the draft room.
   useEffect(() => {
-    if (ticket?.status === "matched" && activeMatchId) void navigate({ to: "/ranked/$matchId", params: { matchId: activeMatchId } });
+    if (ticket?.status === "matched" && activeMatchId)
+      void navigate({ to: "/ranked/$matchId", params: { matchId: activeMatchId } });
   }, [ticket?.status, activeMatchId, navigate]);
 
   const findMatch = async () => {
     setBusy(true);
     try {
       const r = await join();
-      if (!r.ok) { toast.error(r.error); return; }
-      if (r.matchId) { void navigate({ to: "/ranked/$matchId", params: { matchId: r.matchId } }); return; }
+      if (!r.ok) {
+        toast.error(r.error);
+        return;
+      }
+      if (r.matchId) {
+        void navigate({ to: "/ranked/$matchId", params: { matchId: r.matchId } });
+        return;
+      }
       await qc.invalidateQueries({ queryKey: ["ranked", "queue"] });
-    } finally { setBusy(false); }
+    } finally {
+      setBusy(false);
+    }
   };
   const stop = async () => {
     setBusy(true);
-    try { await cancel(); await qc.invalidateQueries({ queryKey: ["ranked", "queue"] }); } finally { setBusy(false); }
+    try {
+      await cancel();
+      await qc.invalidateQueries({ queryKey: ["ranked", "queue"] });
+    } finally {
+      setBusy(false);
+    }
   };
 
-  const elapsed = ticket ? Math.max(0, Math.floor((now - new Date(ticket.createdAt).getTime()) / 1000)) : 0;
+  const elapsed = ticket
+    ? Math.max(0, Math.floor((now - new Date(ticket.createdAt).getTime()) / 1000))
+    : 0;
 
+  const [tab, setTab] = useState("battles");
   const prog = account ? leagueProgress(account.rating) : null;
-  const tools = [
-    { to: "/codex", label: "How to Play", icon: BookOpen },
-    { to: "/battle", label: "Practice", icon: Shield },
-    { to: "/leaderboard", label: "Ladder", icon: Crown },
-  ] as const;
-  const tiles = [
-    { href: "#history", label: "Battles", caption: account ? `${account.wins}W ${account.losses}L${account.draws ? ` ${account.draws}D` : ""}` : "History", art: BANNER_BY_ID.bastion_orders.art },
-    { to: "/leaderboard", label: "Ladder", caption: prog ? prog.league.name : "Rankings", art: BANNER_BY_ID.skybound_houses.art },
-    { to: "/battle", label: "Practice", caption: "Vs AI · no rating", art: BANNER_BY_ID.wild_courts.art },
-    { to: "/codex", label: "Codex", caption: "Every card & rule", art: BANNER_BY_ID.veil_covenant.art },
+  const rate = account ? winRate(account.wins, account.losses, account.draws) : null;
+  const sections = [
+    {
+      id: "battles",
+      label: "Battles",
+      icon: "challenge",
+      left: `Win rate ${rate === null ? "—" : `${rate}%`}`,
+      right: `${account?.wins ?? 0} wins`,
+      art: "/assets/battle/arena.jpg",
+    },
+    {
+      id: "rewards",
+      label: "Rewards",
+      icon: "rewards",
+      left: `${rewards.data?.eligibleWins ?? 0} rewarded wins`,
+      right: "Daily",
+      art: "/assets/home/hero.jpg",
+    },
+    {
+      id: "ladder",
+      label: "Ladder",
+      icon: "ladder",
+      left: prog?.league.name ?? "League",
+      right: `Rating ${account?.rating ?? "—"}`,
+      art: "/assets/battle/camp.jpg",
+    },
+    {
+      id: "cards",
+      label: "Cards",
+      icon: "collection",
+      left: `${account?.cardsOwned ?? 0} cards owned`,
+      right: "Collection",
+      art: "/assets/home/hero.jpg",
+    },
   ] as const;
 
   return (
-    <div className="min-h-screen">
+    <div className="portal-page ranked-page play-page-v2">
       <GameHeader />
-      {/* Season bar */}
-      <div className="border-b border-border bg-gradient-to-r from-night via-secondary/40 to-night">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-2">
-          <div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Season</div>
-            <div className="font-display text-lg font-bold">Preseason <span className="text-primary">· Ranked</span></div>
-          </div>
-          <nav className="ml-auto flex gap-2">
-            {tools.map(({ to, label, icon: Icon }) => (
-              <Link key={to} to={to} className="flex w-20 flex-col items-center gap-1 rounded-md border border-primary/30 bg-night/80 px-2 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground transition hover:border-primary hover:text-primary">
-                <Icon className="size-5 text-primary" /> {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-
-      {/* Painted lobby */}
-      <section className="relative overflow-hidden">
-        <img src={camp} alt="" width={1920} height={800} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/30 via-transparent to-background" />
-        <div className="relative mx-auto grid max-w-6xl items-start gap-5 px-4 py-12 md:grid-cols-[1fr_minmax(0,24rem)_1fr]">
-          <div className="hidden md:block">
-            {account && (
-              <div className="inline-flex items-center gap-3 rounded-lg border border-primary/40 bg-night/80 px-4 py-2 backdrop-blur">
-                <span className="font-display text-3xl font-black text-primary">{account.wins}</span>
-                <span className="font-display text-sm font-bold uppercase italic leading-tight">Ranked<br />wins</span>
+      <BattleChrome mode="ranked" />
+      <PageHero
+        art="/assets/battle/camp.jpg"
+        className="battle-painted-stage ranked-stage ranked-stage-v2"
+        pos="50% 44%"
+      >
+        <h1 className="sr-only">Ranked Battles</h1>
+        <div className="play-lobby-layout">
+          <aside className="play-collection-banner">
+            <div className="play-banner-heading">
+              <HudIcon name="collection" />
+              <div>
+                <span className="portal-eyebrow">Forge your warband</span>
+                <h2>The Shattered Crown</h2>
               </div>
-            )}
-          </div>
+            </div>
+            <p>
+              Six Banners. A realm of possibilities.
+              <br />
+              Your next champion awaits.
+            </p>
+            <div className="play-collection-count">
+              <strong>{account?.cardsOwned ?? "—"}</strong>
+              <span>Cards in your collection</span>
+            </div>
+            <Link
+              to={account?.cardsOwned === 0 ? "/open" : "/market"}
+              search={account?.cardsOwned === 0 ? {} : { section: "collection" }}
+              className="play-small-button"
+            >
+              {account?.cardsOwned === 0 ? "Open Packs" : "View Collection"}{" "}
+              <ArrowRight className="size-3" />
+            </Link>
+          </aside>
 
-          <div className="space-y-3">
-            <div className="rounded-xl border border-primary/30 bg-night/85 p-5 backdrop-blur">
-              <div className="flex items-start justify-between gap-3">
+          <section className="play-matchmaking" aria-label="Ranked matchmaking">
+            <div className="play-league-card">
+              <HudIcon name="ranked" className="play-league-medal" />
+              <div className="play-league-heading">
                 <div>
-                  <div className="text-xs text-muted-foreground">Current League</div>
-                  <div className="font-display text-2xl font-bold uppercase text-primary">{prog?.league.name ?? "—"}</div>
+                  <span>Current league</span>
+                  <h2>{prog?.league.name ?? "Loading"}</h2>
                 </div>
-                <div className="text-right">
-                  <div className="font-display text-2xl font-black tabular-nums">{account?.rating ?? "—"}</div>
-                  <Link to="/leaderboard" className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground hover:text-primary">Leagues</Link>
+                <div className="play-league-rating">
+                  <strong>{account?.rating ?? "—"}</strong>
+                  <Link to="/leaderboard">Leagues</Link>
                 </div>
               </div>
               {prog && (
-                <>
-                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-secondary"><div className="h-full bg-gold" style={{ width: `${prog.pct}%` }} /></div>
-                  <div className="mt-1.5 text-center text-xs text-foreground/80">{prog.next ? `${prog.toNext} rating to reach ${prog.next.name}` : "Top league reached"}</div>
-                  <div className="mt-2 flex justify-center gap-2 text-[11px]">
-                    <span className="rounded border border-primary/40 px-2 py-0.5 text-primary">Win rewards {multiplierLabel(prog.league.winMultiplier)}</span>
-                    {prog.next && <span className="rounded border border-border px-2 py-0.5 text-muted-foreground">{prog.next.name} {multiplierLabel(prog.next.winMultiplier)}</span>}
+                <div className="play-league-progress">
+                  <div>
+                    <span style={{ width: `${prog.pct}%` }} />
                   </div>
-                </>
+                  <p>
+                    {prog.next
+                      ? `${prog.toNext} rating to ${prog.next.name}`
+                      : "Top league reached"}
+                    <span>Win rewards {multiplierLabel(prog.league.winMultiplier)}</span>
+                  </p>
+                </div>
               )}
             </div>
-
-            <div className="space-y-4 rounded-xl border border-primary/30 bg-night/85 p-5 text-center backdrop-blur">
-              <EnergyMeter r={rewards.data} />
+            <div className="play-battle-card">
               {activeMatchId && !searching ? (
-                <Link to="/ranked/$matchId" params={{ matchId: activeMatchId }} className="btn-ornate btn-ornate-verdant w-full"><Swords className="size-5" /> Return to match</Link>
+                <Link
+                  to="/ranked/$matchId"
+                  params={{ matchId: activeMatchId }}
+                  className="btn-ornate btn-ornate-verdant w-full"
+                >
+                  Return to Match
+                </Link>
               ) : searching ? (
-                <div className="space-y-3">
-                  <div className="flex items-center justify-center gap-3 font-display text-lg font-bold">
-                    <Loader2 className="size-5 animate-spin text-primary" /> Searching… <span className="tabular-nums text-muted-foreground">{Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")}</span>
+                <div className="ranked-search-state" role="status">
+                  <div>
+                    <Loader2 className="size-4 animate-spin" /> Searching{" "}
+                    <strong>
+                      {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")}
+                    </strong>
                   </div>
-                  <p className="text-xs text-muted-foreground">You'll be matched with a player near your rating. The search stops after two minutes.</p>
-                  <Button variant="secondary" onClick={stop} disabled={busy}><X /> Cancel search</Button>
+                  <p>Finding an opponent near your rating.</p>
+                  <Button variant="secondary" size="sm" onClick={stop} disabled={busy}>
+                    <X className="size-3" /> Cancel
+                  </Button>
                 </div>
               ) : (
-                <div className="space-y-2">
-                  {ticket?.status === "expired" && <p className="text-sm text-muted-foreground">No opponent was found in time. Try again in a moment.</p>}
-                  {account && account.cardsOwned === 0 && (
-                    <p className="text-sm text-muted-foreground">You don't own any cards yet. <Link to="/shop" className="font-semibold text-primary hover:underline">Open packs in the Shop</Link> to build a team.</p>
+                <>
+                  {ticket?.status === "expired" && (
+                    <p role="status" className="play-search-expired">
+                      No opponent found. Try again.
+                    </p>
                   )}
-                  <button type="button" className="btn-ornate btn-ornate-verdant w-full text-2xl disabled:opacity-60" onClick={findMatch} disabled={busy || status.isLoading}>
-                    {busy ? <Loader2 className="size-5 animate-spin" /> : null} Battle
+                  <button
+                    type="button"
+                    className="btn-ornate btn-ornate-verdant w-full play-battle-button"
+                    onClick={findMatch}
+                    disabled={busy || status.isLoading || !account || account.cardsOwned === 0}
+                  >
+                    {busy && <Loader2 className="size-4 animate-spin" />} Battle
                   </button>
-                </div>
+                  {account?.cardsOwned === 0 && (
+                    <p className="play-collection-required">
+                      <Link to="/open">Open packs</Link> to build your first ranked team.
+                    </p>
+                  )}
+                </>
               )}
+              <EnergyMeter r={rewards.data} />
             </div>
-          </div>
+          </section>
 
-          <div className="rounded-xl border border-primary/30 bg-night/85 p-5 text-center backdrop-blur">
-            <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-primary"><ScrollText className="size-4" /> Format Rules</div>
-            <p className="mt-2 text-sm italic text-foreground/90">Each match rolls a mana cap, the active Banners and a battle rule. Both players see the same conditions.</p>
-            <p className="mt-2 text-xs text-muted-foreground">You have 90 seconds to lock in a team. If only one player locks in, they win.</p>
-          </div>
+          <aside className="play-format-panel">
+            <h2>Format Rules</h2>
+            <p>Only cards in your collection are playable.</p>
+            <span>Same mana cap. Same Banners. Same rules.</span>
+            <div className="play-format-divider" />
+            <h3>Daily Progress</h3>
+            <div className="play-daily-progress">
+              <HudIcon name="rewards" />
+              <div>
+                <strong>{rewards.data?.eligibleWins ?? 0}</strong>
+                <span>Rewarded wins</span>
+              </div>
+              <div>
+                <strong>
+                  {rewards.data?.activityPoints ?? 0}
+                  <small>/100</small>
+                </strong>
+                <span>Mission points</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="play-small-button"
+              onClick={() => {
+                setTab("rewards");
+                document
+                  .getElementById("play-dashboard")
+                  ?.scrollIntoView({ block: "start", behavior: "smooth" });
+              }}
+            >
+              View Daily Rewards <ArrowRight className="size-3" />
+            </button>
+          </aside>
         </div>
-      </section>
+      </PageHero>
 
-      <main className="mx-auto max-w-6xl space-y-8 px-4 pb-12">
-        <RewardsPanel r={rewards.data} />
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {tiles.map((t) => {
-            const inner = (
-              <>
-                <div className="flex justify-between px-1 pb-2 text-xs text-muted-foreground"><span className="font-semibold text-foreground">{t.label}</span><span>{t.caption}</span></div>
-                <div className="relative flex h-16 items-center justify-center overflow-hidden rounded-md border border-primary/30">
-                  <img src={t.art} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-60 transition group-hover:scale-105 group-hover:opacity-80" style={{ objectPosition: "50% 30%" }} />
-                  <div className="absolute inset-0 bg-night/40" />
-                  <span className="relative font-display text-2xl font-black uppercase tracking-wide drop-shadow">{t.label}</span>
-                </div>
-              </>
-            );
-            const cls = "group rounded-xl border border-border bg-card/70 p-3 transition hover:border-primary";
-            return "to" in t ? <Link key={t.label} to={t.to} className={cls}>{inner}</Link> : <a key={t.label} href={t.href} className={cls}>{inner}</a>;
-          })}
-        </div>
-
-        <section id="history" className="scroll-mt-20 rounded-2xl border border-border bg-card/50 p-5">
-          <h2 className="mb-4 text-center font-display text-xl font-bold uppercase tracking-widest text-primary">Match History</h2>
-          <RankedHistory />
-        </section>
+      <main className="play-dashboard" id="play-dashboard">
+        <Tabs value={tab} onValueChange={setTab}>
+          <TabsList className="play-dashboard-tabs" aria-label="Play sections">
+            {sections.map((s) => (
+              <TabsTrigger key={s.id} value={s.id} className="play-dashboard-tab">
+                <span className="play-tab-caption">
+                  <span>{s.left}</span>
+                  <span>{s.right}</span>
+                </span>
+                <span className="play-tab-art" style={{ backgroundImage: `url('${s.art}')` }}>
+                  <HudIcon name={s.icon} />
+                  <strong>{s.label}</strong>
+                </span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <TabsContent value="battles" className="play-dashboard-content">
+            <div className="play-panel-heading">
+              <h2>Battle History</h2>
+              <span>Preseason · Ranked</span>
+            </div>
+            <RankedHistory />
+          </TabsContent>
+          <TabsContent value="rewards" className="play-dashboard-content">
+            <RewardsPanel r={rewards.data} />
+            {!rewards.data && (
+              <p className="text-sm text-muted-foreground">Loading your daily rewards…</p>
+            )}
+          </TabsContent>
+          <TabsContent value="ladder" className="play-dashboard-content">
+            <LadderTeaser signedIn />
+          </TabsContent>
+          <TabsContent value="cards" className="play-dashboard-content">
+            <div className="play-cards-summary">
+              <HudIcon name="collection" />
+              <div>
+                <span className="portal-eyebrow">Your collection</span>
+                <h2>{account?.cardsOwned ?? "—"} Cards Owned</h2>
+                <p>
+                  {account?.cardsOwned === 0
+                    ? "Open packs to collect your first summoner and troops, then bring your warband into the arena."
+                    : "Manage your cards, combine duplicates, and prepare your next ranked warband."}
+                </p>
+                <Link
+                  to={account?.cardsOwned === 0 ? "/open" : "/market"}
+                  search={account?.cardsOwned === 0 ? {} : { section: "collection" }}
+                  className="play-small-button"
+                >
+                  {account?.cardsOwned === 0 ? "Open Packs" : "Manage Collection"}{" "}
+                  <ArrowRight className="size-3" />
+                </Link>
+                <Link to="/codex" className="play-codex-link">
+                  Explore all cards in the Codex
+                </Link>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
       </main>
+      <PortalFooter />
     </div>
   );
 }

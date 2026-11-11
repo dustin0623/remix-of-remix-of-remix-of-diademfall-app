@@ -18,6 +18,7 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as TreasuryRouteImport } from './routes/treasury'
 import { Route as AuthenticatedLeaderboardRouteImport } from './routes/_authenticated/leaderboard'
 import { Route as AuthenticatedMarketRouteImport } from './routes/_authenticated/market'
+import { Route as AuthenticatedOpenRouteImport } from './routes/_authenticated/open'
 import { Route as AuthenticatedShopRouteImport } from './routes/_authenticated/shop'
 import { Route as AuthenticatedAdminTreasuryRouteImport } from './routes/_authenticated/admin.treasury'
 import { Route as AuthenticatedRankedIndexRouteImport } from './routes/_authenticated/ranked.index'
@@ -68,6 +69,11 @@ const AuthenticatedMarketRoute = AuthenticatedMarketRouteImport.update({
   path: '/market',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedOpenRoute = AuthenticatedOpenRouteImport.update({
+  id: '/open',
+  path: '/open',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedShopRoute = AuthenticatedShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/treasury': typeof TreasuryRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
+  '/open': typeof AuthenticatedOpenRoute
   '/shop': typeof AuthenticatedShopRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/treasury': typeof TreasuryRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
+  '/open': typeof AuthenticatedOpenRoute
   '/shop': typeof AuthenticatedShopRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/treasury': typeof TreasuryRoute
   '/_authenticated/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/_authenticated/market': typeof AuthenticatedMarketRoute
+  '/_authenticated/open': typeof AuthenticatedOpenRoute
   '/_authenticated/shop': typeof AuthenticatedShopRoute
   '/_authenticated/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/_authenticated/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/treasury'
     | '/leaderboard'
     | '/market'
+    | '/open'
     | '/shop'
     | '/admin/treasury'
     | '/ranked/$matchId'
@@ -161,6 +171,7 @@ export interface FileRouteTypes {
     | '/treasury'
     | '/leaderboard'
     | '/market'
+    | '/open'
     | '/shop'
     | '/admin/treasury'
     | '/ranked/$matchId'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
     | '/treasury'
     | '/_authenticated/leaderboard'
     | '/_authenticated/market'
+    | '/_authenticated/open'
     | '/_authenticated/shop'
     | '/_authenticated/admin/treasury'
     | '/_authenticated/ranked/$matchId'
@@ -257,6 +269,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMarketRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/open': {
+      id: '/_authenticated/open'
+      path: '/open'
+      fullPath: '/open'
+      preLoaderRoute: typeof AuthenticatedOpenRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/shop': {
       id: '/_authenticated/shop'
       path: '/shop'
@@ -291,6 +310,7 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedLeaderboardRoute: typeof AuthenticatedLeaderboardRoute
   AuthenticatedMarketRoute: typeof AuthenticatedMarketRoute
+  AuthenticatedOpenRoute: typeof AuthenticatedOpenRoute
   AuthenticatedShopRoute: typeof AuthenticatedShopRoute
   AuthenticatedAdminTreasuryRoute: typeof AuthenticatedAdminTreasuryRoute
   AuthenticatedRankedMatchIdRoute: typeof AuthenticatedRankedMatchIdRoute
@@ -300,6 +320,7 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedLeaderboardRoute: AuthenticatedLeaderboardRoute,
   AuthenticatedMarketRoute: AuthenticatedMarketRoute,
+  AuthenticatedOpenRoute: AuthenticatedOpenRoute,
   AuthenticatedShopRoute: AuthenticatedShopRoute,
   AuthenticatedAdminTreasuryRoute: AuthenticatedAdminTreasuryRoute,
   AuthenticatedRankedMatchIdRoute: AuthenticatedRankedMatchIdRoute,
