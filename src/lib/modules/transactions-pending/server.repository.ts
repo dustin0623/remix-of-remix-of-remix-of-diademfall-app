@@ -112,7 +112,8 @@ async function admin() {
   return supabaseAdmin;
 }
 
-/** Pending transactions in the Lovable Cloud table public.transactions_pending (service role only). */
+/** Waiting/claimed transfers are the PENDING/PROCESSING rows of public.wallet_transfers (service role only). */
+const ACTIVE = ["PENDING", "PROCESSING"];
 export const cloudPendingTransactionRepository: PendingTransactionRepository = {
   async create(data) {
     const db = await admin();
@@ -126,7 +127,7 @@ export const cloudPendingTransactionRepository: PendingTransactionRepository = {
     }
     const r = newRecord(data);
     const { data: row, error } = await db
-      .from("transactions_pending")
+      .from("wallet_transfers")
       .insert({
         transaction_id: r.transactionId,
         player_id: r.playerId,
@@ -145,21 +146,21 @@ export const cloudPendingTransactionRepository: PendingTransactionRepository = {
   },
   async findById(transactionId) {
     const db = await admin();
-    const { data, error } = await db.from("transactions_pending").select("*").eq("transaction_id", transactionId).maybeSingle();
+    const { data, error } = await db.from("wallet_transfers").select("*").eq("transaction_id", transactionId).in("status", ACTIVE).maybeSingle();
     if (error) throw new Error(error.message);
     return data ? fromRow(data as PendingRow) : null;
   },
   async findByRef(type, onChainRef) {
     const db = await admin();
     const { data, error } = await db
-      .from("transactions_pending").select("*").eq("type", type).eq("on_chain_ref", onChainRef).maybeSingle();
+      .from("wallet_transfers").select("*").eq("type", type).eq("on_chain_ref", onChainRef).in("status", ACTIVE).maybeSingle();
     if (error) throw new Error(error.message);
     return data ? fromRow(data as PendingRow) : null;
   },
   async findByPlayer(playerId) {
     const db = await admin();
     const { data, error } = await db
-      .from("transactions_pending").select("*").eq("player_id", playerId).order("created_at", { ascending: false }).limit(100);
+      .from("wallet_transfers").select("*").eq("player_id", playerId).in("status", ACTIVE).order("created_at", { ascending: false }).limit(100);
     if (error) throw new Error(error.message);
     return (data ?? []).map((r) => fromRow(r as PendingRow));
   },
@@ -172,14 +173,15 @@ export const cloudPendingTransactionRepository: PendingTransactionRepository = {
   async release(transactionId, error) {
     const db = await admin();
     const { error: e } = await db
-      .from("transactions_pending")
+      .from("wallet_transfers")
       .update({ status: "PENDING", claimed_by: null, claimed_at: null, last_error: error.slice(0, 500), updated_at: now() })
       .eq("transaction_id", transactionId);
     if (e) throw new Error(e.message);
   },
   async remove(transactionId) {
     const db = await admin();
-    const { error } = await db.from("transactions_pending").delete().eq("transaction_id", transactionId);
+    // Finished rows stay in wallet_transfers as the processed record; only a still-waiting row is dropped.
+    const { error } = await db.from("wallet_transfers").delete().eq("transaction_id", transactionId).in("status", ACTIVE);
     if (error) throw new Error(error.message);
   },
 };
