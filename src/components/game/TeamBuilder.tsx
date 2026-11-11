@@ -77,7 +77,7 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
             {SUMMONERS.filter((s) => cfg.banners.includes(s.banner) && (bannerFilter === "all" || s.banner === bannerFilter)).map((s) => {
               const legal = cardLegal(s, cfg.rulesets) && cardCost(s.mana, cfg.rulesets) <= cfg.manaCap && isOwned(s.id);
               return <SummonerCardView key={s.id} s={s} size="sm" manaOverride={cardCost(s.mana, cfg.rulesets)} disabled={!legal} selected={pick.summonerId === s.id}
-                onClick={() => setPick((p) => ({ summonerId: s.id, unitIds: SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner ? p.unitIds : [] }))} />;
+                onClick={() => setPick((p) => ({ summonerId: s.id, unitIds: SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner ? p.unitIds : p.unitIds.filter((id) => { const u = UNIT_BY_ID[id]; return !!u && isWayfarer(u); }) }))} />;
             })}
           </div>
         </section>
