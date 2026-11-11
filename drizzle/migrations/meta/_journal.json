@@ -1,48 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1794421871070,
-      "tag": "0000_restore_signup_trigger",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1794422187734,
-      "tag": "0001_drop_retired_tables",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1794423285658,
-      "tag": "0002_unique_player_cards_and_card_supply",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1794424061062,
-      "tag": "0003_unified_game_secrets",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1794424292435,
-      "tag": "0004_drop_old_seed_tables",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1794425238530,
-      "tag": "0005_consolidate_transfers_openings_listings",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
