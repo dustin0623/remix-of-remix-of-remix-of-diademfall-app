@@ -65,6 +65,9 @@
 - [ ] Advancement chests (Scout/War/Crown): claims, provably fair opening, card/Coin-share/Credit results
 - [ ] Legionnaire reward reserve (20,000 packs = 100,000 cards) and season-close Coin-share settlement (needs pool size from user)
 
+## Reference code
+- [ ] Copy github.com/dustin0623/official-boom-game-v1 into /ref as plain files (no nested git repo)
+
 ## Later
 - [ ] Add the Solana treasury key + RPC key as secrets before server-signed payouts
 
