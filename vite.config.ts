@@ -7,12 +7,23 @@
 // the build fails. Never add compression (compressPublicAssets, vite-plugin-compression):
 // hosting already compresses at the edge.
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+// rpc-websockets (pulled in by @solana/web3.js) only exports "browser" and "node" builds, so the
+// Worker server build cannot resolve it. Point it at the browser build, which uses the standard
+// WebSocket API the Worker runtime provides.
+const rpcWebsocketsBrowser = fileURLToPath(new URL("./node_modules/rpc-websockets/dist/index.browser.mjs", import.meta.url));
 
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+  },
+  vite: {
+    resolve: {
+      alias: [{ find: /^rpc-websockets$/, replacement: rpcWebsocketsBrowser }],
+    },
   },
 });
