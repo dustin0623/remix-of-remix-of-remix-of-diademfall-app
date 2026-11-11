@@ -8,6 +8,13 @@
       "when": 1794426197186,
       "tag": "0000_restore_signup_trigger",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794426642327,
+      "tag": "0001_drop_consolidated_tables",
+      "breakpoints": true
     }
   ]
 }

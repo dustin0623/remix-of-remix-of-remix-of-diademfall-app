@@ -96,8 +96,9 @@
 - [x] Delete the retired tables
 
 ## Table consolidation (33 → fewer tables)
-- [ ] Deposits/withdrawals: one wallet_transfers table (pending + processed repositories kept on top of it)
-- [ ] Pack and chest openings: one item_openings table
-- [ ] Sale and rental listings: one card_listings table
+- [x] Deposits/withdrawals: one wallet_transfers table (pending + processed repositories kept on top of it)
+- [x] Pack and chest openings: one item_openings table
+- [x] Sale and rental listings: one card_listings table
+- [x] Old tables removed after testing packs, chests, sales, rentals and withdrawals on the merged tables
 - [ ] Treasury: snapshots, acquisitions and flows in one treasury_ledger
 - [ ] Matches: review folding match_players / match_rewards into matches (match_submissions stays separate so teams stay hidden until both lock)
