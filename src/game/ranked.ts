@@ -7,6 +7,7 @@ import type { BattleEvent as ContractEvent, BattleInput, BattleOutput, Formation
 import { SUMMONERS } from "./catalog/summoners";
 import { catalogFor } from "./catalogs";
 import { simulateBattle, type BattleResult, type SnapUnit } from "./engine";
+import { playedTroopLevel } from "./combining";
 import { cardLegal, recruitable, teamMana, validateTeam, type MatchConfig, type TeamPick } from "./match";
 import { hash } from "./rng";
 import { hashCanonical } from "./sha256";
@@ -53,14 +54,31 @@ export function buildFormation(side: 1 | 2, unitIds: string[], levels: Record<st
   }));
 }
 
+/**
+ * Owned levels -> the levels a team actually plays at: the summoner at its owned level (capped), each troop
+ * temporarily lowered to what that summoner can command (combining.ts allowedTroopLevel). Owned cards are unchanged.
+ */
+export function playedLevels(pick: TeamPick, owned: Record<string, number>): Record<string, number> {
+  const s = SUMMONERS.find((x) => x.id === pick.summonerId);
+  const sCap = s?.levelCap ?? 1;
+  const sLevel = Math.max(1, Math.min(sCap, owned[pick.summonerId] ?? 1));
+  const out: Record<string, number> = { [pick.summonerId]: sLevel };
+  for (const id of pick.unitIds) {
+    const cap = UNIT_BY_ID[id]?.levelCap ?? 1;
+    out[id] = playedTroopLevel(owned[id] ?? 1, sLevel, sCap, cap);
+  }
+  return out;
+}
+
 export function lockedTeam(args: {
   matchId: string; playerId: string; side: 1 | 2; pick: TeamPick; levels: Record<string, number>; rulesets: string[];
 }): LockedTeam {
+  const levels = playedLevels(args.pick, args.levels);
   const team = {
     playerId: args.playerId,
     summonerCardId: args.pick.summonerId,
-    summonerLevel: args.levels[args.pick.summonerId] ?? 1,
-    formation: buildFormation(args.side, args.pick.unitIds, args.levels),
+    summonerLevel: levels[args.pick.summonerId] ?? 1,
+    formation: buildFormation(args.side, args.pick.unitIds, levels),
     calculatedMana: teamMana(args.pick, args.rulesets),
   };
   return { ...team, submissionHash: hashCanonical({ matchId: args.matchId, ...team }) };

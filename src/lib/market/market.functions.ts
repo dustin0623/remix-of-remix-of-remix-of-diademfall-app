@@ -7,16 +7,22 @@ const loadAdmin = async () => (await import("@/integrations/supabase/client.serv
 const price = z.number().min(MIN_PRICE_COINS).max(1_000_000_000).refine((v) => Math.round(v * 1e8) === v * 1e8, "At most 8 decimals");
 
 export type Foil = "regular" | "gold";
-export type SaleListing = { id: string; assetId: string; cardId: string; foil: Foil; price: string; seller: string; sellerId: string; createdAt: string };
-export type RentalListing = { id: string; assetId: string; cardId: string; foil: Foil; pricePerDay: string; minDays: number; maxDays: number; owner: string; ownerId: string; status: string };
-export type RentalContract = { id: string; cardId: string; foil: Foil; days: number; endsAt: string; gross: string; counterparty: string };
-export type MyAsset = { id: string; cardId: string; foil: Foil; status: string };
+export type SaleListing = { id: string; assetId: string; cardId: string; foil: Foil; essence: number; level: number; price: string; seller: string; sellerId: string; createdAt: string };
+export type RentalListing = { id: string; assetId: string; cardId: string; foil: Foil; essence: number; level: number; pricePerDay: string; minDays: number; maxDays: number; owner: string; ownerId: string; status: string };
+export type RentalContract = { id: string; cardId: string; foil: Foil; essence: number; level: number; days: number; endsAt: string; gross: string; counterparty: string };
+export type MyAsset = { id: string; cardId: string; foil: Foil; essence: number; level: number; status: string };
 export type MarketState = {
   sales: SaleListing[];
   rentals: RentalListing[];
   mine: { assets: MyAsset[]; sales: SaleListing[]; rentals: RentalListing[]; renting: RentalContract[]; rentedOut: RentalContract[] };
 };
 type Result = { ok: true } | { ok: false; error: string };
+
+/** CE and level of the listed asset (embedded card_assets row). */
+const ce = (a: unknown) => {
+  const v = (Array.isArray(a) ? a[0] : a) as { essence: number; level: number } | null;
+  return { essence: v?.essence ?? 1, level: v?.level ?? 1 };
+};
 
 const name = (p: unknown) => {
   const v = p as { username: string; display_name: string | null } | null;
@@ -31,31 +37,31 @@ export const getMarketState = createServerFn({ method: "POST" })
     const admin = await loadAdmin();
     const { error: expErr } = await admin.rpc("expire_rentals");
     if (expErr) console.error("[market] expire_rentals failed", expErr);
-    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id, created_at, profiles!market_listings_seller_id_fkey(username, display_name)";
-    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, profiles!rental_listings_owner_id_fkey(username, display_name)";
-    const contractCols = "id, card_id, foil, days, ends_at, gross_coins::text, owner:profiles!rental_contracts_owner_id_fkey(username, display_name), renter:profiles!rental_contracts_renter_id_fkey(username, display_name)";
+    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id, created_at, asset:card_assets(essence, level), profiles!market_listings_seller_id_fkey(username, display_name)";
+    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, asset:card_assets(essence, level), profiles!rental_listings_owner_id_fkey(username, display_name)";
+    const contractCols = "id, card_id, foil, days, ends_at, gross_coins::text, asset:card_assets(essence, level), owner:profiles!rental_contracts_owner_id_fkey(username, display_name), renter:profiles!rental_contracts_renter_id_fkey(username, display_name)";
     const [sales, rentals, assets, mySales, myRentals, renting, rentedOut] = await Promise.all([
       supabase.from("market_listings").select(saleCols).eq("status", "active").neq("seller_id", userId).order("created_at", { ascending: false }).limit(200),
       supabase.from("rental_listings").select(rentCols).eq("status", "active").neq("owner_id", userId).order("created_at", { ascending: false }).limit(200),
-      supabase.from("card_assets").select("id, card_id, foil, status").eq("owner_id", userId).neq("status", "burned").order("created_at", { ascending: false }).limit(1000),
+      supabase.from("card_assets").select("id, card_id, foil, essence, level, status").eq("owner_id", userId).not("status", "in", "(burned,combined)").order("created_at", { ascending: false }).limit(1000),
       supabase.from("market_listings").select(saleCols).eq("status", "active").eq("seller_id", userId).order("created_at", { ascending: false }),
       supabase.from("rental_listings").select(rentCols).in("status", ["active", "rented"]).eq("owner_id", userId).order("created_at", { ascending: false }),
       supabase.from("rental_contracts").select(contractCols).eq("status", "active").eq("renter_id", userId).order("ends_at"),
       supabase.from("rental_contracts").select(contractCols).eq("status", "active").eq("owner_id", userId).order("ends_at"),
     ]);
     for (const r of [sales, rentals, assets, mySales, myRentals, renting, rentedOut]) if (r.error) console.error("[market] read failed", r.error);
-    type SaleRow = { id: string; asset_id: string; card_id: string; foil: Foil; price_coins: string; seller_id: string; created_at: string; profiles: unknown };
-    type RentRow = { id: string; asset_id: string; card_id: string; foil: Foil; price_coins_per_day: string; minimum_days: number; maximum_days: number; owner_id: string; status: string; profiles: unknown };
-    type ContractRow = { id: string; card_id: string; foil: Foil; days: number; ends_at: string; gross_coins: string; owner: unknown; renter: unknown };
-    const toSale = (r: SaleRow): SaleListing => ({ id: r.id, assetId: r.asset_id, cardId: r.card_id, foil: r.foil, price: r.price_coins, seller: name(r.profiles), sellerId: r.seller_id, createdAt: r.created_at });
-    const toRent = (r: RentRow): RentalListing => ({ id: r.id, assetId: r.asset_id, cardId: r.card_id, foil: r.foil, pricePerDay: r.price_coins_per_day,
+    type SaleRow = { id: string; asset_id: string; card_id: string; foil: Foil; price_coins: string; seller_id: string; created_at: string; asset: unknown; profiles: unknown };
+    type RentRow = { id: string; asset_id: string; card_id: string; foil: Foil; price_coins_per_day: string; minimum_days: number; maximum_days: number; owner_id: string; status: string; asset: unknown; profiles: unknown };
+    type ContractRow = { id: string; card_id: string; foil: Foil; days: number; ends_at: string; gross_coins: string; asset: unknown; owner: unknown; renter: unknown };
+    const toSale = (r: SaleRow): SaleListing => ({ id: r.id, assetId: r.asset_id, cardId: r.card_id, foil: r.foil, ...ce(r.asset), price: r.price_coins, seller: name(r.profiles), sellerId: r.seller_id, createdAt: r.created_at });
+    const toRent = (r: RentRow): RentalListing => ({ id: r.id, assetId: r.asset_id, cardId: r.card_id, foil: r.foil, ...ce(r.asset), pricePerDay: r.price_coins_per_day,
       minDays: r.minimum_days, maxDays: r.maximum_days, owner: name(r.profiles), ownerId: r.owner_id, status: r.status });
-    const toContract = (r: ContractRow, who: "owner" | "renter"): RentalContract => ({ id: r.id, cardId: r.card_id, foil: r.foil, days: r.days, endsAt: r.ends_at, gross: r.gross_coins, counterparty: name(r[who]) });
+    const toContract = (r: ContractRow, who: "owner" | "renter"): RentalContract => ({ id: r.id, cardId: r.card_id, foil: r.foil, ...ce(r.asset), days: r.days, endsAt: r.ends_at, gross: r.gross_coins, counterparty: name(r[who]) });
     return {
       sales: ((sales.data ?? []) as unknown as SaleRow[]).map(toSale),
       rentals: ((rentals.data ?? []) as unknown as RentRow[]).map(toRent),
       mine: {
-        assets: (assets.data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, status: a.status })),
+        assets: (assets.data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, essence: a.essence, level: a.level, status: a.status })),
         sales: ((mySales.data ?? []) as unknown as SaleRow[]).map(toSale),
         rentals: ((myRentals.data ?? []) as unknown as RentRow[]).map(toRent),
         renting: ((renting.data ?? []) as unknown as ContractRow[]).map((r) => toContract(r, "owner")),

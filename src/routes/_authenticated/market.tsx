@@ -6,13 +6,18 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
 import { PageHero, SegmentTabs } from "@/components/portal/PageHero";
-import { OwnedCard, cardName } from "@/components/packs/OwnedCard";
+import { EssenceBar, EssenceDetails } from "@/components/packs/CardEssence";
+import { OwnedCard, cardName, isSummoner } from "@/components/packs/OwnedCard";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useAuthStore } from "@/features/stores/auth.store";
+import { pricePerEssence } from "@/game/combining";
 import { isValidPrice, MAX_RENTAL_DAYS, rentalTotal, splitTradingFee } from "@/game/market";
 import { formatAmount } from "@/lib/economy/currency";
+import { myCardsQuery } from "@/lib/packs/packs.queries";
 import {
   buyCard, cancelRentalListing, cancelSaleListing, getMarketState, listCardForRent, listCardForSale, rentCard,
   type MyAsset, type RentalListing, type SaleListing,
@@ -67,10 +72,33 @@ function CardTile({ cardId, gold, children }: { cardId: string; gold: boolean; c
   );
 }
 
-function Filters({ q, setQ, foil, setFoil }: { q: string; setQ: (v: string) => void; foil: "all" | "gold"; setFoil: (v: "all" | "gold") => void }) {
+type SummonerPick = { id: string; level: number } | null;
+
+/** The buyer's own summoners (highest level owned), to preview what level a troop would play at. */
+function useMySummoners() {
+  const userId = useAuthStore((s) => s.user?.id);
+  const cards = useQuery(myCardsQuery(userId));
+  return useMemo(() => {
+    const best = new Map<string, number>();
+    for (const a of cards.data ?? []) if (isSummoner(a.cardId) && a.status === "available") best.set(a.cardId, Math.max(best.get(a.cardId) ?? 1, a.level));
+    return [...best.entries()].map(([id, level]) => ({ id, level })).sort((a, b) => cardName(a.id).localeCompare(cardName(b.id)));
+  }, [cards.data]);
+}
+
+function Filters({ q, setQ, foil, setFoil, summoner, setSummoner }: {
+  q: string; setQ: (v: string) => void; foil: "all" | "gold"; setFoil: (v: "all" | "gold") => void; summoner: SummonerPick; setSummoner: (v: SummonerPick) => void;
+}) {
+  const mine = useMySummoners();
   return (
     <div className="flex flex-wrap items-center justify-between gap-3">
       <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search cards…" className="max-w-xs" aria-label="Search cards" />
+      <Select value={summoner?.id ?? "none"} onValueChange={(v) => setSummoner(mine.find((m) => m.id === v) ?? null)}>
+        <SelectTrigger className="w-56" aria-label="Check levels with a summoner"><SelectValue placeholder="Check with a summoner" /></SelectTrigger>
+        <SelectContent>
+          <SelectItem value="none">{mine.length ? "No summoner check" : "You own no summoners yet"}</SelectItem>
+          {mine.map((m) => <SelectItem key={m.id} value={m.id}>{cardName(m.id)} · Lv {m.level}</SelectItem>)}
+        </SelectContent>
+      </Select>
       <SegmentTabs label="Foil" value={foil} onChange={setFoil} options={[{ id: "all", name: "All foils" }, { id: "gold", name: "Gold only" }]} />
     </div>
   );
@@ -79,14 +107,15 @@ function Filters({ q, setQ, foil, setFoil }: { q: string; setQ: (v: string) => v
 function useFiltered<T extends { cardId: string; foil: string }>(rows: T[]) {
   const [q, setQ] = useState("");
   const [foil, setFoil] = useState<"all" | "gold">("all");
+  const [summoner, setSummoner] = useState<SummonerPick>(null);
   const list = useMemo(() => rows.filter((r) => (foil === "all" || r.foil === "gold") && cardName(r.cardId).toLowerCase().includes(q.trim().toLowerCase())), [rows, q, foil]);
-  return { list, filters: <Filters q={q} setQ={setQ} foil={foil} setFoil={setFoil} /> };
+  return { list, summoner, filters: <Filters q={q} setQ={setQ} foil={foil} setFoil={setFoil} summoner={summoner} setSummoner={setSummoner} /> };
 }
 
 function BuyTab({ sales }: { sales: SaleListing[] }) {
   const buy = useServerFn(buyCard);
   const { busy, run } = useAction();
-  const { list, filters } = useFiltered(sales);
+  const { list, filters, summoner } = useFiltered(sales);
   return (
     <div className="space-y-5">
       {filters}
@@ -95,6 +124,8 @@ function BuyTab({ sales }: { sales: SaleListing[] }) {
           {list.map((l) => (
             <CardTile key={l.id} cardId={l.cardId} gold={l.foil === "gold"}>
               <div className="font-display text-lg font-black text-primary">{coins(l.price)} <span className="text-xs font-bold">Coins</span></div>
+              <div className="-mt-1.5 text-[11px] text-muted-foreground">{coins(pricePerEssence(Number(l.price), l.essence))} Coins per CE</div>
+              <EssenceDetails cardId={l.cardId} foil={l.foil} essence={l.essence} level={l.level} summonerId={summoner?.id} summonerLevel={summoner?.level} />
               <div className="text-[11px] text-muted-foreground">Seller: {l.seller}</div>
               <Button size="sm" className="w-full" disabled={!!busy} onClick={() => run(l.id, () => buy({ data: { listingId: l.id } }), `Bought ${cardName(l.cardId)}.`)}>
                 {busy === l.id ? <Loader2 className="animate-spin" /> : "Buy"}
@@ -107,7 +138,7 @@ function BuyTab({ sales }: { sales: SaleListing[] }) {
   );
 }
 
-function RentTile({ l }: { l: RentalListing }) {
+function RentTile({ l, summoner }: { l: RentalListing; summoner: SummonerPick }) {
   const rent = useServerFn(rentCard);
   const { busy, run } = useAction();
   const [days, setDays] = useState(l.minDays);
@@ -115,6 +146,7 @@ function RentTile({ l }: { l: RentalListing }) {
   return (
     <CardTile cardId={l.cardId} gold={l.foil === "gold"}>
       <div className="font-display text-lg font-black text-primary">{coins(l.pricePerDay)} <span className="text-xs font-bold">Coins / day</span></div>
+      <EssenceDetails cardId={l.cardId} foil={l.foil} essence={l.essence} level={l.level} summonerId={summoner?.id} summonerLevel={summoner?.level} />
       <div className="text-[11px] text-muted-foreground">Owner: {l.owner} · {l.minDays}–{l.maxDays} days</div>
       <div className="flex w-full items-center gap-2">
         <Label htmlFor={`days-${l.id}`} className="text-xs">Days</Label>
@@ -129,13 +161,13 @@ function RentTile({ l }: { l: RentalListing }) {
 }
 
 function RentTab({ rentals }: { rentals: RentalListing[] }) {
-  const { list, filters } = useFiltered(rentals);
+  const { list, filters, summoner } = useFiltered(rentals);
   return (
     <div className="space-y-5">
       {filters}
-      <p className="text-center text-xs text-muted-foreground">A rented card is yours to battle with until the rental ends, and it counts for ranked rewards (Gold cards included).</p>
+      <p className="text-center text-xs text-muted-foreground">You rent the whole card at its current level. It's yours to battle with until the rental ends, and it counts for ranked rewards (Gold cards included). Rented cards can't be combined, sold or passed on.</p>
       {list.length === 0 ? <p className="text-center text-muted-foreground">No cards for rent right now.</p> : (
-        <div className="flex flex-wrap justify-center gap-4">{list.map((l) => <RentTile key={l.id} l={l} />)}</div>
+        <div className="flex flex-wrap justify-center gap-4">{list.map((l) => <RentTile key={l.id} l={l} summoner={summoner} />)}</div>
       )}
     </div>
   );
@@ -163,7 +195,7 @@ function ListDialog({ asset, onClose }: { asset: MyAsset | null; onClose: () => 
     <Dialog open={!!asset} onOpenChange={(o) => { if (!o) onClose(); }}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{asset ? cardName(asset.cardId) : ""}{asset?.foil === "gold" ? " (Gold)" : ""}</DialogTitle>
+          <DialogTitle>{asset ? cardName(asset.cardId) : ""}{asset?.foil === "gold" ? " (Gold)" : ""}{asset ? ` · Lv ${asset.level} · ${asset.essence} CE` : ""}</DialogTitle>
           <DialogDescription>While a card is listed you can't battle with it. You can cancel any time it isn't rented out.</DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
@@ -202,6 +234,7 @@ function SellTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["dat
           <div className="flex flex-wrap gap-4">
             {mine.sales.map((l) => (
               <CardTile key={l.id} cardId={l.cardId} gold={l.foil === "gold"}>
+                <EssenceBar cardId={l.cardId} foil={l.foil} essence={l.essence} />
                 <div className="text-sm">For sale · <span className="font-bold text-primary">{coins(l.price)}</span></div>
                 <Button size="sm" variant="secondary" className="w-full" disabled={!!busy} onClick={() => run(l.id, () => cancelSale({ data: { listingId: l.id } }), "Listing cancelled.")}>
                   {busy === l.id ? <Loader2 className="animate-spin" /> : "Cancel"}
@@ -210,6 +243,7 @@ function SellTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["dat
             ))}
             {mine.rentals.map((l) => (
               <CardTile key={l.id} cardId={l.cardId} gold={l.foil === "gold"}>
+                <EssenceBar cardId={l.cardId} foil={l.foil} essence={l.essence} />
                 <div className="text-sm">For rent · <span className="font-bold text-primary">{coins(l.pricePerDay)}</span>/day</div>
                 {l.status === "rented" ? <div className="text-[11px] text-muted-foreground">Rented out now</div> : (
                   <Button size="sm" variant="secondary" className="w-full" disabled={!!busy} onClick={() => run(l.id, () => cancelRent({ data: { listingId: l.id } }), "Rental listing cancelled.")}>
@@ -229,6 +263,7 @@ function SellTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["dat
           <div className="flex flex-wrap gap-4">
             {available.map((a) => (
               <CardTile key={a.id} cardId={a.cardId} gold={a.foil === "gold"}>
+                <EssenceBar cardId={a.cardId} foil={a.foil} essence={a.essence} />
                 <Button size="sm" className="w-full" onClick={() => setPicked(a)}>Sell or rent out</Button>
               </CardTile>
             ))}
@@ -250,6 +285,7 @@ function RentalsTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["
             <div className="flex flex-wrap gap-4">
               {rows.map((c) => (
                 <CardTile key={c.id} cardId={c.cardId} gold={c.foil === "gold"}>
+                  <EssenceBar cardId={c.cardId} foil={c.foil} essence={c.essence} />
                   <div className="text-[11px] text-muted-foreground">{who} {c.counterparty} · {c.days} day{c.days > 1 ? "s" : ""} · {coins(c.gross)} Coins</div>
                   <div className="text-xs">Ends {until(c.endsAt)}</div>
                 </CardTile>

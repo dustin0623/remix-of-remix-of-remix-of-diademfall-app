@@ -13,6 +13,7 @@ import { TROOPS } from "../src/game/catalog/troops";
 import { CATALOG_VERSION, catalogHash } from "../src/game/catalogs";
 import { rulesetSelectionWeight } from "../src/game/rule-support";
 import { PACK_RULES } from "../src/game/packs";
+import { requirementRows } from "../src/game/combining";
 
 const ENGINE_VERSION = "battle-engine-1.0.0";
 const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -57,6 +58,9 @@ must("pack supply", await db.from("pack_supply").upsert(PACK_RULES.editions.map(
   set_id: e.id, price_credits: PACK_RULES.priceCredits, maximum_packs: e.maximumPacks, public_allocation: e.publicSale, reserve_allocation: e.reserve,
 })), { onConflict: "set_id", ignoreDuplicates: true }));
 // Players own only cards they open from packs: no cards are granted here.
+
+// 7. Card Essence level requirements (combining); the TS table in src/game/combining.ts is the source.
+must("level requirements", await db.from("card_level_requirements").upsert(requirementRows(), { onConflict: "rarity,foil,level" }));
 
 const count = async (t: "cards" | "rulesets", active = false) => {
   let q = db.from(t).select("*", { count: "exact", head: true });

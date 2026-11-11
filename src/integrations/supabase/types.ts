@@ -17,7 +17,10 @@ export type Database = {
       card_assets: {
         Row: {
           card_id: string
+          combined_at: string | null
+          combined_into: string | null
           created_at: string
+          essence: number
           foil: string
           id: string
           level: number
@@ -28,7 +31,10 @@ export type Database = {
         }
         Insert: {
           card_id: string
+          combined_at?: string | null
+          combined_into?: string | null
           created_at?: string
+          essence?: number
           foil?: string
           id?: string
           level?: number
@@ -39,7 +45,10 @@ export type Database = {
         }
         Update: {
           card_id?: string
+          combined_at?: string | null
+          combined_into?: string | null
           created_at?: string
+          essence?: number
           foil?: string
           id?: string
           level?: number
@@ -57,6 +66,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "card_assets_combined_into_fkey"
+            columns: ["combined_into"]
+            isOneToOne: false
+            referencedRelation: "card_assets"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "card_assets_opening_id_fkey"
             columns: ["opening_id"]
             isOneToOne: false
@@ -71,6 +87,94 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      card_combinations: {
+        Row: {
+          card_id: string
+          created_at: string
+          essence_added: number
+          essence_after: number
+          essence_before: number
+          foil: string
+          id: string
+          level_after: number
+          level_before: number
+          player_id: string
+          source_asset_ids: string[]
+          target_asset_id: string
+        }
+        Insert: {
+          card_id: string
+          created_at?: string
+          essence_added: number
+          essence_after: number
+          essence_before: number
+          foil: string
+          id?: string
+          level_after: number
+          level_before: number
+          player_id: string
+          source_asset_ids: string[]
+          target_asset_id: string
+        }
+        Update: {
+          card_id?: string
+          created_at?: string
+          essence_added?: number
+          essence_after?: number
+          essence_before?: number
+          foil?: string
+          id?: string
+          level_after?: number
+          level_before?: number
+          player_id?: string
+          source_asset_ids?: string[]
+          target_asset_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "card_combinations_card_id_fkey"
+            columns: ["card_id"]
+            isOneToOne: false
+            referencedRelation: "cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_combinations_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_combinations_target_asset_id_fkey"
+            columns: ["target_asset_id"]
+            isOneToOne: false
+            referencedRelation: "card_assets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      card_level_requirements: {
+        Row: {
+          foil: string
+          level: number
+          rarity: string
+          required_essence: number
+        }
+        Insert: {
+          foil: string
+          level: number
+          rarity: string
+          required_essence: number
+        }
+        Update: {
+          foil?: string
+          level?: number
+          rarity?: string
+          required_essence?: number
+        }
+        Relationships: []
       }
       cards: {
         Row: {
@@ -1479,6 +1583,15 @@ export type Database = {
       both_teams_locked: { Args: { p_match_id: string }; Returns: boolean }
       calculate_reward_budget: { Args: { p_month: string }; Returns: Json }
       cancel_matchmaking: { Args: never; Returns: undefined }
+      card_supply_summary: { Args: never; Returns: Json }
+      combine_card_assets: {
+        Args: {
+          p_player_id: string
+          p_source_asset_ids: string[]
+          p_target_asset_id: string
+        }
+        Returns: Json
+      }
       commit_pack_opening: {
         Args: {
           p_algorithm: string

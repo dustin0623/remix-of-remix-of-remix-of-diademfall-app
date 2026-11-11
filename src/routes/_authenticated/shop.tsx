@@ -1,20 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Loader2, Minus, PackageOpen, Plus } from "lucide-react";
+import { Layers, Loader2, Minus, PackageOpen, Plus } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
 import { PageHero, SegmentTabs } from "@/components/portal/PageHero";
+import { EssenceBar } from "@/components/packs/CardEssence";
+import { CombineDialog } from "@/components/packs/CombineDialog";
 import { OpenPackDialog } from "@/components/packs/OpenPackDialog";
+import { Button } from "@/components/ui/button";
 import { OwnedCard, cardName, isSummoner } from "@/components/packs/OwnedCard";
 import { PACK_ART } from "@/components/packs/packArt";
 import { useAuthStore } from "@/features/stores/auth.store";
-import { PACK_IDS, PACK_INFO, PACK_RULES, RARITY_ORDER, type PackId } from "@/game/packs";
+import { PACK_IDS, PACK_INFO, PACK_RULES, RARITY_ORDER, type Foil, type PackId } from "@/game/packs";
+import { CE_REQUIREMENTS } from "@/game/combining";
 import { formatAmount } from "@/lib/economy/currency";
 import { walletQuery } from "@/lib/economy/wallet.queries";
 import { buyPacks } from "@/lib/packs/packs.functions";
-import { myCardsQuery, myPacksQuery, packSupplyQuery } from "@/lib/packs/packs.queries";
+import { cardSupplyQuery, myCardsQuery, myPacksQuery, packSupplyQuery, type OwnedAsset } from "@/lib/packs/packs.queries";
 import arena from "@/assets/portal/arena.jpg";
 
 export const Route = createFileRoute("/_authenticated/shop")({
@@ -120,21 +124,63 @@ function OddsTable() {
   );
 }
 
+function LevelsTable() {
+  const supply = useQuery(cardSupplyQuery());
+  const levels = Array.from({ length: 10 }, (_, i) => i + 1);
+  return (
+    <div className="panel-ornate mx-auto max-w-3xl p-5">
+      <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Card levels &amp; combining</h2>
+      <p className="mt-1 text-xs text-muted-foreground">Total Card Essence (CE) needed for each level. Every opened copy is 1 CE. Combining is permanent.</p>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        {(["regular", "gold"] as const).map((foil) => (
+          <table key={foil} className="w-full text-xs">
+            <caption className="mb-1 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{foil === "gold" ? "Gold" : "Regular"}</caption>
+            <thead className="text-[10px] uppercase text-muted-foreground">
+              <tr><th className="py-0.5 text-left">Lv</th>{RARITY_ORDER.map((r) => <th key={r} className="py-0.5 text-right" style={{ color: `var(--rarity-${r})` }}>{r.slice(0, 3)}</th>)}</tr>
+            </thead>
+            <tbody className="tabular-nums">
+              {levels.map((lv) => (
+                <tr key={lv} className="border-t border-border/50">
+                  <td className="py-0.5">{lv}</td>
+                  {RARITY_ORDER.map((r) => <td key={r} className="py-0.5 text-right">{CE_REQUIREMENTS[foil][r][lv - 1] ?? "—"}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ))}
+      </div>
+      {supply.data && (
+        <p className="mt-3 text-xs text-muted-foreground">
+          {fmt(supply.data.minted)} cards opened so far · {fmt(supply.data.activeAssets)} separate cards today · {fmt(supply.data.combinedAssets)} combined into others · {fmt(supply.data.existingEssence)} CE in play
+          {supply.data.burnedEssence > 0 && <> · {fmt(supply.data.burnedEssence)} CE burned</>}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type Group = { key: string; cardId: string; foil: Foil; assets: OwnedAsset[]; best: OwnedAsset; free: number };
+
 function Collection() {
   const userId = useAuthStore((s) => s.user?.id);
   const cards = useQuery(myCardsQuery(userId));
   const [filter, setFilter] = useState<"all" | "summoners" | "troops">("all");
-  const grouped = useMemo(() => {
-    const m = new Map<string, { cardId: string; regular: number; gold: number }>();
+  const [combining, setCombining] = useState<{ cardId: string; foil: Foil } | null>(null);
+  const groups = useMemo(() => {
+    const m = new Map<string, Group>();
     for (const a of cards.data ?? []) {
-      const g = m.get(a.cardId) ?? { cardId: a.cardId, regular: 0, gold: 0 };
-      if (a.foil === "gold") g.gold++; else g.regular++;
-      m.set(a.cardId, g);
+      const key = `${a.cardId}:${a.foil}`;
+      const g = m.get(key) ?? { key, cardId: a.cardId, foil: a.foil, assets: [], best: a, free: 0 };
+      g.assets.push(a);
+      if (a.essence > g.best.essence) g.best = a;
+      if (a.status === "available") g.free++;
+      m.set(key, g);
     }
     return [...m.values()]
       .filter((g) => filter === "all" || (filter === "summoners") === isSummoner(g.cardId))
-      .sort((a, b) => cardName(a.cardId).localeCompare(cardName(b.cardId)));
+      .sort((a, b) => cardName(a.cardId).localeCompare(cardName(b.cardId)) || a.foil.localeCompare(b.foil));
   }, [cards.data, filter]);
+  const combineAssets = combining ? (cards.data ?? []).filter((a) => a.cardId === combining.cardId && a.foil === combining.foil) : [];
 
   if (cards.isLoading) return <p className="text-center text-sm text-muted-foreground">Loading your cards…</p>;
   if (!cards.data?.length) return <p className="text-center text-muted-foreground">You don't own any cards yet. Buy and open a pack to start your collection.</p>;
@@ -144,16 +190,26 @@ function Collection() {
         <p className="text-sm text-muted-foreground">{fmt(cards.data.length)} cards · {fmt(new Set(cards.data.map((c) => c.cardId)).size)} different</p>
         <SegmentTabs label="Card type" value={filter} onChange={setFilter} options={[{ id: "all", name: "All" }, { id: "summoners", name: "Summoners" }, { id: "troops", name: "Troops" }]} />
       </div>
+      <p className="text-center text-xs text-muted-foreground">
+        Combine copies of the same card to level it up. Each copy adds its Card Essence (CE). Regular and Gold copies level up separately. Gold cards need fewer copies.
+      </p>
       <div className="flex flex-wrap justify-center gap-4">
-        {grouped.map((g) => (
-          <div key={g.cardId} className="space-y-1">
-            <OwnedCard cardId={g.cardId} gold={g.gold > 0 && g.regular === 0} size="sm" />
+        {groups.map((g) => (
+          <div key={g.key} className="flex w-[9.5rem] flex-col items-center gap-1.5">
+            <OwnedCard cardId={g.cardId} gold={g.foil === "gold"} size="sm" />
+            <EssenceBar cardId={g.cardId} foil={g.foil} essence={g.best.essence} />
             <div className="text-center text-[11px] text-muted-foreground">
-              ×{g.regular + g.gold}{g.gold > 0 && <span className="ml-1 font-bold text-primary">({g.gold} Gold)</span>}
+              ×{g.assets.length} {g.foil === "gold" ? <span className="font-bold text-primary">Gold</span> : "Regular"}
             </div>
+            {g.free >= 2 && (
+              <Button size="sm" variant="secondary" className="h-7 w-full text-xs" onClick={() => setCombining({ cardId: g.cardId, foil: g.foil })}>
+                <Layers className="size-3.5" /> Combine
+              </Button>
+            )}
           </div>
         ))}
       </div>
+      <CombineDialog cardId={combining?.cardId ?? null} foil={combining?.foil ?? "regular"} assets={combineAssets} onClose={() => setCombining(null)} />
     </div>
   );
 }
@@ -174,6 +230,7 @@ function ShopPage() {
           <>
             <div className="grid gap-6 md:grid-cols-3">{PACK_IDS.map((p) => <PackTile key={p} pack={p} onOpen={setOpening} />)}</div>
             <OddsTable />
+            <LevelsTable />
           </>
         ) : <Collection />}
       </main>
