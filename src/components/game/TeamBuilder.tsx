@@ -4,7 +4,7 @@ import { SummonerCardView, UnitCardView } from "@/components/game/cards";
 import { RULESETS as BATTLE_RULESETS } from "@/game/catalog/rulesets";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { BANNER_BY_ID } from "@/game/banners";
-import { cardCost, cardLegal, maxUnits, teamMana, type MatchConfig, type TeamPick } from "@/game/match";
+import { cardCost, cardLegal, maxUnits, recruitable, teamMana, type MatchConfig, type TeamPick } from "@/game/match";
 import { UNITS, UNIT_BY_ID } from "@/game/units";
 import { cn } from "@/lib/utils";
 
@@ -43,7 +43,7 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
   const summoner = SUMMONERS.find((s) => s.id === pick.summonerId);
   const mana = teamMana(pick, cfg.rulesets);
   const isOwned = (id: string) => !owned || owned[id] !== undefined;
-  const units = useMemo(() => (summoner ? UNITS.filter((u) => u.banner === summoner.banner && cardLegal(u, cfg.rulesets) && isOwned(u.id)) : []),
+  const units = useMemo(() => (summoner ? UNITS.filter((u) => recruitable(u, summoner.banner) && cardLegal(u, cfg.rulesets) && isOwned(u.id)) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [summoner, cfg, owned]);
 
@@ -82,7 +82,7 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
         </section>
         {summoner && (
           <section>
-            <h2 className="mb-3 font-display text-xl font-bold">2. Recruit {BANNER_BY_ID[summoner.banner].name} Units</h2>
+            <h2 className="mb-3 font-display text-xl font-bold">2. Recruit {BANNER_BY_ID[summoner.banner].name} Units and Wayfarers</h2>
             <div className="flex flex-wrap gap-3">
               {units.map((u) => {
                 const sel = pick.unitIds.includes(u.id);

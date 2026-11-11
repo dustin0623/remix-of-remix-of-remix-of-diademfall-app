@@ -6,6 +6,7 @@ import { BANNER_BY_ID } from "@/game/banners";
 import type { UnitCard } from "@/game/units";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import wayfarerArt from "@/assets/portal/hero.jpg";
 
 export const ABILITY_BY_ID = Object.fromEntries(ABILITIES.map((a) => [a.id, a]));
 
@@ -84,7 +85,7 @@ function Frame({ rarity, banner, art, crop, mana, children, onClick, selected, d
 
 export function UnitCardView({ u, ...rest }: { u: UnitCard; onClick?: () => void; selected?: boolean; disabled?: boolean; manaOverride?: number; size?: "sm" | "md" }) {
   return (
-    <Frame rarity={u.rarity} banner={u.banner} art={BANNER_BY_ID[u.banner].art} crop={u.crop} mana={rest.manaOverride ?? u.mana} {...rest}>
+    <Frame rarity={u.rarity} banner={u.banner ?? "wayfarer"} art={u.banner ? BANNER_BY_ID[u.banner].art : wayfarerArt} crop={u.crop} mana={rest.manaOverride ?? u.mana} {...rest}>
       <div className="font-display text-[13px] font-bold leading-tight text-foreground">{u.name}</div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{u.set} · {u.rarity}</div>
       <UnitStats u={u} />

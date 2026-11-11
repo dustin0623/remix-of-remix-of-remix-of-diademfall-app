@@ -59,17 +59,17 @@ function Codex() {
             <TabsTrigger value="rules">Rulesets</TabsTrigger>
           </TabsList>
           <TabsContent value="units" className="flex flex-wrap gap-3 pt-4">
-            {UNITS.filter((u) => match(u.banner)).map((u) => <UnitCardView key={u.id} u={u} />)}
+            {UNITS.filter((u) => match(u.banner ?? "wayfarer")).map((u) => <UnitCardView key={u.id} u={u} />)}
           </TabsContent>
           <TabsContent value="summoners" className="flex flex-wrap gap-3 pt-4">
             {SUMMONERS.filter((s) => match(s.banner)).map((s) => <SummonerCardView key={s.id} s={s} />)}
           </TabsContent>
           <TabsContent value="abilities" className="grid gap-3 pt-4 md:grid-cols-2">
-            {ABILITIES.filter((a) => match(a.banner)).map((a) => (
+            {ABILITIES.filter((a) => match(a.banner ?? "wayfarer")).map((a) => (
               <div key={a.id} className="rounded-lg border border-border bg-card/60 p-3">
                 <div className="flex items-center justify-between">
                   <span className="font-display font-bold text-primary">{a.name}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{BANNERS.find((b) => b.id === a.banner)?.name} · {a.timing.replace(/_/g, " ")}</span>
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{BANNERS.find((b) => b.id === a.banner)?.name ?? "Wayfarer"} · {a.timing.replace(/_/g, " ")}</span>
                 </div>
                 <p className="mt-1 text-sm">{a.mechanics}</p>
               </div>
