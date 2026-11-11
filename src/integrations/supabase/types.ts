@@ -17,6 +17,7 @@ export type Database = {
       card_assets: {
         Row: {
           card_id: string
+          chest_id: string | null
           combined_at: string | null
           combined_into: string | null
           created_at: string
@@ -31,6 +32,7 @@ export type Database = {
         }
         Insert: {
           card_id: string
+          chest_id?: string | null
           combined_at?: string | null
           combined_into?: string | null
           created_at?: string
@@ -45,6 +47,7 @@ export type Database = {
         }
         Update: {
           card_id?: string
+          chest_id?: string | null
           combined_at?: string | null
           combined_into?: string | null
           created_at?: string
@@ -63,6 +66,13 @@ export type Database = {
             columns: ["card_id"]
             isOneToOne: false
             referencedRelation: "cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_assets_chest_id_fkey"
+            columns: ["chest_id"]
+            isOneToOne: false
+            referencedRelation: "division_chests"
             referencedColumns: ["id"]
           },
           {
@@ -368,6 +378,121 @@ export type Database = {
           },
         ]
       }
+      division_chest_secrets: {
+        Row: {
+          chest_id: string
+          server_seed: string
+        }
+        Insert: {
+          chest_id: string
+          server_seed: string
+        }
+        Update: {
+          chest_id?: string
+          server_seed?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "division_chest_secrets_chest_id_fkey"
+            columns: ["chest_id"]
+            isOneToOne: true
+            referencedRelation: "division_chests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      division_chests: {
+        Row: {
+          algorithm: string
+          chest_type: string
+          client_seed: string | null
+          coin_shares: number
+          commit_hash: string
+          created_at: string
+          credits: number
+          division_id: string
+          id: string
+          match_id: string | null
+          opened_at: string | null
+          ordinal: number
+          player_id: string
+          reserve_snapshot: Json | null
+          results: Json | null
+          season_key: string
+          server_seed: string | null
+          status: string
+        }
+        Insert: {
+          algorithm: string
+          chest_type: string
+          client_seed?: string | null
+          coin_shares?: number
+          commit_hash: string
+          created_at?: string
+          credits?: number
+          division_id: string
+          id?: string
+          match_id?: string | null
+          opened_at?: string | null
+          ordinal: number
+          player_id: string
+          reserve_snapshot?: Json | null
+          results?: Json | null
+          season_key: string
+          server_seed?: string | null
+          status?: string
+        }
+        Update: {
+          algorithm?: string
+          chest_type?: string
+          client_seed?: string | null
+          coin_shares?: number
+          commit_hash?: string
+          created_at?: string
+          credits?: number
+          division_id?: string
+          id?: string
+          match_id?: string | null
+          opened_at?: string | null
+          ordinal?: number
+          player_id?: string
+          reserve_snapshot?: Json | null
+          results?: Json | null
+          season_key?: string
+          server_seed?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "division_chests_division_id_fkey"
+            columns: ["division_id"]
+            isOneToOne: false
+            referencedRelation: "ranked_divisions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "division_chests_match_id_fkey"
+            columns: ["match_id"]
+            isOneToOne: false
+            referencedRelation: "matches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "division_chests_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "division_chests_season_key_fkey"
+            columns: ["season_key"]
+            isOneToOne: false
+            referencedRelation: "ranked_seasons"
+            referencedColumns: ["key"]
+          },
+        ]
+      }
       game_versions: {
         Row: {
           catalog_hash: string | null
@@ -395,6 +520,27 @@ export type Database = {
           published_at?: string | null
           status?: string
           version?: string
+        }
+        Relationships: []
+      }
+      legionnaire_reward_reserve: {
+        Row: {
+          original_units: number
+          rarity: string
+          remaining_units: number
+          seeded_at: string
+        }
+        Insert: {
+          original_units: number
+          rarity: string
+          remaining_units: number
+          seeded_at?: string
+        }
+        Update: {
+          original_units?: number
+          rarity?: string
+          remaining_units?: number
+          seeded_at?: string
         }
         Relationships: []
       }
@@ -641,6 +787,7 @@ export type Database = {
           result: Json | null
           result_hash: string | null
           ruleset_ids: string[]
+          season_key: string | null
           seed: string
           selection_deadline: string
           started_at: string | null
@@ -662,6 +809,7 @@ export type Database = {
           result?: Json | null
           result_hash?: string | null
           ruleset_ids?: string[]
+          season_key?: string | null
           seed: string
           selection_deadline?: string
           started_at?: string | null
@@ -683,6 +831,7 @@ export type Database = {
           result?: Json | null
           result_hash?: string | null
           ruleset_ids?: string[]
+          season_key?: string | null
           seed?: string
           selection_deadline?: string
           started_at?: string | null
@@ -734,7 +883,7 @@ export type Database = {
           rating: number
           rating_delta?: number
           region?: string
-          season_key?: string
+          season_key: string
           status?: string
         }
         Update: {
@@ -1030,6 +1179,7 @@ export type Database = {
           rating: number
           season_key: string
           updated_at: string
+          win_streak: number
           wins: number
         }
         Insert: {
@@ -1040,6 +1190,7 @@ export type Database = {
           rating?: number
           season_key?: string
           updated_at?: string
+          win_streak?: number
           wins?: number
         }
         Update: {
@@ -1050,6 +1201,7 @@ export type Database = {
           rating?: number
           season_key?: string
           updated_at?: string
+          win_streak?: number
           wins?: number
         }
         Relationships: [
@@ -1143,6 +1295,84 @@ export type Database = {
           last_seen_at?: string | null
           updated_at?: string
           username?: string
+        }
+        Relationships: []
+      }
+      ranked_divisions: {
+        Row: {
+          bonus_chest: string | null
+          bonus_count: number
+          id: string
+          league: string
+          min_rating: number
+          reset_rating: number
+          reward_chest: string | null
+          reward_count: number
+          rulesets: number
+          tier: number | null
+        }
+        Insert: {
+          bonus_chest?: string | null
+          bonus_count?: number
+          id: string
+          league: string
+          min_rating: number
+          reset_rating: number
+          reward_chest?: string | null
+          reward_count?: number
+          rulesets: number
+          tier?: number | null
+        }
+        Update: {
+          bonus_chest?: string | null
+          bonus_count?: number
+          id?: string
+          league?: string
+          min_rating?: number
+          reset_rating?: number
+          reward_chest?: string | null
+          reward_count?: number
+          rulesets?: number
+          tier?: number | null
+        }
+        Relationships: []
+      }
+      ranked_seasons: {
+        Row: {
+          chest_coin_pool: number
+          chest_coin_shares: number
+          chest_coins_paid: number
+          closed_at: string | null
+          created_at: string
+          ends_at: string
+          key: string
+          number: number
+          starts_at: string
+          status: string
+        }
+        Insert: {
+          chest_coin_pool?: number
+          chest_coin_shares?: number
+          chest_coins_paid?: number
+          closed_at?: string | null
+          created_at?: string
+          ends_at: string
+          key: string
+          number: number
+          starts_at: string
+          status?: string
+        }
+        Update: {
+          chest_coin_pool?: number
+          chest_coin_shares?: number
+          chest_coins_paid?: number
+          closed_at?: string | null
+          created_at?: string
+          ends_at?: string
+          key?: string
+          number?: number
+          starts_at?: string
+          status?: string
         }
         Relationships: []
       }
@@ -1578,12 +1808,28 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      _new_division_chest: {
+        Args: {
+          p_division: string
+          p_match: string
+          p_ordinal: number
+          p_player: string
+          p_season: string
+          p_type: string
+        }
+        Returns: string
+      }
       _try_match_ticket: { Args: { p_ticket_id: string }; Returns: string }
       accrue_match_rewards: { Args: { p_match_id: string }; Returns: undefined }
+      apply_ranked_result: { Args: { p_match_id: string }; Returns: undefined }
       both_teams_locked: { Args: { p_match_id: string }; Returns: boolean }
       calculate_reward_budget: { Args: { p_month: string }; Returns: Json }
       cancel_matchmaking: { Args: never; Returns: undefined }
       card_supply_summary: { Args: never; Returns: Json }
+      close_ranked_season: {
+        Args: { p_key: string; p_pool_share: number }
+        Returns: Json
+      }
       combine_card_assets: {
         Args: {
           p_player_id: string
@@ -1602,6 +1848,27 @@ export type Database = {
         }
         Returns: Json
       }
+      current_ranked_season: {
+        Args: never
+        Returns: {
+          chest_coin_pool: number
+          chest_coin_shares: number
+          chest_coins_paid: number
+          closed_at: string | null
+          created_at: string
+          ends_at: string
+          key: string
+          number: number
+          starts_at: string
+          status: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "ranked_seasons"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       expire_rentals: { Args: never; Returns: number }
       expire_stale_matches: { Args: never; Returns: number }
       finalize_match: {
@@ -1615,6 +1882,16 @@ export type Database = {
           p_winner_player_id: string
         }
         Returns: boolean
+      }
+      grant_division_chests: {
+        Args: {
+          p_after: number
+          p_before: number
+          p_match: string
+          p_player: string
+          p_season: string
+        }
+        Returns: number
       }
       has_role: {
         Args: {
@@ -1673,6 +1950,17 @@ export type Database = {
         Returns: string
       }
       my_rewards_today: { Args: never; Returns: Json }
+      open_division_chest: {
+        Args: {
+          p_auto?: boolean
+          p_chest_id: string
+          p_client_seed: string
+          p_player_id: string
+          p_reserve: Json
+          p_results: Json
+        }
+        Returns: Json
+      }
       publish_calculated_reward_budget: {
         Args: { p_month: string }
         Returns: Json
@@ -1693,6 +1981,10 @@ export type Database = {
           p_set_id: string
         }
         Returns: Json
+      }
+      ranked_rating_change: {
+        Args: { p_rating: number; p_result: string; p_streak: number }
+        Returns: Record<string, unknown>
       }
       record_ledger_entry: {
         Args: {
@@ -1755,6 +2047,10 @@ export type Database = {
       reward_league: {
         Args: { p_rating: number }
         Returns: Record<string, unknown>
+      }
+      seed_legionnaire_reserve: {
+        Args: { p_counts: Json; p_packs: number }
+        Returns: boolean
       }
       settle_due_reward_days: { Args: never; Returns: number }
       settle_reward_day: { Args: { p_day: string }; Returns: Json }
