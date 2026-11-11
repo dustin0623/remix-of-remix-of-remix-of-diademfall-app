@@ -1,5 +1,5 @@
 /**
- * Marketplace and rental fee rules (docs/diademfall-complete-v4/economy/treasury-config.json tradingFees).
+ * Marketplace and rental fee rules (docs/diademfall-complete-v5/economy/treasury-config.json tradingFees).
  * All prices are in Coins. The database (split_trading_fee) is authoritative; this mirrors it for display.
  */
 export const TRADING_FEES = { marketplace: 0.05, rental: 0.05, rewardVaultShare: 0.02, burnShare: 0.02, operationsShare: 0.01 } as const;

@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Economy currencies (docs/diademfall-complete-v4/economy).
+ * Economy currencies (docs/diademfall-complete-v5/economy).
  * Credits: whole numbers, 1,000 Credits = $1, non-transferable, only from Coin conversion
  * (or future SOL/USDC deposits). Coins: 8-decimal blockchain token earned from play.
  */

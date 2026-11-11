@@ -1,5 +1,5 @@
 /**
- * Ranked reward rules (docs/diademfall-complete-v4/economy/economy-config.json; a test keeps them in sync).
+ * Ranked reward rules (docs/diademfall-complete-v5/economy/economy-config.json; a test keeps them in sync).
  * The database is authoritative: accrue_match_rewards / settle_reward_day apply the same formula in SQL.
  * This module mirrors it for display (mission checklist, energy timer) and tests.
  */

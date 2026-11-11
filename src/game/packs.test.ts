@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import economy from "../../docs/diademfall-complete-v4/economy/economy-config.json";
+import economy from "../../docs/diademfall-complete-v5/economy/economy-config.json";
 import { commitmentFor, openPack, PACK_IDS, PACK_POOLS, PACK_RULES, pickRarity, RARITY_ORDER, verifyOpening } from "./packs";
 
 const seed = "a".repeat(64);
@@ -10,7 +10,7 @@ describe("pack rules", () => {
     for (const e of PACK_RULES.editions) { expect(e.maximumPacks).toBe(500_000); expect(e.publicSale).toBe(450_000); expect(e.reserve).toBe(50_000); }
   });
   it("Gold foil chance is 2%", () => expect(PACK_RULES.goldFoilChance).toBe(0.02));
-  it("matches docs/diademfall-complete-v4 economy-config.json", () => {
+  it("matches docs/diademfall-complete-v5 economy-config.json", () => {
     const p = economy.packs;
     expect(PACK_RULES.cardsPerPack).toBe(p.cardsPerPack);
     expect(PACK_RULES.priceCredits).toBe(p.priceCredits);

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/codex")({
   head: () => ({
     meta: [
       { title: "Codex — Diademfall" },
-      { name: "description", content: "Browse every summoner, unit, ability and ruleset across the six Banners of Diademfall." },
+      { name: "description", content: "Browse every summoner, unit, ability and ruleset across the six Banners and the Wayfarers of Diademfall." },
       { property: "og:title", content: "Codex — Diademfall" },
       { property: "og:description", content: "Every summoner, unit, ability and ruleset in Diademfall." },
       { property: "og:type", content: "website" },
@@ -33,9 +33,9 @@ function Codex() {
   return (
     <div className="min-h-screen">
       <GameHeader />
-      <PageHero art={hero} eyebrow="Card Library" title="The Codex" subtitle="Every summoner, unit, ability and battle rule across the six Banners.">
+      <PageHero art={hero} eyebrow="Card Library" title="The Codex" subtitle="Every summoner, unit, ability and battle rule across the six Banners and the Wayfarers.">
         <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4">
-          {[{ id: "all", name: "All", color: "var(--color-primary)", art: null as string | null }, ...BANNERS].map((b) => {
+          {[{ id: "all", name: "All", color: "var(--color-primary)", art: null as string | null }, ...BANNERS, { id: "wayfarer", name: "Wayfarers", color: "var(--color-muted-foreground)", art: hero }].map((b) => {
             const on = banner === b.id;
             return (
               <button key={b.id} type="button" aria-pressed={on} onClick={() => setBanner(b.id)}

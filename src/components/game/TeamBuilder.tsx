@@ -4,8 +4,8 @@ import { SummonerCardView, UnitCardView } from "@/components/game/cards";
 import { RULESETS as BATTLE_RULESETS } from "@/game/catalog/rulesets";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { BANNER_BY_ID } from "@/game/banners";
-import { cardCost, cardLegal, maxUnits, recruitable, teamMana, type MatchConfig, type TeamPick } from "@/game/match";
-import { UNITS, UNIT_BY_ID } from "@/game/units";
+import { cardCost, cardLegal, maxUnits, maxWayfarers, recruitable, teamMana, wayfarerCount, type MatchConfig, type TeamPick } from "@/game/match";
+import { isWayfarer, UNITS, UNIT_BY_ID } from "@/game/units";
 import { cn } from "@/lib/utils";
 
 export function RulesetPills({ ids }: { ids: string[] }) {
@@ -43,6 +43,7 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
   const summoner = SUMMONERS.find((s) => s.id === pick.summonerId);
   const mana = teamMana(pick, cfg.rulesets);
   const isOwned = (id: string) => !owned || owned[id] !== undefined;
+  const wfCount = wayfarerCount(pick.unitIds), wfMax = maxWayfarers(cfg.rulesets);
   const units = useMemo(() => (summoner ? UNITS.filter((u) => recruitable(u, summoner.banner) && cardLegal(u, cfg.rulesets) && isOwned(u.id)) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [summoner, cfg, owned]);
@@ -76,18 +77,19 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
             {SUMMONERS.filter((s) => cfg.banners.includes(s.banner) && (bannerFilter === "all" || s.banner === bannerFilter)).map((s) => {
               const legal = cardLegal(s, cfg.rulesets) && cardCost(s.mana, cfg.rulesets) <= cfg.manaCap && isOwned(s.id);
               return <SummonerCardView key={s.id} s={s} size="sm" manaOverride={cardCost(s.mana, cfg.rulesets)} disabled={!legal} selected={pick.summonerId === s.id}
-                onClick={() => setPick((p) => ({ summonerId: s.id, unitIds: SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner ? p.unitIds : [] }))} />;
+                onClick={() => setPick((p) => ({ summonerId: s.id, unitIds: SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner ? p.unitIds : p.unitIds.filter((id) => { const u = UNIT_BY_ID[id]; return !!u && isWayfarer(u); }) }))} />;
             })}
           </div>
         </section>
         {summoner && (
           <section>
-            <h2 className="mb-3 font-display text-xl font-bold">2. Recruit {BANNER_BY_ID[summoner.banner].name} Units and Wayfarers</h2>
+            <h2 className="mb-1 font-display text-xl font-bold">2. Recruit {BANNER_BY_ID[summoner.banner].name} Units{wfMax > 0 ? " and Wayfarers" : ""}</h2>
+            <p className="mb-3 text-xs text-muted-foreground">{wfMax === 0 ? "Closed Ranks: no Wayfarers this match." : `Wayfarers are shared troops any summoner can hire, up to ${wfMax} per team.`}</p>
             <div className="flex flex-wrap gap-3">
               {units.map((u) => {
                 const sel = pick.unitIds.includes(u.id);
                 const cost = cardCost(u.mana, cfg.rulesets, pick.unitIds.length === 0 || pick.unitIds[0] === u.id);
-                const fits = sel || (mana + cost <= cfg.manaCap && pick.unitIds.length < maxUnits(cfg.rulesets));
+                const fits = sel || (mana + cost <= cfg.manaCap && pick.unitIds.length < maxUnits(cfg.rulesets) && (!isWayfarer(u) || wfCount < wfMax));
                 return <UnitCardView key={u.id} u={u} size="sm" manaOverride={cost} selected={sel} disabled={!fits} onClick={() => toggleUnit(u.id)} />;
               })}
             </div>
@@ -99,9 +101,15 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
           <div className="flex justify-between text-sm"><span className="font-display font-bold">Mana</span><span className={cn("font-bold", mana > cfg.manaCap ? "text-destructive" : "text-primary")}>{mana} / {cfg.manaCap}</span></div>
           <div className="mt-1 h-2 overflow-hidden rounded bg-muted"><div className="h-full bg-gold transition-all" style={{ width: `${Math.min(100, (mana / cfg.manaCap) * 100)}%` }} /></div>
         </div>
-        <div className="rounded-lg border border-border p-2 text-sm">
-          <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Summoner</div>
-          <div className="font-display font-bold">{summoner?.name ?? "—"}</div>
+        <div className="flex gap-2">
+          <div className="flex-1 rounded-lg border border-border p-2 text-sm">
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Summoner</div>
+            <div className="font-display font-bold">{summoner?.name ?? "—"}</div>
+          </div>
+          <div className="rounded-lg border border-border p-2 text-sm" title={wfMax === 0 ? "Closed Ranks: no Wayfarers" : `At most ${wfMax} Wayfarers`}>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Wayfarers</div>
+            <div className={cn("font-display font-bold", wfCount > wfMax ? "text-destructive" : "text-primary")}>{wfCount} / {wfMax}</div>
+          </div>
         </div>
         <ol className="space-y-1.5">
           {Array.from({ length: maxUnits(cfg.rulesets) }).map((_, i) => {
@@ -112,6 +120,7 @@ export function TeamBuilder({ cfg, pick, setPick, error, action, owned, topBar, 
                 {u ? (
                   <>
                     <span className="flex-1 truncate font-semibold">{u.name}</span>
+                    {isWayfarer(u) && <span className="rounded border border-border px-1 text-[9px] uppercase tracking-wider text-muted-foreground">Wayfarer</span>}
                     <button onClick={() => move(i, -1)} aria-label="Move up" className="text-muted-foreground hover:text-foreground"><ArrowUp className="size-3.5" /></button>
                     <button onClick={() => move(i, 1)} aria-label="Move down" className="text-muted-foreground hover:text-foreground"><ArrowDown className="size-3.5" /></button>
                     <button onClick={() => toggleUnit(u.id)} aria-label="Remove" className="text-muted-foreground hover:text-destructive"><X className="size-3.5" /></button>

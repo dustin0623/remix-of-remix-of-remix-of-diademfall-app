@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import economy from "../../docs/diademfall-complete-v4/economy/economy-config.json";
+import economy from "../../docs/diademfall-complete-v5/economy/economy-config.json";
 import { currentStreak, leagueIdFor, leagueOf, leagueProgress, LEAGUES, rewardMultiplierFor, STARTING_RATING, streakLabel, winRate } from "./ladder";
 
 describe("v4 ladder leagues", () => {
@@ -13,7 +13,7 @@ describe("v4 ladder leagues", () => {
   it("win multipliers: Wood x0, Bronze x1, Silver x1.75, Gold x3, Diamond x5, Champion x8", () => {
     expect([0, 1000, 1400, 1800, 2200, 2600].map(rewardMultiplierFor)).toEqual([0, 1, 1.75, 3, 5, 8]);
   });
-  it("matches docs/diademfall-complete-v4 economy-config.json", () => {
+  it("matches docs/diademfall-complete-v5 economy-config.json", () => {
     const cfg = economy.leagues;
     expect(LEAGUES.map((l) => l.id)).toEqual(cfg.map((c) => c.id));
     LEAGUES.forEach((l, i) => {

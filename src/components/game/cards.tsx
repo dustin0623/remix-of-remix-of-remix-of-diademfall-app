@@ -76,7 +76,7 @@ function Frame({ rarity, banner, art, crop, mana, children, onClick, selected, d
         <img src={art} alt="" loading="lazy" width={768} height={1024} className="h-full w-full object-cover transition group-hover:scale-105" style={{ objectPosition: crop ?? "50% 25%" }} />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-card to-transparent" />
         <span className="absolute left-1.5 top-1.5 flex size-7 items-center justify-center rounded-full bg-gold font-display text-sm font-black text-primary-foreground shadow">{mana}</span>
-        <span className="absolute right-1.5 top-1.5 size-3 rounded-full border border-background" style={{ background: b?.color }} title={b?.name} />
+        <span className="absolute right-1.5 top-1.5 size-3 rounded-full border border-background" style={{ background: b?.color ?? "var(--color-muted-foreground)" }} title={b?.name ?? "Wayfarer"} />
       </div>
       <div className="flex flex-1 flex-col gap-1.5 p-2">{children}</div>
     </button>
@@ -87,7 +87,7 @@ export function UnitCardView({ u, ...rest }: { u: UnitCard; onClick?: () => void
   return (
     <Frame rarity={u.rarity} banner={u.banner ?? "wayfarer"} art={u.banner ? BANNER_BY_ID[u.banner].art : wayfarerArt} crop={u.crop} mana={rest.manaOverride ?? u.mana} {...rest}>
       <div className="font-display text-[13px] font-bold leading-tight text-foreground">{u.name}</div>
-      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{u.set} · {u.rarity}</div>
+      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{u.banner ? "" : "Wayfarer · "}{u.set} · {u.rarity}</div>
       <UnitStats u={u} />
       {u.abilities.length > 0 && <div className="flex flex-wrap gap-1">{u.abilities.map((a) => <AbilityChip key={a} id={a} />)}</div>}
     </Frame>
