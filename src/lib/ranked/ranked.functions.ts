@@ -8,11 +8,16 @@ import { SUMMONERS } from "@/game/catalog/summoners";
 
 const SUMMONER_IDS = new Set(SUMMONERS.map((s) => s.id));
 
-const SEASON = "preseason";
 const MODE = "ranked";
 const RATING_DELTA = 200;
 
 const loadAdmin = async () => (await import("@/integrations/supabase/client.server")).supabaseAdmin;
+
+/** Key of the active ranked season (ratings are stored per season). */
+async function activeSeasonKey(supabase: { from: typeof import("@/integrations/supabase/client").supabase.from }) {
+  const { data } = await supabase.from("ranked_seasons").select("key").eq("status", "active").maybeSingle();
+  return data?.key ?? "season-1";
+}
 
 export type QueueStatus = {
   ticket: { id: string; status: string; createdAt: string; expiresAt: string } | null;
@@ -29,9 +34,16 @@ export const joinRankedQueue = createServerFn({ method: "POST" })
       return { ok: false as const, error: "You need at least one summoner and one troop. Open packs in the Shop first." };
     const admin = await loadAdmin();
     const { expireStale } = await import("./ranked.server");
+    const { rolloverSeasonIfDue } = await import("./chests.server");
     await expireStale(admin);
+    await rolloverSeasonIfDue(admin);
     const { data, error } = await context.supabase.rpc("join_matchmaking", { p_mode: MODE, p_region: "global", p_rating_delta: RATING_DELTA });
-    if (error) return { ok: false as const, error: error.message.includes("current match") ? "Finish your current match first." : "Couldn't join the queue. Try again." };
+    if (error) {
+      const m = error.message ?? "";
+      if (m.includes("current match")) return { ok: false as const, error: "Finish your current match first." };
+      if (m.includes("Season is ending")) return { ok: false as const, error: "The season is ending. The next one starts in a moment, try again shortly." };
+      return { ok: false as const, error: "Couldn't join the queue. Try again." };
+    }
     const r = data as { matchId: string | null; status: string };
     return { ok: true as const, matchId: r.matchId, status: r.status };
   });
@@ -243,6 +255,7 @@ export const getLeaderboard = createServerFn({ method: "POST" })
   .handler(async ({ data, context }): Promise<Leaderboard> => {
     const { supabase, userId } = context;
     const { leagueById, currentStreak } = await import("@/game/ladder");
+    const SEASON = await activeSeasonKey(supabase);
     const cols = "player_id, rating, wins, losses, draws, profiles(username, display_name)";
     let q = supabase.from("player_ratings").select(cols).eq("season_key", SEASON).eq("mode", MODE);
     if (data.league !== "all") {
