@@ -36,7 +36,8 @@ export async function openChestTrusted(admin: Admin, playerId: string, chestId: 
     let rolls: ChestRoll[] = [];
     let reserve = await readReserve(admin);
     if (c.status === "unopened") {
-      const { data: secret } = await admin.from("division_chest_secrets").select("server_seed").eq("chest_id", c.id).maybeSingle();
+      const { data: secret } = await admin.from("game_secrets").select("server_seed")
+        .eq("action_type", "division_chest").eq("target_id", c.id).eq("status", "committed").maybeSingle();
       if (!secret) return { ok: false, error: "Chest not found." };
       rolls = rollChest(c.chest_type as ChestType, secret.server_seed, clientSeed, c.id, reserve);
     }
