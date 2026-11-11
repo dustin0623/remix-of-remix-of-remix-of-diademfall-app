@@ -1,27 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1794417100381,
-      "tag": "0000_restore_signup_trigger",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1794417625884,
-      "tag": "0001_ranked_divisions",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1794418785063,
-      "tag": "0002_wallet_transfers",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
