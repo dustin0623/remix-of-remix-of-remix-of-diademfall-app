@@ -99,6 +99,6 @@ export const RESERVE_PACKS = RANKED_CONFIG.legionnaireRewardReserve.packsCommitt
 export const RESERVE_SEED = "diademfall-legionnaire-reward-reserve-1";
 export function reserveComposition(packs = RESERVE_PACKS): Reserve {
   const counts = Object.fromEntries(RARITY_ORDER.map((r) => [r, 0])) as Reserve;
-  for (let i = 0; i < packs; i++) for (const c of openPack("legionnaire", RESERVE_SEED, "reward-reserve", `pack-${i}`)) counts[c.rarity]++;
+  for (let i = 0; i < packs; i++) for (const c of openPack("legionnaire", RESERVE_SEED, "reward-reserve", `pack-${i}`, "diademfall-pack-v2")) counts[c.rarity]++;
   return counts;
 }
