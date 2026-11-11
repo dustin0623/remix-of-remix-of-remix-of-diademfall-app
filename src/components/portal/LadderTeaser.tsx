@@ -3,7 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { Link } from "@tanstack/react-router";
 import { Crown } from "lucide-react";
 import { getLeaderboard } from "@/lib/ranked/ranked.functions";
-import { leagueFor } from "@/game/profile";
+import { divisionFor } from "@/game/divisions";
 import { LoginDialog } from "@/components/auth/LoginDialog";
 
 export function LadderTeaser({ signedIn }: { signedIn: boolean }) {
@@ -30,7 +30,7 @@ export function LadderTeaser({ signedIn }: { signedIn: boolean }) {
             <li key={r.playerId} className="flex items-center gap-3 rounded-lg bg-background/60 px-3 py-2">
               <span className={`w-6 font-display text-lg font-black ${r.rank === 1 ? "text-gold" : "text-muted-foreground"}`}>{r.rank}</span>
               <span className="flex-1 truncate font-semibold">{r.username}</span>
-              <span className="rounded border border-primary/40 px-2 text-xs uppercase text-primary">{leagueFor(r.rating)}</span>
+              <span className="rounded border border-primary/40 px-2 text-xs uppercase text-primary">{divisionFor(r.rating)}</span>
               <span className="w-12 text-right font-display font-bold">{r.rating}</span>
             </li>
           ))}

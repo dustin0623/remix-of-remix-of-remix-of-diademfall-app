@@ -7,7 +7,7 @@ import { useAuthStore } from "@/features/stores/auth.store";
 import { BANNER_BY_ID } from "@/game/banners";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { LEAGUES, leagueIdFor, multiplierLabel, streakLabel, winRate, type LeagueId } from "@/game/ladder";
-import { leagueFor } from "@/game/profile";
+import { divisionFor } from "@/game/divisions";
 import { getLeaderboard, getSummonerStats, type LeaderRow } from "@/lib/ranked/ranked.functions";
 import { cn } from "@/lib/utils";
 import arena from "@/assets/portal/arena.jpg";
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/_authenticated/leaderboard")({
   head: () => ({
     meta: [
       { title: "Leaderboard — Diademfall" },
-      { name: "description", content: "The top Diademfall players this preseason by league, with win rates, streaks and the most-played summoners." },
+      { name: "description", content: "The top Diademfall players this ranked season by league and division, with win rates, streaks and the most-played summoners." },
       { property: "og:title", content: "Leaderboard — Diademfall" },
       { property: "og:description", content: "See who leads the Diademfall ranked ladder, league by league." },
       { property: "og:type", content: "website" },
@@ -36,7 +36,7 @@ function Row({ r, me, highlight }: { r: LeaderRow; me?: string | undefined; high
     <tr className={cn((r.playerId === me || highlight) && "bg-primary/10")}>
       <td className="px-4 py-2 font-display font-bold text-muted-foreground">{r.rank}</td>
       <td className="px-4 py-2 font-semibold">{r.username}{r.playerId === me && <span className="ml-2 text-xs text-primary">(you)</span>}</td>
-      <td className="hidden px-4 py-2 sm:table-cell">{leagueFor(r.rating)}</td>
+      <td className="hidden px-4 py-2 sm:table-cell">{divisionFor(r.rating)}</td>
       <td className="px-4 py-2 text-right font-display font-bold tabular-nums text-primary">{r.rating}</td>
       <td className="px-4 py-2 text-right tabular-nums text-muted-foreground">{r.wins}W {r.losses}L{r.draws ? ` ${r.draws}D` : ""}</td>
       <td className="hidden px-4 py-2 text-right tabular-nums sm:table-cell">{wr === null ? "—" : `${wr}%`}</td>
@@ -61,7 +61,7 @@ function LeaderboardPage() {
   return (
     <div className="min-h-screen">
       <GameHeader />
-      <PageHero art={arena} eyebrow="Preseason Ladder" title="Leaderboard" subtitle="The strongest commanders of the Shattered Realm, league by league.">
+      <PageHero art={arena} eyebrow="Ranked Season Ladder" title="Leaderboard" subtitle="The strongest commanders of the Shattered Realm, league by league.">
         <div className="flex justify-center">
           <SegmentTabs label="League" value={league} onChange={setLeague}
             options={[{ id: "all" as Filter, name: "All" }, ...LEAGUES.map((l) => ({ id: l.id as Filter, name: l.name }))]} />
@@ -73,7 +73,7 @@ function LeaderboardPage() {
                 <Crown className={cn("mx-auto", i === 1 ? "size-8 text-primary" : "size-6 text-muted-foreground")} />
                 <div className="mt-1 font-display text-3xl font-black text-primary">#{r.rank}</div>
                 <div className="truncate font-semibold">{r.username}{r.playerId === me && <span className="ml-1 text-xs text-primary">(you)</span>}</div>
-                <div className="text-xs text-muted-foreground">{leagueFor(r.rating)}</div>
+                <div className="text-xs text-muted-foreground">{divisionFor(r.rating)}</div>
                 <div className="mt-1 font-display text-xl font-bold tabular-nums">{r.rating}</div>
               </div>
             ) : <div key={i} />)}
@@ -147,7 +147,7 @@ function LeaderboardPage() {
               })}
             </ol>
           )}
-          <p className="text-[10px] text-muted-foreground">Win % across all finished ranked battles this preseason.</p>
+          <p className="text-[10px] text-muted-foreground">Win % across all finished ranked battles.</p>
         </aside>
         </div>
       </main>
