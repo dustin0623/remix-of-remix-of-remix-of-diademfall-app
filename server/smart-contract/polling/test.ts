@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { mockDb } from "@/features/stores/mock/database";
-import { createPollingContext } from "./context";
+import { mockPendingTransactionRepository } from "@/lib/modules/transactions-pending/server.repository";
+import { mockProcessedTransactionRepository } from "@/lib/modules/transactions-processed/server.repository";
+import { createPollingContext as baseContext, type PollingContext } from "./context";
+
+/** Unit tests always run against the in-memory store. */
+const createPollingContext = (o: Partial<PollingContext> = {}) =>
+  baseContext({ pending: mockPendingTransactionRepository, processed: mockProcessedTransactionRepository, ...o });
 import { pollOnce } from "./transaction-poller";
 
 const withdraw = { recipientAddress: "alice", assetType: "native" as const, symbol: "SOL", amount: "1.000" };
