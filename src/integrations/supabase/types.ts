@@ -361,6 +361,53 @@ export type Database = {
           },
         ]
       }
+      game_secrets: {
+        Row: {
+          action_type: string
+          client_seed: string | null
+          commit_hash: string
+          created_at: string
+          id: string
+          player_id: string
+          revealed_at: string | null
+          server_seed: string
+          status: string
+          target_id: string
+        }
+        Insert: {
+          action_type: string
+          client_seed?: string | null
+          commit_hash: string
+          created_at?: string
+          id?: string
+          player_id: string
+          revealed_at?: string | null
+          server_seed: string
+          status?: string
+          target_id: string
+        }
+        Update: {
+          action_type?: string
+          client_seed?: string | null
+          commit_hash?: string
+          created_at?: string
+          id?: string
+          player_id?: string
+          revealed_at?: string | null
+          server_seed?: string
+          status?: string
+          target_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "game_secrets_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       game_versions: {
         Row: {
           catalog_hash: string | null
