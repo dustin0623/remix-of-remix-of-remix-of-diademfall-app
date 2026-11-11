@@ -58,12 +58,13 @@
 
 ## Ranked divisions (docs/diademfall-complete-v6)
 - [x] v6 design package in docs (16 divisions, ±20 rating, advancement chests, season reset; cards and economy unchanged)
-- [ ] Divisions III/II/I on the ladder, home and leaderboard
-- [ ] Fixed ±20 rating with win-streak bonus in place of Elo
-- [ ] Rules per match by division (Wood 0, Bronze 1, Silver+ 2)
-- [ ] 14-day seasons with rating reset
-- [ ] Advancement chests (Scout/War/Crown): claims, provably fair opening, card/Coin-share/Credit results
-- [ ] Legionnaire reward reserve (20,000 packs = 100,000 cards) and season-close Coin-share settlement (needs pool size from user)
+- [x] Divisions III/II/I on the ladder, home and leaderboard
+- [x] Fixed ±20 rating with win-streak bonus in place of Elo
+- [x] Rules per match by division (Wood 0, Bronze 1, Silver+ 2)
+- [x] 14-day seasons with rating reset (Season 1 started; current ratings carried over)
+- [x] Advancement chests (Scout/War/Crown): claims, provably fair opening, card/Coin-share/Credit results
+- [x] Legionnaire reward reserve (20,000 packs = 100,000 cards) and season-close Coin-share settlement
+- [ ] Real chest Coin pool share (placeholder 20% of the season's League pool; needs user decision)
 
 ## Reference code
 - [x] Copy github.com/dustin0623/official-boom-game-v1 into /ref as plain files (no nested git repo)
