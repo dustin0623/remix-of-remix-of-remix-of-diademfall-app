@@ -465,7 +465,8 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
   background: oklch(0.31 0.045 270);
   color: oklch(0.95 0.025 90);
 }
-.hud-currency > button:focus-visible {
+.hud-currency > button:focus-visible,
+.hud-currency > a:focus-visible {
   outline: 1px solid oklch(0.8 0.12 190);
   outline-offset: -2px;
 }

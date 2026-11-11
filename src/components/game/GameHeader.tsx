@@ -14,7 +14,7 @@ export function GameHeader() {
   const [challenge, setChallenge] = useState(false);
   const path = useRouterState({ select: (s) => s.location.pathname });
   const playing = path === "/battle" || path.startsWith("/ranked");
-  const inMarket = path === "/shop" || path === "/market";
+  const inMarket = path === "/shop" || path === "/market" || path === "/wallet" || path === "/activity";
   const items = [
     { to: "/open", label: "Open", icon: "rewards", show: !!user },
     { to: "/leaderboard", label: "Ladder", icon: "ladder", show: !!user },
@@ -83,6 +83,16 @@ export function GameHeader() {
                     <NavigationMenu.Link asChild>
                       <Link to="/market" onClick={() => setMenu("")}>
                         Cards
+                      </Link>
+                    </NavigationMenu.Link>
+                    <NavigationMenu.Link asChild>
+                      <Link to="/wallet" onClick={() => setMenu("")}>
+                        Wallet
+                      </Link>
+                    </NavigationMenu.Link>
+                    <NavigationMenu.Link asChild>
+                      <Link to="/activity" onClick={() => setMenu("")}>
+                        Activity
                       </Link>
                     </NavigationMenu.Link>
                   </NavigationMenu.Content>

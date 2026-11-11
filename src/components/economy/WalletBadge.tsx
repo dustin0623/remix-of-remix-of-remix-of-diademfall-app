@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "@tanstack/react-router";
 import { useId, useRef, useState, type MouseEvent } from "react";
-import { Coins, Gem, Plus } from "lucide-react";
+import { ArrowDownToLine, ArrowUpFromLine, Coins, Gem, History, Plus } from "lucide-react";
 import { Popover, PopoverAnchor, PopoverContent } from "@/components/ui/popover";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { walletQuery } from "@/lib/economy/wallet.queries";
@@ -49,18 +50,15 @@ export function WalletBadge() {
                 <HudIcon name={icon} />
                 <span>{amount}</span>
               </button>
-              <button
-                type="button"
+              <Link
+                to="/wallet"
+                search={{ tab: "deposit" }}
                 className="hud-currency-plus"
-                aria-label={`Manage ${name}`}
-                aria-haspopup="dialog"
-                aria-expanded={open}
-                aria-controls={panelId}
-                onClick={showWallet}
-                title={`Manage ${name}`}
+                aria-label={`Deposit ${name}`}
+                title={`Deposit ${name}`}
               >
                 <Plus aria-hidden="true" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -136,9 +134,27 @@ export function WalletBadge() {
             No activity yet. Ranked rewards and pack purchases will show up here.
           </p>
         )}
+        <div className="grid grid-cols-3 gap-1.5 border-t border-border p-3">
+          {(
+            [
+              { label: "Deposit", icon: ArrowDownToLine, to: "/wallet", search: { tab: "deposit" } },
+              { label: "Withdraw", icon: ArrowUpFromLine, to: "/wallet", search: { tab: "withdraw" } },
+              { label: "Activity", icon: History, to: "/activity", search: {} },
+            ] as const
+          ).map(({ label, icon: Icon, to, search }) => (
+            <Link
+              key={label}
+              to={to}
+              search={search}
+              onClick={() => setOpen(false)}
+              className="flex flex-col items-center gap-1 rounded-md border border-border bg-card/60 py-2 text-[11px] font-bold uppercase tracking-wider transition hover:border-primary hover:text-primary"
+            >
+              <Icon className="size-4" aria-hidden="true" /> {label}
+            </Link>
+          ))}
+        </div>
         <p className="border-t border-border px-4 py-2.5 text-[11px] leading-snug text-muted-foreground">
-          Credits come from converting Coins (SOL and USDC deposits later). Credits can't be turned
-          back into Coins.
+          Credits buy packs and can't be withdrawn. Coins can be withdrawn to your own Solana wallet.
         </p>
       </PopoverContent>
     </Popover>

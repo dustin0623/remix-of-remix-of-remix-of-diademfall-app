@@ -9,6 +9,7 @@ import { transfersQuery, type TransferRow } from "@/lib/wallet/transfers.queries
 const isOpen = (t: TransferRow) => t.status === "PENDING" || t.status === "PROCESSING";
 
 function describe(t: TransferRow): string {
+  if (t.test) return t.status === "SUCCESS" ? `Test ${t.type === "deposit" ? "deposit" : "withdrawal"} done.` : `Test ${t.type === "deposit" ? "deposit" : "withdrawal"} failed: ${t.error ?? "unknown error"}`;
   const amount = t.amount && t.currency ? `${formatAmount(t.amount, t.currency)} ${t.currency === "credits" ? "Credits" : "Coins"}` : "";
   if (t.type === "deposit") return t.status === "SUCCESS" ? `Deposit credited${amount ? `: ${amount}` : ""}.` : `Deposit not credited: ${t.error ?? "failed"}`;
   return t.status === "SUCCESS" ? `Withdrawal sent${amount ? `: ${amount}` : ""}.` : `Withdrawal failed: ${t.error ?? "unknown error"}`;

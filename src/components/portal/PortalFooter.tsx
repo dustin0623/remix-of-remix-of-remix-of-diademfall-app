@@ -10,6 +10,8 @@ export function PortalFooter() {
         <Link to="/battle">Practice</Link>
         <Link to="/ranked">Ranked</Link>
         <Link to="/codex">Codex</Link>
+        <Link to="/wallet">Wallet</Link>
+        <Link to="/activity">Activity</Link>
         <Link to="/treasury">Treasury</Link>
       </nav>
       <p>© {new Date().getFullYear()} Diademfall. All rights reserved.</p>

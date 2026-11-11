@@ -47,7 +47,7 @@ use the editor.
 
 - The poller (server/smart-contract/polling) reads and writes only through the transactions-pending and transactions-processed repositories (why: it works unchanged on the mock store and on MongoDB).
 
-- Smart-contract worker is unified: server/smart-contract/processor routes `chain:action` to handlers; in mock mode the app runs one poll cycle every few seconds via a dev-only hook calling runTransactionBatch, in live mode a separate worker process runs the same poller (why: one code path, no mock/live duplication).
+- Smart-contract worker is unified: server/smart-contract/processor routes transaction types to handlers. With the in-memory store a dev-only hook runs mock cycles (runTransactionBatch); with the Cloud queue the Wallet/Activity pages call processTransferQueue (src/lib/wallet) while the player has a waiting transfer, which runs runLiveTransferCycle with the live deposit/withdraw handlers (why: one code path, no separate worker process or cron; atomic claims and idempotent ledger keys make overlapping cycles harmless).
 
 - Solana is the only supported chain; Hive and XRPL modules were removed (why: product focuses on Solana only).
 # Game decisions

@@ -33,7 +33,7 @@ export function TransfersList({ rows, loading }: { rows: TransferRow[]; loading?
         </thead>
         <tbody className="divide-y divide-border">
           {rows.map((t) => {
-            const st = STATUS[t.status] ?? STATUS.PENDING!;
+            const st = STATUS[t.status] ?? STATUS["PENDING"]!;
             const deposit = t.type === "deposit";
             return (
               <tr key={t.transactionId} className="align-top">
