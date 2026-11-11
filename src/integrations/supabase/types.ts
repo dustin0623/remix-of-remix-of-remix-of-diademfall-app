@@ -1431,6 +1431,62 @@ export type Database = {
         }
         Relationships: []
       }
+      treasury_ledger: {
+        Row: {
+          account: string | null
+          amount: number
+          category: string
+          created_at: string
+          created_by: string | null
+          details: Json
+          entry_type: string
+          id: string
+          occurred_at: string
+          reference_id: string | null
+          reference_type: string | null
+          tx_hash: string | null
+          wallet_id: string | null
+        }
+        Insert: {
+          account?: string | null
+          amount: number
+          category: string
+          created_at?: string
+          created_by?: string | null
+          details?: Json
+          entry_type: string
+          id?: string
+          occurred_at?: string
+          reference_id?: string | null
+          reference_type?: string | null
+          tx_hash?: string | null
+          wallet_id?: string | null
+        }
+        Update: {
+          account?: string | null
+          amount?: number
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          details?: Json
+          entry_type?: string
+          id?: string
+          occurred_at?: string
+          reference_id?: string | null
+          reference_type?: string | null
+          tx_hash?: string | null
+          wallet_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "treasury_ledger_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "treasury_wallets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       treasury_snapshots: {
         Row: {
           captured_at: string

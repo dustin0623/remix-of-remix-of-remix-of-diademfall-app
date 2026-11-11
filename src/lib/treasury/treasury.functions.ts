@@ -82,8 +82,8 @@ export const getTreasuryAdmin = createServerFn({ method: "POST" })
     const admin = await loadAdmin();
     const [{ data: wallets }, { data: snaps }, { data: acqs }, { data: thisM }, { data: nextM }] = await Promise.all([
       admin.from("treasury_wallets").select("id, label, address, wallet_type, public, active").order("wallet_type").order("label"),
-      admin.from("treasury_snapshots").select("wallet_id, coin_balance::text, captured_at").order("captured_at", { ascending: false }).limit(500),
-      admin.from("token_acquisitions").select("id, source, coins_acquired::text, tx_hash, acquired_at, treasury_wallets(label)").order("acquired_at", { ascending: false }).limit(25),
+      admin.from("treasury_ledger").select("wallet_id, coin_balance:amount::text, captured_at:occurred_at").eq("entry_type", "snapshot").order("occurred_at", { ascending: false }).limit(500),
+      admin.from("treasury_ledger").select("id, source:category, coins_acquired:amount::text, tx_hash, acquired_at:occurred_at, treasury_wallets(label)").eq("entry_type", "acquisition").order("occurred_at", { ascending: false }).limit(25),
       admin.rpc("calculate_reward_budget", { p_month: monthStart(0) }),
       admin.rpc("calculate_reward_budget", { p_month: monthStart(1) }),
     ]);
@@ -135,8 +135,8 @@ export const recordTreasurySnapshot = createServerFn({ method: "POST" })
       balance = Number(r.data.balance);
     }
     if (balance === undefined || !Number.isFinite(balance)) return fail("Enter a balance.");
-    const { error } = await admin.from("treasury_snapshots").insert({
-      wallet_id: data.walletId, coin_balance: Math.trunc(balance * 1e8) / 1e8, source: data.fromChain ? "chain" : "manual", created_by: context.userId,
+    const { error } = await admin.from("treasury_ledger").insert({
+      entry_type: "snapshot", wallet_id: data.walletId, amount: Math.trunc(balance * 1e8) / 1e8, category: data.fromChain ? "chain" : "manual", created_by: context.userId,
     });
     if (error) { console.error("[treasury] snapshot failed", error); return fail("Couldn't save the snapshot."); }
     return { ok: true };
@@ -152,10 +152,11 @@ export const recordTokenAcquisition = createServerFn({ method: "POST" })
   .handler(async ({ data, context }): Promise<Ok> => {
     await assertAdmin(context);
     const admin = await loadAdmin();
-    const { error } = await admin.from("token_acquisitions").insert({
-      source: data.source, coins_acquired: Math.trunc(data.coins * 1e8) / 1e8, destination_wallet_id: data.walletId,
-      quote_spent: data.quoteSpent ?? null, quote_asset: data.quoteAsset ?? null, average_price_usd: data.averagePriceUsd ?? null,
-      tx_hash: data.txHash ?? null, acquired_at: data.acquiredAt ?? new Date().toISOString(), created_by: context.userId,
+    const quote = { quoteSpent: data.quoteSpent?.toString(), quoteAsset: data.quoteAsset, averagePriceUsd: data.averagePriceUsd?.toString() };
+    const { error } = await admin.from("treasury_ledger").insert({
+      entry_type: "acquisition", category: data.source, amount: Math.trunc(data.coins * 1e8) / 1e8, wallet_id: data.walletId,
+      details: Object.fromEntries(Object.entries(quote).filter(([, v]) => v !== undefined)),
+      tx_hash: data.txHash ?? null, occurred_at: data.acquiredAt ?? new Date().toISOString(), created_by: context.userId,
     });
     if (error) return fail(error.code === "23505" ? "That transaction is already recorded." : "Couldn't save the acquisition.");
     return { ok: true };
