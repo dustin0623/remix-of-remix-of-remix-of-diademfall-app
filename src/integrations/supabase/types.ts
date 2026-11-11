@@ -291,6 +291,70 @@ export type Database = {
         }
         Relationships: []
       }
+      market_listings: {
+        Row: {
+          asset_id: string
+          buyer_id: string | null
+          card_id: string
+          completed_at: string | null
+          created_at: string
+          fee_coins: number | null
+          foil: string
+          id: string
+          price_coins: number
+          seller_id: string
+          status: string
+        }
+        Insert: {
+          asset_id: string
+          buyer_id?: string | null
+          card_id: string
+          completed_at?: string | null
+          created_at?: string
+          fee_coins?: number | null
+          foil: string
+          id?: string
+          price_coins: number
+          seller_id: string
+          status?: string
+        }
+        Update: {
+          asset_id?: string
+          buyer_id?: string | null
+          card_id?: string
+          completed_at?: string | null
+          created_at?: string
+          fee_coins?: number | null
+          foil?: string
+          id?: string
+          price_coins?: number
+          seller_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "market_listings_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "card_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "market_listings_buyer_id_fkey"
+            columns: ["buyer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "market_listings_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       match_players: {
         Row: {
           joined_at: string
@@ -975,6 +1039,140 @@ export type Database = {
         }
         Relationships: []
       }
+      rental_contracts: {
+        Row: {
+          asset_id: string
+          card_id: string
+          completed_at: string | null
+          days: number
+          ends_at: string
+          fee_coins: number
+          foil: string
+          gross_coins: number
+          id: string
+          listing_id: string
+          owner_id: string
+          renter_id: string
+          starts_at: string
+          status: string
+        }
+        Insert: {
+          asset_id: string
+          card_id: string
+          completed_at?: string | null
+          days: number
+          ends_at: string
+          fee_coins: number
+          foil: string
+          gross_coins: number
+          id?: string
+          listing_id: string
+          owner_id: string
+          renter_id: string
+          starts_at?: string
+          status?: string
+        }
+        Update: {
+          asset_id?: string
+          card_id?: string
+          completed_at?: string | null
+          days?: number
+          ends_at?: string
+          fee_coins?: number
+          foil?: string
+          gross_coins?: number
+          id?: string
+          listing_id?: string
+          owner_id?: string
+          renter_id?: string
+          starts_at?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rental_contracts_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "card_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "rental_contracts_listing_id_fkey"
+            columns: ["listing_id"]
+            isOneToOne: false
+            referencedRelation: "rental_listings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "rental_contracts_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "rental_contracts_renter_id_fkey"
+            columns: ["renter_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      rental_listings: {
+        Row: {
+          asset_id: string
+          card_id: string
+          created_at: string
+          foil: string
+          id: string
+          maximum_days: number
+          minimum_days: number
+          owner_id: string
+          price_coins_per_day: number
+          status: string
+        }
+        Insert: {
+          asset_id: string
+          card_id: string
+          created_at?: string
+          foil: string
+          id?: string
+          maximum_days?: number
+          minimum_days?: number
+          owner_id: string
+          price_coins_per_day: number
+          status?: string
+        }
+        Update: {
+          asset_id?: string
+          card_id?: string
+          created_at?: string
+          foil?: string
+          id?: string
+          maximum_days?: number
+          minimum_days?: number
+          owner_id?: string
+          price_coins_per_day?: number
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rental_listings_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "card_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "rental_listings_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reward_days: {
         Row: {
           activity_pool: number
@@ -1099,6 +1297,175 @@ export type Database = {
           },
         ]
       }
+      token_acquisitions: {
+        Row: {
+          acquired_at: string
+          average_price_usd: number | null
+          coins_acquired: number
+          created_by: string | null
+          destination_wallet_id: string
+          id: string
+          metadata: Json
+          quote_asset: string | null
+          quote_spent: number | null
+          source: string
+          tx_hash: string | null
+        }
+        Insert: {
+          acquired_at?: string
+          average_price_usd?: number | null
+          coins_acquired: number
+          created_by?: string | null
+          destination_wallet_id: string
+          id?: string
+          metadata?: Json
+          quote_asset?: string | null
+          quote_spent?: number | null
+          source: string
+          tx_hash?: string | null
+        }
+        Update: {
+          acquired_at?: string
+          average_price_usd?: number | null
+          coins_acquired?: number
+          created_by?: string | null
+          destination_wallet_id?: string
+          id?: string
+          metadata?: Json
+          quote_asset?: string | null
+          quote_spent?: number | null
+          source?: string
+          tx_hash?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "token_acquisitions_destination_wallet_id_fkey"
+            columns: ["destination_wallet_id"]
+            isOneToOne: false
+            referencedRelation: "treasury_wallets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      treasury_flows: {
+        Row: {
+          account: string
+          amount: number
+          created_at: string
+          flow_type: string
+          id: string
+          reference_id: string
+          reference_type: string | null
+        }
+        Insert: {
+          account: string
+          amount: number
+          created_at?: string
+          flow_type: string
+          id?: string
+          reference_id: string
+          reference_type?: string | null
+        }
+        Update: {
+          account?: string
+          amount?: number
+          created_at?: string
+          flow_type?: string
+          id?: string
+          reference_id?: string
+          reference_type?: string | null
+        }
+        Relationships: []
+      }
+      treasury_snapshots: {
+        Row: {
+          captured_at: string
+          coin_balance: number
+          created_by: string | null
+          id: string
+          quote_value_usd: number | null
+          source: string
+          wallet_id: string
+        }
+        Insert: {
+          captured_at?: string
+          coin_balance: number
+          created_by?: string | null
+          id?: string
+          quote_value_usd?: number | null
+          source?: string
+          wallet_id: string
+        }
+        Update: {
+          captured_at?: string
+          coin_balance?: number
+          created_by?: string | null
+          id?: string
+          quote_value_usd?: number | null
+          source?: string
+          wallet_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "treasury_snapshots_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "treasury_wallets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      treasury_wallets: {
+        Row: {
+          active: boolean
+          address: string
+          chain: string
+          created_at: string
+          id: string
+          label: string
+          public: boolean
+          wallet_type: string
+        }
+        Insert: {
+          active?: boolean
+          address: string
+          chain?: string
+          created_at?: string
+          id?: string
+          label: string
+          public?: boolean
+          wallet_type: string
+        }
+        Update: {
+          active?: boolean
+          address?: string
+          chain?: string
+          created_at?: string
+          id?: string
+          label?: string
+          public?: boolean
+          wallet_type?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -1107,6 +1474,7 @@ export type Database = {
       _try_match_ticket: { Args: { p_ticket_id: string }; Returns: string }
       accrue_match_rewards: { Args: { p_match_id: string }; Returns: undefined }
       both_teams_locked: { Args: { p_match_id: string }; Returns: boolean }
+      calculate_reward_budget: { Args: { p_month: string }; Returns: Json }
       cancel_matchmaking: { Args: never; Returns: undefined }
       commit_pack_opening: {
         Args: {
@@ -1118,6 +1486,7 @@ export type Database = {
         }
         Returns: Json
       }
+      expire_rentals: { Args: never; Returns: number }
       expire_stale_matches: { Args: never; Returns: number }
       finalize_match: {
         Args: {
@@ -1128,6 +1497,13 @@ export type Database = {
           p_result: Json
           p_result_hash: string
           p_winner_player_id: string
+        }
+        Returns: boolean
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
         }
         Returns: boolean
       }
@@ -1168,7 +1544,23 @@ export type Database = {
         }
         Returns: boolean
       }
+      market_buy: {
+        Args: { p_buyer_id: string; p_listing_id: string }
+        Returns: Json
+      }
+      market_cancel_listing: {
+        Args: { p_listing_id: string; p_player_id: string }
+        Returns: boolean
+      }
+      market_list_card: {
+        Args: { p_asset_id: string; p_player_id: string; p_price: number }
+        Returns: string
+      }
       my_rewards_today: { Args: never; Returns: Json }
+      publish_calculated_reward_budget: {
+        Args: { p_month: string }
+        Returns: Json
+      }
       publish_reward_budget: {
         Args: {
           p_month: string
@@ -1199,9 +1591,31 @@ export type Database = {
         }
         Returns: Json
       }
+      record_trading_fee: {
+        Args: { p_flow_type: string; p_gross: number; p_reference_id: string }
+        Returns: number
+      }
       refresh_player_card: {
         Args: { p_card_id: string; p_player_id: string }
         Returns: undefined
+      }
+      rental_cancel_listing: {
+        Args: { p_listing_id: string; p_player_id: string }
+        Returns: boolean
+      }
+      rental_list_card: {
+        Args: {
+          p_asset_id: string
+          p_maximum_days: number
+          p_minimum_days: number
+          p_player_id: string
+          p_price_per_day: number
+        }
+        Returns: string
+      }
+      rental_rent: {
+        Args: { p_days: number; p_listing_id: string; p_renter_id: string }
+        Returns: Json
       }
       retry_matchmaking: { Args: never; Returns: Json }
       reveal_pack_opening: {
@@ -1232,9 +1646,14 @@ export type Database = {
         Args: { p_at: string; p_player_id: string }
         Returns: boolean
       }
+      split_trading_fee: {
+        Args: { p_gross: number }
+        Returns: Record<string, unknown>
+      }
+      treasury_month_report: { Args: { p_month: string }; Returns: Json }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1361,6 +1780,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin"],
+    },
   },
 } as const
