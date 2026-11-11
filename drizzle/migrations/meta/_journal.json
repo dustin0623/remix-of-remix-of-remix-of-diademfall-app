@@ -1,27 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1794407940869,
-      "tag": "0000_wayfarer_cards",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1794409353210,
-      "tag": "0001_card_combining",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1794409630368,
-      "tag": "0002_restore_signup_trigger",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
