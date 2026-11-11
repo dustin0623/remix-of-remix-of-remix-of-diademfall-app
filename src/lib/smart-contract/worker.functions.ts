@@ -6,12 +6,13 @@ import { z } from "zod";
  * Only active in mock mode (no MONGODB_URI); live mode uses a real worker process.
  */
 export const runTransactionBatch = createServerFn({ method: "POST" }).handler(async () => {
-  const { getDatabaseMode } = await import("@/lib/config/database");
-  if (getDatabaseMode() !== "mock") return { processed: 0, skipped: true };
+  const { getDatabaseMode, getTransactionStore } = await import("@/lib/config/database");
+  // The mock worker must never touch the real Cloud queue (it would fake-succeed deposits/withdrawals).
+  if (getDatabaseMode() !== "mock" || getTransactionStore() !== "mock") return { processed: 0, skipped: true };
   const { createPollingContext } = await import("../../../server/smart-contract/polling/context");
   const { pollOnce } = await import("../../../server/smart-contract/polling/transaction-poller");
-  const { createProcessor, liveRegistry, mockSuccess } = await import("../../../server/smart-contract/processor");
-  const processed = await pollOnce(createPollingContext({ workerId: "dev-worker" }), createProcessor(liveRegistry, mockSuccess));
+  const { createProcessor, mockSuccess } = await import("../../../server/smart-contract/processor");
+  const processed = await pollOnce(createPollingContext({ workerId: "dev-worker" }), createProcessor({}, mockSuccess));
   return { processed, skipped: false };
 });
 
