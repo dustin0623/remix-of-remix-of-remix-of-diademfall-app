@@ -29,6 +29,27 @@
       "when": 1794427123126,
       "tag": "0003_drop_old_treasury_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794428323657,
+      "tag": "0004_fold_matches_rewards_constants",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794428480866,
+      "tag": "0005_matches_single_table_procedures",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794428610147,
+      "tag": "0006_derived_rewards_supply_reserve",
+      "breakpoints": true
     }
   ]
 }

@@ -174,7 +174,8 @@ export type Database = {
           circulating_supply: number | null
           created_at: string
           definition: Json
-          game_version_id: string
+          game_version: string | null
+          game_version_id: string | null
           id: string
           level_cap: number
           mana: number
@@ -194,7 +195,8 @@ export type Database = {
           circulating_supply?: number | null
           created_at?: string
           definition?: Json
-          game_version_id: string
+          game_version?: string | null
+          game_version_id?: string | null
           id: string
           level_cap: number
           mana: number
@@ -214,7 +216,8 @@ export type Database = {
           circulating_supply?: number | null
           created_at?: string
           definition?: Json
-          game_version_id?: string
+          game_version?: string | null
+          game_version_id?: string | null
           id?: string
           level_cap?: number
           mana?: number
@@ -693,12 +696,25 @@ export type Database = {
           completed_at: string | null
           created_at: string
           engine_version: string
-          game_version_id: string
+          game_version: string | null
+          game_version_id: string | null
           id: string
           input_hash: string | null
           mana_cap: number
           mode: string
           outcome: string | null
+          p1_rating_after: number | null
+          p1_rating_before: number | null
+          p1_result: string | null
+          p1_reward: Json | null
+          p1_team: Json | null
+          p2_rating_after: number | null
+          p2_rating_before: number | null
+          p2_result: string | null
+          p2_reward: Json | null
+          p2_team: Json | null
+          player1_id: string | null
+          player2_id: string | null
           region: string
           replay: Json | null
           result: Json | null
@@ -715,12 +731,25 @@ export type Database = {
           completed_at?: string | null
           created_at?: string
           engine_version: string
-          game_version_id: string
+          game_version?: string | null
+          game_version_id?: string | null
           id?: string
           input_hash?: string | null
           mana_cap: number
           mode: string
           outcome?: string | null
+          p1_rating_after?: number | null
+          p1_rating_before?: number | null
+          p1_result?: string | null
+          p1_reward?: Json | null
+          p1_team?: Json | null
+          p2_rating_after?: number | null
+          p2_rating_before?: number | null
+          p2_result?: string | null
+          p2_reward?: Json | null
+          p2_team?: Json | null
+          player1_id?: string | null
+          player2_id?: string | null
           region?: string
           replay?: Json | null
           result?: Json | null
@@ -737,12 +766,25 @@ export type Database = {
           completed_at?: string | null
           created_at?: string
           engine_version?: string
-          game_version_id?: string
+          game_version?: string | null
+          game_version_id?: string | null
           id?: string
           input_hash?: string | null
           mana_cap?: number
           mode?: string
           outcome?: string | null
+          p1_rating_after?: number | null
+          p1_rating_before?: number | null
+          p1_result?: string | null
+          p1_reward?: Json | null
+          p1_team?: Json | null
+          p2_rating_after?: number | null
+          p2_rating_before?: number | null
+          p2_result?: string | null
+          p2_reward?: Json | null
+          p2_team?: Json | null
+          player1_id?: string | null
+          player2_id?: string | null
           region?: string
           replay?: Json | null
           result?: Json | null
@@ -764,6 +806,20 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "matches_player1_id_fkey"
+            columns: ["player1_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matches_player2_id_fkey"
+            columns: ["player2_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "matches_winner_player_id_fkey"
             columns: ["winner_player_id"]
             isOneToOne: false
@@ -776,7 +832,8 @@ export type Database = {
         Row: {
           created_at: string
           expires_at: string
-          game_version_id: string
+          game_version: string | null
+          game_version_id: string | null
           id: string
           match_id: string | null
           matched_at: string | null
@@ -791,7 +848,8 @@ export type Database = {
         Insert: {
           created_at?: string
           expires_at?: string
-          game_version_id: string
+          game_version?: string | null
+          game_version_id?: string | null
           id?: string
           match_id?: string | null
           matched_at?: string | null
@@ -806,7 +864,8 @@ export type Database = {
         Update: {
           created_at?: string
           expires_at?: string
-          game_version_id?: string
+          game_version?: string | null
+          game_version_id?: string | null
           id?: string
           match_id?: string | null
           matched_at?: string | null
@@ -1664,6 +1723,15 @@ export type Database = {
         }
         Returns: boolean
       }
+      game_version_table: {
+        Args: never
+        Returns: {
+          catalog_hash: string
+          engine_version: string
+          status: string
+          version: string
+        }[]
+      }
       grant_division_chests: {
         Args: {
           p_after: number
@@ -1742,6 +1810,31 @@ export type Database = {
         }
         Returns: Json
       }
+      pack_edition_table: {
+        Args: never
+        Returns: {
+          active: boolean
+          maximum_packs: number
+          price_credits: number
+          public_allocation: number
+          reserve_allocation: number
+          set_id: string
+        }[]
+      }
+      pack_supply_summary: {
+        Args: never
+        Returns: {
+          active: boolean
+          maximum_packs: number
+          opened_packs: number
+          price_credits: number
+          public_allocation: number
+          reserve_allocation: number
+          reserve_issued: number
+          set_id: string
+          sold_packs: number
+        }[]
+      }
       publish_calculated_reward_budget: {
         Args: { p_month: string }
         Returns: Json
@@ -1753,6 +1846,20 @@ export type Database = {
           p_prior_month_acquired?: number
         }
         Returns: Json
+      }
+      published_budget: {
+        Args: { p_month: string }
+        Returns: {
+          activity_pool: number
+          calculated_budget: number
+          leaderboard_pool: number
+          league_pool: number
+          match_pool: number
+          month: string
+          opening_reward_vault: number
+          prior_month_acquired: number
+          published_at: string
+        }[]
       }
       purchase_packs: {
         Args: {
@@ -1859,13 +1966,38 @@ export type Database = {
         }
         Returns: number
       }
+      reward_day_players: {
+        Args: { p_day: string }
+        Returns: {
+          activity_points: number
+          activity_shares: number
+          banners: string[]
+          daily_multiplier: number
+          eligible_wins: number
+          low_mana_win: boolean
+          match_shares: number
+          player_id: string
+          rulesets: string[]
+        }[]
+      }
       reward_league: {
         Args: { p_rating: number }
         Returns: Record<string, unknown>
       }
-      seed_legionnaire_reserve: {
-        Args: { p_counts: Json; p_packs: number }
-        Returns: boolean
+      reward_reserve_remaining: {
+        Args: never
+        Returns: {
+          original_units: number
+          rarity: string
+          remaining_units: number
+        }[]
+      }
+      reward_reserve_table: {
+        Args: never
+        Returns: {
+          original_units: number
+          rarity: string
+        }[]
       }
       settle_due_reward_days: { Args: never; Returns: number }
       settle_reward_day: { Args: { p_day: string }; Returns: Json }
