@@ -1,6 +1,6 @@
 /**
  * SQL copies of game constants the database procedures need (ranked divisions, Card Essence level table,
- * the ranked battle-rule pool). These are not tables: each is an IMMUTABLE SQL function generated from the
+ * the ranked battle-rule pool, game versions, pack editions, the Legionnaire reward reserve). These are not tables: each is an IMMUTABLE SQL function generated from the
  * TS constants below and pasted into a migration. sql-constants.test.ts fails when the newest migration
  * defining a function no longer matches the TS source, so a constant change always ships a new migration.
  */
@@ -8,7 +8,10 @@ import { CE_REQUIREMENTS } from "./combining";
 import { DIVISIONS } from "./divisions";
 import { RULESETS } from "./catalog/rulesets";
 import { rulesetSelectionWeight } from "./rule-support";
-import type { Foil, Rarity } from "./packs";
+import { PACK_RULES, RARITY_ORDER, type Foil, type Rarity } from "./packs";
+import { CATALOG_VERSION, LEGACY_CATALOG_VERSION, THREE_PACKS_CATALOG_VERSION, catalogHash } from "./catalogs";
+import { ENGINE_VERSION } from "./ranked";
+import { reserveComposition } from "./chests";
 
 const lit = (v: string | null) => (v === null ? "NULL" : `'${v.replace(/'/g, "''")}'`);
 const arr = (v: readonly string[]) => `'{${v.join(",")}}'`;
@@ -61,8 +64,58 @@ AS $fn$
 $fn$;`;
 }
 
+/** public.game_version_table(): every catalog version matches can reference; exactly one is active (new play). */
+export function gameVersionTableSql(): string {
+  const rows = [
+    `(${lit(CATALOG_VERSION)}, ${lit(ENGINE_VERSION)}, 'active', ${lit(catalogHash(rulesetSelectionWeight))})`,
+    `(${lit(THREE_PACKS_CATALOG_VERSION)}, ${lit(ENGINE_VERSION)}, 'retired', NULL)`,
+    `(${lit(LEGACY_CATALOG_VERSION)}, ${lit(ENGINE_VERSION)}, 'retired', NULL)`,
+  ];
+  return `CREATE OR REPLACE FUNCTION public.game_version_table()
+ RETURNS TABLE(version text, engine_version text, status text, catalog_hash text)
+ LANGUAGE sql IMMUTABLE PARALLEL SAFE SET search_path TO ''
+AS $fn$
+  SELECT v.version::text, v.engine_version::text, v.status::text, v.catalog_hash::text
+  FROM (VALUES
+    ${rows.join(",\n    ")}
+  ) AS v(version, engine_version, status, catalog_hash)
+$fn$;`;
+}
+
+/** public.pack_edition_table(): pack editions on sale with price and fixed caps (sold/opened counts are derived). */
+export function packEditionTableSql(): string {
+  const rows = PACK_RULES.editions.map((e) => `(${lit(e.id)}, ${PACK_RULES.priceCredits}, ${e.maximumPacks}, ${e.publicSale}, ${e.reserve}, true)`);
+  return `CREATE OR REPLACE FUNCTION public.pack_edition_table()
+ RETURNS TABLE(set_id text, price_credits bigint, maximum_packs bigint, public_allocation bigint, reserve_allocation bigint, active boolean)
+ LANGUAGE sql IMMUTABLE PARALLEL SAFE SET search_path TO ''
+AS $fn$
+  SELECT v.set_id::text, v.price_credits::bigint, v.maximum_packs::bigint, v.public_allocation::bigint, v.reserve_allocation::bigint, v.active::boolean
+  FROM (VALUES
+    ${rows.join(",\n    ")}
+  ) AS v(set_id, price_credits, maximum_packs, public_allocation, reserve_allocation, active)
+$fn$;`;
+}
+
+/** public.reward_reserve_table(): reward-card units per rarity in the Legionnaire reserve (remaining = minus chest cards). */
+export function rewardReserveTableSql(): string {
+  const counts = reserveComposition();
+  const rows = RARITY_ORDER.map((r) => `(${lit(r)}, ${counts[r]})`);
+  return `CREATE OR REPLACE FUNCTION public.reward_reserve_table()
+ RETURNS TABLE(rarity text, original_units integer)
+ LANGUAGE sql IMMUTABLE PARALLEL SAFE SET search_path TO ''
+AS $fn$
+  SELECT v.rarity::text, v.original_units::integer
+  FROM (VALUES
+    ${rows.join(",\n    ")}
+  ) AS v(rarity, original_units)
+$fn$;`;
+}
+
 export const SQL_CONSTANT_FUNCTIONS = {
   ranked_division_table: rankedDivisionTableSql,
   card_level_requirement_table: cardLevelRequirementTableSql,
   ranked_ruleset_pool: rankedRulesetPoolSql,
+  game_version_table: gameVersionTableSql,
+  pack_edition_table: packEditionTableSql,
+  reward_reserve_table: rewardReserveTableSql,
 } as const;
