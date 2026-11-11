@@ -31,9 +31,9 @@ export const getSeasonStatus = createServerFn({ method: "POST" })
     const [{ data: r }, { data: chests }] = await Promise.all([
       supabase.from("player_ratings").select("rating, wins, losses, draws, win_streak")
         .eq("player_id", userId).eq("season_key", s.key).eq("mode", "ranked").maybeSingle(),
-      supabase.from("division_chests")
-        .select("id, chest_type, division_id, status, commit_hash, server_seed, client_seed, reserve_snapshot, results, coin_shares::text, credits, created_at")
-        .eq("player_id", userId).eq("season_key", s.key).order("created_at").order("ordinal"),
+      supabase.from("item_openings")
+        .select("id, chest_type:item_id, division_id, status, commit_hash, server_seed, client_seed, reserve_snapshot, results, coin_shares::text, credits, created_at")
+        .eq("player_id", userId).eq("item_type", "chest").eq("season_key", s.key).order("created_at").order("ordinal"),
     ]);
     const rows: ChestRow[] = (chests ?? []).map((c) => ({
       id: c.id, type: c.chest_type as ChestType, divisionId: c.division_id, status: c.status as ChestRow["status"],

@@ -28,8 +28,8 @@ async function readReserve(admin: Admin): Promise<Reserve> {
  */
 export async function openChestTrusted(admin: Admin, playerId: string, chestId: string, clientSeed: string, auto = false):
   Promise<{ ok: true; chest: OpenedChest } | { ok: false; error: string }> {
-  const { data: c } = await admin.from("division_chests").select("id, player_id, chest_type, status, algorithm")
-    .eq("id", chestId).eq("player_id", playerId).maybeSingle();
+  const { data: c } = await admin.from("item_openings").select("id, player_id, chest_type:item_id, status, algorithm")
+    .eq("id", chestId).eq("item_type", "chest").eq("player_id", playerId).maybeSingle();
   if (!c) return { ok: false, error: "Chest not found." };
   if (c.algorithm !== CHEST_ALGORITHM) return { ok: false, error: "This chest uses an unknown algorithm." };
   for (let attempt = 0; attempt < 4; attempt++) {
@@ -64,7 +64,7 @@ export async function openChestTrusted(admin: Admin, playerId: string, chestId: 
 export async function rolloverSeasonIfDue(admin: Admin) {
   const { data: s } = await admin.from("ranked_seasons").select("key, ends_at").eq("status", "active").maybeSingle();
   if (!s || new Date(s.ends_at).getTime() > Date.now()) return false;
-  const { data: open } = await admin.from("division_chests").select("id, player_id").eq("season_key", s.key).eq("status", "unopened");
+  const { data: open } = await admin.from("item_openings").select("id, player_id").eq("item_type", "chest").eq("season_key", s.key).eq("status", "unopened");
   for (const ch of open ?? []) await openChestTrusted(admin, ch.player_id, ch.id, "season-close", true);
   const { error } = await admin.rpc("close_ranked_season", { p_key: s.key, p_pool_share: CHEST_COIN_POOL_SHARE });
   if (error) {

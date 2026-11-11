@@ -148,7 +148,7 @@ export const processTransferQueue = createServerFn({ method: "POST" })
   .handler(async ({ context }) => {
     const { getTransactionStore } = await import("@/lib/config/database");
     if (getTransactionStore() !== "cloud") return { processed: 0 };
-    const { data: mine } = await context.supabase.from("transactions_pending").select("transaction_id").limit(1);
+    const { data: mine } = await context.supabase.from("wallet_transfers").select("transaction_id").in("status", ["PENDING", "PROCESSING"]).limit(1);
     if (!mine?.length) return { processed: 0 };
     const { runLiveTransferCycle } = await import("./worker.server");
     const processed = await runLiveTransferCycle(`wallet-${context.userId.slice(0, 8)}`);

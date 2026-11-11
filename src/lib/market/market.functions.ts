@@ -37,15 +37,15 @@ export const getMarketState = createServerFn({ method: "POST" })
     const admin = await loadAdmin();
     const { error: expErr } = await admin.rpc("expire_rentals");
     if (expErr) console.error("[market] expire_rentals failed", expErr);
-    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id, created_at, asset:player_cards(essence, level), profiles!market_listings_seller_id_fkey(username, display_name)";
-    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, asset:player_cards(essence, level), profiles!rental_listings_owner_id_fkey(username, display_name)";
+    const saleCols = "id, asset_id, card_id, foil, price_coins::text, seller_id:owner_id, created_at, asset:player_cards(essence, level), profiles!card_listings_owner_id_fkey(username, display_name)";
+    const rentCols = "id, asset_id, card_id, foil, price_coins_per_day::text, minimum_days, maximum_days, owner_id, status, asset:player_cards(essence, level), profiles!card_listings_owner_id_fkey(username, display_name)";
     const contractCols = "id, card_id, foil, days, ends_at, gross_coins::text, asset:player_cards(essence, level), owner:profiles!rental_contracts_owner_id_fkey(username, display_name), renter:profiles!rental_contracts_renter_id_fkey(username, display_name)";
     const [sales, rentals, assets, mySales, myRentals, renting, rentedOut] = await Promise.all([
-      supabase.from("market_listings").select(saleCols).eq("status", "active").neq("seller_id", userId).order("created_at", { ascending: false }).limit(200),
-      supabase.from("rental_listings").select(rentCols).eq("status", "active").neq("owner_id", userId).order("created_at", { ascending: false }).limit(200),
+      supabase.from("card_listings").select(saleCols).eq("listing_type", "sale").eq("status", "active").neq("owner_id", userId).order("created_at", { ascending: false }).limit(200),
+      supabase.from("card_listings").select(rentCols).eq("listing_type", "rental").eq("status", "active").neq("owner_id", userId).order("created_at", { ascending: false }).limit(200),
       supabase.from("player_cards").select("id, card_id, foil, essence, level, status").eq("player_id", userId).eq("is_combined", false).neq("status", "burned").order("created_at", { ascending: false }).limit(1000),
-      supabase.from("market_listings").select(saleCols).eq("status", "active").eq("seller_id", userId).order("created_at", { ascending: false }),
-      supabase.from("rental_listings").select(rentCols).in("status", ["active", "rented"]).eq("owner_id", userId).order("created_at", { ascending: false }),
+      supabase.from("card_listings").select(saleCols).eq("listing_type", "sale").eq("status", "active").eq("owner_id", userId).order("created_at", { ascending: false }),
+      supabase.from("card_listings").select(rentCols).eq("listing_type", "rental").in("status", ["active", "rented"]).eq("owner_id", userId).order("created_at", { ascending: false }),
       supabase.from("rental_contracts").select(contractCols).eq("status", "active").eq("renter_id", userId).order("ends_at"),
       supabase.from("rental_contracts").select(contractCols).eq("status", "active").eq("owner_id", userId).order("ends_at"),
     ]);
