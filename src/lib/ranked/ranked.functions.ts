@@ -30,7 +30,7 @@ export const joinRankedQueue = createServerFn({ method: "POST" })
   .handler(async ({ context }) => {
     // Owned cards only: a ranked team needs at least one owned summoner and one owned troop.
     const { data: mine } = await context.supabase.from("player_card_stacks").select("card_id, copies").eq("player_id", context.userId).gt("copies", 0);
-    const ids = (mine ?? []).map((c) => c.card_id);
+    const ids = (mine ?? []).flatMap((c) => (c.card_id ? [c.card_id] : []));
     if (!ids.some((id) => SUMMONER_IDS.has(id)) || !ids.some((id) => !SUMMONER_IDS.has(id)))
       return { ok: false as const, error: "You need at least one summoner and one troop. Open packs in the Shop first." };
     const admin = await loadAdmin();
@@ -137,7 +137,7 @@ export const getRankedMatch = createServerFn({ method: "POST" })
     let owned: Record<string, number> = {};
     if (m.status === "team_selection" && !mySub) {
       const { data: cards } = await supabase.from("player_card_stacks").select("card_id, level, copies").eq("player_id", userId);
-      owned = Object.fromEntries((cards ?? []).filter((c) => c.copies > 0).map((c) => [c.card_id, c.level]));
+      owned = Object.fromEntries((cards ?? []).filter((c) => c.card_id && (c.copies ?? 0) > 0).map((c) => [c.card_id!, c.level ?? 1]));
     }
     const formation = (mySub?.formation ?? []) as { cardId: string; position: number }[];
     const result = (m.result ?? null) as { reason?: string } | null;
@@ -196,7 +196,7 @@ export const submitRankedTeam = createServerFn({ method: "POST" })
     const type = new Map((cards ?? []).map((c) => [c.id, c.card_type]));
     if (type.get(pick.summonerId) !== "summoner") return fail("That summoner isn't available.");
     if (pick.unitIds.some((id) => type.get(id) !== "unit")) return fail("One of those units isn't available.");
-    const levels = Object.fromEntries((owned ?? []).filter((c) => c.copies > 0).map((c) => [c.card_id, c.level]));
+    const levels = Object.fromEntries((owned ?? []).filter((c) => c.card_id && (c.copies ?? 0) > 0).map((c) => [c.card_id!, c.level ?? 1]));
     if (ids.some((id) => levels[id] === undefined)) return fail("You don't own every card in that team.");
 
     const team = lockedTeam({ matchId: m.id, playerId: userId, side: me.side as 1 | 2, pick, levels, rulesets: m.ruleset_ids });
