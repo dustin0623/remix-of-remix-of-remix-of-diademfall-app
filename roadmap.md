@@ -36,7 +36,8 @@
 - [x] No starter cards: players own only cards opened from packs; ranked needs an owned summoner + troop
 - [x] Credits + Coins balances and ledger (server-only writes, idempotent) + header wallet
 - [x] Packs: supply caps, buy with Credits, commit-reveal opening, 5 card assets with Regular/Gold foil, Shop + My cards page
-- [ ] Card combining/levelling (needs combine thresholds — not in the v4 docs)
+- [x] Card combining (Card Essence): Regular/Gold CE tables, permanent server-side combine + audit, summoner-gated troop levels in ranked, CE/level/price-per-CE on market listings, card supply line in the Shop
+- [x] Restored the sign-up setup (profile, rating, wallet) that the remix had lost
 - [ ] A way for new players to get their first Credits or packs (Coin conversion needs an oracle; needs user decision)
 - [x] Ranked reward shares + Reward Energy; daily settlement of match and daily-activity pools (Today's rewards panel, match reward line, daily job)
 - [ ] First monthly reward budget (operator records the reward vault balance and publishes it on the Treasury admin page)
