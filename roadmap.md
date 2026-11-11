@@ -48,6 +48,13 @@
 - [ ] Coin to Credit conversion with price oracle (needs oracle choice)
 - [ ] SOL/USDC deposits for Credits (later; never card/fiat payments)
 
+## Wayfarers (docs/diademfall-complete-v5 — next build)
+- [x] v5 design package in docs (12 Wayfarer troops, 6 abilities, Closed Ranks / Open Contract; economy unchanged)
+- [ ] New catalog version with Wayfarers; freeze the current catalog for old replays
+- [ ] Wayfarer team limit (2, or 0/4 under Closed Ranks/Open Contract) in drafts, saved teams and ranked validation
+- [ ] Engine support for the 6 Wayfarer abilities, then enable the 2 new rulesets
+- [ ] Add 4 Wayfarers to each pack and update the card database
+
 ## Later
 - [ ] Add the Solana treasury key + RPC key as secrets before server-signed payouts
 

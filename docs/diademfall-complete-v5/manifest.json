@@ -1,0 +1,62 @@
+{
+  "title": "Diademfall complete catalog v2",
+  "version": "three-packs-economy-wayfarers-1.0.0",
+  "prototypeStatus": "prototype-v2",
+  "counts": {
+    "sets": 3,
+    "banners": 6,
+    "summoners": 30,
+    "bannerTroops": 108,
+    "wayfarerTroops": 12,
+    "troops": 120,
+    "abilities": 42,
+    "rulesets": 32,
+    "cards": 150
+  },
+  "packCounts": {
+    "ancient": {
+      "summoners": 6,
+      "troops": 40,
+      "total": 46
+    },
+    "oath": {
+      "summoners": 12,
+      "troops": 40,
+      "total": 52
+    },
+    "legionnaire": {
+      "summoners": 12,
+      "troops": 40,
+      "total": 52
+    }
+  },
+  "rarityCaps": {
+    "common": 10,
+    "uncommon": 8,
+    "rare": 6,
+    "epic": 4,
+    "legendary": 3
+  },
+  "generated": "2026-11-11",
+  "economy": {
+    "externalTokenSupply": 1000000000,
+    "projectLaunchHoldingsRange": [
+      50000000,
+      100000000
+    ],
+    "additionalAcquisitionTarget": [
+      100000000,
+      200000000
+    ],
+    "monthlyRewardTarget": [
+      25000000,
+      50000000
+    ],
+    "budgetModel": "treasury-funded-12-month-runway"
+  },
+  "teamComposition": {
+    "maximumTroops": 6,
+    "standardMaximumWayfarers": 2,
+    "wayfarerSummoners": 0
+  }
+}

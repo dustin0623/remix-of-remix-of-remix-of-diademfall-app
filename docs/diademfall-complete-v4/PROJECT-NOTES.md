@@ -1,5 +1,7 @@
 # How v4 maps onto this project
 
+> Superseded by `docs/diademfall-complete-v5` (adds Wayfarers; economy unchanged). The game and tests still read this folder until v5 is built in; see the v5 PROJECT-NOTES.
+
 v4 = the v2 card catalog (byte-identical: 30 summoners, 108 troops, 36 abilities, 30 rulesets, 138 cards) **plus** the economy layer in `economy/`, `engine/economy.ts`, `engine/treasury-economy.ts`, `supabase/002_economy.sql` and `supabase/003_treasury_funded_rewards.sql`.
 
 - **Catalog:** nothing to migrate. `src/game/catalog/` already matches `engine/` here; the in-game catalog label stays `three-packs-1.0.0` so stored ranked result hashes keep verifying. The manifest's `three-packs-economy-2.0.0` names the package, not a new card catalog.
