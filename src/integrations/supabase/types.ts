@@ -75,8 +75,9 @@ export type Database = {
       cards: {
         Row: {
           active: boolean
+          affiliation: string
           art_path: string | null
-          banner_id: string
+          banner_id: string | null
           card_type: string
           created_at: string
           definition: Json
@@ -90,8 +91,9 @@ export type Database = {
         }
         Insert: {
           active?: boolean
+          affiliation?: string
           art_path?: string | null
-          banner_id: string
+          banner_id?: string | null
           card_type: string
           created_at?: string
           definition?: Json
@@ -105,8 +107,9 @@ export type Database = {
         }
         Update: {
           active?: boolean
+          affiliation?: string
           art_path?: string | null
-          banner_id?: string
+          banner_id?: string | null
           card_type?: string
           created_at?: string
           definition?: Json
