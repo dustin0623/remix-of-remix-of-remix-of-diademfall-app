@@ -36,7 +36,7 @@ export const getSeasonStatus = createServerFn({ method: "POST" })
         .eq("player_id", userId).eq("item_type", "chest").eq("season_key", s.key).order("created_at").order("ordinal"),
     ]);
     const rows: ChestRow[] = (chests ?? []).map((c) => ({
-      id: c.id, type: c.chest_type as ChestType, divisionId: c.division_id, status: c.status as ChestRow["status"],
+      id: c.id, type: c.chest_type as ChestType, divisionId: c.division_id ?? "", status: c.status as ChestRow["status"],
       commitHash: c.commit_hash, serverSeed: c.server_seed, clientSeed: c.client_seed,
       reserve: (c.reserve_snapshot ?? null) as unknown as Reserve | null,
       rolls: (c.results ?? null) as unknown as ChestRow["rolls"],
