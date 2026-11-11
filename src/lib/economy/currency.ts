@@ -25,6 +25,12 @@ export const ENTRY_TYPE_LABELS: Record<string, string> = {
   rental_payment: "Card rental",
   sol_deposit: "SOL deposit",
   usdc_deposit: "USDC deposit",
+  coin_deposit: "Coin deposit",
+  test_deposit: "Test deposit",
+  withdrawal: "Withdrawal",
+  withdrawal_refund: "Withdrawal refund",
+  chest_credits: "Chest Credits",
+  chest_reward: "Chest Coin share",
   adjustment: "Adjustment",
 };
 

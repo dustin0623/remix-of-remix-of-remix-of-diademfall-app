@@ -16,10 +16,12 @@ import { Route as BattleRouteImport } from './routes/battle'
 import { Route as CodexRouteImport } from './routes/codex'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as TreasuryRouteImport } from './routes/treasury'
+import { Route as AuthenticatedActivityRouteImport } from './routes/_authenticated/activity'
 import { Route as AuthenticatedLeaderboardRouteImport } from './routes/_authenticated/leaderboard'
 import { Route as AuthenticatedMarketRouteImport } from './routes/_authenticated/market'
 import { Route as AuthenticatedOpenRouteImport } from './routes/_authenticated/open'
 import { Route as AuthenticatedShopRouteImport } from './routes/_authenticated/shop'
+import { Route as AuthenticatedWalletRouteImport } from './routes/_authenticated/wallet'
 import { Route as AuthenticatedAdminTreasuryRouteImport } from './routes/_authenticated/admin.treasury'
 import { Route as AuthenticatedRankedIndexRouteImport } from './routes/_authenticated/ranked.index'
 import { Route as AuthenticatedRankedMatchIdRouteImport } from './routes/_authenticated/ranked.$matchId'
@@ -58,6 +60,11 @@ const TreasuryRoute = TreasuryRouteImport.update({
   path: '/treasury',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedActivityRoute = AuthenticatedActivityRouteImport.update({
+  id: '/activity',
+  path: '/activity',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedLeaderboardRoute =
   AuthenticatedLeaderboardRouteImport.update({
     id: '/leaderboard',
@@ -77,6 +84,11 @@ const AuthenticatedOpenRoute = AuthenticatedOpenRouteImport.update({
 const AuthenticatedShopRoute = AuthenticatedShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedWalletRoute = AuthenticatedWalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedAdminTreasuryRoute =
@@ -105,10 +117,12 @@ export interface FileRoutesByFullPath {
   '/codex': typeof CodexRoute
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
+  '/activity': typeof AuthenticatedActivityRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
   '/shop': typeof AuthenticatedShopRoute
+  '/wallet': typeof AuthenticatedWalletRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
   '/ranked/': typeof AuthenticatedRankedIndexRoute
@@ -120,10 +134,12 @@ export interface FileRoutesByTo {
   '/codex': typeof CodexRoute
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
+  '/activity': typeof AuthenticatedActivityRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
   '/shop': typeof AuthenticatedShopRoute
+  '/wallet': typeof AuthenticatedWalletRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
   '/ranked': typeof AuthenticatedRankedIndexRoute
@@ -137,10 +153,12 @@ export interface FileRoutesById {
   '/codex': typeof CodexRoute
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
+  '/_authenticated/activity': typeof AuthenticatedActivityRoute
   '/_authenticated/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/_authenticated/market': typeof AuthenticatedMarketRoute
   '/_authenticated/open': typeof AuthenticatedOpenRoute
   '/_authenticated/shop': typeof AuthenticatedShopRoute
+  '/_authenticated/wallet': typeof AuthenticatedWalletRoute
   '/_authenticated/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
   '/_authenticated/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
   '/_authenticated/ranked/': typeof AuthenticatedRankedIndexRoute
@@ -154,10 +172,12 @@ export interface FileRouteTypes {
     | '/codex'
     | '/reset-password'
     | '/treasury'
+    | '/activity'
     | '/leaderboard'
     | '/market'
     | '/open'
     | '/shop'
+    | '/wallet'
     | '/admin/treasury'
     | '/ranked/$matchId'
     | '/ranked/'
@@ -169,10 +189,12 @@ export interface FileRouteTypes {
     | '/codex'
     | '/reset-password'
     | '/treasury'
+    | '/activity'
     | '/leaderboard'
     | '/market'
     | '/open'
     | '/shop'
+    | '/wallet'
     | '/admin/treasury'
     | '/ranked/$matchId'
     | '/ranked'
@@ -185,10 +207,12 @@ export interface FileRouteTypes {
     | '/codex'
     | '/reset-password'
     | '/treasury'
+    | '/_authenticated/activity'
     | '/_authenticated/leaderboard'
     | '/_authenticated/market'
     | '/_authenticated/open'
     | '/_authenticated/shop'
+    | '/_authenticated/wallet'
     | '/_authenticated/admin/treasury'
     | '/_authenticated/ranked/$matchId'
     | '/_authenticated/ranked/'
@@ -255,6 +279,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TreasuryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/activity': {
+      id: '/_authenticated/activity'
+      path: '/activity'
+      fullPath: '/activity'
+      preLoaderRoute: typeof AuthenticatedActivityRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/leaderboard': {
       id: '/_authenticated/leaderboard'
       path: '/leaderboard'
@@ -283,6 +314,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedShopRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/wallet': {
+      id: '/_authenticated/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof AuthenticatedWalletRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/treasury': {
       id: '/_authenticated/admin/treasury'
       path: '/admin/treasury'
@@ -308,20 +346,24 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedActivityRoute: typeof AuthenticatedActivityRoute
   AuthenticatedLeaderboardRoute: typeof AuthenticatedLeaderboardRoute
   AuthenticatedMarketRoute: typeof AuthenticatedMarketRoute
   AuthenticatedOpenRoute: typeof AuthenticatedOpenRoute
   AuthenticatedShopRoute: typeof AuthenticatedShopRoute
+  AuthenticatedWalletRoute: typeof AuthenticatedWalletRoute
   AuthenticatedAdminTreasuryRoute: typeof AuthenticatedAdminTreasuryRoute
   AuthenticatedRankedMatchIdRoute: typeof AuthenticatedRankedMatchIdRoute
   AuthenticatedRankedIndexRoute: typeof AuthenticatedRankedIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedActivityRoute: AuthenticatedActivityRoute,
   AuthenticatedLeaderboardRoute: AuthenticatedLeaderboardRoute,
   AuthenticatedMarketRoute: AuthenticatedMarketRoute,
   AuthenticatedOpenRoute: AuthenticatedOpenRoute,
   AuthenticatedShopRoute: AuthenticatedShopRoute,
+  AuthenticatedWalletRoute: AuthenticatedWalletRoute,
   AuthenticatedAdminTreasuryRoute: AuthenticatedAdminTreasuryRoute,
   AuthenticatedRankedMatchIdRoute: AuthenticatedRankedMatchIdRoute,
   AuthenticatedRankedIndexRoute: AuthenticatedRankedIndexRoute,
