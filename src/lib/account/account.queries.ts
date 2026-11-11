@@ -28,7 +28,7 @@ export const accountQuery = (userId: string | undefined) =>
         supabase.from("profiles").select("username, display_name, account_level").eq("id", userId).maybeSingle(),
         supabase.from("player_ratings").select("rating, wins, losses, draws, win_streak")
           .eq("player_id", userId).eq("season_key", season?.key ?? "season-1").eq("mode", "ranked").maybeSingle(),
-        supabase.from("player_cards").select("card_id", { count: "exact", head: true }).eq("player_id", userId),
+        supabase.from("player_cards").select("id", { count: "exact", head: true }).eq("player_id", userId).eq("is_combined", false).neq("status", "burned"),
       ]);
       if (profile.error) throw profile.error;
       if (rating.error) throw rating.error;

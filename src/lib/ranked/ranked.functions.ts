@@ -29,7 +29,7 @@ export const joinRankedQueue = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     // Owned cards only: a ranked team needs at least one owned summoner and one owned troop.
-    const { data: mine } = await context.supabase.from("player_cards").select("card_id, copies").eq("player_id", context.userId).gt("copies", 0);
+    const { data: mine } = await context.supabase.from("player_card_stacks").select("card_id, copies").eq("player_id", context.userId).gt("copies", 0);
     const ids = (mine ?? []).map((c) => c.card_id);
     if (!ids.some((id) => SUMMONER_IDS.has(id)) || !ids.some((id) => !SUMMONER_IDS.has(id)))
       return { ok: false as const, error: "You need at least one summoner and one troop. Open packs in the Shop first." };
@@ -136,7 +136,7 @@ export const getRankedMatch = createServerFn({ method: "POST" })
 
     let owned: Record<string, number> = {};
     if (m.status === "team_selection" && !mySub) {
-      const { data: cards } = await supabase.from("player_cards").select("card_id, level, copies").eq("player_id", userId);
+      const { data: cards } = await supabase.from("player_card_stacks").select("card_id, level, copies").eq("player_id", userId);
       owned = Object.fromEntries((cards ?? []).filter((c) => c.copies > 0).map((c) => [c.card_id, c.level]));
     }
     const formation = (mySub?.formation ?? []) as { cardId: string; position: number }[];
@@ -191,7 +191,7 @@ export const submitRankedTeam = createServerFn({ method: "POST" })
     const ids = [pick.summonerId, ...pick.unitIds];
     const [{ data: cards }, { data: owned }] = await Promise.all([
       supabase.from("cards").select("id, card_type").in("id", ids),
-      supabase.from("player_cards").select("card_id, level, copies").eq("player_id", userId).in("card_id", ids),
+      supabase.from("player_card_stacks").select("card_id, level, copies").eq("player_id", userId).in("card_id", ids),
     ]);
     const type = new Map((cards ?? []).map((c) => [c.id, c.card_type]));
     if (type.get(pick.summonerId) !== "summoner") return fail("That summoner isn't available.");

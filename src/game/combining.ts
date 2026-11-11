@@ -1,5 +1,5 @@
 /**
- * Card combining (Card Essence, "CE"). Pure and deterministic; the database (combine_card_assets and the
+ * Card combining (Card Essence, "CE"). Pure and deterministic; the database (combine_player_cards and the
  * public.card_level_requirement_table() generated from CE_REQUIREMENTS by sql-constants.ts) is authoritative,
  * this module mirrors it for display, previews and ranked level gating.
  *
@@ -77,7 +77,7 @@ export type CombinePlan =
   | { ok: true; essenceBefore: number; essenceAdded: number; essenceAfter: number; levelBefore: number; levelAfter: number }
   | { ok: false; error: string };
 
-/** Mirrors combine_card_assets' checks so the UI can preview (and refuse) a combine before calling the server. */
+/** Mirrors combine_player_cards' checks so the UI can preview (and refuse) a combine before calling the server. */
 export function planCombine(rarity: Rarity, target: CombineAsset, sources: CombineAsset[]): CombinePlan {
   if (sources.length === 0) return { ok: false, error: "Pick at least one copy to combine." };
   if (new Set(sources.map((s) => s.id)).size !== sources.length || sources.some((s) => s.id === target.id))

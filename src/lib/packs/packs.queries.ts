@@ -46,8 +46,8 @@ export const myCardsQuery = (userId: string | undefined) =>
     queryKey: ["packs", "cards", userId],
     enabled: !!userId,
     queryFn: async (): Promise<OwnedAsset[]> => {
-      const { data, error } = await supabase.from("card_assets").select("id, card_id, foil, level, essence, status, created_at")
-        .eq("owner_id", userId!).not("status", "in", "(burned,combined)").order("created_at", { ascending: false }).limit(1000);
+      const { data, error } = await supabase.from("player_cards").select("id, card_id, foil, level, essence, status, created_at")
+        .eq("player_id", userId!).eq("is_combined", false).neq("status", "burned").order("created_at", { ascending: false }).limit(1000);
       if (error) throw error;
       return (data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, level: a.level, essence: a.essence, status: a.status, createdAt: a.created_at }));
     },

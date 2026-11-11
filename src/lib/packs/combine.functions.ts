@@ -5,7 +5,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 const loadAdmin = async () => (await import("@/integrations/supabase/client.server")).supabaseAdmin;
 
 export type CombineResult =
-  | { ok: true; assetId: string; essenceAfter: number; levelBefore: number; levelAfter: number }
+  | { ok: true; targetCardId: string; essenceAfter: number; levelBefore: number; levelAfter: number }
   | { ok: false; error: string };
 
 const friendly = (m: string) =>
@@ -18,19 +18,19 @@ const friendly = (m: string) =>
   : m.includes("used once") ? "Each copy can only be used once."
   : "Couldn't combine those cards. Try again.";
 
-/** Permanently merge copies into one surviving card (combine_card_assets runs it in one transaction). */
+/** Permanently merge copies into one surviving card (combine_player_cards runs it in one transaction: absorbed copies get is_combined + combined_to). */
 export const combineCards = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => z.object({
-    targetAssetId: z.string().uuid(),
-    sourceAssetIds: z.array(z.string().uuid()).min(1).max(100),
+    targetCardId: z.string().uuid(),
+    sourceCardIds: z.array(z.string().uuid()).min(1).max(100),
   }).parse(d))
   .handler(async ({ data, context }): Promise<CombineResult> => {
     const admin = await loadAdmin();
-    const { data: r, error } = await admin.rpc("combine_card_assets", {
-      p_player_id: context.userId, p_target_asset_id: data.targetAssetId, p_source_asset_ids: data.sourceAssetIds,
+    const { data: r, error } = await admin.rpc("combine_player_cards", {
+      p_player_id: context.userId, p_target_card_id: data.targetCardId, p_source_card_ids: data.sourceCardIds,
     });
     if (error) { console.error("[combine] failed", error); return { ok: false, error: friendly(error.message ?? "") }; }
-    const v = r as { assetId: string; essenceAfter: number; levelBefore: number; levelAfter: number };
-    return { ok: true, assetId: v.assetId, essenceAfter: v.essenceAfter, levelBefore: v.levelBefore, levelAfter: v.levelAfter };
+    const v = r as { targetCardId: string; essenceAfter: number; levelBefore: number; levelAfter: number };
+    return { ok: true, targetCardId: v.targetCardId, essenceAfter: v.essenceAfter, levelBefore: v.levelBefore, levelAfter: v.levelAfter };
   });
