@@ -64,8 +64,8 @@ export const revealPackOpening = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => z.object({ openingId: z.string().uuid(), clientSeed: z.string().min(8).max(128) }).parse(d))
   .handler(async ({ data, context }): Promise<RevealResult> => {
     const admin = await loadAdmin();
-    const { data: o } = await admin.from("pack_openings").select("id, player_id, set_id, status, commit_hash, algorithm")
-      .eq("id", data.openingId).eq("player_id", context.userId).maybeSingle();
+    const { data: o } = await admin.from("item_openings").select("id, player_id, set_id:item_id, status, commit_hash, algorithm")
+      .eq("id", data.openingId).eq("item_type", "pack").eq("player_id", context.userId).maybeSingle();
     if (!o) return { ok: false, error: "Opening not found." };
     // Openings keep the algorithm (card pools) they were committed with, so ones started before a catalog update still open fairly.
     if (!isPackAlgorithm(o.algorithm)) return { ok: false, error: "This opening uses an unknown pack algorithm." };

@@ -28,7 +28,7 @@ export const myPacksQuery = (userId: string | undefined) =>
     queryFn: async (): Promise<MyPacks> => {
       const [packs, pending] = await Promise.all([
         supabase.from("player_items").select("item_id, balance").eq("player_id", userId!).eq("item_type", "pack"),
-        supabase.from("pack_openings").select("id, set_id, commit_hash").eq("player_id", userId!).eq("status", "committed"),
+        supabase.from("item_openings").select("id, set_id:item_id, commit_hash").eq("player_id", userId!).eq("item_type", "pack").eq("status", "committed"),
       ]);
       if (packs.error) throw packs.error;
       if (pending.error) throw pending.error;

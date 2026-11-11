@@ -81,6 +81,89 @@ export type Database = {
           },
         ]
       }
+      card_listings: {
+        Row: {
+          asset_id: string
+          buyer_id: string | null
+          card_id: string
+          completed_at: string | null
+          created_at: string
+          fee_coins: number | null
+          foil: string
+          id: string
+          listing_type: string
+          maximum_days: number | null
+          minimum_days: number | null
+          owner_id: string
+          price_coins: number | null
+          price_coins_per_day: number | null
+          status: string
+        }
+        Insert: {
+          asset_id: string
+          buyer_id?: string | null
+          card_id: string
+          completed_at?: string | null
+          created_at?: string
+          fee_coins?: number | null
+          foil: string
+          id?: string
+          listing_type: string
+          maximum_days?: number | null
+          minimum_days?: number | null
+          owner_id: string
+          price_coins?: number | null
+          price_coins_per_day?: number | null
+          status?: string
+        }
+        Update: {
+          asset_id?: string
+          buyer_id?: string | null
+          card_id?: string
+          completed_at?: string | null
+          created_at?: string
+          fee_coins?: number | null
+          foil?: string
+          id?: string
+          listing_type?: string
+          maximum_days?: number | null
+          minimum_days?: number | null
+          owner_id?: string
+          price_coins?: number | null
+          price_coins_per_day?: number | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "card_listings_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "player_cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_listings_buyer_id_fkey"
+            columns: ["buyer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_listings_card_id_fkey"
+            columns: ["card_id"]
+            isOneToOne: false
+            referencedRelation: "cards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "card_listings_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       cards: {
         Row: {
           active: boolean
@@ -414,6 +497,97 @@ export type Database = {
           version?: string
         }
         Relationships: []
+      }
+      item_openings: {
+        Row: {
+          algorithm: string
+          catalog_version: string | null
+          client_seed: string | null
+          coin_shares: number
+          commit_hash: string
+          created_at: string
+          credits: number
+          division_id: string | null
+          id: string
+          item_id: string
+          item_type: string
+          match_id: string | null
+          opened_at: string | null
+          ordinal: number | null
+          player_id: string
+          reserve_snapshot: Json | null
+          results: Json | null
+          season_key: string | null
+          server_seed: string | null
+          status: string
+        }
+        Insert: {
+          algorithm: string
+          catalog_version?: string | null
+          client_seed?: string | null
+          coin_shares?: number
+          commit_hash: string
+          created_at?: string
+          credits?: number
+          division_id?: string | null
+          id?: string
+          item_id: string
+          item_type: string
+          match_id?: string | null
+          opened_at?: string | null
+          ordinal?: number | null
+          player_id: string
+          reserve_snapshot?: Json | null
+          results?: Json | null
+          season_key?: string | null
+          server_seed?: string | null
+          status: string
+        }
+        Update: {
+          algorithm?: string
+          catalog_version?: string | null
+          client_seed?: string | null
+          coin_shares?: number
+          commit_hash?: string
+          created_at?: string
+          credits?: number
+          division_id?: string | null
+          id?: string
+          item_id?: string
+          item_type?: string
+          match_id?: string | null
+          opened_at?: string | null
+          ordinal?: number | null
+          player_id?: string
+          reserve_snapshot?: Json | null
+          results?: Json | null
+          season_key?: string | null
+          server_seed?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "item_openings_match_id_fkey"
+            columns: ["match_id"]
+            isOneToOne: false
+            referencedRelation: "matches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "item_openings_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "item_openings_season_key_fkey"
+            columns: ["season_key"]
+            isOneToOne: false
+            referencedRelation: "ranked_seasons"
+            referencedColumns: ["key"]
+          },
+        ]
       }
       legionnaire_reward_reserve: {
         Row: {
@@ -1019,13 +1193,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "player_cards_chest_id_fkey"
-            columns: ["chest_id"]
-            isOneToOne: false
-            referencedRelation: "division_chests"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "player_cards_combined_to_fkey"
             columns: ["combined_to"]
             isOneToOne: false
@@ -1036,7 +1203,7 @@ export type Database = {
             foreignKeyName: "player_cards_opening_id_fkey"
             columns: ["opening_id"]
             isOneToOne: false
-            referencedRelation: "pack_openings"
+            referencedRelation: "item_openings"
             referencedColumns: ["id"]
           },
           {
@@ -1323,7 +1490,7 @@ export type Database = {
             foreignKeyName: "rental_contracts_listing_id_fkey"
             columns: ["listing_id"]
             isOneToOne: false
-            referencedRelation: "rental_listings"
+            referencedRelation: "card_listings"
             referencedColumns: ["id"]
           },
           {
@@ -1721,6 +1888,83 @@ export type Database = {
         }
         Relationships: []
       }
+      wallet_transfers: {
+        Row: {
+          attempts: number
+          block_number: number | null
+          claimed_at: string | null
+          claimed_by: string | null
+          created_at: string
+          error: string | null
+          last_error: string | null
+          max_attempts: number
+          metadata: Json
+          on_chain_ref: string | null
+          on_chain_tx_id: string | null
+          player_id: string
+          processed_at: string | null
+          processed_by: string | null
+          result: Json | null
+          status: string
+          transaction_id: string
+          type: string
+          updated_at: string
+          wallet_address: string | null
+        }
+        Insert: {
+          attempts?: number
+          block_number?: number | null
+          claimed_at?: string | null
+          claimed_by?: string | null
+          created_at?: string
+          error?: string | null
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          on_chain_ref?: string | null
+          on_chain_tx_id?: string | null
+          player_id: string
+          processed_at?: string | null
+          processed_by?: string | null
+          result?: Json | null
+          status?: string
+          transaction_id?: string
+          type: string
+          updated_at?: string
+          wallet_address?: string | null
+        }
+        Update: {
+          attempts?: number
+          block_number?: number | null
+          claimed_at?: string | null
+          claimed_by?: string | null
+          created_at?: string
+          error?: string | null
+          last_error?: string | null
+          max_attempts?: number
+          metadata?: Json
+          on_chain_ref?: string | null
+          on_chain_tx_id?: string | null
+          player_id?: string
+          processed_at?: string | null
+          processed_by?: string | null
+          result?: Json | null
+          status?: string
+          transaction_id?: string
+          type?: string
+          updated_at?: string
+          wallet_address?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wallet_transfers_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       player_card_stacks: {
@@ -1766,14 +2010,20 @@ export type Database = {
         Args: { p_limit?: number; p_worker: string }
         Returns: {
           attempts: number
+          block_number: number | null
           claimed_at: string | null
           claimed_by: string | null
           created_at: string
+          error: string | null
           last_error: string | null
           max_attempts: number
           metadata: Json
           on_chain_ref: string | null
+          on_chain_tx_id: string | null
           player_id: string
+          processed_at: string | null
+          processed_by: string | null
+          result: Json | null
           status: string
           transaction_id: string
           type: string
@@ -1782,7 +2032,7 @@ export type Database = {
         }[]
         SetofOptions: {
           from: "*"
-          to: "transactions_pending"
+          to: "wallet_transfers"
           isOneToOne: false
           isSetofReturn: true
         }
