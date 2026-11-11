@@ -1,34 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1794405683997,
-      "tag": "0000_diademfall_base_schema",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1794405710262,
-      "tag": "0001_restore_grants_and_signup_trigger",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1794405822963,
-      "tag": "0002_ranked_rewards_and_energy",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1794405998471,
-      "tag": "0003_market_rentals_treasury",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
