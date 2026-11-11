@@ -8,6 +8,20 @@
       "when": 1794419463945,
       "tag": "0000_restore_signup_trigger",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794421430599,
+      "tag": "0001_player_items_and_constants",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794421546735,
+      "tag": "0002_player_items_procedures",
+      "breakpoints": true
     }
   ]
 }

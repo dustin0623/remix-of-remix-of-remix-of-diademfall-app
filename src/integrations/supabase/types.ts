@@ -464,13 +464,6 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "division_chests_division_id_fkey"
-            columns: ["division_id"]
-            isOneToOne: false
-            referencedRelation: "ranked_divisions"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "division_chests_match_id_fkey"
             columns: ["match_id"]
             isOneToOne: false
@@ -1134,6 +1127,47 @@ export type Database = {
           },
         ]
       }
+      player_items: {
+        Row: {
+          balance: number
+          created_at: string
+          item_id: string
+          item_type: string
+          locked: number
+          metadata: Json
+          player_id: string
+          updated_at: string
+        }
+        Insert: {
+          balance?: number
+          created_at?: string
+          item_id: string
+          item_type: string
+          locked?: number
+          metadata?: Json
+          player_id: string
+          updated_at?: string
+        }
+        Update: {
+          balance?: number
+          created_at?: string
+          item_id?: string
+          item_type?: string
+          locked?: number
+          metadata?: Json
+          player_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "player_items_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       player_packs: {
         Row: {
           player_id: string
@@ -1271,6 +1305,8 @@ export type Database = {
           experience: number
           id: string
           last_seen_at: string | null
+          reward_energy: number
+          reward_energy_anchor_at: string
           updated_at: string
           username: string
         }
@@ -1282,6 +1318,8 @@ export type Database = {
           experience?: number
           id: string
           last_seen_at?: string | null
+          reward_energy?: number
+          reward_energy_anchor_at?: string
           updated_at?: string
           username: string
         }
@@ -1293,6 +1331,8 @@ export type Database = {
           experience?: number
           id?: string
           last_seen_at?: string | null
+          reward_energy?: number
+          reward_energy_anchor_at?: string
           updated_at?: string
           username?: string
         }
@@ -1930,6 +1970,15 @@ export type Database = {
       both_teams_locked: { Args: { p_match_id: string }; Returns: boolean }
       calculate_reward_budget: { Args: { p_month: string }; Returns: Json }
       cancel_matchmaking: { Args: never; Returns: undefined }
+      card_level_requirement_table: {
+        Args: never
+        Returns: {
+          foil: string
+          level: number
+          rarity: string
+          required_essence: number
+        }[]
+      }
       card_supply_summary: { Args: never; Returns: Json }
       claim_pending_transactions: {
         Args: { p_limit?: number; p_worker: string }
@@ -2112,9 +2161,32 @@ export type Database = {
         }
         Returns: Json
       }
+      ranked_division_table: {
+        Args: never
+        Returns: {
+          bonus_chest: string
+          bonus_count: number
+          id: string
+          league: string
+          min_rating: number
+          reset_rating: number
+          reward_chest: string
+          reward_count: number
+          rulesets: number
+          tier: number
+        }[]
+      }
       ranked_rating_change: {
         Args: { p_rating: number; p_result: string; p_streak: number }
         Returns: Record<string, unknown>
+      }
+      ranked_ruleset_pool: {
+        Args: never
+        Returns: {
+          id: string
+          incompatible_with: string[]
+          selection_weight: number
+        }[]
       }
       record_ledger_entry: {
         Args: {
