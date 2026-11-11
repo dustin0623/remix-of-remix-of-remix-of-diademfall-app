@@ -36,6 +36,7 @@ const gv = version.id;
 
 // 3. Cards (summoners + troops), then retire every card that is not in the current catalog.
 //    Wayfarers have affiliation "wayfarer" and no Banner (banner_id null).
+//    Supply counters (total_printed/total_combined/max_supply) are left out so reloading never resets them.
 must("cards", await db.from("cards").upsert([
   ...SUMMONERS.map((s) => ({ id: s.id, game_version_id: gv, set_id: s.set, banner_id: s.banner, affiliation: "banner", card_type: "summoner", name: s.name, rarity: s.rarity, mana: s.mana, level_cap: s.levelCap, definition: { effects: s.effects, lore: s.lore }, active: true })),
   ...TROOPS.map((t) => ({ id: t.id, game_version_id: gv, set_id: t.set, banner_id: t.banner, affiliation: t.affiliation, card_type: "unit", name: t.name, rarity: t.rarity, mana: t.mana, level_cap: t.levelCap, definition: { role: t.role, channel: t.channel }, active: true })),

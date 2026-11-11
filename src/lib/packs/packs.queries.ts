@@ -69,3 +69,18 @@ export const cardSupplyQuery = () =>
       };
     },
   });
+
+export interface CardSupplyRow { printed: number; combined: number; circulating: number; maxSupply: number | null }
+
+/** Per-card supply from the catalog: copies printed (packs + chests), absorbed by combining, and still in circulation. */
+export const cardSuppliesQuery = () =>
+  queryOptions({
+    queryKey: ["packs", "card-supplies"],
+    queryFn: async (): Promise<Record<string, CardSupplyRow>> => {
+      const { data, error } = await supabase.from("cards").select("id, total_printed, total_combined, circulating_supply, max_supply").eq("active", true);
+      if (error) throw error;
+      return Object.fromEntries((data ?? []).map((c) => [c.id, {
+        printed: c.total_printed, combined: c.total_combined, circulating: c.circulating_supply ?? c.total_printed - c.total_combined, maxSupply: c.max_supply,
+      }]));
+    },
+  });

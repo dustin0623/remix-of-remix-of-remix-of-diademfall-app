@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { RARITY_ORDER, type Foil } from "@/game/packs";
 import { CE_REQUIREMENTS } from "@/game/combining";
-import { cardSupplyQuery, myCardsQuery, type OwnedAsset } from "@/lib/packs/packs.queries";
+import { cardSuppliesQuery, cardSupplyQuery, myCardsQuery, type OwnedAsset } from "@/lib/packs/packs.queries";
 const fmt = (n: number) => n.toLocaleString("en-US");
 export function CardCollection() {
   return (
@@ -87,6 +87,7 @@ type Group = {
 function Collection() {
   const userId = useAuthStore((s) => s.user?.id);
   const cards = useQuery(myCardsQuery(userId));
+  const supplies = useQuery(cardSuppliesQuery());
   const [filter, setFilter] = useState<"all" | "summoners" | "troops">("all");
   const [combining, setCombining] = useState<{ cardId: string; foil: Foil } | null>(null);
   const groups = useMemo(() => {
@@ -166,6 +167,15 @@ function Collection() {
               ×{g.assets.length}{" "}
               {g.foil === "gold" ? <span className="font-bold text-primary">Gold</span> : "Regular"}
             </div>
+            {supplies.data?.[g.cardId] && (
+              <div
+                className="text-center text-[10px] text-muted-foreground"
+                title={`${fmt(supplies.data[g.cardId].printed)} printed · ${fmt(supplies.data[g.cardId].combined)} combined`}
+              >
+                {fmt(supplies.data[g.cardId].circulating)} in circulation
+                {supplies.data[g.cardId].maxSupply !== null && <> / {fmt(supplies.data[g.cardId].maxSupply!)} max</>}
+              </div>
+            )}
             {g.free >= 2 && (
               <Button
                 size="sm"
