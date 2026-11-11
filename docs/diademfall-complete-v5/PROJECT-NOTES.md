@@ -1,5 +1,7 @@
 # How v5 maps onto this project
 
+> Superseded by `docs/diademfall-complete-v6` (adds ranked divisions). Its card, rule and economy files are identical, so the game keeps importing from this folder.
+
 v5 = the v4 package (byte-identical economy: `economy/`, `engine/economy.ts`, `engine/treasury-economy.ts`, `engine/banners.ts`) **plus Wayfarers**: 12 shared troops, 6 Wayfarer abilities and 2 draft rulesets. It supersedes `docs/diademfall-complete-v4`, which stays in the repo for reference only. The game and its tests now read v5.
 
 ## What changed from v4

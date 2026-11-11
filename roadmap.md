@@ -56,6 +56,15 @@
 - [x] Engine support for the 6 Wayfarer abilities, then enable the 2 new rulesets (Roadwise's Pin clause waits for a Pin effect)
 - [x] Add 4 Wayfarers to each pack and update the card database (150 cards, 32 rulesets loaded)
 
+## Ranked divisions (docs/diademfall-complete-v6)
+- [x] v6 design package in docs (16 divisions, ±20 rating, advancement chests, season reset; cards and economy unchanged)
+- [ ] Divisions III/II/I on the ladder, home and leaderboard
+- [ ] Fixed ±20 rating with win-streak bonus in place of Elo
+- [ ] Rules per match by division (Wood 0, Bronze 1, Silver+ 2)
+- [ ] 14-day seasons with rating reset
+- [ ] Advancement chests (Scout/War/Crown): claims, provably fair opening, card/Coin-share/Credit results
+- [ ] Legionnaire reward reserve (20,000 packs = 100,000 cards) and season-close Coin-share settlement (needs pool size from user)
+
 ## Later
 - [ ] Add the Solana treasury key + RPC key as secrets before server-signed payouts
 
