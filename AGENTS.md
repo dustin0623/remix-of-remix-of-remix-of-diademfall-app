@@ -76,4 +76,4 @@ use the editor.
 - ref/ holds a plain-file copy of github.com/dustin0623/official-boom-game-v1 (no nested .git); it is reference only, outside tsconfig/vitest includes and ignored by ESLint (why: never built, tested or imported by this app).
 
 # Build
-- vite.config.ts resolves rpc-websockets and the rc.1 @solana/codecs family to their dist/index.browser.mjs (nearest copy to the importer) (why: they export only browser/node builds, which the Worker server build cannot resolve).
+- vite.config.ts maps rpc-websockets and rc.1 @solana/codecs* to the importer's nearest dist/index.browser.mjs (why: they export only browser/node builds; the Worker build can't resolve them).
