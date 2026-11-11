@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { RARITY_ORDER, type Foil } from "@/game/packs";
 import { CE_REQUIREMENTS } from "@/game/combining";
-import { cardSuppliesQuery, cardSupplyQuery, myCardsQuery, type OwnedAsset } from "@/lib/packs/packs.queries";
+import { cardSuppliesQuery, cardSupplyQuery, myCardsQuery, type CardSupplyRow, type OwnedAsset } from "@/lib/packs/packs.queries";
 const fmt = (n: number) => n.toLocaleString("en-US");
 export function CardCollection() {
   return (
@@ -71,6 +71,20 @@ function LevelsTable() {
           {supply.data.burnedEssence > 0 && <> · {fmt(supply.data.burnedEssence)} CE burned</>}
         </p>
       )}
+    </div>
+  );
+}
+
+/** How many copies of a card exist across all players (printed minus combined). */
+function SupplyLine({ supply }: { supply: CardSupplyRow | undefined }) {
+  if (!supply) return null;
+  return (
+    <div
+      className="text-center text-[10px] text-muted-foreground"
+      title={`${fmt(supply.printed)} printed · ${fmt(supply.combined)} combined`}
+    >
+      {fmt(supply.circulating)} in circulation
+      {supply.maxSupply !== null && <> / {fmt(supply.maxSupply)} max</>}
     </div>
   );
 }
@@ -167,15 +181,7 @@ function Collection() {
               ×{g.assets.length}{" "}
               {g.foil === "gold" ? <span className="font-bold text-primary">Gold</span> : "Regular"}
             </div>
-            {supplies.data?.[g.cardId] && (
-              <div
-                className="text-center text-[10px] text-muted-foreground"
-                title={`${fmt(supplies.data[g.cardId].printed)} printed · ${fmt(supplies.data[g.cardId].combined)} combined`}
-              >
-                {fmt(supplies.data[g.cardId].circulating)} in circulation
-                {supplies.data[g.cardId].maxSupply !== null && <> / {fmt(supplies.data[g.cardId].maxSupply!)} max</>}
-              </div>
-            )}
+            <SupplyLine supply={supplies.data?.[g.cardId]} />
             {g.free >= 2 && (
               <Button
                 size="sm"
