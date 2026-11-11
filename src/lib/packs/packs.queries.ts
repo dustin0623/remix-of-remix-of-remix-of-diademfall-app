@@ -38,17 +38,34 @@ export const myPacksQuery = (userId: string | undefined) =>
     },
   });
 
-export interface OwnedAsset { id: string; cardId: string; foil: Foil; level: number; status: string; createdAt: string }
+export interface OwnedAsset { id: string; cardId: string; foil: Foil; level: number; essence: number; status: string; createdAt: string }
 
-/** Every card the player owns, newest first. */
+/** Every card the player owns (absorbed/combined and burned copies excluded), newest first. */
 export const myCardsQuery = (userId: string | undefined) =>
   queryOptions({
     queryKey: ["packs", "cards", userId],
     enabled: !!userId,
     queryFn: async (): Promise<OwnedAsset[]> => {
-      const { data, error } = await supabase.from("card_assets").select("id, card_id, foil, level, status, created_at")
-        .eq("owner_id", userId!).neq("status", "burned").order("created_at", { ascending: false }).limit(1000);
+      const { data, error } = await supabase.from("card_assets").select("id, card_id, foil, level, essence, status, created_at")
+        .eq("owner_id", userId!).not("status", "in", "(burned,combined)").order("created_at", { ascending: false }).limit(1000);
       if (error) throw error;
-      return (data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, level: a.level, status: a.status, createdAt: a.created_at }));
+      return (data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, level: a.level, essence: a.essence, status: a.status, createdAt: a.created_at }));
+    },
+  });
+
+export interface CardSupply { minted: number; activeAssets: number; combinedAssets: number; existingEssence: number; burnedEssence: number }
+
+/** Public card supply: combining lowers the number of separate cards, never total CE. */
+export const cardSupplyQuery = () =>
+  queryOptions({
+    queryKey: ["packs", "card-supply"],
+    queryFn: async (): Promise<CardSupply> => {
+      const { data, error } = await supabase.rpc("card_supply_summary");
+      if (error) throw error;
+      const v = (data ?? {}) as Record<string, number | string>;
+      return {
+        minted: Number(v.minted ?? 0), activeAssets: Number(v.activeAssets ?? 0), combinedAssets: Number(v.combinedAssets ?? 0),
+        existingEssence: Number(v.existingEssence ?? 0), burnedEssence: Number(v.burnedEssence ?? 0),
+      };
     },
   });
