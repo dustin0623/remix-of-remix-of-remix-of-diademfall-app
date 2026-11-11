@@ -100,5 +100,5 @@
 - [x] Pack and chest openings: one item_openings table
 - [x] Sale and rental listings: one card_listings table
 - [x] Old tables removed after testing packs, chests, sales, rentals and withdrawals on the merged tables
-- [ ] Treasury: snapshots, acquisitions and flows in one treasury_ledger
+- [x] Treasury: snapshots, acquisitions and flows in one treasury_ledger (old three tables removed)
 - [ ] Matches: review folding match_players / match_rewards into matches (match_submissions stays separate so teams stay hidden until both lock)

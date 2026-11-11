@@ -1351,86 +1351,6 @@ export type Database = {
         }
         Relationships: []
       }
-      token_acquisitions: {
-        Row: {
-          acquired_at: string
-          average_price_usd: number | null
-          coins_acquired: number
-          created_by: string | null
-          destination_wallet_id: string
-          id: string
-          metadata: Json
-          quote_asset: string | null
-          quote_spent: number | null
-          source: string
-          tx_hash: string | null
-        }
-        Insert: {
-          acquired_at?: string
-          average_price_usd?: number | null
-          coins_acquired: number
-          created_by?: string | null
-          destination_wallet_id: string
-          id?: string
-          metadata?: Json
-          quote_asset?: string | null
-          quote_spent?: number | null
-          source: string
-          tx_hash?: string | null
-        }
-        Update: {
-          acquired_at?: string
-          average_price_usd?: number | null
-          coins_acquired?: number
-          created_by?: string | null
-          destination_wallet_id?: string
-          id?: string
-          metadata?: Json
-          quote_asset?: string | null
-          quote_spent?: number | null
-          source?: string
-          tx_hash?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "token_acquisitions_destination_wallet_id_fkey"
-            columns: ["destination_wallet_id"]
-            isOneToOne: false
-            referencedRelation: "treasury_wallets"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      treasury_flows: {
-        Row: {
-          account: string
-          amount: number
-          created_at: string
-          flow_type: string
-          id: string
-          reference_id: string
-          reference_type: string | null
-        }
-        Insert: {
-          account: string
-          amount: number
-          created_at?: string
-          flow_type: string
-          id?: string
-          reference_id: string
-          reference_type?: string | null
-        }
-        Update: {
-          account?: string
-          amount?: number
-          created_at?: string
-          flow_type?: string
-          id?: string
-          reference_id?: string
-          reference_type?: string | null
-        }
-        Relationships: []
-      }
       treasury_ledger: {
         Row: {
           account: string | null
@@ -1480,44 +1400,6 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "treasury_ledger_wallet_id_fkey"
-            columns: ["wallet_id"]
-            isOneToOne: false
-            referencedRelation: "treasury_wallets"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      treasury_snapshots: {
-        Row: {
-          captured_at: string
-          coin_balance: number
-          created_by: string | null
-          id: string
-          quote_value_usd: number | null
-          source: string
-          wallet_id: string
-        }
-        Insert: {
-          captured_at?: string
-          coin_balance: number
-          created_by?: string | null
-          id?: string
-          quote_value_usd?: number | null
-          source?: string
-          wallet_id: string
-        }
-        Update: {
-          captured_at?: string
-          coin_balance?: number
-          created_by?: string | null
-          id?: string
-          quote_value_usd?: number | null
-          source?: string
-          wallet_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "treasury_snapshots_wallet_id_fkey"
             columns: ["wallet_id"]
             isOneToOne: false
             referencedRelation: "treasury_wallets"
