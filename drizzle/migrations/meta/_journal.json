@@ -15,6 +15,13 @@
       "when": 1794409353210,
       "tag": "0001_card_combining",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794409630368,
+      "tag": "0002_restore_signup_trigger",
+      "breakpoints": true
     }
   ]
 }
