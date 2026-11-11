@@ -87,7 +87,7 @@ function LeaderboardPage() {
               <table className="w-full text-sm">
                 <thead className="bg-night text-left font-display text-xs uppercase tracking-wider text-primary">
                   <tr>
-                    <th className="px-4 py-2">#</th><th className="px-4 py-2">Player</th><th className="hidden px-4 py-2 sm:table-cell">League</th>
+                    <th className="px-4 py-2">#</th><th className="px-4 py-2">Player</th><th className="hidden px-4 py-2 sm:table-cell">Division</th>
                     <th className="px-4 py-2 text-right">Rating</th><th className="px-4 py-2 text-right">Record</th>
                     <th className="hidden px-4 py-2 text-right sm:table-cell">Win %</th><th className="px-4 py-2 text-right">Streak</th>
                   </tr>
