@@ -165,27 +165,6 @@ export type Database = {
           },
         ]
       }
-      card_level_requirements: {
-        Row: {
-          foil: string
-          level: number
-          rarity: string
-          required_essence: number
-        }
-        Insert: {
-          foil: string
-          level: number
-          rarity: string
-          required_essence: number
-        }
-        Update: {
-          foil?: string
-          level?: number
-          rarity?: string
-          required_essence?: number
-        }
-        Relationships: []
-      }
       cards: {
         Row: {
           active: boolean
@@ -241,38 +220,6 @@ export type Database = {
             columns: ["game_version_id"]
             isOneToOne: false
             referencedRelation: "game_versions"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      currency_balances: {
-        Row: {
-          available: number
-          currency: string
-          locked: number
-          player_id: string
-          updated_at: string
-        }
-        Insert: {
-          available?: number
-          currency: string
-          locked?: number
-          player_id: string
-          updated_at?: string
-        }
-        Update: {
-          available?: number
-          currency?: string
-          locked?: number
-          player_id?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "currency_balances_player_id_fkey"
-            columns: ["player_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -1168,42 +1115,6 @@ export type Database = {
           },
         ]
       }
-      player_packs: {
-        Row: {
-          player_id: string
-          quantity: number
-          set_id: string
-          updated_at: string
-        }
-        Insert: {
-          player_id: string
-          quantity?: number
-          set_id: string
-          updated_at?: string
-        }
-        Update: {
-          player_id?: string
-          quantity?: number
-          set_id?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "player_packs_player_id_fkey"
-            columns: ["player_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "player_packs_set_id_fkey"
-            columns: ["set_id"]
-            isOneToOne: false
-            referencedRelation: "pack_supply"
-            referencedColumns: ["set_id"]
-          },
-        ]
-      }
       player_ratings: {
         Row: {
           draws: number
@@ -1335,45 +1246,6 @@ export type Database = {
           reward_energy_anchor_at?: string
           updated_at?: string
           username?: string
-        }
-        Relationships: []
-      }
-      ranked_divisions: {
-        Row: {
-          bonus_chest: string | null
-          bonus_count: number
-          id: string
-          league: string
-          min_rating: number
-          reset_rating: number
-          reward_chest: string | null
-          reward_count: number
-          rulesets: number
-          tier: number | null
-        }
-        Insert: {
-          bonus_chest?: string | null
-          bonus_count?: number
-          id: string
-          league: string
-          min_rating: number
-          reset_rating: number
-          reward_chest?: string | null
-          reward_count?: number
-          rulesets: number
-          tier?: number | null
-        }
-        Update: {
-          bonus_chest?: string | null
-          bonus_count?: number
-          id?: string
-          league?: string
-          min_rating?: number
-          reset_rating?: number
-          reward_chest?: string | null
-          reward_count?: number
-          rulesets?: number
-          tier?: number | null
         }
         Relationships: []
       }
@@ -1600,79 +1472,6 @@ export type Database = {
           total_match_shares?: number
         }
         Relationships: []
-      }
-      reward_energy: {
-        Row: {
-          anchor_at: string
-          energy: number
-          player_id: string
-        }
-        Insert: {
-          anchor_at?: string
-          energy: number
-          player_id: string
-        }
-        Update: {
-          anchor_at?: string
-          energy?: number
-          player_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "reward_energy_player_id_fkey"
-            columns: ["player_id"]
-            isOneToOne: true
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      rulesets: {
-        Row: {
-          active: boolean
-          category: string
-          definition: Json
-          description: string
-          game_version_id: string
-          id: string
-          incompatible_with: string[]
-          name: string
-          phase: string
-          selection_weight: number
-        }
-        Insert: {
-          active?: boolean
-          category: string
-          definition?: Json
-          description: string
-          game_version_id: string
-          id: string
-          incompatible_with?: string[]
-          name: string
-          phase: string
-          selection_weight?: number
-        }
-        Update: {
-          active?: boolean
-          category?: string
-          definition?: Json
-          description?: string
-          game_version_id?: string
-          id?: string
-          incompatible_with?: string[]
-          name?: string
-          phase?: string
-          selection_weight?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "rulesets_game_version_id_fkey"
-            columns: ["game_version_id"]
-            isOneToOne: false
-            referencedRelation: "game_versions"
-            referencedColumns: ["id"]
-          },
-        ]
       }
       token_acquisitions: {
         Row: {
