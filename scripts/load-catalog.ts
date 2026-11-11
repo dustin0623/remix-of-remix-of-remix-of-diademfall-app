@@ -14,6 +14,8 @@ import { CATALOG_VERSION, catalogHash } from "../src/game/catalogs";
 import { rulesetSelectionWeight } from "../src/game/rule-support";
 import { PACK_RULES } from "../src/game/packs";
 import { requirementRows } from "../src/game/combining";
+import { divisionRows } from "../src/game/divisions";
+import { RESERVE_PACKS, reserveComposition } from "../src/game/chests";
 
 const ENGINE_VERSION = "battle-engine-1.0.0";
 const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -62,6 +64,13 @@ must("pack supply", await db.from("pack_supply").upsert(PACK_RULES.editions.map(
 // 7. Card Essence level requirements (combining); the TS table in src/game/combining.ts is the source.
 must("level requirements", await db.from("card_level_requirements").upsert(requirementRows(), { onConflict: "rarity,foil,level" }));
 
+// 8. Ranked divisions (v6): thresholds, rules per match, advancement chests and season reset ratings.
+must("ranked divisions", await db.from("ranked_divisions").upsert(divisionRows(), { onConflict: "id" }));
+
+// 9. Legionnaire reward reserve: once, open the 20,000 committed reserve packs with the public seed and record
+//    the reward-card units per rarity (also counts them as issued + opened Legionnaire reserve packs). No-op afterwards.
+const seeded = must("reward reserve", await db.rpc("seed_legionnaire_reserve", { p_counts: reserveComposition(), p_packs: RESERVE_PACKS }));
+
 const count = async (t: "cards" | "rulesets", active = false) => {
   let q = db.from(t).select("*", { count: "exact", head: true });
   if (active) q = q.eq("active", true);
@@ -69,5 +78,5 @@ const count = async (t: "cards" | "rulesets", active = false) => {
 };
 console.log(JSON.stringify({
   version: CATALOG_VERSION, activeCards: await count("cards", true),
-  activeRulesets: await count("rulesets", true),
+  activeRulesets: await count("rulesets", true), rewardReserveSeeded: seeded,
 }));
