@@ -253,29 +253,6 @@ export type Database = {
           },
         ]
       }
-      division_chest_secrets: {
-        Row: {
-          chest_id: string
-          server_seed: string
-        }
-        Insert: {
-          chest_id: string
-          server_seed: string
-        }
-        Update: {
-          chest_id?: string
-          server_seed?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "division_chest_secrets_chest_id_fkey"
-            columns: ["chest_id"]
-            isOneToOne: true
-            referencedRelation: "division_chests"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       division_chests: {
         Row: {
           algorithm: string
@@ -881,29 +858,6 @@ export type Database = {
           status?: string
         }
         Relationships: []
-      }
-      pack_opening_secrets: {
-        Row: {
-          opening_id: string
-          server_seed: string
-        }
-        Insert: {
-          opening_id: string
-          server_seed: string
-        }
-        Update: {
-          opening_id?: string
-          server_seed?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "pack_opening_secrets_opening_id_fkey"
-            columns: ["opening_id"]
-            isOneToOne: true
-            referencedRelation: "pack_openings"
-            referencedColumns: ["id"]
-          },
-        ]
       }
       pack_openings: {
         Row: {
