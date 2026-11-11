@@ -1,20 +1,17 @@
 /**
- * Loads the current card catalog (src/game/catalog, v5: 150 cards incl. 12 Wayfarers) into Lovable Cloud
- * and retires older catalog rows.
+ * Loads the current card catalog (src/game/catalog, v5: 150 cards incl. 12 Wayfarers), pack supply and the chest
+ * reward reserve into Lovable Cloud and retires older catalog cards.
  * Idempotent; safe to re-run after a remix or a catalog edit. Old matches keep their game version,
  * and retired cards stay in the database (inactive) so old submissions and replays still resolve.
  *
  *   bun scripts/load-catalog.ts        (needs SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY in the environment)
  */
 import { createClient } from "@supabase/supabase-js";
-import { RULESETS } from "../src/game/catalog/rulesets";
 import { SUMMONERS } from "../src/game/catalog/summoners";
 import { TROOPS } from "../src/game/catalog/troops";
 import { CATALOG_VERSION, catalogHash } from "../src/game/catalogs";
 import { rulesetSelectionWeight } from "../src/game/rule-support";
 import { PACK_RULES } from "../src/game/packs";
-import { requirementRows } from "../src/game/combining";
-import { divisionRows } from "../src/game/divisions";
 import { RESERVE_PACKS, reserveComposition } from "../src/game/chests";
 
 const ENGINE_VERSION = "battle-engine-1.0.0";
@@ -45,12 +42,8 @@ must("cards", await db.from("cards").upsert([
 ]));
 must("retire cards", await db.from("cards").update({ active: false }).neq("game_version_id", gv));
 
-// 4. Battle rules: only rules the engine enforces get a ranked roll weight; retire rules not in the current catalog.
-must("rulesets", await db.from("rulesets").upsert(RULESETS.map((r) => ({
-  id: r.id, game_version_id: gv, name: r.name, category: r.category, phase: r.phase, description: r.text,
-  definition: r.values, incompatible_with: r.incompatibleWith, selection_weight: rulesetSelectionWeight(r.id), active: true,
-}))));
-must("retire rulesets", await db.from("rulesets").update({ active: false }).neq("game_version_id", gv));
+// 4. Battle rules, ranked divisions and Card Essence levels are NOT stored in the database: the SQL procedures read
+//    generated constant functions (src/game/sql-constants.ts, checked against the migrations by sql-constants.test.ts).
 
 // 5. Catalog fingerprint.
 must("hash", await db.from("game_versions").update({ catalog_hash: catalogHash(rulesetSelectionWeight) }).eq("id", gv));
@@ -61,22 +54,9 @@ must("pack supply", await db.from("pack_supply").upsert(PACK_RULES.editions.map(
 })), { onConflict: "set_id", ignoreDuplicates: true }));
 // Players own only cards they open from packs: no cards are granted here.
 
-// 7. Card Essence level requirements (combining); the TS table in src/game/combining.ts is the source.
-must("level requirements", await db.from("card_level_requirements").upsert(requirementRows(), { onConflict: "rarity,foil,level" }));
-
-// 8. Ranked divisions (v6): thresholds, rules per match, advancement chests and season reset ratings.
-must("ranked divisions", await db.from("ranked_divisions").upsert(divisionRows(), { onConflict: "id" }));
-
-// 9. Legionnaire reward reserve: once, open the 20,000 committed reserve packs with the public seed and record
+// 7. Legionnaire reward reserve: once, open the 20,000 committed reserve packs with the public seed and record
 //    the reward-card units per rarity (also counts them as issued + opened Legionnaire reserve packs). No-op afterwards.
 const seeded = must("reward reserve", await db.rpc("seed_legionnaire_reserve", { p_counts: reserveComposition(), p_packs: RESERVE_PACKS }));
 
-const count = async (t: "cards" | "rulesets", active = false) => {
-  let q = db.from(t).select("*", { count: "exact", head: true });
-  if (active) q = q.eq("active", true);
-  return (await q).count;
-};
-console.log(JSON.stringify({
-  version: CATALOG_VERSION, activeCards: await count("cards", true),
-  activeRulesets: await count("rulesets", true), rewardReserveSeeded: seeded,
-}));
+const cards = await db.from("cards").select("*", { count: "exact", head: true }).eq("active", true);
+console.log(JSON.stringify({ version: CATALOG_VERSION, activeCards: cards.count, rewardReserveSeeded: seeded }));

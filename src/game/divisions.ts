@@ -2,7 +2,7 @@
  * v6 ranked divisions (docs/diademfall-complete-v6/ranked): 16 divisions inside the league bands,
  * fixed ±20 rating with a win-streak bonus, rules per match, advancement chests and the season reset.
  * Pure; the SQL procedures (apply_ranked_result, grant_division_chests, close_ranked_season, _try_match_ticket)
- * mirror these rules and read the division rows that scripts/load-catalog.ts loads from DIVISIONS.
+ * mirror these rules and read public.ranked_division_table(), generated from DIVISIONS by sql-constants.ts.
  */
 import { RANKED_CONFIG } from "./catalog/ranked-divisions";
 import { leagueById, leagueOf, type LeagueId, type MatchResult } from "./ladder";
@@ -95,16 +95,6 @@ export function ratingChange(rating: number, result: MatchResult, winStreak: num
 
 /** Next-season rating from the finishing rating (by league). */
 export const seasonResetRating = (rating: number) => divisionOf(rating).resetRating;
-
-/** Rows for public.ranked_divisions (loaded by scripts/load-catalog.ts). */
-export function divisionRows() {
-  return DIVISIONS.map((d) => ({
-    id: d.id, league: d.league, tier: d.tier, min_rating: d.minRating, rulesets: d.rulesets,
-    reward_chest: d.chests[0]?.type ?? null, reward_count: d.chests[0]?.count ?? 0,
-    bonus_chest: d.chests[1]?.type ?? null, bonus_count: d.chests[1]?.count ?? 0,
-    reset_rating: d.resetRating,
-  }));
-}
 
 /** "4d 6h" / "3h 12m" / "ended". */
 export function timeLeft(endsAt: string | Date, now = Date.now()) {
