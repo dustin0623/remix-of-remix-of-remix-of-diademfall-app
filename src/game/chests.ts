@@ -84,11 +84,15 @@ export function rollChest(chest: ChestType, serverSeed: string, clientSeed: stri
   return out;
 }
 
+const canonical = (r: ChestRoll) =>
+  JSON.stringify(Object.fromEntries(Object.entries(r).filter(([k, v]) => k !== "assetId" && v !== undefined).sort(([x], [y]) => x.localeCompare(y))));
+
 /** Player-side check after opening: the seed matches the commitment and the rolls match the algorithm. */
 export function verifyChest(c: { chest: ChestType; commitHash: string; serverSeed: string; clientSeed: string; chestId: string; reserve: Reserve; rolls: ChestRoll[] }) {
   if (sha256Hex(c.serverSeed) !== c.commitHash) return false;
   const expected = rollChest(c.chest, c.serverSeed, c.clientSeed, c.chestId, c.reserve);
-  return JSON.stringify(expected) === JSON.stringify(c.rolls);
+  // Stored results come back from the database with keys in a different order: compare canonically.
+  return expected.length === c.rolls.length && expected.every((e, i) => canonical(e) === canonical(c.rolls[i]!));
 }
 
 /**
