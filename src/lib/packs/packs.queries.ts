@@ -62,7 +62,7 @@ export const cardSupplyQuery = () =>
     queryFn: async (): Promise<CardSupply> => {
       const { data, error } = await supabase.rpc("card_supply_summary");
       if (error) throw error;
-      const v = (data ?? {}) as Record<string, number | string>;
+      const v = (data ?? {}) as Partial<Record<keyof CardSupply, number | string>>;
       return {
         minted: Number(v.minted ?? 0), activeAssets: Number(v.activeAssets ?? 0), combinedAssets: Number(v.combinedAssets ?? 0),
         existingEssence: Number(v.existingEssence ?? 0), burnedEssence: Number(v.burnedEssence ?? 0),

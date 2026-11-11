@@ -44,7 +44,7 @@ export function EssenceBar({ cardId, foil, essence, className }: { cardId: strin
 
 /** Full listing details: edition, foil, unlocked abilities and (optionally) the level it plays at under a summoner. */
 export function EssenceDetails({ cardId, foil, essence, level, summonerId, summonerLevel }: {
-  cardId: string; foil: Foil; essence: number; level: number; summonerId?: string | null; summonerLevel?: number;
+  cardId: string; foil: Foil; essence: number; level: number; summonerId?: string | null | undefined; summonerLevel?: number | undefined;
 }) {
   const meta = cardMeta(cardId);
   if (!meta) return null;
