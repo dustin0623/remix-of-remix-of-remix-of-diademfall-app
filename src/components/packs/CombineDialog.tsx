@@ -73,7 +73,7 @@ export function CombineDialog({ cardId, foil, assets, onClose }: { cardId: strin
             <div className="flex flex-col items-center gap-3">
               <OwnedCard cardId={cardId} gold={foil === "gold"} size="sm" />
               <div className="w-40">
-                {after ? <EssenceBar cardId={cardId} foil={foil} essence={plan!.ok ? plan!.essenceAfter : 1} /> : keep && <EssenceBar cardId={cardId} foil={foil} essence={keep.essence} />}
+                {(plan?.ok || keep) && <EssenceBar cardId={cardId} foil={foil} essence={plan?.ok ? plan.essenceAfter : keep!.essence} />}
               </div>
             </div>
             <div className="space-y-3">
@@ -117,7 +117,7 @@ export function CombineDialog({ cardId, foil, assets, onClose }: { cardId: strin
                   ) : null}
               </div>
               <Button className="w-full" disabled={!plan?.ok || busy} onClick={submit}>
-                {busy ? <Loader2 className="animate-spin" /> : `Combine ${chosen.length >= 2 ? chosen.length : ""} cards`.replace("  ", " ")}
+                {busy ? <Loader2 className="animate-spin" /> : chosen.length >= 2 ? `Combine ${chosen.length} cards` : "Combine cards"}
               </Button>
             </div>
           </div>
