@@ -86,3 +86,9 @@
 - [x] Header wallet, menu and footer links
 - [ ] Withdrawal minimum/fee/daily limit and the Coin token address (needs user decision; token not launched)
 - [ ] Treasury deposit address + signing key as secrets to open live USDC deposits and Coin withdrawals
+
+## Player items & table cleanup
+- [x] player_items for Credits/Coins, unopened packs and unopened chests (wallet, pack and chest screens read it)
+- [x] Reward Energy on profiles; players can only edit display name and avatar
+- [x] Divisions, Card Essence levels and the ranked rule pool as code constants (no tables), with a drift test
+- [ ] Delete the retired tables (needs the user's OK for destructive database changes)

@@ -1,7 +1,7 @@
 /** Pure (no assets) so the catalog loader script can import it. */
 /**
  * Rulesets the engine and draft validator enforce. Only these can be rolled, locally or in ranked
- * (the database selection weight comes from rulesetSelectionWeight). No Retreat needs no code:
+ * (ranked rolls from public.ranked_ruleset_pool(), generated from rulesetSelectionWeight by sql-constants.ts). No Retreat needs no code:
  * the engine has no voluntary or forced movement besides Turning Wheel, which it excludes.
  */
 export const SUPPORTED_RULESETS = [

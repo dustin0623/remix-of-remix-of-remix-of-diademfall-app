@@ -1,6 +1,6 @@
 /**
  * Card combining (Card Essence, "CE"). Pure and deterministic; the database (combine_card_assets and the
- * card_level_requirements rows loaded from CE_REQUIREMENTS by scripts/load-catalog.ts) is authoritative,
+ * public.card_level_requirement_table() generated from CE_REQUIREMENTS by sql-constants.ts) is authoritative,
  * this module mirrors it for display, previews and ranked level gating.
  *
  * Every opened card starts at 1 CE / level 1. Combining compatible copies (same card, same foil, same owner,
@@ -26,7 +26,7 @@ export const CE_REQUIREMENTS: Record<Foil, Record<Rarity, readonly number[]>> = 
   },
 };
 
-/** Flat rows for the database table card_level_requirements. */
+/** Flat (rarity, foil, level, CE) rows, the shape of public.card_level_requirement_table(). */
 export function requirementRows() {
   const rows: { rarity: Rarity; foil: Foil; level: number; required_essence: number }[] = [];
   for (const foil of Object.keys(CE_REQUIREMENTS) as Foil[])

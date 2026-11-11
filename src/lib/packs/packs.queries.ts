@@ -27,13 +27,13 @@ export const myPacksQuery = (userId: string | undefined) =>
     enabled: !!userId,
     queryFn: async (): Promise<MyPacks> => {
       const [packs, pending] = await Promise.all([
-        supabase.from("player_packs").select("set_id, quantity").eq("player_id", userId!),
+        supabase.from("player_items").select("item_id, balance").eq("player_id", userId!).eq("item_type", "pack"),
         supabase.from("pack_openings").select("id, set_id, commit_hash").eq("player_id", userId!).eq("status", "committed"),
       ]);
       if (packs.error) throw packs.error;
       if (pending.error) throw pending.error;
       const unopened = { ancient: 0, oath: 0, legionnaire: 0 } as Record<PackId, number>;
-      for (const p of packs.data ?? []) unopened[p.set_id as PackId] = Number(p.quantity);
+      for (const p of packs.data ?? []) unopened[p.item_id as PackId] = Number(p.balance);
       return { unopened, pending: Object.fromEntries((pending.data ?? []).map((p) => [p.set_id, { openingId: p.id, commitHash: p.commit_hash }])) };
     },
   });
