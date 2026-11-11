@@ -1,0 +1,12 @@
+export type SetId = 'ancient' | 'oath' | 'legionnaire';
+export type BannerId = 'bastion_orders' | 'wild_courts' | 'veil_covenant' | 'hollow_legions' | 'skybound_houses' | 'wyrm_clans';
+export type Affiliation = 'banner' | 'wayfarer';
+export type Rarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
+export type CardType = 'summoner' | 'troop';
+export type AttackChannel = 'none' | 'steel' | 'shot' | 'spell';
+export interface StatLine { level:number; health:number; armor:number; speed:number; steel:number; shot:number; spell:number; }
+export interface AbilityUnlock { abilityId:string; unlockLevel:number; }
+export interface TroopDefinition { id:string; name:string; originalName:string; set:SetId; banner:BannerId|null; affiliation:Affiliation; cardType:'troop'; mana:number; rarity:Rarity; levelCap:number; role:string; channel:AttackChannel; baseStats:Omit<StatLine,'level'>; abilityUnlocks:AbilityUnlock[]; levels:StatLine[]; }
+export interface SummonerDefinition { id:string; name:string; originalName:string; set:SetId; banner:BannerId; affiliation:'banner'; cardType:'summoner'; mana:number; rarity:Rarity; levelCap:number; effects:Record<string,unknown>[]; lore:string; }
+export interface AbilityDefinition { id:string; name:string; originalName:string; banner:BannerId|null; affiliation:Affiliation; timing:string; mechanics:string; values:Record<string,unknown>; stacking:string; interactions:string[]; }
+export interface RulesetDefinition { id:string; name:string; category:string; phase:string; text:string; values:Record<string,unknown>; incompatibleWith:string[]; }

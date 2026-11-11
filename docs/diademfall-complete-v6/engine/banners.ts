@@ -1,0 +1,38 @@
+export const BANNERS = [
+  {
+    "id": "bastion_orders",
+    "name": "Bastion Orders",
+    "description": "Knights, oathbound guards, masons, and royal retainers.",
+    "playStyle": "Formation defense, armor recovery, and protection."
+  },
+  {
+    "id": "wild_courts",
+    "name": "Wild Courts",
+    "description": "Beast clans, thorn druids, moon hunters, and ancient forest courts.",
+    "playStyle": "Marks, wounded-target pressure, and forward movement."
+  },
+  {
+    "id": "veil_covenant",
+    "name": "Veil Covenant",
+    "description": "Fey envoys, witches, mirror mages, and masked spies.",
+    "playStyle": "Misdirection, linking, delayed hexes, and copied tempo."
+  },
+  {
+    "id": "hollow_legions",
+    "name": "Hollow Legions",
+    "description": "Revenants, grave knights, bell keepers, and oathless dead.",
+    "playStyle": "Death resources, delayed retaliation, and second lives."
+  },
+  {
+    "id": "skybound_houses",
+    "name": "Skybound Houses",
+    "description": "Griffin riders, cliff rangers, falconers, and cloud nobles.",
+    "playStyle": "Rear-rank accuracy, coordinated volleys, and forced movement."
+  },
+  {
+    "id": "wyrm_clans",
+    "name": "Wyrm Clans",
+    "description": "Dragon-blooded houses, rune giants, hoard seers, and elder beasts.",
+    "playStyle": "High-cost threats, stored mana, adaptive damage, and scaling power."
+  }
+] as const;
