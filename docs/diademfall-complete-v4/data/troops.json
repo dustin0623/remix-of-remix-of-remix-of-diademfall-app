@@ -1,0 +1,10166 @@
+[
+  {
+    "id": "ashen_page",
+    "name": "Ashen Page",
+    "originalName": "Ashen Page",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "stoneward_hound",
+    "name": "Stoneward Hound",
+    "originalName": "Stoneward Hound",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 1,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 2,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 3,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 4,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "oathcarver_acolyte",
+    "name": "Oathcarver Acolyte",
+    "originalName": "Oathcarver Acolyte",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "rampart_arbalist",
+    "name": "Rampart Arbalist",
+    "originalName": "Rampart Arbalist",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "granite_bailiff",
+    "name": "Granite Bailiff",
+    "originalName": "Granite Bailiff",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 4,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "brace",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 4,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 4,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 5,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "colossus_of_the_first_wall",
+    "name": "Colossus of the First Wall",
+    "originalName": "Colossus of the First Wall",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "lantern_squire",
+    "name": "Lantern Squire",
+    "originalName": "Lantern Squire",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 4,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "moat_runner",
+    "name": "Moat Runner",
+    "originalName": "Moat Runner",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "crown_pike",
+    "name": "Crown Pike",
+    "originalName": "Crown Pike",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 3,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 4,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "chapel_thaumaturge",
+    "name": "Chapel Thaumaturge",
+    "originalName": "Chapel Thaumaturge",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "banner_chirurgeon",
+    "name": "Banner Chirurgeon",
+    "originalName": "Banner Chirurgeon",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "gilded_castellan",
+    "name": "Gilded Castellan",
+    "originalName": "Gilded Castellan",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 4,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "levy_drummer",
+    "name": "Levy Drummer",
+    "originalName": "Levy Drummer",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 3,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 4,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "shield_clerk",
+    "name": "Shield Clerk",
+    "originalName": "Shield Clerk",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 1,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 1,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 1,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 2,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 3,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 4,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "gatebolt_archer",
+    "name": "Gatebolt Archer",
+    "originalName": "Gatebolt Archer",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 1,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 3,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "chain_magistrate",
+    "name": "Chain Magistrate",
+    "originalName": "Chain Magistrate",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 1,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "iron_vow_captain",
+    "name": "Iron-Vow Captain",
+    "originalName": "Iron-Vow Captain",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 3,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "brace",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 3,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 4,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "citadel_behemoth",
+    "name": "Citadel Behemoth",
+    "originalName": "Citadel Behemoth",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 9,
+      "armor": 4,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 9,
+        "armor": 4,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 10,
+        "armor": 4,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 10,
+        "armor": 4,
+        "speed": 1,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "seedling_wisp",
+    "name": "Seedling Wisp",
+    "originalName": "Seedling Wisp",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "fangroot_cub",
+    "name": "Fangroot Cub",
+    "originalName": "Fangroot Cub",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 5,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "moss_oracle",
+    "name": "Moss Oracle",
+    "originalName": "Moss Oracle",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "briar_dartling",
+    "name": "Briar Dartling",
+    "originalName": "Briar Dartling",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "antler_guardian",
+    "name": "Antler Guardian",
+    "originalName": "Antler Guardian",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "elderhorn_colossus",
+    "name": "Elderhorn Colossus",
+    "originalName": "Elderhorn Colossus",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 7,
+      "armor": 1,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 1,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 1,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 1,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "burrow_mouse",
+    "name": "Burrow Mouse",
+    "originalName": "Burrow Mouse",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "thistle_runner",
+    "name": "Thistle Runner",
+    "originalName": "Thistle Runner",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "moonclaw_stalker",
+    "name": "Moonclaw Stalker",
+    "originalName": "Moonclaw Stalker",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 5,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 5,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "spore_witch",
+    "name": "Spore Witch",
+    "originalName": "Spore Witch",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "grove_tender",
+    "name": "Grove Tender",
+    "originalName": "Grove Tender",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "whitehart_ravager",
+    "name": "Whitehart Ravager",
+    "originalName": "Whitehart Ravager",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 1,
+      "speed": 3,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 1,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 1,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 1,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 2,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "twig_scout",
+    "name": "Twig Scout",
+    "originalName": "Twig Scout",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "pack_pup",
+    "name": "Pack Pup",
+    "originalName": "Pack Pup",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 5,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "needlewing_hunter",
+    "name": "Needlewing Hunter",
+    "originalName": "Needlewing Hunter",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "rootsnare_druid",
+    "name": "Rootsnare Druid",
+    "originalName": "Rootsnare Druid",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "greatpaw_warden",
+    "name": "Greatpaw Warden",
+    "originalName": "Greatpaw Warden",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 1,
+      "speed": 4,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 1,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 1,
+        "speed": 4,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 1,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 2,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "crowned_mammoth",
+    "name": "Crowned Mammoth",
+    "originalName": "Crowned Mammoth",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 9,
+      "armor": 2,
+      "speed": 3,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 9,
+        "armor": 2,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 10,
+        "armor": 2,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 10,
+        "armor": 2,
+        "speed": 3,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "paper_moth",
+    "name": "Paper Moth",
+    "originalName": "Paper Moth",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "glass_imp",
+    "name": "Glass Imp",
+    "originalName": "Glass Imp",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "threadling_seer",
+    "name": "Threadling Seer",
+    "originalName": "Threadling Seer",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "prism_needler",
+    "name": "Prism Needler",
+    "originalName": "Prism Needler",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "lacquered_sentinel",
+    "name": "Lacquered Sentinel",
+    "originalName": "Lacquered Sentinel",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "the_unremembered_face",
+    "name": "The Unremembered Face",
+    "originalName": "The Unremembered Face",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "whisper_sprite",
+    "name": "Whisper Sprite",
+    "originalName": "Whisper Sprite",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "ribbon_fox",
+    "name": "Ribbon Fox",
+    "originalName": "Ribbon Fox",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "masked_duelist",
+    "name": "Masked Duelist",
+    "originalName": "Masked Duelist",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "moon_mirror_adept",
+    "name": "Moon-Mirror Adept",
+    "originalName": "Moon-Mirror Adept",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "fate_stitcher",
+    "name": "Fate Stitcher",
+    "originalName": "Fate Stitcher",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "gloam_courtier",
+    "name": "Gloam Courtier",
+    "originalName": "Gloam Courtier",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "inkcap_familiar",
+    "name": "Inkcap Familiar",
+    "originalName": "Inkcap Familiar",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "silkknife_agent",
+    "name": "Silkknife Agent",
+    "originalName": "Silkknife Agent",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "glimmerbow_spy",
+    "name": "Glimmerbow Spy",
+    "originalName": "Glimmerbow Spy",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "knotwitch",
+    "name": "Knotwitch",
+    "originalName": "Knotwitch",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "mirrorblade_envoy",
+    "name": "Mirrorblade Envoy",
+    "originalName": "Mirrorblade Envoy",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 2,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 2,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 2,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 2,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 3,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "palace_of_one",
+    "name": "Palace of One",
+    "originalName": "Palace of One",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 9,
+      "armor": 3,
+      "speed": 2,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 10,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 10,
+        "armor": 3,
+        "speed": 2,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "candle_remnant",
+    "name": "Candle Remnant",
+    "originalName": "Candle Remnant",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "bone_rat",
+    "name": "Bone Rat",
+    "originalName": "Bone Rat",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "grave_cantor",
+    "name": "Grave Cantor",
+    "originalName": "Grave Cantor",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 9,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "coffin_dart",
+    "name": "Coffin Dart",
+    "originalName": "Coffin Dart",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "ossuary_guard",
+    "name": "Ossuary Guard",
+    "originalName": "Ossuary Guard",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "the_bell_beneath",
+    "name": "The Bell Beneath",
+    "originalName": "The Bell Beneath",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "tallow_wisp",
+    "name": "Tallow Wisp",
+    "originalName": "Tallow Wisp",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "crypt_scrabbler",
+    "name": "Crypt Scrabbler",
+    "originalName": "Crypt Scrabbler",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "mourning_pike",
+    "name": "Mourning Pike",
+    "originalName": "Mourning Pike",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 9,
+        "armor": 0,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 9,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 10,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "pale_medium",
+    "name": "Pale Medium",
+    "originalName": "Pale Medium",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 9,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "marrow_surgeon",
+    "name": "Marrow Surgeon",
+    "originalName": "Marrow Surgeon",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "sepulcher_knight",
+    "name": "Sepulcher Knight",
+    "originalName": "Sepulcher Knight",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "grave_levy",
+    "name": "Grave Levy",
+    "originalName": "Grave Levy",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "rattleblade",
+    "name": "Rattleblade",
+    "originalName": "Rattleblade",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "ash_bolt_deadeye",
+    "name": "Ash-Bolt Deadeye",
+    "originalName": "Ash-Bolt Deadeye",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "debt_collector",
+    "name": "Debt Collector",
+    "originalName": "Debt Collector",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 6,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 8,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 9,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "black_bell_centurion",
+    "name": "Black Bell Centurion",
+    "originalName": "Black Bell Centurion",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "catacomb_sovereign",
+    "name": "Catacomb Sovereign",
+    "originalName": "Catacomb Sovereign",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 10,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 11,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 11,
+        "armor": 3,
+        "speed": 1,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "loose_feather",
+    "name": "Loose Feather",
+    "originalName": "Loose Feather",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "cliff_marten",
+    "name": "Cliff Marten",
+    "originalName": "Cliff Marten",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "cloud_reader",
+    "name": "Cloud Reader",
+    "originalName": "Cloud Reader",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "rookbow_scout",
+    "name": "Rookbow Scout",
+    "originalName": "Rookbow Scout",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "griffin_warden",
+    "name": "Griffin Warden",
+    "originalName": "Griffin Warden",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "windread",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "thunder_roc_ancient",
+    "name": "Thunder-Roc Ancient",
+    "originalName": "Thunder-Roc Ancient",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "kite_squire",
+    "name": "Kite Squire",
+    "originalName": "Kite Squire",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "eyrie_runner",
+    "name": "Eyrie Runner",
+    "originalName": "Eyrie Runner",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "gale_lancer",
+    "name": "Gale Lancer",
+    "originalName": "Gale Lancer",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "mistcaller",
+    "name": "Mistcaller",
+    "originalName": "Mistcaller",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "wingmender",
+    "name": "Wingmender",
+    "originalName": "Wingmender",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "cloudhouse_champion",
+    "name": "Cloudhouse Champion",
+    "originalName": "Cloudhouse Champion",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "pennant_swift",
+    "name": "Pennant Swift",
+    "originalName": "Pennant Swift",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "hookwing_recruit",
+    "name": "Hookwing Recruit",
+    "originalName": "Hookwing Recruit",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "stormglass_archer",
+    "name": "Stormglass Archer",
+    "originalName": "Stormglass Archer",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 5,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "wind_magistrate",
+    "name": "Wind Magistrate",
+    "originalName": "Wind Magistrate",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "griffin_legionary",
+    "name": "Griffin Legionary",
+    "originalName": "Griffin Legionary",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
+      "armor": 2,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "windread",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 2,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 2,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 2,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 3,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "tempest_crown_roc",
+    "name": "Tempest Crown Roc",
+    "originalName": "Tempest Crown Roc",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 9,
+      "armor": 3,
+      "speed": 2,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 10,
+        "armor": 3,
+        "speed": 2,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 10,
+        "armor": 3,
+        "speed": 2,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "shed_scale",
+    "name": "Shed Scale",
+    "originalName": "Shed Scale",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 0,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "fodder",
+    "channel": "none",
+    "baseStats": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 1,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 2,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 3,
+        "armor": 0,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "cinder_gecko",
+    "name": "Cinder Gecko",
+    "originalName": "Cinder Gecko",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "skirmisher",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "rune_hatchling",
+    "name": "Rune Hatchling",
+    "originalName": "Rune Hatchling",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "support",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "hoard_slinger",
+    "name": "Hoard Slinger",
+    "originalName": "Hoard Slinger",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "basalt_drake",
+    "name": "Basalt Drake",
+    "originalName": "Basalt Drake",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "guardian",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "first_blood_wyrm",
+    "name": "First-Blood Wyrm",
+    "originalName": "First-Blood Wyrm",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ]
+  },
+  {
+    "id": "ember_newt",
+    "name": "Ember Newt",
+    "originalName": "Ember Newt",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "copper_kobold",
+    "name": "Copper Kobold",
+    "originalName": "Copper Kobold",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "scaleclaw_raider",
+    "name": "Scaleclaw Raider",
+    "originalName": "Scaleclaw Raider",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "runespark_adept",
+    "name": "Runespark Adept",
+    "originalName": "Runespark Adept",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ]
+  },
+  {
+    "id": "hoard_tender",
+    "name": "Hoard Tender",
+    "originalName": "Hoard Tender",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ]
+  },
+  {
+    "id": "ashen_drakeguard",
+    "name": "Ashen Drakeguard",
+    "originalName": "Ashen Drakeguard",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 9,
+        "armor": 2,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "coal_snout_recruit",
+    "name": "Coal-Snout Recruit",
+    "originalName": "Coal-Snout Recruit",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "ironscale_skulk",
+    "name": "Ironscale Skulk",
+    "originalName": "Ironscale Skulk",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "runebow_clansman",
+    "name": "Runebow Clansman",
+    "originalName": "Runebow Clansman",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "bloodline_seer",
+    "name": "Bloodline Seer",
+    "originalName": "Bloodline Seer",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ]
+  },
+  {
+    "id": "elder_scale_guard",
+    "name": "Elder Scale Guard",
+    "originalName": "Elder Scale Guard",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  },
+  {
+    "id": "worldcoil_heir",
+    "name": "Worldcoil Heir",
+    "originalName": "Worldcoil Heir",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "cardType": "troop",
+    "mana": 9,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "legion_champion",
+    "channel": "steel",
+    "baseStats": {
+      "health": 10,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 10,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 11,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 11,
+        "armor": 3,
+        "speed": 1,
+        "steel": 5,
+        "shot": 0,
+        "spell": 0
+      }
+    ]
+  }
+]

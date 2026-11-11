@@ -1,0 +1,662 @@
+import type { SummonerDefinition } from './types';
+
+export const SUMMONERS: SummonerDefinition[] = [
+  {
+    "id": "aldric_stonebanner",
+    "name": "Aldric Stonebanner",
+    "originalName": "Aldric Stonebanner",
+    "set": "ancient",
+    "banner": "bastion_orders",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "armor",
+        "value": 1
+      }
+    ],
+    "lore": "A field captain who carries the last lawful standard.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "lady_serane_vale",
+    "name": "Lady Serane Vale",
+    "originalName": "Lady Serane Vale",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "front_two",
+        "abilityId": "brace"
+      }
+    ],
+    "lore": "A court duelist who turns a narrow line into a fortress.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "torvane_crownshield",
+    "name": "Torvane Crownshield",
+    "originalName": "Torvane Crownshield",
+    "set": "oath",
+    "banner": "bastion_orders",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
+      },
+      {
+        "kind": "grantAbility",
+        "target": "middle_allies",
+        "abilityId": "retinue"
+      }
+    ],
+    "lore": "The vanished king’s shield, still obeying an unfinished oath.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "bram_forgewarden",
+    "name": "Bram Forgewarden",
+    "originalName": "Bram Forgewarden",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "all_allies",
+        "stat": "armor",
+        "value": 1,
+        "condition": "printedArmorAtLeast1"
+      }
+    ],
+    "lore": "A practical armorer who improves only what can bear the weight.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "maelor_ironhand",
+    "name": "Maelor Ironhand",
+    "originalName": "Maelor Ironhand",
+    "set": "legionnaire",
+    "banner": "bastion_orders",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "front_ally",
+        "abilityId": "oathkeeper"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "all_allies",
+        "abilityId": "forgeheart"
+      }
+    ],
+    "lore": "A queen without a throne who refuses to lose another soldier.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "eira_thornpath",
+    "name": "Eira Thornpath",
+    "originalName": "Eira Thornpath",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "speed",
+        "value": 1
+      }
+    ],
+    "lore": "The quickest guide through the moving briar roads.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "rowan_packmother",
+    "name": "Rowan Packmother",
+    "originalName": "Rowan Packmother",
+    "set": "oath",
+    "banner": "wild_courts",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "all_allies",
+        "abilityId": "packmark"
+      }
+    ],
+    "lore": "She teaches rival beasts to hunt as one court.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "garran_moonfang",
+    "name": "Garran Moonfang",
+    "originalName": "Garran Moonfang",
+    "set": "oath",
+    "banner": "wild_courts",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "steel_allies",
+        "stat": "steel",
+        "value": 1
+      },
+      {
+        "kind": "grantAbility",
+        "target": "highest_mana_ally",
+        "abilityId": "moonrush"
+      }
+    ],
+    "lore": "A moon-crowned warlord who times every charge to the old sky.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "pip_briarwhistle",
+    "name": "Pip Briarwhistle",
+    "originalName": "Pip Briarwhistle",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "rear_three",
+        "stat": "speed",
+        "value": 1,
+        "condition": "rounds1to2"
+      }
+    ],
+    "lore": "A hedge scout whose whistle always arrives before the ambush.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "ysilde_whitehart",
+    "name": "Ysilde Whitehart",
+    "originalName": "Ysilde Whitehart",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "all_allies",
+        "abilityId": "bloodscent"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "lowest_health_ally",
+        "abilityId": "primal_mend"
+      }
+    ],
+    "lore": "The antlered judge of every hunt taken without need.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "oris_glassmoth",
+    "name": "Oris Glassmoth",
+    "originalName": "Oris Glassmoth",
+    "set": "ancient",
+    "banner": "veil_covenant",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "spell_allies",
+        "stat": "spell",
+        "value": 1
+      }
+    ],
+    "lore": "A soft-spoken envoy whose wings remember every lie.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "miravel_threadseer",
+    "name": "Miravel Threadseer",
+    "originalName": "Miravel Threadseer",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "lowest_mana_ally",
+        "abilityId": "fate_knot"
+      },
+      {
+        "kind": "stat",
+        "target": "lowest_mana_ally",
+        "stat": "health",
+        "value": 1
+      }
+    ],
+    "lore": "She knots two possible futures and cuts the one she dislikes.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "veyra_nine_masks",
+    "name": "Veyra Nine-Masks",
+    "originalName": "Veyra Nine-Masks",
+    "set": "oath",
+    "banner": "veil_covenant",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "rear_ally",
+        "abilityId": "mislead"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "highest_speed_ally",
+        "abilityId": "mirrorcraft"
+      }
+    ],
+    "lore": "No witness agrees on which face led the battle.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "fen_quill",
+    "name": "Fen Quill",
+    "originalName": "Fen Quill",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "all_allies",
+        "stat": "accuracy",
+        "value": 5,
+        "condition": "enemyHasStatus"
+      }
+    ],
+    "lore": "A contract witch who writes the weakness after seeing it.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "the_lacquered_oracle",
+    "name": "The Lacquered Oracle",
+    "originalName": "The Lacquered Oracle",
+    "set": "legionnaire",
+    "banner": "veil_covenant",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "support_allies",
+        "abilityId": "echo_sigil"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "front_ally",
+        "abilityId": "hexweave"
+      }
+    ],
+    "lore": "Its painted prophecies speak twice, never quite the same way.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "morcant_bellkeeper",
+    "name": "Morcant Bellkeeper",
+    "originalName": "Morcant Bellkeeper",
+    "set": "ancient",
+    "banner": "hollow_legions",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "healingReceived",
+        "value": -1
+      }
+    ],
+    "lore": "Each toll reminds the dead which side of the gate they chose.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "abbess_nhal",
+    "name": "Abbess Nhal",
+    "originalName": "Abbess Nhal",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "lowest_health_ally",
+        "abilityId": "soul_tithe"
+      }
+    ],
+    "lore": "She collects no coin, only promises left at graves.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "king_ossuary",
+    "name": "King Ossuary",
+    "originalName": "King Ossuary",
+    "set": "oath",
+    "banner": "hollow_legions",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "highest_mana_ally",
+        "abilityId": "grave_recall"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "front_ally",
+        "abilityId": "bone_harvest"
+      }
+    ],
+    "lore": "A monarch assembled from the bones of those who broke faith.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "tallow_jack",
+    "name": "Tallow Jack",
+    "originalName": "Tallow Jack",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1,
+        "condition": "printedHealthAtMost5"
+      }
+    ],
+    "lore": "A candle bearer who makes small ghosts surprisingly difficult to extinguish.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "vel_mourningstar",
+    "name": "Vel Mourningstar",
+    "originalName": "Vel Mourningstar",
+    "set": "legionnaire",
+    "banner": "hollow_legions",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "front_two",
+        "abilityId": "death_debt"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "rear_ally",
+        "abilityId": "doom_count"
+      }
+    ],
+    "lore": "The general who schedules revenge with funeral precision.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "cael_rookwing",
+    "name": "Cael Rookwing",
+    "originalName": "Cael Rookwing",
+    "set": "ancient",
+    "banner": "skybound_houses",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "shot_allies",
+        "stat": "shot",
+        "value": 1
+      }
+    ],
+    "lore": "A cliff-born captain with a rook’s eye for weak seams.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "maris_cloudreel",
+    "name": "Maris Cloudreel",
+    "originalName": "Maris Cloudreel",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "rear_three",
+        "abilityId": "windread"
+      }
+    ],
+    "lore": "She measures battle lines as if they were weather fronts.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "duke_avorran",
+    "name": "Duke Avorran",
+    "originalName": "Duke Avorran",
+    "set": "oath",
+    "banner": "skybound_houses",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "shot_allies",
+        "abilityId": "volley_line"
+      },
+      {
+        "kind": "stat",
+        "target": "rear_three",
+        "stat": "accuracy",
+        "value": 5
+      }
+    ],
+    "lore": "Aerial nobility distilled into ruthless coordination.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "tess_kestrel",
+    "name": "Tess Kestrel",
+    "originalName": "Tess Kestrel",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "rear_ally",
+        "stat": "speed",
+        "value": 2,
+        "condition": "round1Only"
+      }
+    ],
+    "lore": "The youngest courier ever to outrun a storm drake.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "saint_orien_of_the_gale",
+    "name": "Saint Orien of the Gale",
+    "originalName": "Saint Orien of the Gale",
+    "set": "legionnaire",
+    "banner": "skybound_houses",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "highest_speed_ally",
+        "abilityId": "spotter"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "shot_allies",
+        "abilityId": "skyhook"
+      }
+    ],
+    "lore": "A canonized hunter who believes every tyrant can be moved.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "vaelor_runeclaw",
+    "name": "Vaelor Runeclaw",
+    "originalName": "Vaelor Runeclaw",
+    "set": "ancient",
+    "banner": "wyrm_clans",
+    "mana": 3,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
+      }
+    ],
+    "lore": "A rune-carver who reads ancestry in every scale.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "syrra_hoardseer",
+    "name": "Syrra Hoardseer",
+    "originalName": "Syrra Hoardseer",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "spell_allies",
+        "abilityId": "hoardfire"
+      }
+    ],
+    "lore": "She values the mana deliberately left unspent.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "orrun_the_first_scale",
+    "name": "Orrun the First Scale",
+    "originalName": "Orrun the First Scale",
+    "set": "oath",
+    "banner": "wyrm_clans",
+    "mana": 6,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "highest_mana_ally",
+        "abilityId": "ancient_scale"
+      },
+      {
+        "kind": "stat",
+        "target": "highest_mana_ally",
+        "stat": "attackPower",
+        "value": 1
+      }
+    ],
+    "lore": "An elder whose first scar predates the current crown.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "kiva_emberledger",
+    "name": "Kiva Emberledger",
+    "originalName": "Kiva Emberledger",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "mana": 2,
+    "rarity": "rare",
+    "levelCap": 6,
+    "effects": [
+      {
+        "kind": "conditionalStat",
+        "target": "all_allies",
+        "stat": "accuracy",
+        "value": 5,
+        "condition": "unspentManaAtLeast2"
+      }
+    ],
+    "lore": "A hoard accountant who turns restraint into certainty.",
+    "cardType": "summoner"
+  },
+  {
+    "id": "thalor_worldcoil",
+    "name": "Thalor Worldcoil",
+    "originalName": "Thalor Worldcoil",
+    "set": "legionnaire",
+    "banner": "wyrm_clans",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "effects": [
+      {
+        "kind": "grantAbility",
+        "target": "front_ally",
+        "abilityId": "colossus_wake"
+      },
+      {
+        "kind": "grantAbility",
+        "target": "all_allies",
+        "abilityId": "bloodline_roar"
+      }
+    ],
+    "lore": "A sleeping giant whose breath makes old blood remember itself.",
+    "cardType": "summoner"
+  }
+];

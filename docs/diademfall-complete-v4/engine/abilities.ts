@@ -1,0 +1,683 @@
+import type { AbilityDefinition } from './types';
+
+export const ABILITIES: AbilityDefinition[] = [
+  {
+    "id": "brace",
+    "name": "Brace",
+    "originalName": "Brace",
+    "banner": "bastion_orders",
+    "timing": "round_start",
+    "mechanics": "If this unit is in position 1 or 2, it gains 2 brace points. Each point prevents 1 Steel or Shot damage after armor and is then spent. Unspent points expire when the unit takes its turn.",
+    "values": {
+      "bracePoints": 2,
+      "eligiblePositions": [
+        1,
+        2
+      ]
+    },
+    "stacking": "Multiple grants do not stack; use the highest point value.",
+    "interactions": [
+      "Does not prevent Spell or direct damage.",
+      "Damage reduced to 0 does not trigger on-damage effects.",
+      "A stunned unit still loses unspent points at its skipped turn."
+    ]
+  },
+  {
+    "id": "shieldwall",
+    "name": "Shieldwall",
+    "originalName": "Shieldwall",
+    "banner": "bastion_orders",
+    "timing": "damage_mitigation",
+    "mechanics": "While this unit has at least 1 armor, adjacent allies take 1 less Steel and Shot damage after their own armor. A unit can receive protection from both neighbors.",
+    "values": {
+      "reductionPerNeighbor": 1,
+      "maximumReduction": 2
+    },
+    "stacking": "Additive from left and right neighbors, capped at 2.",
+    "interactions": [
+      "Broken Formation disables adjacency benefits.",
+      "Does not protect the bearer.",
+      "Reduction applies after armor absorption but before brace points."
+    ]
+  },
+  {
+    "id": "forgeheart",
+    "name": "Forgeheart",
+    "originalName": "Forgeheart",
+    "banner": "bastion_orders",
+    "timing": "after_damage",
+    "mechanics": "The first time this unit falls from positive armor to 0 armor, restore 2 armor after the current action finishes.",
+    "values": {
+      "restoredArmor": 2,
+      "usesPerBattle": 1
+    },
+    "stacking": "Additional copies add no uses.",
+    "interactions": [
+      "A lethal hit still defeats the unit before armor is restored.",
+      "An armor purge that deals no damage can trigger it.",
+      "The restored armor cannot exceed printed maximum armor."
+    ]
+  },
+  {
+    "id": "bannerhold",
+    "name": "Bannerhold",
+    "originalName": "Bannerhold",
+    "banner": "bastion_orders",
+    "timing": "continuous",
+    "mechanics": "While this unit occupies position 1 or 2, positive numeric effects created by allied summoners are increased by 1 for this unit only.",
+    "values": {
+      "bonus": 1,
+      "eligiblePositions": [
+        1,
+        2
+      ]
+    },
+    "stacking": "Does not stack with another Bannerhold.",
+    "interactions": [
+      "Does not increase ability-grant effects.",
+      "Recalculates immediately after position changes.",
+      "A +0 or conditional effect remains unchanged."
+    ]
+  },
+  {
+    "id": "retinue",
+    "name": "Retinue",
+    "originalName": "Retinue",
+    "banner": "bastion_orders",
+    "timing": "round_start",
+    "mechanics": "If this unit has a living ally immediately ahead and immediately behind it, all three gain 1 temporary armor until round end.",
+    "values": {
+      "temporaryArmor": 1,
+      "requiredNeighbors": 2
+    },
+    "stacking": "Each Retinue bearer may create a separate layer; maximum 2 temporary armor per unit.",
+    "interactions": [
+      "Temporary armor is lost at round end before damage-over-time resolves.",
+      "Broken Formation suppresses this ability.",
+      "Summoned units can satisfy the neighbor check next round."
+    ]
+  },
+  {
+    "id": "oathkeeper",
+    "name": "Oathkeeper",
+    "originalName": "Oathkeeper",
+    "banner": "bastion_orders",
+    "timing": "before_lethal_damage",
+    "mechanics": "Once per battle, when an adjacent ally would be defeated by direct attack damage, this unit takes that post-mitigation damage instead. The ally takes 0.",
+    "values": {
+      "usesPerBattle": 1
+    },
+    "stacking": "Each bearer has its own use; the nearest frontward eligible bearer resolves first.",
+    "interactions": [
+      "Cannot intercept fatigue, Doom Count, or other indirect damage.",
+      "If the bearer is defeated, excess damage does not return to the ally.",
+      "Does not trigger if displacement has broken adjacency."
+    ]
+  },
+  {
+    "id": "bloodscent",
+    "name": "Bloodscent",
+    "originalName": "Bloodscent",
+    "banner": "wild_courts",
+    "timing": "damage_calculation",
+    "mechanics": "Deal +1 attack damage to a target that began the action below its maximum health.",
+    "values": {
+      "bonusDamage": 1
+    },
+    "stacking": "Multiple copies do not stack.",
+    "interactions": [
+      "Checked before the attack roll, not after reflected or linked damage.",
+      "Applies to Steel, Shot, and Spell attacks.",
+      "Temporary maximum-health loss can make a target wounded."
+    ]
+  },
+  {
+    "id": "packmark",
+    "name": "Packmark",
+    "originalName": "Packmark",
+    "banner": "wild_courts",
+    "timing": "after_hit",
+    "mechanics": "The first Wild Courts attack that hits each round marks its target until round end. Later Wild Courts attacks against that target gain +1 damage.",
+    "values": {
+      "bonusDamage": 1,
+      "marksPerTeamPerRound": 1
+    },
+    "stacking": "One team mark per target; it cannot stack.",
+    "interactions": [
+      "Misses do not place the mark.",
+      "The marking attack does not receive the bonus.",
+      "A copied or stolen Packmark still keys from the attacker’s current Banner."
+    ]
+  },
+  {
+    "id": "pounce",
+    "name": "Pounce",
+    "originalName": "Pounce",
+    "banner": "wild_courts",
+    "timing": "battle_start",
+    "mechanics": "If this unit starts in position 4, 5, or 6, it makes a 1-damage Steel strike against the enemy rearmost unit before round 1. This strike cannot critically hit.",
+    "values": {
+      "openingDamage": 1,
+      "eligiblePositions": [
+        4,
+        5,
+        6
+      ]
+    },
+    "stacking": "Every bearer triggers in normal speed order.",
+    "interactions": [
+      "Uses normal accuracy and can be intercepted.",
+      "Does not count as the unit’s round action.",
+      "Battle-start defeats are removed before round 1 initiative is built."
+    ]
+  },
+  {
+    "id": "moonrush",
+    "name": "Moonrush",
+    "originalName": "Moonrush",
+    "banner": "wild_courts",
+    "timing": "after_attack",
+    "mechanics": "After this unit completes its attack in rounds 3, 6, 9, and so on, it repeats the same attack against a newly selected legal target at 70% power, rounded down, minimum 1.",
+    "values": {
+      "everyNthRound": 3,
+      "repeatPowerPercent": 70
+    },
+    "stacking": "Additional copies do not create more repeats.",
+    "interactions": [
+      "The repeat performs a fresh accuracy roll.",
+      "On-attack effects can trigger on both attacks unless limited per round.",
+      "A defeated original target is retargeted normally."
+    ]
+  },
+  {
+    "id": "trailblazer",
+    "name": "Trailblazer",
+    "originalName": "Trailblazer",
+    "banner": "wild_courts",
+    "timing": "after_position_change",
+    "mechanics": "When this unit moves toward position 1 because an ally was defeated, gain +2 speed until round end and clear Pin.",
+    "values": {
+      "speedBonus": 2
+    },
+    "stacking": "Refreshes duration; does not add more speed.",
+    "interactions": [
+      "Voluntary swaps do not trigger it.",
+      "The speed change affects any remaining action this round.",
+      "No Retreat prevents the movement and therefore the trigger."
+    ]
+  },
+  {
+    "id": "primal_mend",
+    "name": "Primal Mend",
+    "originalName": "Primal Mend",
+    "banner": "wild_courts",
+    "timing": "after_kill",
+    "mechanics": "The first time this unit defeats an enemy each round, restore 2 health to the wounded allied Wild Courts unit with the lowest health percentage; ties favor the frontmost.",
+    "values": {
+      "healing": 2,
+      "usesPerRound": 1
+    },
+    "stacking": "Each bearer can trigger once per round.",
+    "interactions": [
+      "Cannot target the bearer if another eligible ally has a lower percentage.",
+      "Overhealing is lost.",
+      "Healing modifiers apply after target selection."
+    ]
+  },
+  {
+    "id": "mislead",
+    "name": "Mislead",
+    "originalName": "Mislead",
+    "banner": "veil_covenant",
+    "timing": "before_target_lock",
+    "mechanics": "Once per round, when an enemy directly targets another allied back-rank unit, redirect that action to this unit if this unit is a legal target.",
+    "values": {
+      "usesPerRound": 1,
+      "backRankPositions": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "stacking": "Nearest rearward eligible bearer resolves first.",
+    "interactions": [
+      "Does not redirect attacks already aimed at position 1.",
+      "Area and random-target actions cannot be redirected.",
+      "The attacker does not reroll accuracy after redirection."
+    ]
+  },
+  {
+    "id": "fate_knot",
+    "name": "Fate Knot",
+    "originalName": "Fate Knot",
+    "banner": "veil_covenant",
+    "timing": "battle_start",
+    "mechanics": "Link to the adjacent ally with the lowest printed mana; ties favor the frontward ally. Whenever either linked unit takes 2 or more post-mitigation damage, move 1 of that damage to the other as direct damage.",
+    "values": {
+      "shiftedDamage": 1,
+      "minimumTriggerDamage": 2
+    },
+    "stacking": "A unit may belong to only one knot; earlier formation position wins conflicts.",
+    "interactions": [
+      "Shifted damage cannot trigger another Fate Knot.",
+      "The link ends when either unit is defeated.",
+      "Oathkeeper resolves before the knot."
+    ]
+  },
+  {
+    "id": "hexweave",
+    "name": "Hexweave",
+    "originalName": "Hexweave",
+    "banner": "veil_covenant",
+    "timing": "after_hit",
+    "mechanics": "The first hit each round applies the next hex in a repeating sequence: -1 speed; then -1 attack power; then healing locked. Each hex lasts through the next round.",
+    "values": {
+      "speedPenalty": 1,
+      "attackPenalty": 1,
+      "durationRounds": 1
+    },
+    "stacking": "Different hexes coexist; the same hex refreshes but does not stack.",
+    "interactions": [
+      "The sequence is stored per bearer.",
+      "Attack power reduces all three attack channels, minimum 0.",
+      "Cleanse removes the active hex but does not reset the sequence."
+    ]
+  },
+  {
+    "id": "echo_sigil",
+    "name": "Echo Sigil",
+    "originalName": "Echo Sigil",
+    "banner": "veil_covenant",
+    "timing": "after_support_action",
+    "mechanics": "Once per round, repeat this unit’s first numeric support action at 50% value, rounded down, minimum 1, on the same target if still legal or the next legal target by the original selector.",
+    "values": {
+      "repeatPercent": 50,
+      "usesPerRound": 1
+    },
+    "stacking": "Additional copies add no repeats.",
+    "interactions": [
+      "Cannot repeat resurrection, ability grants, displacement, or another Echo Sigil.",
+      "The repeat is a new event for triggers.",
+      "Echoing Hall modifies the original action before this repeat is calculated."
+    ]
+  },
+  {
+    "id": "vanish",
+    "name": "Vanish",
+    "originalName": "Vanish",
+    "banner": "veil_covenant",
+    "timing": "after_damage",
+    "mechanics": "The first time each battle this unit loses its last armor, it becomes untargetable by direct attacks from positions 3–6 until after its next action.",
+    "values": {
+      "usesPerBattle": 1,
+      "blockedAttackerPositions": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "stacking": "Additional copies add no uses.",
+    "interactions": [
+      "Does not cancel the action that broke the armor.",
+      "Area, indirect, and front-rank attacks remain legal.",
+      "If stunned, Vanish lasts until after the skipped action resolves."
+    ]
+  },
+  {
+    "id": "mirrorcraft",
+    "name": "Mirrorcraft",
+    "originalName": "Mirrorcraft",
+    "banner": "veil_covenant",
+    "timing": "round_start",
+    "mechanics": "Set this unit’s speed to the highest current enemy speed until round end, but never below its printed speed.",
+    "values": {
+      "floor": "printedSpeed"
+    },
+    "stacking": "One recalculation; copies do not stack.",
+    "interactions": [
+      "Reads enemy speed after round-start penalties but before initiative ordering.",
+      "Later speed changes still apply to the copied value.",
+      "If there are no enemies, no change occurs."
+    ]
+  },
+  {
+    "id": "soul_tithe",
+    "name": "Soul Tithe",
+    "originalName": "Soul Tithe",
+    "banner": "hollow_legions",
+    "timing": "after_unit_defeated",
+    "mechanics": "Gain 1 soul whenever any other unit is defeated. At 3 souls, automatically spend 3 to heal 3 health and remove the oldest removable negative status from this unit.",
+    "values": {
+      "soulsRequired": 3,
+      "healing": 3,
+      "maximumSouls": 3
+    },
+    "stacking": "Each bearer tracks souls independently.",
+    "interactions": [
+      "Battle-start defeats grant souls.",
+      "Cannot trigger after the bearer is defeated.",
+      "If at full health with no removable status, souls remain stored."
+    ]
+  },
+  {
+    "id": "grave_recall",
+    "name": "Grave Recall",
+    "originalName": "Grave Recall",
+    "banner": "hollow_legions",
+    "timing": "after_self_defeated",
+    "mechanics": "Once per battle, return in the same position after the current action with 2 health, 0 armor, -1 attack power, and support actions disabled.",
+    "values": {
+      "returnedHealth": 2,
+      "attackPenalty": 1,
+      "usesPerBattle": 1
+    },
+    "stacking": "Additional copies add no revivals.",
+    "interactions": [
+      "The return is the same unit identity and keeps once-per-battle usage.",
+      "Cannot trigger if its position was filled by a summon.",
+      "Victory is checked after pending returns resolve."
+    ]
+  },
+  {
+    "id": "death_debt",
+    "name": "Death Debt",
+    "originalName": "Death Debt",
+    "banner": "hollow_legions",
+    "timing": "after_damage",
+    "mechanics": "The first enemy each round to deal positive direct damage to this unit gains a debt. At round end, that enemy takes 2 direct damage and the debt is removed.",
+    "values": {
+      "debtDamage": 2,
+      "debtsPlacedPerRound": 1
+    },
+    "stacking": "One debt from each bearer may coexist on the same enemy.",
+    "interactions": [
+      "The debt persists if the bearer is defeated.",
+      "Direct damage ignores armor and Brace.",
+      "A defeated debtor is removed before the debt resolves."
+    ]
+  },
+  {
+    "id": "bone_harvest",
+    "name": "Bone Harvest",
+    "originalName": "Bone Harvest",
+    "banner": "hollow_legions",
+    "timing": "after_unit_defeated",
+    "mechanics": "Whenever another unit is defeated, gain 1 armor, up to 3 gained armor during each life.",
+    "values": {
+      "armorPerDefeat": 1,
+      "maximumPerLife": 3
+    },
+    "stacking": "Each copy raises the per-life cap by 1, not the gain.",
+    "interactions": [
+      "A Grave Recall return begins a new life and resets the cap.",
+      "Cannot exceed printed maximum armor plus 3.",
+      "Simultaneous defeats resolve front to back, ally before enemy."
+    ]
+  },
+  {
+    "id": "doom_count",
+    "name": "Doom Count",
+    "originalName": "Doom Count",
+    "banner": "hollow_legions",
+    "timing": "after_hit",
+    "mechanics": "The first hit against each target places a counter at 3. At each round end it decreases by 1; at 0 the target takes 3 direct damage and the counter ends.",
+    "values": {
+      "startingCount": 3,
+      "expiryDamage": 3
+    },
+    "stacking": "One count per source; a new hit refreshes it to 3.",
+    "interactions": [
+      "Cleanse removes the counter.",
+      "The source need not remain alive.",
+      "The count ticks after Death Debt and before fatigue."
+    ]
+  },
+  {
+    "id": "pale_exchange",
+    "name": "Pale Exchange",
+    "originalName": "Pale Exchange",
+    "banner": "hollow_legions",
+    "timing": "before_support_action",
+    "mechanics": "Once per round, this unit may pay 1 health to increase the numeric value of its next heal, armor restore, or debuff by 2. It cannot pay if at 1 health.",
+    "values": {
+      "healthCost": 1,
+      "potencyBonus": 2,
+      "usesPerRound": 1
+    },
+    "stacking": "Additional copies add no uses.",
+    "interactions": [
+      "The health cost is direct and cannot be prevented.",
+      "If the action is canceled, the cost is refunded.",
+      "Echo Sigil repeats the increased final value at half strength."
+    ]
+  },
+  {
+    "id": "windread",
+    "name": "Windread",
+    "originalName": "Windread",
+    "banner": "skybound_houses",
+    "timing": "continuous",
+    "mechanics": "While in position 4, 5, or 6, gain +1 speed and +10 accuracy.",
+    "values": {
+      "speedBonus": 1,
+      "accuracyBonus": 10,
+      "eligiblePositions": [
+        4,
+        5,
+        6
+      ]
+    },
+    "stacking": "Additional copies do not stack.",
+    "interactions": [
+      "Recalculates immediately after movement.",
+      "Accuracy is on a 0–100 scale.",
+      "Open Flanks adds after Windread."
+    ]
+  },
+  {
+    "id": "dive_pass",
+    "name": "Dive Pass",
+    "originalName": "Dive Pass",
+    "banner": "skybound_houses",
+    "timing": "after_attack",
+    "mechanics": "After this unit hits with a Steel attack from position 3–6, swap it with the allied unit immediately ahead, unless either unit is pinned or anchored.",
+    "values": {
+      "eligiblePositions": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "moveDistance": 1
+    },
+    "stacking": "At most one swap per attack.",
+    "interactions": [
+      "The swap occurs after all hit triggers.",
+      "No Retreat disables the swap.",
+      "Trailblazer does not trigger because the movement was not caused by a defeat."
+    ]
+  },
+  {
+    "id": "spotter",
+    "name": "Spotter",
+    "originalName": "Spotter",
+    "banner": "skybound_houses",
+    "timing": "after_hit",
+    "mechanics": "The first enemy this unit hits each round is spotted until round end. Allied Shot attacks against it ignore 1 armor and gain +5 accuracy.",
+    "values": {
+      "ignoredArmor": 1,
+      "accuracyBonus": 5,
+      "usesPerRound": 1
+    },
+    "stacking": "Multiple Spotter marks refresh; armor ignore is capped at 2.",
+    "interactions": [
+      "Ignored armor is not removed; that portion of damage reaches health.",
+      "A miss does not spot.",
+      "Packmark and Spotter bonuses may coexist."
+    ]
+  },
+  {
+    "id": "volley_line",
+    "name": "Volley Line",
+    "originalName": "Volley Line",
+    "banner": "skybound_houses",
+    "timing": "continuous",
+    "mechanics": "If this unit has an adjacent living ally with a printed Shot value above 0, both units gain +1 Shot power.",
+    "values": {
+      "shotBonus": 1
+    },
+    "stacking": "A unit can receive at most +1 from Volley Line, regardless of neighbors.",
+    "interactions": [
+      "Broken Formation suppresses the bonus.",
+      "The bonus ends immediately when adjacency changes.",
+      "A unit whose Shot value was granted rather than printed does not qualify."
+    ]
+  },
+  {
+    "id": "crosswind",
+    "name": "Crosswind",
+    "originalName": "Crosswind",
+    "banner": "skybound_houses",
+    "timing": "after_action",
+    "mechanics": "After this unit acts, the next living enemy in the current initiative queue receives -2 speed for the next round.",
+    "values": {
+      "speedPenalty": 2,
+      "durationRounds": 1
+    },
+    "stacking": "Penalties from different bearers stack to a maximum of -4.",
+    "interactions": [
+      "Does not change the current queue.",
+      "If no enemy remains in the queue, target the fastest living enemy.",
+      "Mirrorcraft reads the penalty at the next round start."
+    ]
+  },
+  {
+    "id": "skyhook",
+    "name": "Skyhook",
+    "originalName": "Skyhook",
+    "banner": "skybound_houses",
+    "timing": "after_hit",
+    "mechanics": "When this unit’s Shot attack breaks a target’s armor, pull that target one position toward the front if the destination is legal.",
+    "values": {
+      "moveDistance": 1
+    },
+    "stacking": "One pull per attack.",
+    "interactions": [
+      "Anchor and No Retreat prevent the pull.",
+      "A target already in position 1 does not move.",
+      "Formation closes normally after the displaced unit changes position."
+    ]
+  },
+  {
+    "id": "ancient_scale",
+    "name": "Ancient Scale",
+    "originalName": "Ancient Scale",
+    "banner": "wyrm_clans",
+    "timing": "damage_mitigation",
+    "mechanics": "The first time each round this unit would take 4 or more damage from one event, reduce it by 2 and gain 1 rage.",
+    "values": {
+      "triggerDamage": 4,
+      "reduction": 2,
+      "maximumRage": 3
+    },
+    "stacking": "Copies do not add reductions; each extra copy raises maximum rage by 1.",
+    "interactions": [
+      "Rage is a resource used by other Wyrm effects and persists between rounds.",
+      "Checked after armor but before direct damage conversion.",
+      "Damage reduced below 1 still counts as damage."
+    ]
+  },
+  {
+    "id": "hoardfire",
+    "name": "Hoardfire",
+    "originalName": "Hoardfire",
+    "banner": "wyrm_clans",
+    "timing": "battle_start",
+    "mechanics": "Gain +1 Spell power for every 3 unspent team mana left after drafting, to a maximum of +2.",
+    "values": {
+      "manaPerBonus": 3,
+      "maximumBonus": 2
+    },
+    "stacking": "Each bearer calculates independently; copies on one unit do not stack.",
+    "interactions": [
+      "Blood Price changes card costs before unspent mana is calculated.",
+      "The bonus is fixed for the battle.",
+      "A unit with printed Spell 0 may gain Spell power but still needs legal Spell targeting."
+    ]
+  },
+  {
+    "id": "devour_oath",
+    "name": "Devour Oath",
+    "originalName": "Devour Oath",
+    "banner": "wyrm_clans",
+    "timing": "after_kill",
+    "mechanics": "When this unit defeats an enemy, steal the oldest removable positive numeric status from that enemy at its remaining value and duration.",
+    "values": {
+      "statusesStolenPerKill": 1
+    },
+    "stacking": "Additional copies steal one extra status, maximum 2.",
+    "interactions": [
+      "Printed stats, summoner effects, and abilities cannot be stolen.",
+      "If no legal status exists, nothing happens.",
+      "The defeated unit’s after-defeat effects resolve after the theft."
+    ]
+  },
+  {
+    "id": "runebreath",
+    "name": "Runebreath",
+    "originalName": "Runebreath",
+    "banner": "wyrm_clans",
+    "timing": "before_attack",
+    "mechanics": "Cycle this unit’s attack channel for each attack: Steel, then Spell, then Shot, repeating. Power remains equal to its highest printed attack value.",
+    "values": {
+      "sequence": [
+        "steel",
+        "spell",
+        "shot"
+      ]
+    },
+    "stacking": "Additional copies do not alter the sequence.",
+    "interactions": [
+      "The cycle advances even on a miss.",
+      "Target legality is recalculated for the chosen channel.",
+      "Moonrush repeats use the next channel in sequence."
+    ]
+  },
+  {
+    "id": "colossus_wake",
+    "name": "Colossus Wake",
+    "originalName": "Colossus Wake",
+    "banner": "wyrm_clans",
+    "timing": "continuous",
+    "mechanics": "Adjacent allies gain +1 maximum health and cannot be moved by enemy effects.",
+    "values": {
+      "maximumHealthBonus": 1
+    },
+    "stacking": "Health bonuses from two adjacent bearers stack to +2; movement immunity does not stack.",
+    "interactions": [
+      "Broken Formation suppresses both effects.",
+      "Current health rises and falls with maximum health, but never below 1 when the aura ends.",
+      "Allied voluntary movement remains legal."
+    ]
+  },
+  {
+    "id": "bloodline_roar",
+    "name": "Bloodline Roar",
+    "originalName": "Bloodline Roar",
+    "banner": "wyrm_clans",
+    "timing": "after_health_change",
+    "mechanics": "The first time each allied unit falls to half maximum health or lower, that unit gains +1 attack power for the rest of its current life.",
+    "values": {
+      "attackBonus": 1,
+      "thresholdPercent": 50
+    },
+    "stacking": "One roar bonus per ally; multiple bearers do not add more.",
+    "interactions": [
+      "A unit already below half at battle start triggers after the first health change.",
+      "Grave Recall creates a new life and can trigger again.",
+      "Attack power affects Steel, Shot, and Spell values above 0."
+    ]
+  }
+];

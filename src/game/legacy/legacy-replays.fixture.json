@@ -1,0 +1,502 @@
+[
+ {
+  "input": {
+   "matchId": "legacy-0",
+   "gameVersion": "alpha-beta-1.0.0",
+   "engineVersion": "battle-engine-1.0.0",
+   "seed": "9f3a1c0b5e7d2a4f8c6b1e0d3a5f7c9b",
+   "manaCap": 30,
+   "rulesetIds": [
+    "steel_tempest"
+   ],
+   "side1": {
+    "playerId": "player-a",
+    "summonerCardId": "morcant_bellkeeper",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s1p1",
+      "cardId": "debt_collector",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s1p2",
+      "cardId": "ossuary_knight",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s1p3",
+      "cardId": "rattling_thrall",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s1p4",
+      "cardId": "grave_lantern",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s1p5",
+      "cardId": "bellringer_shade",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s1p6",
+      "cardId": "bonebow_sexton",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 27,
+    "submissionHash": "6c58e833093c446a118aa0a4895d97508ad42fb5fe84238bdc14cdb0fc154846"
+   },
+   "side2": {
+    "playerId": "player-b",
+    "summonerCardId": "cael_rookwing",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s2p1",
+      "cardId": "gale_lancer",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s2p2",
+      "cardId": "volley_captain",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s2p3",
+      "cardId": "crosswind_herald",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s2p4",
+      "cardId": "windreader_falconer",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s2p5",
+      "cardId": "cloud_archer",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s2p6",
+      "cardId": "gull_courier",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 27,
+    "submissionHash": "05582b61d93cd616197e68e8de785a8cca5aefb7631186cdc6541d66a5d8497c"
+   },
+   "catalogHash": "62e6d027faee5de040c993794267bb27886d5b2112f815a3e52db10f369e590a"
+  },
+  "resultHash": "4e0797262af7ce0d17e3a1272a6a6fa7857469901ad7983baf3aa3ed3df843f8",
+  "outcome": "side_2",
+  "rounds": 3
+ },
+ {
+  "input": {
+   "matchId": "legacy-1",
+   "gameVersion": "alpha-beta-1.0.0",
+   "engineVersion": "battle-engine-1.0.0",
+   "seed": "0a1b2c3d4e5f60718293a4b5c6d7e8f9",
+   "manaCap": 24,
+   "rulesetIds": [
+    "humble_origins"
+   ],
+   "side1": {
+    "playerId": "player-a",
+    "summonerCardId": "syrra_hoardseer",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s1p1",
+      "cardId": "roaring_matriarch",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s1p2",
+      "cardId": "hoard_guard",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s1p3",
+      "cardId": "emberkin_whelp",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s1p4",
+      "cardId": "hoardflame_adept",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s1p5",
+      "cardId": "ashscale_caster",
+      "level": 1,
+      "position": 5
+     }
+    ],
+    "calculatedMana": 24,
+    "submissionHash": "214023af7d7631a8221c4d82320bb918e970dd2103a5a3f0b5b78a5c4418925c"
+   },
+   "side2": {
+    "playerId": "player-b",
+    "summonerCardId": "vaelor_runeclaw",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s2p1",
+      "cardId": "scaled_juggernaut",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s2p2",
+      "cardId": "hoard_guard",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s2p3",
+      "cardId": "emberkin_whelp",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s2p4",
+      "cardId": "hoardflame_adept",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s2p5",
+      "cardId": "ashscale_caster",
+      "level": 1,
+      "position": 5
+     }
+    ],
+    "calculatedMana": 24,
+    "submissionHash": "16590429b402468af948967e45c1cffadab530ac84c50d3f6080755f788fcc85"
+   },
+   "catalogHash": "62e6d027faee5de040c993794267bb27886d5b2112f815a3e52db10f369e590a"
+  },
+  "resultHash": "05c4f25a33aa2a7b24dc079776b8cc69a482768a69d1f79c666459d3f8392516",
+  "outcome": "side_2",
+  "rounds": 5
+ },
+ {
+  "input": {
+   "matchId": "legacy-2",
+   "gameVersion": "alpha-beta-1.0.0",
+   "engineVersion": "battle-engine-1.0.0",
+   "seed": "deadbeef00112233445566778899aabb",
+   "manaCap": 40,
+   "rulesetIds": [
+    "turning_wheel"
+   ],
+   "side1": {
+    "playerId": "player-a",
+    "summonerCardId": "torvane_crownshield",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s1p1",
+      "cardId": "the_unbroken_warden",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s1p2",
+      "cardId": "shieldwall_sergeant",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s1p3",
+      "cardId": "forgebound_sentinel",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s1p4",
+      "cardId": "wallward_recruit",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s1p5",
+      "cardId": "oath_chanter",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s1p6",
+      "cardId": "lantern_crossbowman",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 33,
+    "submissionHash": "3249218d05b4e885babcae13a22eab2b4fd46349e7250ad8219f12a391d34dcf"
+   },
+   "side2": {
+    "playerId": "player-b",
+    "summonerCardId": "thalor_worldcoil",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s2p1",
+      "cardId": "the_coiled_colossus",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s2p2",
+      "cardId": "scaled_juggernaut",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s2p3",
+      "cardId": "hoard_guard",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s2p4",
+      "cardId": "emberkin_whelp",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s2p5",
+      "cardId": "hoardflame_adept",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s2p6",
+      "cardId": "ashscale_caster",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 38,
+    "submissionHash": "6218101a400058925c73d4c1353ed116078dd7bb780ac7ddaadc691ba5514951"
+   },
+   "catalogHash": "62e6d027faee5de040c993794267bb27886d5b2112f815a3e52db10f369e590a"
+  },
+  "resultHash": "92a0674086bb39eef3be9508e3fb446f80b022d7fc343e44f197d1c8251bdaef",
+  "outcome": "side_1",
+  "rounds": 11
+ },
+ {
+  "input": {
+   "matchId": "legacy-3",
+   "gameVersion": "alpha-beta-1.0.0",
+   "engineVersion": "battle-engine-1.0.0",
+   "seed": "1234abcd5678ef901234abcd5678ef90",
+   "manaCap": 21,
+   "rulesetIds": [
+    "red_hour"
+   ],
+   "side1": {
+    "playerId": "player-a",
+    "summonerCardId": "maris_cloudreel",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s1p1",
+      "cardId": "volley_captain",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s1p2",
+      "cardId": "kestrel_spotter",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s1p3",
+      "cardId": "cloud_archer",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s1p4",
+      "cardId": "gull_courier",
+      "level": 1,
+      "position": 4
+     }
+    ],
+    "calculatedMana": 20,
+    "submissionHash": "eeec361c9b7179d286c06085db9f368906bec9cee70294d1ad332d67cea019e7"
+   },
+   "side2": {
+    "playerId": "player-b",
+    "summonerCardId": "tallow_jack",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s2p1",
+      "cardId": "ossuary_knight",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s2p2",
+      "cardId": "rattling_thrall",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s2p3",
+      "cardId": "grave_lantern",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s2p4",
+      "cardId": "bellringer_shade",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s2p5",
+      "cardId": "bonebow_sexton",
+      "level": 1,
+      "position": 5
+     }
+    ],
+    "calculatedMana": 20,
+    "submissionHash": "844e3725821647fd502b5c7e18654e400feb653bb6dc587bc100e24035d7015d"
+   },
+   "catalogHash": "62e6d027faee5de040c993794267bb27886d5b2112f815a3e52db10f369e590a"
+  },
+  "resultHash": "b6c59dc38ca7e036c4735dc71efda3a8287648fc06b4843fa14ba9ac0635cda5",
+  "outcome": "side_2",
+  "rounds": 4
+ },
+ {
+  "input": {
+   "matchId": "legacy-4",
+   "gameVersion": "alpha-beta-1.0.0",
+   "engineVersion": "battle-engine-1.0.0",
+   "seed": "cafebabe0f0f0f0f1e1e1e1e2d2d2d2d",
+   "manaCap": 35,
+   "rulesetIds": [
+    "oathless_day"
+   ],
+   "side1": {
+    "playerId": "player-a",
+    "summonerCardId": "pip_briarwhistle",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s1p1",
+      "cardId": "mossback_boar",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s1p2",
+      "cardId": "packlord_varg",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s1p3",
+      "cardId": "trailrunner_hart",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s1p4",
+      "cardId": "moonfang_stalker",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s1p5",
+      "cardId": "thornling_scout",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s1p6",
+      "cardId": "briar_slinger",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 26,
+    "submissionHash": "e01ded448794d71c689d87c0f245b39e6ce3bee5f63942e0edea3110dd348b81"
+   },
+   "side2": {
+    "playerId": "player-b",
+    "summonerCardId": "oris_glassmoth",
+    "summonerLevel": 1,
+    "formation": [
+     {
+      "instanceId": "s2p1",
+      "cardId": "mirror_duelist",
+      "level": 1,
+      "position": 1
+     },
+     {
+      "instanceId": "s2p2",
+      "cardId": "veiled_doorwarden",
+      "level": 1,
+      "position": 2
+     },
+     {
+      "instanceId": "s2p3",
+      "cardId": "fate_spinner",
+      "level": 1,
+      "position": 3
+     },
+     {
+      "instanceId": "s2p4",
+      "cardId": "hexweaver",
+      "level": 1,
+      "position": 4
+     },
+     {
+      "instanceId": "s2p5",
+      "cardId": "silkthread_archer",
+      "level": 1,
+      "position": 5
+     },
+     {
+      "instanceId": "s2p6",
+      "cardId": "masked_acolyte",
+      "level": 1,
+      "position": 6
+     }
+    ],
+    "calculatedMana": 26,
+    "submissionHash": "2a1c97c0f7f0e3047a894d8238849b9b3bc76267c1291f55981a9071eda96d56"
+   },
+   "catalogHash": "62e6d027faee5de040c993794267bb27886d5b2112f815a3e52db10f369e590a"
+  },
+  "resultHash": "52b2e0e2afbfb1ba6423a5447e7d54c5bb7b23958f3958abfd5afb4d070173fc",
+  "outcome": "side_1",
+  "rounds": 7
+ }
+]

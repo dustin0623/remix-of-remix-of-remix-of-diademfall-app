@@ -1,0 +1,54 @@
+import { queryOptions } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import type { Foil, PackId } from "@/game/packs";
+
+export interface PackSupplyRow { pack: PackId; priceCredits: number; publicAllocation: number; soldPacks: number; openedPacks: number; maximumPacks: number; active: boolean }
+
+/** Public store counters (readable signed out). */
+export const packSupplyQuery = () =>
+  queryOptions({
+    queryKey: ["packs", "supply"],
+    queryFn: async (): Promise<PackSupplyRow[]> => {
+      const { data, error } = await supabase.from("pack_supply").select("set_id, price_credits, public_allocation, sold_packs, opened_packs, maximum_packs, active");
+      if (error) throw error;
+      return (data ?? []).map((r) => ({
+        pack: r.set_id as PackId, priceCredits: Number(r.price_credits), publicAllocation: Number(r.public_allocation),
+        soldPacks: Number(r.sold_packs), openedPacks: Number(r.opened_packs), maximumPacks: Number(r.maximum_packs), active: r.active,
+      }));
+    },
+  });
+
+export interface MyPacks { unopened: Record<PackId, number>; pending: Record<string, { openingId: string; commitHash: string }> }
+
+/** Signed-in player's unopened packs and any opening already committed but not revealed. */
+export const myPacksQuery = (userId: string | undefined) =>
+  queryOptions({
+    queryKey: ["packs", "mine", userId],
+    enabled: !!userId,
+    queryFn: async (): Promise<MyPacks> => {
+      const [packs, pending] = await Promise.all([
+        supabase.from("player_packs").select("set_id, quantity").eq("player_id", userId!),
+        supabase.from("pack_openings").select("id, set_id, commit_hash").eq("player_id", userId!).eq("status", "committed"),
+      ]);
+      if (packs.error) throw packs.error;
+      if (pending.error) throw pending.error;
+      const unopened = { ancient: 0, oath: 0, legionnaire: 0 } as Record<PackId, number>;
+      for (const p of packs.data ?? []) unopened[p.set_id as PackId] = Number(p.quantity);
+      return { unopened, pending: Object.fromEntries((pending.data ?? []).map((p) => [p.set_id, { openingId: p.id, commitHash: p.commit_hash }])) };
+    },
+  });
+
+export interface OwnedAsset { id: string; cardId: string; foil: Foil; level: number; status: string; createdAt: string }
+
+/** Every card the player owns, newest first. */
+export const myCardsQuery = (userId: string | undefined) =>
+  queryOptions({
+    queryKey: ["packs", "cards", userId],
+    enabled: !!userId,
+    queryFn: async (): Promise<OwnedAsset[]> => {
+      const { data, error } = await supabase.from("card_assets").select("id, card_id, foil, level, status, created_at")
+        .eq("owner_id", userId!).neq("status", "burned").order("created_at", { ascending: false }).limit(1000);
+      if (error) throw error;
+      return (data ?? []).map((a) => ({ id: a.id, cardId: a.card_id, foil: a.foil as Foil, level: a.level, status: a.status, createdAt: a.created_at }));
+    },
+  });

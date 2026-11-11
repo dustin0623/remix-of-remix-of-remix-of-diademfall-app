@@ -10,33 +10,186 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BattleRouteImport } from './routes/battle'
+import { Route as CodexRouteImport } from './routes/codex'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as TreasuryRouteImport } from './routes/treasury'
+import { Route as AuthenticatedLeaderboardRouteImport } from './routes/_authenticated/leaderboard'
+import { Route as AuthenticatedMarketRouteImport } from './routes/_authenticated/market'
+import { Route as AuthenticatedShopRouteImport } from './routes/_authenticated/shop'
+import { Route as AuthenticatedAdminTreasuryRouteImport } from './routes/_authenticated/admin.treasury'
+import { Route as AuthenticatedRankedIndexRouteImport } from './routes/_authenticated/ranked.index'
+import { Route as AuthenticatedRankedMatchIdRouteImport } from './routes/_authenticated/ranked.$matchId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BattleRoute = BattleRouteImport.update({
+  id: '/battle',
+  path: '/battle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CodexRoute = CodexRouteImport.update({
+  id: '/codex',
+  path: '/codex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreasuryRoute = TreasuryRouteImport.update({
+  id: '/treasury',
+  path: '/treasury',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedLeaderboardRoute =
+  AuthenticatedLeaderboardRouteImport.update({
+    id: '/leaderboard',
+    path: '/leaderboard',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedMarketRoute = AuthenticatedMarketRouteImport.update({
+  id: '/market',
+  path: '/market',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedShopRoute = AuthenticatedShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminTreasuryRoute =
+  AuthenticatedAdminTreasuryRouteImport.update({
+    id: '/admin/treasury',
+    path: '/admin/treasury',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRankedIndexRoute =
+  AuthenticatedRankedIndexRouteImport.update({
+    id: '/ranked/',
+    path: '/ranked/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedRankedMatchIdRoute =
+  AuthenticatedRankedMatchIdRouteImport.update({
+    id: '/ranked/$matchId',
+    path: '/ranked/$matchId',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/battle': typeof BattleRoute
+  '/codex': typeof CodexRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/treasury': typeof TreasuryRoute
+  '/leaderboard': typeof AuthenticatedLeaderboardRoute
+  '/market': typeof AuthenticatedMarketRoute
+  '/shop': typeof AuthenticatedShopRoute
+  '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
+  '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
+  '/ranked/': typeof AuthenticatedRankedIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/battle': typeof BattleRoute
+  '/codex': typeof CodexRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/treasury': typeof TreasuryRoute
+  '/leaderboard': typeof AuthenticatedLeaderboardRoute
+  '/market': typeof AuthenticatedMarketRoute
+  '/shop': typeof AuthenticatedShopRoute
+  '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
+  '/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
+  '/ranked': typeof AuthenticatedRankedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/battle': typeof BattleRoute
+  '/codex': typeof CodexRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/treasury': typeof TreasuryRoute
+  '/_authenticated/leaderboard': typeof AuthenticatedLeaderboardRoute
+  '/_authenticated/market': typeof AuthenticatedMarketRoute
+  '/_authenticated/shop': typeof AuthenticatedShopRoute
+  '/_authenticated/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
+  '/_authenticated/ranked/$matchId': typeof AuthenticatedRankedMatchIdRoute
+  '/_authenticated/ranked/': typeof AuthenticatedRankedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/battle'
+    | '/codex'
+    | '/reset-password'
+    | '/treasury'
+    | '/leaderboard'
+    | '/market'
+    | '/shop'
+    | '/admin/treasury'
+    | '/ranked/$matchId'
+    | '/ranked/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/battle'
+    | '/codex'
+    | '/reset-password'
+    | '/treasury'
+    | '/leaderboard'
+    | '/market'
+    | '/shop'
+    | '/admin/treasury'
+    | '/ranked/$matchId'
+    | '/ranked'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/battle'
+    | '/codex'
+    | '/reset-password'
+    | '/treasury'
+    | '/_authenticated/leaderboard'
+    | '/_authenticated/market'
+    | '/_authenticated/shop'
+    | '/_authenticated/admin/treasury'
+    | '/_authenticated/ranked/$matchId'
+    | '/_authenticated/ranked/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  BattleRoute: typeof BattleRoute
+  CodexRoute: typeof CodexRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  TreasuryRoute: typeof TreasuryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +201,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/battle': {
+      id: '/battle'
+      path: '/battle'
+      fullPath: '/battle'
+      preLoaderRoute: typeof BattleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/codex': {
+      id: '/codex'
+      path: '/codex'
+      fullPath: '/codex'
+      preLoaderRoute: typeof CodexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treasury': {
+      id: '/treasury'
+      path: '/treasury'
+      fullPath: '/treasury'
+      preLoaderRoute: typeof TreasuryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/leaderboard': {
+      id: '/_authenticated/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof AuthenticatedLeaderboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/market': {
+      id: '/_authenticated/market'
+      path: '/market'
+      fullPath: '/market'
+      preLoaderRoute: typeof AuthenticatedMarketRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/shop': {
+      id: '/_authenticated/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof AuthenticatedShopRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/treasury': {
+      id: '/_authenticated/admin/treasury'
+      path: '/admin/treasury'
+      fullPath: '/admin/treasury'
+      preLoaderRoute: typeof AuthenticatedAdminTreasuryRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/ranked/': {
+      id: '/_authenticated/ranked/'
+      path: '/ranked'
+      fullPath: '/ranked/'
+      preLoaderRoute: typeof AuthenticatedRankedIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/ranked/$matchId': {
+      id: '/_authenticated/ranked/$matchId'
+      path: '/ranked/$matchId'
+      fullPath: '/ranked/$matchId'
+      preLoaderRoute: typeof AuthenticatedRankedMatchIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedLeaderboardRoute: typeof AuthenticatedLeaderboardRoute
+  AuthenticatedMarketRoute: typeof AuthenticatedMarketRoute
+  AuthenticatedShopRoute: typeof AuthenticatedShopRoute
+  AuthenticatedAdminTreasuryRoute: typeof AuthenticatedAdminTreasuryRoute
+  AuthenticatedRankedMatchIdRoute: typeof AuthenticatedRankedMatchIdRoute
+  AuthenticatedRankedIndexRoute: typeof AuthenticatedRankedIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedLeaderboardRoute: AuthenticatedLeaderboardRoute,
+  AuthenticatedMarketRoute: AuthenticatedMarketRoute,
+  AuthenticatedShopRoute: AuthenticatedShopRoute,
+  AuthenticatedAdminTreasuryRoute: AuthenticatedAdminTreasuryRoute,
+  AuthenticatedRankedMatchIdRoute: AuthenticatedRankedMatchIdRoute,
+  AuthenticatedRankedIndexRoute: AuthenticatedRankedIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
+  BattleRoute: BattleRoute,
+  CodexRoute: CodexRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  TreasuryRoute: TreasuryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

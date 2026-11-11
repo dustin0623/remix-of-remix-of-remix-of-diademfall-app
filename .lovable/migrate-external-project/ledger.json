@@ -1,0 +1,12 @@
+[
+  {"capability":"code","source":"github dustin0623/tje-official-diademfall","outcome":"migrate","status":"in_progress","next_action":"copy source into project"},
+  {"capability":"schema","source":"old Lovable Cloud database (base schema not in repo) + drizzle migrations 0000-0002","outcome":"migrate","status":"pending","next_action":"rebuild base schema from types and code, then apply repo migrations"},
+  {"capability":"catalog records","source":"src/game/catalog via scripts/load-catalog.ts","outcome":"migrate","status":"pending","next_action":"insert game version, cards, rulesets, pack supply"},
+  {"capability":"player records","source":"old Lovable Cloud database","outcome":"migrate","status":"pending","next_action":"request CSV/JSON exports after preview"},
+  {"capability":"auth identities","source":"email/password accounts on old backend","outcome":"migrate","status":"pending","next_action":"request user export after preview"},
+  {"capability":"authorization","source":"RLS policies + user_roles admin","outcome":"migrate","status":"pending","next_action":"recreate with schema"},
+  {"capability":"scheduled jobs","source":"daily reward settlement route","outcome":"migrate","status":"pending","next_action":"check route and schedule"},
+  {"capability":"solana chain module","source":"optional SOLANA_* secrets, chain login disabled","outcome":"preserve","status":"preserved","next_action":"secrets only needed when wallet features are turned on"},
+  {"capability":"mongodb transaction worker","source":"optional MONGODB_URI, mock mode otherwise","outcome":"preserve","status":"preserved","next_action":"none until live worker is wanted"},
+  {"capability":"verification","source":"-","outcome":"verify","status":"pending","next_action":"tests + sign-in + pack/ranked flow"}
+]

@@ -1,0 +1,55 @@
+{
+  "title": "Diademfall complete catalog v2",
+  "version": "three-packs-economy-2.0.0",
+  "prototypeStatus": "prototype-v2",
+  "counts": {
+    "sets": 3,
+    "banners": 6,
+    "summoners": 30,
+    "troops": 108,
+    "abilities": 36,
+    "rulesets": 30,
+    "cards": 138
+  },
+  "packCounts": {
+    "ancient": {
+      "summoners": 6,
+      "troops": 36,
+      "total": 42
+    },
+    "oath": {
+      "summoners": 12,
+      "troops": 36,
+      "total": 48
+    },
+    "legionnaire": {
+      "summoners": 12,
+      "troops": 36,
+      "total": 48
+    }
+  },
+  "rarityCaps": {
+    "common": 10,
+    "uncommon": 8,
+    "rare": 6,
+    "epic": 4,
+    "legendary": 3
+  },
+  "generated": "2026-11-11",
+  "economy": {
+    "externalTokenSupply": 1000000000,
+    "projectLaunchHoldingsRange": [
+      50000000,
+      100000000
+    ],
+    "additionalAcquisitionTarget": [
+      100000000,
+      200000000
+    ],
+    "monthlyRewardTarget": [
+      25000000,
+      50000000
+    ],
+    "budgetModel": "treasury-funded-12-month-runway"
+  }
+}

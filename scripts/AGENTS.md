@@ -1,0 +1,2 @@
+# Scripts
+- load-catalog.ts loads catalog reference rows (game version, cards, rulesets, catalog_hash) from the TS catalog; packs, banners, abilities, level stats and unlocks live only in TS and are not stored in the database (cards.set_id/banner_id are CHECK-guarded; their old tables were removed). The loader retires older cards/rules (inactive, never deleted) and grants new cards to existing players (why: one catalog definition; migrations stay DDL-only).
