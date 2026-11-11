@@ -9,7 +9,8 @@ export const packSupplyQuery = () =>
   queryOptions({
     queryKey: ["packs", "supply"],
     queryFn: async (): Promise<PackSupplyRow[]> => {
-      const { data, error } = await supabase.from("pack_supply").select("set_id, price_credits, public_allocation, sold_packs, opened_packs, maximum_packs, active");
+      // Caps are code constants; sold/opened counts are derived from purchases and openings.
+      const { data, error } = await supabase.rpc("pack_supply_summary");
       if (error) throw error;
       return (data ?? []).map((r) => ({
         pack: r.set_id as PackId, priceCredits: Number(r.price_credits), publicAllocation: Number(r.public_allocation),

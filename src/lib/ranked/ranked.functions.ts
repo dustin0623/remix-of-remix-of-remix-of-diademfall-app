@@ -69,12 +69,12 @@ export const pollRankedQueue = createServerFn({ method: "POST" })
     const [{ data: t }, { data: active }] = await Promise.all([
       supabase.from("matchmaking_tickets").select("id, status, created_at, expires_at")
         .eq("player_id", userId).order("created_at", { ascending: false }).limit(1).maybeSingle(),
-      supabase.from("match_players").select("match_id, matches!inner(status)")
-        .eq("player_id", userId).in("matches.status", ["team_selection", "resolving"]).limit(1).maybeSingle(),
+      supabase.from("matches").select("id").or(`player1_id.eq.${userId},player2_id.eq.${userId}`)
+        .in("status", ["team_selection", "resolving"]).limit(1).maybeSingle(),
     ]);
     return {
       ticket: t ? { id: t.id, status: t.status, createdAt: t.created_at, expiresAt: t.expires_at } : null,
-      activeMatchId: active?.match_id ?? null,
+      activeMatchId: active?.id ?? null,
     };
   });
 
@@ -110,36 +110,39 @@ export const getRankedMatch = createServerFn({ method: "POST" })
     await expireStale(admin);
 
     const load = () => supabase.from("matches")
-      .select("id, status, mana_cap, ruleset_ids, selection_deadline, outcome, result, result_hash, replay_input:replay->input")
+      .select(`id, status, mana_cap, ruleset_ids, selection_deadline, outcome, result, result_hash, replay_input:replay->input,
+        player1_id, player2_id, p1_rating_before, p1_rating_after, p1_result, p2_rating_before, p2_rating_after, p2_result,
+        p1:profiles!matches_player1_id_fkey(username, display_name), p2:profiles!matches_player2_id_fkey(username, display_name)`)
       .eq("id", data.matchId).maybeSingle();
     let { data: m } = await load();
     if (!m) return null; // not a participant (RLS) or missing
     if (m.status === "resolving") { await resolveMatch(admin, m.id); m = (await load()).data ?? m; }
 
-    const [{ data: players }, { data: mySub }, { count: oppCount }, { data: rw }] = await Promise.all([
-      supabase.from("match_players").select("player_id, side, rating_before, rating_after, result, profiles(username, display_name)").eq("match_id", m.id),
-      supabase.from("match_submissions").select("summoner_card_id, formation").eq("match_id", m.id).eq("player_id", userId).maybeSingle(),
-      admin.from("match_submissions").select("player_id", { count: "exact", head: true }).eq("match_id", m.id).neq("player_id", userId),
-      supabase.from("match_rewards").select("status, shares::text, energy_spent, league_multiplier::text, opponent_factor::text, streak_bonus::text, foil_bonus::text, gold_cards")
-        .eq("match_id", m.id).eq("player_id", userId).maybeSingle(),
-    ]);
-    const reward = rw as unknown as { status: NonNullable<MatchState["reward"]>["status"]; shares: string; energy_spent: boolean; league_multiplier: string;
-      opponent_factor: string; streak_bonus: string; foil_bonus: string; gold_cards: number } | null;
-    const toSide = (p: NonNullable<typeof players>[number]): MatchSide => {
-      const prof = p.profiles as { username: string; display_name: string | null } | null;
-      return { side: p.side as 1 | 2, playerId: p.player_id, username: prof?.display_name ?? prof?.username ?? "Unknown",
-        ratingBefore: p.rating_before, ratingAfter: p.rating_after, result: p.result };
+    // Locked teams and reward rows are hidden from players (no column grant): read them with the service client.
+    const { data: hidden } = await admin.from("matches").select("p1_team, p2_team, p1_reward, p2_reward").eq("id", m.id).maybeSingle();
+    const mySide: 1 | 2 | null = m.player1_id === userId ? 1 : m.player2_id === userId ? 2 : null;
+    if (!mySide || !m.player1_id || !m.player2_id) return null;
+    type Team = { summonerCardId: string; formation: { cardId: string; position: number }[] } | null;
+    const mySub = (mySide === 1 ? hidden?.p1_team : hidden?.p2_team) as unknown as Team;
+    const oppSub = (mySide === 1 ? hidden?.p2_team : hidden?.p1_team) as unknown as Team;
+    const rw = (mySide === 1 ? hidden?.p1_reward : hidden?.p2_reward) as unknown as {
+      status: NonNullable<MatchState["reward"]>["status"]; shares: number | string; energySpent: boolean; leagueMultiplier: number | string;
+      opponentFactor: number | string; streakBonus: number | string; foilBonus: number | string; goldCards: number } | null;
+    const name = (p: unknown) => {
+      const prof = p as { username: string; display_name: string | null } | null;
+      return prof?.display_name ?? prof?.username ?? "Unknown";
     };
-    const meRow = players?.find((p) => p.player_id === userId);
-    const oppRow = players?.find((p) => p.player_id !== userId);
-    if (!meRow || !oppRow) return null;
+    const sides: Record<1 | 2, MatchSide> = {
+      1: { side: 1, playerId: m.player1_id, username: name(m.p1), ratingBefore: m.p1_rating_before ?? 0, ratingAfter: m.p1_rating_after, result: m.p1_result },
+      2: { side: 2, playerId: m.player2_id, username: name(m.p2), ratingBefore: m.p2_rating_before ?? 0, ratingAfter: m.p2_rating_after, result: m.p2_result },
+    };
 
     let owned: Record<string, number> = {};
     if (m.status === "team_selection" && !mySub) {
       const { data: cards } = await supabase.from("player_card_stacks").select("card_id, level, copies").eq("player_id", userId);
       owned = Object.fromEntries((cards ?? []).filter((c) => c.card_id && (c.copies ?? 0) > 0).map((c) => [c.card_id!, c.level ?? 1]));
     }
-    const formation = (mySub?.formation ?? []) as { cardId: string; position: number }[];
+    const formation = mySub?.formation ?? [];
     const result = (m.result ?? null) as { reason?: string } | null;
     return {
       id: m.id,
@@ -150,15 +153,15 @@ export const getRankedMatch = createServerFn({ method: "POST" })
       serverNow: new Date().toISOString(),
       outcome: m.outcome,
       reason: result?.reason ?? null,
-      me: toSide(meRow),
-      opponent: toSide(oppRow),
-      myTeam: mySub ? { summonerId: mySub.summoner_card_id, unitIds: [...formation].sort((a, b) => a.position - b.position).map((f) => f.cardId) } : null,
-      opponentLocked: (oppCount ?? 0) > 0,
+      me: sides[mySide],
+      opponent: sides[mySide === 1 ? 2 : 1],
+      myTeam: mySub ? { summonerId: mySub.summonerCardId, unitIds: [...formation].sort((a, b) => a.position - b.position).map((f) => f.cardId) } : null,
+      opponentLocked: !!oppSub,
       owned,
       replayInput: (m.replay_input ?? null) as unknown as BattleInput | null,
       resultHash: m.result_hash,
-      reward: reward ? { status: reward.status, shares: reward.shares, energySpent: reward.energy_spent, leagueMultiplier: reward.league_multiplier,
-        opponentFactor: reward.opponent_factor, streakBonus: reward.streak_bonus, foilBonus: reward.foil_bonus, goldCards: reward.gold_cards } : null,
+      reward: rw ? { status: rw.status, shares: String(rw.shares), energySpent: rw.energySpent, leagueMultiplier: String(rw.leagueMultiplier),
+        opponentFactor: String(rw.opponentFactor), streakBonus: String(rw.streakBonus), foilBonus: String(rw.foilBonus), goldCards: Number(rw.goldCards) } : null,
     };
   });
 
@@ -173,13 +176,13 @@ export const submitRankedTeam = createServerFn({ method: "POST" })
     const { supabase, userId } = context;
     const fail = (error: string) => ({ ok: false as const, error });
 
-    const { data: m } = await supabase.from("matches").select("id, status, seed, mana_cap, ruleset_ids, selection_deadline").eq("id", data.matchId).maybeSingle();
+    const { data: m } = await supabase.from("matches").select("id, status, seed, mana_cap, ruleset_ids, selection_deadline, player1_id, player2_id").eq("id", data.matchId).maybeSingle();
     if (!m) return fail("Match not found.");
     if (m.status !== "team_selection") return fail("Team selection is over for this match.");
     if (new Date(m.selection_deadline).getTime() <= Date.now()) return fail("Time ran out for team selection.");
 
-    const { data: me } = await supabase.from("match_players").select("side").eq("match_id", m.id).eq("player_id", userId).maybeSingle();
-    if (!me) return fail("You're not in this match.");
+    const side: 1 | 2 | null = m.player1_id === userId ? 1 : m.player2_id === userId ? 2 : null;
+    if (!side) return fail("You're not in this match.");
 
     const pick = { summonerId: data.summonerId, unitIds: data.unitIds };
     const cfg = rankedConfig({ seed: m.seed, manaCap: m.mana_cap, rulesetIds: m.ruleset_ids });
@@ -199,7 +202,7 @@ export const submitRankedTeam = createServerFn({ method: "POST" })
     const levels = Object.fromEntries((owned ?? []).filter((c) => c.card_id && (c.copies ?? 0) > 0).map((c) => [c.card_id!, c.level ?? 1]));
     if (ids.some((id) => levels[id] === undefined)) return fail("You don't own every card in that team.");
 
-    const team = lockedTeam({ matchId: m.id, playerId: userId, side: me.side as 1 | 2, pick, levels, rulesets: m.ruleset_ids });
+    const team = lockedTeam({ matchId: m.id, playerId: userId, side, pick, levels, rulesets: m.ruleset_ids });
     const { data: locked, error } = await admin.rpc("lock_match_submission", {
       p_match_id: m.id, p_player_id: userId, p_summoner_card_id: team.summonerCardId, p_summoner_level: team.summonerLevel,
       p_formation: team.formation as unknown as Json, p_calculated_mana: team.calculatedMana, p_submission_hash: team.submissionHash,
@@ -223,24 +226,24 @@ export const getRankedHistory = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => z.object({ limit: z.number().int().min(1).max(50).default(20) }).parse(d ?? {}))
   .handler(async ({ data, context }): Promise<HistoryRow[]> => {
     const { supabase, userId } = context;
-    const { data: mine } = await supabase.from("match_players")
-      .select("match_id, result, rating_before, rating_after, joined_at, matches!inner(status, completed_at, mana_cap, ruleset_ids, result)")
-      .eq("player_id", userId).order("joined_at", { ascending: false }).limit(data.limit);
-    if (!mine?.length) return [];
-    const { data: opps } = await supabase.from("match_players").select("match_id, rating_before, profiles(username, display_name)")
-      .in("match_id", mine.map((r) => r.match_id)).neq("player_id", userId);
-    const opp = new Map((opps ?? []).map((o) => {
-      const p = o.profiles as { username: string; display_name: string | null } | null;
-      return [o.match_id, { name: p?.display_name ?? p?.username ?? "Unknown", rating: o.rating_before }];
-    }));
-    return mine.map((r) => {
-      const mm = r.matches as { status: string; completed_at: string | null; mana_cap: number; ruleset_ids: string[]; result: { reason?: string } | null };
-      const o = opp.get(r.match_id);
+    const { data: rows } = await supabase.from("matches")
+      .select(`id, status, created_at, completed_at, mana_cap, ruleset_ids, result, player1_id,
+        p1_rating_before, p1_rating_after, p1_result, p2_rating_before, p2_rating_after, p2_result,
+        p1:profiles!matches_player1_id_fkey(username, display_name), p2:profiles!matches_player2_id_fkey(username, display_name)`)
+      .or(`player1_id.eq.${userId},player2_id.eq.${userId}`)
+      .order("created_at", { ascending: false }).limit(data.limit);
+    const name = (p: unknown) => {
+      const prof = p as { username: string; display_name: string | null } | null;
+      return prof?.display_name ?? prof?.username ?? "Unknown";
+    };
+    return (rows ?? []).map((r) => {
+      const first = r.player1_id === userId;
+      const result = r.result as { reason?: string } | null;
       return {
-        matchId: r.match_id, status: mm.status, result: r.result, reason: mm.result?.reason ?? null,
-        ratingBefore: r.rating_before, ratingAfter: r.rating_after,
-        opponent: o?.name ?? "Unknown", opponentRating: o?.rating ?? 0,
-        manaCap: mm.mana_cap, rulesetIds: mm.ruleset_ids ?? [], at: mm.completed_at ?? r.joined_at,
+        matchId: r.id, status: r.status, result: first ? r.p1_result : r.p2_result, reason: result?.reason ?? null,
+        ratingBefore: (first ? r.p1_rating_before : r.p2_rating_before) ?? 0, ratingAfter: first ? r.p1_rating_after : r.p2_rating_after,
+        opponent: name(first ? r.p2 : r.p1), opponentRating: (first ? r.p2_rating_before : r.p1_rating_before) ?? 0,
+        manaCap: r.mana_cap, rulesetIds: r.ruleset_ids ?? [], at: r.completed_at ?? r.created_at,
       };
     });
   });

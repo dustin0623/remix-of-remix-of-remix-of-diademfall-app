@@ -3,6 +3,8 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, Json } from "@/integrations/supabase/types";
 import type { BattleInput, FormationCard, LockedTeam } from "@/game/battle-contract";
 import { resolveBattle } from "@/game/ranked";
+import { CATALOG_VERSION, catalogHash } from "@/game/catalogs";
+import { rulesetSelectionWeight } from "@/game/rule-support";
 
 type Admin = SupabaseClient<Database>;
 
@@ -17,40 +19,35 @@ export async function expireStale(admin: Admin) {
 export async function resolveMatch(admin: Admin, matchId: string): Promise<boolean> {
   const { data: m, error } = await admin
     .from("matches")
-    .select("id, status, seed, mana_cap, ruleset_ids, engine_version, game_versions(version, catalog_hash)")
+    .select("id, status, seed, mana_cap, ruleset_ids, engine_version, game_version, player1_id, player2_id, p1_team, p2_team")
     .eq("id", matchId)
     .maybeSingle();
-  if (error || !m || m.status !== "resolving") return false;
+  if (error || !m || m.status !== "resolving" || !m.player1_id || !m.player2_id || !m.p1_team || !m.p2_team) return false;
 
-  const [{ data: players }, { data: subs }] = await Promise.all([
-    admin.from("match_players").select("player_id, side").eq("match_id", matchId),
-    admin.from("match_submissions").select("*").eq("match_id", matchId),
-  ]);
-  if (!players || players.length !== 2 || !subs || subs.length !== 2) return false;
-
-  const teamFor = (side: 1 | 2): LockedTeam => {
-    const pid = players.find((p) => p.side === side)!.player_id;
-    const s = subs.find((x) => x.player_id === pid)!;
+  type StoredTeam = { summonerCardId: string; summonerLevel: number; formation: FormationCard[]; calculatedMana: number; submissionHash: string };
+  const teamFor = (playerId: string, stored: Json): LockedTeam => {
+    const s = stored as unknown as StoredTeam;
     return {
-      playerId: pid,
-      summonerCardId: s.summoner_card_id,
-      summonerLevel: s.summoner_level,
-      formation: s.formation as unknown as FormationCard[],
-      calculatedMana: s.calculated_mana,
-      submissionHash: s.submission_hash,
+      playerId,
+      summonerCardId: s.summonerCardId,
+      summonerLevel: s.summonerLevel,
+      formation: s.formation,
+      calculatedMana: s.calculatedMana,
+      submissionHash: s.submissionHash,
     };
   };
-  const gv = m.game_versions as { version: string; catalog_hash: string | null } | null;
+  const gameVersion = m.game_version ?? "unknown";
   const input: BattleInput = {
     matchId: m.id,
-    gameVersion: gv?.version ?? "unknown",
+    gameVersion,
     engineVersion: m.engine_version,
     seed: m.seed,
     manaCap: m.mana_cap,
     rulesetIds: m.ruleset_ids,
-    side1: teamFor(1),
-    side2: teamFor(2),
-    catalogHash: gv?.catalog_hash ?? "",
+    side1: teamFor(m.player1_id, m.p1_team),
+    side2: teamFor(m.player2_id, m.p2_team),
+    // Only the active version carries a catalog fingerprint (same value as game_version_table()).
+    catalogHash: gameVersion === CATALOG_VERSION ? catalogHash(rulesetSelectionWeight) : "",
   };
 
   const out = resolveBattle(input);

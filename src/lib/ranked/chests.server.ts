@@ -15,7 +15,8 @@ export interface OpenedChest {
 }
 
 async function readReserve(admin: Admin): Promise<Reserve> {
-  const { data } = await admin.from("legionnaire_reward_reserve").select("rarity, remaining_units");
+  // Reserve size is a code constant; remaining = size minus cards already minted from chests.
+  const { data } = await admin.rpc("reward_reserve_remaining");
   const counts = Object.fromEntries(RARITY_ORDER.map((r) => [r, 0])) as Reserve;
   for (const row of data ?? []) counts[row.rarity as keyof Reserve] = row.remaining_units;
   return reserveView(counts);
