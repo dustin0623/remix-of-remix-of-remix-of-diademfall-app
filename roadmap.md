@@ -67,6 +67,7 @@
 
 ## Reference code
 - [x] Copy github.com/dustin0623/official-boom-game-v1 into /ref as plain files (no nested git repo)
+- [x] Remove all .webp images from /ref
 
 ## Later
 - [ ] Add the Solana treasury key + RPC key as secrets before server-signed payouts
