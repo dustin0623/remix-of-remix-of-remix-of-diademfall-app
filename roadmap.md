@@ -94,3 +94,10 @@
 - [x] Reward Energy on profiles; players can only edit display name and avatar
 - [x] Divisions, Card Essence levels and the ranked rule pool as code constants (no tables), with a drift test
 - [x] Delete the retired tables
+
+## Table consolidation (33 → fewer tables)
+- [ ] Deposits/withdrawals: one wallet_transfers table (pending + processed repositories kept on top of it)
+- [ ] Pack and chest openings: one item_openings table
+- [ ] Sale and rental listings: one card_listings table
+- [ ] Treasury: snapshots, acquisitions and flows in one treasury_ledger
+- [ ] Matches: review folding match_players / match_rewards into matches (match_submissions stays separate so teams stay hidden until both lock)
