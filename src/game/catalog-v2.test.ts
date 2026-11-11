@@ -12,18 +12,19 @@ import { UNIT_BY_ID, UNITS, unitAtLevel } from "./units";
 import legacyReplays from "./legacy/legacy-replays.fixture.json";
 
 describe("catalog v2", () => {
-  it("has 3 launch packs: 30 summoners, 108 troops, 138 cards", () => {
+  it("has 3 launch packs: 30 summoners, 120 troops (108 Banner + 12 Wayfarers), 150 cards", () => {
     expect(SETS.map((s) => s.id)).toEqual(["ancient", "oath", "legionnaire"]);
     expect(SUMMONERS).toHaveLength(30);
-    expect(TROOPS).toHaveLength(108);
-    expect(UNITS).toHaveLength(108);
-    expect(SETS.reduce((n, s) => n + s.total, 0)).toBe(138);
+    expect(TROOPS).toHaveLength(120);
+    expect(UNITS).toHaveLength(120);
+    expect(TROOPS.filter((t) => t.affiliation === "wayfarer")).toHaveLength(12);
+    expect(SETS.reduce((n, s) => n + s.total, 0)).toBe(150);
   });
-  it("splits packs 6+36, 12+36, 12+36", () => {
+  it("splits packs 6+40, 12+40, 12+40", () => {
     const count = (set: string) => [SUMMONERS.filter((s) => s.set === set).length, TROOPS.filter((t) => t.set === set).length];
-    expect(count("ancient")).toEqual([6, 36]);
-    expect(count("oath")).toEqual([12, 36]);
-    expect(count("legionnaire")).toEqual([12, 36]);
+    expect(count("ancient")).toEqual([6, 40]);
+    expect(count("oath")).toEqual([12, 40]);
+    expect(count("legionnaire")).toEqual([12, 40]);
   });
   it("uses the documented rarity level caps", () => {
     const caps: Record<string, number> = { common: 10, uncommon: 8, rare: 6, epic: 4, legendary: 3 };
