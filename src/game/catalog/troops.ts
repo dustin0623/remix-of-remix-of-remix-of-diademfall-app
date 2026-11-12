@@ -135,15 +135,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 3,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 1,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "shieldwall",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -151,8 +151,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -160,8 +160,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -169,8 +169,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -178,8 +178,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 5,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -187,8 +187,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -196,8 +196,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -205,8 +205,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 6,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -214,8 +214,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 7,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -223,8 +223,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 9,
         "health": 7,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -232,8 +232,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 10,
         "health": 8,
-        "armor": 4,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -255,15 +255,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "spell",
     "baseStats": {
       "health": 4,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "forgeheart",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       }
     ],
@@ -271,8 +271,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -280,8 +280,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -289,8 +289,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -298,8 +298,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 6,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -307,8 +307,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -316,8 +316,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 7,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -325,8 +325,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 7,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -334,8 +334,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 8,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -357,15 +357,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "shot",
     "baseStats": {
       "health": 3,
-      "armor": 1,
-      "speed": 2,
+      "armor": 0,
+      "speed": 3,
       "steel": 0,
       "shot": 2,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bannerhold",
+        "abilityId": "roadwise",
         "unlockLevel": 1
       }
     ],
@@ -373,8 +373,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 3,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -382,8 +382,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 4,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -391,8 +391,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 4,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -400,8 +400,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -409,8 +409,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 5,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -418,8 +418,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 6,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -441,7 +441,7 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 6,
-      "armor": 4,
+      "armor": 3,
       "speed": 1,
       "steel": 2,
       "shot": 0,
@@ -449,11 +449,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "retinue",
+        "abilityId": "forgeheart",
         "unlockLevel": 1
       },
       {
-        "abilityId": "brace",
+        "abilityId": "field_ration",
         "unlockLevel": 4
       }
     ],
@@ -461,7 +461,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 6,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 2,
         "shot": 0,
@@ -470,7 +470,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 7,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 2,
         "shot": 0,
@@ -479,7 +479,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 7,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 3,
         "shot": 0,
@@ -488,7 +488,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 8,
-        "armor": 5,
+        "armor": 4,
         "speed": 1,
         "steel": 3,
         "shot": 0,
@@ -511,7 +511,7 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "spell",
     "baseStats": {
       "health": 7,
-      "armor": 3,
+      "armor": 2,
       "speed": 1,
       "steel": 0,
       "shot": 0,
@@ -519,11 +519,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "oathkeeper",
-        "unlockLevel": 1
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "shieldwall",
+        "abilityId": "spotter",
         "unlockLevel": 3
       }
     ],
@@ -531,7 +531,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 7,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 0,
         "shot": 0,
@@ -540,7 +540,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 8,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 0,
         "shot": 0,
@@ -549,7 +549,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 8,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 0,
         "shot": 0,
@@ -572,8 +572,8 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "none",
     "baseStats": {
       "health": 2,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 0
@@ -588,8 +588,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 2,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -597,8 +597,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -606,8 +606,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -615,8 +615,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 4,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -624,8 +624,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 4,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -633,8 +633,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -642,8 +642,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 5,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -651,8 +651,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 6,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -660,8 +660,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 9,
         "health": 6,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -669,8 +669,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 10,
         "health": 7,
-        "armor": 4,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -692,15 +692,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "shot",
     "baseStats": {
       "health": 2,
-      "armor": 1,
-      "speed": 2,
+      "armor": 0,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "shieldwall",
+        "abilityId": "primal_mend",
         "unlockLevel": 1
       }
     ],
@@ -708,8 +708,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 2,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -717,8 +717,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 3,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -726,8 +726,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 3,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -735,8 +735,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 4,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -744,8 +744,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 4,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -753,8 +753,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 5,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -762,8 +762,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 5,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -771,8 +771,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 6,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -794,15 +794,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 4,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 2,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "forgeheart",
+        "abilityId": "shieldwall",
         "unlockLevel": 7
       }
     ],
@@ -810,8 +810,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -819,8 +819,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -828,8 +828,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -837,8 +837,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 6,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -846,8 +846,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -855,8 +855,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 7,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -864,8 +864,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 7,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -873,8 +873,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 8,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -882,8 +882,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 9,
         "health": 8,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -891,8 +891,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 10,
         "health": 9,
-        "armor": 4,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -914,15 +914,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "spell",
     "baseStats": {
       "health": 4,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bannerhold",
+        "abilityId": "salvager",
         "unlockLevel": 1
       }
     ],
@@ -930,8 +930,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -939,8 +939,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -948,8 +948,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -957,8 +957,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 6,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -966,8 +966,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -975,8 +975,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 7,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -984,8 +984,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 7,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -993,8 +993,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 8,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -1016,15 +1016,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "shot",
     "baseStats": {
       "health": 4,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "retinue",
+        "abilityId": "roadwise",
         "unlockLevel": 1
       }
     ],
@@ -1032,8 +1032,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -1041,8 +1041,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -1050,8 +1050,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -1059,8 +1059,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 6,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -1068,8 +1068,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -1077,8 +1077,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 7,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -1100,7 +1100,7 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 7,
-      "armor": 3,
+      "armor": 2,
       "speed": 1,
       "steel": 3,
       "shot": 0,
@@ -1108,11 +1108,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "oathkeeper",
-        "unlockLevel": 1
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "shieldwall",
+        "abilityId": "last_pay",
         "unlockLevel": 4
       }
     ],
@@ -1120,7 +1120,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 7,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 3,
         "shot": 0,
@@ -1129,7 +1129,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 8,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 3,
         "shot": 0,
@@ -1138,7 +1138,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 8,
-        "armor": 3,
+        "armor": 2,
         "speed": 1,
         "steel": 4,
         "shot": 0,
@@ -1147,7 +1147,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 9,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 4,
         "shot": 0,
@@ -1170,8 +1170,8 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "none",
     "baseStats": {
       "health": 2,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 0
@@ -1186,8 +1186,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 2,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1195,8 +1195,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1204,8 +1204,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1213,8 +1213,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 4,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1222,8 +1222,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 4,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1231,8 +1231,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1240,8 +1240,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 5,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1249,8 +1249,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 6,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1258,8 +1258,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 9,
         "health": 6,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1267,8 +1267,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 10,
         "health": 7,
-        "armor": 4,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -1290,15 +1290,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 3,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 1,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "shieldwall",
+        "abilityId": "hunt",
         "unlockLevel": 7
       }
     ],
@@ -1306,8 +1306,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 3,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -1315,8 +1315,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -1324,8 +1324,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 4,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1333,8 +1333,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 5,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1342,8 +1342,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1351,8 +1351,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 6,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1360,8 +1360,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 6,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1369,8 +1369,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 7,
-        "armor": 3,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1378,8 +1378,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 9,
         "health": 7,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1387,8 +1387,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 10,
         "health": 8,
-        "armor": 4,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1410,15 +1410,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "shot",
     "baseStats": {
       "health": 3,
-      "armor": 1,
-      "speed": 2,
+      "armor": 0,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "forgeheart",
+        "abilityId": "spotter",
         "unlockLevel": 1
       }
     ],
@@ -1426,8 +1426,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 3,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -1435,8 +1435,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 4,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -1444,8 +1444,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 4,
-        "armor": 1,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -1453,8 +1453,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 5,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -1462,8 +1462,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 5,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -1471,8 +1471,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 6,
-        "armor": 2,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -1480,8 +1480,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 7,
         "health": 6,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -1489,8 +1489,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 8,
         "health": 7,
-        "armor": 3,
-        "speed": 3,
+        "armor": 0,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -1512,15 +1512,15 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "spell",
     "baseStats": {
       "health": 5,
-      "armor": 1,
-      "speed": 1,
+      "armor": 0,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bannerhold",
+        "abilityId": "hunt",
         "unlockLevel": 1
       }
     ],
@@ -1528,8 +1528,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 5,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -1537,8 +1537,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 6,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -1546,8 +1546,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 6,
-        "armor": 1,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -1555,8 +1555,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 7,
-        "armor": 2,
-        "speed": 1,
+        "armor": 0,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -1564,8 +1564,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 5,
         "health": 7,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -1573,8 +1573,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 6,
         "health": 8,
-        "armor": 2,
-        "speed": 2,
+        "armor": 0,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -1596,7 +1596,7 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 6,
-      "armor": 3,
+      "armor": 2,
       "speed": 2,
       "steel": 2,
       "shot": 0,
@@ -1604,11 +1604,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "retinue",
+        "abilityId": "flank",
         "unlockLevel": 1
       },
       {
-        "abilityId": "brace",
+        "abilityId": "doom_count",
         "unlockLevel": 4
       }
     ],
@@ -1616,7 +1616,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 6,
-        "armor": 3,
+        "armor": 2,
         "speed": 2,
         "steel": 2,
         "shot": 0,
@@ -1625,7 +1625,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 7,
-        "armor": 3,
+        "armor": 2,
         "speed": 2,
         "steel": 2,
         "shot": 0,
@@ -1634,7 +1634,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 7,
-        "armor": 3,
+        "armor": 2,
         "speed": 2,
         "steel": 3,
         "shot": 0,
@@ -1643,7 +1643,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 4,
         "health": 8,
-        "armor": 4,
+        "armor": 3,
         "speed": 2,
         "steel": 3,
         "shot": 0,
@@ -1666,7 +1666,7 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 9,
-      "armor": 4,
+      "armor": 3,
       "speed": 1,
       "steel": 4,
       "shot": 0,
@@ -1674,11 +1674,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "oathkeeper",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       },
       {
-        "abilityId": "shieldwall",
+        "abilityId": "grave_recall",
         "unlockLevel": 3
       }
     ],
@@ -1686,7 +1686,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 9,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 4,
         "shot": 0,
@@ -1695,7 +1695,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 10,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 4,
         "shot": 0,
@@ -1704,7 +1704,7 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 10,
-        "armor": 4,
+        "armor": 3,
         "speed": 1,
         "steel": 5,
         "shot": 0,
@@ -1735,7 +1735,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bloodscent",
+        "abilityId": "field_ration",
         "unlockLevel": 7
       }
     ],
@@ -1848,14 +1848,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 3,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 1,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "packmark",
+        "abilityId": "crosswind",
         "unlockLevel": 7
       }
     ],
@@ -1864,7 +1864,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 3,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -1873,7 +1873,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
@@ -1882,7 +1882,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1891,7 +1891,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1900,7 +1900,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 5,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1909,7 +1909,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -1918,7 +1918,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1927,7 +1927,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1936,7 +1936,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 9,
         "health": 7,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1945,7 +1945,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 10,
         "health": 8,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -1968,14 +1968,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 4,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pounce",
+        "abilityId": "packmark",
         "unlockLevel": 1
       }
     ],
@@ -1984,7 +1984,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -1993,7 +1993,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -2002,7 +2002,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -2011,7 +2011,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -2020,7 +2020,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -2029,7 +2029,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -2038,7 +2038,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -2047,7 +2047,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 8,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -2070,14 +2070,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 3,
       "armor": 0,
-      "speed": 4,
+      "speed": 3,
       "steel": 0,
       "shot": 2,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "moonrush",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 1
       }
     ],
@@ -2086,7 +2086,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 3,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -2095,7 +2095,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -2104,7 +2104,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -2113,7 +2113,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 5,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -2122,7 +2122,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 5,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -2131,7 +2131,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 6,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -2153,6 +2153,1161 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 6,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 7,
+        "armor": 3,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 8,
+        "armor": 4,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "elderhorn_colossus",
+    "name": "Elderhorn Colossus",
+    "originalName": "Elderhorn Colossus",
+    "set": "ancient",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 8,
+    "rarity": "legendary",
+    "levelCap": 3,
+    "role": "ancient_finisher",
+    "channel": "spell",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 3
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 0,
+        "shot": 0,
+        "spell": 4
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "burrow_mouse",
+    "name": "Burrow Mouse",
+    "originalName": "Burrow Mouse",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "filler",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "thistle_runner",
+    "name": "Thistle Runner",
+    "originalName": "Thistle Runner",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "utility",
+    "channel": "shot",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "moonclaw_stalker",
+    "name": "Moonclaw Stalker",
+    "originalName": "Moonclaw Stalker",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "line_fighter",
+    "channel": "steel",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 9,
+        "armor": 0,
+        "speed": 4,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "spore_witch",
+    "name": "Spore Witch",
+    "originalName": "Spore Witch",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "caster",
+    "channel": "spell",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 7,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      },
+      {
+        "level": 8,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 3
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "grove_tender",
+    "name": "Grove Tender",
+    "originalName": "Grove Tender",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 5,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "support",
+    "channel": "shot",
+    "baseStats": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 4,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 5,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      },
+      {
+        "level": 6,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 1
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "whitehart_ravager",
+    "name": "Whitehart Ravager",
+    "originalName": "Whitehart Ravager",
+    "set": "oath",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 7,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "banner_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 7,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 8,
+        "armor": 2,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 9,
+        "armor": 3,
+        "speed": 1,
+        "steel": 4,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "twig_scout",
+    "name": "Twig Scout",
+    "originalName": "Twig Scout",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 1,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "recruit",
+    "channel": "none",
+    "baseStats": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 2,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "pack_pup",
+    "name": "Pack Pup",
+    "originalName": "Pack Pup",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 2,
+    "rarity": "common",
+    "levelCap": 10,
+    "role": "auxiliary",
+    "channel": "steel",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 1,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 2,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 9,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      },
+      {
+        "level": 10,
+        "health": 8,
+        "armor": 0,
+        "speed": 4,
+        "steel": 3,
+        "shot": 0,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "needlewing_hunter",
+    "name": "Needlewing Hunter",
+    "originalName": "Needlewing Hunter",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 3,
+    "rarity": "uncommon",
+    "levelCap": 8,
+    "role": "legion_shooter",
+    "channel": "shot",
+    "baseStats": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 3,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 2,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 1,
+        "spell": 0
+      },
+      {
+        "level": 3,
+        "health": 4,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 4,
+        "health": 5,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 5,
+        "health": 5,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 6,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 2,
+        "spell": 0
+      },
+      {
+        "level": 7,
+        "health": 6,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      },
+      {
+        "level": 8,
+        "health": 7,
+        "armor": 0,
+        "speed": 4,
+        "steel": 0,
+        "shot": 3,
+        "spell": 0
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "rootsnare_druid",
+    "name": "Rootsnare Druid",
+    "originalName": "Rootsnare Druid",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 4,
+    "rarity": "rare",
+    "levelCap": 6,
+    "role": "controller",
+    "channel": "spell",
+    "baseStats": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "abilityUnlocks": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "health": 5,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 2,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 1
+      },
+      {
+        "level": 3,
+        "health": 6,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 4,
+        "health": 7,
+        "armor": 0,
+        "speed": 2,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 5,
+        "health": 7,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      },
+      {
+        "level": 6,
+        "health": 8,
+        "armor": 0,
+        "speed": 3,
+        "steel": 0,
+        "shot": 0,
+        "spell": 2
+      }
+    ],
+    "affiliation": "banner"
+  },
+  {
+    "id": "greatpaw_warden",
+    "name": "Greatpaw Warden",
+    "originalName": "Greatpaw Warden",
+    "set": "legionnaire",
+    "banner": "wild_courts",
+    "cardType": "troop",
+    "mana": 6,
+    "rarity": "epic",
+    "levelCap": 4,
+    "role": "legion_elite",
+    "channel": "steel",
+    "baseStats": {
+      "health": 6,
       "armor": 2,
       "speed": 2,
       "steel": 2,
@@ -2161,11 +3316,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "trailblazer",
+        "abilityId": "hunt",
         "unlockLevel": 1
       },
       {
-        "abilityId": "bloodscent",
+        "abilityId": "ancient_scale",
         "unlockLevel": 4
       }
     ],
@@ -2210,1161 +3365,6 @@ export const TROOPS: TroopDefinition[] = [
     "affiliation": "banner"
   },
   {
-    "id": "elderhorn_colossus",
-    "name": "Elderhorn Colossus",
-    "originalName": "Elderhorn Colossus",
-    "set": "ancient",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 8,
-    "rarity": "legendary",
-    "levelCap": 3,
-    "role": "ancient_finisher",
-    "channel": "spell",
-    "baseStats": {
-      "health": 7,
-      "armor": 1,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 3
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "primal_mend",
-        "unlockLevel": 1
-      },
-      {
-        "abilityId": "packmark",
-        "unlockLevel": 3
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 7,
-        "armor": 1,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 3
-      },
-      {
-        "level": 2,
-        "health": 8,
-        "armor": 1,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 3
-      },
-      {
-        "level": 3,
-        "health": 8,
-        "armor": 1,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 4
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "burrow_mouse",
-    "name": "Burrow Mouse",
-    "originalName": "Burrow Mouse",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 1,
-    "rarity": "common",
-    "levelCap": 10,
-    "role": "filler",
-    "channel": "none",
-    "baseStats": {
-      "health": 2,
-      "armor": 0,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "bloodscent",
-        "unlockLevel": 7
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 2,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 3,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 3,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 4,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 9,
-        "health": 6,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 10,
-        "health": 7,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "thistle_runner",
-    "name": "Thistle Runner",
-    "originalName": "Thistle Runner",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 2,
-    "rarity": "uncommon",
-    "levelCap": 8,
-    "role": "utility",
-    "channel": "shot",
-    "baseStats": {
-      "health": 2,
-      "armor": 0,
-      "speed": 4,
-      "steel": 0,
-      "shot": 1,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "packmark",
-        "unlockLevel": 1
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 2,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 3,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 3,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 4,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 4,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 5,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 5,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 3,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 6,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 3,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "moonclaw_stalker",
-    "name": "Moonclaw Stalker",
-    "originalName": "Moonclaw Stalker",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 3,
-    "rarity": "common",
-    "levelCap": 10,
-    "role": "line_fighter",
-    "channel": "steel",
-    "baseStats": {
-      "health": 4,
-      "armor": 0,
-      "speed": 3,
-      "steel": 2,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "pounce",
-        "unlockLevel": 7
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 6,
-        "armor": 0,
-        "speed": 3,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 8,
-        "armor": 0,
-        "speed": 4,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 9,
-        "health": 8,
-        "armor": 0,
-        "speed": 5,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 10,
-        "health": 9,
-        "armor": 0,
-        "speed": 5,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "spore_witch",
-    "name": "Spore Witch",
-    "originalName": "Spore Witch",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 4,
-    "rarity": "uncommon",
-    "levelCap": 8,
-    "role": "caster",
-    "channel": "spell",
-    "baseStats": {
-      "health": 4,
-      "armor": 0,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 1
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "moonrush",
-        "unlockLevel": 1
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 2,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 3,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 4,
-        "health": 6,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 5,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 6,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 7,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 3
-      },
-      {
-        "level": 8,
-        "health": 8,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 3
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "grove_tender",
-    "name": "Grove Tender",
-    "originalName": "Grove Tender",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 5,
-    "rarity": "rare",
-    "levelCap": 6,
-    "role": "support",
-    "channel": "shot",
-    "baseStats": {
-      "health": 4,
-      "armor": 0,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 1
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "trailblazer",
-        "unlockLevel": 1
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 2,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 3,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 1,
-        "spell": 1
-      },
-      {
-        "level": 4,
-        "health": 6,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 1,
-        "spell": 1
-      },
-      {
-        "level": 5,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 1
-      },
-      {
-        "level": 6,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 1
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "whitehart_ravager",
-    "name": "Whitehart Ravager",
-    "originalName": "Whitehart Ravager",
-    "set": "oath",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 7,
-    "rarity": "epic",
-    "levelCap": 4,
-    "role": "banner_elite",
-    "channel": "steel",
-    "baseStats": {
-      "health": 7,
-      "armor": 1,
-      "speed": 3,
-      "steel": 3,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "primal_mend",
-        "unlockLevel": 1
-      },
-      {
-        "abilityId": "packmark",
-        "unlockLevel": 4
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 7,
-        "armor": 1,
-        "speed": 3,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 8,
-        "armor": 1,
-        "speed": 3,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 8,
-        "armor": 1,
-        "speed": 3,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 9,
-        "armor": 2,
-        "speed": 3,
-        "steel": 4,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "twig_scout",
-    "name": "Twig Scout",
-    "originalName": "Twig Scout",
-    "set": "legionnaire",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 1,
-    "rarity": "common",
-    "levelCap": 10,
-    "role": "recruit",
-    "channel": "none",
-    "baseStats": {
-      "health": 2,
-      "armor": 0,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "bloodscent",
-        "unlockLevel": 7
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 2,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 3,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 3,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 4,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 9,
-        "health": 6,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 10,
-        "health": 7,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "pack_pup",
-    "name": "Pack Pup",
-    "originalName": "Pack Pup",
-    "set": "legionnaire",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 2,
-    "rarity": "common",
-    "levelCap": 10,
-    "role": "auxiliary",
-    "channel": "steel",
-    "baseStats": {
-      "health": 3,
-      "armor": 0,
-      "speed": 3,
-      "steel": 1,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "packmark",
-        "unlockLevel": 7
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 3,
-        "armor": 0,
-        "speed": 3,
-        "steel": 1,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 1,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 4,
-        "armor": 0,
-        "speed": 3,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 6,
-        "armor": 0,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 9,
-        "health": 7,
-        "armor": 0,
-        "speed": 5,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 10,
-        "health": 8,
-        "armor": 0,
-        "speed": 5,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "needlewing_hunter",
-    "name": "Needlewing Hunter",
-    "originalName": "Needlewing Hunter",
-    "set": "legionnaire",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 3,
-    "rarity": "uncommon",
-    "levelCap": 8,
-    "role": "legion_shooter",
-    "channel": "shot",
-    "baseStats": {
-      "health": 3,
-      "armor": 0,
-      "speed": 4,
-      "steel": 0,
-      "shot": 1,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "pounce",
-        "unlockLevel": 1
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 3,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 4,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 1,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 4,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 5,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 5,
-        "health": 5,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 6,
-        "health": 6,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 2,
-        "spell": 0
-      },
-      {
-        "level": 7,
-        "health": 6,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 3,
-        "spell": 0
-      },
-      {
-        "level": 8,
-        "health": 7,
-        "armor": 0,
-        "speed": 5,
-        "steel": 0,
-        "shot": 3,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "rootsnare_druid",
-    "name": "Rootsnare Druid",
-    "originalName": "Rootsnare Druid",
-    "set": "legionnaire",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 4,
-    "rarity": "rare",
-    "levelCap": 6,
-    "role": "controller",
-    "channel": "spell",
-    "baseStats": {
-      "health": 5,
-      "armor": 0,
-      "speed": 3,
-      "steel": 0,
-      "shot": 0,
-      "spell": 1
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "moonrush",
-        "unlockLevel": 1
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 5,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 2,
-        "health": 6,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 1
-      },
-      {
-        "level": 3,
-        "health": 6,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 4,
-        "health": 7,
-        "armor": 0,
-        "speed": 3,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 5,
-        "health": 7,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      },
-      {
-        "level": 6,
-        "health": 8,
-        "armor": 0,
-        "speed": 4,
-        "steel": 0,
-        "shot": 0,
-        "spell": 2
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
-    "id": "greatpaw_warden",
-    "name": "Greatpaw Warden",
-    "originalName": "Greatpaw Warden",
-    "set": "legionnaire",
-    "banner": "wild_courts",
-    "cardType": "troop",
-    "mana": 6,
-    "rarity": "epic",
-    "levelCap": 4,
-    "role": "legion_elite",
-    "channel": "steel",
-    "baseStats": {
-      "health": 6,
-      "armor": 1,
-      "speed": 4,
-      "steel": 2,
-      "shot": 0,
-      "spell": 0
-    },
-    "abilityUnlocks": [
-      {
-        "abilityId": "trailblazer",
-        "unlockLevel": 1
-      },
-      {
-        "abilityId": "bloodscent",
-        "unlockLevel": 4
-      }
-    ],
-    "levels": [
-      {
-        "level": 1,
-        "health": 6,
-        "armor": 1,
-        "speed": 4,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 2,
-        "health": 7,
-        "armor": 1,
-        "speed": 4,
-        "steel": 2,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 3,
-        "health": 7,
-        "armor": 1,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      },
-      {
-        "level": 4,
-        "health": 8,
-        "armor": 2,
-        "speed": 4,
-        "steel": 3,
-        "shot": 0,
-        "spell": 0
-      }
-    ],
-    "affiliation": "banner"
-  },
-  {
     "id": "crowned_mammoth",
     "name": "Crowned Mammoth",
     "originalName": "Crowned Mammoth",
@@ -3378,19 +3378,19 @@ export const TROOPS: TroopDefinition[] = [
     "channel": "steel",
     "baseStats": {
       "health": 9,
-      "armor": 2,
-      "speed": 3,
+      "armor": 3,
+      "speed": 1,
       "steel": 4,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "primal_mend",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 1
       },
       {
-        "abilityId": "packmark",
+        "abilityId": "last_pay",
         "unlockLevel": 3
       }
     ],
@@ -3398,8 +3398,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 1,
         "health": 9,
-        "armor": 2,
-        "speed": 3,
+        "armor": 3,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -3407,8 +3407,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 2,
         "health": 10,
-        "armor": 2,
-        "speed": 3,
+        "armor": 3,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -3416,8 +3416,8 @@ export const TROOPS: TroopDefinition[] = [
       {
         "level": 3,
         "health": 10,
-        "armor": 2,
-        "speed": 3,
+        "armor": 3,
+        "speed": 1,
         "steel": 5,
         "shot": 0,
         "spell": 0
@@ -3447,7 +3447,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mislead",
+        "abilityId": "windread",
         "unlockLevel": 7
       }
     ],
@@ -3567,7 +3567,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "fate_knot",
+        "abilityId": "hunt",
         "unlockLevel": 7
       }
     ],
@@ -3680,14 +3680,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 4,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hexweave",
+        "abilityId": "primal_mend",
         "unlockLevel": 1
       }
     ],
@@ -3696,7 +3696,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -3705,7 +3705,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -3714,7 +3714,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -3723,7 +3723,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -3732,7 +3732,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -3741,7 +3741,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -3750,7 +3750,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -3759,7 +3759,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 8,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -3789,7 +3789,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "echo_sigil",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -3873,11 +3873,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "vanish",
+        "abilityId": "windread",
         "unlockLevel": 1
       },
       {
-        "abilityId": "mislead",
+        "abilityId": "flank",
         "unlockLevel": 4
       }
     ],
@@ -3936,18 +3936,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 7,
       "armor": 2,
-      "speed": 3,
+      "speed": 1,
       "steel": 0,
       "shot": 0,
       "spell": 3
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mirrorcraft",
-        "unlockLevel": 1
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "fate_knot",
+        "abilityId": "hexweave",
         "unlockLevel": 3
       }
     ],
@@ -3956,7 +3956,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 7,
         "armor": 2,
-        "speed": 3,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -3965,7 +3965,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 8,
         "armor": 2,
-        "speed": 3,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -3974,7 +3974,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 8,
         "armor": 2,
-        "speed": 3,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 4
@@ -4004,7 +4004,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mislead",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -4124,7 +4124,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "fate_knot",
+        "abilityId": "primal_mend",
         "unlockLevel": 1
       }
     ],
@@ -4226,7 +4226,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hexweave",
+        "abilityId": "last_pay",
         "unlockLevel": 7
       }
     ],
@@ -4339,14 +4339,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 4,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "echo_sigil",
+        "abilityId": "roadwise",
         "unlockLevel": 1
       }
     ],
@@ -4355,7 +4355,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4364,7 +4364,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4373,7 +4373,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4382,7 +4382,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4391,7 +4391,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4400,7 +4400,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4409,7 +4409,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -4418,7 +4418,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 8,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -4441,14 +4441,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 4,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "vanish",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -4457,7 +4457,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4466,7 +4466,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4475,7 +4475,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -4484,7 +4484,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -4493,7 +4493,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 6,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -4502,7 +4502,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -4525,18 +4525,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 7,
       "armor": 2,
-      "speed": 2,
+      "speed": 1,
       "steel": 3,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mirrorcraft",
+        "abilityId": "crosswind",
         "unlockLevel": 1
       },
       {
-        "abilityId": "fate_knot",
+        "abilityId": "field_ration",
         "unlockLevel": 4
       }
     ],
@@ -4545,7 +4545,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 7,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -4554,7 +4554,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -4563,7 +4563,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -4572,7 +4572,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 9,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -4602,7 +4602,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mislead",
+        "abilityId": "roadwise",
         "unlockLevel": 7
       }
     ],
@@ -4722,7 +4722,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "fate_knot",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -4842,7 +4842,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hexweave",
+        "abilityId": "spotter",
         "unlockLevel": 1
       }
     ],
@@ -4937,14 +4937,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 5,
       "armor": 0,
-      "speed": 3,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "echo_sigil",
+        "abilityId": "packmark",
         "unlockLevel": 1
       }
     ],
@@ -4953,7 +4953,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4962,7 +4962,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
@@ -4971,7 +4971,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4980,7 +4980,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4989,7 +4989,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 7,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -4998,7 +4998,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 8,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -5021,18 +5021,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 6,
       "armor": 2,
-      "speed": 3,
+      "speed": 2,
       "steel": 2,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "vanish",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       },
       {
-        "abilityId": "mislead",
+        "abilityId": "hunt",
         "unlockLevel": 4
       }
     ],
@@ -5041,7 +5041,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 6,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -5050,7 +5050,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 7,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -5059,7 +5059,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 7,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -5068,7 +5068,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 8,
         "armor": 3,
-        "speed": 3,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -5091,18 +5091,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 9,
       "armor": 3,
-      "speed": 2,
+      "speed": 1,
       "steel": 4,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "mirrorcraft",
-        "unlockLevel": 1
+        "abilityId": "pounce",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "fate_knot",
+        "abilityId": "crosswind",
         "unlockLevel": 3
       }
     ],
@@ -5111,7 +5111,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 9,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -5120,7 +5120,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 10,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -5129,7 +5129,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 10,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 5,
         "shot": 0,
         "spell": 0
@@ -5159,7 +5159,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "soul_tithe",
+        "abilityId": "windread",
         "unlockLevel": 7
       }
     ],
@@ -5270,106 +5270,106 @@ export const TROOPS: TroopDefinition[] = [
     "role": "skirmisher",
     "channel": "steel",
     "baseStats": {
-      "health": 4,
+      "health": 3,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 1,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
+        "abilityId": "hexweave",
         "unlockLevel": 7
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 9,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 10,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -5390,88 +5390,88 @@ export const TROOPS: TroopDefinition[] = [
     "role": "support",
     "channel": "spell",
     "baseStats": {
-      "health": 5,
+      "health": 4,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "death_debt",
+        "abilityId": "last_pay",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 2,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 3,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 4,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 5,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 6,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 7,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
       },
       {
         "level": 8,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -5492,70 +5492,70 @@ export const TROOPS: TroopDefinition[] = [
     "role": "shooter",
     "channel": "shot",
     "baseStats": {
-      "health": 4,
+      "health": 3,
       "armor": 0,
-      "speed": 2,
+      "speed": 3,
       "steel": 0,
       "shot": 2,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bone_harvest",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -5576,7 +5576,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "guardian",
     "channel": "steel",
     "baseStats": {
-      "health": 7,
+      "health": 6,
       "armor": 3,
       "speed": 1,
       "steel": 2,
@@ -5585,18 +5585,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "doom_count",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 1
       },
       {
-        "abilityId": "soul_tithe",
+        "abilityId": "hexweave",
         "unlockLevel": 4
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 7,
+        "health": 6,
         "armor": 3,
         "speed": 1,
         "steel": 2,
@@ -5605,7 +5605,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 8,
+        "health": 7,
         "armor": 3,
         "speed": 1,
         "steel": 2,
@@ -5614,7 +5614,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 8,
+        "health": 7,
         "armor": 3,
         "speed": 1,
         "steel": 3,
@@ -5623,7 +5623,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 9,
+        "health": 8,
         "armor": 4,
         "speed": 1,
         "steel": 3,
@@ -5646,7 +5646,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "ancient_finisher",
     "channel": "spell",
     "baseStats": {
-      "health": 8,
+      "health": 7,
       "armor": 2,
       "speed": 1,
       "steel": 0,
@@ -5655,18 +5655,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pale_exchange",
-        "unlockLevel": 1
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "grave_recall",
+        "abilityId": "doom_count",
         "unlockLevel": 3
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -5675,7 +5675,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -5684,7 +5684,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -5707,106 +5707,106 @@ export const TROOPS: TroopDefinition[] = [
     "role": "filler",
     "channel": "none",
     "baseStats": {
-      "health": 3,
+      "health": 2,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "soul_tithe",
+        "abilityId": "last_pay",
         "unlockLevel": 7
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 3,
+        "health": 2,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 9,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 10,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -5827,88 +5827,88 @@ export const TROOPS: TroopDefinition[] = [
     "role": "utility",
     "channel": "shot",
     "baseStats": {
-      "health": 3,
+      "health": 2,
       "armor": 0,
-      "speed": 2,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
+        "abilityId": "bloodscent",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 3,
+        "health": 2,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -5929,106 +5929,106 @@ export const TROOPS: TroopDefinition[] = [
     "role": "line_fighter",
     "channel": "steel",
     "baseStats": {
-      "health": 5,
+      "health": 4,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 2,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "death_debt",
+        "abilityId": "field_ration",
         "unlockLevel": 7
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 4,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 4,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 9,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 4,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 10,
-        "health": 10,
+        "health": 9,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -6049,88 +6049,88 @@ export const TROOPS: TroopDefinition[] = [
     "role": "caster",
     "channel": "spell",
     "baseStats": {
-      "health": 5,
+      "health": 4,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bone_harvest",
+        "abilityId": "crosswind",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 2,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 3,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 4,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 5,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 6,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 7,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
       },
       {
         "level": 8,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -6151,70 +6151,70 @@ export const TROOPS: TroopDefinition[] = [
     "role": "support",
     "channel": "shot",
     "baseStats": {
-      "health": 5,
+      "health": 4,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "doom_count",
+        "abilityId": "primal_mend",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 2,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 3,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
       },
       {
         "level": 4,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 1,
         "spell": 1
       },
       {
         "level": 5,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
       },
       {
         "level": 6,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 1
@@ -6235,7 +6235,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "banner_elite",
     "channel": "steel",
     "baseStats": {
-      "health": 8,
+      "health": 7,
       "armor": 2,
       "speed": 1,
       "steel": 3,
@@ -6244,18 +6244,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pale_exchange",
-        "unlockLevel": 1
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "grave_recall",
+        "abilityId": "doom_count",
         "unlockLevel": 4
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 1,
         "steel": 3,
@@ -6264,7 +6264,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 3,
@@ -6273,7 +6273,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 4,
@@ -6282,7 +6282,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 10,
+        "health": 9,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -6305,106 +6305,106 @@ export const TROOPS: TroopDefinition[] = [
     "role": "recruit",
     "channel": "none",
     "baseStats": {
-      "health": 3,
+      "health": 2,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "soul_tithe",
+        "abilityId": "brace",
         "unlockLevel": 7
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 3,
+        "health": 2,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 9,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 10,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 0,
         "spell": 0
@@ -6425,106 +6425,106 @@ export const TROOPS: TroopDefinition[] = [
     "role": "auxiliary",
     "channel": "steel",
     "baseStats": {
-      "health": 4,
+      "health": 3,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 1,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 1,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 2,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 9,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
       },
       {
         "level": 10,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -6545,88 +6545,88 @@ export const TROOPS: TroopDefinition[] = [
     "role": "legion_shooter",
     "channel": "shot",
     "baseStats": {
-      "health": 4,
+      "health": 3,
       "armor": 0,
-      "speed": 2,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "death_debt",
+        "abilityId": "wildshot",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 4,
+        "health": 3,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
       },
       {
         "level": 2,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
       },
       {
         "level": 3,
-        "health": 5,
+        "health": 4,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 4,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 5,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 6,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
       },
       {
         "level": 7,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
       },
       {
         "level": 8,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 3,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -6647,70 +6647,70 @@ export const TROOPS: TroopDefinition[] = [
     "role": "controller",
     "channel": "spell",
     "baseStats": {
-      "health": 6,
+      "health": 5,
       "armor": 0,
-      "speed": 1,
+      "speed": 2,
       "steel": 0,
       "shot": 0,
       "spell": 1
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bone_harvest",
+        "abilityId": "bloodscent",
         "unlockLevel": 1
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 6,
+        "health": 5,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 2,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 1
       },
       {
         "level": 3,
-        "health": 7,
+        "health": 6,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 4,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 1,
+        "speed": 2,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 5,
-        "health": 8,
+        "health": 7,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
       },
       {
         "level": 6,
-        "health": 9,
+        "health": 8,
         "armor": 0,
-        "speed": 2,
+        "speed": 3,
         "steel": 0,
         "shot": 0,
         "spell": 2
@@ -6731,7 +6731,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "legion_elite",
     "channel": "steel",
     "baseStats": {
-      "health": 7,
+      "health": 6,
       "armor": 2,
       "speed": 2,
       "steel": 2,
@@ -6740,18 +6740,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "doom_count",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       },
       {
-        "abilityId": "soul_tithe",
+        "abilityId": "doom_count",
         "unlockLevel": 4
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 7,
+        "health": 6,
         "armor": 2,
         "speed": 2,
         "steel": 2,
@@ -6760,7 +6760,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 2,
         "steel": 2,
@@ -6769,7 +6769,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 2,
         "steel": 3,
@@ -6778,7 +6778,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 9,
+        "health": 8,
         "armor": 3,
         "speed": 2,
         "steel": 3,
@@ -6801,7 +6801,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "legion_champion",
     "channel": "steel",
     "baseStats": {
-      "health": 10,
+      "health": 9,
       "armor": 3,
       "speed": 1,
       "steel": 4,
@@ -6810,18 +6810,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pale_exchange",
-        "unlockLevel": 1
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "grave_recall",
+        "abilityId": "packmark",
         "unlockLevel": 3
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 10,
+        "health": 9,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -6830,7 +6830,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 11,
+        "health": 10,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -6839,7 +6839,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 11,
+        "health": 10,
         "armor": 3,
         "speed": 1,
         "steel": 5,
@@ -6871,7 +6871,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -6991,7 +6991,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "dive_pass",
+        "abilityId": "hexweave",
         "unlockLevel": 7
       }
     ],
@@ -7111,7 +7111,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "spotter",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -7206,14 +7206,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 3,
       "armor": 0,
-      "speed": 4,
+      "speed": 3,
       "steel": 0,
       "shot": 2,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "volley_line",
+        "abilityId": "brace",
         "unlockLevel": 1
       }
     ],
@@ -7222,7 +7222,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 3,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7231,7 +7231,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7240,7 +7240,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7249,7 +7249,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 5,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7258,7 +7258,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 5,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7267,7 +7267,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 6,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7297,11 +7297,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "crosswind",
-        "unlockLevel": 1
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "windread",
+        "abilityId": "forgeheart",
         "unlockLevel": 4
       }
     ],
@@ -7360,18 +7360,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 7,
       "armor": 2,
-      "speed": 2,
+      "speed": 1,
       "steel": 0,
       "shot": 0,
       "spell": 3
     },
     "abilityUnlocks": [
       {
-        "abilityId": "skyhook",
-        "unlockLevel": 1
+        "abilityId": "moonrush",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "dive_pass",
+        "abilityId": "runebreath",
         "unlockLevel": 3
       }
     ],
@@ -7380,7 +7380,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 7,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -7389,7 +7389,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 3
@@ -7398,7 +7398,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 0,
         "shot": 0,
         "spell": 4
@@ -7428,7 +7428,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "field_ration",
         "unlockLevel": 7
       }
     ],
@@ -7541,14 +7541,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 2,
       "armor": 0,
-      "speed": 4,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "dive_pass",
+        "abilityId": "last_pay",
         "unlockLevel": 1
       }
     ],
@@ -7557,7 +7557,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 2,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -7566,7 +7566,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 3,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -7575,7 +7575,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 3,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7584,7 +7584,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7593,7 +7593,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 4,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7602,7 +7602,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 5,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -7611,7 +7611,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 5,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7620,7 +7620,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 6,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -7650,7 +7650,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "spotter",
+        "abilityId": "hunt",
         "unlockLevel": 7
       }
     ],
@@ -7770,7 +7770,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "volley_line",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 1
       }
     ],
@@ -7872,7 +7872,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "crosswind",
+        "abilityId": "roadwise",
         "unlockLevel": 1
       }
     ],
@@ -7949,18 +7949,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 7,
       "armor": 2,
-      "speed": 2,
+      "speed": 1,
       "steel": 3,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "skyhook",
-        "unlockLevel": 1
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "dive_pass",
+        "abilityId": "flank",
         "unlockLevel": 4
       }
     ],
@@ -7969,7 +7969,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 7,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -7978,7 +7978,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -7987,7 +7987,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 8,
         "armor": 2,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -7996,7 +7996,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 9,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -8026,7 +8026,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -8146,7 +8146,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "dive_pass",
+        "abilityId": "hexweave",
         "unlockLevel": 7
       }
     ],
@@ -8259,14 +8259,14 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 3,
       "armor": 0,
-      "speed": 4,
+      "speed": 3,
       "steel": 0,
       "shot": 1,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "spotter",
+        "abilityId": "packmark",
         "unlockLevel": 1
       }
     ],
@@ -8275,7 +8275,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 3,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -8284,7 +8284,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 1,
         "spell": 0
@@ -8293,7 +8293,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 4,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -8302,7 +8302,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 5,
         "armor": 0,
-        "speed": 4,
+        "speed": 3,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -8311,7 +8311,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 5,
         "health": 5,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -8320,7 +8320,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 6,
         "health": 6,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 2,
         "spell": 0
@@ -8329,7 +8329,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 7,
         "health": 6,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -8338,7 +8338,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 8,
         "health": 7,
         "armor": 0,
-        "speed": 5,
+        "speed": 4,
         "steel": 0,
         "shot": 3,
         "spell": 0
@@ -8368,7 +8368,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "volley_line",
+        "abilityId": "crosswind",
         "unlockLevel": 1
       }
     ],
@@ -8445,18 +8445,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 6,
       "armor": 2,
-      "speed": 3,
+      "speed": 2,
       "steel": 2,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "crosswind",
-        "unlockLevel": 1
+        "abilityId": "pounce",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "windread",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 4
       }
     ],
@@ -8465,7 +8465,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 6,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -8474,7 +8474,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 7,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 2,
         "shot": 0,
         "spell": 0
@@ -8483,7 +8483,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 7,
         "armor": 2,
-        "speed": 3,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -8492,7 +8492,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 4,
         "health": 8,
         "armor": 3,
-        "speed": 3,
+        "speed": 2,
         "steel": 3,
         "shot": 0,
         "spell": 0
@@ -8515,18 +8515,18 @@ export const TROOPS: TroopDefinition[] = [
     "baseStats": {
       "health": 9,
       "armor": 3,
-      "speed": 2,
+      "speed": 1,
       "steel": 4,
       "shot": 0,
       "spell": 0
     },
     "abilityUnlocks": [
       {
-        "abilityId": "skyhook",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       },
       {
-        "abilityId": "dive_pass",
+        "abilityId": "windread",
         "unlockLevel": 3
       }
     ],
@@ -8535,7 +8535,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 1,
         "health": 9,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -8544,7 +8544,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 2,
         "health": 10,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 4,
         "shot": 0,
         "spell": 0
@@ -8553,7 +8553,7 @@ export const TROOPS: TroopDefinition[] = [
         "level": 3,
         "health": 10,
         "armor": 3,
-        "speed": 2,
+        "speed": 1,
         "steel": 5,
         "shot": 0,
         "spell": 0
@@ -8583,7 +8583,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "ancient_scale",
+        "abilityId": "field_ration",
         "unlockLevel": 7
       }
     ],
@@ -8703,7 +8703,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hoardfire",
+        "abilityId": "primal_mend",
         "unlockLevel": 7
       }
     ],
@@ -8823,7 +8823,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "devour_oath",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -8925,7 +8925,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "runebreath",
+        "abilityId": "hunt",
         "unlockLevel": 1
       }
     ],
@@ -9000,7 +9000,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "guardian",
     "channel": "steel",
     "baseStats": {
-      "health": 7,
+      "health": 6,
       "armor": 3,
       "speed": 1,
       "steel": 2,
@@ -9009,8 +9009,8 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "colossus_wake",
-        "unlockLevel": 1
+        "abilityId": "moonrush",
+        "unlockLevel": 2
       },
       {
         "abilityId": "ancient_scale",
@@ -9020,7 +9020,7 @@ export const TROOPS: TroopDefinition[] = [
     "levels": [
       {
         "level": 1,
-        "health": 7,
+        "health": 6,
         "armor": 3,
         "speed": 1,
         "steel": 2,
@@ -9029,7 +9029,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 8,
+        "health": 7,
         "armor": 3,
         "speed": 1,
         "steel": 2,
@@ -9038,7 +9038,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 8,
+        "health": 7,
         "armor": 3,
         "speed": 1,
         "steel": 3,
@@ -9047,7 +9047,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 9,
+        "health": 8,
         "armor": 4,
         "speed": 1,
         "steel": 3,
@@ -9070,7 +9070,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "ancient_finisher",
     "channel": "spell",
     "baseStats": {
-      "health": 8,
+      "health": 7,
       "armor": 2,
       "speed": 1,
       "steel": 0,
@@ -9079,18 +9079,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bloodline_roar",
-        "unlockLevel": 1
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "hoardfire",
+        "abilityId": "ancient_scale",
         "unlockLevel": 3
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -9099,7 +9099,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -9108,7 +9108,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 0,
@@ -9140,7 +9140,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "ancient_scale",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -9260,7 +9260,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hoardfire",
+        "abilityId": "last_pay",
         "unlockLevel": 1
       }
     ],
@@ -9362,7 +9362,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "devour_oath",
+        "abilityId": "primal_mend",
         "unlockLevel": 7
       }
     ],
@@ -9482,7 +9482,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "runebreath",
+        "abilityId": "wildshot",
         "unlockLevel": 1
       }
     ],
@@ -9584,7 +9584,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "colossus_wake",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -9659,7 +9659,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "banner_elite",
     "channel": "steel",
     "baseStats": {
-      "health": 8,
+      "health": 7,
       "armor": 2,
       "speed": 1,
       "steel": 3,
@@ -9668,18 +9668,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bloodline_roar",
-        "unlockLevel": 1
+        "abilityId": "runebreath",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "hoardfire",
+        "abilityId": "brace",
         "unlockLevel": 4
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 1,
         "steel": 3,
@@ -9688,7 +9688,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 3,
@@ -9697,7 +9697,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 9,
+        "health": 8,
         "armor": 2,
         "speed": 1,
         "steel": 4,
@@ -9706,7 +9706,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 10,
+        "health": 9,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -9738,7 +9738,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "ancient_scale",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -9858,7 +9858,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "hoardfire",
+        "abilityId": "makeshift_guard",
         "unlockLevel": 7
       }
     ],
@@ -9978,7 +9978,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "devour_oath",
+        "abilityId": "crosswind",
         "unlockLevel": 1
       }
     ],
@@ -10080,7 +10080,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "runebreath",
+        "abilityId": "crosswind",
         "unlockLevel": 1
       }
     ],
@@ -10155,7 +10155,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "legion_elite",
     "channel": "steel",
     "baseStats": {
-      "health": 7,
+      "health": 6,
       "armor": 2,
       "speed": 2,
       "steel": 2,
@@ -10164,18 +10164,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "colossus_wake",
-        "unlockLevel": 1
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "ancient_scale",
+        "abilityId": "hunt",
         "unlockLevel": 4
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 7,
+        "health": 6,
         "armor": 2,
         "speed": 2,
         "steel": 2,
@@ -10184,7 +10184,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 2,
         "steel": 2,
@@ -10193,7 +10193,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 8,
+        "health": 7,
         "armor": 2,
         "speed": 2,
         "steel": 3,
@@ -10202,7 +10202,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 4,
-        "health": 9,
+        "health": 8,
         "armor": 3,
         "speed": 2,
         "steel": 3,
@@ -10225,7 +10225,7 @@ export const TROOPS: TroopDefinition[] = [
     "role": "legion_champion",
     "channel": "steel",
     "baseStats": {
-      "health": 10,
+      "health": 9,
       "armor": 3,
       "speed": 1,
       "steel": 4,
@@ -10234,18 +10234,18 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "bloodline_roar",
+        "abilityId": "salvager",
         "unlockLevel": 1
       },
       {
-        "abilityId": "hoardfire",
+        "abilityId": "roadwise",
         "unlockLevel": 3
       }
     ],
     "levels": [
       {
         "level": 1,
-        "health": 10,
+        "health": 9,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -10254,7 +10254,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 2,
-        "health": 11,
+        "health": 10,
         "armor": 3,
         "speed": 1,
         "steel": 4,
@@ -10263,7 +10263,7 @@ export const TROOPS: TroopDefinition[] = [
       },
       {
         "level": 3,
-        "health": 11,
+        "health": 10,
         "armor": 3,
         "speed": 1,
         "steel": 5,
@@ -10602,11 +10602,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "contract_bond",
-        "unlockLevel": 1
+        "abilityId": "pounce",
+        "unlockLevel": 2
       },
       {
-        "abilityId": "salvager",
+        "abilityId": "flank",
         "unlockLevel": 3
       }
     ],
@@ -10973,7 +10973,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 1
       },
       {
-        "abilityId": "contract_bond",
+        "abilityId": "ancient_scale",
         "unlockLevel": 4
       }
     ],
@@ -11039,7 +11039,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "salvager",
+        "abilityId": "bloodscent",
         "unlockLevel": 7
       }
     ],
@@ -11381,11 +11381,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "contract_bond",
+        "abilityId": "forgeheart",
         "unlockLevel": 1
       },
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 4
       }
     ],

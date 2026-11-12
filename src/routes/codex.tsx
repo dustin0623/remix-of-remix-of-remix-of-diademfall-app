@@ -1,3 +1,4 @@
+import { AbilityIcon } from "@/components/game/AbilityIcon";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Search, SlidersHorizontal, X } from "lucide-react";
@@ -42,6 +43,7 @@ function Codex() {
   const [mana, setMana] = useState("all");
   const [sort, setSort] = useState("name");
   const [tab, setTab] = useState("units");
+  const [abilityCategory, setAbilityCategory] = useState("all");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selection, setSelection] = useState<InspectedCard | null>(null);
   const term = query.trim().toLowerCase();
@@ -79,7 +81,9 @@ function Codex() {
     matchesCard(s, `${s.lore} ${summonerEffectText(s).join(" ")}`),
   ).sort(compare);
   const abilities = ABILITIES.filter(
-    (a) => matchesBanner(a.banner) && matchesText(`${a.name} ${a.mechanics}`),
+    (a) =>
+      (abilityCategory === "all" || a.category === abilityCategory) &&
+      matchesText([a.name, a.mechanics, a.category].join(" ")),
   );
   const rules = RULESETS.filter((r) => matchesText(`${r.name} ${r.text} ${r.category}`));
   const count =
@@ -91,14 +95,19 @@ function Codex() {
           ? abilities.length
           : rules.length;
   const activeCount =
-    (tab === "rules" ? 0 : Number(banner !== "all")) +
-    (cardsTab ? Number(rarity !== "all") + Number(edition !== "all") + Number(mana !== "all") : 0);
+    (cardsTab
+      ? Number(banner !== "all") +
+        Number(rarity !== "all") +
+        Number(edition !== "all") +
+        Number(mana !== "all")
+      : 0) + (tab === "abilities" ? Number(abilityCategory !== "all") : 0);
   const reset = () => {
     setBanner("all");
     setQuery("");
     setRarity("all");
     setEdition("all");
     setMana("all");
+    setAbilityCategory("all");
   };
   return (
     <div className="portal-page codex-page">
@@ -146,7 +155,7 @@ function Codex() {
                   Done
                 </button>
               </div>
-              {tab !== "rules" && (
+              {cardsTab && (
                 <fieldset>
                   <legend>Banner</legend>
                   <div className="codex-banner-list">
@@ -225,6 +234,31 @@ function Codex() {
                           {n === 7 ? "7 or more" : n}
                         </option>
                       ))}
+                    </select>
+                  </label>
+                </>
+              )}
+              {tab === "abilities" && (
+                <>
+                  <p className="codex-filter-hint">
+                    Abilities are shared across all Banners and Wayfarers. A card unlocks them as it
+                    levels up.
+                  </p>
+                  <label className="codex-select">
+                    Combat role
+                    <select
+                      aria-label="Ability combat role"
+                      value={abilityCategory}
+                      onChange={(e) => setAbilityCategory(e.target.value)}
+                    >
+                      <option value="all">All abilities</option>
+                      {["defense", "offense", "targeting", "control", "restoration", "support"].map(
+                        (role) => (
+                          <option key={role} value={role}>
+                            {role.charAt(0).toUpperCase() + role.slice(1)}
+                          </option>
+                        ),
+                      )}
                     </select>
                   </label>
                 </>
@@ -339,10 +373,22 @@ function Codex() {
               <TabsContent value="abilities" className="codex-reference-grid">
                 {abilities.map((a) => (
                   <article key={a.id}>
-                    <span className="portal-eyebrow">{a.timing.replace(/_/g, " ")}</span>
-                    <h2>{a.name}</h2>
+                    <div className="ability-reference-heading">
+                      <AbilityIcon id={a.id} decorative />
+                      <div>
+                        <span className="portal-eyebrow">{a.category}</span>
+                        <h2>{a.name}</h2>
+                      </div>
+                    </div>
                     <p>{a.mechanics}</p>
-                    <small>{BANNERS.find((b) => b.id === a.banner)?.name ?? "Wayfarer"}</small>
+                    <small>{a.timing.replace(/_/g, " ")} · Shared ability</small>
+                    <details className="ability-details">
+                      <summary>Interactions & stacking</summary>
+                      <p>{a.stacking}</p>
+                      {a.interactions.map((text) => (
+                        <p key={text}>{text}</p>
+                      ))}
+                    </details>
                   </article>
                 ))}
               </TabsContent>

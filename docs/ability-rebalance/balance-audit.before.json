@@ -1,0 +1,465 @@
+{
+  "methodology": "5400 deterministic battles, all 15 banner pairs, three mana caps, 20 draft seeds, both sides, at level 1/mid/max. AI draft sample, not competitive metagame proof.",
+  "results": [
+    {
+      "stage": "level-1",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "wins": 224,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.3733
+        },
+        {
+          "banner": "wild_courts",
+          "wins": 368,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.6133
+        },
+        {
+          "banner": "veil_covenant",
+          "wins": 473,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.7883
+        },
+        {
+          "banner": "hollow_legions",
+          "wins": 108,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.18
+        },
+        {
+          "banner": "skybound_houses",
+          "wins": 267,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.445
+        },
+        {
+          "banner": "wyrm_clans",
+          "wins": 360,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.6
+        }
+      ]
+    },
+    {
+      "stage": "mid-level",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "wins": 210,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.35
+        },
+        {
+          "banner": "wild_courts",
+          "wins": 364,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.6067
+        },
+        {
+          "banner": "veil_covenant",
+          "wins": 512,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.8533
+        },
+        {
+          "banner": "hollow_legions",
+          "wins": 78,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.13
+        },
+        {
+          "banner": "skybound_houses",
+          "wins": 287,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.4783
+        },
+        {
+          "banner": "wyrm_clans",
+          "wins": 349,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.5817
+        }
+      ]
+    },
+    {
+      "stage": "max-level",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "wins": 199,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.3317
+        },
+        {
+          "banner": "wild_courts",
+          "wins": 375,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.625
+        },
+        {
+          "banner": "veil_covenant",
+          "wins": 518,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.8633
+        },
+        {
+          "banner": "hollow_legions",
+          "wins": 86,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.1433
+        },
+        {
+          "banner": "skybound_houses",
+          "wins": 269,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.4483
+        },
+        {
+          "banner": "wyrm_clans",
+          "wins": 353,
+          "draws": 0,
+          "games": 600,
+          "scoreRate": 0.5883
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "id": "brace",
+      "category": "defense",
+      "troops": 8,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "shieldwall",
+      "category": "defense",
+      "troops": 4,
+      "banners": [
+        "bastion_orders",
+        "veil_covenant"
+      ],
+      "summoners": [
+        "maelor_ironhand",
+        "thalor_worldcoil"
+      ]
+    },
+    {
+      "id": "forgeheart",
+      "category": "defense",
+      "troops": 3,
+      "banners": [
+        "bastion_orders",
+        "skybound_houses"
+      ],
+      "summoners": [
+        "maelor_ironhand"
+      ]
+    },
+    {
+      "id": "ancient_scale",
+      "category": "defense",
+      "troops": 9,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "orrun_the_first_scale"
+      ]
+    },
+    {
+      "id": "bloodscent",
+      "category": "offense",
+      "troops": 4,
+      "banners": [
+        "wild_courts",
+        "hollow_legions"
+      ],
+      "summoners": [
+        "ysilde_whitehart",
+        "thalor_worldcoil"
+      ]
+    },
+    {
+      "id": "moonrush",
+      "category": "offense",
+      "troops": 2,
+      "banners": [
+        "wild_courts",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "garran_moonfang"
+      ]
+    },
+    {
+      "id": "pounce",
+      "category": "offense",
+      "troops": 4,
+      "banners": [
+        "veil_covenant",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "runebreath",
+      "category": "offense",
+      "troops": 3,
+      "banners": [
+        "wild_courts",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "wildshot",
+      "category": "targeting",
+      "troops": 3,
+      "banners": [
+        "veil_covenant",
+        "hollow_legions",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "saint_orien_of_the_gale"
+      ]
+    },
+    {
+      "id": "flank",
+      "category": "targeting",
+      "troops": 4,
+      "banners": [
+        "bastion_orders",
+        "veil_covenant",
+        "skybound_houses"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "hunt",
+      "category": "targeting",
+      "troops": 6,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "spotter",
+      "category": "targeting",
+      "troops": 5,
+      "banners": [
+        "bastion_orders",
+        "veil_covenant",
+        "hollow_legions",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "duke_avorran",
+        "saint_orien_of_the_gale"
+      ]
+    },
+    {
+      "id": "hexweave",
+      "category": "control",
+      "troops": 5,
+      "banners": [
+        "wild_courts",
+        "hollow_legions",
+        "skybound_houses"
+      ],
+      "summoners": [
+        "the_lacquered_oracle"
+      ]
+    },
+    {
+      "id": "doom_count",
+      "category": "control",
+      "troops": 3,
+      "banners": [
+        "bastion_orders",
+        "hollow_legions"
+      ],
+      "summoners": [
+        "vel_mourningstar"
+      ]
+    },
+    {
+      "id": "crosswind",
+      "category": "control",
+      "troops": 8,
+      "banners": [
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "vel_mourningstar"
+      ]
+    },
+    {
+      "id": "packmark",
+      "category": "control",
+      "troops": 5,
+      "banners": [
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "primal_mend",
+      "category": "restoration",
+      "troops": 9,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "ysilde_whitehart"
+      ]
+    },
+    {
+      "id": "grave_recall",
+      "category": "restoration",
+      "troops": 5,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions"
+      ],
+      "summoners": [
+        "king_ossuary"
+      ]
+    },
+    {
+      "id": "salvager",
+      "category": "restoration",
+      "troops": 3,
+      "banners": [
+        "bastion_orders",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "morcant_bellkeeper",
+        "king_ossuary"
+      ]
+    },
+    {
+      "id": "field_ration",
+      "category": "restoration",
+      "troops": 13,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "makeshift_guard",
+      "category": "support",
+      "troops": 18,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "torvane_crownshield"
+      ]
+    },
+    {
+      "id": "windread",
+      "category": "support",
+      "troops": 9,
+      "banners": [
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": [
+        "veyra_nine_masks"
+      ]
+    },
+    {
+      "id": "roadwise",
+      "category": "support",
+      "troops": 10,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    },
+    {
+      "id": "last_pay",
+      "category": "support",
+      "troops": 10,
+      "banners": [
+        "bastion_orders",
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
+      ],
+      "summoners": []
+    }
+  ]
+}

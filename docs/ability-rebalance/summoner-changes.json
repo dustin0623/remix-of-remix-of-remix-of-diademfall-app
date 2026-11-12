@@ -1,0 +1,605 @@
+[
+  {
+    "id": "aldric_stonebanner",
+    "name": "Aldric, the Last Standard",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "armor",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "armor",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "torvane_crownshield",
+    "name": "Torvane, the Unbroken Oath",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "middle_allies",
+          "abilityId": "retinue"
+        }
+      ]
+    },
+    "after": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "middle_allies",
+          "abilityId": "makeshift_guard"
+        }
+      ]
+    }
+  },
+  {
+    "id": "maelor_ironhand",
+    "name": "Maelor, the Iron Queen",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "oathkeeper"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "forgeheart"
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "shieldwall"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "forgeheart"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eira_thornpath",
+    "name": "Eira, Keeper of Thornpaths",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "speed",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "speed",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "garran_moonfang",
+    "name": "Garran, the Mooncrowned",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "steel_allies",
+          "stat": "steel",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "moonrush"
+        }
+      ]
+    },
+    "after": {
+      "mana": 6,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "steel_allies",
+          "stat": "steel",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "moonrush"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ysilde_whitehart",
+    "name": "Ysilde, the White Hart",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "steel_allies",
+          "abilityId": "bloodscent"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "primal_mend"
+        }
+      ]
+    },
+    "after": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "steel_allies",
+          "abilityId": "bloodscent"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "primal_mend"
+        }
+      ]
+    }
+  },
+  {
+    "id": "oris_glassmoth",
+    "name": "Oris, the Glass Envoy",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "spell_allies",
+          "stat": "spell",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "strongest_spell_ally",
+          "stat": "spell",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "veyra_nine_masks",
+    "name": "Veyra of the Nine Faces",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "mirrorcraft"
+        }
+      ]
+    },
+    "after": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "rear_three",
+          "abilityId": "windread"
+        }
+      ]
+    }
+  },
+  {
+    "id": "the_lacquered_oracle",
+    "name": "The Lacquered Oracle",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "hexweave"
+        },
+        {
+          "kind": "stat",
+          "target": "front_ally",
+          "stat": "health",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "hexweave"
+        },
+        {
+          "kind": "stat",
+          "target": "front_ally",
+          "stat": "health",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "morcant_bellkeeper",
+    "name": "Morcant of the Last Toll",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_enemies",
+          "stat": "healingReceived",
+          "value": -1
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "bone_harvest"
+        }
+      ]
+    },
+    "after": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        },
+        {
+          "kind": "stat",
+          "target": "all_enemies",
+          "stat": "speed",
+          "value": -1
+        }
+      ]
+    }
+  },
+  {
+    "id": "king_ossuary",
+    "name": "Ossyr, the Bone Sovereign",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "grave_recall"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "bone_harvest"
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "grave_recall"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "salvager"
+        }
+      ]
+    }
+  },
+  {
+    "id": "vel_mourningstar",
+    "name": "Vel, Marshal of Mourning",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "death_debt"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "doom_count"
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_two",
+          "abilityId": "crosswind"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "doom_count"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cael_rookwing",
+    "name": "Cael, Captain of Highwatch",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "shot_allies",
+          "stat": "shot",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "shot_allies",
+          "stat": "shot",
+          "value": 1
+        },
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "accuracy",
+          "value": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": "duke_avorran",
+    "name": "Avorran, Lord of the Eyrie",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "shot_allies",
+          "abilityId": "volley_line"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "rear_ally",
+          "abilityId": "spotter"
+        }
+      ]
+    },
+    "after": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "shot_allies",
+          "abilityId": "spotter"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "rear_three",
+          "abilityId": "windread"
+        }
+      ]
+    }
+  },
+  {
+    "id": "saint_orien_of_the_gale",
+    "name": "Orien, Saint of Storms",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_speed_ally",
+          "abilityId": "spotter"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "shot_allies",
+          "abilityId": "skyhook"
+        },
+        {
+          "kind": "stat",
+          "target": "shot_allies",
+          "stat": "speed",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_speed_ally",
+          "abilityId": "spotter"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "shot_allies",
+          "abilityId": "hunt"
+        },
+        {
+          "kind": "stat",
+          "target": "shot_allies",
+          "stat": "speed",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "vaelor_runeclaw",
+    "name": "Vaelor, Keeper of Firstfire",
+    "before": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 3,
+      "effects": [
+        {
+          "kind": "stat",
+          "target": "all_allies",
+          "stat": "health",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "orrun_the_first_scale",
+    "name": "Orrun, First of the Flame",
+    "before": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "ancient_scale"
+        },
+        {
+          "kind": "stat",
+          "target": "highest_mana_ally",
+          "stat": "attackPower",
+          "value": 1
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "highest_mana_ally",
+          "abilityId": "ancient_scale"
+        },
+        {
+          "kind": "stat",
+          "target": "highest_mana_ally",
+          "stat": "attackPower",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "thalor_worldcoil",
+    "name": "Thalor, the Worldcoil",
+    "before": {
+      "mana": 5,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "colossus_wake"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "all_allies",
+          "abilityId": "bloodline_roar"
+        }
+      ]
+    },
+    "after": {
+      "mana": 4,
+      "effects": [
+        {
+          "kind": "grantAbility",
+          "target": "front_ally",
+          "abilityId": "shieldwall"
+        },
+        {
+          "kind": "grantAbility",
+          "target": "steel_allies",
+          "abilityId": "bloodscent"
+        }
+      ]
+    }
+  }
+]

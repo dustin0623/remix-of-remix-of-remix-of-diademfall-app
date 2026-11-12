@@ -1,0 +1,65 @@
+[
+    {
+        "sha256":  "55111c6186b2717775243a0b67b0cfa684d58f2c62cac3c1fd16add1999a5d35",
+        "width":  96,
+        "stat":  "mana",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "8635d0457e3136e4fa0f395e23726771f36f5e0c43abfe3b10afd6be3ae4e85d",
+        "width":  96,
+        "stat":  "health",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "f2e0fbac4f32b88f9129e5de51dbd4c665031b6615fcb0abec48f4255b82ec27",
+        "width":  96,
+        "stat":  "armor",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "e9b0f559b281e395c83a2ab3bf3d405c456499b04057b7931ef04300eec0aa90",
+        "width":  96,
+        "stat":  "speed",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "ca0b62e3816c502a357995be752d988aa2361ba25e3b29855bd9a17a77e43121",
+        "width":  96,
+        "stat":  "steel",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "f3c497e780f0e041a03a0ef1842b92b8938be2587a00c7aa33ab43cc93b5b7db",
+        "width":  96,
+        "stat":  "shot",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    },
+    {
+        "sha256":  "bcffc54c394f88543b13c6ae63eb554428e71729ac1e49ac979d971ca9c89f0a",
+        "width":  96,
+        "stat":  "spell",
+        "transparentExterior":  true,
+        "valid":  true,
+        "opaqueCenter":  true,
+        "height":  96
+    }
+]

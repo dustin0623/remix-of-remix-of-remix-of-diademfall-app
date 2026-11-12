@@ -1,0 +1,262 @@
+[
+    {
+        "id":  "background_bastion_orders",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/bastion_orders.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in cobalt and pale ivory. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from an angular tower and two small laurel branches. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_hollow_legions",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/hollow_legions.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in bone ivory and muted crimson. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from a hanging funeral bell inside an angular arch. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_skybound_houses",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/skybound_houses.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in sky blue and silver. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from a frontal griffin head with two swept wings. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_veil_covenant",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/veil_covenant.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in plum purple and turquoise. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from a split theatrical mask in front of one angular mirror. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_wayfarer",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/wayfarer.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in warm sandstone and slate. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from a compass rose above a road vanishing between two hills. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_wild_courts",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/wild_courts.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in forest emerald and warm gold. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from an antler crown enclosing a broad leaf. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "background_wyrm_clans",
+        "width":  300,
+        "file":  "/assets/raw/frames-background/wyrm_clans.png",
+        "prompt":  "Use case: stylized-concept. ONE original Diademfall fantasy card BACKGROUND layer only, upright 5:7 portrait for 300x420 export. Full bleed, deliberately simple flat graphic art in ember orange and basalt. Large low-contrast diagonal bands and a few widely spaced geometric shapes derived from a curled dragon head enclosing one broad diamond. An abstract repeated heraldic pattern, NOT a landscape or illustration. Broad clean color areas; light upper center, darker corners and a smooth deep near-black tint over the lower quarter to keep white card text legible. Subtle 2-3 tone cel-shaded vector-like shapes. Restrained, clean, quiet visual support for a character cutout. No frame, border, foreground subject, character, creature, emblem badge, text, numbers, UI, watermark or paper texture. Opaque background fills every pixel.",
+        "height":  420,
+        "kind":  "background",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_bastion_orders",
+        "width":  96,
+        "file":  "/assets/banners/crests/bastion_orders.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original bastion_orders banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the ivory tower with small laurel branches on a cobalt-blue field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_hollow_legions",
+        "width":  96,
+        "file":  "/assets/banners/crests/hollow_legions.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original hollow_legions banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the ivory hanging bell and two narrow columns on a burgundy field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_skybound_houses",
+        "width":  96,
+        "file":  "/assets/banners/crests/skybound_houses.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original skybound_houses banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the ivory owl head and spread wings on a sky-blue field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_veil_covenant",
+        "width":  96,
+        "file":  "/assets/banners/crests/veil_covenant.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original veil_covenant banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the two ivory theatrical masks and teal jewel on a purple field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_wayfarer",
+        "width":  96,
+        "file":  "/assets/banners/crests/wayfarer.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original wayfarer banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the ivory compass rose above simple road/horizon shapes on a warm tan field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_wild_courts",
+        "width":  96,
+        "file":  "/assets/banners/crests/wild_courts.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: the original wild_courts banner crest. Image 2 is the APPROVED SILVER SHIELD HOUSING reference. Preserve the target\u0027s identity: the ivory oak leaf framed by antlers on a deep green field. Rehouse its central motif in EXACTLY the clean shield silhouette and broad silver outer layer of image 2. Replace the target\u0027s old hairline frame with the same smoothly arched upper shoulders, straight tapered sides and one centered lower point as image 2. Continuous silver rim about 6 pixels thick at final 96x96, bright outer bevel, medium-silver face and thin charcoal inner keyline, simple 2-3 tone cel shading. Make the rim just as substantial and readable as image 2; keep all motif details INSIDE the shield, with no leaves, antlers, wings or ornaments extending over the silver border. Retain original banner colors and ivory central motif, simplify tiny details only to improve 39-pixel readability. Front-facing centered square game UI icon, shield spans about x=5..91 and y=3..92 in 96x96 geometry, large central symbol. No dragon or diamond from image 2: image 2 supplies the SHIELD HOUSING only. Genuine transparent alpha outside the shield. No text, letters, number, ribbon, circle, crown, spikes, filigree, external shadows, scenery or watermark. Match the common silver border and proportions consistently.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "crest_wyrm_clans",
+        "width":  96,
+        "file":  "/assets/banners/crests/wyrm_clans.png",
+        "prompt":  "Use case: precise-object-edit. Edit target: the supplied original Diademfall Wyrm Clan crest. Preserve the curled ivory dragon head and central orange diamond, ember-orange/basalt inner field, clean bold comic outlines and simple cel shading. Redesign ONLY the crest housing: a clean broad SILVER SHIELD OUTER LAYER, substantially thicker and more readable than the current hairline. Use this crest\u0027s rounded heraldic shield silhouette: smoothly arched shoulders, straight tapered side walls, one centered lower point. One continuous polished silver rim with a bright outer bevel, medium silver face and thin dark inner keyline; simple broad 2-3 tone planes, no filigree. At a final 96x96 canvas, outer shield should span x=5..91 and y=3..92; silver rim approximately 6 pixels thick, still visible when displayed at 39 pixels. Keep the dragon motif large and entirely INSIDE the inner shield field. This is a reusable game UI badge, front-facing, centered, balanced and crisp, not a physical 3D object. Background is genuine transparent alpha outside the shield. No circle, crown, top spikes, corner wings, extra emblems, banners, text, letters, shadows outside the shield, watermark or scene. Make the outer silver layer clean, clear and visually separate from a busy card portrait. Square output.",
+        "height":  96,
+        "kind":  "crest",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "frame_common",
+        "width":  300,
+        "file":  "/assets/raw/frames/common.png",
+        "prompt":  "Use case: precise-object-edit. Edit the supplied silver fantasy card FRAME. Correct ONLY the TOP LEFT and TOP RIGHT corner geometry. The current upper corners have wrong outward arrowhead hooks/notches at their side junctions. Remove these hooks, inward pinches, stepped points and concave notches. Make each top corner the vertically mirrored equivalent of its corresponding clean BOTTOM corner: a simple straight 45-degree chamfer smoothly joining the flat horizontal top rail to the straight vertical side rail. Continuous outer silhouette, no ears, horns, wings, spikes or side protrusions. Keep the upper horizontal rail flush with the canvas top; retain the recessed circular WHITE FLAME medallion at top center below that rail, same size/location/design. Keep ALL remaining side/bottom rails unchanged, same slender silver metal bevel, same proportions, full-height open portrait window. Output a tall 5:7 frame intended for 300x420. Preserve genuine transparent alpha inside and outside; no background, no fill, no text, no portrait, no extra icons, no lower divider. The top corner joins must look as clean and straight as the bottom corner joins.",
+        "height":  420,
+        "kind":  "frame",
+        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "frame_epic",
+        "width":  300,
+        "file":  "/assets/raw/frames/epic.png",
+        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the epic rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to purple. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a purple flame in its medallion.",
+        "height":  420,
+        "kind":  "frame",
+        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "frame_legendary",
+        "width":  300,
+        "file":  "/assets/raw/frames/legendary.png",
+        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the legendary rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to ember amber-orange. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a ember amber-orange flame in its medallion.",
+        "height":  420,
+        "kind":  "frame",
+        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "frame_rare",
+        "width":  300,
+        "file":  "/assets/raw/frames/rare.png",
+        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the rare rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to blue. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a blue flame in its medallion.",
+        "height":  420,
+        "kind":  "frame",
+        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "frame_uncommon",
+        "width":  300,
+        "file":  "/assets/raw/frames/uncommon.png",
+        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the uncommon rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to emerald green. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a emerald green flame in its medallion.",
+        "height":  420,
+        "kind":  "frame",
+        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_armor",
+        "width":  96,
+        "file":  "/assets/stats/armor.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old armor stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: ONE simple SILVER SHIELD. Arched shoulders, broad tapered face and one centered lower point. Silver outer bevel and broad dark slate-blue metal face, like a plain unmarked version of the crest housing. No symbol on the shield, rivets, crown, extra jewels, swords or filigree. Shield alone supplies the silhouette. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_health",
+        "width":  96,
+        "file":  "/assets/stats/health.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old health stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: ONE broad red HEART. The heart itself supplies the complete silhouette, with two clear upper lobes and one lower point. Ruby red main face, dark crimson center and lower plane, one clean silver/ivory outline and a simple upper-left highlight. No horns, metal fittings, jewels or surrounding frame. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_mana",
+        "width":  96,
+        "file":  "/assets/stats/mana.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old mana stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: ONE simple BLUE MANA CRYSTAL: compact almost-round faceted azure gem with a few broad flat sapphire and cyan planes, dark blue central face and one narrow continuous silver/ivory edge. No metal cage, surrounding jeweled rim, spikes, crown, wings, tiny facets or separate badges. The blue crystal itself is the silhouette, with a broad center for a white mana number added later. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_shot",
+        "width":  96,
+        "file":  "/assets/stats/shot.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old shot stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: ONE simple RANGED TARGET / BULLSEYE. A front-facing compact round target with three broad concentric rings in ivory and ochre gold, a deep amber center and a narrow silver outer edge. Rings thick enough to remain visible around a white number later overlaid on the central bullseye. No arrow, bow, shield, crown, spikes, handle, wings, surrounding ornament or empty gem socket. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_speed",
+        "width":  96,
+        "file":  "/assets/stats/speed.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET, Diademfall\u0027s current speed stat icon. Image 2 is ONLY an ART STYLE reference, the revised Diademfall crest. Replace the ENTIRE old winged empty circular badge with ONE simple BLUE LEATHER BOOT to mean speed. No circle or shield housing: the boot itself is the icon silhouette. Three-quarter side view facing left, clear broad toe pointing left at the bottom, substantial boot shaft on the right, folded cuff, a single simple silver ankle strap and dark sole. Compact chunky proportions, clean silver/ivory outer edge and charcoal inner outlines, matching the reference crest\u0027s bold clean linework and broad 2-3 tone cel-shaded planes. Sapphire blue boot leather, silver cuff/edge, dark navy shaded face. No realistic rendering or tiny stitching. Design to read clearly at 32-48 pixels. Leave the broad central ankle/shaft at about x=54%,y=46% simple dark blue so the app can overlay a white stat numeral; DO NOT draw the numeral or create a separate socket for it. The boot must remain identifiable with a number across its middle. Square asset for 96x96 export, entire boot fills about 86% of the square with a little breathing room. Genuine transparent alpha outside its silhouette. No wings, jewels, gem, laurel, decorative frame, circle, background, text, letters, numbers, UI, watermark or extra icons. Preserve the original asset\u0027s transparency.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_spell",
+        "width":  96,
+        "file":  "/assets/stats/spell.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old spell stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: ONE original MAGIC ARCANE SPARK: a chunky four-point amethyst-violet energy star with a dark purple center, pale silver edge, and just two short curved teal energy trails wrapping near its lower sides. A clear magical spell silhouette, distinct from a round mana crystal or physical weapon. Broad simple faceted planes, very few shapes. No circle enclosure, shield, wand, staff, crown, jewels mounted around a socket, tiny runes or ornament. A later white number overlays the central purple face; star points and teal trails remain visible. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "stat_steel",
+        "width":  96,
+        "file":  "/assets/stats/steel.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is the EDIT TARGET: Diademfall\u0027s old steel stat badge. Image 2 is an APPROVED STYLE REFERENCE ONLY: the new boot stat icon. Completely replace the old graphic with: EXACTLY TWO CROSSED SWORDS forming a bold X. Broad silver blades point toward the upper-left and upper-right; simple charcoal grips with small muted-gold wraps extend to the lower-left and lower-right. Broad flat silver bevels, dark slate blade faces near the crossing. Two swords must remain clearly recognizable around a white number later overlaid at their central crossing. No surrounding badge, shield, circle, star, flame or extra weapon. Match the boot\u0027s clean bold charcoal linework, silver/ivory silhouette edge, broad 2-3 tone cel shading and restrained highlights. Simple game UI icon that blends with Diademfall\u0027s silver shield crests. This is a SEMANTIC SYMBOL, not an ornate empty socket for a number. At 32-48 pixels the symbol must be immediately recognizable. Keep the central 30% calm and dark enough for a later white numeral, without drawing a new panel or hiding the symbol. Center the complete icon in a square for 96x96 production, approximately 86-90% canvas coverage with clear transparent margin. Genuine transparent alpha outside the icon silhouette, matching the edit target\u0027s transparency. No background, scene, text, numbers, letters, watermark, sheet, card, UI screenshot or multiple unrelated icons. Do not include the boot from image 2.",
+        "height":  96,
+        "kind":  "stat",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    }
+]

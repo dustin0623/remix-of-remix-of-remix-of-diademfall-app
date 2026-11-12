@@ -1,5 +1,5 @@
 /**
- * Loads the current card catalog (src/game/catalog, v5: 150 cards incl. 12 Wayfarers) into Lovable Cloud and
+ * Loads the current card catalog (src/game/catalog: 138 cards incl. 12 Wayfarers) into Lovable Cloud and
  * retires older catalog cards. Game versions, pack editions and the chest reward reserve are SQL constant
  * functions (src/game/sql-constants.ts), so nothing else is loaded.
  * Idempotent; safe to re-run after a remix or a catalog edit. Old matches keep their game version,

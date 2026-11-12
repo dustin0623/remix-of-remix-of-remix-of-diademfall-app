@@ -1,0 +1,72 @@
+[
+    {
+        "width":  96,
+        "banner":  "bastion_orders",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "e861310afe84e0b136f5eac8614ff82f5ad75f5fad1f4dd171cbcce64e0830b0"
+    },
+    {
+        "width":  96,
+        "banner":  "wild_courts",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "9235f129be53c46a5a7a4aef99e25bae11abc58b9257a05dd1cffebae3b77548"
+    },
+    {
+        "width":  96,
+        "banner":  "veil_covenant",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "ddfda128628cc1fa224f1714f82b0ea1c101d84e83b9fc94467db12662ca9e06"
+    },
+    {
+        "width":  96,
+        "banner":  "hollow_legions",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "4283a6ff5e4207537458a4dd2983217389deced1f43744618fa3dce071136ad4"
+    },
+    {
+        "width":  96,
+        "banner":  "skybound_houses",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "86a1ec492673bd40b1e679602bcee08f84a9114460ab3c1ae8c22cefe98d2ee6"
+    },
+    {
+        "width":  96,
+        "banner":  "wyrm_clans",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "57f010678cbffbb0ab71cfd3013d28a0de989212cf24d68bea9161936d8efe45"
+    },
+    {
+        "width":  96,
+        "banner":  "wayfarer",
+        "valid":  true,
+        "height":  96,
+        "cardDisplaySize":  39,
+        "opaqueField":  true,
+        "transparentExterior":  true,
+        "sha256":  "d7b6d1c37c2d1bf6c35aca3daa34f25c59d5109affbc362a0ac528040f531207"
+    }
+]

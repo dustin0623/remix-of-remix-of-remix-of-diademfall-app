@@ -3,7 +3,7 @@ import { SUMMONERS } from "./catalog/summoners";
 import type { BannerId, SummonerDefinition } from "./catalog/types";
 import { BANNERS } from "./banners";
 import { TEAM_COMPOSITION } from "./catalog/team-composition";
-import { UNITS, UNIT_BY_ID, isWayfarer, type UnitCard } from "./units";
+import { UNITS, UNIT_BY_ID, isWayfarer, unitAtLevel, type UnitCard } from "./units";
 import { Rng } from "./rng";
 
 import { SUPPORTED_RULESETS } from "./rule-support";
@@ -104,21 +104,50 @@ export function validateTeam(pick: TeamPick, cfg: MatchConfig): string | null {
 }
 
 /** Simple AI drafter: pick a summoner that fits, then greedily add the best value units. */
-export function aiDraft(cfg: MatchConfig, seed: number): TeamPick {
+export function aiDraft(cfg: MatchConfig, seed: number, levels?: Readonly<Record<string, number>>): TeamPick {
   const rng = new Rng(seed);
   const summoners = SUMMONERS.filter((s) => cfg.banners.includes(s.banner) && cardLegal(s, cfg.rulesets) && cardCost(s.mana, cfg.rulesets) <= cfg.manaCap - 2);
   const s: SummonerDefinition = summoners[rng.int(summoners.length, "ai-summoner")] ?? SUMMONERS[0]!;
-  const pool = UNITS.filter((u) => recruitable(u, s.banner) && cardLegal(u, cfg.rulesets));
-  const value = (u: UnitCard) => (u.steel * 2 + u.shot * 2 + u.spell * 2.2 + u.armor + u.health * 0.8 + u.speed * 0.5 + u.abilities.length) / Math.max(1, u.mana) + rng.next("ai-jitter") * 0.4;
-  const sorted = [...pool].sort((a, b) => value(b) - value(a));
-  const pick: TeamPick = { summonerId: s.id, unitIds: [] };
+  const pool = UNITS.filter((u) => recruitable(u, s.banner) && cardLegal(u, cfg.rulesets))
+    .map((u) => levels ? unitAtLevel(u, levels[u.id] ?? 1) : u);
+  const planningById = Object.fromEntries(pool.map((u) => [u.id, u])) as Record<string, UnitCard>;
+  // Roll once per candidate: random work inside a sort comparator is not a stable ranking.
+  const jitter = new Map(pool.map(u => [u.id, rng.next("ai-jitter") * 0.1]));
+  const front = (u: UnitCard) => (u.steel > 0 ? 10 : 0) + u.armor * 2 + u.health;
+  const formation = (ids: string[]) => [...ids].sort((a, b) => front(planningById[b]!) - front(planningById[a]!));
+  const strength = (ids: string[]) => formation(ids).reduce((total, id, position) => {
+    const u = planningById[id]!;
+    const freeSteel = ["flank", "hunt", "runebreath"].some(ability => u.abilities.includes(ability));
+    const attack = Math.max(u.spell * 3.2, position > 0 ? u.shot * 3 : 0, position < 2 || freeSteel ? u.steel * 3 : 0);
+    // Price small marginal upgrades so a costly tank cannot crowd out an attacking back line.
+    // A cheaper replacement can improve this score and release mana for the next upgrade.
+    return total + attack + u.health * 0.7 + u.armor * 0.55 + u.speed * 0.35 + u.abilities.length * 0.5 + jitter.get(id)! - u.mana * 0.8;
+  }, 0);
+  const sorted = [...pool].sort((a, b) => strength([b.id]) / Math.max(1, b.mana) - strength([a.id]) / Math.max(1, a.mana));
+  const pick: TeamPick = { summonerId: s.id, unitIds: [], ...(levels ? { levels: { ...levels } } : {}) };
   for (const u of sorted) {
     if (pick.unitIds.length >= maxUnits(cfg.rulesets)) break;
     const trial = { ...pick, unitIds: [...pick.unitIds, u.id] };
     if (validateTeam(trial, cfg) === null) pick.unitIds = trial.unitIds;
   }
-  // formation: tanky steel in front, ranged/spell behind
-  const front = (u: UnitCard) => (u.steel > 0 ? 10 : 0) + u.armor * 2 + u.health;
-  pick.unitIds.sort((a, b) => front(UNIT_BY_ID[b]!) - front(UNIT_BY_ID[a]!));
+  // Upgrade the first affordable lineup instead of leaving a high mana cap mostly unspent.
+  // Evaluate real attack positions so excess backline Steel units have an opportunity cost.
+  for (;;) {
+    const current = strength(pick.unitIds);
+    let best = current;
+    let upgrade: string[] | undefined;
+    for (const candidate of pool) {
+      if (pick.unitIds.includes(candidate.id)) continue;
+      for (let index = 0; index < pick.unitIds.length; index++) {
+        const ids = pick.unitIds.map((id, i) => i === index ? candidate.id : id);
+        if (validateTeam({ ...pick, unitIds: ids }, cfg) !== null) continue;
+        const score = strength(ids);
+        if (score > best + 0.001) { best = score; upgrade = ids; }
+      }
+    }
+    if (!upgrade) break;
+    pick.unitIds = upgrade;
+  }
+  pick.unitIds = formation(pick.unitIds);
   return pick;
 }

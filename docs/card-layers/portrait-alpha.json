@@ -1,0 +1,1202 @@
+[
+    {
+        "id":  "aldric_stonebanner",
+        "transparentFraction":  0.2984,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/rare/summoner/aldric_stonebanner.png"
+    },
+    {
+        "id":  "lady_serane_vale",
+        "transparentFraction":  0.3222,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/uncommon/summoner/lady_serane_vale.png"
+    },
+    {
+        "id":  "torvane_crownshield",
+        "transparentFraction":  0.2619,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/legendary/summoner/torvane_crownshield.png"
+    },
+    {
+        "id":  "bram_forgewarden",
+        "transparentFraction":  0.319,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/rare/summoner/bram_forgewarden.png"
+    },
+    {
+        "id":  "maelor_ironhand",
+        "transparentFraction":  0.3405,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/epic/summoner/maelor_ironhand.png"
+    },
+    {
+        "id":  "eira_thornpath",
+        "transparentFraction":  0.477,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/rare/summoner/eira_thornpath.png"
+    },
+    {
+        "id":  "rowan_packmother",
+        "transparentFraction":  0.3063,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/uncommon/summoner/rowan_packmother.png"
+    },
+    {
+        "id":  "garran_moonfang",
+        "transparentFraction":  0.2833,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/legendary/summoner/garran_moonfang.png"
+    },
+    {
+        "id":  "pip_briarwhistle",
+        "transparentFraction":  0.346,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/rare/summoner/pip_briarwhistle.png"
+    },
+    {
+        "id":  "ysilde_whitehart",
+        "transparentFraction":  0.2619,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/epic/summoner/ysilde_whitehart.png"
+    },
+    {
+        "id":  "oris_glassmoth",
+        "transparentFraction":  0.2587,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/rare/summoner/oris_glassmoth.png"
+    },
+    {
+        "id":  "miravel_threadseer",
+        "transparentFraction":  0.2865,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/uncommon/summoner/miravel_threadseer.png"
+    },
+    {
+        "id":  "veyra_nine_masks",
+        "transparentFraction":  0.2944,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/legendary/summoner/veyra_nine_masks.png"
+    },
+    {
+        "id":  "fen_quill",
+        "transparentFraction":  0.2365,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/rare/summoner/fen_quill.png"
+    },
+    {
+        "id":  "the_lacquered_oracle",
+        "transparentFraction":  0.2817,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/epic/summoner/the_lacquered_oracle.png"
+    },
+    {
+        "id":  "morcant_bellkeeper",
+        "transparentFraction":  0.3492,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/rare/summoner/morcant_bellkeeper.png"
+    },
+    {
+        "id":  "abbess_nhal",
+        "transparentFraction":  0.3,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/uncommon/summoner/abbess_nhal.png"
+    },
+    {
+        "id":  "king_ossuary",
+        "transparentFraction":  0.2532,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/legendary/summoner/king_ossuary.png"
+    },
+    {
+        "id":  "tallow_jack",
+        "transparentFraction":  0.3857,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/rare/summoner/tallow_jack.png"
+    },
+    {
+        "id":  "vel_mourningstar",
+        "transparentFraction":  0.2722,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/epic/summoner/vel_mourningstar.png"
+    },
+    {
+        "id":  "cael_rookwing",
+        "transparentFraction":  0.3389,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/rare/summoner/cael_rookwing.png"
+    },
+    {
+        "id":  "maris_cloudreel",
+        "transparentFraction":  0.3817,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/uncommon/summoner/maris_cloudreel.png"
+    },
+    {
+        "id":  "duke_avorran",
+        "transparentFraction":  0.2778,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/legendary/summoner/duke_avorran.png"
+    },
+    {
+        "id":  "tess_kestrel",
+        "transparentFraction":  0.55,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/rare/summoner/tess_kestrel.png"
+    },
+    {
+        "id":  "saint_orien_of_the_gale",
+        "transparentFraction":  0.2389,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/epic/summoner/saint_orien_of_the_gale.png"
+    },
+    {
+        "id":  "vaelor_runeclaw",
+        "transparentFraction":  0.3238,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/rare/summoner/vaelor_runeclaw.png"
+    },
+    {
+        "id":  "syrra_hoardseer",
+        "transparentFraction":  0.3119,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/uncommon/summoner/syrra_hoardseer.png"
+    },
+    {
+        "id":  "orrun_the_first_scale",
+        "transparentFraction":  0.231,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/legendary/summoner/orrun_the_first_scale.png"
+    },
+    {
+        "id":  "kiva_emberledger",
+        "transparentFraction":  0.4357,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/rare/summoner/kiva_emberledger.png"
+    },
+    {
+        "id":  "thalor_worldcoil",
+        "transparentFraction":  0.3183,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/epic/summoner/thalor_worldcoil.png"
+    },
+    {
+        "id":  "ashen_page",
+        "transparentFraction":  0.4198,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/ashen_page.png"
+    },
+    {
+        "id":  "stoneward_hound",
+        "transparentFraction":  0.5214,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/stoneward_hound.png"
+    },
+    {
+        "id":  "oathcarver_acolyte",
+        "transparentFraction":  0.3484,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/uncommon/normal/oathcarver_acolyte.png"
+    },
+    {
+        "id":  "rampart_arbalist",
+        "transparentFraction":  0.4778,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/rare/normal/rampart_arbalist.png"
+    },
+    {
+        "id":  "granite_bailiff",
+        "transparentFraction":  0.3786,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/epic/normal/granite_bailiff.png"
+    },
+    {
+        "id":  "colossus_of_the_first_wall",
+        "transparentFraction":  0.3079,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/legendary/normal/colossus_of_the_first_wall.png"
+    },
+    {
+        "id":  "lantern_squire",
+        "transparentFraction":  0.4032,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/lantern_squire.png"
+    },
+    {
+        "id":  "moat_runner",
+        "transparentFraction":  0.6556,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/uncommon/normal/moat_runner.png"
+    },
+    {
+        "id":  "crown_pike",
+        "transparentFraction":  0.5119,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/crown_pike.png"
+    },
+    {
+        "id":  "chapel_thaumaturge",
+        "transparentFraction":  0.3317,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/uncommon/normal/chapel_thaumaturge.png"
+    },
+    {
+        "id":  "banner_chirurgeon",
+        "transparentFraction":  0.3952,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/rare/normal/banner_chirurgeon.png"
+    },
+    {
+        "id":  "gilded_castellan",
+        "transparentFraction":  0.3087,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/epic/normal/gilded_castellan.png"
+    },
+    {
+        "id":  "levy_drummer",
+        "transparentFraction":  0.3698,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/levy_drummer.png"
+    },
+    {
+        "id":  "shield_clerk",
+        "transparentFraction":  0.3794,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/common/normal/shield_clerk.png"
+    },
+    {
+        "id":  "gatebolt_archer",
+        "transparentFraction":  0.3579,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/uncommon/normal/gatebolt_archer.png"
+    },
+    {
+        "id":  "chain_magistrate",
+        "transparentFraction":  0.3405,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/rare/normal/chain_magistrate.png"
+    },
+    {
+        "id":  "iron_vow_captain",
+        "transparentFraction":  0.296,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/epic/normal/iron_vow_captain.png"
+    },
+    {
+        "id":  "citadel_behemoth",
+        "transparentFraction":  0.3579,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/bastion_orders/legendary/normal/citadel_behemoth.png"
+    },
+    {
+        "id":  "seedling_wisp",
+        "transparentFraction":  0.6357,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/seedling_wisp.png"
+    },
+    {
+        "id":  "fangroot_cub",
+        "transparentFraction":  0.5722,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/fangroot_cub.png"
+    },
+    {
+        "id":  "moss_oracle",
+        "transparentFraction":  0.4698,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/uncommon/normal/moss_oracle.png"
+    },
+    {
+        "id":  "briar_dartling",
+        "transparentFraction":  0.4381,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/rare/normal/briar_dartling.png"
+    },
+    {
+        "id":  "antler_guardian",
+        "transparentFraction":  0.327,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/epic/normal/antler_guardian.png"
+    },
+    {
+        "id":  "elderhorn_colossus",
+        "transparentFraction":  0.4675,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/legendary/normal/elderhorn_colossus.png"
+    },
+    {
+        "id":  "burrow_mouse",
+        "transparentFraction":  0.6151,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/burrow_mouse.png"
+    },
+    {
+        "id":  "thistle_runner",
+        "transparentFraction":  0.5262,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/uncommon/normal/thistle_runner.png"
+    },
+    {
+        "id":  "moonclaw_stalker",
+        "transparentFraction":  0.5476,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/moonclaw_stalker.png"
+    },
+    {
+        "id":  "spore_witch",
+        "transparentFraction":  0.2611,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/uncommon/normal/spore_witch.png"
+    },
+    {
+        "id":  "grove_tender",
+        "transparentFraction":  0.3659,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/rare/normal/grove_tender.png"
+    },
+    {
+        "id":  "whitehart_ravager",
+        "transparentFraction":  0.4524,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/epic/normal/whitehart_ravager.png"
+    },
+    {
+        "id":  "twig_scout",
+        "transparentFraction":  0.577,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/twig_scout.png"
+    },
+    {
+        "id":  "pack_pup",
+        "transparentFraction":  0.5524,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/common/normal/pack_pup.png"
+    },
+    {
+        "id":  "needlewing_hunter",
+        "transparentFraction":  0.5698,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/uncommon/normal/needlewing_hunter.png"
+    },
+    {
+        "id":  "rootsnare_druid",
+        "transparentFraction":  0.2619,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/rare/normal/rootsnare_druid.png"
+    },
+    {
+        "id":  "greatpaw_warden",
+        "transparentFraction":  0.3468,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/epic/normal/greatpaw_warden.png"
+    },
+    {
+        "id":  "crowned_mammoth",
+        "transparentFraction":  0.4198,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wild_courts/legendary/normal/crowned_mammoth.png"
+    },
+    {
+        "id":  "paper_moth",
+        "transparentFraction":  0.5151,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/paper_moth.png"
+    },
+    {
+        "id":  "glass_imp",
+        "transparentFraction":  0.5349,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/glass_imp.png"
+    },
+    {
+        "id":  "threadling_seer",
+        "transparentFraction":  0.3135,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/uncommon/normal/threadling_seer.png"
+    },
+    {
+        "id":  "prism_needler",
+        "transparentFraction":  0.2968,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/rare/normal/prism_needler.png"
+    },
+    {
+        "id":  "lacquered_sentinel",
+        "transparentFraction":  0.3405,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/epic/normal/lacquered_sentinel.png"
+    },
+    {
+        "id":  "the_unremembered_face",
+        "transparentFraction":  0.2968,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/legendary/normal/the_unremembered_face.png"
+    },
+    {
+        "id":  "whisper_sprite",
+        "transparentFraction":  0.523,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/whisper_sprite.png"
+    },
+    {
+        "id":  "ribbon_fox",
+        "transparentFraction":  0.4111,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/uncommon/normal/ribbon_fox.png"
+    },
+    {
+        "id":  "masked_duelist",
+        "transparentFraction":  0.3651,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/masked_duelist.png"
+    },
+    {
+        "id":  "moon_mirror_adept",
+        "transparentFraction":  0.273,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/uncommon/normal/moon_mirror_adept.png"
+    },
+    {
+        "id":  "fate_stitcher",
+        "transparentFraction":  0.2794,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/rare/normal/fate_stitcher.png"
+    },
+    {
+        "id":  "gloam_courtier",
+        "transparentFraction":  0.2556,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/epic/normal/gloam_courtier.png"
+    },
+    {
+        "id":  "inkcap_familiar",
+        "transparentFraction":  0.4611,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/inkcap_familiar.png"
+    },
+    {
+        "id":  "silkknife_agent",
+        "transparentFraction":  0.2905,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/common/normal/silkknife_agent.png"
+    },
+    {
+        "id":  "glimmerbow_spy",
+        "transparentFraction":  0.3333,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/uncommon/normal/glimmerbow_spy.png"
+    },
+    {
+        "id":  "knotwitch",
+        "transparentFraction":  0.2548,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/rare/normal/knotwitch.png"
+    },
+    {
+        "id":  "mirrorblade_envoy",
+        "transparentFraction":  0.3016,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/epic/normal/mirrorblade_envoy.png"
+    },
+    {
+        "id":  "palace_of_one",
+        "transparentFraction":  0.2595,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/veil_covenant/legendary/normal/palace_of_one.png"
+    },
+    {
+        "id":  "candle_remnant",
+        "transparentFraction":  0.5937,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/candle_remnant.png"
+    },
+    {
+        "id":  "bone_rat",
+        "transparentFraction":  0.6738,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/bone_rat.png"
+    },
+    {
+        "id":  "grave_cantor",
+        "transparentFraction":  0.3079,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/uncommon/normal/grave_cantor.png"
+    },
+    {
+        "id":  "coffin_dart",
+        "transparentFraction":  0.3532,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/rare/normal/coffin_dart.png"
+    },
+    {
+        "id":  "ossuary_guard",
+        "transparentFraction":  0.281,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/epic/normal/ossuary_guard.png"
+    },
+    {
+        "id":  "the_bell_beneath",
+        "transparentFraction":  0.4333,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/legendary/normal/the_bell_beneath.png"
+    },
+    {
+        "id":  "tallow_wisp",
+        "transparentFraction":  0.6278,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/tallow_wisp.png"
+    },
+    {
+        "id":  "crypt_scrabbler",
+        "transparentFraction":  0.5937,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/uncommon/normal/crypt_scrabbler.png"
+    },
+    {
+        "id":  "mourning_pike",
+        "transparentFraction":  0.4302,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/mourning_pike.png"
+    },
+    {
+        "id":  "pale_medium",
+        "transparentFraction":  0.327,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/uncommon/normal/pale_medium.png"
+    },
+    {
+        "id":  "marrow_surgeon",
+        "transparentFraction":  0.3421,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/rare/normal/marrow_surgeon.png"
+    },
+    {
+        "id":  "sepulcher_knight",
+        "transparentFraction":  0.3111,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/epic/normal/sepulcher_knight.png"
+    },
+    {
+        "id":  "grave_levy",
+        "transparentFraction":  0.477,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/grave_levy.png"
+    },
+    {
+        "id":  "rattleblade",
+        "transparentFraction":  0.4167,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/common/normal/rattleblade.png"
+    },
+    {
+        "id":  "ash_bolt_deadeye",
+        "transparentFraction":  0.3738,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/uncommon/normal/ash_bolt_deadeye.png"
+    },
+    {
+        "id":  "debt_collector",
+        "transparentFraction":  0.3111,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/rare/normal/debt_collector.png"
+    },
+    {
+        "id":  "black_bell_centurion",
+        "transparentFraction":  0.2984,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/epic/normal/black_bell_centurion.png"
+    },
+    {
+        "id":  "catacomb_sovereign",
+        "transparentFraction":  0.4651,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/hollow_legions/legendary/normal/catacomb_sovereign.png"
+    },
+    {
+        "id":  "loose_feather",
+        "transparentFraction":  0.6349,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/loose_feather.png"
+    },
+    {
+        "id":  "cliff_marten",
+        "transparentFraction":  0.6262,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/cliff_marten.png"
+    },
+    {
+        "id":  "cloud_reader",
+        "transparentFraction":  0.2738,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/uncommon/normal/cloud_reader.png"
+    },
+    {
+        "id":  "rookbow_scout",
+        "transparentFraction":  0.5429,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/rare/normal/rookbow_scout.png"
+    },
+    {
+        "id":  "griffin_warden",
+        "transparentFraction":  0.4294,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/epic/normal/griffin_warden.png"
+    },
+    {
+        "id":  "thunder_roc_ancient",
+        "transparentFraction":  0.4032,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/legendary/normal/thunder_roc_ancient.png"
+    },
+    {
+        "id":  "kite_squire",
+        "transparentFraction":  0.4579,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/kite_squire.png"
+    },
+    {
+        "id":  "eyrie_runner",
+        "transparentFraction":  0.5857,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/uncommon/normal/eyrie_runner.png"
+    },
+    {
+        "id":  "gale_lancer",
+        "transparentFraction":  0.4452,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/gale_lancer.png"
+    },
+    {
+        "id":  "mistcaller",
+        "transparentFraction":  0.3357,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/uncommon/normal/mistcaller.png"
+    },
+    {
+        "id":  "wingmender",
+        "transparentFraction":  0.3302,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/rare/normal/wingmender.png"
+    },
+    {
+        "id":  "cloudhouse_champion",
+        "transparentFraction":  0.3429,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/epic/normal/cloudhouse_champion.png"
+    },
+    {
+        "id":  "pennant_swift",
+        "transparentFraction":  0.6722,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/pennant_swift.png"
+    },
+    {
+        "id":  "hookwing_recruit",
+        "transparentFraction":  0.4484,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/common/normal/hookwing_recruit.png"
+    },
+    {
+        "id":  "stormglass_archer",
+        "transparentFraction":  0.4032,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/uncommon/normal/stormglass_archer.png"
+    },
+    {
+        "id":  "wind_magistrate",
+        "transparentFraction":  0.2579,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/rare/normal/wind_magistrate.png"
+    },
+    {
+        "id":  "griffin_legionary",
+        "transparentFraction":  0.3222,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/epic/normal/griffin_legionary.png"
+    },
+    {
+        "id":  "tempest_crown_roc",
+        "transparentFraction":  0.3595,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/skybound_houses/legendary/normal/tempest_crown_roc.png"
+    },
+    {
+        "id":  "shed_scale",
+        "transparentFraction":  0.596,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/shed_scale.png"
+    },
+    {
+        "id":  "cinder_gecko",
+        "transparentFraction":  0.6429,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/cinder_gecko.png"
+    },
+    {
+        "id":  "rune_hatchling",
+        "transparentFraction":  0.5579,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/uncommon/normal/rune_hatchling.png"
+    },
+    {
+        "id":  "hoard_slinger",
+        "transparentFraction":  0.5214,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/rare/normal/hoard_slinger.png"
+    },
+    {
+        "id":  "basalt_drake",
+        "transparentFraction":  0.4627,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/epic/normal/basalt_drake.png"
+    },
+    {
+        "id":  "first_blood_wyrm",
+        "transparentFraction":  0.3381,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/legendary/normal/first_blood_wyrm.png"
+    },
+    {
+        "id":  "ember_newt",
+        "transparentFraction":  0.6921,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/ember_newt.png"
+    },
+    {
+        "id":  "copper_kobold",
+        "transparentFraction":  0.6151,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/uncommon/normal/copper_kobold.png"
+    },
+    {
+        "id":  "scaleclaw_raider",
+        "transparentFraction":  0.45,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/scaleclaw_raider.png"
+    },
+    {
+        "id":  "runespark_adept",
+        "transparentFraction":  0.377,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/uncommon/normal/runespark_adept.png"
+    },
+    {
+        "id":  "hoard_tender",
+        "transparentFraction":  0.3937,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/rare/normal/hoard_tender.png"
+    },
+    {
+        "id":  "ashen_drakeguard",
+        "transparentFraction":  0.2778,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/epic/normal/ashen_drakeguard.png"
+    },
+    {
+        "id":  "coal_snout_recruit",
+        "transparentFraction":  0.4238,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/coal_snout_recruit.png"
+    },
+    {
+        "id":  "ironscale_skulk",
+        "transparentFraction":  0.4556,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/common/normal/ironscale_skulk.png"
+    },
+    {
+        "id":  "runebow_clansman",
+        "transparentFraction":  0.4833,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/uncommon/normal/runebow_clansman.png"
+    },
+    {
+        "id":  "bloodline_seer",
+        "transparentFraction":  0.2849,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/rare/normal/bloodline_seer.png"
+    },
+    {
+        "id":  "elder_scale_guard",
+        "transparentFraction":  0.3071,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/epic/normal/elder_scale_guard.png"
+    },
+    {
+        "id":  "worldcoil_heir",
+        "transparentFraction":  0.4373,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wyrm_clans/legendary/normal/worldcoil_heir.png"
+    },
+    {
+        "id":  "pebble_familiar",
+        "transparentFraction":  0.696,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/common/normal/pebble_familiar.png"
+    },
+    {
+        "id":  "ruin_jackal",
+        "transparentFraction":  0.6016,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/uncommon/normal/ruin_jackal.png"
+    },
+    {
+        "id":  "bronze_pilgrim",
+        "transparentFraction":  0.3897,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/rare/normal/bronze_pilgrim.png"
+    },
+    {
+        "id":  "nameless_colossus",
+        "transparentFraction":  0.3206,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/legendary/normal/nameless_colossus.png"
+    },
+    {
+        "id":  "roadside_tinker",
+        "transparentFraction":  0.3587,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/common/normal/roadside_tinker.png"
+    },
+    {
+        "id":  "hedge_crossbowman",
+        "transparentFraction":  0.3452,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/uncommon/normal/hedge_crossbowman.png"
+    },
+    {
+        "id":  "contract_mender",
+        "transparentFraction":  0.381,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/rare/normal/contract_mender.png"
+    },
+    {
+        "id":  "greycloak_duelist",
+        "transparentFraction":  0.3889,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/epic/normal/greycloak_duelist.png"
+    },
+    {
+        "id":  "camp_scavenger",
+        "transparentFraction":  0.4254,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/common/normal/camp_scavenger.png"
+    },
+    {
+        "id":  "free_lance_archer",
+        "transparentFraction":  0.4429,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/common/normal/free_lance_archer.png"
+    },
+    {
+        "id":  "bannerless_veteran",
+        "transparentFraction":  0.3421,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/uncommon/normal/bannerless_veteran.png"
+    },
+    {
+        "id":  "crownless_giant",
+        "transparentFraction":  0.2857,
+        "width":  300,
+        "valid":  true,
+        "height":  420,
+        "file":  "/assets/raw/portraits/wayfarer/epic/normal/crownless_giant.png"
+    }
+]

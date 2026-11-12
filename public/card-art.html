@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="robots" content="noindex" />
-  <title>Diademfall — Individual Card Artwork</title>
+  <title>Diademfall — Layered Card Artwork</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;background:#0c1322;color:#edf1fa;font:15px/1.5 system-ui,sans-serif}header,main,footer{max-width:1600px;margin:auto;padding:30px}header{padding-top:45px}a{color:#9ee4e0}h1{font-size:clamp(29px,4vw,48px);line-height:1.1;letter-spacing:-.04em;margin:22px 0 15px}header p{color:#aebbd2;max-width:850px}header p strong{color:#efd394}.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:25px}.toolbar label{display:grid;gap:6px;font-size:11px;color:#9aabc6;letter-spacing:.05em}.toolbar label:first-child{flex:1;min-width:200px}.toolbar input,.toolbar select,.toolbar button{min-height:40px;background:#101d30;color:#e6efff;border:1px solid #41516d;padding:8px 12px;font:14px system-ui;max-width:100%}.toolbar button{cursor:pointer}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #91dfdc;outline-offset:4px}.status{color:#aabbd2;font-size:12px;margin:0 0 22px}.gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:30px 22px}figure{margin:0;min-width:0}figure img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block}figcaption{padding-top:11px}figcaption strong{font-size:14px;font-weight:600}figcaption small{display:block;color:#91a2bd;font-size:11px;margin-top:3px}figcaption a{font-size:11px;display:inline-block;margin-top:5px}.empty{padding:65px 15px;text-align:center;color:#afbed5;grid-column:1/-1}footer{padding-bottom:45px;color:#8294b3;font-size:12px}footer a{margin-right:18px}@media(max-width:1150px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:850px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px 14px}}@media(max-width:550px){header,main,footer{padding:24px 16px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}.toolbar{gap:10px}.toolbar label{flex:1;min-width:135px}.toolbar label:first-child{flex-basis:100%}figcaption strong{font-size:12px}}
+    *{box-sizing:border-box}body{margin:0;background:#0c1322;color:#edf1fa;font:15px/1.5 system-ui,sans-serif}header,main,footer{max-width:1600px;margin:auto;padding:30px}header{padding-top:45px}a{color:#9ee4e0}h1{font-size:clamp(29px,4vw,48px);line-height:1.1;letter-spacing:-.04em;margin:22px 0 15px}header p{color:#aebbd2;max-width:850px}header p strong{color:#efd394}.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:25px}.toolbar label{display:grid;gap:6px;font-size:11px;color:#9aabc6;letter-spacing:.05em}.toolbar label:first-child{flex:1;min-width:200px}.toolbar input,.toolbar select,.toolbar button{min-height:40px;background:#101d30;color:#e6efff;border:1px solid #41516d;padding:8px 12px;font:14px system-ui;max-width:100%}.toolbar button{cursor:pointer}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #91dfdc;outline-offset:4px}.status{color:#aabbd2;font-size:12px;margin:0 0 22px}.gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:30px 22px}figure{margin:0;min-width:0}figure img{width:100%;height:auto;aspect-ratio:5/7;object-fit:contain;display:block}figcaption{padding-top:11px}figcaption strong{font-size:14px;font-weight:600}figcaption small{display:block;color:#91a2bd;font-size:11px;margin-top:3px}figcaption a{font-size:11px;display:inline-block;margin-top:5px}.empty{padding:65px 15px;text-align:center;color:#afbed5;grid-column:1/-1}footer{padding-bottom:45px;color:#8294b3;font-size:12px}footer a{margin-right:18px}@media(max-width:1150px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:850px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px 14px}}@media(max-width:550px){header,main,footer{padding:24px 16px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}.toolbar{gap:10px}.toolbar label{flex:1;min-width:135px}.toolbar label:first-child{flex-basis:100%}figcaption strong{font-size:12px}}
   </style>
 </head>
 <body>
   <header>
     <a href="/">← Diademfall</a> · <a href="/artwork.html">Shared artwork</a>
     <h1>Every card. Its own character.</h1>
-    <p>Individual regular artwork for the Diademfall catalog. <strong>Unframed illustrations, without baked-in labels, stats, or foil effects.</strong> Select an image to open its PNG master.</p>
+    <p>Original Diademfall characters in <strong>300 × 420 layered card textures</strong>, with flat patterned backgrounds, complete rarity frames and flame seals. Names, stat values and abilities remain live UI overlays. Select an image to open its texture.</p>
     <div class="toolbar">
       <label>Search cards<input id="query" type="search" placeholder="Card name…" /></label>
       <label>Banner<select id="banner"><option value="all">All Banners</option></select></label>
@@ -24,20 +24,20 @@
     </div>
   </header>
   <main><p class="status" id="status" role="status">Loading artwork…</p><div id="gallery" class="gallery"></div></main>
-  <footer><a href="/assets/cards/manifest.json">Full prompts &amp; asset manifest</a>PNG masters · Built-in ImageGen · Future gold artwork will use the matching gold_ filename.</footer>
+  <footer><a href="/assets/cards/manifest.json">Full prompts &amp; asset manifest</a>300 × 420 textures · Built-in ImageGen + layer composition · Future gold artwork will use the matching gold_ filename.</footer>
   <script type="module">
     const banners={bastion_orders:'Bastion Orders',wild_courts:'Wild Courts',veil_covenant:'Veil Covenant',hollow_legions:'Hollow Legions',skybound_houses:'Skybound Houses',wyrm_clans:'Wyrm Clans',wayfarer:'Wayfarers'};
     const elements=Object.fromEntries(['query','banner','rarity','kind','reset','refresh','status','gallery'].map(id=>[id,document.getElementById(id)]));
     for(const [id,name] of Object.entries(banners)){const option=document.createElement('option');option.value=id;option.textContent=name;elements.banner.append(option)}
     let cards=[];
     function render(){
-      const completed=cards.filter(card=>card.status==='generated');
+      const completed=cards.filter(card=>card.status==='generated'&&card.layered===true);
       const query=elements.query.value.trim().toLowerCase();
       const visible=completed.filter(card=>(!query||card.name.toLowerCase().includes(query))&&(elements.banner.value==='all'||card.banner===elements.banner.value)&&(elements.rarity.value==='all'||card.rarity===elements.rarity.value)&&(elements.kind.value==='all'||card.kind===elements.kind.value));
-      elements.status.textContent=`${completed.length} / ${cards.length} portraits saved · ${visible.length} shown${completed.length<cards.length?' · Generation in progress; refresh for new artwork.':''}`;
+      elements.status.textContent=`${completed.length} / ${cards.length} card textures composed · ${visible.length} shown${completed.length<cards.length?' · Layer composition in progress; refresh for completed cards.':''}`;
       elements.gallery.replaceChildren(...visible.map(card=>{
         const figure=document.createElement('figure'),link=document.createElement('a'),image=document.createElement('img'),caption=document.createElement('figcaption'),title=document.createElement('strong'),details=document.createElement('small'),file=document.createElement('a');
-        link.href=card.file;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',`View ${card.name} artwork`);image.src=card.file;image.alt=`${card.name} — unframed original character illustration`;image.width=card.width??1086;image.height=card.height??1448;image.loading='lazy';link.append(image);
+        link.href=card.file;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',`View ${card.name} artwork`);image.src=card.file;image.alt=`${card.name} — layered original card texture`;image.width=card.width??300;image.height=card.height??420;image.loading='lazy';link.append(image);
         title.textContent=card.name;details.textContent=`${banners[card.banner]} · ${card.rarity} · ${card.kind==='summoner'?'Summoner':'Troop'}`;file.href=card.file;file.target='_blank';file.rel='noopener';file.textContent='Open PNG ↗';caption.append(title,details,file);figure.append(link,caption);return figure;
       }));
       if(!visible.length){const empty=document.createElement('p');empty.className='empty';empty.textContent=completed.length?'No portraits match these filters.':'The first portraits are being prepared.';elements.gallery.append(empty)}

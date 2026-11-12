@@ -10,7 +10,7 @@ export function cardArtPath(card: ArtCard, foil: ArtFoil = "regular") {
   return `/assets/cards/${card.banner ?? "wayfarer"}/${card.rarity}/${kind}/${foil}_${card.id}.png`;
 }
 
-/** Only completed portraits are referenced while production proceeds. */
+/** Completed layered card textures; live card stats, names and abilities are separate UI overlays. */
 export function regularCardArt(card: Pick<ArtCard, "id" | "banner">) {
   const portrait = (paths as Record<string, string>)[card.id];
   if (portrait) return portrait;

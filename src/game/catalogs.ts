@@ -1,7 +1,7 @@
 /**
- * Versioned card catalogs. New play uses the current (Wayfarers) catalog; ranked replays re-simulate
- * with the catalog of the game version they were played on, so old result hashes keep verifying.
- * three-packs-1.0.0 is the same 138 cards without the 12 Wayfarers (v5 left every existing card unchanged).
+ * Catalog lookup and retired-card display. The current prelaunch catalog is revised in place;
+ * unpublished result hashes have no compatibility guarantee. Published versions will need frozen
+ * catalogs/engine behavior. The older no-Wayfarer roster contains 126 cards.
  */
 import { ABILITIES } from "./catalog/abilities";
 import { BANNERS as CATALOG_BANNERS } from "./catalog/banners";

@@ -1,0 +1,9459 @@
+[
+  {
+    "id": "ashen_page",
+    "name": "Ashen Page",
+    "banner": "bastion_orders",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "stoneward_hound",
+    "name": "Stoneward Hound",
+    "banner": "bastion_orders",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 1,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "oathcarver_acolyte",
+    "name": "Oathcarver Acolyte",
+    "banner": "bastion_orders",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "rampart_arbalist",
+    "name": "Rampart Arbalist",
+    "banner": "bastion_orders",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "granite_bailiff",
+    "name": "Granite Bailiff",
+    "banner": "bastion_orders",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "brace",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 4,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "colossus_of_the_first_wall",
+    "name": "Colossus of the First Wall",
+    "banner": "bastion_orders",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "lantern_squire",
+    "name": "Lantern Squire",
+    "banner": "bastion_orders",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "moat_runner",
+    "name": "Moat Runner",
+    "banner": "bastion_orders",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "crown_pike",
+    "name": "Crown Pike",
+    "banner": "bastion_orders",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "chapel_thaumaturge",
+    "name": "Chapel Thaumaturge",
+    "banner": "bastion_orders",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "banner_chirurgeon",
+    "name": "Banner Chirurgeon",
+    "banner": "bastion_orders",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "gilded_castellan",
+    "name": "Gilded Castellan",
+    "banner": "bastion_orders",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "levy_drummer",
+    "name": "Levy Drummer",
+    "banner": "bastion_orders",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "shield_clerk",
+    "name": "Shield Clerk",
+    "banner": "bastion_orders",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 1,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "gatebolt_archer",
+    "name": "Gatebolt Archer",
+    "banner": "bastion_orders",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 0
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "chain_magistrate",
+    "name": "Chain Magistrate",
+    "banner": "bastion_orders",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bannerhold",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 1,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 0
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "iron_vow_captain",
+    "name": "Iron-Vow Captain",
+    "banner": "bastion_orders",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "retinue",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "brace",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "flank",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 3,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "citadel_behemoth",
+    "name": "Citadel Behemoth",
+    "banner": "bastion_orders",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "oathkeeper",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 9,
+      "armor": 4,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "seedling_wisp",
+    "name": "Seedling Wisp",
+    "banner": "wild_courts",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "fangroot_cub",
+    "name": "Fangroot Cub",
+    "banner": "wild_courts",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "moss_oracle",
+    "name": "Moss Oracle",
+    "banner": "wild_courts",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "briar_dartling",
+    "name": "Briar Dartling",
+    "banner": "wild_courts",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "antler_guardian",
+    "name": "Antler Guardian",
+    "banner": "wild_courts",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 3,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "elderhorn_colossus",
+    "name": "Elderhorn Colossus",
+    "banner": "wild_courts",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 1,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "burrow_mouse",
+    "name": "Burrow Mouse",
+    "banner": "wild_courts",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "thistle_runner",
+    "name": "Thistle Runner",
+    "banner": "wild_courts",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "moonclaw_stalker",
+    "name": "Moonclaw Stalker",
+    "banner": "wild_courts",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "spore_witch",
+    "name": "Spore Witch",
+    "banner": "wild_courts",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "grove_tender",
+    "name": "Grove Tender",
+    "banner": "wild_courts",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "whitehart_ravager",
+    "name": "Whitehart Ravager",
+    "banner": "wild_courts",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 1,
+      "speed": 3,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "twig_scout",
+    "name": "Twig Scout",
+    "banner": "wild_courts",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pack_pup",
+    "name": "Pack Pup",
+    "banner": "wild_courts",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "needlewing_hunter",
+    "name": "Needlewing Hunter",
+    "banner": "wild_courts",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "rootsnare_druid",
+    "name": "Rootsnare Druid",
+    "banner": "wild_courts",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "greatpaw_warden",
+    "name": "Greatpaw Warden",
+    "banner": "wild_courts",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "trailblazer",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 1,
+      "speed": 4,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 4,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 4,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 1,
+            "to": 2
+          },
+          "speed": {
+            "from": 4,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 4,
+            "to": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "crowned_mammoth",
+    "name": "Crowned Mammoth",
+    "banner": "wild_courts",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 9,
+      "armor": 2,
+      "speed": 3,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "armor": {
+            "from": 2,
+            "to": 3
+          },
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "paper_moth",
+    "name": "Paper Moth",
+    "banner": "veil_covenant",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "glass_imp",
+    "name": "Glass Imp",
+    "banner": "veil_covenant",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "threadling_seer",
+    "name": "Threadling Seer",
+    "banner": "veil_covenant",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "prism_needler",
+    "name": "Prism Needler",
+    "banner": "veil_covenant",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "lacquered_sentinel",
+    "name": "Lacquered Sentinel",
+    "banner": "veil_covenant",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "flank",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "the_unremembered_face",
+    "name": "The Unremembered Face",
+    "banner": "veil_covenant",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "whisper_sprite",
+    "name": "Whisper Sprite",
+    "banner": "veil_covenant",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "ribbon_fox",
+    "name": "Ribbon Fox",
+    "banner": "veil_covenant",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "masked_duelist",
+    "name": "Masked Duelist",
+    "banner": "veil_covenant",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "moon_mirror_adept",
+    "name": "Moon-Mirror Adept",
+    "banner": "veil_covenant",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "fate_stitcher",
+    "name": "Fate Stitcher",
+    "banner": "veil_covenant",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "gloam_courtier",
+    "name": "Gloam Courtier",
+    "banner": "veil_covenant",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "inkcap_familiar",
+    "name": "Inkcap Familiar",
+    "banner": "veil_covenant",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "silkknife_agent",
+    "name": "Silkknife Agent",
+    "banner": "veil_covenant",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "glimmerbow_spy",
+    "name": "Glimmerbow Spy",
+    "banner": "veil_covenant",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "knotwitch",
+    "name": "Knotwitch",
+    "banner": "veil_covenant",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "echo_sigil",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "mirrorblade_envoy",
+    "name": "Mirrorblade Envoy",
+    "banner": "veil_covenant",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "vanish",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "mislead",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 2,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "palace_of_one",
+    "name": "Palace of One",
+    "banner": "veil_covenant",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "mirrorcraft",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "fate_knot",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 9,
+      "armor": 3,
+      "speed": 2,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "candle_remnant",
+    "name": "Candle Remnant",
+    "banner": "hollow_legions",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "bone_rat",
+    "name": "Bone Rat",
+    "banner": "hollow_legions",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "grave_cantor",
+    "name": "Grave Cantor",
+    "banner": "hollow_legions",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "coffin_dart",
+    "name": "Coffin Dart",
+    "banner": "hollow_legions",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ossuary_guard",
+    "name": "Ossuary Guard",
+    "banner": "hollow_legions",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "the_bell_beneath",
+    "name": "The Bell Beneath",
+    "banner": "hollow_legions",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tallow_wisp",
+    "name": "Tallow Wisp",
+    "banner": "hollow_legions",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 3,
+            "to": 2
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "crypt_scrabbler",
+    "name": "Crypt Scrabbler",
+    "banner": "hollow_legions",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 3,
+            "to": 2
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "mourning_pike",
+    "name": "Mourning Pike",
+    "banner": "hollow_legions",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "health": {
+            "from": 10,
+            "to": 9
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pale_medium",
+    "name": "Pale Medium",
+    "banner": "hollow_legions",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "marrow_surgeon",
+    "name": "Marrow Surgeon",
+    "banner": "hollow_legions",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "sepulcher_knight",
+    "name": "Sepulcher Knight",
+    "banner": "hollow_legions",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 10,
+            "to": 9
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "grave_levy",
+    "name": "Grave Levy",
+    "banner": "hollow_legions",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 3,
+            "to": 2
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "rattleblade",
+    "name": "Rattleblade",
+    "banner": "hollow_legions",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 1,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 9,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 10,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ash_bolt_deadeye",
+    "name": "Ash-Bolt Deadeye",
+    "banner": "hollow_legions",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "death_debt",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "wildshot",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 4,
+            "to": 3
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 5,
+            "to": 4
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 3,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "debt_collector",
+    "name": "Debt Collector",
+    "banner": "hollow_legions",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "bone_harvest",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 6,
+            "to": 5
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 1,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          },
+          "speed": {
+            "from": 2,
+            "to": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "black_bell_centurion",
+    "name": "Black Bell Centurion",
+    "banner": "hollow_legions",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "soul_tithe",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "doom_count",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "catacomb_sovereign",
+    "name": "Catacomb Sovereign",
+    "banner": "hollow_legions",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "pale_exchange",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 10,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 10,
+            "to": 9
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 11,
+            "to": 10
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 11,
+            "to": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "loose_feather",
+    "name": "Loose Feather",
+    "banner": "skybound_houses",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "cliff_marten",
+    "name": "Cliff Marten",
+    "banner": "skybound_houses",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "cloud_reader",
+    "name": "Cloud Reader",
+    "banner": "skybound_houses",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "rookbow_scout",
+    "name": "Rookbow Scout",
+    "banner": "skybound_houses",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "brace",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "griffin_warden",
+    "name": "Griffin Warden",
+    "banner": "skybound_houses",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "windread",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "thunder_roc_ancient",
+    "name": "Thunder-Roc Ancient",
+    "banner": "skybound_houses",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kite_squire",
+    "name": "Kite Squire",
+    "banner": "skybound_houses",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "eyrie_runner",
+    "name": "Eyrie Runner",
+    "banner": "skybound_houses",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "gale_lancer",
+    "name": "Gale Lancer",
+    "banner": "skybound_houses",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "mistcaller",
+    "name": "Mistcaller",
+    "banner": "skybound_houses",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "wingmender",
+    "name": "Wingmender",
+    "banner": "skybound_houses",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "cloudhouse_champion",
+    "name": "Cloudhouse Champion",
+    "banner": "skybound_houses",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "flank",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pennant_swift",
+    "name": "Pennant Swift",
+    "banner": "skybound_houses",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "hookwing_recruit",
+    "name": "Hookwing Recruit",
+    "banner": "skybound_houses",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hexweave",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "stormglass_archer",
+    "name": "Stormglass Archer",
+    "banner": "skybound_houses",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "spotter",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "packmark",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 4,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 4,
+            "to": 3
+          }
+        }
+      },
+      {
+        "level": 5,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 6,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 7,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      },
+      {
+        "level": 8,
+        "changes": {
+          "speed": {
+            "from": 5,
+            "to": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "wind_magistrate",
+    "name": "Wind Magistrate",
+    "banner": "skybound_houses",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "volley_line",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "griffin_legionary",
+    "name": "Griffin Legionary",
+    "banner": "skybound_houses",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "windread",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 2,
+      "speed": 3,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "speed": {
+            "from": 3,
+            "to": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "tempest_crown_roc",
+    "name": "Tempest Crown Roc",
+    "banner": "skybound_houses",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "skyhook",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "dive_pass",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "windread",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 9,
+      "armor": 3,
+      "speed": 2,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "speed": {
+            "from": 2,
+            "to": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "shed_scale",
+    "name": "Shed Scale",
+    "banner": "wyrm_clans",
+    "mana": 0,
+    "before": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 1,
+      "armor": 0,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "cinder_gecko",
+    "name": "Cinder Gecko",
+    "banner": "wyrm_clans",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "rune_hatchling",
+    "name": "Rune Hatchling",
+    "banner": "wyrm_clans",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "hoard_slinger",
+    "name": "Hoard Slinger",
+    "banner": "wyrm_clans",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "basalt_drake",
+    "name": "Basalt Drake",
+    "banner": "wyrm_clans",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "moonrush",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 3,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "first_blood_wyrm",
+    "name": "First-Blood Wyrm",
+    "banner": "wyrm_clans",
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 0,
+      "shot": 0,
+      "spell": 3
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ember_newt",
+    "name": "Ember Newt",
+    "banner": "wyrm_clans",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "copper_kobold",
+    "name": "Copper Kobold",
+    "banner": "wyrm_clans",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "scaleclaw_raider",
+    "name": "Scaleclaw Raider",
+    "banner": "wyrm_clans",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "primal_mend",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "runespark_adept",
+    "name": "Runespark Adept",
+    "banner": "wyrm_clans",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "wildshot",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "hoard_tender",
+    "name": "Hoard Tender",
+    "banner": "wyrm_clans",
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "windread",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "ashen_drakeguard",
+    "name": "Ashen Drakeguard",
+    "banner": "wyrm_clans",
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "brace",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 8,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 10,
+            "to": 9
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "coal_snout_recruit",
+    "name": "Coal-Snout Recruit",
+    "banner": "wyrm_clans",
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "ironscale_skulk",
+    "name": "Ironscale Skulk",
+    "banner": "wyrm_clans",
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "runebow_clansman",
+    "name": "Runebow Clansman",
+    "banner": "wyrm_clans",
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "devour_oath",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "bloodline_seer",
+    "name": "Bloodline Seer",
+    "banner": "wyrm_clans",
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "runebreath",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "crosswind",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "elder_scale_guard",
+    "name": "Elder Scale Guard",
+    "banner": "wyrm_clans",
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "colossus_wake",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "hunt",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 2,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 7,
+            "to": 6
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 8,
+            "to": 7
+          }
+        }
+      },
+      {
+        "level": 4,
+        "changes": {
+          "health": {
+            "from": 9,
+            "to": 8
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "worldcoil_heir",
+    "name": "Worldcoil Heir",
+    "banner": "wyrm_clans",
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "bloodline_roar",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "hoardfire",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 10,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": [
+      {
+        "level": 1,
+        "changes": {
+          "health": {
+            "from": 10,
+            "to": 9
+          }
+        }
+      },
+      {
+        "level": 2,
+        "changes": {
+          "health": {
+            "from": 11,
+            "to": 10
+          }
+        }
+      },
+      {
+        "level": 3,
+        "changes": {
+          "health": {
+            "from": 11,
+            "to": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "pebble_familiar",
+    "name": "Pebble Familiar",
+    "banner": null,
+    "mana": 1,
+    "before": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 2,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "ruin_jackal",
+    "name": "Ruin Jackal",
+    "banner": null,
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "bronze_pilgrim",
+    "name": "Bronze Pilgrim",
+    "banner": null,
+    "mana": 5,
+    "before": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "makeshift_guard",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 6,
+      "armor": 2,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 6,
+      "armor": 2,
+      "speed": 1,
+      "steel": 2,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "nameless_colossus",
+    "name": "Nameless Colossus",
+    "banner": null,
+    "mana": 8,
+    "before": [
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 3
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "pounce",
+        "unlockLevel": 2
+      },
+      {
+        "abilityId": "flank",
+        "unlockLevel": 3
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 9,
+      "armor": 3,
+      "speed": 1,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "roadside_tinker",
+    "name": "Roadside Tinker",
+    "banner": null,
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 1,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "hedge_crossbowman",
+    "name": "Hedge Crossbowman",
+    "banner": null,
+    "mana": 3,
+    "before": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 1,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "contract_mender",
+    "name": "Contract Mender",
+    "banner": null,
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "field_ration",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "baseStatsAfter": {
+      "health": 5,
+      "armor": 0,
+      "speed": 2,
+      "steel": 0,
+      "shot": 0,
+      "spell": 1
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "greycloak_duelist",
+    "name": "Greycloak Duelist",
+    "banner": null,
+    "mana": 7,
+    "before": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "ancient_scale",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 1,
+      "speed": 4,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 1,
+      "speed": 4,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "camp_scavenger",
+    "name": "Camp Scavenger",
+    "banner": null,
+    "mana": 2,
+    "before": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "bloodscent",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 3,
+      "armor": 0,
+      "speed": 2,
+      "steel": 1,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "free_lance_archer",
+    "name": "Free-Lance Archer",
+    "banner": null,
+    "mana": 4,
+    "before": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 7
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "roadwise",
+        "unlockLevel": 7
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 4,
+      "armor": 0,
+      "speed": 3,
+      "steel": 0,
+      "shot": 2,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "bannerless_veteran",
+    "name": "Bannerless Veteran",
+    "banner": null,
+    "mana": 6,
+    "before": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 1
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "salvager",
+        "unlockLevel": 1
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 7,
+      "armor": 2,
+      "speed": 2,
+      "steel": 3,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  },
+  {
+    "id": "crownless_giant",
+    "name": "Crownless Giant",
+    "banner": null,
+    "mana": 9,
+    "before": [
+      {
+        "abilityId": "contract_bond",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "last_pay",
+        "unlockLevel": 4
+      }
+    ],
+    "after": [
+      {
+        "abilityId": "forgeheart",
+        "unlockLevel": 1
+      },
+      {
+        "abilityId": "shieldwall",
+        "unlockLevel": 4
+      }
+    ],
+    "baseStatsBefore": {
+      "health": 11,
+      "armor": 2,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "baseStatsAfter": {
+      "health": 11,
+      "armor": 2,
+      "speed": 1,
+      "steel": 4,
+      "shot": 0,
+      "spell": 0
+    },
+    "levelChanges": []
+  }
+]

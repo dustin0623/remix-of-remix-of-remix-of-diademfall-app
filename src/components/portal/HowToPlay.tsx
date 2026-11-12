@@ -61,7 +61,8 @@ export function HowToPlay({
               <h3>02 · Assemble your warband</h3>
               <p>
                 Choose a summoner, then recruit troops from their Banner and eligible Wayfarers. The
-                match rules decide the unit limit.
+                match rules decide the unit limit. Abilities are shared combat skills across all
+                Banners.
               </p>
             </div>
           </li>

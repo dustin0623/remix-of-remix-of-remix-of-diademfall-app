@@ -1666,3 +1666,51 @@
     flex-shrink: 0;
   }
 }
+
+/* Shared ability medallions use their native 150 x 152 aspect ratio. */
+.ability-icon { display: block; flex-shrink: 0; object-fit: contain; }
+.ability-reference-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.ability-reference-heading > .ability-icon { width: 68px; height: auto; }
+.ability-reference-heading h2 { margin: 4px 0 0; }
+.ability-details { margin-top: 14px; font-size: 12px; color: var(--muted-foreground); }
+.ability-details summary { cursor: pointer; color: var(--primary); }
+.ability-details p { margin-top: 8px; font-size: 12px; }
+/* Card artwork layers share a 300 x 420 production canvas. */
+.game-card { border: 0; padding: 0; border-radius: 4%; container-type: inline-size; overflow: visible; }
+.card-face { position: relative; isolation: isolate; width: 100%; aspect-ratio: 5 / 7; padding: 0; color: white; overflow: visible; }
+.card-face-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.card-face-interior { clip-path: polygon(5% 2%,95% 2%,98% 5%,98% 95%,94% 98%,6% 98%,2% 95%,2% 5%); }
+.card-face-portrait { z-index: 1; }
+.card-face-shade { position: absolute; inset: 1.5% 2%; z-index: 2; border-radius: 4%; background: linear-gradient(transparent 55%,#080c14b8 74%,#080c14e8 100%); pointer-events: none; }
+.card-face-frame { z-index: 3; }
+.card-face-crest { position: absolute; width: 13%; height: auto; right: 3%; top: 2.5%; z-index: 4; }
+.card-face-stat { position: relative; display: block; width: 16%; aspect-ratio: 1; z-index: 5; }
+.card-face-stat > img { position: absolute; width: 100%; height: 100%; object-fit: contain; }
+.card-face-stat > strong { position: absolute; inset: 0; display: grid; place-items: center; transform: translate(var(--stat-value-x,0),var(--stat-value-y,0)); font: 900 8cqw/1 Georgia,serif; color: #fff; -webkit-text-stroke: 1.1px #0b0d14; paint-order: stroke fill; text-shadow: 0 2px 2px #000; }
+.card-face-stat[data-stat="speed"] { --stat-value-x: 8%; --stat-value-y: -3%; }
+.card-face-stat[data-stat="steel"] { --stat-value-y: 3%; }
+.card-face-mana { position: absolute; width: 19%; top: 1%; left: 1%; }
+.card-face-mana > strong { font-size: 10cqw; }
+.card-face-attacks,.card-face-vitals { position: absolute; top: 30%; display: flex; flex-direction: column; gap: 1.5cqw; width: 17%; z-index: 5; }
+.card-face-attacks { left: 0; transform: translateX(-33.333333%); }
+.card-face-vitals { right: 0; top: 28%; transform: translateX(33.333333%); }
+.card-face-attacks .card-face-stat,.card-face-vitals .card-face-stat { width: 100%; }
+.card-face-name { position: absolute; z-index: 6; top: 69%; left: 12%; right: 12%; height: 10%; display: flex; align-items: center; justify-content: center; font: 800 clamp(10px,5.3cqw,18px)/1.08 var(--font-display); text-transform: uppercase; text-align: center; text-shadow: 0 2px 2px #000,1px 0 2px #000,-1px 0 2px #000; }
+.card-face-footer { position: absolute; z-index: 7; top: 79.5%; bottom: 3%; left: 14%; right: 14%; display: flex; flex-direction: column; }
+.card-face-level { display: flex; flex-shrink: 0; align-items: center; gap: 4%; font: italic 800 clamp(9px,4.3cqw,15px)/1 Georgia,serif; }
+.card-face-level > span { flex: 1; height: 2px; background: repeating-linear-gradient(90deg,#a4b1bf 0 9%,transparent 9% 11%); opacity: .6; }
+.card-face-effects { flex-shrink: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: center; font-size: 3.15cqw; line-height: 1.25; color: #f4e9ce; }
+.card-face-effects > span { display: block; }
+.card-face-abilities { display: flex; flex: 1; min-height: 0; justify-content: center; align-items: center; gap: 8%; }
+.card-face-ability { display: block; width: 17%; max-width: 34px; aspect-ratio: 150 / 152; cursor: help; }
+.card-face-ability > img { width: 100%; height: 100%; }
+.codex-card-grid > .game-card { min-height: 0; width: 100%; box-shadow: none; }
+.codex-card-grid { column-gap: clamp(24px,5vw,44px); padding-inline: clamp(12px,3vw,28px); }
+.codex-card-grid > .game-card > .card-face { aspect-ratio: 5 / 7; padding: 0; gap: 0; }
+.inspector-card .game-card { width: min(100%,300px); }
+@media (prefers-reduced-motion: reduce) { .game-card { transition: none; } }
+
+@media(min-width: 700px) { .codex-card-grid { grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); } }
+
+
+button.game-card > div.card-face, .inspector-card > button.game-card > div.card-face { aspect-ratio: 5 / 7; height: auto; padding: 0; gap: 0; }

@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import type { BattleInput } from "./battle-contract";
 import { SETS } from "./catalog/sets";
 import { SUMMONERS } from "./catalog/summoners";
 import { TROOPS } from "./catalog/troops";
@@ -7,24 +6,22 @@ import { RULESETS } from "./catalog/rulesets";
 import { CATALOG_VERSION, LEGACY_CATALOG_VERSION, catalogFor, displayUnit, retiredCards, rulesetName } from "./catalogs";
 import { simulateBattle } from "./engine";
 import { aiDraft, cardLegal, rollMatch, rulesetSelectionWeight, SUPPORTED_RULESETS, validateTeam } from "./match";
-import { resolveBattle } from "./ranked";
 import { UNIT_BY_ID, UNITS, unitAtLevel } from "./units";
-import legacyReplays from "./legacy/legacy-replays.fixture.json";
 
 describe("catalog v2", () => {
-  it("has 3 launch packs: 30 summoners, 120 troops (108 Banner + 12 Wayfarers), 150 cards", () => {
+  it("has 3 launch packs: 18 summoners, 120 troops (108 Banner + 12 Wayfarers), 138 cards", () => {
     expect(SETS.map((s) => s.id)).toEqual(["ancient", "oath", "legionnaire"]);
-    expect(SUMMONERS).toHaveLength(30);
+    expect(SUMMONERS).toHaveLength(18);
     expect(TROOPS).toHaveLength(120);
     expect(UNITS).toHaveLength(120);
     expect(TROOPS.filter((t) => t.affiliation === "wayfarer")).toHaveLength(12);
-    expect(SETS.reduce((n, s) => n + s.total, 0)).toBe(150);
+    expect(SETS.reduce((n, s) => n + s.total, 0)).toBe(138);
   });
-  it("splits packs 6+40, 12+40, 12+40", () => {
+  it("splits every pack into 6 summoners and 40 troops", () => {
     const count = (set: string) => [SUMMONERS.filter((s) => s.set === set).length, TROOPS.filter((t) => t.set === set).length];
     expect(count("ancient")).toEqual([6, 40]);
-    expect(count("oath")).toEqual([12, 40]);
-    expect(count("legionnaire")).toEqual([12, 40]);
+    expect(count("oath")).toEqual([6, 40]);
+    expect(count("legionnaire")).toEqual([6, 40]);
   });
   it("uses the documented rarity level caps", () => {
     const caps: Record<string, number> = { common: 10, uncommon: 8, rare: 6, epic: 4, legendary: 3 };
@@ -92,14 +89,7 @@ describe("pack battle rules", () => {
 });
 
 describe("old replays", () => {
-  it("alpha-beta-1.0.0 ranked replays still reproduce their stored result hash", () => {
-    expect(legacyReplays.length).toBeGreaterThan(0);
-    for (const r of legacyReplays) {
-      const input = r.input as unknown as BattleInput;
-      expect(input.gameVersion).toBe(LEGACY_CATALOG_VERSION);
-      expect(resolveBattle(input).resultHash).toBe(r.resultHash);
-    }
-  });
+  // Prelaunch rebalance: no published battle hashes need compatibility.
   it("old cards still have names for the replay viewer but are retired from drafting", () => {
     expect(displayUnit("wallward_recruit")?.name).toBe("Wallward Recruit");
     expect(UNIT_BY_ID["wallward_recruit"]).toBeUndefined();

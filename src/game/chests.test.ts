@@ -14,7 +14,7 @@ describe("chest odds", () => {
   });
   it("Gold chance 1% / 2% / 3%", () => expect([CHESTS.scout, CHESTS.war, CHESTS.crown].map((c) => c.goldFoilChancePercent)).toEqual([1, 2, 3]));
   it("median Coin shares: Scout 25, War 100, Crown 500", () => expect([medianShares("scout"), medianShares("war"), medianShares("crown")]).toEqual([25, 100, 500]));
-  it("reward cards are the 52 Legionnaire cards", () => expect(Object.values(REWARD_CARDS).flat()).toHaveLength(52));
+  it("reward cards are the 46 Legionnaire cards", () => expect(Object.values(REWARD_CARDS).flat()).toHaveLength(46));
 });
 
 describe("chest rolls", () => {

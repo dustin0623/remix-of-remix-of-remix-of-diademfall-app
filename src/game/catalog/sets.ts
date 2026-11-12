@@ -15,9 +15,9 @@ export const SETS = [
     "subtitle": "The Six Banners Rise",
     "releaseOrder": 2,
     "status": "launch",
-    "summoners": 12,
+    "summoners": 6,
     "troops": 40,
-    "total": 52
+    "total": 46
   },
   {
     "id": "legionnaire",
@@ -25,8 +25,8 @@ export const SETS = [
     "subtitle": "March of the Crownless Armies",
     "releaseOrder": 3,
     "status": "launch",
-    "summoners": 12,
+    "summoners": 6,
     "troops": 40,
-    "total": 52
+    "total": 46
   }
 ] as const;

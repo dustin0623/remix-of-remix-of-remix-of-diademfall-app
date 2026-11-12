@@ -1,0 +1,77 @@
+[
+    {
+        "valid":  true,
+        "topRailStarts":  [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                          ],
+        "rarity":  "common",
+        "transparentWindow":  true,
+        "changedPixelsOutsideSeal":  0
+    },
+    {
+        "valid":  true,
+        "topRailStarts":  [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                          ],
+        "rarity":  "uncommon",
+        "transparentWindow":  true,
+        "changedPixelsOutsideSeal":  0
+    },
+    {
+        "valid":  true,
+        "topRailStarts":  [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                          ],
+        "rarity":  "rare",
+        "transparentWindow":  true,
+        "changedPixelsOutsideSeal":  0
+    },
+    {
+        "valid":  true,
+        "topRailStarts":  [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                          ],
+        "rarity":  "epic",
+        "transparentWindow":  true,
+        "changedPixelsOutsideSeal":  0
+    },
+    {
+        "valid":  true,
+        "topRailStarts":  [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                          ],
+        "rarity":  "legendary",
+        "transparentWindow":  true,
+        "changedPixelsOutsideSeal":  0
+    }
+]

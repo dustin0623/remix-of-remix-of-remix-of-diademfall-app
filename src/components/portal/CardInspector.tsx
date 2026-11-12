@@ -1,3 +1,4 @@
+import { AbilityIcon } from "@/components/game/AbilityIcon";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
@@ -84,7 +85,10 @@ export function CardInspector({
                 unit.abilities.length ? (
                   unit.abilities.map((id) => (
                     <div className="inspector-ability" key={id}>
-                      <strong>{ABILITY_BY_ID[id]?.name ?? id}</strong>
+                      <strong className="flex items-center gap-2">
+                        <AbilityIcon id={id} decorative className="size-10" />
+                        {ABILITY_BY_ID[id]?.name ?? id}
+                      </strong>
                       <p>{ABILITY_BY_ID[id]?.mechanics}</p>
                     </div>
                   ))

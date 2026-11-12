@@ -1,0 +1,1063 @@
+{
+  "generator": "built-in image_gen",
+  "mode": "background-extraction",
+  "canvas": {
+    "width": 300,
+    "height": 420
+  },
+  "transparent": true,
+  "promptTemplate": "Use case: background-extraction. Image 1 is the EDIT TARGET, an existing original Diademfall character illustration. Remove ONLY its environment/background and return the SAME character artwork as a clean isolated transparent PNG cutout. Preserve the character's exact identity, species, face, expression, pose, anatomy, costume, armor, colors, dark outlines, cel shading, weapons, carried items and framing. Keep familiars or mounts that are part of this character, and retain subject-attached magical effects such as glowing hands, energy weapons, wings, smoke forming the creature, or a spirit body. Remove sky, scenery, architecture, trees, landscape, floor, ground rocks not part of the creature, and disconnected decorative background shards or swirls. Preserve the original crop; do not invent missing feet or limbs. Do not redesign, recolor, beautify, add props, change the pose, or add a card frame. No text, badges, numbers, logos, UI, watermark, ground shadow, new scene or solid background. Every pixel outside the isolated subject must have real alpha transparency, including gaps between limbs and props. Keep a portrait canvas and the original artwork's proportions.",
+  "promptSuffix": "\nCharacter to preserve: {name} ({id}). This is a cutout of the supplied art, not a new illustration.",
+  "portraits": [
+    {
+      "id": "abbess_nhal",
+      "name": "Abbess Nhal",
+      "file": "/assets/raw/portraits/hollow_legions/uncommon/summoner/abbess_nhal.png",
+      "sourceSha256": "420127ebf1535d32469036b8e9a20a6c5263249df8785e3cfdb7281b0e3e9cf9",
+      "sha256": "5be8ddf126099e5655160779d5205b7cd6f27aad983973860f900bd3a1061982"
+    },
+    {
+      "id": "aldric_stonebanner",
+      "name": "Aldric Stonebanner",
+      "file": "/assets/raw/portraits/bastion_orders/rare/summoner/aldric_stonebanner.png",
+      "sourceSha256": "dd4182c658db38b5a20c18505224d8061fb9a2b8ea49459c3bff50cd7f235d76",
+      "sha256": "854ce9b97adfdb75441381819cef73c56e36b6ec5ffbe7df2ba919a81ed9bdbc"
+    },
+    {
+      "id": "antler_guardian",
+      "name": "Antler Guardian",
+      "file": "/assets/raw/portraits/wild_courts/epic/normal/antler_guardian.png",
+      "sourceSha256": "12b7b86549d257eb5b4bed8f63ba40ee915cb4c749e1dbb956779f09c7ecd30d",
+      "sha256": "de4655061dde2f9e9fcd69c9159c0772dc10a518e8d49e00793ddc6f6b0df7fa"
+    },
+    {
+      "id": "ashen_drakeguard",
+      "name": "Ashen Drakeguard",
+      "file": "/assets/raw/portraits/wyrm_clans/epic/normal/ashen_drakeguard.png",
+      "sourceSha256": "d02ac24990fdaa91b3426caa6b02308b393b2118bb182c2b5d47ae7beef9ffd5",
+      "sha256": "dd3005e3c08f9b992009347e340171569bf86867eae3844cd0d866d558e68c99"
+    },
+    {
+      "id": "ashen_page",
+      "name": "Ashen Page",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/ashen_page.png",
+      "sourceSha256": "1e10bdbae2c8bf58159b4c7dc185e256aca74b40c4594c4897eb28975c42a3f4",
+      "sha256": "0edd1ef4553ff09431dec6b8b724b9ded0849c23a09082fbcfd16a8452216322"
+    },
+    {
+      "id": "ash_bolt_deadeye",
+      "name": "Ash-Bolt Deadeye",
+      "file": "/assets/raw/portraits/hollow_legions/uncommon/normal/ash_bolt_deadeye.png",
+      "sourceSha256": "acc443882775213ea3a4ca0093e33df5e628938cd1da000155e6af4a689a1bd8",
+      "sha256": "748dacc4f3b69bed2b97f24177936e5d0345ebc598d1a0c6736fe204224ac7a3"
+    },
+    {
+      "id": "bannerless_veteran",
+      "name": "Bannerless Veteran",
+      "file": "/assets/raw/portraits/wayfarer/uncommon/normal/bannerless_veteran.png",
+      "sourceSha256": "e2228265bd5f4f9427b963a3f6fb6b4f391eab75165d87a1685a7560c1d50a48",
+      "sha256": "544d8ed1afc9aa262d5032190eec2d571044b9a66aa45045e1fb803686374812"
+    },
+    {
+      "id": "banner_chirurgeon",
+      "name": "Banner Chirurgeon",
+      "file": "/assets/raw/portraits/bastion_orders/rare/normal/banner_chirurgeon.png",
+      "sourceSha256": "93e22e0005b0f64a123629bfefa07e08efed19c3bce21752ffc470eddaf4e562",
+      "sha256": "2bdff5b13cb1375dcd4dc1a5a5470f2b56bcc2fa5a5ada2d00d47811a98abe04"
+    },
+    {
+      "id": "basalt_drake",
+      "name": "Basalt Drake",
+      "file": "/assets/raw/portraits/wyrm_clans/epic/normal/basalt_drake.png",
+      "sourceSha256": "7a059314c252f2ba86a6001d784d1b5099de893dc5389b803bfb12474ba0531f",
+      "sha256": "398279bf87f9bbbf652abcc679560bc1214e174a29395fc33db50703fcfb392f"
+    },
+    {
+      "id": "black_bell_centurion",
+      "name": "Black Bell Centurion",
+      "file": "/assets/raw/portraits/hollow_legions/epic/normal/black_bell_centurion.png",
+      "sourceSha256": "cb5ed8857760923f5cb5b175a3f1560234ab709f7eecce4983094a3cae7859df",
+      "sha256": "b12d5977f0bfc64001b08ef3c96abda004562fff45261fb8552409704154e988"
+    },
+    {
+      "id": "bloodline_seer",
+      "name": "Bloodline Seer",
+      "file": "/assets/raw/portraits/wyrm_clans/rare/normal/bloodline_seer.png",
+      "sourceSha256": "e7234719dd267560217acba64678431a81f07d5768e23eb7a82bb8cf24b35bc8",
+      "sha256": "ba43db6fe7f060a7cf3cf6ef43db87f38f9013c7311c876ae9c24130e88a89b0"
+    },
+    {
+      "id": "bone_rat",
+      "name": "Bone Rat",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/bone_rat.png",
+      "sourceSha256": "1cbe59289481b5f94ccc3f7c07208d8bddfb5b51e2fc1f325025a8ec8fd66a7e",
+      "sha256": "6c23229af7f3041e7eb06a698d3c102da6d9abf9617de64704ecee8c35c05c62"
+    },
+    {
+      "id": "bram_forgewarden",
+      "name": "Bram Forgewarden",
+      "file": "/assets/raw/portraits/bastion_orders/rare/summoner/bram_forgewarden.png",
+      "sourceSha256": "e1345580d60408b20c8c80c6a11634814c625d7bbbdbe816491d46e51b765894",
+      "sha256": "b45308af90e8cefc6b9ad5e8d396950e88807968f475320821b344ae9ebe2349"
+    },
+    {
+      "id": "briar_dartling",
+      "name": "Briar Dartling",
+      "file": "/assets/raw/portraits/wild_courts/rare/normal/briar_dartling.png",
+      "sourceSha256": "d0cf0d516932e33380a7a30f8cd40b81ce6e64866426ae1f96d67be1cc236c2e",
+      "sha256": "f13f7564320556bf7c2605096d788a287e520e82e42cafda44d0629de9f0ad8c"
+    },
+    {
+      "id": "bronze_pilgrim",
+      "name": "Bronze Pilgrim",
+      "file": "/assets/raw/portraits/wayfarer/rare/normal/bronze_pilgrim.png",
+      "sourceSha256": "fd5dd2833072a45b32fe0d965d7765eb40e85fce31881dc8bbdceb74ca113244",
+      "sha256": "3e7351f7e896f74f1a6b2fdf302726c87ccc84dff89d3c8c8f11768dd7f71e6c"
+    },
+    {
+      "id": "burrow_mouse",
+      "name": "Burrow Mouse",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/burrow_mouse.png",
+      "sourceSha256": "be83ca8928bfa8d52068d14298bb8b1ac03872d7d120c1d2225d587f16f223c3",
+      "sha256": "6a77bebbbe2993f7c26657885d9ddaf89e2ea8bba4820cf3dd1e84ccb9b5fca1"
+    },
+    {
+      "id": "cael_rookwing",
+      "name": "Cael Rookwing",
+      "file": "/assets/raw/portraits/skybound_houses/rare/summoner/cael_rookwing.png",
+      "sourceSha256": "263a71bb71b04afced51ce7e72e96c9dfdaf84e25c3dbafeb7ed3d634f33a9bb",
+      "sha256": "9850a33a0d972033968955e769b8fcad9300fb31110f937b201ade4c35b96d6b"
+    },
+    {
+      "id": "camp_scavenger",
+      "name": "Camp Scavenger",
+      "file": "/assets/raw/portraits/wayfarer/common/normal/camp_scavenger.png",
+      "sourceSha256": "d3edd67fd9f9dfbb6da220a00ef0c70b13b9916d14ae7c857bfbf932bfcaf9d4",
+      "sha256": "a9238d4b0988eb0f889941d8ec66454c49fae716be46af6723872018724fb314"
+    },
+    {
+      "id": "candle_remnant",
+      "name": "Candle Remnant",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/candle_remnant.png",
+      "sourceSha256": "dfd1a2baef795594885aad7dba11853d37223e4a7040b7b783cdf8dee8b868eb",
+      "sha256": "fe6dbf6f36ec0e3c20b3eae612fc996dc8ac5f2dc38ae19af2f631eb6640f60c"
+    },
+    {
+      "id": "catacomb_sovereign",
+      "name": "Catacomb Sovereign",
+      "file": "/assets/raw/portraits/hollow_legions/legendary/normal/catacomb_sovereign.png",
+      "sourceSha256": "9e82cc9d219e3bece4a61921a651b326f3eb45a0e52891f33c17c6661c7c3ed0",
+      "sha256": "10a65bf4000a67585a9af52352c58c85ee03ea3f770b48375d2e466a1e0e2a44"
+    },
+    {
+      "id": "chain_magistrate",
+      "name": "Chain Magistrate",
+      "file": "/assets/raw/portraits/bastion_orders/rare/normal/chain_magistrate.png",
+      "sourceSha256": "625f6ab9e77f966554444d0b6325c782b9d1267fd940a030f671927b32d6a8c4",
+      "sha256": "e34d9693f2de7e77c649ac08e8be7d6c223e11c58a96aa1a9a39ca78b1b4fdf8"
+    },
+    {
+      "id": "chapel_thaumaturge",
+      "name": "Chapel Thaumaturge",
+      "file": "/assets/raw/portraits/bastion_orders/uncommon/normal/chapel_thaumaturge.png",
+      "sourceSha256": "88b97b321774f09c028e4ee9c31e4e00760922690e9749bd2b013651b986789a",
+      "sha256": "0c9a4d9d6fa2083a2627055f97b02be94122f4f49334a82f7726e93c829b6b97"
+    },
+    {
+      "id": "cinder_gecko",
+      "name": "Cinder Gecko",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/cinder_gecko.png",
+      "sourceSha256": "3abea8b995ac31a63b03ca296022c9c77df1db8583b0da15f6cef5647f0edaed",
+      "sha256": "8b025bdb141d36026db9a6934692ed538cec72d5325f61c400d5cb8d77aaca43"
+    },
+    {
+      "id": "citadel_behemoth",
+      "name": "Citadel Behemoth",
+      "file": "/assets/raw/portraits/bastion_orders/legendary/normal/citadel_behemoth.png",
+      "sourceSha256": "0a3fed334b3dad971648110f7efd5ff990f63cc497d1cc9ef040785d050ab0e9",
+      "sha256": "fab3c491921359806891e4a08f7b5bb46737569e79d02bdc0d672609fd08ad6c"
+    },
+    {
+      "id": "cliff_marten",
+      "name": "Cliff Marten",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/cliff_marten.png",
+      "sourceSha256": "87bc6986bed1ee75ca13763d4c703fcf176615503cc2ec6a767d938176e84e35",
+      "sha256": "b1d3a665a4b07c1823f6e71d651c14a98f431f52f876ddeec9d55557cc0baecf"
+    },
+    {
+      "id": "cloudhouse_champion",
+      "name": "Cloudhouse Champion",
+      "file": "/assets/raw/portraits/skybound_houses/epic/normal/cloudhouse_champion.png",
+      "sourceSha256": "16d4da49b7f3b93be1fa03bc8b470204b18ac517b1512f9bd686d5ff4f8618c1",
+      "sha256": "2d5354db9b1a36d8a506e43ebca472023885f50fb585770689253925a03b63e6"
+    },
+    {
+      "id": "cloud_reader",
+      "name": "Cloud Reader",
+      "file": "/assets/raw/portraits/skybound_houses/uncommon/normal/cloud_reader.png",
+      "sourceSha256": "42aa51995463c5b1e2aef38155a6dbd7f4267e14e5480fe35646d12f4436f3df",
+      "sha256": "9a2a947565b412df981ad8f1566aac18397c0dfc642dbda185398d409554c25f"
+    },
+    {
+      "id": "coal_snout_recruit",
+      "name": "Coal-Snout Recruit",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/coal_snout_recruit.png",
+      "sourceSha256": "70b1e50ba3245253344df1782e54a5f500890e5d99a6c33f68f31a5bdc893a13",
+      "sha256": "909d4820386c2c93e42f3ac5435febb2d523bb0f2ceab6db6f3e65d7f7597649"
+    },
+    {
+      "id": "coffin_dart",
+      "name": "Coffin Dart",
+      "file": "/assets/raw/portraits/hollow_legions/rare/normal/coffin_dart.png",
+      "sourceSha256": "ca5b9c20d5e7917c00d901a24d653a6ac5890d25b8e2eb9bff61773ff4094a5a",
+      "sha256": "44a1726ce9f72094871c9d17aa73fced948e4203ab079587a1f3180136b0f1b4"
+    },
+    {
+      "id": "colossus_of_the_first_wall",
+      "name": "Colossus of the First Wall",
+      "file": "/assets/raw/portraits/bastion_orders/legendary/normal/colossus_of_the_first_wall.png",
+      "sourceSha256": "4b598c80cbe48e1ac99e1123cf47781b4e0f97a4e886d6dc6956becd60dcdadc",
+      "sha256": "7492905de7be423ba053ffdaafdf673ea7018352095bba2a571b6ceb4609e58b"
+    },
+    {
+      "id": "contract_mender",
+      "name": "Contract Mender",
+      "file": "/assets/raw/portraits/wayfarer/rare/normal/contract_mender.png",
+      "sourceSha256": "95df6767a52611d3d5751c8c044a35c888a9618ef3128eb376c37a1bb65c5388",
+      "sha256": "2817687f9365c53717f45081691dfb0a1c3cb2e2b9fd650b444df359860fdabc"
+    },
+    {
+      "id": "copper_kobold",
+      "name": "Copper Kobold",
+      "file": "/assets/raw/portraits/wyrm_clans/uncommon/normal/copper_kobold.png",
+      "sourceSha256": "599e5d3eae5039ecf9dda6b85de23d5fccf683e7b26eef51de31f55675828798",
+      "sha256": "3ab6aa2c4ec883547adddd1ee59408d9d319a61176949814f551e75150fd59ff"
+    },
+    {
+      "id": "crowned_mammoth",
+      "name": "Crowned Mammoth",
+      "file": "/assets/raw/portraits/wild_courts/legendary/normal/crowned_mammoth.png",
+      "sourceSha256": "5def0b26b170fea861f7426233407853b7ee0e8fa7b08ddf3e68f8368dc9eef0",
+      "sha256": "02485568598d555afd12f4dcb8d30537010e1776693eeda3407bdbcab2e96c7f"
+    },
+    {
+      "id": "crownless_giant",
+      "name": "Crownless Giant",
+      "file": "/assets/raw/portraits/wayfarer/epic/normal/crownless_giant.png",
+      "sourceSha256": "5af854093b0575eb28b24e0af7b91fe54b1eaa2b4056d3942f7c481353d53104",
+      "sha256": "18463fa3e062311366c492430b9990bf150b37e42053a0298bf8464996869ff4"
+    },
+    {
+      "id": "crown_pike",
+      "name": "Crown Pike",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/crown_pike.png",
+      "sourceSha256": "6014dda79dc2c393839a02ec38e5579a423793708e355f45056092fb8abfc272",
+      "sha256": "2c36a0f67357bf13cb01bcd0a80b1bf2a88d4c0682f3f1528d5ddeec9d982a14"
+    },
+    {
+      "id": "crypt_scrabbler",
+      "name": "Crypt Scrabbler",
+      "file": "/assets/raw/portraits/hollow_legions/uncommon/normal/crypt_scrabbler.png",
+      "sourceSha256": "10d15524620ddbedb3f7e48a0149b56078278ef4e574006191780f6eed93d47e",
+      "sha256": "4ded972c64dec0acccefa3a82ef965f418421476f6d623b4ac580cd09e6d49ee"
+    },
+    {
+      "id": "debt_collector",
+      "name": "Debt Collector",
+      "file": "/assets/raw/portraits/hollow_legions/rare/normal/debt_collector.png",
+      "sourceSha256": "f816c6cec76d0a66611c037b53724d34902003db5cf22d6eefdc6237bcaaf1f0",
+      "sha256": "960e9d55c9a556c1b071deaa73cdff812bc9f4fbb9a11528eb7aca995fca7717"
+    },
+    {
+      "id": "duke_avorran",
+      "name": "Duke Avorran",
+      "file": "/assets/raw/portraits/skybound_houses/legendary/summoner/duke_avorran.png",
+      "sourceSha256": "81dd81ccf07ccda769c745d101a418939985ef7036e28002f9007abec9259968",
+      "sha256": "c983502fca0e72e79b199ae09048a0b0c2a381d4f437e2416f3c64a2d32b4865"
+    },
+    {
+      "id": "eira_thornpath",
+      "name": "Eira Thornpath",
+      "file": "/assets/raw/portraits/wild_courts/rare/summoner/eira_thornpath.png",
+      "sourceSha256": "7ac52e05f061fdc62d7f3c64573298951ad304599291fee705e9fe68645a7427",
+      "sha256": "78ba66e473faef76ea9cd6cebb87ef8347be9db35ab41fe1f2c5ded145b6ecc4"
+    },
+    {
+      "id": "elderhorn_colossus",
+      "name": "Elderhorn Colossus",
+      "file": "/assets/raw/portraits/wild_courts/legendary/normal/elderhorn_colossus.png",
+      "sourceSha256": "c78fd5a5746c060baad20a95e1d7ac1bcb1ffcbdf91392a5fec11ffbcdbbee00",
+      "sha256": "d579a548e9621f6810a7207e1e14c8263d3ce5b6e6bb820a1f698f5e5790aae3"
+    },
+    {
+      "id": "elder_scale_guard",
+      "name": "Elder Scale Guard",
+      "file": "/assets/raw/portraits/wyrm_clans/epic/normal/elder_scale_guard.png",
+      "sourceSha256": "550b78204edec767668501022971207f9b30f8887208464817438f2f6438d50e",
+      "sha256": "9281ad88c0adafcf6397d00f66db39e9d36f0252a7c15578db0ce1dc8ee25aae"
+    },
+    {
+      "id": "ember_newt",
+      "name": "Ember Newt",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/ember_newt.png",
+      "sourceSha256": "f895b6ae26e5570c9d617c46a44cebc544821ce3514da4db16f4f41a7fde4b8e",
+      "sha256": "2e107bdb598655f4d9317d5031efa19d6e9643d5e0b0b72eca5305a52ab5f345"
+    },
+    {
+      "id": "eyrie_runner",
+      "name": "Eyrie Runner",
+      "file": "/assets/raw/portraits/skybound_houses/uncommon/normal/eyrie_runner.png",
+      "sourceSha256": "9b09b2e192b5ba250d78fdfe168a8d51a5173c9284a549ff2aaaa2bfad95fc0d",
+      "sha256": "7c32bf0044844ca834391f3d5edbad29083c02d7baf7105911ae5f28c2eddd9c"
+    },
+    {
+      "id": "fangroot_cub",
+      "name": "Fangroot Cub",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/fangroot_cub.png",
+      "sourceSha256": "7a7f497c2402ff0de3897a435cb360d6f120853c5072588884257f3a01714a85",
+      "sha256": "23fcac34efa9b543426382b3721d7046513186a314648f71b15fc086389d36b3"
+    },
+    {
+      "id": "fate_stitcher",
+      "name": "Fate Stitcher",
+      "file": "/assets/raw/portraits/veil_covenant/rare/normal/fate_stitcher.png",
+      "sourceSha256": "9a29269ddf345a78668972f14d071c6de015af5baba1cc6fb6db7e332c98103f",
+      "sha256": "d6941d75c595d2582b5e8a751d2de5ef5ec199ccb0f9632712a9cb64a3ab3297"
+    },
+    {
+      "id": "fen_quill",
+      "name": "Fen Quill",
+      "file": "/assets/raw/portraits/veil_covenant/rare/summoner/fen_quill.png",
+      "sourceSha256": "f53a2b175bfed284d9d6f7e4ad19a5126e48c395c609773749a505bee1e65246",
+      "sha256": "cc5ea17a566909b6f2e67c14f7778d3112342adac6ba89cd780c54a1b51eb0e4"
+    },
+    {
+      "id": "first_blood_wyrm",
+      "name": "First-Blood Wyrm",
+      "file": "/assets/raw/portraits/wyrm_clans/legendary/normal/first_blood_wyrm.png",
+      "sourceSha256": "73a7c805b48433061b4fa43b3d41b88b5e061e8bcaff36a7442d9c2e944ba7e2",
+      "sha256": "d034ca649e29dcb6f3dd10cd6266cca7f2e1d6c7af798623bca1c48ca84a41f5"
+    },
+    {
+      "id": "free_lance_archer",
+      "name": "Free-Lance Archer",
+      "file": "/assets/raw/portraits/wayfarer/common/normal/free_lance_archer.png",
+      "sourceSha256": "94e5497d114e425cdf77129df7d912da78d6bc0668589ac4d241a67d45e5a96e",
+      "sha256": "1cc21d3cf0a0f4afb38af7c7a7a2180ded19802fb8d0081f324bb335ad207985"
+    },
+    {
+      "id": "gale_lancer",
+      "name": "Gale Lancer",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/gale_lancer.png",
+      "sourceSha256": "0798d8b9c79964a419d536995505ce5a406442318b9037edad81566ccc0f0a17",
+      "sha256": "fd0d96899d9f5ae22b62157d23a2f9d3e9b9c8eabbbc82d5e33311d934e9e42b"
+    },
+    {
+      "id": "garran_moonfang",
+      "name": "Garran Moonfang",
+      "file": "/assets/raw/portraits/wild_courts/legendary/summoner/garran_moonfang.png",
+      "sourceSha256": "5a54696d0f6b0ca4f08e6ea0f494ded685de8b9bbf885a959a5a88dfc6cea378",
+      "sha256": "95d4f361904c38c17e0575e1b86104d64a71efac1e9c2444aeb725fbb307df08"
+    },
+    {
+      "id": "gatebolt_archer",
+      "name": "Gatebolt Archer",
+      "file": "/assets/raw/portraits/bastion_orders/uncommon/normal/gatebolt_archer.png",
+      "sourceSha256": "7c0ad171c18d1eb153ec488db3e5c35759bab365f18a7e2d1bb168887dbf30c2",
+      "sha256": "73211c5b2dcd467e85bb57d1996655ed6b8345fbcdff4634fc5997e18d6cb6e6"
+    },
+    {
+      "id": "gilded_castellan",
+      "name": "Gilded Castellan",
+      "file": "/assets/raw/portraits/bastion_orders/epic/normal/gilded_castellan.png",
+      "sourceSha256": "8142b9887d847888f9445a612f7671e82f500bd1d41414f5678f15ce3bd24be1",
+      "sha256": "f025f4e5332f4c72698cb189f58a7f53ca1372066a00513f5110aaddba3d5da8"
+    },
+    {
+      "id": "glass_imp",
+      "name": "Glass Imp",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/glass_imp.png",
+      "sourceSha256": "492e4b1c86fbba820d84789c416ac6561e30da9f710fbf7134976bddc1858ae7",
+      "sha256": "847c815cb4b24faaf944e5483a4d67c1811c862998ef6c198d0cd8dbc865a8fa"
+    },
+    {
+      "id": "glimmerbow_spy",
+      "name": "Glimmerbow Spy",
+      "file": "/assets/raw/portraits/veil_covenant/uncommon/normal/glimmerbow_spy.png",
+      "sourceSha256": "c3c8ccf58898d5587f4221d496115160c987876698977d2d3f770bb4161f7e8b",
+      "sha256": "72efeee686fcf115cecc905158fae1b17af4c887c1639e208ff6f0655bb33280"
+    },
+    {
+      "id": "gloam_courtier",
+      "name": "Gloam Courtier",
+      "file": "/assets/raw/portraits/veil_covenant/epic/normal/gloam_courtier.png",
+      "sourceSha256": "20c62c5cd966b32b1baecf1f19016c6e9834620cac76d0c0affa479150e363e0",
+      "sha256": "7a65c2e2657e46d9b79d13957bd04d7676102b4f1fdf5cac7507eb027ec9e7eb"
+    },
+    {
+      "id": "granite_bailiff",
+      "name": "Granite Bailiff",
+      "file": "/assets/raw/portraits/bastion_orders/epic/normal/granite_bailiff.png",
+      "sourceSha256": "60c2d463ea7ee3867c9915f746060f905c7e5687b7642288c40d443a64097d2b",
+      "sha256": "79132fa9cdcdd268c47a6ca8b5f04384c0e9f17a8f5875c9de132737b507c3ef"
+    },
+    {
+      "id": "grave_cantor",
+      "name": "Grave Cantor",
+      "file": "/assets/raw/portraits/hollow_legions/uncommon/normal/grave_cantor.png",
+      "sourceSha256": "f4c3ddabbeb853bf72763e58889635c59377d5d189a7eaabba07223d31160134",
+      "sha256": "e9217f0b60abb0c0ec58b3380e5847ce7df69de603f29ec13510cf7417c6e6eb"
+    },
+    {
+      "id": "grave_levy",
+      "name": "Grave Levy",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/grave_levy.png",
+      "sourceSha256": "ff282ab1ae6996577a95635e7a78ffa48ba5015420f443db0172ac28ed70344d",
+      "sha256": "8c2b586008db9139faba4f77aa6a06899be3a2d190866805dd90cfdd0576bc0c"
+    },
+    {
+      "id": "greatpaw_warden",
+      "name": "Greatpaw Warden",
+      "file": "/assets/raw/portraits/wild_courts/epic/normal/greatpaw_warden.png",
+      "sourceSha256": "b53765328857d012c6a3e79517f508c956b8e9587a7379115000d9abe2564ebc",
+      "sha256": "d480494bdc0ba3f90e67334ce94d3b6dd97ccae0523b922a62209e1062920ee1"
+    },
+    {
+      "id": "greycloak_duelist",
+      "name": "Greycloak Duelist",
+      "file": "/assets/raw/portraits/wayfarer/epic/normal/greycloak_duelist.png",
+      "sourceSha256": "95c6fe3e9997a179a77f86ea12e912b99c9b6f7cbe0b61460a706ab09eb357e0",
+      "sha256": "2531e25b762b084be4b26dd8d9107ea9ba9e2a4fc0f57d594441a9293860b97d"
+    },
+    {
+      "id": "griffin_legionary",
+      "name": "Griffin Legionary",
+      "file": "/assets/raw/portraits/skybound_houses/epic/normal/griffin_legionary.png",
+      "sourceSha256": "73d02f7c81339c877ff440f3c4a123a0c22bf8f9d415e665c3c64f1c4f64ba0a",
+      "sha256": "bf982242ede031110904056fa990d4d674ad0869c210bbc3e44a28ae2e151a6a"
+    },
+    {
+      "id": "griffin_warden",
+      "name": "Griffin Warden",
+      "file": "/assets/raw/portraits/skybound_houses/epic/normal/griffin_warden.png",
+      "sourceSha256": "967fd8ef285d080e8c98dfd953117f17f9ca6a1c8c133e2c91779be2d82f8316",
+      "sha256": "8eff50060d2d89c4c856cc87b268c8eab7d179f35183f5b2972407dd5a05c91e"
+    },
+    {
+      "id": "grove_tender",
+      "name": "Grove Tender",
+      "file": "/assets/raw/portraits/wild_courts/rare/normal/grove_tender.png",
+      "sourceSha256": "810fcb9e32286003eef702a60b7681d3d8523e34c390386863d9687ea890b69a",
+      "sha256": "baee881ec1f297ff5bce61c09a99269e754dceefd1421c02a492d92be820649b"
+    },
+    {
+      "id": "hedge_crossbowman",
+      "name": "Hedge Crossbowman",
+      "file": "/assets/raw/portraits/wayfarer/uncommon/normal/hedge_crossbowman.png",
+      "sourceSha256": "b6420f7b2224bde339d28b3ee47334a647e236f7542fa706ed1d657c08342b69",
+      "sha256": "c4ee85d07846729df48ca1c94e77f32305e63a96888c5c7c7cf068be60a7f67b"
+    },
+    {
+      "id": "hoard_slinger",
+      "name": "Hoard Slinger",
+      "file": "/assets/raw/portraits/wyrm_clans/rare/normal/hoard_slinger.png",
+      "sourceSha256": "def212870a3bcda472729b08944d32b3656ee3b13b47d5fe9a482b6993f451e4",
+      "sha256": "f4c08eea88d46ccb8afa5d69833da19dc7cb93dbe4a67cd322a7e6d65367779b"
+    },
+    {
+      "id": "hoard_tender",
+      "name": "Hoard Tender",
+      "file": "/assets/raw/portraits/wyrm_clans/rare/normal/hoard_tender.png",
+      "sourceSha256": "b1886a2035b343cddd17ed2c7bbc1f778a3066abc8b5c0ecf7b036f7205b0949",
+      "sha256": "4e65d1104b3c1836c888ff978426297db70b3d50b1fe7b39db22109858a9fdaf"
+    },
+    {
+      "id": "hookwing_recruit",
+      "name": "Hookwing Recruit",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/hookwing_recruit.png",
+      "sourceSha256": "f10ec4338bb3c48c933eb3fdeb4436a4073d15634c01f0751d1d1cd1ccfed2c6",
+      "sha256": "2141948a9efff6a3fb205858e4de868dccbe2b906347feba9d14022c71da5a51"
+    },
+    {
+      "id": "inkcap_familiar",
+      "name": "Inkcap Familiar",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/inkcap_familiar.png",
+      "sourceSha256": "43bad6f01a89cb063c0c1cf6452cf4e1f1a05cf1fdb09a9d012a335090a08652",
+      "sha256": "27d5a86e9b07d362172c56a24b56462803f2ff17e16a90474d7b8be76d70fe3f"
+    },
+    {
+      "id": "ironscale_skulk",
+      "name": "Ironscale Skulk",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/ironscale_skulk.png",
+      "sourceSha256": "b3784d8ce4603bef528a0294575104ad6ef17a97e90cf76e29c80275eac72c5e",
+      "sha256": "7745badd00190a40d2f80e921c8fcbe2b790a60d8efe7e2261ec747eec23ebf4"
+    },
+    {
+      "id": "iron_vow_captain",
+      "name": "Iron-Vow Captain",
+      "file": "/assets/raw/portraits/bastion_orders/epic/normal/iron_vow_captain.png",
+      "sourceSha256": "cbbdb48257d2bb0f1a935b6912d12a15c3cfa2731d3ee4b56cc23ce23dad8b03",
+      "sha256": "4947d193150e95b94bd92ee5cedb55712e673d68973b51f0f4cecc5619ac017c"
+    },
+    {
+      "id": "king_ossuary",
+      "name": "King Ossuary",
+      "file": "/assets/raw/portraits/hollow_legions/legendary/summoner/king_ossuary.png",
+      "sourceSha256": "4d72a9715d1f789f55eadb120c027a858d0741cadb0fdd9c08114e83500027ce",
+      "sha256": "257902a4ac086f40a7799d58b020cf25c0c68ca5cf44f6e93f5cfdcdbf1661f7"
+    },
+    {
+      "id": "kite_squire",
+      "name": "Kite Squire",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/kite_squire.png",
+      "sourceSha256": "7bbb7785e4463f9e15792eb4e002cef8405e6cc19c881aa49629b090300dbf51",
+      "sha256": "4e6f3a6af0faed9b20fb4895ad9c40eb62e5faf4f11f329c3a7df208c592c388"
+    },
+    {
+      "id": "kiva_emberledger",
+      "name": "Kiva Emberledger",
+      "file": "/assets/raw/portraits/wyrm_clans/rare/summoner/kiva_emberledger.png",
+      "sourceSha256": "1a05e3c90f95258b56a1ec43001804e5d4f966659e06c5392e5251eab4f3ab50",
+      "sha256": "8623b7deb2c0a31422ace35dfa4c72fb7b4530f04d0bb60a1e1bb31b38f75fa8"
+    },
+    {
+      "id": "knotwitch",
+      "name": "Knotwitch",
+      "file": "/assets/raw/portraits/veil_covenant/rare/normal/knotwitch.png",
+      "sourceSha256": "69a59f335e2d3fdd9215a128706da06b6fa8a77e6bf752343ee20e0126d60cac",
+      "sha256": "964e64f5fa75a4fa3f699f76f5c2cb8522f8ebbd80373cddb212072c43687304"
+    },
+    {
+      "id": "lacquered_sentinel",
+      "name": "Lacquered Sentinel",
+      "file": "/assets/raw/portraits/veil_covenant/epic/normal/lacquered_sentinel.png",
+      "sourceSha256": "44fdcc380e70630aec2d96f21f0e641c34c3036d9bf7a1b1f7fc42af16cd33b9",
+      "sha256": "b926346a87a7e5a5bb93feae2bfc10d074886d8efb238a36ea52b7784336d3fa"
+    },
+    {
+      "id": "lady_serane_vale",
+      "name": "Lady Serane Vale",
+      "file": "/assets/raw/portraits/bastion_orders/uncommon/summoner/lady_serane_vale.png",
+      "sourceSha256": "c0c1799773852b551241915f19517be2c3747f058ec1735ffb2ba52d5951cae0",
+      "sha256": "4d30fba1dfa4ce85da7aaee53450c60398afc95a57b191035a68ae6fff8c4fbf"
+    },
+    {
+      "id": "lantern_squire",
+      "name": "Lantern Squire",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/lantern_squire.png",
+      "sourceSha256": "1fd1f3c518add0ecaf49a08ada47b3c12239ff666ef713336729ab8c4ad609b5",
+      "sha256": "e66c6e42b8e7b6a3f296dd166e6ec61f4e7cac21fa3dbb61de18c85b69a8a199"
+    },
+    {
+      "id": "levy_drummer",
+      "name": "Levy Drummer",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/levy_drummer.png",
+      "sourceSha256": "3d397da57663f9cc8d9f128fa011a4add1a9ac5b61e9115bbc604e9b31a440c2",
+      "sha256": "79482e2d9a412ca484158177c4f43c71c1f39442594986d994d8fe410b2ddbbb"
+    },
+    {
+      "id": "loose_feather",
+      "name": "Loose Feather",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/loose_feather.png",
+      "sourceSha256": "dc85f62715cf9e32bfa18f4b619f4e6e3c065956e86965154386a08fd06072cd",
+      "sha256": "3fbc53cc6804349192e58a1127a708e3d450897c1aa5e7918265c4c00d0f99ae"
+    },
+    {
+      "id": "maelor_ironhand",
+      "name": "Maelor Ironhand",
+      "file": "/assets/raw/portraits/bastion_orders/epic/summoner/maelor_ironhand.png",
+      "sourceSha256": "680eb1b4766d3b03ff08463bfd3e299b5ef1dfe9d898d66311e415d5678ceac8",
+      "sha256": "2cffe17c229b8613694b8708292b5b8345bc22b0308c8dab7628008f9289adc6"
+    },
+    {
+      "id": "maris_cloudreel",
+      "name": "Maris Cloudreel",
+      "file": "/assets/raw/portraits/skybound_houses/uncommon/summoner/maris_cloudreel.png",
+      "sourceSha256": "d212368dcb9d3010ee1279f5335e8f2cb1508027f991776cd128dae031a358a3",
+      "sha256": "1562c9609fcd240d0e97ecc658ff4444bf859114213afea550abcbf137adc4c5"
+    },
+    {
+      "id": "marrow_surgeon",
+      "name": "Marrow Surgeon",
+      "file": "/assets/raw/portraits/hollow_legions/rare/normal/marrow_surgeon.png",
+      "sourceSha256": "5ff2c69f5449f5501a1a2fe388a773e555dfce25d352913b320fda78d8947f2b",
+      "sha256": "920622863c8c0d627eec0f0093ad6e55cb0524af5cd31c3970049af594de05dd"
+    },
+    {
+      "id": "masked_duelist",
+      "name": "Masked Duelist",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/masked_duelist.png",
+      "sourceSha256": "679dd2b41c700214196b5df143c3b9f0a1d40d93866af27882b6fe46369d8004",
+      "sha256": "70c4e8b429632ffb081f2ed6de2ea2fb813e27e78740904687dabe7f60f42b81"
+    },
+    {
+      "id": "miravel_threadseer",
+      "name": "Miravel Threadseer",
+      "file": "/assets/raw/portraits/veil_covenant/uncommon/summoner/miravel_threadseer.png",
+      "sourceSha256": "3bc6dbe7bffc86bf8cdfab962a6671491c29ee1b12186ae3d5d579b8bc255eda",
+      "sha256": "a40ff30b8aff982c4edfcd8d32862ec586b0d79b8d540c4d4854e36eb7e3f396"
+    },
+    {
+      "id": "mirrorblade_envoy",
+      "name": "Mirrorblade Envoy",
+      "file": "/assets/raw/portraits/veil_covenant/epic/normal/mirrorblade_envoy.png",
+      "sourceSha256": "c5f3757f4db1e5311c7356147eaf1024023afaea91fe38900793b6cd4960c266",
+      "sha256": "0972c8a2af7ca1ba0c469e47c9f15791583af10b865fb1e7b22ab84a81fcd5ae"
+    },
+    {
+      "id": "mistcaller",
+      "name": "Mistcaller",
+      "file": "/assets/raw/portraits/skybound_houses/uncommon/normal/mistcaller.png",
+      "sourceSha256": "b95042294d0958a308766e549d1edb7cb50bfa3c7a313936995accb15976cd67",
+      "sha256": "5077a3993f3727734fd577bc89492ced1c73841fa8e2848439093c02c748ade6"
+    },
+    {
+      "id": "moat_runner",
+      "name": "Moat Runner",
+      "file": "/assets/raw/portraits/bastion_orders/uncommon/normal/moat_runner.png",
+      "sourceSha256": "db1aa5f93da3f2b382910076c7167b7843d463e9f0d8916e4e7a7794f6580e61",
+      "sha256": "cc8a502fba4d11b07a7f8364d457645a54e17508b067ff1a6e9a883fa46c79a0"
+    },
+    {
+      "id": "moonclaw_stalker",
+      "name": "Moonclaw Stalker",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/moonclaw_stalker.png",
+      "sourceSha256": "674d249a0da2e59f6a00d95bff0b8238b2adc589e2bd7c0f9aa33a7bdd1a6299",
+      "sha256": "28450e568a33fb0ce6cb928bbeed28bd7766e3563e01a762503b49ff10035166"
+    },
+    {
+      "id": "moon_mirror_adept",
+      "name": "Moon-Mirror Adept",
+      "file": "/assets/raw/portraits/veil_covenant/uncommon/normal/moon_mirror_adept.png",
+      "sourceSha256": "033c0308751866a1558829b39ad40689839e2b2bfacd1486f2ef8c1a0d7ab512",
+      "sha256": "12f4ccb7d4e8e040e908490d167281de96d66424a6a9dd7b85536067ffb08550"
+    },
+    {
+      "id": "morcant_bellkeeper",
+      "name": "Morcant Bellkeeper",
+      "file": "/assets/raw/portraits/hollow_legions/rare/summoner/morcant_bellkeeper.png",
+      "sourceSha256": "e6cb347b9877bdf237738866fa77bf7edad9d02e6467b9cd4e99f016678b5d9f",
+      "sha256": "80c281204d5efd835669afe8820c7798acd50639264bd4f6204d1d61a397b317"
+    },
+    {
+      "id": "moss_oracle",
+      "name": "Moss Oracle",
+      "file": "/assets/raw/portraits/wild_courts/uncommon/normal/moss_oracle.png",
+      "sourceSha256": "c56edb20e506ef7bad73f2779685047661014bdee72f15f68a37b26be70ccf32",
+      "sha256": "b88112411b3a7f176928e9fb8c94980a770896574f125faadd5325b42afb8846"
+    },
+    {
+      "id": "mourning_pike",
+      "name": "Mourning Pike",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/mourning_pike.png",
+      "sourceSha256": "bf2e3f816c56709e4bb6898cd9314a58ab84158ba557073bd6fc06f122b75fe0",
+      "sha256": "73881d611b1b84b57e53f07e61aa76313aa72a56e365d95349637a81ea2213eb"
+    },
+    {
+      "id": "nameless_colossus",
+      "name": "Nameless Colossus",
+      "file": "/assets/raw/portraits/wayfarer/legendary/normal/nameless_colossus.png",
+      "sourceSha256": "77fb8f96e3ea06f478bd75dfa06797e034bf573c6b22759167cbf1df064f3ae1",
+      "sha256": "1da972328d3e287c5a12b017e96e4fb61722e5e9297e3cf826427566bc310db5"
+    },
+    {
+      "id": "needlewing_hunter",
+      "name": "Needlewing Hunter",
+      "file": "/assets/raw/portraits/wild_courts/uncommon/normal/needlewing_hunter.png",
+      "sourceSha256": "ada99b8ccd16702038c1ccbdc7c645a0f3ee6a8c333a6f428521cc4ea1ee28ac",
+      "sha256": "ccd2e06f05e48a265bdddc769e626e8d7a67ea8b0b9c16c4c16f3b753f3f9106"
+    },
+    {
+      "id": "oathcarver_acolyte",
+      "name": "Oathcarver Acolyte",
+      "file": "/assets/raw/portraits/bastion_orders/uncommon/normal/oathcarver_acolyte.png",
+      "sourceSha256": "76fcadb642fc2539e62a512fdf5260ecfc68d1f5f92093f0efb2d38cb6fafaab",
+      "sha256": "fcf3b6c364e3948425b11d39ec41ff296e087077b7b9dd51cfacd7531d506020"
+    },
+    {
+      "id": "oris_glassmoth",
+      "name": "Oris Glassmoth",
+      "file": "/assets/raw/portraits/veil_covenant/rare/summoner/oris_glassmoth.png",
+      "sourceSha256": "60ef8aba534d25a8ab1bab699ef8788fe3ee5bfad6a676725eb8c0e544543dc5",
+      "sha256": "26ef53b8112e8f5d4eb38b3fb2ea8bcc2a2738e3ea5ae916fd3a2daeefad6e39"
+    },
+    {
+      "id": "orrun_the_first_scale",
+      "name": "Orrun the First Scale",
+      "file": "/assets/raw/portraits/wyrm_clans/legendary/summoner/orrun_the_first_scale.png",
+      "sourceSha256": "50e94be3a364534ad1a8c687ae73fc4622906ba6c3fd8ee1ab94823f0a112d9e",
+      "sha256": "d24b31fea73f6e9d50ec88e77e1a08f141b08665613faab701ee9907c365e2a7"
+    },
+    {
+      "id": "ossuary_guard",
+      "name": "Ossuary Guard",
+      "file": "/assets/raw/portraits/hollow_legions/epic/normal/ossuary_guard.png",
+      "sourceSha256": "3c929f42539fd6887965b95c1b49a525fda66aa8ae1336533bcc2335216009ce",
+      "sha256": "32d1ed603a6609adbb3332e53d20d2d7b3cc21ea779434cb03e3accc85b23949"
+    },
+    {
+      "id": "pack_pup",
+      "name": "Pack Pup",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/pack_pup.png",
+      "sourceSha256": "5d43bd25e609674b8c9da1b748cc533edb37fe9e9a5265624e0dfbf905dd36e9",
+      "sha256": "08418f37e42f8c784dd47191f1219812ee3faf8df4540fe3e58cb19b083cba09"
+    },
+    {
+      "id": "palace_of_one",
+      "name": "Palace of One",
+      "file": "/assets/raw/portraits/veil_covenant/legendary/normal/palace_of_one.png",
+      "sourceSha256": "15ef7fd5d6736197edb04e17f6c4eadc2cdd40b01e660638e501f1424158fa50",
+      "sha256": "8027bc490e12dc1d2ba581cca0f79fec8563c0cbbaf953007c94b997ea81f56e"
+    },
+    {
+      "id": "pale_medium",
+      "name": "Pale Medium",
+      "file": "/assets/raw/portraits/hollow_legions/uncommon/normal/pale_medium.png",
+      "sourceSha256": "1372ba34882a75aab171799327ef60791d4678f1ae7e485d51f234fa3587d4bb",
+      "sha256": "cf1dfa5ce01713b357c3b5667cae571927f99886038efeefc0e6a5632bacb227"
+    },
+    {
+      "id": "paper_moth",
+      "name": "Paper Moth",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/paper_moth.png",
+      "sourceSha256": "7f7fb3ad40dbe4fc2b891c6379e4baad380c84024203860e777e6099bd6be182",
+      "sha256": "5e24560129ec10343fafe519c6318779f07a89351e7a97a253cc9fb27ef69000"
+    },
+    {
+      "id": "pebble_familiar",
+      "name": "Pebble Familiar",
+      "file": "/assets/raw/portraits/wayfarer/common/normal/pebble_familiar.png",
+      "sourceSha256": "defe7a5303e53c1f5bac9eea2c031ada9cb018dbaf79bd2737f8ac7a7f4f501e",
+      "sha256": "f7ba00034260afb7ddfcc17e3f2fb3a56e7d59708fa959f7b4f89f3bf634f3ad"
+    },
+    {
+      "id": "pennant_swift",
+      "name": "Pennant Swift",
+      "file": "/assets/raw/portraits/skybound_houses/common/normal/pennant_swift.png",
+      "sourceSha256": "72d5702ec36f65f0737a96fbcd5333b1532732c4786c9845a95af447268e4355",
+      "sha256": "f5a266b2430757b926bac21954b5535e001bddcc7af1c36db8fe1bfa497c74e7"
+    },
+    {
+      "id": "pip_briarwhistle",
+      "name": "Pip Briarwhistle",
+      "file": "/assets/raw/portraits/wild_courts/rare/summoner/pip_briarwhistle.png",
+      "sourceSha256": "72c180130d82cb8c1665b2b087a0e858282547a45c6f27ff635ea6ad0e39433d",
+      "sha256": "c5a71175b3dba17251ba687bbbc54cca7cb34704f31cde7d905b7ef5f8dfa779"
+    },
+    {
+      "id": "prism_needler",
+      "name": "Prism Needler",
+      "file": "/assets/raw/portraits/veil_covenant/rare/normal/prism_needler.png",
+      "sourceSha256": "743b5a99e6ba9316627f3fb6776e27226ebd8c0e73342838f9e21296a6d43f90",
+      "sha256": "f419da89ab0e59de7af264b69a66ab895ba46c245fe89f88573891110ef6ea57"
+    },
+    {
+      "id": "rampart_arbalist",
+      "name": "Rampart Arbalist",
+      "file": "/assets/raw/portraits/bastion_orders/rare/normal/rampart_arbalist.png",
+      "sourceSha256": "0b727b229719a307a36c97f140c3363642b2bb9f12f54321466bc1b0168c4b37",
+      "sha256": "1d5290e9057237316b9ead8b32730cd39fe05386a60e242468262d177cb9c13d"
+    },
+    {
+      "id": "rattleblade",
+      "name": "Rattleblade",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/rattleblade.png",
+      "sourceSha256": "b8a40326e643bccfde929ea47e15338f8252be23ebdd026329f7a7f5c82cb20a",
+      "sha256": "af1927834cfa3a6d8d4db648acdacf54e628505bf39d1d878c833524bffdabe4"
+    },
+    {
+      "id": "ribbon_fox",
+      "name": "Ribbon Fox",
+      "file": "/assets/raw/portraits/veil_covenant/uncommon/normal/ribbon_fox.png",
+      "sourceSha256": "cc3954f7fdafdca08f6d340a3314a9a941ceb44f12bbe4b89daf3d0deac1cdd3",
+      "sha256": "f731fc3b4b9e67a595e22e0ead31255b164101708f594788bc0257b99d6bdf7b"
+    },
+    {
+      "id": "roadside_tinker",
+      "name": "Roadside Tinker",
+      "file": "/assets/raw/portraits/wayfarer/common/normal/roadside_tinker.png",
+      "sourceSha256": "e100e93517a5dddacfd46dd8971140a2e6753aac9db8dbe34abbd25c74d5f890",
+      "sha256": "3d7954ac2938174d94231ab4f3c90e9acd79bb2718c61aac81956a2ec718ed4f"
+    },
+    {
+      "id": "rookbow_scout",
+      "name": "Rookbow Scout",
+      "file": "/assets/raw/portraits/skybound_houses/rare/normal/rookbow_scout.png",
+      "sourceSha256": "62e3c716e14deb4f31882d02d39e9ab8b771ba9584c006aab4abe0c9675a8321",
+      "sha256": "cb73becf85d1d8f17da9db5375ab18fd4b1a982d539194bb028c4624d215ec28"
+    },
+    {
+      "id": "rootsnare_druid",
+      "name": "Rootsnare Druid",
+      "file": "/assets/raw/portraits/wild_courts/rare/normal/rootsnare_druid.png",
+      "sourceSha256": "286f00d8da7431f3ae18a92aac3a5ad0b26583eb02075e6ec06f40bec61e87d3",
+      "sha256": "0264e5f75e1903563b895ac04c49e2ad4bf47bdbdb1be8dac7c540d39c63802c"
+    },
+    {
+      "id": "rowan_packmother",
+      "name": "Rowan Packmother",
+      "file": "/assets/raw/portraits/wild_courts/uncommon/summoner/rowan_packmother.png",
+      "sourceSha256": "2df31e2a25a5101ba3746aa7c934d4cf7910c1749096907bd44f7fb58114cf74",
+      "sha256": "0527988036e325a3c66307090d56339dcc61761bfae34fdf2da45c3e48221b6c"
+    },
+    {
+      "id": "ruin_jackal",
+      "name": "Ruin Jackal",
+      "file": "/assets/raw/portraits/wayfarer/uncommon/normal/ruin_jackal.png",
+      "sourceSha256": "3537d5fd31a7c0a81c0677899ae19f25399b4ccba1a59ef0dbb9d72243bcc128",
+      "sha256": "24f0cf0af8f5fb4cc1345076e597efad253f2faa68c895fde46a487f135205e6"
+    },
+    {
+      "id": "runebow_clansman",
+      "name": "Runebow Clansman",
+      "file": "/assets/raw/portraits/wyrm_clans/uncommon/normal/runebow_clansman.png",
+      "sourceSha256": "bd858ce019426c2a29737b6a5c96b685819b00fa43776ce33880304cf0e21f35",
+      "sha256": "48d566fde9fa1d8051b5c6d2bde3da0c345c770feaf6b91512f74308bacbe33a"
+    },
+    {
+      "id": "runespark_adept",
+      "name": "Runespark Adept",
+      "file": "/assets/raw/portraits/wyrm_clans/uncommon/normal/runespark_adept.png",
+      "sourceSha256": "9b08610bc6c1b884e1734fead76aca5d701cdcabee9986d72aa5756aa10d9033",
+      "sha256": "6369ec5ce428bc7224f878a43c48d1ee9766c535d12dc4d95c6d440379ea2d79"
+    },
+    {
+      "id": "rune_hatchling",
+      "name": "Rune Hatchling",
+      "file": "/assets/raw/portraits/wyrm_clans/uncommon/normal/rune_hatchling.png",
+      "sourceSha256": "561163eb5a640cdf28d265cff2c28b06c3b08d67699d679c5fcedd9f2c3bca20",
+      "sha256": "216a53498b983a9705dd670ef5a7e19d72059877f3e7b205510a54f6bc71fd91"
+    },
+    {
+      "id": "saint_orien_of_the_gale",
+      "name": "Saint Orien of the Gale",
+      "file": "/assets/raw/portraits/skybound_houses/epic/summoner/saint_orien_of_the_gale.png",
+      "sourceSha256": "64d8d49cba627786500b1ce61869c4ec6232b6ce26a1da3780788a126eb7c176",
+      "sha256": "b795010f88cf5643d8a100e7580424c55527c10d9e6d34e2b2553440153f16c8"
+    },
+    {
+      "id": "scaleclaw_raider",
+      "name": "Scaleclaw Raider",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/scaleclaw_raider.png",
+      "sourceSha256": "03db7e4c41de25bcd1d08b695e85f689e8924d7c8677351b46d135d750bf4d8b",
+      "sha256": "c0cebdd084950be35ff1006225d36aac25c30e47a530c2febe110af921d22dd7"
+    },
+    {
+      "id": "seedling_wisp",
+      "name": "Seedling Wisp",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/seedling_wisp.png",
+      "sourceSha256": "1f280a52fb05aed07be7220267579d8a873c50ec9ca101971fa1d8e5c0fba859",
+      "sha256": "9bfff6fda3455b98aa355b1313dc3060ba81507027de956897189b0495a21c5d"
+    },
+    {
+      "id": "sepulcher_knight",
+      "name": "Sepulcher Knight",
+      "file": "/assets/raw/portraits/hollow_legions/epic/normal/sepulcher_knight.png",
+      "sourceSha256": "7b9e055891d9888eeccc2199c32db8ae1d1fd90adc0b37e33073a6d8f72af7b7",
+      "sha256": "e373608e11c78336f3ec4e9612e744f5c7d60e0215cc5a6ce5c36495f0510dc1"
+    },
+    {
+      "id": "shed_scale",
+      "name": "Shed Scale",
+      "file": "/assets/raw/portraits/wyrm_clans/common/normal/shed_scale.png",
+      "sourceSha256": "60a1107c7e4a935774c6fdd79f1abd73239b0febc14386c9ce005896bd37ebe6",
+      "sha256": "8a4f52faedcdece918418773a429e165059498fbae9100fa4cda1d38d98a5a31"
+    },
+    {
+      "id": "shield_clerk",
+      "name": "Shield Clerk",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/shield_clerk.png",
+      "sourceSha256": "39898b0f4999af0d7c1f872cdb21506507071496985b35e454b723df3adbbbe6",
+      "sha256": "493bd5daa69a9647ed0877750c3baeb50efa8c405e2a1f5b234dc9f6ed27f79a"
+    },
+    {
+      "id": "silkknife_agent",
+      "name": "Silkknife Agent",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/silkknife_agent.png",
+      "sourceSha256": "5c77adf3ea906e210b45ff57d76963a69f03736217e1369fde79b2f22272d364",
+      "sha256": "e848ec9269c3d14765805dce4f6dcec6b084c7ae185da4d3c28f3f871a40b26c"
+    },
+    {
+      "id": "spore_witch",
+      "name": "Spore Witch",
+      "file": "/assets/raw/portraits/wild_courts/uncommon/normal/spore_witch.png",
+      "sourceSha256": "25c1b6a90ba5b7a024cd287cf8f78970fd56b440cf546be6dc06a33c3c6a71e5",
+      "sha256": "d81307f0f2757ac6e43ec84d6ef33dae66a6c64f74e93f8c2fb27ac902823384"
+    },
+    {
+      "id": "stoneward_hound",
+      "name": "Stoneward Hound",
+      "file": "/assets/raw/portraits/bastion_orders/common/normal/stoneward_hound.png",
+      "sourceSha256": "ded6c60119bee73ecd80eacf2f010f7f658423555f682927b5045ee647c659f5",
+      "sha256": "f7cfd7f921b55ca81b2729536bd5986e33ec364bdba92ebafc89ddafa0d17e29"
+    },
+    {
+      "id": "stormglass_archer",
+      "name": "Stormglass Archer",
+      "file": "/assets/raw/portraits/skybound_houses/uncommon/normal/stormglass_archer.png",
+      "sourceSha256": "ede4114224ca373acee32685b2901e4615ae8795c2fa1c0536aef98e69df0479",
+      "sha256": "84ce3d58adb9f95acaffecf970a5f1401870920c9eb1487b1892fb1fbea5fe15"
+    },
+    {
+      "id": "syrra_hoardseer",
+      "name": "Syrra Hoardseer",
+      "file": "/assets/raw/portraits/wyrm_clans/uncommon/summoner/syrra_hoardseer.png",
+      "sourceSha256": "709dd3b056aa6cc35f6fa830b12ba67d050aff9c50afb8c7e8234f675a25bfa2",
+      "sha256": "43b56d5593f909aef1bc8534d45cb9c49fb2068c5d454b407c600b81dce5b360"
+    },
+    {
+      "id": "tallow_jack",
+      "name": "Tallow Jack",
+      "file": "/assets/raw/portraits/hollow_legions/rare/summoner/tallow_jack.png",
+      "sourceSha256": "79174df5d05b4e47baebf5e7e3bc491cc58ce9c2594d92b5ec93712a863e9925",
+      "sha256": "971d4fb44bdb5a076c12d55ce3a857346042d54e729c67205163dc570ee1bc21"
+    },
+    {
+      "id": "tallow_wisp",
+      "name": "Tallow Wisp",
+      "file": "/assets/raw/portraits/hollow_legions/common/normal/tallow_wisp.png",
+      "sourceSha256": "607ec4348149e3a08a92a5aab748add2f0a1a339869c41d3c2f1d1dd658381ae",
+      "sha256": "8551733b3f8d798f123dac1cf02ff6073ce90bac475e0328301683c0cb35aded"
+    },
+    {
+      "id": "tempest_crown_roc",
+      "name": "Tempest Crown Roc",
+      "file": "/assets/raw/portraits/skybound_houses/legendary/normal/tempest_crown_roc.png",
+      "sourceSha256": "11dcff4d6444aba0f46e0da3bdd6af90bce9fdefe56124bf4a3e8b22c0b127a5",
+      "sha256": "8475f7b656d1cb04162b0bfea8bac58762847e16048babb334b7dbb82e67bff6"
+    },
+    {
+      "id": "tess_kestrel",
+      "name": "Tess Kestrel",
+      "file": "/assets/raw/portraits/skybound_houses/rare/summoner/tess_kestrel.png",
+      "sourceSha256": "350b91b0077fb594bd1be1225a56219671edea38f94ad917a160a0fe97d03745",
+      "sha256": "655c2aa9e08c7a0b34a51dde6783e44d74576a2ff73051703464ed254bbcd5b4"
+    },
+    {
+      "id": "thalor_worldcoil",
+      "name": "Thalor Worldcoil",
+      "file": "/assets/raw/portraits/wyrm_clans/epic/summoner/thalor_worldcoil.png",
+      "sourceSha256": "2ed0a7725592a7e3d1cbbd3f4a3066a3497469fc6363f64c9edce6493e50ab1d",
+      "sha256": "a8d670dfda3c3ea62063e5c1d46fdb475d40e89758926c0e3ade8c7f8fe0e024"
+    },
+    {
+      "id": "the_bell_beneath",
+      "name": "The Bell Beneath",
+      "file": "/assets/raw/portraits/hollow_legions/legendary/normal/the_bell_beneath.png",
+      "sourceSha256": "9d7d1faf5849893578aa5e954d9c363ee86d226d39900374ee15ef2899aceb52",
+      "sha256": "804753e3b5d0389bd2f5bab50765469644f62a02d635cab26082f1b61356f668"
+    },
+    {
+      "id": "the_lacquered_oracle",
+      "name": "The Lacquered Oracle",
+      "file": "/assets/raw/portraits/veil_covenant/epic/summoner/the_lacquered_oracle.png",
+      "sourceSha256": "ee5bfa9ce150dd9e4f3ee9d2a580be436c2eed06a62843b3ae10fe942f5ca1b5",
+      "sha256": "1f9833b8a9032f81e6c48980e6746de33b111ffbe9b685e77aee48b1d72e5881"
+    },
+    {
+      "id": "the_unremembered_face",
+      "name": "The Unremembered Face",
+      "file": "/assets/raw/portraits/veil_covenant/legendary/normal/the_unremembered_face.png",
+      "sourceSha256": "a28f6683c327e693a601f4469f21dc9061a11cf774a2550b4c7923d041d96093",
+      "sha256": "e4b17d47bf2eaafd5db620cebcfb677422bcecf515e18a5a0f9a4ae02e913de7"
+    },
+    {
+      "id": "thistle_runner",
+      "name": "Thistle Runner",
+      "file": "/assets/raw/portraits/wild_courts/uncommon/normal/thistle_runner.png",
+      "sourceSha256": "21c0ee2de016b981191be93af27506dc9ec59a4c8149fd7ab13abbb1a063ae62",
+      "sha256": "0f5b73a0952cb0f16183265b20b68e7b838251480f38c191daae120f6586d438"
+    },
+    {
+      "id": "threadling_seer",
+      "name": "Threadling Seer",
+      "file": "/assets/raw/portraits/veil_covenant/uncommon/normal/threadling_seer.png",
+      "sourceSha256": "ebd59abd631cd733ac350de96569bf0f4d5a9d6edef2b9641e07c2ba28a5f221",
+      "sha256": "31658aaf2b2faf115253a4169901e9ce97f98e9d7c2bc49cea1cf618e136afc9"
+    },
+    {
+      "id": "thunder_roc_ancient",
+      "name": "Thunder-Roc Ancient",
+      "file": "/assets/raw/portraits/skybound_houses/legendary/normal/thunder_roc_ancient.png",
+      "sourceSha256": "af4034d904ebc697a7f02fa9ba89378fc6f9dc9151a86a35a355b714a144bf7f",
+      "sha256": "4b7d0e0bd8560a7146336e827630e9542a7a2d44561376dfffe49a9300ea387c"
+    },
+    {
+      "id": "torvane_crownshield",
+      "name": "Torvane Crownshield",
+      "file": "/assets/raw/portraits/bastion_orders/legendary/summoner/torvane_crownshield.png",
+      "sourceSha256": "a1619752be31d546cfce1d799a9a4a69de641f8f5ad71632dfedec9417f1e223",
+      "sha256": "0b37dd7990f0078ef7dbb70c9c82c58dd14f12729b9c721a8499e20652a2ebb1"
+    },
+    {
+      "id": "twig_scout",
+      "name": "Twig Scout",
+      "file": "/assets/raw/portraits/wild_courts/common/normal/twig_scout.png",
+      "sourceSha256": "c2b68995d31fcb7df6c217f63cc6d32e396ec6e3a678a9999c691f38fd247ab8",
+      "sha256": "b5462905c3a8fc0200c7634aaadd3e89c51f294956831a30a9ac28f1094b60e8"
+    },
+    {
+      "id": "vaelor_runeclaw",
+      "name": "Vaelor Runeclaw",
+      "file": "/assets/raw/portraits/wyrm_clans/rare/summoner/vaelor_runeclaw.png",
+      "sourceSha256": "938b774296bdbee5d79b1dae692ece9aca40291114e3e865058b523229154bab",
+      "sha256": "890a74da8da3d6cf87a2d92244da4e4f27000d5f4b5e29c144ca4886ad2facdd"
+    },
+    {
+      "id": "vel_mourningstar",
+      "name": "Vel Mourningstar",
+      "file": "/assets/raw/portraits/hollow_legions/epic/summoner/vel_mourningstar.png",
+      "sourceSha256": "1096e0dd0e06cac20d4d2ef6931cb0f014c7349b51e69bed9f3b60c4eb44f579",
+      "sha256": "82a9426795d0edee2d81b58bf1d25440790fab1aec175a30a4c8294f160c472c"
+    },
+    {
+      "id": "veyra_nine_masks",
+      "name": "Veyra Nine-Masks",
+      "file": "/assets/raw/portraits/veil_covenant/legendary/summoner/veyra_nine_masks.png",
+      "sourceSha256": "1fe5742d582eb0dc1c1f9d12677c4f7e14f22e551e1dcee95d17a98b19757b7e",
+      "sha256": "093e08eb2d96ea4b5c0edfbf5ec979f47601305d9f9e40981f8b2d82a5850aad"
+    },
+    {
+      "id": "whisper_sprite",
+      "name": "Whisper Sprite",
+      "file": "/assets/raw/portraits/veil_covenant/common/normal/whisper_sprite.png",
+      "sourceSha256": "25f76ba9e3ec1efb0b47cb1f3865b17d9eda4f7f7479d3216f54abddbee94469",
+      "sha256": "733a813054440a5e3bb277b9d6823bf3cbaf721a9e263c90d2e6bb308eada518"
+    },
+    {
+      "id": "whitehart_ravager",
+      "name": "Whitehart Ravager",
+      "file": "/assets/raw/portraits/wild_courts/epic/normal/whitehart_ravager.png",
+      "sourceSha256": "f79633068eab2a1e0754180901bbd1939e0211384017278d2d4807a91bbfbba8",
+      "sha256": "afcc028f4b00bb70387fbb2345e38b36150ac6973d8528d0a94383409527dc99"
+    },
+    {
+      "id": "wind_magistrate",
+      "name": "Wind Magistrate",
+      "file": "/assets/raw/portraits/skybound_houses/rare/normal/wind_magistrate.png",
+      "sourceSha256": "3c8c5127d55fa56a83f6e3f61b897b6e756335c997fb1d71e24ac5374fc703ca",
+      "sha256": "fbc273f9ae95746d0790f03f14525afb6936a56cce0352ecbce3a712e8dc6bb2"
+    },
+    {
+      "id": "wingmender",
+      "name": "Wingmender",
+      "file": "/assets/raw/portraits/skybound_houses/rare/normal/wingmender.png",
+      "sourceSha256": "4a9967c7e3c4daa64cf42e5aa8f9408785e8202cf63340c2ef64930527cd0f16",
+      "sha256": "da4c71a88c5fe0c83cadd24a5188ac7862543ae88970da5dab73254b438f6c92"
+    },
+    {
+      "id": "worldcoil_heir",
+      "name": "Worldcoil Heir",
+      "file": "/assets/raw/portraits/wyrm_clans/legendary/normal/worldcoil_heir.png",
+      "sourceSha256": "ca567f0425ce06a0392ae93c4ea62e5dc1736eeb7eacc9d1663021792ce7bddc",
+      "sha256": "6b92c65b88f78655044347bd3a3230f536dd9483e4ec12d053f8a34c7f798343"
+    },
+    {
+      "id": "ysilde_whitehart",
+      "name": "Ysilde Whitehart",
+      "file": "/assets/raw/portraits/wild_courts/epic/summoner/ysilde_whitehart.png",
+      "sourceSha256": "3c138e61736d154cc05647f25ca21e8b71488a665b0fa0ef8d6f39801f20b054",
+      "sha256": "b4135c23a66524c4a281f9fd646e0b8a68ceb18799a581436ad6d4c20c2ecaf1"
+    }
+  ]
+}
