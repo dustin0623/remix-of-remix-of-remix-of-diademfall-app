@@ -103,7 +103,7 @@ function BattlePage() {
       <BattleChrome mode="practice" />
       {step === "reveal" && (
         <PageHero
-          art="/assets/battle/camp.jpg"
+          art="/assets/rebellion/backgrounds/camp.jpg"
           eyebrow="Learn. Experiment. Conquer."
           title="Training Grounds"
           subtitle="Master your warband against an AI rival. No rating on the line."

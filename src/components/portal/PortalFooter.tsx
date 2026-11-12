@@ -9,6 +9,10 @@ export function PortalFooter() {
       <nav aria-label="Footer">
         <Link to="/battle">Practice</Link>
         <Link to="/ranked">Ranked</Link>
+        <Link to="/shop">Shop</Link>
+        <Link to="/market" search={{ section: "collection" }}>
+          Collection
+        </Link>
         <Link to="/codex">Codex</Link>
         <Link to="/wallet">Wallet</Link>
         <Link to="/activity">Activity</Link>

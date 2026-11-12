@@ -6,7 +6,7 @@ import { BANNER_BY_ID } from "@/game/banners";
 import type { UnitCard } from "@/game/units";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import wayfarerArt from "@/assets/portal/hero.jpg";
+import { regularCardArt } from "@/lib/card-art";
 
 export const ABILITY_BY_ID = Object.fromEntries(ABILITIES.map((a) => [a.id, a]));
 
@@ -63,6 +63,7 @@ function Frame({ rarity, banner, art, crop, mana, children, onClick, selected, d
       type="button"
       onClick={onClick}
       disabled={disabled}
+      aria-pressed={selected}
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-lg border-2 bg-card text-left transition",
         size === "sm" ? "w-36" : "w-44",
@@ -85,7 +86,7 @@ function Frame({ rarity, banner, art, crop, mana, children, onClick, selected, d
 
 export function UnitCardView({ u, ...rest }: { u: UnitCard; onClick?: () => void; selected?: boolean; disabled?: boolean; manaOverride?: number; size?: "sm" | "md" }) {
   return (
-    <Frame rarity={u.rarity} banner={u.banner ?? "wayfarer"} art={u.banner ? BANNER_BY_ID[u.banner].art : wayfarerArt} crop={u.crop} mana={rest.manaOverride ?? u.mana} {...rest}>
+    <Frame rarity={u.rarity} banner={u.banner ?? "wayfarer"} art={regularCardArt(u)} crop="50% 20%" mana={rest.manaOverride ?? u.mana} {...rest}>
       <div className="font-display text-[13px] font-bold leading-tight text-foreground">{u.name}</div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{u.banner ? "" : "Wayfarer · "}{u.set} · {u.rarity}</div>
       <UnitStats u={u} />
@@ -105,7 +106,7 @@ export function summonerEffectText(s: SummonerDefinition) {
 
 export function SummonerCardView({ s, ...rest }: { s: SummonerDefinition; onClick?: () => void; selected?: boolean; disabled?: boolean; manaOverride?: number; size?: "sm" | "md" }) {
   return (
-    <Frame rarity={s.rarity} banner={s.banner} art={BANNER_BY_ID[s.banner].art} crop="50% 15%" mana={rest.manaOverride ?? s.mana} {...rest}>
+    <Frame rarity={s.rarity} banner={s.banner} art={regularCardArt(s)} crop="50% 20%" mana={rest.manaOverride ?? s.mana} {...rest}>
       <div className="font-display text-[13px] font-bold leading-tight text-foreground">{s.name}</div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Summoner · {s.set} · {s.rarity}</div>
       <ul className="space-y-0.5 text-[11px] text-foreground/90">

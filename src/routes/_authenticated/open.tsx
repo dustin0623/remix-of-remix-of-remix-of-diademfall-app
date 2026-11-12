@@ -96,7 +96,7 @@ function OpenPage() {
               </button>
               {!canOpen && (
                 <Link to="/shop" className="open-buy-link">
-                  Buy packs in the Market <ArrowRight className="size-3" />
+                  Visit the Pack Shop <ArrowRight className="size-3" />
                 </Link>
               )}
             </section>

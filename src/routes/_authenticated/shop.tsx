@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { ArrowRight, Loader2, Minus, Plus } from "lucide-react";
+import { ArrowRight, Loader2, Minus, Plus, Layers, ShieldCheck, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
@@ -73,7 +73,8 @@ function PackTile({ pack }: { pack: PackId }) {
   };
 
   return (
-    <div className="panel-ornate flex flex-col items-center gap-4 p-5 text-center">
+    <div className="panel-ornate pack-shop-tile flex flex-col items-center gap-4 p-5 text-center">
+      <span className="pack-edition-label">{pack} edition</span>
       <img
         src={PACK_ART[pack]}
         alt={info.name}
@@ -90,6 +91,7 @@ function PackTile({ pack }: { pack: PackId }) {
           {info.summoners} summoners · {info.troops} troops
         </p>
       </div>
+      <p className="pack-guarantee">5 cards · Uncommon or better guaranteed</p>
       <div className="w-full rounded-md border border-border bg-background/40 p-2 text-xs">
         <div className="flex justify-between">
           <span className="text-muted-foreground">In store</span>
@@ -100,7 +102,7 @@ function PackTile({ pack }: { pack: PackId }) {
         <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-secondary">
           <div
             className="h-full bg-gold"
-            style={{ width: `${row ? (left! / row.publicAllocation) * 100 : 100}%` }}
+            style={{ width: `${row ? (left! / row.publicAllocation) * 100 : 0}%` }}
           />
         </div>
         <div className="mt-1 flex justify-between">
@@ -112,6 +114,7 @@ function PackTile({ pack }: { pack: PackId }) {
         <button
           type="button"
           aria-label="Fewer packs"
+          disabled={qty <= 1 || busy}
           onClick={() => setQty((q) => Math.max(1, q - 1))}
           className="rounded border border-border p-1.5 hover:border-primary"
         >
@@ -123,6 +126,7 @@ function PackTile({ pack }: { pack: PackId }) {
         <button
           type="button"
           aria-label="More packs"
+          disabled={qty >= PACK_RULES.maxPerPurchase || busy}
           onClick={() => setQty((q) => Math.min(PACK_RULES.maxPerPurchase, q + 1))}
           className="rounded border border-border p-1.5 hover:border-primary"
         >
@@ -135,12 +139,32 @@ function PackTile({ pack }: { pack: PackId }) {
         disabled={busy || !canAfford || !row?.active || left === null || left < qty}
         className="btn-ornate w-full px-6 py-2.5 font-display font-black uppercase italic tracking-wider text-primary-foreground disabled:opacity-50"
       >
-        {busy ? <Loader2 className="mx-auto size-5 animate-spin" /> : `Buy · ${fmt(cost)} Credits`}
+        {busy ? (
+          <Loader2 className="mx-auto size-5 animate-spin" />
+        ) : supply.isError ? (
+          "Availability unavailable"
+        ) : !row ? (
+          "Loading availability…"
+        ) : left === 0 ? (
+          "Sold out"
+        ) : !row.active ? (
+          "Not on sale"
+        ) : (
+          `Buy · ${fmt(cost)} Credits`
+        )}
       </button>
       {!canAfford && wallet.data && (
         <p className="-mt-2 text-[11px] text-muted-foreground">
-          You have {formatAmount(wallet.data.credits, "credits")} Credits.
+          You have {formatAmount(wallet.data.credits, "credits")} Credits.{" "}
+          <Link to="/wallet" search={{ tab: "deposit" }} className="text-primary underline">
+            Add Credits
+          </Link>
         </p>
+      )}
+      {supply.isError && (
+        <button type="button" className="play-small-button" onClick={() => void supply.refetch()}>
+          Retry availability
+        </button>
       )}
     </div>
   );
@@ -205,6 +229,17 @@ function ShopPage() {
           <Link to="/open" className="play-small-button">
             Go to Open <ArrowRight className="size-3" />
           </Link>
+        </div>
+        <div className="commerce-benefits">
+          <span>
+            <Layers /> Five cards per pack
+          </span>
+          <span>
+            <Sparkles /> 2% Gold foil chance per card
+          </span>
+          <span>
+            <ShieldCheck /> Verifiable openings
+          </span>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {PACK_IDS.map((pack) => (

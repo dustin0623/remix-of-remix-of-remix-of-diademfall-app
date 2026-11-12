@@ -1,0 +1,26 @@
+import { readFileSync, writeFileSync, copyFileSync, mkdirSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { resolve, dirname, sep } from "node:path";
+
+const [id, source] = process.argv.slice(2);
+if (!id || !source) throw new Error("Usage: node scripts/record-card-art.mjs <catalog-id> <generated-png-path>");
+const root = resolve("public/assets/cards");
+const manifestPath = resolve(root, "manifest.json");
+const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+const card = manifest.cards.find(card => card.id === id);
+if (!card) throw new Error(`Unknown catalog card: ${id}`);
+const destination = resolve("public", card.file.slice(1));
+if (!destination.startsWith(root + sep)) throw new Error("Card art destination escaped its root");
+const bytes = readFileSync(source);
+if (!bytes.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) throw new Error("Generated file is not PNG");
+const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
+if (width < 768 || height < 1024 || Math.abs(width / height - 0.75) > 0.05) throw new Error(`Unexpected portrait dimensions: ${width}x${height}`);
+mkdirSync(dirname(destination), { recursive: true });
+copyFileSync(source, destination);
+card.status = "generated";
+card.width = width;
+card.height = height;
+card.sha256 = createHash("sha256").update(bytes).digest("hex");
+writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
+writeFileSync(resolve("src/lib/card-art-index.json"), JSON.stringify(Object.fromEntries(manifest.cards.filter(card => card.status === "generated").map(card => [card.id, card.file])), null, 2) + "\n");
+console.log(JSON.stringify({ id, file: card.file, width, height, generated: manifest.cards.filter(card => card.status === "generated").length, total: manifest.cards.length }));

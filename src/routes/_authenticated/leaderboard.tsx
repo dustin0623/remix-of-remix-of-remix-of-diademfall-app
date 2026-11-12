@@ -11,7 +11,7 @@ import { DIVISIONS, divisionFor, divisionOf } from "@/game/divisions";
 import { CHESTS } from "@/game/chests";
 import { getLeaderboard, getSummonerStats, type LeaderRow } from "@/lib/ranked/ranked.functions";
 import { cn } from "@/lib/utils";
-import arena from "@/assets/portal/arena.jpg";
+import { ARTWORK } from "@/lib/artwork";
 import { PageHero, SegmentTabs } from "@/components/portal/PageHero";
 import { Crown } from "lucide-react";
 
@@ -62,7 +62,7 @@ function LeaderboardPage() {
   return (
     <div className="min-h-screen">
       <GameHeader />
-      <PageHero art={arena} eyebrow="Ranked Season Ladder" title="Leaderboard" subtitle="The strongest commanders of the Shattered Realm, league by league.">
+      <PageHero art={ARTWORK.backgrounds.arena} eyebrow="Ranked Season Ladder" title="Leaderboard" subtitle="The strongest commanders of the Shattered Realm, league by league.">
         <div className="flex justify-center">
           <SegmentTabs label="League" value={league} onChange={setLeague}
             options={[{ id: "all" as Filter, name: "All" }, ...LEAGUES.map((l) => ({ id: l.id as Filter, name: l.name }))]} />

@@ -1,10 +1,7 @@
 import type { BannerId } from "./catalog/types";
-import bastion from "@/assets/banners/bastion_orders.jpg";
-import wild from "@/assets/banners/wild_courts.jpg";
-import veil from "@/assets/banners/veil_covenant.jpg";
-import hollow from "@/assets/banners/hollow_legions.jpg";
-import sky from "@/assets/banners/skybound_houses.jpg";
-import wyrm from "@/assets/banners/wyrm_clans.jpg";
+import { ARTWORK } from "@/lib/artwork";
+
+const { bastion_orders: bastion, wild_courts: wild, veil_covenant: veil, hollow_legions: hollow, skybound_houses: sky, wyrm_clans: wyrm } = ARTWORK.characters;
 
 export interface BannerMeta {
   id: BannerId;

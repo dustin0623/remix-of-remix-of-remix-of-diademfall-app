@@ -559,7 +559,7 @@ function MarketPage() {
   return (
     <div className="portal-page card-market-page">
       <GameHeader />
-      <CommerceHeader section="cards" />
+      <CommerceHeader section={tab === "collection" ? "collection" : "cards"} />
       <nav className="market-section-tabs" aria-label="Card market section">
         {(
           [

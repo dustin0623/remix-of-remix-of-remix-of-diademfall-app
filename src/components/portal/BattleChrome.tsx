@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useAccount } from "@/hooks/use-account";
 import { HudIcon } from "./HudIcon";
 import { ChallengeDialog } from "./ChallengeDialog";
+import { HowToPlay } from "./HowToPlay";
+import { SeasonClock } from "./SeasonClock";
 
 export function BattleChrome({ mode }: { mode: "practice" | "ranked" }) {
   const [challenge, setChallenge] = useState(false);
@@ -13,6 +15,7 @@ export function BattleChrome({ mode }: { mode: "practice" | "ranked" }) {
         <div className="battle-season-label">
           <span>{account?.season ? `Season ${account.season.number}` : "Ranked Season"}</span>
           <strong>{mode === "ranked" ? "Ranked Battles" : "Practice Battles"}</strong>
+          <SeasonClock endsAt={account?.season?.endsAt} />
         </div>
         <nav aria-label="Battle mode" className="battle-format-tabs">
           <Link to="/ranked" className={mode === "ranked" ? "selected" : ""}>
@@ -26,10 +29,7 @@ export function BattleChrome({ mode }: { mode: "practice" | "ranked" }) {
           </button>
         </nav>
         <nav aria-label="Battle tools" className="battle-quick-tools">
-          <Link to="/codex">
-            <HudIcon name="codex" />
-            <span>How to play</span>
-          </Link>
+          <HowToPlay className="battle-guide-trigger" painted />
           <Link to="/battle">
             <HudIcon name="practice" />
             <span>Practice</span>

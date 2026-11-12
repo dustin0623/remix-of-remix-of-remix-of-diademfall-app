@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diademfall — Artwork Review</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#0c1322;color:#edf1fa;font:16px/1.5 system-ui,sans-serif}header,main{max-width:1500px;margin:auto;padding:32px}header{padding-top:48px}a{color:#9ee4e0}header>a{font-size:13px}h1{font-size:clamp(30px,4vw,52px);line-height:1.1;letter-spacing:-.04em;margin:24px 0 16px}header p{max-width:800px;color:#aebbd2}header p strong{color:#f0d397}nav{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 0}nav button{border:1px solid #45536d;background:transparent;color:#c8d6ee;padding:9px 16px;font:inherit;cursor:pointer}nav button[aria-pressed=true]{background:#174d51;border-color:#8dd9cc;color:white}button:focus-visible,a:focus-visible{outline:3px solid #92dfdb;outline-offset:5px}.count{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#93a3bd;margin:0 0 22px}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:35px 22px}figure{margin:0;min-width:0}figure>a{display:block}figure img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}figure.background{grid-column:span 2}figure.background img{aspect-ratio:16/9}figcaption{padding-top:13px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}figcaption strong{font-size:14px;font-weight:600}figcaption a{font-size:11px;white-space:nowrap}figcaption small{display:block;color:#8a9ab5;font-size:11px;font-weight:400;margin-top:2px}.error{color:#f4b5b5}footer{padding:20px 32px 50px;color:#8493af;font-size:12px;max-width:1500px;margin:auto}footer a{margin-right:20px}@media(max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){header,main{padding:24px 18px}header{padding-top:30px}.gallery{gap:26px 12px}figcaption{display:block}figcaption a{display:inline-block;margin-top:7px}figure.background{grid-column:1/-1}nav button{padding:8px 11px;font-size:13px}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">← Back to Diademfall</a>
+    <h1>The realm, redrawn.</h1>
+    <p>Original Diademfall illustrations with bold ink contours, expressive silhouettes, jewel colors, and clean cel shading. <strong>Artwork only: no baked-in frames, text, or stats.</strong></p>
+    <nav aria-label="Artwork categories">
+      <button type="button" data-type="all" aria-pressed="true">All artwork</button>
+      <button type="button" data-type="character" aria-pressed="false">Characters</button>
+      <button type="button" data-type="edition" aria-pressed="false">Editions</button>
+      <button type="button" data-type="background" aria-pressed="false">Backgrounds</button>
+    </nav>
+  </header>
+  <main><p class="count" id="count" role="status">Loading artwork…</p><div class="gallery" id="gallery"></div></main>
+  <footer><a href="/assets/rebellion/manifest.json">Asset manifest &amp; generation prompts</a>PNG masters and JPEG web exports · Generated with built-in ImageGen · Shared faction art; individual card portraits deferred.</footer>
+  <script type="module">
+    const names={bastion_orders:'Bastion Orders',wild_courts:'Wild Courts',veil_covenant:'Veil Covenant',hollow_legions:'Hollow Legions',skybound_houses:'Skybound Houses',wyrm_clans:'Wyrm Clans',wayfarers:'Wayfarers',ancient:'Ancient',oath:'Oath',legionnaire:'Legionnaire',hero:'Shattered Realm',camp:'Warband Camp',arena:'Crown Arena',gate:'Summoning Gate'};
+    const gallery=document.getElementById('gallery'),count=document.getElementById('count');
+    let assets=[];
+    function render(type){
+      const visible=assets.filter(asset=>type==='all'||asset.type===type);
+      count.textContent=`${visible.length} ${visible.length===1?'illustration':'illustrations'}`;
+      gallery.replaceChildren(...visible.map(asset=>{
+        const figure=document.createElement('figure');figure.className=asset.type;
+        const preview=document.createElement('a');preview.href=asset.master;preview.target='_blank';preview.rel='noopener';preview.setAttribute('aria-label',`View ${names[asset.id]} original image`);
+        const img=document.createElement('img');img.src=asset.web;img.alt=`${names[asset.id]} — original unframed ${asset.type} illustration`;img.loading='lazy';img.width=asset.type==='background'?1672:1086;img.height=asset.type==='background'?941:1448;preview.append(img);
+        const caption=document.createElement('figcaption'),title=document.createElement('strong'),kind=document.createElement('small'),master=document.createElement('a');title.textContent=names[asset.id];kind.textContent=asset.type==='background'?'Environment':asset.type==='edition'?'Edition illustration':'Shared faction illustration';title.append(kind);master.href=asset.master;master.textContent='Open PNG ↗';master.target='_blank';master.rel='noopener';caption.append(title,master);figure.append(preview,caption);return figure;
+      }));
+      document.querySelectorAll('[data-type]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.type===type)));
+    }
+    document.querySelectorAll('[data-type]').forEach(button=>button.addEventListener('click',()=>render(button.dataset.type)));
+    try{const response=await fetch('/assets/rebellion/manifest.json');if(!response.ok)throw Error('Manifest unavailable');assets=(await response.json()).assets;render('all')}catch{count.textContent='Artwork could not load. Refresh to try again.';count.className='error'}
+  </script>
+</body>
+</html>

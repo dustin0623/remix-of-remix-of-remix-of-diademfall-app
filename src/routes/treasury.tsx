@@ -8,7 +8,7 @@ import { PageHero } from "@/components/portal/PageHero";
 import { formatAmount } from "@/lib/economy/currency";
 import { getIsAdmin, getTreasuryReport, type TreasuryReport } from "@/lib/treasury/treasury.functions";
 import { useAuthStore } from "@/features/stores/auth.store";
-import hero from "@/assets/portal/hero.jpg";
+import { ARTWORK } from "@/lib/artwork";
 
 const reportQuery = (month: string | undefined) =>
   queryOptions({ queryKey: ["treasury", "report", month ?? "current"], queryFn: () => getTreasuryReport({ data: { month } }) });
@@ -88,7 +88,7 @@ function Report({ r, onMonth }: { r: TreasuryReport; onMonth: (m: string) => voi
   return (
     <div className="min-h-screen">
       <GameHeader />
-      <PageHero art={hero} eyebrow="Public report" title="Treasury" subtitle="Rewards are paid from Coins the project actually holds. Every month we publish the reward vault, what came in, what was burned and what was paid out.">
+      <PageHero art={ARTWORK.backgrounds.hero} eyebrow="Public report" title="Treasury" subtitle="Rewards are paid from Coins the project actually holds. Every month we publish the reward vault, what came in, what was burned and what was paid out.">
         <div className="flex flex-col items-center gap-2">
           <select aria-label="Report month" value={r.month} onChange={(e) => onMonth(e.target.value)}
             className="rounded-md border border-primary/40 bg-night/90 px-3 py-1.5 font-display text-sm font-bold uppercase tracking-wider">

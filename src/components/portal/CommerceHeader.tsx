@@ -1,13 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
-export function CommerceHeader({ section }: { section: "packs" | "cards" | "open" }) {
+export function CommerceHeader({
+  section,
+}: {
+  section: "packs" | "cards" | "open" | "collection";
+}) {
   return (
     <div className="commerce-header">
       <Link to="/" className="portal-back">
-        <ArrowLeft className="size-3" /> Back
+        <ArrowLeft className="size-3" /> War Room
       </Link>
-      <h1>{section === "cards" ? "Cards" : section === "packs" ? "Packs" : "Open Packs"}</h1>
+      <h1>
+        {section === "collection"
+          ? "My Collection"
+          : section === "cards"
+            ? "Card Market"
+            : section === "packs"
+              ? "Pack Shop"
+              : "Open Packs"}
+      </h1>
       <nav aria-label="Market navigation">
         <Link to="/shop" className={section === "packs" ? "selected" : ""}>
           Packs
@@ -17,6 +29,13 @@ export function CommerceHeader({ section }: { section: "packs" | "cards" | "open
         </Link>
         <Link to="/open" className={section === "open" ? "selected" : ""}>
           Open
+        </Link>
+        <Link
+          to="/market"
+          search={{ section: "collection" }}
+          className={section === "collection" ? "selected" : ""}
+        >
+          Collection
         </Link>
       </nav>
     </div>

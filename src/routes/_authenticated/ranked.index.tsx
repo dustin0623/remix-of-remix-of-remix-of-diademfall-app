@@ -117,7 +117,7 @@ function RankedLobby() {
       icon: "challenge",
       left: `Win rate ${rate === null ? "—" : `${rate}%`}`,
       right: `${account?.wins ?? 0} wins`,
-      art: "/assets/battle/arena.jpg",
+      art: "/assets/rebellion/backgrounds/arena.jpg",
     },
     {
       id: "rewards",
@@ -125,7 +125,7 @@ function RankedLobby() {
       icon: "rewards",
       left: `${rewards.data?.eligibleWins ?? 0} rewarded wins`,
       right: unopened > 0 ? `${unopened} chest${unopened > 1 ? "s" : ""} to open` : "Daily",
-      art: "/assets/home/hero.jpg",
+      art: "/assets/rebellion/backgrounds/hero.jpg",
     },
     {
       id: "ladder",
@@ -133,7 +133,7 @@ function RankedLobby() {
       icon: "ladder",
       left: prog?.division.name ?? "Division",
       right: `Rating ${account?.rating ?? "—"}`,
-      art: "/assets/battle/camp.jpg",
+      art: "/assets/rebellion/backgrounds/camp.jpg",
     },
     {
       id: "cards",
@@ -141,7 +141,7 @@ function RankedLobby() {
       icon: "collection",
       left: `${account?.cardsOwned ?? 0} cards owned`,
       right: "Collection",
-      art: "/assets/home/hero.jpg",
+      art: "/assets/rebellion/backgrounds/hero.jpg",
     },
   ] as const;
 
@@ -150,7 +150,7 @@ function RankedLobby() {
       <GameHeader />
       <BattleChrome mode="ranked" />
       <PageHero
-        art="/assets/battle/camp.jpg"
+        art="/assets/rebellion/backgrounds/camp.jpg"
         className="battle-painted-stage ranked-stage ranked-stage-v2"
         pos="50% 44%"
       >

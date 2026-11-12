@@ -3111,7 +3111,7 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
       oklch(0.12 0.025 265 / 60%),
       oklch(0.12 0.025 265) 80%
     ),
-    url("/assets/battle/camp.jpg");
+    url("/assets/rebellion/backgrounds/camp.jpg");
   background-size: cover;
   background-position: center top;
 }

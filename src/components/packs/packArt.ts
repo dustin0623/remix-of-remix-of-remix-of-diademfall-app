@@ -1,6 +1,5 @@
-import ancient from "@/assets/packs/ancient_pack.jpg";
-import oath from "@/assets/packs/oath_pack.jpg";
-import legionnaire from "@/assets/packs/legionnaire_pack.jpg";
+import { ARTWORK } from "@/lib/artwork";
 import type { PackId } from "@/game/packs";
 
-export const PACK_ART: Record<PackId, string> = { ancient, oath, legionnaire };
+/** Edition illustrations only: packaging and card frames are intentionally deferred. */
+export const PACK_ART: Record<PackId, string> = ARTWORK.editions;
