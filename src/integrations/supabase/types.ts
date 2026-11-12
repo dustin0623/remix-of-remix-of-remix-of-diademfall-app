@@ -175,7 +175,6 @@ export type Database = {
           created_at: string
           definition: Json
           game_version: string | null
-          game_version_id: string | null
           id: string
           level_cap: number
           mana: number
@@ -196,7 +195,6 @@ export type Database = {
           created_at?: string
           definition?: Json
           game_version?: string | null
-          game_version_id?: string | null
           id: string
           level_cap: number
           mana: number
@@ -217,7 +215,6 @@ export type Database = {
           created_at?: string
           definition?: Json
           game_version?: string | null
-          game_version_id?: string | null
           id?: string
           level_cap?: number
           mana?: number
@@ -228,15 +225,7 @@ export type Database = {
           total_combined?: number
           total_printed?: number
         }
-        Relationships: [
-          {
-            foreignKeyName: "cards_game_version_id_fkey"
-            columns: ["game_version_id"]
-            isOneToOne: false
-            referencedRelation: "game_versions"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       currency_ledger: {
         Row: {
@@ -386,36 +375,6 @@ export type Database = {
           },
         ]
       }
-      game_versions: {
-        Row: {
-          catalog_hash: string | null
-          created_at: string
-          engine_version: string
-          id: string
-          published_at: string | null
-          status: string
-          version: string
-        }
-        Insert: {
-          catalog_hash?: string | null
-          created_at?: string
-          engine_version: string
-          id?: string
-          published_at?: string | null
-          status?: string
-          version: string
-        }
-        Update: {
-          catalog_hash?: string | null
-          created_at?: string
-          engine_version?: string
-          id?: string
-          published_at?: string | null
-          status?: string
-          version?: string
-        }
-        Relationships: []
-      }
       item_openings: {
         Row: {
           algorithm: string
@@ -507,197 +466,12 @@ export type Database = {
           },
         ]
       }
-      legionnaire_reward_reserve: {
-        Row: {
-          original_units: number
-          rarity: string
-          remaining_units: number
-          seeded_at: string
-        }
-        Insert: {
-          original_units: number
-          rarity: string
-          remaining_units: number
-          seeded_at?: string
-        }
-        Update: {
-          original_units?: number
-          rarity?: string
-          remaining_units?: number
-          seeded_at?: string
-        }
-        Relationships: []
-      }
-      match_players: {
-        Row: {
-          joined_at: string
-          match_id: string
-          player_id: string
-          rating_after: number | null
-          rating_before: number
-          result: string | null
-          side: number
-        }
-        Insert: {
-          joined_at?: string
-          match_id: string
-          player_id: string
-          rating_after?: number | null
-          rating_before: number
-          result?: string | null
-          side: number
-        }
-        Update: {
-          joined_at?: string
-          match_id?: string
-          player_id?: string
-          rating_after?: number | null
-          rating_before?: number
-          result?: string | null
-          side?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "match_players_match_id_fkey"
-            columns: ["match_id"]
-            isOneToOne: false
-            referencedRelation: "matches"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "match_players_player_id_fkey"
-            columns: ["player_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      match_rewards: {
-        Row: {
-          created_at: string
-          energy_spent: boolean
-          foil_bonus: number
-          gold_cards: number
-          league_id: string
-          league_multiplier: number
-          match_id: string
-          opponent_factor: number
-          player_id: string
-          reward_day: string
-          shares: number
-          status: string
-          streak_bonus: number
-        }
-        Insert: {
-          created_at?: string
-          energy_spent?: boolean
-          foil_bonus?: number
-          gold_cards?: number
-          league_id: string
-          league_multiplier?: number
-          match_id: string
-          opponent_factor?: number
-          player_id: string
-          reward_day: string
-          shares?: number
-          status: string
-          streak_bonus?: number
-        }
-        Update: {
-          created_at?: string
-          energy_spent?: boolean
-          foil_bonus?: number
-          gold_cards?: number
-          league_id?: string
-          league_multiplier?: number
-          match_id?: string
-          opponent_factor?: number
-          player_id?: string
-          reward_day?: string
-          shares?: number
-          status?: string
-          streak_bonus?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "match_rewards_match_id_fkey"
-            columns: ["match_id"]
-            isOneToOne: false
-            referencedRelation: "matches"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      match_submissions: {
-        Row: {
-          calculated_mana: number
-          formation: Json
-          locked_at: string
-          match_id: string
-          player_id: string
-          submission_hash: string
-          summoner_card_id: string
-          summoner_level: number
-        }
-        Insert: {
-          calculated_mana: number
-          formation: Json
-          locked_at?: string
-          match_id: string
-          player_id: string
-          submission_hash: string
-          summoner_card_id: string
-          summoner_level: number
-        }
-        Update: {
-          calculated_mana?: number
-          formation?: Json
-          locked_at?: string
-          match_id?: string
-          player_id?: string
-          submission_hash?: string
-          summoner_card_id?: string
-          summoner_level?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "match_submissions_match_id_fkey"
-            columns: ["match_id"]
-            isOneToOne: false
-            referencedRelation: "matches"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "match_submissions_match_id_player_id_fkey"
-            columns: ["match_id", "player_id"]
-            isOneToOne: true
-            referencedRelation: "match_players"
-            referencedColumns: ["match_id", "player_id"]
-          },
-          {
-            foreignKeyName: "match_submissions_player_id_fkey"
-            columns: ["player_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "match_submissions_summoner_card_id_fkey"
-            columns: ["summoner_card_id"]
-            isOneToOne: false
-            referencedRelation: "cards"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       matches: {
         Row: {
           completed_at: string | null
           created_at: string
           engine_version: string
           game_version: string | null
-          game_version_id: string | null
           id: string
           input_hash: string | null
           mana_cap: number
@@ -732,7 +506,6 @@ export type Database = {
           created_at?: string
           engine_version: string
           game_version?: string | null
-          game_version_id?: string | null
           id?: string
           input_hash?: string | null
           mana_cap: number
@@ -767,7 +540,6 @@ export type Database = {
           created_at?: string
           engine_version?: string
           game_version?: string | null
-          game_version_id?: string | null
           id?: string
           input_hash?: string | null
           mana_cap?: number
@@ -799,13 +571,6 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "matches_game_version_id_fkey"
-            columns: ["game_version_id"]
-            isOneToOne: false
-            referencedRelation: "game_versions"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "matches_player1_id_fkey"
             columns: ["player1_id"]
             isOneToOne: false
@@ -833,7 +598,6 @@ export type Database = {
           created_at: string
           expires_at: string
           game_version: string | null
-          game_version_id: string | null
           id: string
           match_id: string | null
           matched_at: string | null
@@ -849,7 +613,6 @@ export type Database = {
           created_at?: string
           expires_at?: string
           game_version?: string | null
-          game_version_id?: string | null
           id?: string
           match_id?: string | null
           matched_at?: string | null
@@ -865,7 +628,6 @@ export type Database = {
           created_at?: string
           expires_at?: string
           game_version?: string | null
-          game_version_id?: string | null
           id?: string
           match_id?: string | null
           matched_at?: string | null
@@ -878,13 +640,6 @@ export type Database = {
           status?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "matchmaking_tickets_game_version_id_fkey"
-            columns: ["game_version_id"]
-            isOneToOne: false
-            referencedRelation: "game_versions"
-            referencedColumns: ["id"]
-          },
           {
             foreignKeyName: "matchmaking_tickets_match_id_fkey"
             columns: ["match_id"]
@@ -900,87 +655,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      monthly_reward_budgets: {
-        Row: {
-          activity_pool: number
-          calculated_budget: number
-          created_at: string
-          leaderboard_pool: number
-          league_pool: number
-          match_pool: number
-          month: string
-          opening_reward_vault: number
-          prior_month_acquired: number
-          published_at: string | null
-          status: string
-        }
-        Insert: {
-          activity_pool: number
-          calculated_budget: number
-          created_at?: string
-          leaderboard_pool: number
-          league_pool: number
-          match_pool: number
-          month: string
-          opening_reward_vault: number
-          prior_month_acquired?: number
-          published_at?: string | null
-          status?: string
-        }
-        Update: {
-          activity_pool?: number
-          calculated_budget?: number
-          created_at?: string
-          leaderboard_pool?: number
-          league_pool?: number
-          match_pool?: number
-          month?: string
-          opening_reward_vault?: number
-          prior_month_acquired?: number
-          published_at?: string | null
-          status?: string
-        }
-        Relationships: []
-      }
-      pack_supply: {
-        Row: {
-          active: boolean
-          maximum_packs: number
-          opened_packs: number
-          price_credits: number
-          public_allocation: number
-          reserve_allocation: number
-          reserve_issued: number
-          set_id: string
-          sold_packs: number
-          updated_at: string
-        }
-        Insert: {
-          active?: boolean
-          maximum_packs: number
-          opened_packs?: number
-          price_credits?: number
-          public_allocation: number
-          reserve_allocation: number
-          reserve_issued?: number
-          set_id: string
-          sold_packs?: number
-          updated_at?: string
-        }
-        Update: {
-          active?: boolean
-          maximum_packs?: number
-          opened_packs?: number
-          price_credits?: number
-          public_allocation?: number
-          reserve_allocation?: number
-          reserve_issued?: number
-          set_id?: string
-          sold_packs?: number
-          updated_at?: string
-        }
-        Relationships: []
       }
       player_cards: {
         Row: {
@@ -1150,54 +824,6 @@ export type Database = {
           },
         ]
       }
-      player_reward_days: {
-        Row: {
-          activity_coins: number
-          activity_points: number
-          activity_shares: number
-          banners: string[]
-          daily_multiplier: number
-          eligible_wins: number
-          low_mana_win: boolean
-          match_coins: number
-          match_shares: number
-          player_id: string
-          reward_day: string
-          rulesets: string[]
-          settled_at: string | null
-        }
-        Insert: {
-          activity_coins?: number
-          activity_points?: number
-          activity_shares?: number
-          banners?: string[]
-          daily_multiplier?: number
-          eligible_wins?: number
-          low_mana_win?: boolean
-          match_coins?: number
-          match_shares?: number
-          player_id: string
-          reward_day: string
-          rulesets?: string[]
-          settled_at?: string | null
-        }
-        Update: {
-          activity_coins?: number
-          activity_points?: number
-          activity_shares?: number
-          banners?: string[]
-          daily_multiplier?: number
-          eligible_wins?: number
-          low_mana_win?: boolean
-          match_coins?: number
-          match_shares?: number
-          player_id?: string
-          reward_day?: string
-          rulesets?: string[]
-          settled_at?: string | null
-        }
-        Relationships: []
-      }
       profiles: {
         Row: {
           account_level: number
@@ -1358,57 +984,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      reward_days: {
-        Row: {
-          activity_pool: number
-          budget_month: string
-          match_pool: number
-          paid_activity: number
-          paid_match: number
-          players_paid: number
-          reward_day: string
-          rollover_in_activity: number
-          rollover_in_match: number
-          rollover_out_activity: number
-          rollover_out_match: number
-          settled_at: string
-          total_activity_shares: number
-          total_match_shares: number
-        }
-        Insert: {
-          activity_pool: number
-          budget_month: string
-          match_pool: number
-          paid_activity?: number
-          paid_match?: number
-          players_paid?: number
-          reward_day: string
-          rollover_in_activity?: number
-          rollover_in_match?: number
-          rollover_out_activity?: number
-          rollover_out_match?: number
-          settled_at?: string
-          total_activity_shares?: number
-          total_match_shares?: number
-        }
-        Update: {
-          activity_pool?: number
-          budget_month?: string
-          match_pool?: number
-          paid_activity?: number
-          paid_match?: number
-          players_paid?: number
-          reward_day?: string
-          rollover_in_activity?: number
-          rollover_in_match?: number
-          rollover_out_activity?: number
-          rollover_out_match?: number
-          settled_at?: string
-          total_activity_shares?: number
-          total_match_shares?: number
-        }
-        Relationships: []
       }
       treasury_ledger: {
         Row: {

@@ -101,4 +101,8 @@
 - [x] Sale and rental listings: one card_listings table
 - [x] Old tables removed after testing packs, chests, sales, rentals and withdrawals on the merged tables
 - [x] Treasury: snapshots, acquisitions and flows in one treasury_ledger (old three tables removed)
-- [ ] Matches: review folding match_players / match_rewards into matches (match_submissions stays separate so teams stay hidden until both lock)
+- [x] Matches: players, locked teams (hidden from players) and rewards folded into one matches row; full ranked match tested end to end
+- [x] Daily reward totals worked out from matches; monthly budgets and settled days kept in the treasury record
+- [x] Game versions, pack limits and the chest reward pool as code constants; sold/opened and cards-left counts worked out live
+- [x] Old tables removed: 19 tables remain
+- [ ] Card list update from the latest "ui update" (18 renamed summoners) is half-finished: 6 checks fail and the saved card list still has the old 150 cards (needs the user to confirm it should become a new game version)

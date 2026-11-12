@@ -50,6 +50,13 @@
       "when": 1794428610147,
       "tag": "0006_derived_rewards_supply_reserve",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1794446254907,
+      "tag": "0007_drop_folded_match_reward_constant_tables",
+      "breakpoints": true
     }
   ]
 }
