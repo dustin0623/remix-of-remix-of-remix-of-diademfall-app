@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { ArrowRight, Loader2, Swords, X } from "lucide-react";
+import { Loader2, Swords, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
@@ -141,14 +141,6 @@ function RankedLobby() {
       left: prog?.division.name ?? "Division",
       right: `Rating ${account?.rating ?? "—"}`,
       art: "/assets/rebellion/backgrounds/camp.jpg",
-    },
-    {
-      id: "cards",
-      label: "Cards",
-      icon: "collection",
-      left: "",
-      right: "Collection",
-      art: "/assets/rebellion/backgrounds/hero.jpg",
     },
   ] as const;
 
@@ -296,31 +288,6 @@ function RankedLobby() {
           </TabsContent>
           <TabsContent value="ladder" className="play-dashboard-content">
             <LadderTeaser signedIn />
-          </TabsContent>
-          <TabsContent value="cards" className="play-dashboard-content">
-            <div className="play-cards-summary">
-              <HudIcon name="collection" />
-              <div>
-                <span className="portal-eyebrow">Your collection</span>
-                <h2>{account?.cardsOwned ?? "—"} Cards Owned</h2>
-                <p>
-                  {account?.cardsOwned === 0
-                    ? "Open packs to collect your first commander and troops, then bring your warband into the arena."
-                    : "Manage your cards, combine duplicates, and prepare your next ranked warband."}
-                </p>
-                <Link
-                  to={account?.cardsOwned === 0 ? "/open" : "/market"}
-                  search={account?.cardsOwned === 0 ? {} : { section: "collection" }}
-                  className="play-small-button"
-                >
-                  {account?.cardsOwned === 0 ? "Open Packs" : "Manage Collection"}{" "}
-                  <ArrowRight className="size-3" />
-                </Link>
-                <Link to="/codex" className="play-codex-link">
-                  Explore all cards in the Codex
-                </Link>
-              </div>
-            </div>
           </TabsContent>
         </Tabs>
       </main>
