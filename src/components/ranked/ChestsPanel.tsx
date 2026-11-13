@@ -73,6 +73,8 @@ export function ChestsPanel({ s }: { s: SeasonStatus | null | undefined }) {
         qc.invalidateQueries({ queryKey: ["ranked", "season"] }),
         qc.invalidateQueries({ queryKey: ["account"] }),
         qc.invalidateQueries({ queryKey: ["wallet"] }),
+        qc.invalidateQueries({ queryKey: ["items", "chests"] }),
+        qc.invalidateQueries({ queryKey: ["packs", "cards"] }),
       ]);
     } finally {
       setBusy(null);

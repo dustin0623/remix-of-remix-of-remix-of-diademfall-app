@@ -148,7 +148,7 @@ export function HomeHub() {
             </div>
             <ChevronRight />
           </Link>
-          <Link to="/shop">
+          <Link to="/market" search={{ section: "packs" }}>
             <span className={account && account.cardsOwned > 0 ? "complete" : ""}>
               {account && account.cardsOwned > 0 ? <Check /> : "02"}
             </span>
@@ -172,8 +172,8 @@ export function HomeHub() {
         {(
           [
             {
-              to: "/market",
-              search: { section: "collection" as const },
+              to: "/items",
+              search: { section: "cards" as const },
               title: "Your Collection",
               text: account
                 ? `${account.cardsOwned} cards · Manage your warband`
@@ -183,19 +183,19 @@ export function HomeHub() {
               tag: "The warband",
             },
             {
-              to: "/shop",
-              search: {},
-              title: "Pack Shop",
+              to: "/market",
+              search: { section: "packs" as const },
+              title: "Pack Market",
               text: "Ancient, Oath, and Legionnaire editions",
               icon: "shop",
               art: "/assets/rebellion/backgrounds/hero.jpg",
               tag: "New possibilities",
             },
             {
-              to: "/open",
-              search: {},
-              title: "Open Packs",
-              text: "Break the seal. Reveal your next champion.",
+              to: "/items",
+              search: { section: "others" as const },
+              title: "Other Items",
+              text: "Open owned packs and check your balances",
               icon: "rewards",
               art: "/assets/rebellion/backgrounds/arena.jpg",
               tag: "The summoning",

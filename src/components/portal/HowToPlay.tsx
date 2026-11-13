@@ -60,8 +60,8 @@ export function HowToPlay({
             <div>
               <h3>02 · Assemble your warband</h3>
               <p>
-                Choose a commander, then recruit troops from their Banner and eligible Wayfarers. The
-                match rules decide the unit limit. Abilities are shared combat skills across all
+                Choose a commander, then recruit troops from their Banner and eligible Wayfarers.
+                The match rules decide the unit limit. Abilities are shared combat skills across all
                 Banners.
               </p>
             </div>

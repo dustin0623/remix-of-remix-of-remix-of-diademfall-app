@@ -7,7 +7,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Aldric Stonebanner",
     "set": "ancient",
     "banner": "bastion_orders",
-    "mana": 3,
+    "mana": 4,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
@@ -15,7 +15,7 @@ export const SUMMONERS: SummonerDefinition[] = [
         "kind": "stat",
         "target": "all_allies",
         "stat": "armor",
-        "value": 1
+        "value": 2
       }
     ],
     "lore": "When the Diadem shattered, Aldric lowered the royal standard to carry the wounded beneath it. Every company that sheltered under that torn blue cloth swore to defend people before crowns; their joined shields became the Bastion Orders.",
@@ -28,7 +28,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Torvane Crownshield",
     "set": "oath",
     "banner": "bastion_orders",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -42,7 +42,7 @@ export const SUMMONERS: SummonerDefinition[] = [
         "kind": "stat",
         "target": "all_allies",
         "stat": "health",
-        "value": 1
+        "value": 2
       }
     ],
     "lore": "Torvane guarded the throne room through seven changes of king, refusing every order to abandon the outer wards. Now his empty helm commands the living by one surviving oath: no soldier stands alone while another can close the line.",
@@ -55,7 +55,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Maelor Ironhand",
     "set": "legionnaire",
     "banner": "bastion_orders",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
@@ -64,12 +64,6 @@ export const SUMMONERS: SummonerDefinition[] = [
         "target": "all_allies",
         "stat": "armor",
         "value": 1
-      },
-      {
-        "kind": "stat",
-        "target": "all_enemies",
-        "stat": "steel",
-        "value": -1
       }
     ],
     "lore": "Maelor melted her coronation crown into the iron hand that pulled her last company from a burning gate. Denied a throne, she built traveling forges instead; the crownless march beneath her because she remembers the name behind every battered shield.",
@@ -82,7 +76,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Eira Thornpath",
     "set": "ancient",
     "banner": "wild_courts",
-    "mana": 3,
+    "mana": 4,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
@@ -103,7 +97,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Garran Moonfang",
     "set": "oath",
     "banner": "wild_courts",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -130,7 +124,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Ysilde Whitehart",
     "set": "legionnaire",
     "banner": "wild_courts",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
@@ -139,12 +133,6 @@ export const SUMMONERS: SummonerDefinition[] = [
         "target": "all_allies",
         "stat": "health",
         "value": 1
-      },
-      {
-        "kind": "stat",
-        "target": "all_enemies",
-        "stat": "shot",
-        "value": -1
       }
     ],
     "lore": "The first crown carved from a living tree left a wound that never healed. Ysilde tends that scar beneath the oldest white hart, judging every hunt by what it gives back; those who fight beside her learn that taking a life creates a debt to the living.",
@@ -157,7 +145,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Oris Glassmoth",
     "set": "ancient",
     "banner": "veil_covenant",
-    "mana": 3,
+    "mana": 4,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
@@ -178,7 +166,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Veyra Nine-Masks",
     "set": "oath",
     "banner": "veil_covenant",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -205,7 +193,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "The Lacquered Oracle",
     "set": "legionnaire",
     "banner": "veil_covenant",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
@@ -247,7 +235,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "King Ossuary",
     "set": "oath",
     "banner": "hollow_legions",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -274,7 +262,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Vel Mourningstar",
     "set": "legionnaire",
     "banner": "hollow_legions",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
@@ -282,12 +270,6 @@ export const SUMMONERS: SummonerDefinition[] = [
         "kind": "stat",
         "target": "all_enemies",
         "stat": "steel",
-        "value": -1
-      },
-      {
-        "kind": "stat",
-        "target": "all_enemies",
-        "stat": "shot",
         "value": -1
       }
     ],
@@ -301,7 +283,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Cael Rookwing",
     "set": "ancient",
     "banner": "skybound_houses",
-    "mana": 3,
+    "mana": 4,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
@@ -322,7 +304,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Duke Avorran",
     "set": "oath",
     "banner": "skybound_houses",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -349,16 +331,10 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Saint Orien of the Gale",
     "set": "legionnaire",
     "banner": "skybound_houses",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
-      {
-        "kind": "stat",
-        "target": "all_allies",
-        "stat": "shot",
-        "value": 1
-      },
       {
         "kind": "stat",
         "target": "all_enemies",
@@ -376,7 +352,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Vaelor Runeclaw",
     "set": "ancient",
     "banner": "wyrm_clans",
-    "mana": 3,
+    "mana": 4,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
@@ -384,7 +360,7 @@ export const SUMMONERS: SummonerDefinition[] = [
         "kind": "stat",
         "target": "all_allies",
         "stat": "health",
-        "value": 1
+        "value": 2
       }
     ],
     "lore": "Vaelor carved the histories of the Wyrm Clans into a basalt tablet when conquerors burned their nesting halls. Each rune holds a breath of the first communal fire; he lends that warmth to hatchling and elder alike so no bloodline ends in silence.",
@@ -397,7 +373,7 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Orrun the First Scale",
     "set": "oath",
     "banner": "wyrm_clans",
-    "mana": 5,
+    "mana": 6,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
@@ -405,7 +381,7 @@ export const SUMMONERS: SummonerDefinition[] = [
         "kind": "stat",
         "target": "all_allies",
         "stat": "health",
-        "value": 1
+        "value": 2
       },
       {
         "kind": "stat",
@@ -424,16 +400,10 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Thalor Worldcoil",
     "set": "legionnaire",
     "banner": "wyrm_clans",
-    "mana": 4,
+    "mana": 3,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
-      {
-        "kind": "stat",
-        "target": "all_allies",
-        "stat": "armor",
-        "value": 1
-      },
       {
         "kind": "stat",
         "target": "all_enemies",

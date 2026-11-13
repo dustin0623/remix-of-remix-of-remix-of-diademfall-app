@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight, Loader2, SlidersHorizontal } from "lucide-react";
@@ -44,35 +44,44 @@ import {
 } from "@/lib/market/market.functions";
 import { CommerceHeader } from "@/components/portal/CommerceHeader";
 import { PortalFooter } from "@/components/portal/PortalFooter";
-import { CardCollection } from "@/components/packs/CardCollection";
+import { PackMarket } from "@/components/packs/PackMarket";
 import { MarketFilters } from "@/components/market/MarketFilters";
 import { emptyMarketFilter, filterMarketRows } from "@/components/market/market-filter";
 
 export const Route = createFileRoute("/_authenticated/market")({
-  validateSearch: (search: Record<string, unknown>): { section?: Tab } => {
+  validateSearch: (search: Record<string, unknown>): { section?: Tab | "packs" | "collection" } => {
     const section = search["section"];
-    return ["buy", "rent", "sell", "rentals", "collection"].includes(String(section))
-      ? { section: section as Tab }
+    return typeof section === "string" &&
+      ["buy", "rent", "sell", "rentals", "packs", "collection"].includes(section)
+      ? { section: section as Tab | "packs" | "collection" }
       : {};
   },
-  head: () => ({
-    meta: [
-      { title: "Market — Diademfall" },
-      {
-        name: "description",
-        content:
-          "Buy, sell and rent Diademfall cards with Coins. Sellers keep 95%; the 5% fee feeds the reward vault, a burn and operations.",
-      },
-      { property: "og:title", content: "Market — Diademfall" },
-      { property: "og:description", content: "Trade and rent cards with Coins." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
+  beforeLoad: ({ search }) => {
+    if (search.section === "collection")
+      throw redirect({ to: "/items", search: { section: "cards" }, replace: true });
+    return { marketSection: search.section };
+  },
+  head: ({ match }) => {
+    const packs = match.context.marketSection === "packs";
+    const title = packs ? "Pack Market — Diademfall" : "Card Market — Diademfall";
+    const description = packs
+      ? "Buy Diademfall packs with Credits and open them from your Items."
+      : "Buy, sell and rent Diademfall cards with Coins.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
+      ],
+    };
+  },
   component: MarketPage,
 });
 
-type Tab = "buy" | "rent" | "sell" | "rentals" | "collection";
+type Tab = "buy" | "rent" | "sell" | "rentals";
 const coins = (v: string | number) => formatAmount(String(v), "coins", { maxDecimals: 4 });
 const until = (iso: string) =>
   new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
@@ -484,7 +493,11 @@ function SellTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["dat
         {available.length === 0 ? (
           <p className="text-sm text-muted-foreground">
             No free cards to list.{" "}
-            <Link to="/open" className="font-semibold text-primary hover:underline">
+            <Link
+              to="/items"
+              search={{ section: "others" }}
+              className="font-semibold text-primary hover:underline"
+            >
               Open your packs
             </Link>
             .
@@ -543,9 +556,22 @@ function RentalsTab({ mine }: { mine: NonNullable<ReturnType<typeof useMarket>["
 }
 
 function MarketPage() {
-  const search = Route.useSearch();
+  const { section } = Route.useSearch();
+  if (section === "packs") {
+    return (
+      <div className="portal-page packs-purchase-page">
+        <GameHeader />
+        <CommerceHeader section="packs" />
+        <PackMarket />
+        <PortalFooter />
+      </div>
+    );
+  }
+  return <CardMarket tab={section === "collection" ? "buy" : (section ?? "buy")} />;
+}
+
+function CardMarket({ tab }: { tab: Tab }) {
   const navigate = Route.useNavigate();
-  const tab = search.section ?? "buy";
   const market = useMarket();
   const m = market.data;
   const [filter, setFilter] = useState(emptyMarketFilter);
@@ -559,7 +585,7 @@ function MarketPage() {
   return (
     <div className="portal-page card-market-page">
       <GameHeader />
-      <CommerceHeader section={tab === "collection" ? "collection" : "cards"} />
+      <CommerceHeader section="market-cards" />
       <nav className="market-section-tabs" aria-label="Card market section">
         {(
           [
@@ -567,7 +593,6 @@ function MarketPage() {
             ["rent", "Rentals"],
             ["sell", "My Listings"],
             ["rentals", "Rental Activity"],
-            ["collection", "My Cards"],
           ] as const
         ).map(([id, label]) => (
           <button
@@ -633,9 +658,7 @@ function MarketPage() {
               </Select>
             </div>
           )}
-          {tab === "collection" ? (
-            <CardCollection />
-          ) : !m ? (
+          {!m ? (
             <div className="commerce-empty" role={market.isError ? "alert" : "status"}>
               {market.isError ? (
                 <>
@@ -673,7 +696,7 @@ function MarketPage() {
               >
                 Reset Filters
               </button>
-              <Link to="/shop" className="play-small-button">
+              <Link to="/market" search={{ section: "packs" }} className="play-small-button">
                 Browse Packs <ArrowRight className="size-3" />
               </Link>
             </div>

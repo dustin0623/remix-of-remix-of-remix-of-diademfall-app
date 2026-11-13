@@ -36,21 +36,23 @@ function AuthPage() {
   const target = safePath(redirect);
   const destination = target.split("?")[0];
   const purpose =
-    destination === "/shop"
+    destination === "/shop" || (destination === "/market" && target.includes("section=packs"))
       ? "build your collection"
       : destination === "/open"
         ? "open your packs"
-        : destination === "/market"
-          ? target.includes("section=collection")
-            ? "manage your collection"
-            : "trade cards"
-          : destination === "/wallet"
-            ? "manage your wallet"
-            : destination === "/activity"
-              ? "view your activity"
-              : destination === "/leaderboard"
-                ? "explore the leaderboard"
-                : "enter the arena";
+        : destination === "/items"
+          ? "view your items"
+          : destination === "/market"
+            ? target.includes("section=collection")
+              ? "manage your collection"
+              : "trade cards"
+            : destination === "/wallet"
+              ? "manage your wallet"
+              : destination === "/activity"
+                ? "view your activity"
+                : destination === "/leaderboard"
+                  ? "explore the leaderboard"
+                  : "enter the arena";
   useEffect(() => {
     if (user && redirect) void navigate({ to: target, replace: true });
   }, [user, redirect, target, navigate]);

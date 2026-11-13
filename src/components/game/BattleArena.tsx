@@ -14,7 +14,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { StatIcon } from "./CardFace";
-import { AbilityIcon } from "./AbilityIcon";
+import { TroopAbilityTooltip } from "./AbilityTooltip";
 import { BannerCrests, BattleMana } from "./BattleFlow";
 import type { BattleEvent, BattleResult, SnapUnit } from "@/game/engine";
 import type { TeamPick } from "@/game/match";
@@ -105,7 +105,7 @@ function ArenaUnit({
         {abilities.length > 0 && (
           <div className="battle-token-abilities">
             {abilities.map((id) => (
-              <AbilityIcon key={id} id={id} />
+              <TroopAbilityTooltip key={id} id={id} />
             ))}
           </div>
         )}

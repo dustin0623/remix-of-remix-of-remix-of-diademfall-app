@@ -33,7 +33,7 @@ export const joinRankedQueue = createServerFn({ method: "POST" })
     const { data: mine } = await context.supabase.from("player_card_stacks").select("card_id, copies").eq("player_id", context.userId).gt("copies", 0);
     const ids = (mine ?? []).flatMap((c) => (c.card_id ? [c.card_id] : []));
     if (!ids.some((id) => SUMMONER_IDS.has(id)) || !ids.some((id) => !SUMMONER_IDS.has(id)))
-      return { ok: false as const, error: "You need at least one commander and one troop. Open packs in the Shop first." };
+      return { ok: false as const, error: "You need at least one commander and one troop. Open packs from Items first." };
     const admin = await loadAdmin();
     const { expireStale } = await import("./ranked.server");
     const { rolloverSeasonIfDue } = await import("./chests.server");

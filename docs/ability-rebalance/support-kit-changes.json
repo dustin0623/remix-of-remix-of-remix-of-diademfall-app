@@ -1,4 +1,6 @@
 {
+  "date": "2026-11-13",
+  "activeAbilities": 18,
   "retiredAbilities": {
     "runebreath": "ancient_scale",
     "doom_count": "hexweave",
@@ -248,9 +250,9 @@
       "originalName": "Field Ration",
       "category": "restoration",
       "timing": "turn_start",
-      "mechanics": "At the start of your turn, restore 2 health to the frontmost ally.",
+      "mechanics": "At the start of your turn, restore 1 health to the frontmost ally.",
       "values": {
-        "healing": 2
+        "healing": 1
       },
       "stacking": "Duplicate copies on one unit do not stack.",
       "interactions": [
@@ -289,13 +291,13 @@
         ]
       },
       "after": {
-        "mana": 3,
+        "mana": 4,
         "effects": [
           {
             "kind": "stat",
             "target": "all_allies",
             "stat": "armor",
-            "value": 1
+            "value": 2
           }
         ]
       }
@@ -320,7 +322,7 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
@@ -332,7 +334,7 @@
             "kind": "stat",
             "target": "all_allies",
             "stat": "health",
-            "value": 1
+            "value": 2
           }
         ]
       }
@@ -356,19 +358,13 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
           {
             "kind": "stat",
             "target": "all_allies",
             "stat": "armor",
             "value": 1
-          },
-          {
-            "kind": "stat",
-            "target": "all_enemies",
-            "stat": "steel",
-            "value": -1
           }
         ]
       }
@@ -388,7 +384,7 @@
         ]
       },
       "after": {
-        "mana": 3,
+        "mana": 4,
         "effects": [
           {
             "kind": "stat",
@@ -419,7 +415,7 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
@@ -455,19 +451,13 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
           {
             "kind": "stat",
             "target": "all_allies",
             "stat": "health",
             "value": 1
-          },
-          {
-            "kind": "stat",
-            "target": "all_enemies",
-            "stat": "shot",
-            "value": -1
           }
         ]
       }
@@ -487,7 +477,7 @@
         ]
       },
       "after": {
-        "mana": 3,
+        "mana": 4,
         "effects": [
           {
             "kind": "stat",
@@ -518,7 +508,7 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
@@ -555,7 +545,7 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
           {
             "kind": "stat",
@@ -617,7 +607,7 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
@@ -653,18 +643,12 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
           {
             "kind": "stat",
             "target": "all_enemies",
             "stat": "steel",
-            "value": -1
-          },
-          {
-            "kind": "stat",
-            "target": "all_enemies",
-            "stat": "shot",
             "value": -1
           }
         ]
@@ -691,7 +675,7 @@
         ]
       },
       "after": {
-        "mana": 3,
+        "mana": 4,
         "effects": [
           {
             "kind": "stat",
@@ -721,7 +705,7 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
@@ -763,14 +747,8 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
-          {
-            "kind": "stat",
-            "target": "all_allies",
-            "stat": "shot",
-            "value": 1
-          },
           {
             "kind": "stat",
             "target": "all_enemies",
@@ -795,13 +773,13 @@
         ]
       },
       "after": {
-        "mana": 3,
+        "mana": 4,
         "effects": [
           {
             "kind": "stat",
             "target": "all_allies",
             "stat": "health",
-            "value": 1
+            "value": 2
           }
         ]
       }
@@ -826,13 +804,13 @@
         ]
       },
       "after": {
-        "mana": 5,
+        "mana": 6,
         "effects": [
           {
             "kind": "stat",
             "target": "all_allies",
             "stat": "health",
-            "value": 1
+            "value": 2
           },
           {
             "kind": "stat",
@@ -862,14 +840,8 @@
         ]
       },
       "after": {
-        "mana": 4,
+        "mana": 3,
         "effects": [
-          {
-            "kind": "stat",
-            "target": "all_allies",
-            "stat": "armor",
-            "value": 1
-          },
           {
             "kind": "stat",
             "target": "all_enemies",
@@ -900,10 +872,23 @@
       ]
     },
     {
+      "id": "colossus_of_the_first_wall",
+      "abilityUnlocks": [
+        {
+          "abilityId": "spotter",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
       "id": "banner_chirurgeon",
       "abilityUnlocks": [
         {
-          "abilityId": "windread",
+          "abilityId": "field_ration",
           "unlockLevel": 1
         }
       ]
@@ -913,7 +898,7 @@
       "abilityUnlocks": [
         {
           "abilityId": "ancient_scale",
-          "unlockLevel": 2
+          "unlockLevel": 1
         },
         {
           "abilityId": "shieldwall",
@@ -969,12 +954,12 @@
       "id": "elderhorn_colossus",
       "abilityUnlocks": [
         {
-          "abilityId": "grave_recall",
-          "unlockLevel": 2
+          "abilityId": "windread",
+          "unlockLevel": 1
         },
         {
-          "abilityId": "windread",
-          "unlockLevel": 3
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
         }
       ]
     },
@@ -997,6 +982,28 @@
       ]
     },
     {
+      "id": "grove_tender",
+      "abilityUnlocks": [
+        {
+          "abilityId": "field_ration",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "whitehart_ravager",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "moonrush",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
       "id": "needlewing_hunter",
       "abilityUnlocks": [
         {
@@ -1015,6 +1022,19 @@
         {
           "abilityId": "shieldwall",
           "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "the_unremembered_face",
+      "abilityUnlocks": [
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
         }
       ]
     },
@@ -1073,6 +1093,19 @@
       ]
     },
     {
+      "id": "palace_of_one",
+      "abilityUnlocks": [
+        {
+          "abilityId": "crosswind",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "pounce",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
       "id": "grave_cantor",
       "abilityUnlocks": [
         {
@@ -1098,12 +1131,12 @@
       "id": "the_bell_beneath",
       "abilityUnlocks": [
         {
-          "abilityId": "grave_recall",
-          "unlockLevel": 2
+          "abilityId": "hexweave",
+          "unlockLevel": 1
         },
         {
-          "abilityId": "hexweave",
-          "unlockLevel": 3
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
         }
       ]
     },
@@ -1117,11 +1150,20 @@
       ]
     },
     {
+      "id": "marrow_surgeon",
+      "abilityUnlocks": [
+        {
+          "abilityId": "field_ration",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
       "id": "sepulcher_knight",
       "abilityUnlocks": [
         {
           "abilityId": "ancient_scale",
-          "unlockLevel": 2
+          "unlockLevel": 1
         },
         {
           "abilityId": "hexweave",
@@ -1155,12 +1197,12 @@
       "id": "catacomb_sovereign",
       "abilityUnlocks": [
         {
-          "abilityId": "grave_recall",
-          "unlockLevel": 2
+          "abilityId": "bloodscent",
+          "unlockLevel": 1
         },
         {
-          "abilityId": "bloodscent",
-          "unlockLevel": 3
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
         }
       ]
     },
@@ -1174,15 +1216,37 @@
       ]
     },
     {
+      "id": "cloud_reader",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "griffin_warden",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "forgeheart",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
       "id": "thunder_roc_ancient",
       "abilityUnlocks": [
         {
-          "abilityId": "moonrush",
-          "unlockLevel": 2
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
         },
         {
-          "abilityId": "ancient_scale",
-          "unlockLevel": 3
+          "abilityId": "moonrush",
+          "unlockLevel": 2
         }
       ]
     },
@@ -1208,8 +1272,21 @@
       "id": "wingmender",
       "abilityUnlocks": [
         {
-          "abilityId": "windread",
+          "abilityId": "field_ration",
           "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "cloudhouse_champion",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "flank",
+          "unlockLevel": 4
         }
       ]
     },
@@ -1235,12 +1312,38 @@
       "id": "griffin_legionary",
       "abilityUnlocks": [
         {
-          "abilityId": "pounce",
-          "unlockLevel": 2
+          "abilityId": "salvager",
+          "unlockLevel": 1
         },
         {
-          "abilityId": "salvager",
-          "unlockLevel": 4
+          "abilityId": "pounce",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
+      "id": "basalt_drake",
+      "abilityUnlocks": [
+        {
+          "abilityId": "primal_mend",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "moonrush",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
+      "id": "first_blood_wyrm",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
         }
       ]
     },
@@ -1263,11 +1366,20 @@
       ]
     },
     {
+      "id": "hoard_tender",
+      "abilityUnlocks": [
+        {
+          "abilityId": "field_ration",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
       "id": "ashen_drakeguard",
       "abilityUnlocks": [
         {
-          "abilityId": "ancient_scale",
-          "unlockLevel": 2
+          "abilityId": "bloodscent",
+          "unlockLevel": 1
         },
         {
           "abilityId": "brace",
@@ -1290,6 +1402,19 @@
         {
           "abilityId": "salvager",
           "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "elder_scale_guard",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "hunt",
+          "unlockLevel": 4
         }
       ]
     },
@@ -1334,6 +1459,19 @@
       ]
     },
     {
+      "id": "nameless_colossus",
+      "abilityUnlocks": [
+        {
+          "abilityId": "flank",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "pounce",
+          "unlockLevel": 2
+        }
+      ]
+    },
+    {
       "id": "hedge_crossbowman",
       "abilityUnlocks": [
         {
@@ -1360,9 +1498,353 @@
       "abilityUnlocks": [
         {
           "abilityId": "windread",
-          "unlockLevel": 7
+          "unlockLevel": 1
         }
       ]
+    }
+  ],
+  "preserved": "All card IDs, troop base/level stats, names, rarities and editions. No accounts, ownership, balances or database rows changed.",
+  "commanderEditionLimits": {
+    "ancient": 2,
+    "oath": 2,
+    "legionnaire": 1
+  },
+  "legionnaireRevision": [
+    {
+      "id": "maelor_ironhand",
+      "name": "Maelor, the Iron Queen",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "steel",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 1,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ysilde_whitehart",
+      "name": "Ysilde, the White Hart",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 1,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "the_lacquered_oracle",
+      "name": "The Lacquered Oracle",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "magicResistance",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 2,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "magicResistance",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vel_mourningstar",
+      "name": "Vel, Marshal of Mourning",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "steel",
+            "value": -1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "steel",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "saint_orien_of_the_gale",
+      "name": "Orien, Saint of Storms",
+      "before": {
+        "mana": 6,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "shot",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "thalor_worldcoil",
+      "name": "Thalor, the Worldcoil",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "spell",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "spell",
+            "value": -1
+          }
+        ]
+      }
+    }
+  ],
+  "minimumCommanderMana": 3,
+  "commanderManaRevision": [
+    {
+      "id": "aldric_stonebanner",
+      "name": "Aldric, the Last Standard",
+      "from": 2,
+      "to": 4
+    },
+    {
+      "id": "torvane_crownshield",
+      "name": "Torvane, the Unbroken Oath",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "id": "maelor_ironhand",
+      "name": "Maelor, the Iron Queen",
+      "from": 1,
+      "to": 3
+    },
+    {
+      "id": "eira_thornpath",
+      "name": "Eira, Keeper of Thornpaths",
+      "from": 4,
+      "to": 4
+    },
+    {
+      "id": "garran_moonfang",
+      "name": "Garran, the Mooncrowned",
+      "from": 5,
+      "to": 5
+    },
+    {
+      "id": "ysilde_whitehart",
+      "name": "Ysilde, the White Hart",
+      "from": 1,
+      "to": 3
+    },
+    {
+      "id": "oris_glassmoth",
+      "name": "Oris, the Glass Envoy",
+      "from": 3,
+      "to": 4
+    },
+    {
+      "id": "veyra_nine_masks",
+      "name": "Veyra of the Nine Faces",
+      "from": 4,
+      "to": 5
+    },
+    {
+      "id": "the_lacquered_oracle",
+      "name": "The Lacquered Oracle",
+      "from": 2,
+      "to": 3
+    },
+    {
+      "id": "morcant_bellkeeper",
+      "name": "Morcant of the Last Toll",
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "king_ossuary",
+      "name": "Ossyr, the Bone Sovereign",
+      "from": 4,
+      "to": 5
+    },
+    {
+      "id": "vel_mourningstar",
+      "name": "Vel, Marshal of Mourning",
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "cael_rookwing",
+      "name": "Cael, Captain of Highwatch",
+      "from": 4,
+      "to": 4
+    },
+    {
+      "id": "duke_avorran",
+      "name": "Avorran, Lord of the Eyrie",
+      "from": 6,
+      "to": 5
+    },
+    {
+      "id": "saint_orien_of_the_gale",
+      "name": "Orien, Saint of Storms",
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "vaelor_runeclaw",
+      "name": "Vaelor, Keeper of Firstfire",
+      "from": 2,
+      "to": 4
+    },
+    {
+      "id": "orrun_the_first_scale",
+      "name": "Orrun, First of the Flame",
+      "from": 4,
+      "to": 6
+    },
+    {
+      "id": "thalor_worldcoil",
+      "name": "Thalor, the Worldcoil",
+      "from": 3,
+      "to": 3
+    }
+  ],
+  "twoAbilityCommanderMana": 6,
+  "twoAbilityManaRevision": [
+    {
+      "id": "torvane_crownshield",
+      "from": 6,
+      "to": 6
+    },
+    {
+      "id": "garran_moonfang",
+      "from": 5,
+      "to": 6
+    },
+    {
+      "id": "veyra_nine_masks",
+      "from": 5,
+      "to": 6
+    },
+    {
+      "id": "king_ossuary",
+      "from": 5,
+      "to": 6
+    },
+    {
+      "id": "duke_avorran",
+      "from": 5,
+      "to": 6
+    },
+    {
+      "id": "orrun_the_first_scale",
+      "from": 6,
+      "to": 6
     }
   ]
 }

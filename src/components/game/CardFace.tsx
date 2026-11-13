@@ -3,8 +3,7 @@ import type { UnitCard } from "@/game/units";
 import type { SummonerEffect } from "@/game/catalog/types";
 import { BANNER_BY_ID } from "@/game/banners";
 import { regularCardArt } from "@/lib/card-art";
-import { AbilityIcon } from "./AbilityIcon";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { AbilityTooltip, TroopAbilityTooltip } from "./AbilityTooltip";
 
 export type CardStatId = "mana" | "health" | "armor" | "speed" | "steel" | "shot" | "spell";
 const STAT_LABELS: Record<CardStatId, string> = {
@@ -126,15 +125,15 @@ export function CardFace({
       <CardStat stat="mana" value={mana} className="card-face-mana" />
       {unit && (
         <>
+          <span className="card-face-vitals">
+            <CardStat stat="speed" value={unit.speed} />
+            {unit.armor > 0 && <CardStat stat="armor" value={unit.armor} />}
+            <CardStat stat="health" value={unit.health} />
+          </span>
           <span className="card-face-attacks">
             {attackStats.map((stat) => (
               <CardStat stat={stat} value={unit[stat]} key={stat} />
             ))}
-          </span>
-          <span className="card-face-vitals">
-            {unit.armor > 0 && <CardStat stat="armor" value={unit.armor} />}
-            <CardStat stat="health" value={unit.health} />
-            <CardStat stat="speed" value={unit.speed} />
           </span>
         </>
       )}
@@ -145,33 +144,53 @@ export function CardFace({
             <span />
             {unit.level ?? 1}
           </span>
-        ) : (
-          <span className="card-face-effects" title={effectText.join("\n")}>
-            {effectText.slice(0, 2).map((text) => (
-              <span key={text}>{text}</span>
-            ))}
-          </span>
-        )}
+        ) : null}
         <span className="card-face-abilities" aria-label="Abilities">
-          <TooltipProvider delayDuration={150}>
-            {abilities.map((id) => {
-              const ability = ABILITIES.find((a) => a.id === id);
-              if (!ability) return null;
+          {!unit &&
+            effects.map((effect, index) => {
+              if (effect.kind !== "stat" || !effect.stat || effect.value === undefined) return null;
+              const ward = effect.stat === "magicResistance";
+              const stat = ward ? "armor" : effect.stat;
+              if (!(stat in STAT_LABELS)) return null;
+              const value = ward ? -effect.value : effect.value;
+              const description =
+                effectText[index] ??
+                `${effect.target === "all_enemies" ? "Enemies" : "Allies"}: ${value > 0 ? "+" : ""}${value} ${STAT_LABELS[stat as CardStatId]}`;
               return (
-                <Tooltip key={id}>
-                  <TooltipTrigger asChild>
-                    <span role="img" aria-label={ability.name} className="card-face-ability">
-                      <AbilityIcon id={id} decorative />
+                <AbilityTooltip
+                  key={index}
+                  title={
+                    ward
+                      ? "Magic Ward"
+                      : `${STAT_LABELS[stat as CardStatId]} ${effect.target === "all_enemies" ? "Reduction" : "Boost"}`
+                  }
+                  description={description}
+                  label={description}
+                  target={effect.target}
+                  className="card-face-command-effect"
+                  icon={
+                    <span className="card-face-command-icon">
+                      <StatIcon stat={stat as CardStatId} />
+                      {ward && <StatIcon stat="spell" className="card-face-command-ward" />}
                     </span>
-                  </TooltipTrigger>
-                  <TooltipContent className="max-w-xs text-xs">
-                    <strong>{ability.name}</strong>
-                    <p>{ability.mechanics}</p>
-                  </TooltipContent>
-                </Tooltip>
+                  }
+                >
+                  <span className="card-face-command-icon" aria-hidden="true">
+                    <StatIcon stat={stat as CardStatId} />
+                    {ward && <StatIcon stat="spell" className="card-face-command-ward" />}
+                  </span>
+                  <strong aria-hidden="true">
+                    {value > 0 ? "+" : "−"}
+                    {Math.abs(value)}
+                  </strong>
+                </AbilityTooltip>
               );
             })}
-          </TooltipProvider>
+          {abilities.map((id) => {
+            const ability = ABILITIES.find((a) => a.id === id);
+            if (!ability) return null;
+            return <TroopAbilityTooltip key={id} id={id} className="card-face-ability" />;
+          })}
         </span>
       </div>
     </div>

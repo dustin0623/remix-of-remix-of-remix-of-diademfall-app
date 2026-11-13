@@ -22,6 +22,10 @@ import { RankedHistory } from "@/components/game/RankedHistory";
 import { EnergyMeter, RewardsPanel, useRewardsToday } from "@/components/economy/RewardsPanel";
 
 export const Route = createFileRoute("/_authenticated/ranked/")({
+  validateSearch: (search: Record<string, unknown>): { tab?: "rewards" | "ladder" } => {
+    const tab = search["tab"];
+    return tab === "rewards" || tab === "ladder" ? { tab } : {};
+  },
   head: () => ({
     meta: [
       { title: "Ranked — Diademfall" },
@@ -43,6 +47,8 @@ export const Route = createFileRoute("/_authenticated/ranked/")({
 
 function RankedLobby() {
   const navigate = useNavigate();
+  const { tab = "battles" } = Route.useSearch();
+  const navigateTabs = Route.useNavigate();
   const qc = useQueryClient();
   const { account } = useAccount();
   const join = useServerFn(joinRankedQueue);
@@ -111,7 +117,6 @@ function RankedLobby() {
     ? Math.max(0, Math.floor((now - new Date(ticket.createdAt).getTime()) / 1000))
     : 0;
 
-  const [tab, setTab] = useState("battles");
   const prog = account ? divisionProgress(account.rating) : null;
   const unopened = season.data?.chests.filter((c) => c.status === "unopened").length ?? 0;
   const seasonNo = season.data?.season.number ?? account?.season?.number ?? null;
@@ -245,7 +250,10 @@ function RankedLobby() {
                   </button>
                   {account?.cardsOwned === 0 && (
                     <p className="play-collection-required">
-                      <Link to="/open">Open packs</Link> to build your first ranked team.
+                      <Link to="/items" search={{ section: "others" }}>
+                        Open packs
+                      </Link>{" "}
+                      to build your first ranked team.
                     </p>
                   )}
                 </>
@@ -257,7 +265,14 @@ function RankedLobby() {
       </PageHero>
 
       <main className="play-dashboard" id="play-dashboard">
-        <Tabs value={tab} onValueChange={setTab}>
+        <Tabs
+          value={tab}
+          onValueChange={(value) =>
+            void navigateTabs({
+              search: value === "rewards" || value === "ladder" ? { tab: value } : {},
+            })
+          }
+        >
           <TabsList className="play-dashboard-tabs" aria-label="Play sections">
             {sections.map((s) => (
               <TabsTrigger key={s.id} value={s.id} className="play-dashboard-tab">

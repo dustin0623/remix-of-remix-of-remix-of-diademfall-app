@@ -519,12 +519,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "spotter",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "spotter",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -1024,7 +1024,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -1109,7 +1109,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "unlockLevel": 1
       },
       {
         "abilityId": "shieldwall",
@@ -2231,12 +2231,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "windread",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "windread",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -2736,7 +2736,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "primal_mend",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -2820,12 +2820,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "moonrush",
-        "unlockLevel": 2
+        "abilityId": "ancient_scale",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "ancient_scale",
-        "unlockLevel": 4
+        "abilityId": "moonrush",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -3943,12 +3943,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "hexweave",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "hexweave",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -5098,12 +5098,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pounce",
-        "unlockLevel": 2
+        "abilityId": "crosswind",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "crosswind",
-        "unlockLevel": 3
+        "abilityId": "pounce",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -5655,12 +5655,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "hexweave",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "hexweave",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -6160,7 +6160,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "primal_mend",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -6245,7 +6245,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "unlockLevel": 1
       },
       {
         "abilityId": "hexweave",
@@ -6810,12 +6810,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "bloodscent",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "bloodscent",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -7111,7 +7111,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "field_ration",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -7298,7 +7298,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "unlockLevel": 1
       },
       {
         "abilityId": "forgeheart",
@@ -7367,12 +7367,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "moonrush",
-        "unlockLevel": 2
+        "abilityId": "ancient_scale",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "ancient_scale",
-        "unlockLevel": 3
+        "abilityId": "moonrush",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -7872,7 +7872,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -7957,7 +7957,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "unlockLevel": 1
       },
       {
         "abilityId": "flank",
@@ -8452,12 +8452,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pounce",
-        "unlockLevel": 2
+        "abilityId": "salvager",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "salvager",
-        "unlockLevel": 4
+        "abilityId": "pounce",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -9009,12 +9009,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "moonrush",
-        "unlockLevel": 2
+        "abilityId": "primal_mend",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "ancient_scale",
-        "unlockLevel": 4
+        "abilityId": "moonrush",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -9079,12 +9079,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "grave_recall",
-        "unlockLevel": 2
+        "abilityId": "ancient_scale",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "ancient_scale",
-        "unlockLevel": 3
+        "abilityId": "grave_recall",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -9584,7 +9584,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "windread",
+        "abilityId": "field_ration",
         "unlockLevel": 1
       }
     ],
@@ -9668,8 +9668,8 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "abilityId": "bloodscent",
+        "unlockLevel": 1
       },
       {
         "abilityId": "brace",
@@ -10165,7 +10165,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "ancient_scale",
-        "unlockLevel": 2
+        "unlockLevel": 1
       },
       {
         "abilityId": "hunt",
@@ -10602,12 +10602,12 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "pounce",
-        "unlockLevel": 2
+        "abilityId": "flank",
+        "unlockLevel": 1
       },
       {
-        "abilityId": "flank",
-        "unlockLevel": 3
+        "abilityId": "pounce",
+        "unlockLevel": 2
       }
     ],
     "levels": [
@@ -11160,7 +11160,7 @@ export const TROOPS: TroopDefinition[] = [
     "abilityUnlocks": [
       {
         "abilityId": "windread",
-        "unlockLevel": 7
+        "unlockLevel": 1
       }
     ],
     "levels": [

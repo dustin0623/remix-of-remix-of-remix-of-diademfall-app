@@ -1,6 +1,6 @@
 # Shared ability medallions
 
-24 original Diademfall icons, one per current ability ID. Every PNG is transparent RGBA at 150 x 152 pixels. The copper bevel, navy face and simplified ivory/silver symbols follow the cleaned rarity-emblem artwork. The exterior is transparent; the face is opaque.
+18 active Diademfall ability icons and 6 retained retired illustrations. The manifest marks each icon with `active`; the current catalog controls which icons appear in the game. Every PNG is transparent RGBA at 150 x 152 pixels. The copper bevel, navy face and simplified ivory/silver symbols follow the cleaned rarity-emblem artwork. The exterior is transparent; the face is opaque.
 
 The app reads these files through src/components/game/AbilityIcon.tsx. Ability names, rules, role categories and interactions come from src/game/catalog/abilities.ts. Icons also appear as live card overlays and do not require regenerating the 150 base card textures.
 

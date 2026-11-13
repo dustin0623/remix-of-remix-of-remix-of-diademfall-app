@@ -1,84 +1,57 @@
-# Shared abilities — prelaunch rebalance
+# Shared abilities and Commanders — prelaunch support revision
 
-Reviewed Splinterlands on 12 November 2026, including the user's Rebellion market tab and open Exemplar ability selector. The latest comparison and decisions are in [splinterlands-comparison.md](./splinterlands-comparison.md).
+Updated 13 November 2026. The playable catalog contains 18 Commanders and 120 troops. Card IDs, names, editions, rarities, printed troop stats, accounts, ownership and balances are preserved. Commander mana/effects and troop ability unlocks are revised in place.
 
-## Research
+## Commander rules
 
-Splinterlands separates card elements from combat abilities. Its card-stat documentation describes abilities as properties of individual cards, with more unlocked through levels. Diademfall therefore keeps banners on cards and removes banner ownership from ability definitions. [Card stats](https://docs.splinterlands.com/cards/card-stats)
+Every Commander costs at least 3 mana: basic single effects cost 3, stronger single effects cost 4, and two-effect support always costs 6. Troop mana and printed stats are unchanged.
 
-The official categorical guide separates offense, defense, buffs and debuffs, including targeting, restoration and positioning. Our six roles are defense, offense, targeting, control, restoration and support. These organize discovery rather than restrict who may use a mechanic. [Categorical breakdown](https://support.splinterlands.com/hc/en-us/articles/26698946516884-Abilities-Categorical-Breakdown)
+Commanders support troops automatically. Ancient and Oath Commanders may have up to two unconditional effects on all allies or all enemies; Legionnaire Commanders have exactly one. Current effects are melee/ranged/magic damage, health, armor and Magic Ward. There are no champion selections, positional grants, tactical decision screens or attack-channel cycling.
 
-Scattershot demonstrates a clear targeting rule: ranged and magic select a random enemy. Our original Wildshot uses the battle RNG and explicit precedence. Diademfall does not implement Splinterlands' Taunt/Camouflage system or claim their interactions. [Scattershot](https://support.splinterlands.com/hc/en-us/articles/13655875071892-Scattershot)
+- Damage bonuses and penalties affect an existing attack type only; they never create a new attack type.
+- Health and attack power have a minimum of 1. Armor has a minimum of 0.
+- Both Commanders' effects are added before clamping so opposing bonuses and penalties resolve equally on either side.
+- Magic Ward reduces each incoming magic attack by 1, with a minimum of 1 damage. Magic still bypasses armor. It does not stack with Ancient Scale; use the larger reduction.
+- Oathless Day disables Commander support. Unwritten Deeds removes troop abilities but keeps Commander support.
+- Commanders is the visible product name. Existing summoner IDs, code types, stored team fields, card types and art paths remain compatible.
 
-The official interaction guide makes timing, stacking and counterplay explicit. Each current Diademfall ability has implemented mechanics and interaction notes; the Codex shows these rather than promising unsupported resources or effects. [Abilities and status effects](https://support.splinterlands.com/hc/en-us/articles/4414966685332-Abilities-Status-Effects)
+The exact current lineup is in [support-kit-changes.json](./support-kit-changes.json), and the typed source is src/game/catalog/summoners.ts.
 
-The source inspires clarity and tactical roles. The artwork, names and balance numbers are Diademfall's own.
+## Troop abilities
 
-## Changes
+18 active mechanics are shared across banners and Wayfarers:
 
-The previous 42 faction/Wayfarer definitions are consolidated into 24 shared mechanics. Every current mechanic appears on troops in at least two banners. Removed mechanics are replaced on troop unlocks and summoner grants; no card IDs or player ownership records are reset.
-
-- Wildshot selects seeded random ranged/magic targets; Flank attacks the rear with Steel; Hunt chooses lowest current health.
-- Moonrush repeats at 50% power every third round. Doom Count deals 2 direct damage after three round ends.
-- Crosswind now slows the enemy actually hit: first hit each round, -1 speed next round, capped at -2. Packmark works for every ally.
-- Forgeheart restores armor after survival; Ancient Scale checks damage after armor; Grave Recall revives at 1 health and skips the remaining turn.
-- Hexweave now only blocks healing through the following round, replacing its hidden three-effect cycle. Runebreath retains its documented channel cycle.
-- Shieldwall reduction and Makeshift Guard temporary armor no longer stack across adjacent bearers. Spotter now only grants ranged armor bypass, without an extra accuracy bonus.
-- Roadwise speed expires after a turn with no legal attack, as well as after attacking.
-- High-impact troop mechanics require at least 6 mana and unlock no earlier than half the rarity's level cap.
-- Like-cost troop archetypes use equal printed stat budgets across banners. Summoner effects, ability combinations and formation provide differentiation.
-- The practice AI rolls candidate jitter once, evaluates the sampled level and real attack positions, and prices marginal upgrades so an expensive tank cannot crowd out the attacking back line. Cheaper replacements release mana for later upgrades.
-
-The playable source contains 18 summoners and 120 troops: 138 cards, six summoners and 40 troops per edition. Existing metadata/tests incorrectly claimed 150 playable cards. All 150 previously completed illustrations are retained for the card-layer artwork pass.
-
-This is a prelaunch revision in place, per the user's instruction. No new legacy engine/catalog snapshots or old battle-hash guarantees were added. Existing retired-card lookup remains.
-
-## Evidence and assets
-
-- balance-audit.json: reproducible 5,400-battle AI sample across all banner pairs, three mana caps, both sides, and level 1/mid/max. A balance diagnostic, not proof of a competitive metagame.
-- simplification-baseline.json: the immediately previous engine on the same current rosters, drafter and tuning seeds.
-- simplification-balance-summary.json: matched before/after per-banner scores and fresh validation results.
-- balance-audit.before.json: historical first shared-ability candidate under the old greedy AI; not the baseline for this latest pass.
-- balance-holdout.json: the same 5,400-battle diagnostic with fresh draft/battle seeds not used in tuning.
-- roster-changes.json: card-by-card changes.
-- icon-prompts.json: exact final copper icon prompts, built-in ImageGen mode, export recipe and checksums.
-- icon-contact-sheet.png: all 24 icons at production and small display sizes.
-- Production icons: public/assets/abilities/{ability_id}.png, transparent RGBA, exactly 150 x 152.
-
-Run bun scripts/audit-abilities.ts to reproduce the sample. Engine tests cover targeting precedence, deterministic rolls, armor mitigation, restoration, revival turns, debuff expiry and stacking caps.
-
-## Cloud handoff
-
-No database reset is needed. Synchronize the changed catalog fingerprint and card metadata through Lovable before ranked deployment. See lovable-handoff.md and game-version.sql. The existing SQL-constant consistency test continues to identify the stale migration until Lovable adds the update; it is not bypassed.
-
-## Final diagnostic
-
-The same-seed comparison holds troop stats, summoners, unlocks, formations and drafting logic constant. Only the ability engine changes.
-
-Previous engine, tuning seeds 1–20:
-
-| Card level | Banner score-rate range |
+| Role | Abilities |
 |---|---|
-| level-1 | 45.2–57.0% |
-| mid-level | 43.0–60.0% |
-| max-level | 43.8–56.5% |
+| Defense | Brace: -1 physical damage; Shieldwall: adjacent allies take -1 physical damage; Forgeheart: block the first hit; Ancient Scale: -1 magic damage |
+| Offense | Bloodscent: +1 against wounded enemies; Moonrush: one follow-up attack after a kill; Pounce: one legal opening attack |
+| Targeting | Wildshot: seeded random ranged/magic target; Flank: melee rear attack; Hunt: lowest current health; Spotter: ranged/magic backline support targeting |
+| Control | Hexweave: healing prevention through the following round; Crosswind: -1 speed next round, capped at -2 |
+| Restoration | Primal Mend: self-heal 2 each turn; Field Ration: heal the frontline 1 each turn; Salvager: repair the most damaged allied armor by 2 each turn; Grave Recall: self-revive once at 1 health, without armor |
+| Support | Windread: +1 speed in every position |
 
-Simplified engine, same seeds:
+All ordinary damage reductions resolve before armor and leave at least 1 incoming attack damage; armor can then absorb it. Multiple adjacent Shieldwalls do not stack. Forgeheart blocks an entire attack's damage but not its on-hit debuffs; misses do not consume it. Direct damage bypasses these attack protections.
 
-| Card level | Banner score-rate range |
-|---|---|
-| level-1 | 46.0–57.7% |
-| mid-level | 43.8–59.8% |
-| max-level | 45.3–55.0% |
+Support actions resolve at the start of the bearer's turn, including turns without a legal attack. Repair cannot exceed maximum armor and Gilded March disables it. Healing prevention blocks health restoration, not repair or revival. Revival skips the rest of the current round and does not restore a spent Forgeheart.
 
-Fresh validation seeds 30001–30020:
+Targeting precedence is Duel at Dawn from position 1, Wildshot, Flank, Spotter, Hunt, then the front enemy. Melee normally attacks from positions 1–2; ranged cannot attack from position 1; magic attacks from anywhere. Pounce respects these positions and alternates the teams' formation slots before round 1. Moonrush cannot chain or trigger against a target that revives.
 
-| Card level | Banner score-rate range |
-|---|---|
-| level-1 | 42.8–59.0% |
-| mid-level | 37.0–57.3% |
-| max-level | 41.3–59.8% |
+Runebreath, Doom Count, Makeshift Guard, Roadwise, Last Pay and Packmark are retired from current unlocks. Their images remain retained with active:false in the asset manifest. Current icons keep the existing copper-rim artwork and 150 x 152 transparent canvas.
 
-Each rate counts a draw as half a win. Every sample has 5,400 battles, all 15 banner pairs, both sides, mana caps 19/30/40 and level 1/mid/max. No rulesets, collection limits or human optimization are modeled. Veil Covenant remains weak at mid-level on fresh seeds; further player testing is needed. These diagnostics do not establish competitive balance. The current pass changes no troop stats, summoner effects or unlocks.
+The six rare support troops (Banner Chirurgeon, Grove Tender, Fate Stitcher, Marrow Surgeon, Wingmender and Hoard Tender) now provide frontline healing at level 1. Higher-mana troops can begin with a basic defining skill; extra attacks and revival remain later, high-mana unlocks. The AI evaluates Commander bonuses and the new support roles when drafting.
 
-All 24 icons now use simple ivory/silver symbols, a dark face and a copper rim matching the clean rarity emblem style. Creative edits use built-in ImageGen; transparent model-canvas padding is trimmed before a proportional 150 x 152 export so round badges stay round.
+## Research and validation
+
+The design draws on Splinterlands' clear targeting, defense and restoration roles, while using Diademfall's own names, artwork and balance values:
+
+- [Abilities: categorical breakdown](https://support.splinterlands.com/hc/en-us/articles/26698946516884-Abilities-Categorical-Breakdown)
+- [Abilities and status effects](https://support.splinterlands.com/hc/en-us/articles/4414966685332-Abilities-Status-Effects)
+- [Rebellion FAQ](https://support.splinterlands.com/hc/en-us/articles/21140104512148-Rebellion-FAQ)
+
+The user's latest instruction selects automatic support Commanders instead of Rebellion's targeted tactics. Earlier comparison notes and audit snapshots are historical references; this file and the current typed catalog define the latest rules.
+
+Tests cover every active mechanic, Commander damage channels, minimum stats, opposing-effect order, Magic Ward interactions, silence rules, targeting precedence, healing/repair timing, revival and deterministic battles. The audit scripts run 5,400 seeded AI battles per sample across banner pairs, both sides, three mana caps and level 1/mid/max. Results are diagnostics rather than a claim of competitive metagame balance.
+
+## Cloud synchronization
+
+The generated [game-version.sql](./game-version.sql) and [Lovable handoff](./lovable-handoff.md) must be applied through Lovable before ranked deployment, followed by the existing catalog loader. The catalog fingerprint consistency test stays enabled and identifies the stale Cloud/migration definition until that update is supplied. No database reset, migration edit or live data mutation is part of this revision.

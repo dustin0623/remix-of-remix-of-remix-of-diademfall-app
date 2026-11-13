@@ -17,6 +17,7 @@ import { Route as CodexRouteImport } from './routes/codex'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as TreasuryRouteImport } from './routes/treasury'
 import { Route as AuthenticatedActivityRouteImport } from './routes/_authenticated/activity'
+import { Route as AuthenticatedItemsRouteImport } from './routes/_authenticated/items'
 import { Route as AuthenticatedLeaderboardRouteImport } from './routes/_authenticated/leaderboard'
 import { Route as AuthenticatedMarketRouteImport } from './routes/_authenticated/market'
 import { Route as AuthenticatedOpenRouteImport } from './routes/_authenticated/open'
@@ -65,6 +66,11 @@ const TreasuryRoute = TreasuryRouteImport.update({
 const AuthenticatedActivityRoute = AuthenticatedActivityRouteImport.update({
   id: '/activity',
   path: '/activity',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedItemsRoute = AuthenticatedItemsRouteImport.update({
+  id: '/items',
+  path: '/items',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedLeaderboardRoute =
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
   '/activity': typeof AuthenticatedActivityRoute
+  '/items': typeof AuthenticatedItemsRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
   '/activity': typeof AuthenticatedActivityRoute
+  '/items': typeof AuthenticatedItemsRoute
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/reset-password': typeof ResetPasswordRoute
   '/treasury': typeof TreasuryRoute
   '/_authenticated/activity': typeof AuthenticatedActivityRoute
+  '/_authenticated/items': typeof AuthenticatedItemsRoute
   '/_authenticated/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/_authenticated/market': typeof AuthenticatedMarketRoute
   '/_authenticated/open': typeof AuthenticatedOpenRoute
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/treasury'
     | '/activity'
+    | '/items'
     | '/leaderboard'
     | '/market'
     | '/open'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/treasury'
     | '/activity'
+    | '/items'
     | '/leaderboard'
     | '/market'
     | '/open'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/reset-password'
     | '/treasury'
     | '/_authenticated/activity'
+    | '/_authenticated/items'
     | '/_authenticated/leaderboard'
     | '/_authenticated/market'
     | '/_authenticated/open'
@@ -310,6 +322,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedActivityRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/items': {
+      id: '/_authenticated/items'
+      path: '/items'
+      fullPath: '/items'
+      preLoaderRoute: typeof AuthenticatedItemsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/leaderboard': {
       id: '/_authenticated/leaderboard'
       path: '/leaderboard'
@@ -385,6 +404,7 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedActivityRoute: typeof AuthenticatedActivityRoute
+  AuthenticatedItemsRoute: typeof AuthenticatedItemsRoute
   AuthenticatedLeaderboardRoute: typeof AuthenticatedLeaderboardRoute
   AuthenticatedMarketRoute: typeof AuthenticatedMarketRoute
   AuthenticatedOpenRoute: typeof AuthenticatedOpenRoute
@@ -399,6 +419,7 @@ interface AuthenticatedRouteRouteChildren {
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedActivityRoute: AuthenticatedActivityRoute,
+  AuthenticatedItemsRoute: AuthenticatedItemsRoute,
   AuthenticatedLeaderboardRoute: AuthenticatedLeaderboardRoute,
   AuthenticatedMarketRoute: AuthenticatedMarketRoute,
   AuthenticatedOpenRoute: AuthenticatedOpenRoute,

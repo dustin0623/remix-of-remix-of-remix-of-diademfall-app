@@ -1,7 +1,7 @@
 {
   "version": "three-packs-economy-wayfarers-1.0.0",
-  "catalogHash": "7749b339407f3b3904665b29f96c3397ba5747bf07d5fcc8ae368f0d817276ea",
-  "engineSourceSha256": "4dc1ac85e6e0e7d76a6541e4f28b8497a6405792f44100ad26c45a5e46ee8122",
+  "catalogHash": "fda76be4495cf47c16816dc67d366ce408c582868314790e8a3fec6a6a292a5f",
+  "engineSourceSha256": "a74689550ddfd1df880e8783c002dc126a7c7da4aafe63aaad9c2bfafd724b53",
   "methodology": "5400 deterministic battles, all 15 banner pairs, three mana caps, 20 draft seeds, both sides, at level 1/mid/max. Drafts evaluate the stats and unlocked abilities of the sampled level. AI sample, not competitive metagame proof.",
   "sample": "holdout seeds 30001-30020",
   "results": [
@@ -10,173 +10,173 @@
       "banners": [
         {
           "banner": "bastion_orders",
-          "wins": 306,
+          "wins": 166,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.51
+          "scoreRate": 0.2767
         },
         {
           "banner": "wild_courts",
-          "wins": 354,
+          "wins": 402,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.59
+          "scoreRate": 0.67
         },
         {
           "banner": "veil_covenant",
-          "wins": 257,
+          "wins": 300,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.4283
+          "scoreRate": 0.5
         },
         {
           "banner": "hollow_legions",
-          "wins": 342,
+          "wins": 304,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.57
+          "scoreRate": 0.5067
         },
         {
           "banner": "skybound_houses",
-          "wins": 271,
+          "wins": 409,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.4517
+          "scoreRate": 0.6817
         },
         {
           "banner": "wyrm_clans",
-          "wins": 270,
+          "wins": 219,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.45
+          "scoreRate": 0.365
         }
       ],
       "summoners": [
         {
           "id": "aldric_stonebanner",
-          "wins": 187,
+          "wins": 80,
           "draws": 0,
           "games": 270,
-          "scoreRate": 0.6926
+          "scoreRate": 0.2963
         },
         {
           "id": "torvane_crownshield",
-          "wins": 28,
+          "wins": 9,
           "draws": 0,
           "games": 30,
-          "scoreRate": 0.9333
+          "scoreRate": 0.3
         },
         {
           "id": "maelor_ironhand",
-          "wins": 91,
+          "wins": 77,
           "draws": 0,
           "games": 300,
-          "scoreRate": 0.3033
+          "scoreRate": 0.2567
         },
         {
           "id": "eira_thornpath",
-          "wins": 235,
+          "wins": 148,
           "draws": 0,
           "games": 258,
-          "scoreRate": 0.9109
+          "scoreRate": 0.5736
         },
         {
           "id": "garran_moonfang",
-          "wins": 26,
+          "wins": 39,
           "draws": 0,
           "games": 60,
-          "scoreRate": 0.4333
+          "scoreRate": 0.65
         },
         {
           "id": "ysilde_whitehart",
-          "wins": 93,
+          "wins": 215,
           "draws": 0,
           "games": 282,
-          "scoreRate": 0.3298
+          "scoreRate": 0.7624
         },
         {
           "id": "oris_glassmoth",
-          "wins": 135,
+          "wins": 157,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.5488
+          "scoreRate": 0.6382
         },
         {
           "id": "veyra_nine_masks",
-          "wins": 36,
+          "wins": 47,
           "draws": 0,
           "games": 90,
-          "scoreRate": 0.4
+          "scoreRate": 0.5222
         },
         {
           "id": "the_lacquered_oracle",
-          "wins": 86,
+          "wins": 96,
           "draws": 0,
           "games": 264,
-          "scoreRate": 0.3258
+          "scoreRate": 0.3636
         },
         {
           "id": "morcant_bellkeeper",
-          "wins": 196,
+          "wins": 135,
           "draws": 0,
           "games": 234,
-          "scoreRate": 0.8376
+          "scoreRate": 0.5769
         },
         {
           "id": "king_ossuary",
-          "wins": 57,
+          "wins": 49,
           "draws": 0,
           "games": 120,
-          "scoreRate": 0.475
+          "scoreRate": 0.4083
         },
         {
           "id": "vel_mourningstar",
-          "wins": 89,
+          "wins": 120,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.3618
+          "scoreRate": 0.4878
         },
         {
           "id": "cael_rookwing",
-          "wins": 160,
+          "wins": 176,
           "draws": 0,
           "games": 222,
-          "scoreRate": 0.7207
+          "scoreRate": 0.7928
         },
         {
           "id": "duke_avorran",
-          "wins": 57,
+          "wins": 100,
           "draws": 0,
           "games": 150,
-          "scoreRate": 0.38
+          "scoreRate": 0.6667
         },
         {
           "id": "saint_orien_of_the_gale",
-          "wins": 54,
+          "wins": 133,
           "draws": 0,
           "games": 228,
-          "scoreRate": 0.2368
+          "scoreRate": 0.5833
         },
         {
           "id": "vaelor_runeclaw",
-          "wins": 132,
+          "wins": 87,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.6286
+          "scoreRate": 0.4143
         },
         {
           "id": "orrun_the_first_scale",
-          "wins": 48,
+          "wins": 39,
           "draws": 0,
           "games": 180,
-          "scoreRate": 0.2667
+          "scoreRate": 0.2167
         },
         {
           "id": "thalor_worldcoil",
-          "wins": 90,
+          "wins": 93,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.4286
+          "scoreRate": 0.4429
         }
       ]
     },
@@ -185,173 +185,173 @@
       "banners": [
         {
           "banner": "bastion_orders",
-          "wins": 323,
-          "draws": 0,
+          "wins": 300,
+          "draws": 1,
           "games": 600,
-          "scoreRate": 0.5383
+          "scoreRate": 0.5008
         },
         {
           "banner": "wild_courts",
-          "wins": 344,
-          "draws": 0,
+          "wins": 278,
+          "draws": 1,
           "games": 600,
-          "scoreRate": 0.5733
+          "scoreRate": 0.4642
         },
         {
           "banner": "veil_covenant",
-          "wins": 222,
+          "wins": 268,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.37
+          "scoreRate": 0.4467
         },
         {
           "banner": "hollow_legions",
-          "wins": 337,
+          "wins": 313,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.5617
+          "scoreRate": 0.5217
         },
         {
           "banner": "skybound_houses",
-          "wins": 323,
+          "wins": 431,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.5383
+          "scoreRate": 0.7183
         },
         {
           "banner": "wyrm_clans",
-          "wins": 251,
+          "wins": 209,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.4183
+          "scoreRate": 0.3483
         }
       ],
       "summoners": [
         {
           "id": "aldric_stonebanner",
-          "wins": 192,
+          "wins": 135,
           "draws": 0,
           "games": 270,
-          "scoreRate": 0.7111
+          "scoreRate": 0.5
         },
         {
           "id": "torvane_crownshield",
-          "wins": 17,
-          "draws": 0,
+          "wins": 24,
+          "draws": 1,
           "games": 30,
-          "scoreRate": 0.5667
+          "scoreRate": 0.8167
         },
         {
           "id": "maelor_ironhand",
-          "wins": 114,
+          "wins": 141,
           "draws": 0,
           "games": 300,
-          "scoreRate": 0.38
+          "scoreRate": 0.47
         },
         {
           "id": "eira_thornpath",
-          "wins": 232,
+          "wins": 85,
           "draws": 0,
           "games": 258,
-          "scoreRate": 0.8992
+          "scoreRate": 0.3295
         },
         {
           "id": "garran_moonfang",
-          "wins": 20,
+          "wins": 33,
           "draws": 0,
           "games": 60,
-          "scoreRate": 0.3333
+          "scoreRate": 0.55
         },
         {
           "id": "ysilde_whitehart",
-          "wins": 92,
-          "draws": 0,
+          "wins": 160,
+          "draws": 1,
           "games": 282,
-          "scoreRate": 0.3262
+          "scoreRate": 0.5691
         },
         {
           "id": "oris_glassmoth",
-          "wins": 99,
+          "wins": 113,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.4024
+          "scoreRate": 0.4593
         },
         {
           "id": "veyra_nine_masks",
-          "wins": 39,
+          "wins": 38,
           "draws": 0,
           "games": 90,
-          "scoreRate": 0.4333
+          "scoreRate": 0.4222
         },
         {
           "id": "the_lacquered_oracle",
-          "wins": 84,
+          "wins": 117,
           "draws": 0,
           "games": 264,
-          "scoreRate": 0.3182
+          "scoreRate": 0.4432
         },
         {
           "id": "morcant_bellkeeper",
-          "wins": 200,
+          "wins": 119,
           "draws": 0,
           "games": 234,
-          "scoreRate": 0.8547
+          "scoreRate": 0.5085
         },
         {
           "id": "king_ossuary",
-          "wins": 46,
+          "wins": 68,
           "draws": 0,
           "games": 120,
-          "scoreRate": 0.3833
+          "scoreRate": 0.5667
         },
         {
           "id": "vel_mourningstar",
-          "wins": 91,
+          "wins": 126,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.3699
+          "scoreRate": 0.5122
         },
         {
           "id": "cael_rookwing",
-          "wins": 163,
+          "wins": 164,
           "draws": 0,
           "games": 222,
-          "scoreRate": 0.7342
+          "scoreRate": 0.7387
         },
         {
           "id": "duke_avorran",
-          "wins": 63,
+          "wins": 92,
           "draws": 0,
           "games": 150,
-          "scoreRate": 0.42
+          "scoreRate": 0.6133
         },
         {
           "id": "saint_orien_of_the_gale",
-          "wins": 97,
+          "wins": 175,
           "draws": 0,
           "games": 228,
-          "scoreRate": 0.4254
+          "scoreRate": 0.7675
         },
         {
           "id": "vaelor_runeclaw",
-          "wins": 133,
+          "wins": 70,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.6333
+          "scoreRate": 0.3333
         },
         {
           "id": "orrun_the_first_scale",
-          "wins": 53,
+          "wins": 76,
           "draws": 0,
           "games": 180,
-          "scoreRate": 0.2944
+          "scoreRate": 0.4222
         },
         {
           "id": "thalor_worldcoil",
-          "wins": 65,
+          "wins": 63,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.3095
+          "scoreRate": 0.3
         }
       ]
     },
@@ -360,173 +360,173 @@
       "banners": [
         {
           "banner": "bastion_orders",
-          "wins": 359,
+          "wins": 313,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.5983
+          "scoreRate": 0.5217
         },
         {
           "banner": "wild_courts",
-          "wins": 336,
+          "wins": 342,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.56
+          "scoreRate": 0.57
         },
         {
           "banner": "veil_covenant",
-          "wins": 255,
+          "wins": 296,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.425
+          "scoreRate": 0.4933
         },
         {
           "banner": "hollow_legions",
-          "wins": 330,
+          "wins": 269,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.55
+          "scoreRate": 0.4483
         },
         {
           "banner": "skybound_houses",
-          "wins": 272,
+          "wins": 291,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.4533
+          "scoreRate": 0.485
         },
         {
           "banner": "wyrm_clans",
-          "wins": 248,
+          "wins": 289,
           "draws": 0,
           "games": 600,
-          "scoreRate": 0.4133
+          "scoreRate": 0.4817
         }
       ],
       "summoners": [
         {
           "id": "aldric_stonebanner",
-          "wins": 201,
+          "wins": 160,
           "draws": 0,
           "games": 270,
-          "scoreRate": 0.7444
+          "scoreRate": 0.5926
         },
         {
           "id": "torvane_crownshield",
-          "wins": 25,
+          "wins": 19,
           "draws": 0,
           "games": 30,
-          "scoreRate": 0.8333
+          "scoreRate": 0.6333
         },
         {
           "id": "maelor_ironhand",
-          "wins": 133,
+          "wins": 134,
           "draws": 0,
           "games": 300,
-          "scoreRate": 0.4433
+          "scoreRate": 0.4467
         },
         {
           "id": "eira_thornpath",
-          "wins": 220,
+          "wins": 131,
           "draws": 0,
           "games": 258,
-          "scoreRate": 0.8527
+          "scoreRate": 0.5078
         },
         {
           "id": "garran_moonfang",
-          "wins": 23,
+          "wins": 27,
           "draws": 0,
           "games": 60,
-          "scoreRate": 0.3833
+          "scoreRate": 0.45
         },
         {
           "id": "ysilde_whitehart",
-          "wins": 93,
+          "wins": 184,
           "draws": 0,
           "games": 282,
-          "scoreRate": 0.3298
+          "scoreRate": 0.6525
         },
         {
           "id": "oris_glassmoth",
-          "wins": 111,
+          "wins": 129,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.4512
+          "scoreRate": 0.5244
         },
         {
           "id": "veyra_nine_masks",
-          "wins": 45,
+          "wins": 44,
           "draws": 0,
           "games": 90,
-          "scoreRate": 0.5
+          "scoreRate": 0.4889
         },
         {
           "id": "the_lacquered_oracle",
-          "wins": 99,
+          "wins": 123,
           "draws": 0,
           "games": 264,
-          "scoreRate": 0.375
+          "scoreRate": 0.4659
         },
         {
           "id": "morcant_bellkeeper",
-          "wins": 226,
+          "wins": 116,
           "draws": 0,
           "games": 234,
-          "scoreRate": 0.9658
+          "scoreRate": 0.4957
         },
         {
           "id": "king_ossuary",
-          "wins": 43,
+          "wins": 45,
           "draws": 0,
           "games": 120,
-          "scoreRate": 0.3583
+          "scoreRate": 0.375
         },
         {
           "id": "vel_mourningstar",
-          "wins": 61,
+          "wins": 108,
           "draws": 0,
           "games": 246,
-          "scoreRate": 0.248
+          "scoreRate": 0.439
         },
         {
           "id": "cael_rookwing",
-          "wins": 132,
+          "wins": 135,
           "draws": 0,
           "games": 222,
-          "scoreRate": 0.5946
+          "scoreRate": 0.6081
         },
         {
           "id": "duke_avorran",
-          "wins": 77,
+          "wins": 62,
           "draws": 0,
           "games": 150,
-          "scoreRate": 0.5133
+          "scoreRate": 0.4133
         },
         {
           "id": "saint_orien_of_the_gale",
-          "wins": 63,
+          "wins": 94,
           "draws": 0,
           "games": 228,
-          "scoreRate": 0.2763
+          "scoreRate": 0.4123
         },
         {
           "id": "vaelor_runeclaw",
-          "wins": 131,
+          "wins": 119,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.6238
+          "scoreRate": 0.5667
         },
         {
           "id": "orrun_the_first_scale",
-          "wins": 62,
+          "wins": 93,
           "draws": 0,
           "games": 180,
-          "scoreRate": 0.3444
+          "scoreRate": 0.5167
         },
         {
           "id": "thalor_worldcoil",
-          "wins": 55,
+          "wins": 77,
           "draws": 0,
           "games": 210,
-          "scoreRate": 0.2619
+          "scoreRate": 0.3667
         }
       ]
     }
@@ -548,15 +548,16 @@
     {
       "id": "shieldwall",
       "category": "defense",
-      "troops": 4,
+      "troops": 14,
       "banners": [
         "bastion_orders",
-        "veil_covenant"
+        "wild_courts",
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
       ],
-      "summoners": [
-        "maelor_ironhand",
-        "thalor_worldcoil"
-      ]
+      "summoners": []
     },
     {
       "id": "forgeheart",
@@ -566,9 +567,7 @@
         "bastion_orders",
         "skybound_houses"
       ],
-      "summoners": [
-        "maelor_ironhand"
-      ]
+      "summoners": []
     },
     {
       "id": "ancient_scale",
@@ -581,22 +580,20 @@
         "skybound_houses",
         "wyrm_clans"
       ],
-      "summoners": [
-        "orrun_the_first_scale"
-      ]
+      "summoners": []
     },
     {
       "id": "bloodscent",
       "category": "offense",
-      "troops": 4,
+      "troops": 10,
       "banners": [
         "wild_courts",
-        "hollow_legions"
+        "veil_covenant",
+        "hollow_legions",
+        "skybound_houses",
+        "wyrm_clans"
       ],
-      "summoners": [
-        "ysilde_whitehart",
-        "thalor_worldcoil"
-      ]
+      "summoners": []
     },
     {
       "id": "moonrush",
@@ -607,9 +604,7 @@
         "skybound_houses",
         "wyrm_clans"
       ],
-      "summoners": [
-        "garran_moonfang"
-      ]
+      "summoners": []
     },
     {
       "id": "pounce",
@@ -618,16 +613,6 @@
       "banners": [
         "veil_covenant",
         "skybound_houses"
-      ],
-      "summoners": []
-    },
-    {
-      "id": "runebreath",
-      "category": "offense",
-      "troops": 2,
-      "banners": [
-        "skybound_houses",
-        "wyrm_clans"
       ],
       "summoners": []
     },
@@ -663,9 +648,7 @@
         "skybound_houses",
         "wyrm_clans"
       ],
-      "summoners": [
-        "saint_orien_of_the_gale"
-      ]
+      "summoners": []
     },
     {
       "id": "spotter",
@@ -675,36 +658,20 @@
         "bastion_orders",
         "veil_covenant"
       ],
-      "summoners": [
-        "duke_avorran",
-        "saint_orien_of_the_gale"
-      ]
+      "summoners": []
     },
     {
       "id": "hexweave",
       "category": "control",
-      "troops": 6,
+      "troops": 10,
       "banners": [
+        "bastion_orders",
         "wild_courts",
         "veil_covenant",
         "hollow_legions",
         "skybound_houses"
       ],
-      "summoners": [
-        "the_lacquered_oracle"
-      ]
-    },
-    {
-      "id": "doom_count",
-      "category": "control",
-      "troops": 4,
-      "banners": [
-        "bastion_orders",
-        "hollow_legions"
-      ],
-      "summoners": [
-        "vel_mourningstar"
-      ]
+      "summoners": []
     },
     {
       "id": "crosswind",
@@ -717,36 +684,19 @@
         "skybound_houses",
         "wyrm_clans"
       ],
-      "summoners": [
-        "vel_mourningstar"
-      ]
-    },
-    {
-      "id": "packmark",
-      "category": "control",
-      "troops": 5,
-      "banners": [
-        "wild_courts",
-        "veil_covenant",
-        "hollow_legions",
-        "skybound_houses"
-      ],
       "summoners": []
     },
     {
       "id": "primal_mend",
       "category": "restoration",
-      "troops": 8,
+      "troops": 7,
       "banners": [
         "bastion_orders",
         "wild_courts",
         "veil_covenant",
-        "hollow_legions",
         "wyrm_clans"
       ],
-      "summoners": [
-        "ysilde_whitehart"
-      ]
+      "summoners": []
     },
     {
       "id": "grave_recall",
@@ -759,26 +709,12 @@
         "hollow_legions",
         "wyrm_clans"
       ],
-      "summoners": [
-        "king_ossuary"
-      ]
+      "summoners": []
     },
     {
       "id": "salvager",
       "category": "restoration",
-      "troops": 3,
-      "banners": [
-        "bastion_orders",
-        "wyrm_clans"
-      ],
-      "summoners": [
-        "king_ossuary"
-      ]
-    },
-    {
-      "id": "field_ration",
-      "category": "restoration",
-      "troops": 13,
+      "troops": 20,
       "banners": [
         "bastion_orders",
         "wild_courts",
@@ -790,8 +726,8 @@
       "summoners": []
     },
     {
-      "id": "makeshift_guard",
-      "category": "support",
+      "id": "field_ration",
+      "category": "restoration",
       "troops": 17,
       "banners": [
         "bastion_orders",
@@ -801,42 +737,12 @@
         "skybound_houses",
         "wyrm_clans"
       ],
-      "summoners": [
-        "torvane_crownshield"
-      ]
+      "summoners": []
     },
     {
       "id": "windread",
       "category": "support",
-      "troops": 8,
-      "banners": [
-        "veil_covenant",
-        "hollow_legions",
-        "skybound_houses",
-        "wyrm_clans"
-      ],
-      "summoners": [
-        "veyra_nine_masks",
-        "duke_avorran"
-      ]
-    },
-    {
-      "id": "roadwise",
-      "category": "support",
-      "troops": 10,
-      "banners": [
-        "bastion_orders",
-        "wild_courts",
-        "veil_covenant",
-        "skybound_houses",
-        "wyrm_clans"
-      ],
-      "summoners": []
-    },
-    {
-      "id": "last_pay",
-      "category": "support",
-      "troops": 10,
+      "troops": 16,
       "banners": [
         "bastion_orders",
         "wild_courts",

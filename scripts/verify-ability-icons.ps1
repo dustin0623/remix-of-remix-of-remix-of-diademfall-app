@@ -1,6 +1,7 @@
 Add-Type -AssemblyName System.Drawing
 $manifest=Get-Content public/assets/abilities/manifest.json -Raw | ConvertFrom-Json
-if($manifest.icons.Count -ne 24){throw 'Expected 24 ability icons'}
+$active=@($manifest.icons | Where-Object {$_.active -ne $false})
+if($active.Count -ne 18){throw 'Expected 18 active ability icons'}
 $report=@()
 foreach($entry in $manifest.icons){
  $file='public'+$entry.file
@@ -20,4 +21,4 @@ foreach($entry in $manifest.icons){
  if(-not $valid){throw ('Invalid ability icon: '+$entry.id)}
 }
 $report | ConvertTo-Json -Depth 5 | Set-Content docs/ability-rebalance/icon-qa.json
-Write-Output 'Verified 24 copper ability icons: 150 x 152, transparent corners, opaque faces, circular proportions and matching checksums.'
+Write-Output ('Verified '+$active.Count+' active copper ability icons and '+($manifest.icons.Count-$active.Count)+' retained illustrations: 150 x 152, transparent corners, opaque faces, circular proportions and matching checksums.')

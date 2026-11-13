@@ -10,7 +10,13 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/features/stores/auth.store";
 import { RARITY_ORDER, type Foil } from "@/game/packs";
 import { CE_REQUIREMENTS } from "@/game/combining";
-import { cardSuppliesQuery, cardSupplyQuery, myCardsQuery, type CardSupplyRow, type OwnedAsset } from "@/lib/packs/packs.queries";
+import {
+  cardSuppliesQuery,
+  cardSupplyQuery,
+  myCardsQuery,
+  type CardSupplyRow,
+  type OwnedAsset,
+} from "@/lib/packs/packs.queries";
 const fmt = (n: number) => n.toLocaleString("en-US");
 export function CardCollection() {
   return (
@@ -141,10 +147,10 @@ function Collection() {
       <div className="commerce-empty">
         <p>You don't own any cards yet.</p>
         <div className="flex gap-3">
-          <Link to="/shop" className="play-small-button">
+          <Link to="/market" search={{ section: "packs" }} className="play-small-button">
             Buy Packs
           </Link>
-          <Link to="/open" className="play-small-button">
+          <Link to="/items" search={{ section: "others" }} className="play-small-button">
             Open Owned Packs
           </Link>
         </div>

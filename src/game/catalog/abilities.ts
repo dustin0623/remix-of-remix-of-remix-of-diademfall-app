@@ -241,9 +241,9 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Field Ration",
     "category": "restoration",
     "timing": "turn_start",
-    "mechanics": "At the start of your turn, restore 2 health to the frontmost ally.",
+    "mechanics": "At the start of your turn, restore 1 health to the frontmost ally.",
     "values": {
-      "healing": 2
+      "healing": 1
     },
     "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [

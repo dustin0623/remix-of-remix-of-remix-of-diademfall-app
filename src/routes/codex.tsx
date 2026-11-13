@@ -1,4 +1,5 @@
 import { AbilityIcon } from "@/components/game/AbilityIcon";
+import { BannerCrest, RarityEmblem } from "@/components/game/CardSymbols";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Search, SlidersHorizontal, X } from "lucide-react";
@@ -173,7 +174,7 @@ function Codex() {
                         onClick={() => setBanner(b.id)}
                         aria-pressed={banner === b.id}
                       >
-                        <img src={b.art} alt="" />
+                        <BannerCrest banner={b.id} />
                         <span>{b.name}</span>
                         <span className="banner-dot" style={{ background: b.color }} />
                       </button>
@@ -183,7 +184,8 @@ function Codex() {
                       onClick={() => setBanner("wayfarer")}
                       aria-pressed={banner === "wayfarer"}
                     >
-                      <span className="codex-all">◇</span>Wayfarers
+                      <BannerCrest banner="wayfarer" />
+                      Wayfarers
                     </button>
                   </div>
                 </fieldset>
@@ -200,7 +202,7 @@ function Codex() {
                           onClick={() => setRarity(rarity === r ? "all" : r)}
                           aria-pressed={rarity === r}
                         >
-                          <span style={{ color: `var(--rarity-${r})` }}>◆</span>
+                          <RarityEmblem rarity={r} />
                           {r}
                         </button>
                       ))}

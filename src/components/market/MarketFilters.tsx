@@ -1,5 +1,6 @@
 import { Search, RotateCcw } from "lucide-react";
 import { BANNERS } from "@/game/banners";
+import { BannerCrest, RarityEmblem } from "@/components/game/CardSymbols";
 import { PACK_IDS, PACK_INFO, RARITY_ORDER } from "@/game/packs";
 import { emptyMarketFilter, type MarketFilter } from "./market-filter";
 
@@ -105,7 +106,7 @@ export function MarketFilters({
               aria-pressed={value.rarities.includes(id)}
               onClick={() => toggle("rarities", id)}
             >
-              <span style={{ background: `var(--rarity-${id})` }} />
+              <RarityEmblem rarity={id} />
               {id}
             </button>
           ))}
@@ -123,7 +124,7 @@ export function MarketFilters({
               aria-pressed={value.banners.includes(b.id)}
               onClick={() => toggle("banners", b.id)}
             >
-              <img src={b.art} alt="" />
+              <BannerCrest banner={b.id} />
               <span>{b.name}</span>
             </button>
           ))}
@@ -133,7 +134,8 @@ export function MarketFilters({
             onClick={() => toggle("banners", "wayfarer")}
             className="market-wayfarer"
           >
-            Wayfarers
+            <BannerCrest banner="wayfarer" />
+            <span>Wayfarers</span>
           </button>
         </div>
       </fieldset>

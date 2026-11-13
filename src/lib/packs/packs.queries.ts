@@ -39,6 +39,23 @@ export const myPacksQuery = (userId: string | undefined) =>
     },
   });
 
+export const myChestsQuery = (userId: string | undefined) =>
+  queryOptions({
+    queryKey: ["items", "chests", userId],
+    enabled: !!userId,
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("player_items")
+        .select("item_id, balance")
+        .eq("player_id", userId!)
+        .eq("item_type", "chest")
+        .gt("balance", 0)
+        .order("item_id");
+      if (error) throw error;
+      return (data ?? []).map((row) => ({ id: row.item_id, balance: Number(row.balance) }));
+    },
+  });
+
 export interface OwnedAsset { id: string; cardId: string; foil: Foil; level: number; essence: number; status: string; createdAt: string }
 
 /** Every card the player owns (absorbed/combined and burned copies excluded), newest first. */

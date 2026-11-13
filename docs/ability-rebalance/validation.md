@@ -1,11 +1,36 @@
-# Ability revision validation — 12 November 2026
+# Commander pricing and edition limits: validation
 
-- Compared the user's open Exemplar selector with all 24 current abilities, then checked official ability categories, status interactions, Impede and card-stat documentation. Research and rationale: splinterlands-comparison.md.
-- Regenerated all 24 icons using built-in ImageGen. Exported exactly 150 x 152, preserving transparency and circular proportions. All 24 files pass corner-alpha, center-alpha, dimension, aspect-ratio and SHA-256 checks in icon-qa.json. The production-size and 24/32-pixel contact sheet was visually reviewed.
-- Full suite: 259 tests, 258 passed. The only failure is the existing SQL game_version_table fingerprint guard, which awaits Lovable's migration. No tests were skipped or weakened to suppress it.
-- The final 35 ability interaction tests pass, covering targeting, cadence, mitigation, restoration, debuffs, expiry and stacking. The earlier broader focused engine/roster run passed 66 tests. The extra Crosswind-expiry fixture was added after the full suite and passed in the final focused rerun.
-- Production build and TypeScript check passed. Build output is regenerated after the final asset export.
-- Matched before/after samples use 5,400 battles per engine, all 15 banner pairs, both sides, three mana caps and three level stages. Fresh validation uses another 5,400 battles on seeds 30001–30020. See simplification-balance-summary.json and the raw reports. Mid-level Veil Covenant remains weak on fresh seeds; this is an AI diagnostic, not metagame certification.
-- The initial Splinterlands tab was inspected read-only. Final live Codex access became unavailable in the continuation chat. Final icons were checked directly in their contact sheet; the UI uses the same stable asset paths and current catalog descriptions.
+Updated 13 November 2026. Catalog hash: fda76be4495cf47c16816dc67d366ce408c582868314790e8a3fec6a6a292a5f.
 
-The final generated SQL proposal and Cloud handoff are refreshed. Database migrations, live ownership, balances and player accounts were not edited. No database reset was performed.
+Every current Commander costs at least 3 mana. Every Commander with two abilities costs exactly 6 mana. Ancient/Oath may have up to two abilities; Legionnaire has exactly one. All six current two-ability Commanders cost 6 mana. Card IDs, support effects, ownership and troop stats are unchanged by this pricing correction.
+
+- Focused Vitest: 65 passed across abilities, engine, catalog, ranked validation and Commander card display.
+- TypeScript and focused ESLint: passed.
+- Commander generator: idempotent; rejects prices below 3, two-ability kits priced other than 6, and effects above the edition limit.
+- Existing full-suite catalog-fingerprint guard still requires Lovable synchronization. The full suite was not rerun for this pricing correction.
+
+## AI diagnostics
+
+Each sample contains 5,400 deterministic battles across all banner pairs, both sides, three mana caps and three card-level stages. Draws count as half a win.
+
+Tuning seeds 1–20:
+
+| Stage | Banner score-rate range |
+|---|---|
+| level-1 | 33.3%–69.2% |
+| mid-level | 32.0%–67.5% |
+| max-level | 41.3%–59.2% |
+
+Validation seeds 30001–30020:
+
+| Stage | Banner score-rate range |
+|---|---|
+| level-1 | 27.7%–68.2% |
+| mid-level | 34.8%–71.8% |
+| max-level | 44.8%–57.0% |
+
+These diagnostics enforce no win-rate target and do not establish competitive balance. The sample flags Bastion at level 1 (27.7%), Wyrm at mid-level (34.8%) and Skybound at mid-level (71.8%) for further playtesting. Maximum-level validation spans 44.8–57.0%. Human drafting and ruleset-specific matchups are not modeled.
+
+## Cloud handoff
+
+The generated game-version.sql contains the refreshed fingerprint. Apply it through Lovable and synchronize card metadata using the existing catalog loader before ranked deployment. No migration directory, live database, ownership or balance was changed.
