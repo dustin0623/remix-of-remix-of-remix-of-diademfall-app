@@ -1,0 +1,154 @@
+{
+  "generator": "built-in image_gen",
+  "revision": "copper-clean-support-kit",
+  "width": 150,
+  "height": 152,
+  "transparent": true,
+  "prompts": "docs/ability-rebalance/icon-prompts.json",
+  "icons": [
+    {
+      "id": "brace",
+      "file": "/assets/abilities/brace.png",
+      "sha256": "88739c805dda0959b7466ea18e50f6c0a6ca87e236d975877081ef0e6519a897",
+      "active": true
+    },
+    {
+      "id": "shieldwall",
+      "file": "/assets/abilities/shieldwall.png",
+      "sha256": "1306033d3807418b3d07193394d2e50634fe5b3c67977fb55c5f820e42ac24fc",
+      "active": true
+    },
+    {
+      "id": "forgeheart",
+      "file": "/assets/abilities/forgeheart.png",
+      "sha256": "3a8c9328940d4b95cd76e06069323c8811029ee47363f252a39f7426693db70c",
+      "active": true
+    },
+    {
+      "id": "ancient_scale",
+      "file": "/assets/abilities/ancient_scale.png",
+      "sha256": "a22c206e0845ec33d49b31110fb61b00ce4f36ec6d83568e7e70077298566697",
+      "active": true
+    },
+    {
+      "id": "bloodscent",
+      "file": "/assets/abilities/bloodscent.png",
+      "sha256": "3127581648dca1cb589a57c3e874f40e56439029e2682910813b1f4bf51f5d35",
+      "active": true
+    },
+    {
+      "id": "moonrush",
+      "file": "/assets/abilities/moonrush.png",
+      "sha256": "323b18990b25fcdcb43b6cd094bd61953deffed108dbe206bbd9f2a1230a424c",
+      "active": true
+    },
+    {
+      "id": "pounce",
+      "file": "/assets/abilities/pounce.png",
+      "sha256": "6760d9025c5f5badb67662fba90db7c52d056adb8a05de336749e034997898bf",
+      "active": true
+    },
+    {
+      "id": "runebreath",
+      "file": "/assets/abilities/runebreath.png",
+      "sha256": "a948126db0264da2dcf3df1a4955c51007d0dc8047946be62c6e47d3bffb9d2c",
+      "active": false
+    },
+    {
+      "id": "wildshot",
+      "file": "/assets/abilities/wildshot.png",
+      "sha256": "cc22a2f9336482b762dea47f499f4c4144f6d7a6c70cf7099b38a48c61f32962",
+      "active": true
+    },
+    {
+      "id": "flank",
+      "file": "/assets/abilities/flank.png",
+      "sha256": "c14f7e820cf277e79283f918f3b74ebd72cf77d3ae5bece2f070cb383d663968",
+      "active": true
+    },
+    {
+      "id": "hunt",
+      "file": "/assets/abilities/hunt.png",
+      "sha256": "e8c46a5f4c227be7907cf3031b2c472bec2e14ad06ba59603ec29fac5e8e5ec5",
+      "active": true
+    },
+    {
+      "id": "spotter",
+      "file": "/assets/abilities/spotter.png",
+      "sha256": "cc81ec1dca5a91c4a039b8fb3663f7b417155fa9a183f307dd45c4c61fffa15c",
+      "active": true
+    },
+    {
+      "id": "hexweave",
+      "file": "/assets/abilities/hexweave.png",
+      "sha256": "e53a4b0b4aade660a98420e1c80fc20ed1a7fdcb6f037adfdb2933a0ef0f3a6c",
+      "active": true
+    },
+    {
+      "id": "doom_count",
+      "file": "/assets/abilities/doom_count.png",
+      "sha256": "d0cfbb76f01eb1264c7b9cd2322b105666646022c1e4ccbb043a6225a461778d",
+      "active": false
+    },
+    {
+      "id": "crosswind",
+      "file": "/assets/abilities/crosswind.png",
+      "sha256": "83a471f99ea9be0928994272e8ffb7c4de1e21d6ffc6fa2c244596b6768e37ef",
+      "active": true
+    },
+    {
+      "id": "packmark",
+      "file": "/assets/abilities/packmark.png",
+      "sha256": "b5b34e181fa77155a5361451c067630d368d9c780821c192800e31f51ce0f4ff",
+      "active": false
+    },
+    {
+      "id": "primal_mend",
+      "file": "/assets/abilities/primal_mend.png",
+      "sha256": "0a078c78b24c53c87e0d7126b6128bd9bb8198e2593c2accf19862a312402530",
+      "active": true
+    },
+    {
+      "id": "grave_recall",
+      "file": "/assets/abilities/grave_recall.png",
+      "sha256": "917e12d4e10677719b64fdcedd091ea86b1aecdce207aa2df83e03f7651a9478",
+      "active": true
+    },
+    {
+      "id": "salvager",
+      "file": "/assets/abilities/salvager.png",
+      "sha256": "e1f69ba76aeaa15bc80d44fa144cfdd4cf6a2dc9ad805085adf8294fe0cf751f",
+      "active": true
+    },
+    {
+      "id": "field_ration",
+      "file": "/assets/abilities/field_ration.png",
+      "sha256": "5f05c8c52e057d3ccd8bb8d92f25877ef0aeb98a08e285b740fd2f4e3badb329",
+      "active": true
+    },
+    {
+      "id": "makeshift_guard",
+      "file": "/assets/abilities/makeshift_guard.png",
+      "sha256": "6f7fbca2ca4b5ebcda8f9d655cc7880ab62d8ce2fb1d081f9cfe2f7458261f66",
+      "active": false
+    },
+    {
+      "id": "windread",
+      "file": "/assets/abilities/windread.png",
+      "sha256": "ea4e5817bb8b2cbcdc76b2a87ed5815c58e71e7e89f57d081b4578bc3b41137b",
+      "active": true
+    },
+    {
+      "id": "roadwise",
+      "file": "/assets/abilities/roadwise.png",
+      "sha256": "4bb6b9b6cff2c39333cbd39a30dcae3c7138e2932ba000d40e73183b823ffc6d",
+      "active": false
+    },
+    {
+      "id": "last_pay",
+      "file": "/assets/abilities/last_pay.png",
+      "sha256": "e1af7524c18ef9e76c5c9d5f35c1cb50282f9835c58656c85698eeeaaa8aefae",
+      "active": false
+    }
+  ]
+}

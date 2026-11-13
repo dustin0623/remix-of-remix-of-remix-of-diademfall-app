@@ -35,13 +35,14 @@ export const SUMMONERS: SummonerDefinition[] = [
       {
         "kind": "stat",
         "target": "all_allies",
-        "stat": "health",
-        "value": 1
+        "stat": "armor",
+        "value": 2
       },
       {
-        "kind": "grantAbility",
-        "target": "middle_allies",
-        "abilityId": "makeshift_guard"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
       }
     ],
     "lore": "Torvane guarded the throne room through seven changes of king, refusing every order to abandon the outer wards. Now his empty helm commands the living by one surviving oath: no soldier stands alone while another can close the line.",
@@ -59,14 +60,16 @@ export const SUMMONERS: SummonerDefinition[] = [
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "front_ally",
-        "abilityId": "shieldwall"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "armor",
+        "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "front_two",
-        "abilityId": "forgeheart"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "steel",
+        "value": -1
       }
     ],
     "lore": "Maelor melted her coronation crown into the iron hand that pulled her last company from a burning gate. Denied a throne, she built traveling forges instead; the crownless march beneath her because she remembers the name behind every battered shield.",
@@ -79,14 +82,14 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Eira Thornpath",
     "set": "ancient",
     "banner": "wild_courts",
-    "mana": 4,
+    "mana": 3,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
       {
         "kind": "stat",
         "target": "all_allies",
-        "stat": "speed",
+        "stat": "steel",
         "value": 1
       }
     ],
@@ -100,20 +103,21 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Garran Moonfang",
     "set": "oath",
     "banner": "wild_courts",
-    "mana": 6,
+    "mana": 5,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
       {
         "kind": "stat",
-        "target": "steel_allies",
+        "target": "all_allies",
         "stat": "steel",
         "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "highest_mana_ally",
-        "abilityId": "moonrush"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
       }
     ],
     "lore": "Garran won no throne by killing a rival; he earned it by standing between two starving packs until dawn. Beneath his moon-white antlers, old enemies now wait for a single howl before they charge, and return together to count their dead.",
@@ -126,19 +130,21 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Ysilde Whitehart",
     "set": "legionnaire",
     "banner": "wild_courts",
-    "mana": 5,
+    "mana": 4,
     "rarity": "epic",
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "steel_allies",
-        "abilityId": "bloodscent"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "highest_mana_ally",
-        "abilityId": "primal_mend"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "shot",
+        "value": -1
       }
     ],
     "lore": "The first crown carved from a living tree left a wound that never healed. Ysilde tends that scar beneath the oldest white hart, judging every hunt by what it gives back; those who fight beside her learn that taking a life creates a debt to the living.",
@@ -151,13 +157,13 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Oris Glassmoth",
     "set": "ancient",
     "banner": "veil_covenant",
-    "mana": 4,
+    "mana": 3,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
       {
         "kind": "stat",
-        "target": "strongest_spell_ally",
+        "target": "all_allies",
         "stat": "spell",
         "value": 1
       }
@@ -179,13 +185,14 @@ export const SUMMONERS: SummonerDefinition[] = [
       {
         "kind": "stat",
         "target": "all_allies",
-        "stat": "health",
+        "stat": "spell",
         "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "rear_three",
-        "abilityId": "windread"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "spell",
+        "value": -1
       }
     ],
     "lore": "Nine ambassadors vanished at the signing of the Covenant; Veyra arrived the next morning wearing all their faces. She grants her soldiers reflections of the enemy they must face, while keeping the identity beneath her final mask out of every treaty.",
@@ -203,14 +210,9 @@ export const SUMMONERS: SummonerDefinition[] = [
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "front_two",
-        "abilityId": "hexweave"
-      },
-      {
         "kind": "stat",
-        "target": "front_ally",
-        "stat": "health",
+        "target": "all_allies",
+        "stat": "magicResistance",
         "value": 1
       }
     ],
@@ -224,20 +226,14 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Morcant Bellkeeper",
     "set": "ancient",
     "banner": "hollow_legions",
-    "mana": 5,
+    "mana": 3,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
       {
         "kind": "stat",
-        "target": "all_allies",
-        "stat": "health",
-        "value": 1
-      },
-      {
-        "kind": "stat",
         "target": "all_enemies",
-        "stat": "speed",
+        "stat": "health",
         "value": -1
       }
     ],
@@ -251,19 +247,21 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "King Ossuary",
     "set": "oath",
     "banner": "hollow_legions",
-    "mana": 4,
+    "mana": 5,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "highest_mana_ally",
-        "abilityId": "grave_recall"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "front_ally",
-        "abilityId": "salvager"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "health",
+        "value": -1
       }
     ],
     "lore": "Ossyr asked to be buried with his subjects, and his heirs sealed the entire city beneath the palace. The bones rose as one sovereign when the Diadem broke; each life he returns to battle is another voice demanding that the gates be opened.",
@@ -281,14 +279,16 @@ export const SUMMONERS: SummonerDefinition[] = [
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "front_two",
-        "abilityId": "crosswind"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "steel",
+        "value": -1
       },
       {
-        "kind": "grantAbility",
-        "target": "highest_mana_ally",
-        "abilityId": "doom_count"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "shot",
+        "value": -1
       }
     ],
     "lore": "Vel kept the names of a betrayed legion in the lining of her mourning cloak. She now gives every debt a witness and every reprisal a time, marching at the head of soldiers who will lay down their weapons only when the last name is answered.",
@@ -301,21 +301,15 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Cael Rookwing",
     "set": "ancient",
     "banner": "skybound_houses",
-    "mana": 4,
+    "mana": 3,
     "rarity": "rare",
     "levelCap": 6,
     "effects": [
       {
         "kind": "stat",
-        "target": "shot_allies",
+        "target": "all_allies",
         "stat": "shot",
         "value": 1
-      },
-      {
-        "kind": "stat",
-        "target": "all_allies",
-        "stat": "accuracy",
-        "value": 5
       }
     ],
     "lore": "Cael kept the watchfires burning when the lower kingdoms declared the cliff houses lost. His rook-feather signals carried food, warnings, and a route home across the broken sky; his archers still loose only when that same black wing falls.",
@@ -328,19 +322,21 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Duke Avorran",
     "set": "oath",
     "banner": "skybound_houses",
-    "mana": 3,
+    "mana": 5,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "shot_allies",
-        "abilityId": "spotter"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "shot",
+        "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "rear_three",
-        "abilityId": "windread"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "armor",
+        "value": 1
       }
     ],
     "lore": "Avorran inherited an eyrie with a hundred banners and no grain. He traded its jewels for signal towers and bound the rival Skybound Houses to a shared watch, proving that a volley arrives together only when every house keeps its word.",
@@ -358,20 +354,16 @@ export const SUMMONERS: SummonerDefinition[] = [
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "highest_speed_ally",
-        "abilityId": "spotter"
-      },
-      {
-        "kind": "grantAbility",
-        "target": "shot_allies",
-        "abilityId": "hunt"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "shot",
+        "value": 1
       },
       {
         "kind": "stat",
-        "target": "shot_allies",
-        "stat": "speed",
-        "value": 1
+        "target": "all_enemies",
+        "stat": "shot",
+        "value": -1
       }
     ],
     "lore": "Orien cut the moorings of a tyrant's sky fortress while a storm tore its chains apart. The freed cliff towns named him a saint; he carries no shrine, only the hooked staff with which he teaches ordinary hunters to bring high rulers down.",
@@ -405,19 +397,20 @@ export const SUMMONERS: SummonerDefinition[] = [
     "originalName": "Orrun the First Scale",
     "set": "oath",
     "banner": "wyrm_clans",
-    "mana": 4,
+    "mana": 5,
     "rarity": "legendary",
     "levelCap": 3,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "highest_mana_ally",
-        "abilityId": "ancient_scale"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "health",
+        "value": 1
       },
       {
         "kind": "stat",
-        "target": "highest_mana_ally",
-        "stat": "attackPower",
+        "target": "all_allies",
+        "stat": "magicResistance",
         "value": 1
       }
     ],
@@ -436,14 +429,16 @@ export const SUMMONERS: SummonerDefinition[] = [
     "levelCap": 4,
     "effects": [
       {
-        "kind": "grantAbility",
-        "target": "front_ally",
-        "abilityId": "shieldwall"
+        "kind": "stat",
+        "target": "all_allies",
+        "stat": "armor",
+        "value": 1
       },
       {
-        "kind": "grantAbility",
-        "target": "steel_allies",
-        "abilityId": "bloodscent"
+        "kind": "stat",
+        "target": "all_enemies",
+        "stat": "spell",
+        "value": -1
       }
     ],
     "lore": "The crownmakers mistook Thalor's sleeping coils for a range of mountains and mined their Diadem from the stone above his heart. Their armies have finally woken him; the clans gather in his shadow, carrying the fury of a homeland that learned to breathe again.",

@@ -49,7 +49,7 @@ export const MISSIONS: Mission[] = [
   { id: "first_win", label: "Win 1 rewarded battle", points: 20, done: (p) => p.eligibleWins >= 1, progress: (p) => `${Math.min(p.eligibleWins, 1)}/1` },
   { id: "third_win", label: "Win 3 rewarded battles", points: 20, done: (p) => p.eligibleWins >= 3, progress: (p) => `${Math.min(p.eligibleWins, 3)}/3` },
   { id: "fifth_win", label: "Win 5 rewarded battles", points: 20, done: (p) => p.eligibleWins >= 5, progress: (p) => `${Math.min(p.eligibleWins, 5)}/5` },
-  { id: "two_banners", label: "Win with summoners from 2 Banners", points: 15, done: (p) => p.bannersUsed >= 2, progress: (p) => `${Math.min(p.bannersUsed, 2)}/2` },
+  { id: "two_banners", label: "Win with commanders from 2 Banners", points: 15, done: (p) => p.bannersUsed >= 2, progress: (p) => `${Math.min(p.bannersUsed, 2)}/2` },
   { id: "three_rules", label: "Win under 3 different battle rules", points: 15, done: (p) => p.rulesetsWon >= 3, progress: (p) => `${Math.min(p.rulesetsWon, 3)}/3` },
   { id: "low_mana", label: "Win with a troop costing 2 mana or less", points: 10, done: (p) => p.lowManaWin, progress: (p) => (p.lowManaWin ? "1/1" : "0/1") },
 ];

@@ -140,53 +140,103 @@
         "generator":  "built-in image_gen"
     },
     {
+        "id":  "emblem_common",
+        "width":  96,
+        "file":  "/assets/raw/rarity-emblems/common.png",
+        "prompt":  "Use case: precise-object-edit. Image 1 is a reference for the OLD Diademfall FLAME RARITY EMBLEM at TOP CENTER of the card frame. Image 2 supplies ONLY the clean cel-shaded rendering style of Diademfall\u0027s current crests. Create ONE isolated cleaned-up version of that flame rarity seal, square canvas for 96x96 export. Preserve the recognizable upright sweeping flame motif from image 1, but simplify it into a single bold SILVER-IVORY flame silhouette: one tall curved central tongue, two lower flanking tongues joining a broad base, and ONE clean dark teardrop cutout. Smooth deliberate curves and thick readable shapes; no hairline curls, doubled outlines, jagged details, glow or smoke. Flame centered, about 45% canvas width and 58% canvas height, so it reads when the complete seal is shown at 34 pixels. Dark uniform navy-charcoal circular face behind the flame; thin polished silver circular rim, matching the crest\u0027s broad controlled 2-3 tone bevels. Complete circular seal fills about 94% of the square, genuinely transparent alpha outside it. Front-facing flat game UI art, very restrained shading only on the silver rim. No card frame, rectangle, shield shape, dragon, diamond, letters, text, number, extra symbol, scene, crown, star, watermark or outer cast shadow. This is the common rarity: pale silver flame on a dark face. Keep the central flame simple, strong and clean.",
+        "height":  96,
+        "kind":  "emblem",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "emblem_epic",
+        "width":  96,
+        "file":  "/assets/raw/rarity-emblems/epic.png",
+        "prompt":  "Use case: precise-object-edit. Make the epic rarity version of this approved Diademfall flame seal. Change ONLY the pale silver flame silhouette to violet purple, using at most two clean flat tones. Keep its EXACT same broad three-tongued flame silhouette, one dark teardrop cutout, proportions, size and position. Keep the circular field dark navy-charcoal and the rim SILVER, identical to the source. No colored rim, outer glow, fog, smoke, extra highlights, extra cutouts, fine lines, letters, number, background, other symbols or layout changes. Preserve the genuine transparent alpha outside the round seal and square 96x96-compatible composition. The goal is the same clean readable flame in the epic color, clearly legible at 34 pixels.",
+        "height":  96,
+        "kind":  "emblem",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "emblem_legendary",
+        "width":  96,
+        "file":  "/assets/raw/rarity-emblems/legendary.png",
+        "prompt":  "Use case: precise-object-edit. Make the legendary rarity version of this approved Diademfall flame seal. Change ONLY the pale silver flame silhouette to ember amber-orange, using at most two clean flat tones. Keep its EXACT same broad three-tongued flame silhouette, one dark teardrop cutout, proportions, size and position. Keep the circular field dark navy-charcoal and the rim SILVER, identical to the source. No colored rim, outer glow, fog, smoke, extra highlights, extra cutouts, fine lines, letters, number, background, other symbols or layout changes. Preserve the genuine transparent alpha outside the round seal and square 96x96-compatible composition. The goal is the same clean readable flame in the legendary color, clearly legible at 34 pixels.",
+        "height":  96,
+        "kind":  "emblem",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "emblem_rare",
+        "width":  96,
+        "file":  "/assets/raw/rarity-emblems/rare.png",
+        "prompt":  "Use case: precise-object-edit. Make the rare rarity version of this approved Diademfall flame seal. Change ONLY the pale silver flame silhouette to clear sapphire blue, using at most two clean flat tones. Keep its EXACT same broad three-tongued flame silhouette, one dark teardrop cutout, proportions, size and position. Keep the circular field dark navy-charcoal and the rim SILVER, identical to the source. No colored rim, outer glow, fog, smoke, extra highlights, extra cutouts, fine lines, letters, number, background, other symbols or layout changes. Preserve the genuine transparent alpha outside the round seal and square 96x96-compatible composition. The goal is the same clean readable flame in the rare color, clearly legible at 34 pixels.",
+        "height":  96,
+        "kind":  "emblem",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
+        "id":  "emblem_uncommon",
+        "width":  96,
+        "file":  "/assets/raw/rarity-emblems/uncommon.png",
+        "prompt":  "Use case: precise-object-edit. Make the uncommon rarity version of this approved Diademfall flame seal. Change ONLY the pale silver flame silhouette to emerald green, using at most two clean flat tones. Keep its EXACT same broad three-tongued flame silhouette, one dark teardrop cutout, proportions, size and position. Keep the circular field dark navy-charcoal and the rim SILVER, identical to the source. No colored rim, outer glow, fog, smoke, extra highlights, extra cutouts, fine lines, letters, number, background, other symbols or layout changes. Preserve the genuine transparent alpha outside the round seal and square 96x96-compatible composition. The goal is the same clean readable flame in the uncommon color, clearly legible at 34 pixels.",
+        "height":  96,
+        "kind":  "emblem",
+        "assembly":  "Resized to production canvas.",
+        "generator":  "built-in image_gen"
+    },
+    {
         "id":  "frame_common",
         "width":  300,
         "file":  "/assets/raw/frames/common.png",
-        "prompt":  "Use case: precise-object-edit. Edit the supplied silver fantasy card FRAME. Correct ONLY the TOP LEFT and TOP RIGHT corner geometry. The current upper corners have wrong outward arrowhead hooks/notches at their side junctions. Remove these hooks, inward pinches, stepped points and concave notches. Make each top corner the vertically mirrored equivalent of its corresponding clean BOTTOM corner: a simple straight 45-degree chamfer smoothly joining the flat horizontal top rail to the straight vertical side rail. Continuous outer silhouette, no ears, horns, wings, spikes or side protrusions. Keep the upper horizontal rail flush with the canvas top; retain the recessed circular WHITE FLAME medallion at top center below that rail, same size/location/design. Keep ALL remaining side/bottom rails unchanged, same slender silver metal bevel, same proportions, full-height open portrait window. Output a tall 5:7 frame intended for 300x420. Preserve genuine transparent alpha inside and outside; no background, no fill, no text, no portrait, no extra icons, no lower divider. The top corner joins must look as clean and straight as the bottom corner joins.",
+        "prompt":  "Frame-base generation prompt: undefined\nFinal assembly: composite the inner face of the separately generated emblem_common seal into this shared silver frame; see its own prompt entry.",
         "height":  420,
         "kind":  "frame",
-        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "assembly":  "Shared square-corner silver frame; cleaned flame rarity emblem clipped to the inner seal.",
         "generator":  "built-in image_gen"
     },
     {
         "id":  "frame_epic",
         "width":  300,
         "file":  "/assets/raw/frames/epic.png",
-        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the epic rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to purple. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a purple flame in its medallion.",
+        "prompt":  "Frame-base generation prompt: undefined\nFinal assembly: composite the inner face of the separately generated emblem_epic seal into this shared silver frame; see its own prompt entry.",
         "height":  420,
         "kind":  "frame",
-        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "assembly":  "Shared square-corner silver frame; cleaned flame rarity emblem clipped to the inner seal.",
         "generator":  "built-in image_gen"
     },
     {
         "id":  "frame_legendary",
         "width":  300,
         "file":  "/assets/raw/frames/legendary.png",
-        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the legendary rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to ember amber-orange. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a ember amber-orange flame in its medallion.",
+        "prompt":  "Frame-base generation prompt: undefined\nFinal assembly: composite the inner face of the separately generated emblem_legendary seal into this shared silver frame; see its own prompt entry.",
         "height":  420,
         "kind":  "frame",
-        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "assembly":  "Shared square-corner silver frame; cleaned flame rarity emblem clipped to the inner seal.",
         "generator":  "built-in image_gen"
     },
     {
         "id":  "frame_rare",
         "width":  300,
         "file":  "/assets/raw/frames/rare.png",
-        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the rare rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to blue. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a blue flame in its medallion.",
+        "prompt":  "Frame-base generation prompt: undefined\nFinal assembly: composite the inner face of the separately generated emblem_rare seal into this shared silver frame; see its own prompt entry.",
         "height":  420,
         "kind":  "frame",
-        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "assembly":  "Shared square-corner silver frame; cleaned flame rarity emblem clipped to the inner seal.",
         "generator":  "built-in image_gen"
     },
     {
         "id":  "frame_uncommon",
         "width":  300,
         "file":  "/assets/raw/frames/uncommon.png",
-        "prompt":  "Use case: precise-object-edit. Edit this approved SILVER card frame for the uncommon rarity. Change ONLY THE FLAME SYMBOL AND THE SMALL INNER GLOW INSIDE THE CIRCULAR TOP-CENTER EMBLEM to emerald green. Keep the dark seal face and its SILVER circular rim. ALL OF THE REST OF THE ENTIRE FRAME MUST REMAIN SILVER: do not tint the top rail, side rails, bottom rail, corner bevels, seal rim or highlights. Exact same shape, geometry, clean straight chamfered corners, narrow rails, recessed flame medallion location and proportions as the supplied original. No global color grading. Keep genuine transparent alpha inside the full portrait window and outside corners. Tall 5:7 frame intended for 300x420. No text, background, portrait or added features. This is a silver frame with only a emerald green flame in its medallion.",
+        "prompt":  "Frame-base generation prompt: undefined\nFinal assembly: composite the inner face of the separately generated emblem_uncommon seal into this shared silver frame; see its own prompt entry.",
         "height":  420,
         "kind":  "frame",
-        "assembly":  "Shared silver frame; rarity edits clipped to inner flame seal.",
+        "assembly":  "Shared square-corner silver frame; cleaned flame rarity emblem clipped to the inner seal.",
         "generator":  "built-in image_gen"
     },
     {

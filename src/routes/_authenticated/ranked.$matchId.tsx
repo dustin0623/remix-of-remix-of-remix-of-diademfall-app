@@ -1,27 +1,32 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { CheckCircle2, Loader2, Lock, ShieldCheck, Swords } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { CheckCircle2, Loader2, Lock, RotateCcw, ShieldCheck, Swords } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { GameHeader } from "@/components/game/GameHeader";
 import { BattleArena } from "@/components/game/BattleArena";
-import { RulesetPills, TeamBuilder } from "@/components/game/TeamBuilder";
+import { MatchConditions, MatchCountdown, MatchOverview } from "@/components/game/BattleFlow";
+import { TeamBuilder } from "@/components/game/TeamBuilder";
 import { SavedTeams } from "@/components/game/SavedTeams";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { SUMMONERS } from "@/game/catalog/summoners";
-import type { TeamPick } from "@/game/match";
+import type { MatchConfig, TeamPick } from "@/game/match";
 import { rankedConfig, replayBattle, resolveBattle, validateRankedTeam } from "@/game/ranked";
 import { displayUnit } from "@/game/catalogs";
 import { getRankedMatch, submitRankedTeam, type MatchState } from "@/lib/ranked/ranked.functions";
+import { BattleCardCrop } from "@/components/game/BattleCardThumbnail";
 import { formatAmount } from "@/lib/economy/currency";
 
 export const Route = createFileRoute("/_authenticated/ranked/$matchId")({
   head: () => ({
     meta: [
       { title: "Ranked Match — Diademfall" },
-      { name: "description", content: "Draft your warband for a ranked Diademfall match, then watch the verified battle replay." },
+      {
+        name: "description",
+        content:
+          "Draft your warband for a ranked Diademfall match, then watch the verified battle replay.",
+      },
       { property: "og:title", content: "Ranked Match — Diademfall" },
       { property: "og:description", content: "Lock in your team and watch the battle unfold." },
       { property: "og:type", content: "website" },
@@ -31,162 +36,330 @@ export const Route = createFileRoute("/_authenticated/ranked/$matchId")({
   component: MatchRoom,
 });
 
-function useCountdown(m: MatchState | undefined) {
-  const offset = useRef(0);
-  const [now, setNow] = useState(() => Date.now());
-  useEffect(() => { if (m) offset.current = new Date(m.serverNow).getTime() - Date.now(); }, [m]);
-  const live = m?.status === "team_selection";
+function useCountdown(match: MatchState | undefined) {
+  const deadline = match?.deadline;
+  const serverNow = match?.serverNow;
+  const [sample, setSample] = useState<{ serverNow: string; left: number } | null>(null);
   useEffect(() => {
-    if (!live) return;
-    const t = setInterval(() => setNow(Date.now()), 500);
-    return () => clearInterval(t);
-  }, [live]);
-  if (!m) return 0;
-  return Math.max(0, Math.ceil((new Date(m.deadline).getTime() - (now + offset.current)) / 1000));
+    if (!deadline || !serverNow || match?.status !== "team_selection") return;
+    const initial = Date.parse(deadline) - Date.parse(serverNow);
+    const sampledAt = performance.now();
+    const tick = () =>
+      setSample({
+        serverNow,
+        left: Math.max(0, Math.ceil((initial - (performance.now() - sampledAt)) / 1000)),
+      });
+    tick();
+    const timer = window.setInterval(tick, 250);
+    return () => window.clearInterval(timer);
+  }, [deadline, serverNow, match?.status]);
+  if (!deadline || !serverNow) return 0;
+  return sample && sample.serverNow === serverNow
+    ? sample.left
+    : Math.max(0, Math.ceil((Date.parse(deadline) - Date.parse(serverNow)) / 1000));
 }
 
 function MatchRoom() {
   const { matchId } = Route.useParams();
+  return <RankedMatch key={matchId} matchId={matchId} />;
+}
+
+function RankedMatch({ matchId }: { matchId: string }) {
   const qc = useQueryClient();
   const fetchMatch = useServerFn(getRankedMatch);
   const submit = useServerFn(submitRankedTeam);
   const q = useQuery({
     queryKey: ["ranked", "match", matchId],
     queryFn: () => fetchMatch({ data: { matchId } }),
-    refetchInterval: (s) => (s.state.data && (s.state.data.status === "team_selection" || s.state.data.status === "resolving") ? 2000 : false),
+    refetchInterval: (s) =>
+      s.state.data?.status === "team_selection" || s.state.data?.status === "resolving"
+        ? 2000
+        : false,
   });
   const m = q.data ?? undefined;
   const secs = useCountdown(m);
+  const [selectionWindow, setSelectionWindow] = useState(0);
+  const [entered, setEntered] = useState(false);
+  const [submitted, setSubmitted] = useState<TeamPick | null>(null);
   const [pick, setPick] = useState<TeamPick>({ summonerId: "", unitIds: [] });
   const [busy, setBusy] = useState(false);
-
-  const cfg = useMemo(() => (m ? rankedConfig({ seed: "00000000", manaCap: m.manaCap, rulesetIds: m.rulesetIds }) : null), [m?.manaCap, m?.rulesetIds.join()]);
-  const error = cfg ? validateRankedTeam(pick, cfg) : null;
-
-  const lockIn = async () => {
-    if (!m || error) return;
-    setBusy(true);
-    try {
-      const r = await submit({ data: { matchId: m.id, summonerId: pick.summonerId, unitIds: pick.unitIds } });
-      if (!r.ok) toast.error(r.error); else toast.success(r.status === "completed" ? "Both teams locked — battle resolved!" : "Team locked in.");
-      await qc.invalidateQueries({ queryKey: ["ranked", "match", matchId] });
-    } finally { setBusy(false); }
-  };
+  const [watching, setWatching] = useState(true);
+  const manaCap = m?.manaCap;
+  const ruleKey = m?.rulesetIds.join(",") ?? "";
+  const cfg = useMemo(
+    () =>
+      manaCap === undefined
+        ? null
+        : rankedConfig({
+            seed: "00000000",
+            manaCap,
+            rulesetIds: ruleKey ? ruleKey.split(",") : [],
+          }),
+    [manaCap, ruleKey],
+  );
+  const error = cfg
+    ? (validateRankedTeam(pick, cfg) ??
+      (m && [pick.summonerId, ...pick.unitIds].some((id) => m.owned[id] === undefined)
+        ? "Use cards from your collection."
+        : null))
+    : null;
+  const progress = selectionWindow ? Math.min(100, (secs / selectionWindow) * 100) : 100;
+  const myTeam = m?.myTeam ?? submitted;
+  const stage = q.isLoading
+    ? "loading"
+    : !m
+      ? "missing"
+      : m.status === "team_selection" && !myTeam
+        ? entered
+          ? "draft"
+          : "conditions"
+        : m.status === "team_selection" || m.status === "resolving"
+          ? "waiting"
+          : watching && m.replayInput
+            ? "battle"
+            : "result";
 
   useEffect(() => {
-    if (m && (m.status === "completed" || m.status === "cancelled")) {
+    window.scrollTo(0, 0);
+  }, [stage]);
+  useEffect(() => {
+    if (m?.status === "team_selection" && secs > 0) setSelectionWindow((v) => v || secs);
+  }, [m?.status, secs]);
+  useEffect(() => {
+    if (m?.status === "completed" || m?.status === "cancelled" || m?.status === "invalid") {
       void qc.invalidateQueries({ queryKey: ["account"] });
       void qc.invalidateQueries({ queryKey: ["ranked", "history"] });
     }
   }, [m?.status, qc]);
 
-  if (q.isLoading) return <Shell><p className="py-20 text-center text-muted-foreground"><Loader2 className="mx-auto mb-2 animate-spin" />Loading match…</p></Shell>;
-  if (!m) return <Shell><div className="py-20 text-center"><p className="mb-4 text-muted-foreground">This match doesn't exist or you weren't part of it.</p><Button asChild><Link to="/ranked">Back to Ranked</Link></Button></div></Shell>;
+  const lockIn = async () => {
+    if (!m || error || busy || secs <= 0 || myTeam) return;
+    setBusy(true);
+    try {
+      const r = await submit({
+        data: { matchId: m.id, summonerId: pick.summonerId, unitIds: pick.unitIds },
+      });
+      if (!r.ok) toast.error(r.error);
+      else setSubmitted(pick);
+      await qc.invalidateQueries({ queryKey: ["ranked", "match", matchId] });
+    } catch {
+      toast.error("Couldn't lock in your team. Try again before the timer ends.");
+    } finally {
+      setBusy(false);
+    }
+  };
 
-  const vsBar = (
-    <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card/60 px-4 py-3">
-      <div className="font-display font-bold"><span className="text-stat-armor">{m.me.username}</span> <span className="text-xs text-muted-foreground">({m.me.ratingBefore})</span></div>
-      <div className="font-display text-lg font-black text-gold">VS</div>
-      <div className="font-display font-bold"><span className="text-xs text-muted-foreground">({m.opponent.ratingBefore})</span> <span className="text-destructive">{m.opponent.username}</span></div>
-    </div>
-  );
-
-  if (m.status === "team_selection" && !m.myTeam && cfg) {
-    return (
-      <Shell>
-        {vsBar}
-        <div className="my-4 flex flex-col items-center gap-3 text-center">
-          <RulesetPills ids={m.rulesetIds} />
-          <p className="text-xs text-muted-foreground">{m.opponentLocked ? "Your opponent has locked in." : "Your opponent is still drafting."}</p>
-        </div>
-        <TeamBuilder cfg={cfg} pick={pick} setPick={setPick} error={error} owned={m.owned}
-          extra={<SavedTeams cfg={cfg} pick={pick} setPick={setPick} owned={m.owned} check={(p) => validateRankedTeam(p, cfg)} />}
-          topBar={<span className={secs <= 15 ? "font-display font-bold text-destructive" : "font-display font-bold text-primary"}>{secs}s left</span>}
-          action={<Button className="w-full bg-gold font-display font-bold" size="lg" disabled={!!error || busy || secs <= 0} onClick={lockIn}>
-            {busy ? <Loader2 className="animate-spin" /> : <Lock />} Lock in team
-          </Button>} />
-      </Shell>
-    );
-  }
-
-  if (m.status === "team_selection" || m.status === "resolving") {
-    return (
-      <Shell>
-        {vsBar}
-        <section className="mx-auto mt-6 max-w-xl space-y-4 rounded-2xl border border-border bg-card/60 p-8 text-center">
-          <CheckCircle2 className="mx-auto size-10 text-success" />
-          <h1 className="font-display text-2xl font-bold">{m.status === "resolving" ? "Resolving the battle…" : "Team locked in"}</h1>
-          {m.myTeam && <TeamSummary team={m.myTeam} />}
-          {m.status === "team_selection" && (
-            <p className="text-sm text-muted-foreground">
-              {m.opponentLocked ? "Opponent locked in — resolving…" : <>Waiting for {m.opponent.username} · <span className="font-bold text-primary">{secs}s</span></>}
-            </p>
-          )}
-          <Loader2 className="mx-auto animate-spin text-primary" />
-        </section>
-      </Shell>
-    );
-  }
-
-  return <Shell>{vsBar}<MatchResult m={m} /></Shell>;
-}
-
-function TeamSummary({ team }: { team: { summonerId: string; unitIds: string[] } }) {
   return (
-    <div className="text-sm">
-      <div className="font-display font-bold text-primary">{SUMMONERS.find((s) => s.id === team.summonerId)?.name}</div>
-      <div className="text-muted-foreground">{team.unitIds.map((id, i) => `${i + 1}. ${displayUnit(id)?.name ?? id}`).join(" · ")}</div>
+    <div className="portal-page ranked-match-page">
+      <GameHeader />
+      {stage === "loading" && (
+        <main className="match-screen match-wait">
+          <Loader2 className="animate-spin" />
+          <h1>Loading match…</h1>
+        </main>
+      )}
+      {stage === "missing" && (
+        <main className="match-screen match-wait">
+          <h1>{q.isError ? "Couldn't load the match" : "Match unavailable"}</h1>
+          {q.isError && <Button onClick={() => void q.refetch()}>Try again</Button>}
+          <Link to="/ranked" className="match-quiet-button">
+            Back to lobby
+          </Link>
+        </main>
+      )}
+      {m && cfg && stage === "conditions" && (
+        <MatchConditions
+          cfg={cfg}
+          mode="Ranked"
+          opponent={m.opponent.username}
+          seconds={secs}
+          progress={progress}
+          action={
+            <button
+              type="button"
+              className="btn-ornate btn-ornate-verdant"
+              disabled={secs <= 0}
+              onClick={() => setEntered(true)}
+            >
+              Enter arena <Swords className="size-4" />
+            </button>
+          }
+        />
+      )}
+      {m && cfg && stage === "draft" && (
+        <TeamBuilder
+          cfg={cfg}
+          pick={pick}
+          setPick={setPick}
+          error={error}
+          owned={m.owned}
+          seconds={secs}
+          progress={progress}
+          opponent={m.opponent.username}
+          opponentLocked={m.opponentLocked}
+          onConditions={() => setEntered(false)}
+          extra={
+            <SavedTeams
+              cfg={cfg}
+              pick={pick}
+              setPick={setPick}
+              owned={m.owned}
+              check={(p) => validateRankedTeam(p, cfg)}
+            />
+          }
+          action={
+            <Button
+              className="match-battle-cta"
+              disabled={!!error || busy || secs <= 0}
+              onClick={() => void lockIn()}
+            >
+              {busy ? <Loader2 className="animate-spin" /> : <Lock />}
+              {busy ? "Locking team…" : "Battle"}
+            </Button>
+          }
+        />
+      )}
+      {m && stage === "waiting" && (
+        <main className="match-screen match-wait">
+          <CheckCircle2 className="size-10 text-success" />
+          <h1>
+            {m.status === "resolving" || m.opponentLocked ? "Preparing the battle" : "Team locked"}
+          </h1>
+          {myTeam && (
+            <div className="match-locked-lineup">
+              {[
+                SUMMONERS.find((s) => s.id === myTeam.summonerId),
+                ...myTeam.unitIds.map(displayUnit),
+              ].map(
+                (card, i) =>
+                  card && (
+                    <span key={i} role="img" aria-label={card.name} title={card.name}>
+                      <BattleCardCrop card={card} />
+                    </span>
+                  ),
+              )}
+            </div>
+          )}
+          <p role="status">
+            {m.status === "resolving" || m.opponentLocked
+              ? "Both formations are ready."
+              : `Waiting for ${m.opponent.username} to lock in.`}
+          </p>
+          {m.status === "team_selection" && <MatchCountdown seconds={secs} />}
+        </main>
+      )}
+      {m && cfg && (stage === "battle" || stage === "result") && (
+        <RankedResult m={m} cfg={cfg} watching={watching} setWatching={setWatching} />
+      )}
     </div>
   );
 }
 
-function MatchResult({ m }: { m: MatchState }) {
-  const [open, setOpen] = useState(false);
-  const replay = useMemo(() => (m.replayInput ? replayBattle(m.replayInput) : null), [m.replayInput]);
-  const verified = useMemo(() => (m.replayInput && m.resultHash ? resolveBattle(m.replayInput).resultHash === m.resultHash : false), [m.replayInput, m.resultHash]);
-  const delta = m.me.ratingAfter !== null ? m.me.ratingAfter - m.me.ratingBefore : null;
-  const title = m.status === "cancelled" ? "Match Cancelled" : m.me.result === "win" ? "Victory" : m.me.result === "loss" ? "Defeat" : "Draw";
-  const why = m.status === "cancelled" ? "Neither player locked in a team in time. No rating changed."
-    : m.reason === "timeout" ? (m.me.result === "win" ? `${m.opponent.username} didn't lock in a team in time.` : "You didn't lock in a team in time.")
-    : null;
-  const onFinish = useCallback(() => setTimeout(() => setOpen(true), 600), []);
+function RankedResult({
+  m,
+  cfg,
+  watching,
+  setWatching,
+}: {
+  m: MatchState;
+  cfg: MatchConfig;
+  watching: boolean;
+  setWatching: (v: boolean) => void;
+}) {
+  const replay = useMemo(
+    () => (m.replayInput ? replayBattle(m.replayInput) : null),
+    [m.replayInput],
+  );
+  const verified = useMemo(
+    () =>
+      !!(m.replayInput && m.resultHash && resolveBattle(m.replayInput).resultHash === m.resultHash),
+    [m.replayInput, m.resultHash],
+  );
+  const playerSide = m.me.side === 1 ? 0 : 1;
+  const labels: [string, string] =
+    playerSide === 0 ? [m.me.username, m.opponent.username] : [m.opponent.username, m.me.username];
+  const outcome =
+    m.status === "cancelled" || m.status === "invalid"
+      ? "cancelled"
+      : m.me.result === "win"
+        ? "win"
+        : m.me.result === "loss"
+          ? "loss"
+          : "draw";
+  const delta = m.me.ratingAfter === null ? null : m.me.ratingAfter - m.me.ratingBefore;
+  const why =
+    m.status === "cancelled"
+      ? "Neither player locked in a team in time. No rating changed."
+      : m.status === "invalid"
+        ? "This match could not be resolved."
+        : m.reason === "timeout"
+          ? m.me.result === "win"
+            ? `${m.opponent.username} didn't lock in a team in time.`
+            : "You didn't lock in a team in time."
+          : null;
+  const fallbackTeams: [TeamPick | null, TeamPick | null] =
+    playerSide === 0 ? [m.myTeam, null] : [null, m.myTeam];
 
-  const summary = (
-    <div className="space-y-3 text-center">
-      <div className="font-display text-4xl font-black text-gold">{title}</div>
-      {why && <p className="text-sm text-muted-foreground">{why}</p>}
+  if (watching && replay)
+    return (
+      <BattleArena
+        mode="Ranked"
+        result={replay.result}
+        picks={replay.picks}
+        conditions={cfg}
+        playerSide={playerSide}
+        labels={labels}
+        onFinish={() => setWatching(false)}
+      />
+    );
+  return (
+    <MatchOverview
+      mode="Ranked"
+      outcome={outcome}
+      labels={labels}
+      teams={replay?.picks ?? fallbackTeams}
+      playerSide={playerSide}
+      conditions={cfg}
+      {...(replay ? { rounds: replay.result.rounds } : {})}
+      actions={
+        <>
+          <Link to="/ranked" className="btn-ornate btn-ornate-verdant">
+            Back to lobby
+          </Link>
+          <Link to="/leaderboard" className="match-quiet-button">
+            Leaderboard
+          </Link>
+        </>
+      }
+    >
+      {why && <p>{why}</p>}
       {delta !== null && (
-        <p className="text-sm">Rating {m.me.ratingBefore} → <span className="font-bold text-primary">{m.me.ratingAfter}</span>{" "}
-          <span className={delta >= 0 ? "font-bold text-success" : "font-bold text-destructive"}>({delta >= 0 ? "+" : ""}{delta})</span></p>
+        <p>
+          Rating {m.me.ratingBefore} → <strong>{m.me.ratingAfter}</strong>{" "}
+          <span className={delta < 0 ? "text-destructive" : "text-success"}>
+            ({delta >= 0 ? "+" : ""}
+            {delta})
+          </span>
+        </p>
       )}
       <RewardLine m={m} />
-      <div className="flex justify-center gap-3">
-        <Button asChild className="bg-gold font-display font-bold"><Link to="/ranked"><Swords /> Play again</Link></Button>
-        <Button asChild variant="secondary"><Link to="/leaderboard">Leaderboard</Link></Button>
-      </div>
-    </div>
-  );
-
-  if (!replay || !m.replayInput) {
-    return <section className="mx-auto mt-6 max-w-xl rounded-2xl border border-border bg-card/60 p-8">{summary}</section>;
-  }
-  const side1 = m.me.side === 1 ? m.me : m.opponent;
-  const side2 = m.me.side === 1 ? m.opponent : m.me;
-  return (
-    <div className="mt-4 space-y-3">
-      <div className="flex items-center justify-between text-xs text-muted-foreground">
-        <span className="flex items-center gap-1">{verified ? <><ShieldCheck className="size-4 text-success" /> Replay verified against the server result</> : "Replay could not be verified on this device"}</span>
-        <button className="font-semibold text-primary hover:underline" onClick={() => setOpen(true)}>Show result</button>
-      </div>
-      <BattleArena result={replay.result} picks={replay.picks} onFinish={onFinish}
-        labels={[side1.side === m.me.side ? `You (${side1.username})` : side1.username, side2.side === m.me.side ? `You (${side2.username})` : side2.username]} />
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
-          <DialogHeader className="sr-only"><DialogTitle>{title}</DialogTitle><DialogDescription>Ranked match result</DialogDescription></DialogHeader>
-          {summary}
-        </DialogContent>
-      </Dialog>
-    </div>
+      {replay && (
+        <div className="match-result-replay">
+          <span>
+            {verified ? (
+              <>
+                <ShieldCheck className="size-4 text-success" /> Replay verified
+              </>
+            ) : (
+              "Replay could not be verified"
+            )}
+          </span>
+          <button type="button" className="match-quiet-button" onClick={() => setWatching(true)}>
+            <RotateCcw className="size-3.5" /> Watch battle again
+          </button>
+        </div>
+      )}
+    </MatchOverview>
   );
 }
 
@@ -201,23 +374,23 @@ function RewardLine({ m }: { m: MatchState }) {
     timeout: "Wins by timeout earn no Coins.",
     not_a_win: r.energySpent ? "1 Reward Energy used." : null,
   }[r.status];
-  if (r.status !== "earned") return text ? <p className="text-xs text-muted-foreground">{text}</p> : null;
-  const parts = [`League ×${Number(r.leagueMultiplier)}`, `Opponent ×${Number(r.opponentFactor).toFixed(2)}`];
+  if (r.status !== "earned")
+    return text ? <p className="text-xs text-muted-foreground">{text}</p> : null;
+  const parts = [
+    `League ×${Number(r.leagueMultiplier)}`,
+    `Opponent ×${Number(r.opponentFactor).toFixed(2)}`,
+  ];
   if (Number(r.streakBonus) > 0) parts.push(`Streak ${pct(r.streakBonus)}`);
   if (r.goldCards > 0) parts.push(`Gold cards ${pct(r.foilBonus)}`);
   return (
-    <div className="rounded-lg border border-primary/40 bg-primary/10 px-3 py-2 text-sm">
-      <div><span className="font-bold text-primary">+{formatAmount(r.shares, "coins", { maxDecimals: 2 })} reward shares</span> · paid in Coins after midnight UTC</div>
-      <div className="text-[11px] text-muted-foreground">{parts.join(" · ")} · 1 Reward Energy used</div>
-    </div>
-  );
-}
-
-function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="min-h-screen">
-      <GameHeader />
-      <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
+    <div>
+      <p>
+        <strong className="text-primary">
+          +{formatAmount(r.shares, "coins", { maxDecimals: 2 })} reward shares
+        </strong>{" "}
+        · paid in Coins after midnight UTC
+      </p>
+      <p className="text-xs text-muted-foreground">{parts.join(" · ")} · 1 Reward Energy used</p>
     </div>
   );
 }

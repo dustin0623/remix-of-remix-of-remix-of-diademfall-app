@@ -50,7 +50,8 @@ function RankedLobby() {
   const poll = useServerFn(pollRankedQueue);
   const rewards = useRewardsToday();
   const season = useSeasonStatus();
-  const [busy, setBusy] = useState(false);
+  const [joining, setJoining] = useState(false);
+  const [cancelling, setCancelling] = useState(false);
   const [now, setNow] = useState(() => Date.now());
 
   const status = useQuery({
@@ -74,7 +75,8 @@ function RankedLobby() {
   }, [ticket?.status, activeMatchId, navigate]);
 
   const findMatch = async () => {
-    setBusy(true);
+    if (joining) return;
+    setJoining(true);
     try {
       const r = await join();
       if (!r.ok) {
@@ -86,17 +88,22 @@ function RankedLobby() {
         return;
       }
       await qc.invalidateQueries({ queryKey: ["ranked", "queue"] });
+    } catch {
+      toast.error("Couldn't start matchmaking. Please try again.");
     } finally {
-      setBusy(false);
+      setJoining(false);
     }
   };
   const stop = async () => {
-    setBusy(true);
+    setCancelling(true);
     try {
-      await cancel();
+      const result = await cancel();
+      if (!result.ok) toast.error("Couldn't cancel matchmaking. Please try again.");
       await qc.invalidateQueries({ queryKey: ["ranked", "queue"] });
+    } catch {
+      toast.error("Couldn't cancel matchmaking. Please try again.");
     } finally {
-      setBusy(false);
+      setCancelling(false);
     }
   };
 
@@ -139,11 +146,34 @@ function RankedLobby() {
       id: "cards",
       label: "Cards",
       icon: "collection",
-      left: `${account?.cardsOwned ?? 0} cards owned`,
+      left: "",
       right: "Collection",
       art: "/assets/rebellion/backgrounds/hero.jpg",
     },
   ] as const;
+
+  if (joining || searching)
+    return (
+      <div className="portal-page ranked-page">
+        <GameHeader />
+        <main className="match-searching-layer">
+          <Loader2
+            className="size-9 animate-spin text-primary motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+          <h1>Finding opponent</h1>
+          <p role="status">
+            {searching ? "Looking for a player near your rating." : "Entering the ranked queue…"}
+          </p>
+          <p role="timer">
+            {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")}
+          </p>
+          <Button variant="outline" disabled={joining || cancelling} onClick={() => void stop()}>
+            <X /> {cancelling ? "Cancelling…" : "Cancel search"}
+          </Button>
+        </main>
+      </div>
+    );
 
   return (
     <div className="portal-page ranked-page play-page-v2">
@@ -156,39 +186,15 @@ function RankedLobby() {
       >
         <h1 className="sr-only">Ranked Battles</h1>
         <div className="play-lobby-layout">
-          <aside className="play-collection-banner">
-            <div className="play-banner-heading">
-              <HudIcon name="collection" />
-              <div>
-                <span className="portal-eyebrow">Forge your warband</span>
-                <h2>The Shattered Crown</h2>
-              </div>
-            </div>
-            <p>
-              Six Banners. A realm of possibilities.
-              <br />
-              Your next champion awaits.
-            </p>
-            <div className="play-collection-count">
-              <strong>{account?.cardsOwned ?? "—"}</strong>
-              <span>Cards in your collection</span>
-            </div>
-            <Link
-              to={account?.cardsOwned === 0 ? "/open" : "/market"}
-              search={account?.cardsOwned === 0 ? {} : { section: "collection" }}
-              className="play-small-button"
-            >
-              {account?.cardsOwned === 0 ? "Open Packs" : "View Collection"}{" "}
-              <ArrowRight className="size-3" />
-            </Link>
-          </aside>
-
           <section className="play-matchmaking" aria-label="Ranked matchmaking">
             <div className="play-league-card">
               <HudIcon name="ranked" className="play-league-medal" />
               <div className="play-league-heading">
                 <div>
-                  <span>{seasonNo ? `Season ${seasonNo}` : "Current division"}{endsAt ? ` · ends in ${timeLeft(endsAt, now)}` : ""}</span>
+                  <span>
+                    {seasonNo ? `Season ${seasonNo}` : "Current division"}
+                    {endsAt ? ` · ends in ${timeLeft(endsAt, now)}` : ""}
+                  </span>
                   <h2>{prog?.division.name ?? "Loading"}</h2>
                 </div>
                 <div className="play-league-rating">
@@ -205,17 +211,24 @@ function RankedLobby() {
                     {prog.next
                       ? `${prog.toNext} rating to ${prog.next.name}`
                       : "Top division reached"}
-                    <span>Win rewards {multiplierLabel(leagueById(prog.division.league).winMultiplier)}</span>
+                    <span>
+                      Win rewards {multiplierLabel(leagueById(prog.division.league).winMultiplier)}
+                    </span>
                   </p>
                   <p>
-                    {account && account.winStreak > 0 ? `${account.winStreak} win streak${account.winStreak >= 2 && prog.division.league !== "champion" ? " · next win +30" : ""}` : "Win +20 · Loss −20"}
-                    <span>{rulesetCountFor(account?.rating ?? 0)} battle rule{rulesetCountFor(account?.rating ?? 0) === 1 ? "" : "s"} per match</span>
+                    {account && account.winStreak > 0
+                      ? `${account.winStreak} win streak${account.winStreak >= 2 && prog.division.league !== "champion" ? " · next win +30" : ""}`
+                      : "Win +20 · Loss −20"}
+                    <span>
+                      {rulesetCountFor(account?.rating ?? 0)} battle rule
+                      {rulesetCountFor(account?.rating ?? 0) === 1 ? "" : "s"} per match
+                    </span>
                   </p>
                 </div>
               )}
             </div>
             <div className="play-battle-card">
-              {activeMatchId && !searching ? (
+              {activeMatchId ? (
                 <Link
                   to="/ranked/$matchId"
                   params={{ matchId: activeMatchId }}
@@ -223,19 +236,6 @@ function RankedLobby() {
                 >
                   Return to Match
                 </Link>
-              ) : searching ? (
-                <div className="ranked-search-state" role="status">
-                  <div>
-                    <Loader2 className="size-4 animate-spin" /> Searching{" "}
-                    <strong>
-                      {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")}
-                    </strong>
-                  </div>
-                  <p>Finding an opponent near your rating.</p>
-                  <Button variant="secondary" size="sm" onClick={stop} disabled={busy}>
-                    <X className="size-3" /> Cancel
-                  </Button>
-                </div>
               ) : (
                 <>
                   {ticket?.status === "expired" && (
@@ -247,9 +247,9 @@ function RankedLobby() {
                     type="button"
                     className="btn-ornate btn-ornate-verdant w-full play-battle-button"
                     onClick={findMatch}
-                    disabled={busy || status.isLoading || !account || account.cardsOwned === 0}
+                    disabled={status.isLoading || !account || account.cardsOwned === 0}
                   >
-                    {busy && <Loader2 className="size-4 animate-spin" />} Battle
+                    Battle
                   </button>
                   {account?.cardsOwned === 0 && (
                     <p className="play-collection-required">
@@ -261,52 +261,6 @@ function RankedLobby() {
               <EnergyMeter r={rewards.data} />
             </div>
           </section>
-
-          <aside className="play-format-panel">
-            {unopened > 0 && (
-              <button
-                type="button"
-                className="btn-ornate btn-ornate-verdant mb-3 w-full"
-                onClick={() => {
-                  setTab("rewards");
-                  document.getElementById("play-dashboard")?.scrollIntoView({ block: "start", behavior: "smooth" });
-                }}
-              >
-                Open {unopened} chest{unopened > 1 ? "s" : ""}
-              </button>
-            )}
-            <h2>Format Rules</h2>
-            <p>Only cards in your collection are playable.</p>
-            <span>Same mana cap. Same Banners. Same rules.</span>
-            <div className="play-format-divider" />
-            <h3>Daily Progress</h3>
-            <div className="play-daily-progress">
-              <HudIcon name="rewards" />
-              <div>
-                <strong>{rewards.data?.eligibleWins ?? 0}</strong>
-                <span>Rewarded wins</span>
-              </div>
-              <div>
-                <strong>
-                  {rewards.data?.activityPoints ?? 0}
-                  <small>/100</small>
-                </strong>
-                <span>Mission points</span>
-              </div>
-            </div>
-            <button
-              type="button"
-              className="play-small-button"
-              onClick={() => {
-                setTab("rewards");
-                document
-                  .getElementById("play-dashboard")
-                  ?.scrollIntoView({ block: "start", behavior: "smooth" });
-              }}
-            >
-              View Daily Rewards <ArrowRight className="size-3" />
-            </button>
-          </aside>
         </div>
       </PageHero>
 
@@ -351,7 +305,7 @@ function RankedLobby() {
                 <h2>{account?.cardsOwned ?? "—"} Cards Owned</h2>
                 <p>
                   {account?.cardsOwned === 0
-                    ? "Open packs to collect your first summoner and troops, then bring your warband into the arena."
+                    ? "Open packs to collect your first commander and troops, then bring your warband into the arena."
                     : "Manage your cards, combine duplicates, and prepare your next ranked warband."}
                 </p>
                 <Link

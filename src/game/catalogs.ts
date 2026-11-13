@@ -52,6 +52,10 @@ export function displayUnit(id: string): UnitCard | undefined {
   return UNIT_BY_ID[id] ?? LEGACY_UNIT_BY_ID[id];
 }
 
+export function displaySummoner(id: string): SummonerCard | undefined {
+  return SUMMONER_BY_ID[id] ?? LEGACY_SUMMONER_BY_ID[id];
+}
+
 /** Card ids in a team that are not in the current catalog (retired Alpha/Beta cards or typos). */
 export function retiredCards(pick: { summonerId: string; unitIds: string[] }): string[] {
   return [pick.summonerId, ...pick.unitIds].filter((id) => id && !UNIT_BY_ID[id] && !SUMMONER_BY_ID[id]);

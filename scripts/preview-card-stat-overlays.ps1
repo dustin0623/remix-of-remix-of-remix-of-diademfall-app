@@ -22,7 +22,7 @@ function Draw-Stat($Graphics,[string]$Stat,[int]$Value,[float]$X,[float]$Y,[floa
  $Graphics.FillPath([Drawing.Brushes]::White,$path)
  $family.Dispose();$format.Dispose();$path.Dispose();$pen.Dispose()
 }
-$sheet=[Drawing.Bitmap]::new(960,402)
+$sheet=[Drawing.Bitmap]::new(1080,402)
 $g=[Drawing.Graphics]::FromImage($sheet)
 $g.Clear([Drawing.Color]::FromArgb(20,27,40))
 $g.InterpolationMode=[Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
@@ -34,27 +34,27 @@ for($i=0;$i -lt $cards.Count;$i++){
  $u=$cards[$i]
  $file='public/assets/cards/'+$u.banner+'/'+$u.rarity+'/normal/regular_'+$u.id+'.png'
  $texture=[Drawing.Image]::FromFile((Join-Path $project $file))
- $card=[Drawing.Bitmap]::new(300,420)
+ $card=[Drawing.Bitmap]::new(340,420)
  $cg=[Drawing.Graphics]::FromImage($card)
  $cg.InterpolationMode=[Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
  $cg.SmoothingMode=[Drawing.Drawing2D.SmoothingMode]::AntiAlias
- $cg.DrawImage($texture,0,0,300,420)
- Draw-Stat $cg 'mana' $u.mana 3 4 57 30
+ $cg.DrawImage($texture,20,0,300,420)
+ Draw-Stat $cg 'mana' $u.mana 23 4 57 30
  $position=0
  foreach($stat in @('steel','shot','spell')){
   if($u.$stat -le 0){continue}
-  Draw-Stat $cg $stat $u.$stat 1.5 (126+$position*55.5) 51
+  Draw-Stat $cg $stat $u.$stat 3 (126+$position*55.5) 51
   $position++
  }
  $position=0
  foreach($stat in @('armor','health','speed')){
   if($stat -eq 'armor' -and $u.armor -le 0){continue}
-  Draw-Stat $cg $stat $u.$stat 247.5 (117.6+$position*55.5) 51
+  Draw-Stat $cg $stat $u.$stat 286 (117.6+$position*55.5) 51
   $position++
  }
  $cg.Dispose();$texture.Dispose()
- $g.DrawImage($card,[Drawing.Rectangle]::new((20+$i*315),48,300,300),0,0,300,300,[Drawing.GraphicsUnit]::Pixel)
- $g.DrawString($u.name,$font,[Drawing.Brushes]::Ivory,(20+$i*315),352)
+ $g.DrawImage($card,[Drawing.Rectangle]::new((10+$i*360),48,340,300),0,0,340,300,[Drawing.GraphicsUnit]::Pixel)
+ $g.DrawString($u.name,$font,[Drawing.Brushes]::Ivory,(30+$i*360),352)
  $card.Dispose()
 }
 $g.DrawString('Native 300 px card crops with sample values. Asset composition preview, not a browser screenshot.',$small,[Drawing.Brushes]::LightSteelBlue,20,382)

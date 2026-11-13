@@ -28,9 +28,7 @@ foreach($card in $manifest.cards){
  $g.SmoothingMode=[Drawing.Drawing2D.SmoothingMode]::AntiAlias
  $g.InterpolationMode=[Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
  $clip=[Drawing.Drawing2D.GraphicsPath]::new()
- $clip.AddPolygon([Drawing.PointF[]]@(
-  [Drawing.PointF]::new(15,8),[Drawing.PointF]::new(285,8),[Drawing.PointF]::new(294,21),[Drawing.PointF]::new(294,399),
-  [Drawing.PointF]::new(282,412),[Drawing.PointF]::new(18,412),[Drawing.PointF]::new(6,399),[Drawing.PointF]::new(6,21)))
+ $clip.AddRectangle([Drawing.Rectangle]::new(0,0,300,420))
  $g.SetClip($clip)
  $g.DrawImage($backgrounds[$card.banner],0,0,300,420)
  $g.DrawImage($portrait,0,0,300,420)

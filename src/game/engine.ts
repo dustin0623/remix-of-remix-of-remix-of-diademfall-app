@@ -1,458 +1,285 @@
-/**
- * Deterministic Diademfall battle engine (local v1).
- * Prelaunch shared-ability rebalance: every current catalog ability is implemented here.
- * Ability mechanics do not depend on the bearer banner. Seeded randomness produces a battle log.
- */
+/** Deterministic prelaunch combat: shared troop abilities and automatic commander support. */
 import { CURRENT_CATALOG, type CardCatalog } from "./catalogs";
-import { isWayfarer, unitAtLevel, type UnitCard } from "./units";
+import { unitAtLevel, type UnitCard } from "./units";
 import type { MatchConfig, TeamPick } from "./match";
 import { Rng, hash } from "./rng";
 
 type Channel = "steel" | "shot" | "spell";
-
 export interface BUnit {
-  uid: string; cardId: string; name: string; side: 0 | 1;
-  /** the card at its battle level (printed stats before modifiers) */
-  card: UnitCard;
+  uid: string; cardId: string; name: string; side: 0 | 1; card: UnitCard;
   steel: number; shot: number; spell: number;
   armor: number; maxArmor: number; hp: number; maxHp: number; speed: number;
-  acc: number; abil: Set<string>; alive: boolean;
-  atkMod: number; spdRound: number; spdNext: number; spdUntil: number; spdUntilBonus: number;
-  brace: number; tempArmor: number; souls: number; boneGain: number;
-  forgeUsed: boolean; graveUsed: boolean; vanishUsed: boolean; vanishUntil: number; oathUsed: boolean;
-  misleadRound: number; scaleRound: number; roarUsed: boolean; killRound: number; runeIdx: number;
-  packRound: number; skipRound: number; hexSpeedUntil: number; hexPowerUntil: number;
-  hexIdx: number; hexRound: number; hexSpeed: number; hexPower: number; healLock: number;
-  doom?: number | undefined; debtors: string[]; debtRound: number; marked: number; spotted: number;
-  healMod: number; link?: string | undefined; noRestore: boolean; spotRound: number;
-  /** Wayfarer abilities: Salvager use round, Roadwise used/speed bonus, Last Pay bonuses (one entry per bonus: last round it lasts) */
-  salvRound: number; roadUsed: boolean; roadSpd: number; lastPay: number[];
+  magicResistance: number; abil: Set<string>; alive: boolean;
+  spdRound: number; spdNext: number; brace: number;
+  forgeUsed: boolean; graveUsed: boolean; skipRound: number; healLock: number;
 }
-
-export interface SnapUnit { uid: string; cardId: string; name: string; hp: number; maxHp: number; armor: number; alive: boolean; buffs: string[] }
+export interface SnapUnit {
+  uid: string; cardId: string; name: string; hp: number; maxHp: number; armor: number;
+  alive: boolean; buffs: string[];
+  stats?: { steel: number; shot: number; spell: number; speed: number };
+  abilities?: string[];
+}
 export interface BattleEvent {
   round: number;
   kind: "round" | "attack" | "miss" | "ability" | "death" | "info" | "end";
   text: string;
-  actor?: string | undefined; target?: string | undefined; amount?: number | undefined; channel?: Channel | undefined;
+  actor?: string | undefined; target?: string | undefined;
+  amount?: number | undefined; channel?: Channel | undefined;
   teams: [SnapUnit[], SnapUnit[]];
 }
 export interface BattleResult { winner: 0 | 1 | "draw"; rounds: number; events: BattleEvent[] }
-
 const MAX_ROUNDS = 30;
+const CHANNELS: Channel[] = ["spell", "shot", "steel"];
 
-/** `catalog` defaults to the current cards; replays pass the catalog of their game version. */
 export function simulateBattle(cfg: MatchConfig, picks: [TeamPick, TeamPick], catalog: CardCatalog = CURRENT_CATALOG): BattleResult {
-  const R = cfg.rulesets;
-  const has = (id: string) => R.includes(id);
+  const has = (id: string) => cfg.rulesets.includes(id);
   const rng = new Rng(cfg.seed);
   const events: BattleEvent[] = [];
   let round = 0;
   const teams: [BUnit[], BUnit[]] = [[], []];
-  const T = (s: number): BUnit[] => teams[s as 0 | 1];
-
-  const snap = (): [SnapUnit[], SnapUnit[]] => teams.map((t) => t.map((u) => ({
-    uid: u.uid, cardId: u.cardId, name: u.name, hp: u.hp, maxHp: u.maxHp, armor: u.armor + u.tempArmor, alive: u.alive,
-    buffs: [u.brace > 0 ? "brace" : "", u.marked >= round && u.marked > 0 ? "marked" : "", u.spotted >= round && u.spotted > 0 ? "spotted" : "",
-      u.doom !== undefined ? `doom ${u.doom}` : "", u.hexSpeed || u.hexPower ? "hexed" : "", u.vanishUntil >= round && u.vanishUntil > 0 ? "vanished" : "",
-      u.roadSpd > 0 ? "roadwise" : "", lastPayActive(u) > 0 ? "last pay" : ""].filter(Boolean),
-  }))) as [SnapUnit[], SnapUnit[]];
-  const log = (e: Omit<BattleEvent, "teams" | "round">) => events.push({ ...e, round, teams: snap() });
-  /** Last Pay bonuses still running this round (each = +1 speed, +5 accuracy). */
-  const lastPayActive = (u: BUnit) => Math.min(2, u.lastPay.filter((until) => round <= until).length);
-
-  // ---- create units
-  picks.forEach((p, side) => {
-    p.unitIds.forEach((id, i) => {
-      const c = unitAtLevel(catalog.unit(id)!, p.levels?.[id] ?? 1);
-      let armor = c.armor;
-      if (has("shattered_guard")) armor = Math.floor(armor / 2);
-      if (has("gilded_march") && c.armor > 0) armor += 2;
-      T(side).push({
-        uid: `${side}-${i}-${id}`, cardId: id, name: c.name, side: side as 0 | 1, card: c,
-        steel: c.steel, shot: c.shot, spell: c.spell, armor, maxArmor: armor, hp: c.health, maxHp: c.health, speed: c.speed,
-        acc: 0, abil: new Set(has("unwritten_deeds") ? [] : c.abilities), alive: true,
-        atkMod: 0, spdRound: 0, spdNext: 0, spdUntil: 0, spdUntilBonus: 0, brace: 0, tempArmor: 0, souls: 0, boneGain: 0,
-        forgeUsed: false, graveUsed: false, vanishUsed: false, vanishUntil: 0, oathUsed: false, misleadRound: 0, scaleRound: 0,
-        roarUsed: false, killRound: 0, runeIdx: 0, packRound: 0, skipRound: -1, hexSpeedUntil: 0, hexPowerUntil: 0, hexIdx: 0, hexRound: 0, hexSpeed: 0, hexPower: 0, healLock: 0,
-        debtors: [], debtRound: 0, marked: 0, spotted: 0, healMod: 0, noRestore: has("gilded_march"), spotRound: 0,
-        salvRound: 0, roadUsed: false, roadSpd: 0, lastPay: [],
-      });
-    });
-  });
-
-  const living = (s: number) => T(s).filter((u) => u.alive);
+  const living = (side: number) => teams[side as 0 | 1].filter(u => u.alive);
   const posOf = (u: BUnit) => living(u.side).indexOf(u) + 1;
+  const curSpeed = (u: BUnit) => Math.max(1, u.speed + u.spdRound + (u.abil.has("windread") ? 1 : 0));
   const adjacent = (u: BUnit) => {
     if (has("broken_formation")) return [] as BUnit[];
-    const l = living(u.side); const i = l.indexOf(u);
-    return [l[i - 1], l[i + 1]].filter(Boolean) as BUnit[];
+    const line = living(u.side), i = line.indexOf(u);
+    return [line[i - 1], line[i + 1]].filter((x): x is BUnit => !!x);
   };
-  const overflowRound = [0, 0];
-  const unspent = picks.map((p) => {
-    // mana spent is approximated from printed costs
-    const s = catalog.summoner(p.summonerId);
-    const spent = (s?.mana ?? 0) + p.unitIds.reduce((a, id) => a + catalog.unit(id)!.mana, 0);
-    return Math.max(0, cfg.manaCap - spent);
-  });
+  const snap = (): [SnapUnit[], SnapUnit[]] => teams.map(team => team.map(u => ({
+    uid: u.uid, cardId: u.cardId, name: u.name, hp: u.hp, maxHp: u.maxHp,
+    armor: u.armor, alive: u.alive,
+    stats: { steel: u.steel, shot: u.shot, spell: u.spell, speed: curSpeed(u) },
+    abilities: [...u.abil],
+    buffs: [u.magicResistance > 0 ? "Magic Ward" : "",
+      u.abil.has("forgeheart") && !u.forgeUsed ? "Forgeheart" : "",
+      u.healLock >= round && u.healLock > 0 ? "healing blocked" : "",
+      u.spdRound < 0 ? "slowed" : ""].filter(Boolean),
+  }))) as [SnapUnit[], SnapUnit[]];
+  const log = (event: Omit<BattleEvent, "teams" | "round">) => events.push({ ...event, round, teams: snap() });
 
-  // ---- summoner effects
-  picks.forEach((p, side) => {
-    const s = catalog.summoner(p.summonerId);
-    if (!s) return;
-    if (has("oathless_day")) { log({ kind: "info", text: `${s.name}'s commands are silenced (Oathless Day).` }); return; }
-    const allies = T(side); const enemies = T(1 - side);
-    const pickTargets = (t: string): BUnit[] => {
-      const by = (f: (u: BUnit) => number, dir: 1 | -1) => [...allies].sort((a, b) => dir * (f(b) - f(a)))[0]!;
-      switch (t) {
-        case "all_allies": return allies;
-        case "all_enemies": return enemies;
-        case "front_ally": return allies.slice(0, 1);
-        case "front_two": return allies.slice(0, 2);
-        case "rear_ally": return allies.slice(-1);
-        case "rear_three": return allies.slice(-3);
-        case "middle_allies": return allies.slice(1, -1);
-        case "steel_allies": return allies.filter((u) => u.steel > 0);
-        case "shot_allies": return allies.filter((u) => u.shot > 0);
-        case "spell_allies": case "support_allies": return allies.filter((u) => u.spell > 0);
-        case "strongest_spell_ally": return [...allies].filter((u) => u.spell > 0).sort((a, b) => b.spell - a.spell).slice(0, 1);
-        case "highest_mana_ally": return [by((u) => u.card.mana, 1)];
-        case "lowest_mana_ally": return [by((u) => u.card.mana, -1)];
-        case "lowest_health_ally": return [by((u) => u.maxHp, -1)];
-        case "highest_speed_ally": return [by((u) => u.speed, 1)];
-        default: return [];
-      }
-    };
-    for (const e of s.effects) {
-      const targets = pickTargets(e.target).filter(Boolean);
-      if (e.kind === "grantAbility" && e.abilityId) targets.forEach((u) => u.abil.add(e.abilityId!));
-      else if (e.stat && e.value) {
-        const cond = e.condition;
-        for (const u of targets) {
-          const c = u.card;
-          if (cond === "printedArmorAtLeast1" && c.armor < 1) continue;
-          if (cond === "printedHealthAtMost5" && c.health > 5) continue;
-          if (cond === "unspentManaAtLeast2" && unspent[side]! < 2) continue;
-          const bonus = e.value + (e.value > 0 && u.abil.has("bannerhold") && posOf(u) <= 2 ? 1 : 0);
-          if (cond === "rounds1to2" || cond === "round1Only") { u.spdUntil = cond === "round1Only" ? 1 : 2; u.spdUntilBonus = bonus; continue; }
-          switch (e.stat) {
-            case "armor": u.armor += bonus; u.maxArmor += bonus; break;
-            case "health": u.hp += bonus; u.maxHp += bonus; break;
-            case "speed": u.speed += bonus; break;
-            case "steel": u.steel += bonus; break;
-            case "shot": u.shot += bonus; break;
-            case "spell": u.spell += bonus; break;
-            case "accuracy": u.acc += bonus; break;
-            case "attackPower": u.atkMod += bonus; break;
-            case "healingReceived": u.healMod += bonus; break;
-          }
+  picks.forEach((pick, side) => pick.unitIds.forEach((id, i) => {
+    const card = unitAtLevel(catalog.unit(id)!, pick.levels?.[id] ?? 1);
+    let armor = card.armor;
+    if (has("shattered_guard")) armor = Math.floor(armor / 2);
+    if (has("gilded_march") && card.armor > 0) armor += 2;
+    teams[side as 0 | 1].push({
+      uid: `${side}-${i}-${id}`, cardId: id, name: card.name, side: side as 0 | 1, card,
+      steel: card.steel, shot: card.shot, spell: card.spell, armor, maxArmor: armor,
+      hp: card.health, maxHp: card.health, speed: card.speed, magicResistance: 0,
+      abil: new Set(has("unwritten_deeds") ? [] : card.abilities), alive: true,
+      spdRound: 0, spdNext: 0, brace: 0, forgeUsed: false, graveUsed: false, skipRound: -1, healLock: 0,
+    });
+  }));
+
+  // Apply both commanders before clamping, so opposing buffs/debuffs cancel equally on either side.
+  for (const [side, pick] of picks.entries()) {
+    const commander = catalog.summoner(pick.summonerId);
+    if (!commander) continue;
+    if (has("oathless_day")) {
+      log({ kind: "info", text: `${commander.name}'s commands are silenced (Oathless Day).` });
+      continue;
+    }
+    for (const effect of commander.effects) {
+      const targets = effect.target === "all_allies" ? teams[side as 0 | 1]
+        : effect.target === "all_enemies" ? teams[(1 - side) as 0 | 1] : [];
+      if (effect.kind !== "stat" || !effect.stat || !effect.value) continue;
+      for (const unit of targets) {
+        const bonus = effect.value;
+        switch (effect.stat) {
+          case "health": unit.maxHp += bonus; break;
+          case "armor": unit.maxArmor += bonus; break;
+          case "speed": unit.speed += bonus; break;
+          case "steel": case "shot": case "spell":
+            if (unit.card[effect.stat] > 0) unit[effect.stat] += bonus;
+            break;
+          case "magicResistance": unit.magicResistance += bonus; break;
         }
       }
     }
-    log({ kind: "ability", text: `${s.name} rallies the ${side === 0 ? "player" : "enemy"} warband.` });
-  });
-
-  // colossus wake, hoardfire, crown favor, fate knot
-  for (const side of [0, 1] as const) {
-    for (const u of T(side)) {
-      if (u.abil.has("colossus_wake")) adjacent(u).forEach((a) => { a.maxHp += 1; a.hp += 1; });
-      if (u.abil.has("hoardfire") && u.spell > 0) u.spell += Math.min(2, Math.floor(unspent[side]! / 3));
-      if (u.abil.has("fate_knot")) {
-        const n = adjacent(u).sort((a, b) => a.card.mana - b.card.mana)[0]!;
-        if (n) { u.link = n.uid; n.link = u.uid; }
-      }
-    }
-    // Contract Bond: exactly 2 Wayfarers on the team -> both +1 max health (resolves once per team).
-    if (T(side).some((u) => u.abil.has("contract_bond"))) {
-      const wf = T(side).filter((u) => isWayfarer(u.card));
-      if (wf.length === 2) {
-        wf.forEach((u) => { u.maxHp += 1; u.hp += 1; });
-        log({ kind: "ability", text: `${wf[0]!.name} and ${wf[1]!.name} honor their contract (+1 health).` });
-      }
-    }
-    if (has("crown_favor") && T(side).length) {
-      const top = [...T(side)].sort((a, b) => b.card.mana - a.card.mana)[0]!;
-      top.maxHp += 1; top.hp += 1; top.abil.add("_crown");
-    }
   }
-
-  const curSpeed = (u: BUnit) => {
-    let s = u.speed + u.spdRound - u.hexSpeed;
-    if (round <= u.spdUntil) s += u.spdUntilBonus;
-    s += u.roadSpd + lastPayActive(u);
-    if (u.abil.has("windread") && posOf(u) >= 4) s += 1;
-    return Math.max(1, s);
-  };
-  const byUid = (id: string) => teams[0].concat(teams[1]).find((u) => u.uid === id);
-
+  for (const u of teams.flat()) {
+    u.hp = u.maxHp = Math.max(1, u.maxHp);
+    u.armor = u.maxArmor = Math.max(0, u.maxArmor);
+    u.speed = Math.max(1, u.speed);
+    u.magicResistance = Math.max(0, u.magicResistance);
+    for (const channel of CHANNELS) u[channel] = u.card[channel] > 0 ? Math.max(1, u[channel]) : 0;
+  }
+  for (const [side, pick] of picks.entries()) {
+    const commander = catalog.summoner(pick.summonerId);
+    if (commander && !has("oathless_day")) log({kind:"ability",text:`${commander.name} supports the ${side === 0 ? "player" : "enemy"} troops.`});
+  }
+  if (has("crown_favor")) for (const team of teams) {
+    const champion = [...team].sort((a,b) => b.card.mana-a.card.mana)[0];
+    if (champion) { champion.maxHp++; champion.hp++; champion.abil.add("_crown"); }
+  }
   const checkWin = (): 0 | 1 | "draw" | null => {
     const a = living(0).length, b = living(1).length;
-    if (!a && !b) return "draw"; if (!a) return 1; if (!b) return 0; return null;
+    return !a && !b ? "draw" : !a ? 1 : !b ? 0 : null;
   };
-
-  const defeat = (u: BUnit, killer?: BUnit) => {
-    const payees = u.abil.has("last_pay") ? adjacent(u) : [];
+  const defeat = (u: BUnit) => {
     u.alive = false;
-    if (payees.length) {
-      payees.forEach((a) => a.lastPay.push(round + 1));
-      log({ kind: "ability", text: `${u.name}'s Last Pay spurs ${payees.map((a) => a.name).join(" and ")}.`, actor: u.uid });
-    }
-    log({ kind: "death", text: `${u.name} falls.`, target: u.uid });
-    if (killer && killer.alive) {
-      if (killer.abil.has("primal_mend") && killer.killRound !== round) {
-        killer.killRound = round;
-        const w = living(killer.side).filter((x) => x.hp < x.maxHp).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0]!;
-        if (w) heal(w, 1, "Primal Mend");
-      }
-    }
-    for (const o of teams[0].concat(teams[1])) {
-      if (!o.alive) continue;
-      if (o.abil.has("bone_harvest") && o.boneGain < 3) { o.boneGain++; o.armor++; }
-      if (o.abil.has("soul_tithe")) {
-        o.souls++;
-        if (o.souls >= 3) { o.souls -= 3; heal(o, 3, "Soul Tithe"); o.hexPower = 0; o.hexSpeed = 0; }
-      }
-    }
+    log({kind:"death",text:`${u.name} falls.`,target:u.uid});
     if (u.abil.has("grave_recall") && !u.graveUsed) {
-      u.graveUsed = true; u.alive = true; u.hp = Math.min(1, u.maxHp); u.armor = 0; u.tempArmor = 0; u.brace = 0; u.atkMod -= 1; u.skipRound = round;
-      log({ kind: "ability", text: `${u.name} claws back from the grave (Grave Recall).`, actor: u.uid });
-    }
-    if (u.alive === false && u.side !== undefined) {
-      // Trailblazer: allies behind advance
-      for (const a of living(u.side)) if (a.abil.has("trailblazer")) { a.spdRound += 2; }
+      u.graveUsed = true; u.alive = true; u.hp = 1; u.armor = 0; u.brace = 0; u.skipRound = round;
+      log({kind:"ability",text:`${u.name} claws back from the grave (Grave Recall).`,actor:u.uid});
     }
   };
-
-  const heal = (u: BUnit, amt: number, src: string) => {
-    if (u.healLock >= round && u.healLock > 0) return;
-    let a = amt + u.healMod; if (has("red_hour") && round >= 6) a -= 1;
-    a = Math.max(0, Math.min(a, u.maxHp - u.hp));
-    if (a <= 0) return;
-    u.hp += a;
-    log({ kind: "ability", text: `${u.name} restores ${a} health (${src}).`, target: u.uid, amount: a });
-  };
-
-  const directDamage = (u: BUnit, amt: number, src: string) => {
-    if (!u.alive || amt <= 0) return;
-    u.hp -= amt;
-    log({ kind: "ability", text: `${u.name} takes ${amt} direct damage (${src}).`, target: u.uid, amount: amt });
+  const directDamage = (u: BUnit, amount: number, source: string) => {
+    if (!u.alive || amount <= 0) return;
+    u.hp -= amount;
+    log({kind:"ability",text:`${u.name} takes ${amount} direct damage (${source}).`,target:u.uid,amount});
     if (u.hp <= 0) defeat(u);
   };
-
-  /** Roadwise: the first time an enemy ability (not an attack) selects this unit, +2 speed until after its next action. */
-  const abilityTargeted = (t: BUnit) => {
-    if (!t.alive || !t.abil.has("roadwise") || t.roadUsed) return;
-    t.roadUsed = true; t.roadSpd = 2;
-    log({ kind: "ability", text: `${t.name} sidesteps the trap (Roadwise, +2 speed).`, actor: t.uid });
+  const heal = (u: BUnit, amount: number, source: string, actor: BUnit) => {
+    if (!u.alive || (u.healLock > 0 && u.healLock >= round)) return;
+    const restored = Math.max(0, Math.min(u.maxHp-u.hp, amount-(has("red_hour") && round >= 6 ? 1 : 0)));
+    if (!restored) return;
+    u.hp += restored;
+    log({kind:"ability",text:`${u.name} restores ${restored} health (${source}).`,actor:actor.uid,target:u.uid,amount:restored});
   };
-  /** Salvager: once per round, when another unit loses its last armor, the bearer regains 1 armor (up to printed armor). */
-  const armorBroken = (broken: BUnit) => {
-    for (const o of [...living(0), ...living(1)]) {
-      if (o === broken || !o.abil.has("salvager") || o.noRestore || o.salvRound === round) continue;
-      const cap = o.maxArmor;
-      if (cap <= 0) continue;
-      if (o.armor >= cap) continue;
-      o.salvRound = round;
-      o.armor += 1;
-      log({ kind: "ability", text: `${o.name} salvages 1 armor.`, actor: o.uid });
+  const support = (u: BUnit) => {
+    if (u.abil.has("primal_mend")) heal(u,2,"Primal Mend",u);
+    if (u.abil.has("field_ration")) {
+      const front = living(u.side)[0];
+      if (front) heal(front,2,"Field Ration",u);
     }
-  };
-
-  /** Apply an attack hit; returns damage to health. */
-  const applyHit = (att: BUnit, tgt: BUnit, ch: Channel, power: number) => {
-    let dmg = power;
-    const startingArmor = tgt.armor;
-    if (has("open_flanks") && posOf(tgt) >= 4) dmg += 1;
-    if (ch === "spell") {
-      // bypass armor
-    } else {
-      let ignore = tgt.spotted >= round && tgt.spotted > 0 && ch === "shot" ? 1 : 0;
-      const absorbT = Math.min(tgt.tempArmor, dmg); tgt.tempArmor -= absorbT; dmg -= absorbT;
-      const effArmor = Math.max(0, tgt.armor - ignore); ignore = 0;
-      const hadArmor = tgt.armor > 0;
-      const absorb = Math.min(effArmor, dmg); tgt.armor -= absorb; dmg -= absorb;
-      if (hadArmor && tgt.armor === 0) {
-        // Forgeheart resolves after health damage and the survival check.
-        if (tgt.abil.has("vanish") && !tgt.vanishUsed) { tgt.vanishUsed = true; tgt.vanishUntil = round + 1; log({ kind: "ability", text: `${tgt.name} slips behind the veil (Vanish).`, actor: tgt.uid }); }
-        if (tgt.armor === 0) armorBroken(tgt);
-      }
-      const shield = Math.min(2, adjacent(tgt).filter((a) => a.abil.has("shieldwall") && a.armor > 0).length);
-      dmg = Math.max(0, dmg - shield);
-      const b = Math.min(tgt.brace, dmg); tgt.brace -= b; dmg -= b;
-    }
-    if (tgt.abil.has("ancient_scale") && dmg >= 4 && tgt.scaleRound !== round) { tgt.scaleRound = round; dmg = Math.max(0, dmg - 2); }
-    if (dmg <= 0) { restoreForgeheart(); return 0; }
-    function restoreForgeheart() {
-      if (startingArmor > 0 && tgt.armor === 0 && tgt.hp > 0 && tgt.abil.has("forgeheart") && !tgt.forgeUsed && !tgt.noRestore) {
-        tgt.forgeUsed = true; const restored = Math.min(2, tgt.maxArmor); tgt.armor = restored;
-        log({ kind: "ability", text: tgt.name + " reforges " + restored + " armor (Forgeheart).", actor: tgt.uid, amount: restored });
+    if (u.abil.has("salvager") && !has("gilded_march")) {
+      const target = living(u.side).filter(a=>a.armor<a.maxArmor).sort((a,b)=>(b.maxArmor-b.armor)-(a.maxArmor-a.armor))[0];
+      if (target) {
+        const amount = Math.min(2,target.maxArmor-target.armor);
+        target.armor += amount;
+        log({kind:"ability",text:`${u.name} repairs ${amount} armor on ${target.name} (Salvager).`,actor:u.uid,target:target.uid,amount});
       }
     }
-    // Oathkeeper: an adjacent ally takes lethal damage instead
-    if (dmg >= tgt.hp) {
-      const keeper = adjacent(tgt).find((a) => a.abil.has("oathkeeper") && !a.oathUsed);
-      if (keeper) { keeper.oathUsed = true; log({ kind: "ability", text: `${keeper.name} keeps the oath and takes the blow!`, actor: keeper.uid, target: tgt.uid }); keeper.hp -= dmg; if (keeper.hp <= 0) defeat(keeper, att); return dmg; }
-    }
-    // Shared Burden: 4+ damage spills 1 onto each living neighbour; the target takes the rest.
-    const sharers = has("shared_burden") && dmg >= 4 ? adjacent(tgt) : [];
-    dmg -= sharers.length;
-    tgt.hp -= dmg;
-    for (const n of sharers) directDamage(n, 1, "Shared Burden");
-    if (tgt.abil.has("death_debt") && tgt.debtRound !== round) { tgt.debtRound = round; tgt.debtors.push(att.uid); }
-    if (tgt.link && dmg >= 2) { const l = byUid(tgt.link); if (l && l.alive) { l.hp -= 1; if (l.hp <= 0) defeat(l); } }
-    if (tgt.abil.has("bloodline_roar") || living(tgt.side).some((a) => a.abil.has("bloodline_roar"))) {
-      if (!tgt.roarUsed && tgt.hp > 0 && tgt.hp <= tgt.maxHp / 2) { tgt.roarUsed = true; tgt.atkMod += 1; }
-    }
-    restoreForgeheart();
-    return dmg;
   };
-
   const chooseAction = (u: BUnit): { ch: Channel; power: number; target: BUnit } | null => {
-    const enemies = living(1 - u.side);
+    const enemies = living(1-u.side), pos = posOf(u);
     if (!enemies.length) return null;
-    const pos = posOf(u);
-    let order: Channel[] = ["spell", "shot", "steel"];
-    if (u.abil.has("runebreath")) { const cyc: Channel[] = ["steel", "spell", "shot"]; order = [cyc[u.runeIdx % 3]!]; }
-    for (const ch of order) {
-      let base = u.abil.has("runebreath") ? Math.max(u.card.steel, u.card.shot, u.card.spell) : u[ch];
-      if (base <= 0) continue;
-      if (ch === "steel" && pos > 2 && !["runebreath", "flank", "hunt"].some((id) => u.abil.has(id))) continue;
-      if (ch === "shot" && pos === 1 && !u.abil.has("runebreath")) continue;
-      let power = base + u.atkMod - u.hexPower;
-      if (ch === "steel" && has("steel_tempest")) power += 1;
-      if (ch === "shot" && has("distant_thunder")) { if (pos >= 5) power += 1; if (pos <= 2) power -= 1; }
-      if (ch === "shot" && u.abil.has("volley_line") && adjacent(u).some((a) => a.card.shot > 0)) power += 1;
-      if (ch === "spell" && has("spell_scarcity")) power = Math.min(power, 3);
-      if (has("red_hour") && round >= 6) power += 1;
-      power = Math.max(0, power);
+    for (const ch of CHANNELS) {
+      if (u[ch] <= 0) continue;
+      if (ch === "steel" && pos > 2 && !u.abil.has("flank") && !u.abil.has("hunt")) continue;
+      if (ch === "shot" && pos === 1) continue;
+      let power = u[ch];
+      if (ch === "spell" && has("spell_scarcity")) power = Math.min(u.card.spell,2)+(u.spell-u.card.spell);
+      if (ch === "steel" && has("steel_tempest")) power++;
+      if (ch === "shot" && has("distant_thunder")) { if(pos>=5) power++; if(pos<=2) power--; }
+      if (has("red_hour") && round >= 6) power++;
       if (power <= 0) continue;
       let target = enemies[0]!;
       if (!(has("duel_at_dawn") && pos === 1)) {
-        if (u.abil.has("wildshot") && ch !== "steel") target = enemies[rng.int(enemies.length, "wildshot")]!;
+        if (u.abil.has("wildshot") && ch !== "steel") target = enemies[rng.int(enemies.length,"wildshot")]!;
         else if (u.abil.has("flank") && ch === "steel") target = enemies.at(-1)!;
-        else if (u.abil.has("hunt")) target = [...enemies].sort((a, b) => a.hp - b.hp)[0]!;
+        else if (u.abil.has("spotter") && ch !== "steel") target = enemies.slice(1).find(e=>e.shot>0 || e.spell>0 || e.steel===0) ?? target;
+        else if (u.abil.has("hunt")) target = [...enemies].sort((a,b)=>a.hp-b.hp)[0]!;
       }
-      // Vanish: untargetable from positions 3-6
-      if (target.vanishUntil >= round && target.vanishUntil > 0 && pos >= 3) target = enemies[1] ?? target;
-      // Mislead: redirect attacks aimed at back-rank allies
-      if (posOf(target) > 1) {
-        const decoy = enemies.find((e) => e.abil.has("mislead") && e.misleadRound !== round && e !== target);
-        if (decoy) { decoy.misleadRound = round; log({ kind: "ability", text: `${decoy.name} misleads the attack (Mislead).`, actor: decoy.uid }); target = decoy; }
-      }
-      return { ch, power, target };
+      return {ch,power,target};
     }
     return null;
   };
-
-  const doAttack = (u: BUnit, a: { ch: Channel; power: number; target: BUnit }, label = "") => {
-    const t = a.target;
-    let power = a.power;
-    if (u.abil.has("bloodscent") && t.hp < t.maxHp) power += 1;
-    if (t.marked >= round && t.marked > 0) power += 1;
-    let acc = u.acc + (u.abil.has("windread") && posOf(u) >= 4 ? 10 : 0) + (has("open_flanks") && posOf(u) >= 4 ? 10 : 0) + 5 * lastPayActive(u);
-    if (a.ch === "shot" && has("steel_tempest")) acc -= 5;
-    if (a.ch === "shot" && t.spotted >= round && t.spotted > 0) acc += 5;
-    const chance = Math.max(10, Math.min(100, 90 + acc + 5 * (curSpeed(u) - curSpeed(t))));
-    const roll = rng.next("accuracy") * 100;
-    if (roll >= chance) { log({ kind: "miss", text: `${u.name}${label} misses ${t.name}.`, actor: u.uid, target: t.uid, channel: a.ch }); return; }
-    const line = living(t.side); const behind = line[line.indexOf(t) + 1];
-    const dealt = applyHit(u, t, a.ch, power);
-    // Runic Overflow: each team's first Spell hit per round splashes 1 onto the unit behind the target.
-    if (a.ch === "spell" && has("runic_overflow") && behind && overflowRound[u.side] !== round) { overflowRound[u.side] = round; directDamage(behind, 1, "Runic Overflow"); }
-    log({ kind: "attack", text: `${u.name}${label} hits ${t.name} with ${a.ch} for ${power}${dealt !== power ? ` (${dealt} to health)` : ""}.`, actor: u.uid, target: t.uid, amount: power, channel: a.ch });
-    // after-hit triggers
-    if (t.alive && u.abil.has("packmark") && u.packRound !== round) { u.packRound = round; t.marked = round; }
-    if (t.alive && u.abil.has("spotter") && u.spotRound !== round) { u.spotRound = round; t.spotted = round; }
-    if (t.alive && u.abil.has("hexweave") && u.hexRound !== round) {
-      abilityTargeted(t);
-      u.hexRound = round; const k = u.hexIdx++ % 3;
-      if (k === 0) { t.hexSpeed = 1; t.hexSpeedUntil = round + 1; }
-      else if (k === 1) { t.hexPower = 1; t.hexPowerUntil = round + 1; }
-      else t.healLock = round + 1;
+  const overflowRound = [-1,-1];
+  const applyHit = (target: BUnit, channel: Channel, power: number) => {
+    if (target.abil.has("forgeheart") && !target.forgeUsed) {
+      target.forgeUsed = true;
+      log({kind:"ability",text:`${target.name} blocks the attack (Forgeheart).`,actor:target.uid});
+      return 0;
     }
-    if (t.alive && u.abil.has("doom_count") && t.doom === undefined) { abilityTargeted(t); t.doom = 3; }
-    if (t.hp <= 0 && t.alive) defeat(t, u);
+    let reduction = channel === "spell" ? Math.max(target.magicResistance,target.abil.has("ancient_scale") ? 1 : 0)
+      : (target.abil.has("brace") ? 1 : 0) + (adjacent(target).some(a=>a.abil.has("shieldwall")) ? 1 : 0);
+    let damage = Math.max(1,power-reduction);
+    if (channel !== "spell") {
+      const armor = Math.min(target.armor,damage); target.armor -= armor; damage -= armor;
+      const guard = Math.min(target.brace,damage); target.brace -= guard; damage -= guard;
+    }
+    const sharers = has("shared_burden") && damage >= 4 ? adjacent(target) : [];
+    damage -= sharers.length;
+    target.hp -= damage;
+    for (const neighbor of sharers) directDamage(neighbor,1,"Shared Burden");
+    return damage;
+  };
+  const doAttack = (u: BUnit, action: NonNullable<ReturnType<typeof chooseAction>>, label = "") => {
+    const target = action.target;
+    let power = action.power+(u.abil.has("bloodscent") && target.hp<target.maxHp ? 1 : 0);
+    if (action.ch === "spell" && has("spell_scarcity")) power = Math.min(power,3);
+    const accuracy = (has("open_flanks") && posOf(u)>=4 ? 10 : 0)-(action.ch==="shot" && has("steel_tempest") ? 5 : 0);
+    const chance = Math.max(10,Math.min(100,90+accuracy+5*(curSpeed(u)-curSpeed(target))));
+    if (rng.next("accuracy")*100 >= chance) {
+      log({kind:"miss",text:`${u.name}${label} misses ${target.name}.`,actor:u.uid,target:target.uid,channel:action.ch});
+      return false;
+    }
+    const line = living(target.side), behind = line[line.indexOf(target)+1];
+    if (has("open_flanks") && posOf(target)>=4) power++;
+    const damage = applyHit(target,action.ch,power);
+    log({kind:"attack",text:`${u.name}${label} hits ${target.name} with ${action.ch} for ${power}${damage!==power ? ` (${damage} to health)` : ""}.`,actor:u.uid,target:target.uid,amount:power,channel:action.ch});
+    if (target.hp > 0) {
+      if (u.abil.has("hexweave")) {
+        target.healLock = round+1;
+        log({kind:"ability",text:`${u.name} blocks healing on ${target.name} through round ${round+1} (Hexweave).`,actor:u.uid,target:target.uid});
+      }
+      if (u.abil.has("crosswind")) {
+        target.spdNext = Math.max(-2,target.spdNext-1);
+        log({kind:"ability",text:`${u.name} slows ${target.name} for the next round (Crosswind).`,actor:u.uid,target:target.uid,amount:1});
+      }
+    }
+    if (target.hp<=0) defeat(target);
+    if (action.ch==="spell" && has("runic_overflow") && behind && overflowRound[u.side]!==round) {
+      overflowRound[u.side] = round;
+      directDamage(behind,1,"Runic Overflow");
+    }
+    return !target.alive;
   };
 
-  // ---- battle start: Pounce
-  for (const side of [0, 1] as const) for (const u of living(side)) {
-    if (u.abil.has("pounce") && posOf(u) >= 4) {
-      const enemy = living(1 - side).at(-1);
-      if (enemy) { abilityTargeted(enemy); enemy.hp -= 1; log({ kind: "ability", text: `${u.name} pounces on ${enemy.name} for 1.`, actor: u.uid, target: enemy.uid, amount: 1 }); if (enemy.hp <= 0) defeat(enemy, u); }
+  // Alternate the two formations so every opening unit on one side cannot act before the other side.
+  const openingSide = Math.floor(hash(cfg.seed,"pounce") * 2);
+  for (let index=0; index<Math.max(teams[0].length,teams[1].length);index++) {
+    for (const side of [openingSide,1-openingSide]) {
+      const u = teams[side as 0 | 1][index];
+      if (!u?.alive || u.skipRound===round || !u.abil.has("pounce")) continue;
+      const action = chooseAction(u);
+      if (action) doAttack(u,action," (Pounce)");
     }
   }
-
-  let winner: 0 | 1 | "draw" | null = checkWin();
+  let winner = checkWin();
   while (winner === null && round < MAX_ROUNDS) {
     round++;
-    log({ kind: "round", text: `Round ${round}` });
-    // round start
-    for (const side of [0, 1] as const) {
-      for (const u of living(side)) {
-        u.spdRound = u.spdNext; u.spdNext = 0;
-        if (u.abil.has("brace") && posOf(u) <= 2) u.brace = 2;
-        if (u.abil.has("_crown")) u.brace = Math.max(u.brace, 1);
-        if (u.abil.has("retinue") && !has("broken_formation")) {
-          const l = living(side); const i = l.indexOf(u);
-          if (l[i - 1] && l[i + 1]) [u, l[i - 1]!, l[i + 1]!].forEach((x) => (x.tempArmor = Math.max(x.tempArmor, 1)));
-        }
-        // Makeshift Guard: frontmost adjacent ally with 0 armor gets 1 temporary armor (max 2 from all bearers).
-        if (u.abil.has("makeshift_guard")) {
-          const g = adjacent(u).find((a) => a.armor === 0);
-          if (g && g.tempArmor < 2) { g.tempArmor += 1; log({ kind: "ability", text: `${u.name} props up ${g.name} (Makeshift Guard).`, actor: u.uid, target: g.uid }); }
-        }
-        if (u.abil.has("mirrorcraft")) { const top = Math.max(...living(1 - side).map(curSpeed), 0); u.spdRound += Math.max(0, top - curSpeed(u)); }
-      }
-      if (has("fickle_fortune")) { const l = living(side); if (l.length) l[rng.int(l.length, "fickle")]!.spdRound += 1; }
+    for (const u of [...living(0),...living(1)]) {
+      u.spdRound = u.spdNext; u.spdNext = 0;
+      u.brace = u.abil.has("_crown") ? 1 : 0;
     }
-    const queue = [...living(0), ...living(1)].sort((a, b) => curSpeed(b) - curSpeed(a) || hash(cfg.seed, round, a.uid) - hash(cfg.seed, round, b.uid));
+    if (has("fickle_fortune")) for (const side of [0,1]) {
+      const team = living(side);
+      if(team.length) team[rng.int(team.length,"fickle")]!.spdRound++;
+    }
+    log({kind:"round",text:`Round ${round}`});
+    const queue = [...living(0),...living(1)].sort((a,b)=>curSpeed(b)-curSpeed(a) || hash(cfg.seed,round,a.uid)-hash(cfg.seed,round,b.uid));
     for (const u of queue) {
-      if (!u.alive || u.skipRound === round) continue;
+      if (!u.alive || u.skipRound===round) continue;
       u.brace = 0;
-      const a = chooseAction(u);
-      if (!a) continue;
-      doAttack(u, a);
-      u.roadSpd = 0;
-      if (u.abil.has("runebreath")) u.runeIdx++;
-      if (u.alive && u.skipRound !== round && u.abil.has("moonrush") && round % 3 === 0) {
-        const again = chooseAction(u);
-        if (again) { doAttack(u, { ...again, power: Math.max(1, Math.floor(again.power * 0.5)) }, " (Moonrush)"); if (u.abil.has("runebreath")) u.runeIdx++; }
+      support(u);
+      const action = chooseAction(u);
+      if (action) {
+        const killed = doAttack(u,action);
+        if (killed && u.alive && u.abil.has("moonrush")) {
+          const extra = chooseAction(u);
+          if(extra) doAttack(u,extra," (Moonrush)");
+        }
       }
-      if (u.alive && u.skipRound !== round && u.abil.has("crosswind")) {
-        const nxt = queue.slice(queue.indexOf(u) + 1).find((x) => x.alive && x.side !== u.side)
-          ?? living(1 - u.side).sort((a, b) => curSpeed(b) - curSpeed(a))[0];
-        if (nxt) nxt.spdNext = Math.max(-2, nxt.spdNext - 1);
-      }
-      winner = checkWin(); if (winner !== null) break;
+      winner = checkWin();
+      if (winner !== null) break;
     }
     if (winner !== null) break;
-    // round end
-    for (const u of [...living(0), ...living(1)]) {
-      for (const d of u.debtors) { const e = byUid(d); if (e) { abilityTargeted(e); directDamage(e, 2, `Death Debt of ${u.name}`); } }
-      u.debtors = [];
-      if (u.doom !== undefined) { u.doom--; if (u.doom <= 0) { u.doom = undefined; directDamage(u, 2, "Doom Count"); } }
-      u.tempArmor = 0;
-      if (u.hexSpeedUntil <= round) u.hexSpeed = 0;
-      if (u.hexPowerUntil <= round) u.hexPower = 0;
+    if (has("last_light")) for (const side of [0,1]) {
+      const rear = living(side).at(-1);
+      if(rear) directDamage(rear,1,"Last Light");
     }
-    // Field Ration: every 3rd round, each bearer (formation order) heals the most-wounded ally by 1; ties favor the front.
-    if (round % 3 === 0) for (const s of [0, 1] as const) for (const u of living(s)) {
-      if (!u.abil.has("field_ration") || u.skipRound === round) continue;
-      const w = living(s).filter((x) => x.hp < x.maxHp).sort((a, b) => a.hp / a.maxHp - b.hp / b.maxHp)[0];
-      if (w) heal(w, 1, "Field Ration");
-    }
-    if (has("last_light")) for (const s of [0, 1]) { const r = living(s).at(-1); if (r) directDamage(r, 1, "Last Light"); }
     const fatigueStart = has("closing_chapter") ? 8 : 20;
-    if (round > fatigueStart) {
-      const amt = round - fatigueStart;
-      for (const u of [...living(0), ...living(1)]) directDamage(u, amt, "Fatigue");
-    }
-    if (has("turning_wheel")) for (const s of [0, 1] as const) {
-      const l = living(s); if (l.length > 1) { const front = l[0]!; teams[s] = [...T(s).filter((x) => x !== front), front]; }
+    if (round>fatigueStart) for (const u of [...living(0),...living(1)]) directDamage(u,round-fatigueStart,"Fatigue");
+    if (has("turning_wheel")) for (const side of [0,1] as const) {
+      const front = living(side)[0];
+      if (front && living(side).length>1) teams[side] = [...teams[side].filter(u=>u!==front),front];
     }
     winner = checkWin();
   }
-  const w = winner ?? "draw";
-  log({ kind: "end", text: w === "draw" ? "The battle ends in a draw." : w === 0 ? "Victory!" : "Defeat." });
-  return { winner: w, rounds: round, events };
+  const result = winner ?? "draw";
+  log({kind:"end",text:result==="draw" ? "The battle ends in a draw." : result===0 ? "Victory!" : "Defeat."});
+  return {winner:result,rounds:round,events};
 }

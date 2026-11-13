@@ -19,7 +19,7 @@ export const Route = createFileRoute("/_authenticated/leaderboard")({
   head: () => ({
     meta: [
       { title: "Leaderboard — Diademfall" },
-      { name: "description", content: "The top Diademfall players this ranked season by league and division, with win rates, streaks and the most-played summoners." },
+      { name: "description", content: "The top Diademfall players this ranked season by league and division, with win rates, streaks and the most-played commanders." },
       { property: "og:title", content: "Leaderboard — Diademfall" },
       { property: "og:description", content: "See who leads the Diademfall ranked ladder, league by league." },
       { property: "og:type", content: "website" },
@@ -146,7 +146,7 @@ function LeaderboardPage() {
           <p className="text-[10px] text-muted-foreground">Win +20, loss −20; from your 3rd win in a row each win gives +10 more (not in Champion). Chests are earned the first time you reach a division each 14-day season. At season end ratings reset by league.</p>
         </aside>
         <aside className="space-y-3 rounded-xl border border-primary/30 bg-card/60 p-4">
-          <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Most-played summoners</h2>
+          <h2 className="font-display text-lg font-bold uppercase tracking-wider text-primary">Most-played commanders</h2>
           {stats.isLoading ? <p className="text-xs text-muted-foreground">Loading…</p> : !stats.data?.length ? (
             <p className="text-xs text-muted-foreground">No finished ranked battles yet.</p>
           ) : (

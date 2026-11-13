@@ -1,0 +1,49 @@
+{
+  "source": "Original procedural synthesis for Diademfall",
+  "generator": "scripts/generate-battle-sfx.mjs",
+  "sampleRate": 44100,
+  "channels": 1,
+  "bitsPerSample": 16,
+  "sounds": [
+    {
+      "id": "melee-swing",
+      "duration": 0.22,
+      "peak": 0.62
+    },
+    {
+      "id": "melee-impact",
+      "duration": 0.29,
+      "peak": 0.74
+    },
+    {
+      "id": "ranged-shot",
+      "duration": 0.23,
+      "peak": 0.64
+    },
+    {
+      "id": "ranged-impact",
+      "duration": 0.22,
+      "peak": 0.68
+    },
+    {
+      "id": "magic-cast",
+      "duration": 0.38,
+      "peak": 0.64
+    },
+    {
+      "id": "magic-impact",
+      "duration": 0.42,
+      "peak": 0.72
+    },
+    {
+      "id": "miss",
+      "duration": 0.2,
+      "peak": 0.48
+    },
+    {
+      "id": "defeat",
+      "duration": 0.52,
+      "peak": 0.62
+    }
+  ]
+}

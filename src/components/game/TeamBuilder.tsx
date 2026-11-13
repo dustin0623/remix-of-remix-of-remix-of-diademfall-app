@@ -1,9 +1,19 @@
-import { ArrowDown, ArrowUp, Search, X } from "lucide-react";
-import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
-import { SummonerCardView, UnitCardView } from "@/components/game/cards";
-import { RULESETS as BATTLE_RULESETS } from "@/game/catalog/rulesets";
+import { ArrowLeft, ArrowRight, Search, X } from "lucide-react";
+import {
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type Dispatch,
+  type ReactNode,
+  type SetStateAction,
+} from "react";
+import { SummonerCardView, UnitCardView, summonerEffectText } from "./cards";
+import { BannerCrests, BattleMana, MatchCountdown, MatchRules } from "./BattleFlow";
+import { ABILITIES } from "@/game/catalog/abilities";
 import { SUMMONERS } from "@/game/catalog/summoners";
 import { BANNER_BY_ID } from "@/game/banners";
+import { playedTroopLevel } from "@/game/combining";
 import {
   cardCost,
   cardLegal,
@@ -15,31 +25,57 @@ import {
   type MatchConfig,
   type TeamPick,
 } from "@/game/match";
-import { isWayfarer, UNITS, UNIT_BY_ID } from "@/game/units";
+import { isWayfarer, unitAtLevel, UNITS, UNIT_BY_ID } from "@/game/units";
+import { BattleCardCrop } from "./BattleCardThumbnail";
 import { cn } from "@/lib/utils";
 
-export function RulesetPills({ ids }: { ids: string[] }) {
-  const list = ids.length ? ids : ["open_chronicle"];
-  return (
-    <div className="flex flex-wrap justify-center gap-2">
-      {list.map((id) => {
-        const r = BATTLE_RULESETS.find((x) => x.id === id);
-        if (!r) return null;
-        return (
-          <div
-            key={id}
-            className="max-w-xs rounded-lg border border-border bg-card/70 p-3 text-left"
-          >
-            <div className="font-display text-sm font-bold text-primary">{r.name}</div>
-            <div className="text-xs text-muted-foreground">{r.text}</div>
-          </div>
-        );
-      })}
-    </div>
-  );
+const ATTACKS = ["steel", "shot", "spell"] as const;
+const SLOTS = ["I", "II", "III", "IV", "V", "VI"];
+const ABILITY_NAMES = new Map(ABILITIES.map((a) => [a.id, a.name]));
+
+function useDraftChromeHeight() {
+  const ref = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const section = ref.current;
+    const header = section?.closest(".portal-page")?.querySelector(".game-header");
+    const tray = section?.querySelector(".match-draft-sticky");
+    if (!section || !header || !tray) return;
+    const measure = () => {
+      section.style.setProperty(
+        "--match-header-height",
+        `${header.getBoundingClientRect().height}px`,
+      );
+      section.style.setProperty(
+        "--match-draft-tray-height",
+        `${tray.getBoundingClientRect().height}px`,
+      );
+    };
+    measure();
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(measure);
+    observer.observe(header);
+    observer.observe(tray);
+    return () => observer.disconnect();
+  }, []);
+  return ref;
 }
 
-/** Draft UI shared by practice and ranked: pick a summoner, recruit units, order the formation. */
+type Props = {
+  cfg: MatchConfig;
+  pick: TeamPick;
+  setPick: Dispatch<SetStateAction<TeamPick>>;
+  error: string | null;
+  action: ReactNode;
+  owned?: Record<string, number> | undefined;
+  seconds?: number;
+  progress?: number;
+  opponent?: string;
+  opponentLocked?: boolean;
+  onConditions?: () => void;
+  extra?: ReactNode;
+};
+
+/** The same selection surface serves practice and ranked, with ranked limits and timing passed in. */
 export function TeamBuilder({
   cfg,
   pick,
@@ -47,318 +83,438 @@ export function TeamBuilder({
   error,
   action,
   owned,
-  topBar,
+  seconds,
+  progress,
+  opponent,
+  opponentLocked,
+  onConditions,
   extra,
-}: {
-  cfg: MatchConfig;
-  pick: TeamPick;
-  setPick: Dispatch<SetStateAction<TeamPick>>;
-  error: string | null;
-  action: ReactNode;
-  /** When set, only these card ids can be picked (ranked: the player's collection). */
-  owned?: Record<string, number> | undefined;
-  topBar?: ReactNode;
-  /** Extra panel in the sidebar (e.g. saved teams). */
-  extra?: ReactNode;
-}) {
-  const [bannerFilter, setBannerFilter] = useState<string>("all");
-  const [unitSearch, setUnitSearch] = useState("");
+}: Props) {
+  const ref = useDraftChromeHeight();
+  const [changing, setChanging] = useState(false);
+  const [filters, setFilters] = useState(true);
+  const [banner, setBanner] = useState("all");
+  const [search, setSearch] = useState("");
+  const [attack, setAttack] = useState("all");
+  const [sort, setSort] = useState("mana-desc");
+  const [affordable, setAffordable] = useState(false);
+  const [dragging, setDragging] = useState<number | null>(null);
   const summoner = SUMMONERS.find((s) => s.id === pick.summonerId);
+  const choosing = !summoner || changing;
   const mana = teamMana(pick, cfg.rulesets);
-  const isOwned = (id: string) => !owned || owned[id] !== undefined;
-  const wfCount = wayfarerCount(pick.unitIds),
-    wfMax = maxWayfarers(cfg.rulesets);
+  const limit = maxUnits(cfg.rulesets);
+  const wayfarers = wayfarerCount(pick.unitIds);
+  const wayfarerLimit = maxWayfarers(cfg.rulesets);
+  const summoners = SUMMONERS.filter(
+    (s) =>
+      cfg.banners.includes(s.banner) &&
+      cardLegal(s, cfg.rulesets) &&
+      cardCost(s.mana, cfg.rulesets) <= cfg.manaCap &&
+      (!owned || owned[s.id] !== undefined),
+  );
   const units = useMemo(
     () =>
       summoner
         ? UNITS.filter(
-            (u) => recruitable(u, summoner.banner) && cardLegal(u, cfg.rulesets) && isOwned(u.id),
+            (u) =>
+              recruitable(u, summoner.banner) &&
+              cardLegal(u, cfg.rulesets) &&
+              (wayfarerLimit > 0 || !isWayfarer(u)) &&
+              (!owned || owned[u.id] !== undefined),
+          ).map((u) =>
+            owned
+              ? unitAtLevel(
+                  u,
+                  playedTroopLevel(
+                    owned[u.id] ?? 1,
+                    owned[summoner.id] ?? 1,
+                    summoner.levelCap,
+                    u.levelCap,
+                  ),
+                )
+              : u,
           )
         : [],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [summoner, cfg, owned],
+    [summoner, cfg.rulesets, owned, wayfarerLimit],
   );
 
-  const toggleUnit = (id: string) =>
-    setPick((p) =>
-      p.unitIds.includes(id)
-        ? { ...p, unitIds: p.unitIds.filter((x) => x !== id) }
-        : p.unitIds.length < maxUnits(cfg.rulesets)
-          ? { ...p, unitIds: [...p.unitIds, id] }
-          : p,
+  const entries = units.map((u) => {
+    const selected = pick.unitIds.includes(u.id);
+    const cost = cardCost(u.mana, cfg.rulesets, !pick.unitIds.length || pick.unitIds[0] === u.id);
+    const fits =
+      selected ||
+      (mana + cost <= cfg.manaCap &&
+        pick.unitIds.length < limit &&
+        (!isWayfarer(u) || wayfarers < wayfarerLimit));
+    return { u, selected, cost, fits };
+  });
+  const query = search.trim().toLowerCase();
+  const visible = entries
+    .filter(
+      ({ u, fits }) =>
+        (!affordable || fits) &&
+        (!ATTACKS.some((channel) => channel === attack) ||
+          u[attack as (typeof ATTACKS)[number]] > 0) &&
+        [u.name, ...u.abilities.map((id) => ABILITY_NAMES.get(id) ?? id)].some((term) =>
+          term.toLowerCase().includes(query),
+        ),
+    )
+    .sort((a, b) =>
+      sort === "name"
+        ? a.u.name.localeCompare(b.u.name)
+        : sort === "health"
+          ? b.u.health - a.u.health
+          : sort === "mana-asc"
+            ? a.cost - b.cost
+            : b.cost - a.cost,
     );
-  const move = (i: number, d: -1 | 1) =>
+  const visibleSummoners = summoners.filter(
+    (s) => (banner === "all" || banner === s.banner) && s.name.toLowerCase().includes(query),
+  );
+  const resetFilters = () => {
+    setBanner("all");
+    setSearch("");
+    setAttack("all");
+    setSort("mana-desc");
+    setAffordable(false);
+  };
+  const toggle = (id: string) =>
     setPick((p) => {
-      const u = [...p.unitIds];
-      const j = i + d;
-      if (j < 0 || j >= u.length) return p;
-      const tmp = u[i]!;
-      u[i] = u[j]!;
-      u[j] = tmp;
-      return { ...p, unitIds: u };
+      if (p.unitIds.includes(id)) return { ...p, unitIds: p.unitIds.filter((u) => u !== id) };
+      const card = UNIT_BY_ID[id];
+      if (!card || p.unitIds.length >= limit) return p;
+      const next = { ...p, unitIds: [...p.unitIds, id] };
+      if (teamMana(next, cfg.rulesets) > cfg.manaCap || wayfarerCount(next.unitIds) > wayfarerLimit)
+        return p;
+      return next;
+    });
+  const move = (from: number, to: number) =>
+    setPick((p) => {
+      if (from === to || from < 0 || to < 0 || from >= p.unitIds.length || to >= p.unitIds.length)
+        return p;
+      const unitIds = [...p.unitIds];
+      unitIds.splice(to, 0, unitIds.splice(from, 1)[0]!);
+      return { ...p, unitIds };
     });
 
   return (
-    <div className="draft-workspace grid gap-6 lg:grid-cols-[1fr_320px]">
-      <div className="space-y-6">
-        <a href="#draft-formation" className="draft-mobile-summary">
-          <span>
-            {pick.unitIds.length} / {maxUnits(cfg.rulesets)} troops · {mana} / {cfg.manaCap} mana
-          </span>
-          <strong>View formation ↓</strong>
-        </a>
-        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-border bg-card/60 p-3 text-sm">
-          <span className="font-display font-bold text-primary">Mana cap {cfg.manaCap}</span>
-          <span className="text-muted-foreground">·</span>
-          {(cfg.rulesets.length ? cfg.rulesets : ["open_chronicle"]).map((id) => (
-            <span
-              key={id}
-              title={BATTLE_RULESETS.find((r) => r.id === id)?.text}
-              className="cursor-help rounded border border-border px-2 py-0.5 text-xs"
-            >
-              {BATTLE_RULESETS.find((r) => r.id === id)?.name}
-            </span>
-          ))}
-          {topBar && <div className="ml-auto">{topBar}</div>}
+    <main ref={ref} className="match-draft match-screen">
+      <div className="match-draft-sticky">
+        <div className="match-topbar">
+          <div className="match-draft-title">
+            {onConditions && (
+              <button
+                type="button"
+                className="match-quiet-button"
+                onClick={onConditions}
+                aria-label="Back to battle conditions"
+              >
+                <ArrowLeft className="size-4" />
+              </button>
+            )}
+            <h1>{choosing ? "Select commander" : "Select troops"}</h1>
+          </div>
+          {seconds !== undefined ? (
+            <MatchCountdown seconds={seconds} />
+          ) : (
+            <span className="match-mode-tag">Practice</span>
+          )}
+          <div className="match-draft-context">
+            <details className="match-rule-details">
+              <summary>Rules</summary>
+              <div>
+                <MatchRules rulesets={cfg.rulesets} />
+                {opponent && (
+                  <p>
+                    {opponent} · {opponentLocked ? "Team locked" : "Selecting team"}
+                  </p>
+                )}
+              </div>
+            </details>
+            <BattleMana value={cfg.manaCap} />
+            <BannerCrests active={cfg.banners} />
+          </div>
+          {progress !== undefined && (
+            <div className="match-clock-progress" aria-hidden="true">
+              <span style={{ width: `${progress}%` }} />
+            </div>
+          )}
         </div>
-        <section>
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="font-display text-xl font-bold">1. Choose a Summoner</h2>
-            <div className="flex flex-wrap gap-1">
-              {["all", ...cfg.banners].map((b) => (
-                <button
-                  type="button"
-                  key={b}
-                  aria-pressed={bannerFilter === b}
-                  onClick={() => setBannerFilter(b)}
-                  className={cn(
-                    "rounded px-2 py-1 text-xs font-semibold",
-                    bannerFilter === b
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-secondary-foreground",
-                  )}
-                >
-                  {b === "all" ? "All" : BANNER_BY_ID[b as keyof typeof BANNER_BY_ID].name}
-                </button>
-              ))}
+        <div className="match-formation" aria-label="Your formation" role="group">
+          <div className="match-formation-budget">
+            <div className={cn("match-budget-value", mana > cfg.manaCap && "text-destructive")}>
+              <StatMana />{" "}
+              <strong>
+                {mana} / {cfg.manaCap}
+              </strong>
+            </div>
+            <div className="match-formation-buttons">
+              <button
+                type="button"
+                className="match-quiet-button"
+                aria-expanded={filters}
+                onClick={() => setFilters((v) => !v)}
+              >
+                {filters ? "Hide filters" : "Show filters"}
+              </button>
+              <button
+                type="button"
+                className="match-quiet-button"
+                disabled={!pick.summonerId && !pick.unitIds.length}
+                onClick={() => {
+                  setPick({ summonerId: "", unitIds: [] });
+                  setChanging(false);
+                  resetFilters();
+                }}
+              >
+                Reset
+              </button>
             </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            {SUMMONERS.filter(
-              (s) =>
-                cfg.banners.includes(s.banner) &&
-                (bannerFilter === "all" || s.banner === bannerFilter),
-            ).map((s) => {
-              const legal =
-                cardLegal(s, cfg.rulesets) &&
-                cardCost(s.mana, cfg.rulesets) <= cfg.manaCap &&
-                isOwned(s.id);
+          <div className="match-leader">
+            <button
+              type="button"
+              className="match-slot match-commander-slot"
+              aria-label={summoner ? `Change commander: ${summoner.name}` : "Choose a commander"}
+              onClick={() => {
+                setChanging(true);
+                resetFilters();
+              }}
+            >
+              {summoner ? (
+                <>
+                  <BattleCardCrop card={summoner} />
+                  <span className="match-slot-cost">{cardCost(summoner.mana, cfg.rulesets)}</span>
+                </>
+              ) : (
+                <span>S</span>
+              )}
+            </button>
+            <div>
+              <strong>{summoner?.name ?? "Commander"}</strong>
+              {summoner && (
+                <small title={summonerEffectText(summoner).join(" · ")}>
+                  {BANNER_BY_ID[summoner.banner].name}
+                </small>
+              )}
+            </div>
+          </div>
+          <ol
+            className="match-slots"
+            style={{ gridTemplateColumns: `repeat(${limit}, minmax(0, 1fr))` }}
+          >
+            {Array.from({ length: limit }, (_, i) => {
+              const id = pick.unitIds[i];
+              const unit = id ? UNIT_BY_ID[id] : undefined;
               return (
-                <SummonerCardView
-                  key={s.id}
-                  s={s}
-                  size="sm"
-                  manaOverride={cardCost(s.mana, cfg.rulesets)}
-                  disabled={!legal}
-                  selected={pick.summonerId === s.id}
-                  onClick={() =>
-                    setPick((p) => ({
-                      summonerId: s.id,
-                      unitIds:
-                        SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner
-                          ? p.unitIds
-                          : p.unitIds.filter((id) => {
-                              const u = UNIT_BY_ID[id];
-                              return !!u && isWayfarer(u);
-                            }),
-                    }))
-                  }
-                />
+                <li
+                  key={i}
+                  className="match-slot"
+                  data-filled={!!unit}
+                  data-dragging={dragging === i}
+                  draggable={!!unit}
+                  onDragStart={(e) => {
+                    if (!unit) return;
+                    e.dataTransfer.setData("text/plain", String(i));
+                    e.dataTransfer.effectAllowed = "move";
+                    setDragging(i);
+                  }}
+                  onDragEnd={() => setDragging(null)}
+                  onDragOver={(e) => {
+                    if (dragging !== null && unit) e.preventDefault();
+                  }}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    if (dragging !== null && unit) move(dragging, i);
+                    setDragging(null);
+                  }}
+                  aria-label={`Position ${i + 1}${i === 0 ? ", front line" : ""}: ${unit?.name ?? "empty"}`}
+                >
+                  {unit ? (
+                    <>
+                      <BattleCardCrop card={unit} />
+                      <span className="match-slot-cost">
+                        {cardCost(unit.mana, cfg.rulesets, i === 0)}
+                      </span>
+                      <button
+                        type="button"
+                        className="match-slot-remove"
+                        aria-label={`Remove ${unit.name}`}
+                        onClick={() => toggle(unit.id)}
+                      >
+                        <X />
+                      </button>
+                      <div className="match-slot-move">
+                        <button
+                          type="button"
+                          disabled={i === 0}
+                          aria-label={`Move ${unit.name} forward`}
+                          onClick={() => move(i, i - 1)}
+                        >
+                          <ArrowLeft />
+                        </button>
+                        <button
+                          type="button"
+                          disabled={i === pick.unitIds.length - 1}
+                          aria-label={`Move ${unit.name} back`}
+                          onClick={() => move(i, i + 1)}
+                        >
+                          <ArrowRight />
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <span>{SLOTS[i]}</span>
+                  )}
+                </li>
               );
             })}
+          </ol>
+          <div className="match-formation-action">
+            {action}
+            <p role="status">
+              {seconds === 0 ? "Time is up" : (error ?? `${cfg.manaCap - mana} mana remaining`)}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="match-recruitment" data-filters={filters}>
+        {filters && (
+          <aside className="match-filters" aria-label="Card filters">
+            <label>
+              Sort
+              <select value={sort} onChange={(e) => setSort(e.target.value)} disabled={choosing}>
+                <option value="mana-desc">Mana: high to low</option>
+                <option value="mana-asc">Mana: low to high</option>
+                <option value="health">Health: high to low</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+            <label>
+              <span className="sr-only">Search cards</span>
+              <div className="match-search">
+                <Search />
+                <input
+                  value={search}
+                  placeholder={choosing ? "Search commanders" : "Search troop or ability"}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                {search && (
+                  <button type="button" onClick={() => setSearch("")} aria-label="Clear search">
+                    <X />
+                  </button>
+                )}
+              </div>
+            </label>
+            {choosing ? (
+              <label>
+                Banner
+                <select value={banner} onChange={(e) => setBanner(e.target.value)}>
+                  <option value="all">All Banners</option>
+                  {cfg.banners.map((id) => (
+                    <option key={id} value={id}>
+                      {BANNER_BY_ID[id].name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : (
+              <>
+                <label>
+                  Attack
+                  <select value={attack} onChange={(e) => setAttack(e.target.value)}>
+                    <option value="all">All attacks</option>
+                    <option value="steel">Melee</option>
+                    <option value="shot">Ranged</option>
+                    <option value="spell">Magic</option>
+                  </select>
+                </label>
+                <label className="match-filter-check">
+                  <input
+                    type="checkbox"
+                    checked={affordable}
+                    onChange={(e) => setAffordable(e.target.checked)}
+                  />{" "}
+                  Only troops that fit
+                </label>
+                <p className="match-formation-tip">
+                  Position I is the front line. Melee attacks from I–II; ranged attacks from II
+                  onward. Magic works from any position.
+                </p>
+                <p className="match-formation-tip">
+                  Wayfarers: {wayfarers} / {wayfarerLimit}
+                </p>
+              </>
+            )}
+            <button type="button" className="match-quiet-button" onClick={resetFilters}>
+              Clear filters
+            </button>
+            {extra}
+          </aside>
+        )}
+        <section
+          className="match-card-browser"
+          aria-label={choosing ? "Available commanders" : "Available troops"}
+        >
+          <p className="match-card-count">
+            {choosing
+              ? `${visibleSummoners.length} commanders`
+              : `${visible.length} troops · ${pick.unitIds.length} / ${limit} selected`}
+          </p>
+          {choosing && !visibleSummoners.length && (
+            <p className="match-empty">
+              {summoners.length
+                ? "No commanders match these filters."
+                : "No eligible commanders for this match."}
+            </p>
+          )}
+          {!choosing && !visible.length && (
+            <p className="match-empty">
+              {units.length
+                ? "No troops match these filters."
+                : "No eligible troops for this commander. Choose a different commander."}
+            </p>
+          )}
+          <div className="match-card-grid">
+            {choosing
+              ? visibleSummoners.map((s) => (
+                  <SummonerCardView
+                    key={s.id}
+                    s={s}
+                    selected={pick.summonerId === s.id}
+                    manaOverride={cardCost(s.mana, cfg.rulesets)}
+                    onClick={() => {
+                      setChanging(false);
+                      resetFilters();
+                      setPick((p) => ({
+                        summonerId: s.id,
+                        unitIds:
+                          SUMMONERS.find((x) => x.id === p.summonerId)?.banner === s.banner
+                            ? p.unitIds
+                            : p.unitIds.filter(
+                                (id) => UNIT_BY_ID[id] && isWayfarer(UNIT_BY_ID[id]!),
+                              ),
+                      }));
+                    }}
+                  />
+                ))
+              : visible.map(({ u, selected, cost, fits }) => (
+                  <UnitCardView
+                    key={u.id}
+                    u={u}
+                    manaOverride={cost}
+                    selected={selected}
+                    disabled={!fits}
+                    onClick={() => toggle(u.id)}
+                  />
+                ))}
           </div>
         </section>
-        {!summoner && (
-          <p className="draft-step-hint">
-            Choose a summoner to see the troops they can lead. Their mana cost counts toward your
-            team budget.
-          </p>
-        )}
-        {summoner && (
-          <section>
-            <h2 className="mb-1 font-display text-xl font-bold">
-              2. Recruit {BANNER_BY_ID[summoner.banner].name} Units
-              {wfMax > 0 ? " and Wayfarers" : ""}
-            </h2>
-            <p className="mb-3 text-xs text-muted-foreground">
-              {wfMax === 0
-                ? "Closed Ranks: no Wayfarers this match."
-                : `Wayfarers are shared troops any summoner can hire, up to ${wfMax} per team.`}
-            </p>
-            <label className="codex-search mb-4 max-w-md">
-              <Search />
-              <span className="sr-only">Search available troops</span>
-              <input
-                value={unitSearch}
-                onChange={(e) => setUnitSearch(e.target.value)}
-                placeholder="Find a troop by name…"
-              />
-              {unitSearch && (
-                <button
-                  type="button"
-                  aria-label="Clear troop search"
-                  onClick={() => setUnitSearch("")}
-                >
-                  <X />
-                </button>
-              )}
-            </label>
-            {!units.some((u) => u.name.toLowerCase().includes(unitSearch.trim().toLowerCase())) && (
-              <p className="draft-step-hint">No troops match this search. Try another name.</p>
-            )}
-            <div className="flex flex-wrap gap-3">
-              {units
-                .filter((u) => u.name.toLowerCase().includes(unitSearch.trim().toLowerCase()))
-                .map((u) => {
-                  const sel = pick.unitIds.includes(u.id);
-                  const cost = cardCost(
-                    u.mana,
-                    cfg.rulesets,
-                    pick.unitIds.length === 0 || pick.unitIds[0] === u.id,
-                  );
-                  const fits =
-                    sel ||
-                    (mana + cost <= cfg.manaCap &&
-                      pick.unitIds.length < maxUnits(cfg.rulesets) &&
-                      (!isWayfarer(u) || wfCount < wfMax));
-                  return (
-                    <UnitCardView
-                      key={u.id}
-                      u={u}
-                      size="sm"
-                      manaOverride={cost}
-                      selected={sel}
-                      disabled={!fits}
-                      onClick={() => toggleUnit(u.id)}
-                    />
-                  );
-                })}
-            </div>
-          </section>
-        )}
       </div>
-      <aside
-        id="draft-formation"
-        className="h-fit space-y-4 rounded-xl border border-border bg-card/70 p-4 lg:sticky lg:top-20"
-      >
-        <h2 className="draft-formation-heading">
-          Your Formation{" "}
-          <span>
-            {pick.unitIds.length} / {maxUnits(cfg.rulesets)} troops
-          </span>
-        </h2>
-        <div>
-          <div className="flex justify-between text-sm">
-            <span className="font-display font-bold">Mana</span>
-            <span
-              className={cn("font-bold", mana > cfg.manaCap ? "text-destructive" : "text-primary")}
-            >
-              {mana} / {cfg.manaCap}
-            </span>
-          </div>
-          <div className="mt-1 h-2 overflow-hidden rounded bg-muted">
-            <div
-              className="h-full bg-gold transition-all"
-              style={{ width: `${Math.min(100, (mana / cfg.manaCap) * 100)}%` }}
-            />
-          </div>
-        </div>
-        <div className="flex gap-2">
-          <div className="flex-1 rounded-lg border border-border p-2 text-sm">
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              Summoner
-            </div>
-            <div className="font-display font-bold">{summoner?.name ?? "—"}</div>
-          </div>
-          <div
-            className="rounded-lg border border-border p-2 text-sm"
-            title={wfMax === 0 ? "Closed Ranks: no Wayfarers" : `At most ${wfMax} Wayfarers`}
-          >
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              Wayfarers
-            </div>
-            <div
-              className={cn(
-                "font-display font-bold",
-                wfCount > wfMax ? "text-destructive" : "text-primary",
-              )}
-            >
-              {wfCount} / {wfMax}
-            </div>
-          </div>
-        </div>
-        <ol className="space-y-1.5">
-          {Array.from({ length: maxUnits(cfg.rulesets) }).map((_, i) => {
-            const id = pick.unitIds[i];
-            const u = id ? UNIT_BY_ID[id] : null;
-            return (
-              <li
-                key={i}
-                className="flex items-center gap-2 rounded-md border border-border bg-background/50 px-2 py-1.5 text-sm"
-              >
-                <span className="w-5 text-xs font-bold text-muted-foreground">{i + 1}</span>
-                {u ? (
-                  <>
-                    <span className="flex-1 truncate font-semibold">{u.name}</span>
-                    {isWayfarer(u) && (
-                      <span className="rounded border border-border px-1 text-[9px] uppercase tracking-wider text-muted-foreground">
-                        Wayfarer
-                      </span>
-                    )}
-                    <button
-                      type="button"
-                      disabled={i === 0}
-                      onClick={() => move(i, -1)}
-                      aria-label={`Move ${u.name} forward`}
-                      className="text-muted-foreground hover:text-foreground disabled:opacity-25"
-                    >
-                      <ArrowUp className="size-3.5" />
-                    </button>
-                    <button
-                      type="button"
-                      disabled={i === pick.unitIds.length - 1}
-                      onClick={() => move(i, 1)}
-                      aria-label={`Move ${u.name} back`}
-                      className="text-muted-foreground hover:text-foreground disabled:opacity-25"
-                    >
-                      <ArrowDown className="size-3.5" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => toggleUnit(u.id)}
-                      aria-label={`Remove ${u.name}`}
-                      className="text-muted-foreground hover:text-destructive"
-                    >
-                      <X className="size-3.5" />
-                    </button>
-                  </>
-                ) : (
-                  <span className="flex-1 text-xs italic text-muted-foreground">
-                    {i === 0 ? "Front line" : "Empty"}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-        <p className="text-xs text-muted-foreground">
-          Position 1 takes the hits. Steel attacks only from positions 1–2; Shot can't fire from
-          position 1; Spell works anywhere and ignores armor.
-        </p>
-        {error && <p className="text-xs text-destructive">{error}</p>}
-        {action}
-        {extra}
-      </aside>
-    </div>
+    </main>
   );
+}
+
+function StatMana() {
+  return <img src="/assets/stats/mana.png" alt="Mana" width={30} height={30} />;
 }

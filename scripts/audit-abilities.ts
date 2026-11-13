@@ -1,4 +1,5 @@
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { BANNERS } from "../src/game/banners";
 import { ABILITIES } from "../src/game/catalog/abilities";
 import { TROOPS } from "../src/game/catalog/troops";
@@ -11,7 +12,7 @@ import { rulesetSelectionWeight } from "../src/game/rule-support";
 import type { TeamPick } from "../src/game/match";
 
 const holdout = process.argv.includes("--holdout");
-const seedOffset = holdout ? 20000 : 0;
+const seedOffset = holdout ? 30000 : 0;
 const results = [];
 for (const stage of ["level-1", "mid-level", "max-level"]) {
   const planLevels = Object.fromEntries(
@@ -81,9 +82,12 @@ const coverage = ABILITIES.map((a) => ({
 const report = {
   version: CATALOG_VERSION,
   catalogHash: catalogHash(rulesetSelectionWeight),
+  engineSourceSha256: createHash("sha256")
+    .update(readFileSync(new URL("../src/game/engine.ts", import.meta.url)))
+    .digest("hex"),
   methodology:
     "5400 deterministic battles, all 15 banner pairs, three mana caps, 20 draft seeds, both sides, at level 1/mid/max. Drafts evaluate the stats and unlocked abilities of the sampled level. AI sample, not competitive metagame proof.",
-  sample: holdout ? "holdout seeds 20001-20020" : "tuning seeds 1-20",
+  sample: holdout ? "holdout seeds 30001-30020" : "tuning seeds 1-20",
   results,
   coverage,
 };

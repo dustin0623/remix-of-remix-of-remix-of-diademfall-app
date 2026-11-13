@@ -618,12 +618,12 @@ function MarketPage() {
               >
                 <SelectTrigger
                   className="market-summoner-select"
-                  aria-label="Preview levels with a summoner"
+                  aria-label="Preview levels with a commander"
                 >
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="none">No summoner check</SelectItem>
+                  <SelectItem value="none">No commander check</SelectItem>
                   {mine.map((s) => (
                     <SelectItem key={s.id} value={s.id}>
                       {cardName(s.id)} · Lv {s.level}

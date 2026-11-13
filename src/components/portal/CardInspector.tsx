@@ -49,7 +49,7 @@ export function CardInspector({
           <DialogTitle className="font-display text-2xl text-primary">{card?.name}</DialogTitle>
           <DialogDescription>
             {card?.set} edition · {card?.mana} mana ·{" "}
-            {selection?.kind === "unit" ? "Troop" : "Summoner"}
+            {selection?.kind === "unit" ? "Troop" : "Commander"}
           </DialogDescription>
         </DialogHeader>
         {selection && card && (
@@ -80,7 +80,7 @@ export function CardInspector({
                   <small>Stats and abilities update for the selected level.</small>
                 </label>
               )}
-              <h3>{unit ? "Active abilities" : "Summoner effects"}</h3>
+              <h3>{unit ? "Active abilities" : "Commander effects"}</h3>
               {unit ? (
                 unit.abilities.length ? (
                   unit.abilities.map((id) => (

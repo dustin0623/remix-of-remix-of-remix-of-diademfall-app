@@ -30,7 +30,7 @@ export function rankedConfig(m: { seed: string; manaCap: number; rulesetIds: str
 /** Full ranked legality: base draft rules (incl. the Wayfarer limit) plus Banner, set, duplicate and unknown-card checks. */
 export function validateRankedTeam(pick: TeamPick, cfg: MatchConfig): string | null {
   const s = SUMMONERS.find((x) => x.id === pick.summonerId);
-  if (!s) return "Choose a summoner.";
+  if (!s) return "Choose a commander.";
   if (new Set(pick.unitIds).size !== pick.unitIds.length) return "Each unit can only be used once.";
   for (const id of pick.unitIds) if (!UNIT_BY_ID[id]) return "Unknown unit in formation.";
   const base = validateTeam(pick, cfg);

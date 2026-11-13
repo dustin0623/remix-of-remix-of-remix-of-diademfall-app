@@ -127,7 +127,7 @@ function Codex() {
               Troops <span>{UNITS.length}</span>
             </TabsTrigger>
             <TabsTrigger value="summoners">
-              Summoners <span>{SUMMONERS.length}</span>
+              Commanders <span>{SUMMONERS.length}</span>
             </TabsTrigger>
             <TabsTrigger value="abilities">
               Abilities <span>{ABILITIES.length}</span>

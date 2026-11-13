@@ -88,7 +88,7 @@ function PackTile({ pack }: { pack: PackId }) {
         <h2 className="font-display text-2xl font-black uppercase text-primary">{info.name}</h2>
         <p className="text-sm text-muted-foreground">{info.subtitle}</p>
         <p className="mt-1 text-xs text-foreground/70">
-          {info.summoners} summoners · {info.troops} troops
+          {info.summoners} commanders · {info.troops} troops
         </p>
       </div>
       <p className="pack-guarantee">5 cards · Uncommon or better guaranteed</p>

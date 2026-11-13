@@ -89,7 +89,7 @@ export const RULESETS: RulesetDefinition[] = [
     "name": "Humble Origins",
     "category": "draft",
     "phase": "team_build",
-    "text": "Legendary cards are not legal; at most 2 Epic cards may be used, including the summoner.",
+    "text": "Legendary cards are not legal; at most 2 Epic cards may be used, including the commander.",
     "values": {
       "bannedRarities": [
         "legendary"
@@ -105,7 +105,7 @@ export const RULESETS: RulesetDefinition[] = [
     "name": "Crown and Legend",
     "category": "draft",
     "phase": "team_build",
-    "text": "Exactly 1 Legendary unit must be used when a legal one fits the cap. The summoner does not count.",
+    "text": "Exactly 1 Legendary unit must be used when a legal one fits the cap. The commander does not count.",
     "values": {
       "legendaryUnits": 1
     },
@@ -145,7 +145,7 @@ export const RULESETS: RulesetDefinition[] = [
     "name": "Oathless Day",
     "category": "command",
     "phase": "battle_start",
-    "text": "Summoner effects are disabled. The summoner still determines Banner access and spends mana.",
+    "text": "Commander effects are disabled. The commander still determines Banner access and spends mana.",
     "values": {
       "disableSummonerEffects": true
     },
@@ -156,7 +156,7 @@ export const RULESETS: RulesetDefinition[] = [
     "name": "Unwritten Deeds",
     "category": "command",
     "phase": "battle_start",
-    "text": "Printed unit abilities are disabled. Abilities granted by a summoner or ruleset remain active.",
+    "text": "Printed unit abilities are disabled. Abilities granted by a commander or ruleset remain active.",
     "values": {
       "disablePrintedAbilities": true
     },

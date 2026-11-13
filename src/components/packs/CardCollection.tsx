@@ -163,7 +163,7 @@ function Collection() {
           onChange={setFilter}
           options={[
             { id: "all", name: "All" },
-            { id: "summoners", name: "Summoners" },
+            { id: "summoners", name: "Commanders" },
             { id: "troops", name: "Troops" },
           ]}
         />

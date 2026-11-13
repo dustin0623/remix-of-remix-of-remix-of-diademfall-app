@@ -84,18 +84,18 @@ describe("planCombine", () => {
   });
 });
 
-describe("summoner level gating", () => {
+describe("commander level gating", () => {
   // Rare summoner (cap 6) table from the spec: rows = summoner level, columns = Common..Legendary troop caps 10/8/6/4/3.
   const table: Record<number, number[]> = {
     1: [1, 1, 1, 1, 1], 2: [2, 2, 2, 1, 1], 3: [4, 3, 3, 2, 1], 4: [6, 5, 4, 2, 2], 5: [8, 6, 5, 3, 2], 6: [10, 8, 6, 4, 3],
   };
   for (const [lv, row] of Object.entries(table)) {
-    it(`Rare summoner level ${lv} commands ${row.join("/")}`, () => {
+    it(`Rare commander level ${lv} commands ${row.join("/")}`, () => {
       expect([10, 8, 6, 4, 3].map((cap) => allowedTroopLevel(Number(lv), 6, cap))).toEqual(row);
     });
   }
 
-  it("ranked plays a troop above the summoner's limit at the permitted level", () => {
+  it("ranked plays a troop above the commander's limit at the permitted level", () => {
     const rare = SUMMONERS.find((s) => s.levelCap === 6)!;
     const common = TROOPS.find((t) => t.levelCap === 10 && (t.banner === rare.banner || t.affiliation === "wayfarer"))!;
     const pick = { summonerId: rare.id, unitIds: [common.id] };

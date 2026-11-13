@@ -9,7 +9,7 @@ import { aiDraft, cardLegal, rollMatch, rulesetSelectionWeight, SUPPORTED_RULESE
 import { UNIT_BY_ID, UNITS, unitAtLevel } from "./units";
 
 describe("catalog v2", () => {
-  it("has 3 launch packs: 18 summoners, 120 troops (108 Banner + 12 Wayfarers), 138 cards", () => {
+  it("has 3 launch packs: 18 commanders, 120 troops (108 Banner + 12 Wayfarers), 138 cards", () => {
     expect(SETS.map((s) => s.id)).toEqual(["ancient", "oath", "legionnaire"]);
     expect(SUMMONERS).toHaveLength(18);
     expect(TROOPS).toHaveLength(120);
@@ -17,7 +17,7 @@ describe("catalog v2", () => {
     expect(TROOPS.filter((t) => t.affiliation === "wayfarer")).toHaveLength(12);
     expect(SETS.reduce((n, s) => n + s.total, 0)).toBe(138);
   });
-  it("splits every pack into 6 summoners and 40 troops", () => {
+  it("splits every pack into 6 commanders and 40 troops", () => {
     const count = (set: string) => [SUMMONERS.filter((s) => s.set === set).length, TROOPS.filter((t) => t.set === set).length];
     expect(count("ancient")).toEqual([6, 40]);
     expect(count("oath")).toEqual([6, 40]);

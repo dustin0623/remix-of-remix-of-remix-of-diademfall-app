@@ -143,7 +143,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -365,7 +365,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -1024,7 +1024,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -1112,7 +1112,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 4
       }
     ],
@@ -1608,7 +1608,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 1
       },
       {
-        "abilityId": "doom_count",
+        "abilityId": "hexweave",
         "unlockLevel": 4
       }
     ],
@@ -1975,7 +1975,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "packmark",
+        "abilityId": "bloodscent",
         "unlockLevel": 1
       }
     ],
@@ -2077,7 +2077,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       }
     ],
@@ -2165,7 +2165,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 1
       },
       {
-        "abilityId": "packmark",
+        "abilityId": "bloodscent",
         "unlockLevel": 4
       }
     ],
@@ -2235,7 +2235,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 3
       }
     ],
@@ -2292,7 +2292,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 7
       }
     ],
@@ -2412,7 +2412,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       }
     ],
@@ -3130,7 +3130,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       }
     ],
@@ -3386,11 +3386,11 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       },
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 3
       }
     ],
@@ -4004,7 +4004,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -4226,7 +4226,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 7
       }
     ],
@@ -4346,7 +4346,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -4602,7 +4602,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 7
       }
     ],
@@ -4722,7 +4722,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -4944,7 +4944,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "packmark",
+        "abilityId": "bloodscent",
         "unlockLevel": 1
       }
     ],
@@ -5399,7 +5399,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       }
     ],
@@ -5585,7 +5585,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       },
       {
@@ -5659,7 +5659,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "doom_count",
+        "abilityId": "hexweave",
         "unlockLevel": 3
       }
     ],
@@ -5716,7 +5716,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 7
       }
     ],
@@ -6248,7 +6248,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "doom_count",
+        "abilityId": "hexweave",
         "unlockLevel": 4
       }
     ],
@@ -6434,7 +6434,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -6744,7 +6744,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 1
       },
       {
-        "abilityId": "doom_count",
+        "abilityId": "hexweave",
         "unlockLevel": 4
       }
     ],
@@ -6814,7 +6814,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "packmark",
+        "abilityId": "bloodscent",
         "unlockLevel": 3
       }
     ],
@@ -6871,7 +6871,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -7371,7 +7371,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "runebreath",
+        "abilityId": "ancient_scale",
         "unlockLevel": 3
       }
     ],
@@ -7548,7 +7548,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       }
     ],
@@ -7770,7 +7770,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       }
     ],
@@ -7872,7 +7872,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -8026,7 +8026,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -8266,7 +8266,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "packmark",
+        "abilityId": "bloodscent",
         "unlockLevel": 1
       }
     ],
@@ -8456,7 +8456,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 2
       },
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 4
       }
     ],
@@ -9140,7 +9140,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -9260,7 +9260,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       }
     ],
@@ -9668,7 +9668,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "runebreath",
+        "abilityId": "ancient_scale",
         "unlockLevel": 2
       },
       {
@@ -9738,7 +9738,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -9858,7 +9858,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -10238,7 +10238,7 @@ export const TROOPS: TroopDefinition[] = [
         "unlockLevel": 1
       },
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 3
       }
     ],
@@ -10296,7 +10296,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 7
       }
     ],
@@ -10416,7 +10416,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -10518,7 +10518,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "makeshift_guard",
+        "abilityId": "salvager",
         "unlockLevel": 1
       }
     ],
@@ -10783,7 +10783,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 1
       }
     ],
@@ -10969,7 +10969,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "last_pay",
+        "abilityId": "shieldwall",
         "unlockLevel": 1
       },
       {
@@ -11159,7 +11159,7 @@ export const TROOPS: TroopDefinition[] = [
     },
     "abilityUnlocks": [
       {
-        "abilityId": "roadwise",
+        "abilityId": "windread",
         "unlockLevel": 7
       }
     ],

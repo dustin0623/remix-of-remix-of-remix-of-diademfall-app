@@ -8,7 +8,7 @@ foreach($rarity in @('common','uncommon','rare','epic','legendary')){
  if($frame.Width -ne 300 -or $frame.Height -ne 420){throw 'Wrong frame size'}
  $different=0
  for($y=0;$y -lt 420;$y++){for($x=0;$x -lt 300;$x++){
-  if($x -ge 136 -and $x -le 164 -and $y -ge 3 -and $y -le 32){continue}
+  if($x -ge 138 -and $x -le 162 -and $y -ge 6 -and $y -le 30){continue}
   if($frame.GetPixel($x,$y).ToArgb() -ne $silver.GetPixel($x,$y).ToArgb()){$different++}
  }}
  $rail=@(30,75,110,150,190,225,270) | ForEach-Object {
@@ -16,8 +16,10 @@ foreach($rarity in @('common','uncommon','rare','epic','legendary')){
   for($y=0;$y -le 8;$y++){if($frame.GetPixel($_,$y).A -gt 128){$start=$y;break}}
   $start
  }
- $valid=$different -eq 0 -and $frame.GetPixel(150,210).A -eq 0 -and ($rail | Where-Object {$_ -lt 0}).Count -eq 0
- $report+=@{rarity=$rarity;valid=$valid;topRailStarts=@($rail);transparentWindow=$frame.GetPixel(150,210).A -eq 0;changedPixelsOutsideSeal=$different}
+ $corners=@(@(1,1),@(298,1),@(1,418),@(298,418)) | ForEach-Object {$frame.GetPixel($_[0],$_[1]).A}
+ $square=($corners | Where-Object {$_ -lt 128}).Count -eq 0
+ $valid=$different -eq 0 -and $square -and $frame.GetPixel(150,210).A -eq 0 -and ($rail | Where-Object {$_ -lt 0}).Count -eq 0
+ $report+=@{rarity=$rarity;valid=$valid;topRailStarts=@($rail);transparentWindow=$frame.GetPixel(150,210).A -eq 0;changedPixelsOutsideSeal=$different;squareCorners=$square;nearCornerAlpha=@($corners)}
  $frame.Dispose()
  if(-not $valid){throw ('Invalid frame: '+$rarity)}
 }
@@ -48,4 +50,15 @@ foreach($card in $manifest.cards){
  if($checksum -ne $card.sha256){throw ('Checksum mismatch: '+$card.id)}
 }
 $report | ConvertTo-Json -Depth 5 | Set-Content docs/card-layers/frame-qa.json
-Write-Output ('Verified '+$manifest.cards.Count+' layered cards and 5 identical silver rims with colored inner seals.')
+$emblemReport=@()
+foreach($rarity in @('common','uncommon','rare','epic','legendary')){
+ $file='public/assets/raw/rarity-emblems/'+$rarity+'.png'
+ $emblem=[Drawing.Bitmap]::new((Join-Path $project $file))
+ $valid=$emblem.Width -eq 96 -and $emblem.Height -eq 96 -and $emblem.GetPixel(48,48).A -gt 128
+ foreach($corner in @(@(0,0),@(95,0),@(0,95),@(95,95))){if($emblem.GetPixel($corner[0],$corner[1]).A -ne 0){$valid=$false}}
+ $emblem.Dispose()
+ if(-not $valid){throw ('Invalid rarity emblem: '+$rarity)}
+ $emblemReport+=@{rarity=$rarity;width=96;height=96;valid=$valid;sha256=(Get-FileHash -LiteralPath (Join-Path $project $file) -Algorithm SHA256).Hash.ToLowerInvariant()}
+}
+$emblemReport | ConvertTo-Json -Depth 4 | Set-Content docs/card-layers/rarity-emblem-qa.json
+Write-Output ('Verified '+$manifest.cards.Count+' layered cards and 5 identical square silver rims with cleaned flame rarity seals.')

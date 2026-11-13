@@ -89,7 +89,7 @@ export function teamMana(pick: TeamPick, rules: string[]) {
 
 export function validateTeam(pick: TeamPick, cfg: MatchConfig): string | null {
   const s = SUMMONERS.find((x) => x.id === pick.summonerId);
-  if (!s) return "Choose a summoner.";
+  if (!s) return "Choose a commander.";
   if (pick.unitIds.length === 0) return "Add at least one unit.";
   if (pick.unitIds.some((id) => !UNIT_BY_ID[id])) return "Unknown unit in formation.";
   if (pick.unitIds.length > maxUnits(cfg.rulesets)) return `At most ${maxUnits(cfg.rulesets)} units.`;
@@ -117,7 +117,7 @@ export function aiDraft(cfg: MatchConfig, seed: number, levels?: Readonly<Record
   const formation = (ids: string[]) => [...ids].sort((a, b) => front(planningById[b]!) - front(planningById[a]!));
   const strength = (ids: string[]) => formation(ids).reduce((total, id, position) => {
     const u = planningById[id]!;
-    const freeSteel = ["flank", "hunt", "runebreath"].some(ability => u.abilities.includes(ability));
+    const freeSteel = ["flank", "hunt"].some(ability => u.abilities.includes(ability));
     const attack = Math.max(u.spell * 3.2, position > 0 ? u.shot * 3 : 0, position < 2 || freeSteel ? u.steel * 3 : 0);
     // Price small marginal upgrades so a costly tank cannot crowd out an attacking back line.
     // A cheaper replacement can improve this score and release mana for the next upgrade.

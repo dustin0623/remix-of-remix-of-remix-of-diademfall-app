@@ -2098,7 +2098,8 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
 }
 .play-lobby-layout {
   display: grid;
-  grid-template-columns: 1.05fr 1fr 1.05fr;
+  grid-template-columns: minmax(0, 410px);
+  justify-content: center;
   gap: 18px;
   align-items: end;
 }
@@ -2546,7 +2547,6 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
     padding-inline: 20px;
   }
   .play-lobby-layout {
-    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
   .play-collection-banner {

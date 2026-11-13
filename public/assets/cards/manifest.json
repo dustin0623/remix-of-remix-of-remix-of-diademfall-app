@@ -27,7 +27,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "3c4ba907da5b15c896dc2e60517621a53d631ea535ef24286d99aae37b23272e"
+                      "sha256":  "a7c4f1a3792782a4edd9c6c4d557c1d9c826731496aebe712b16ff37bc7ea43a"
                   },
                   {
                       "id":  "lady_serane_vale",
@@ -52,7 +52,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "fbfd3ea47bbf05736dc3b62a542405cf37bf8f862c323dcfa6ac5cdedd839cb7"
+                      "sha256":  "8fa25c0300f8a0a258c2460f00ac9a99aaf831a7bd1ff99f13fd0408c3a0e92f"
                   },
                   {
                       "id":  "torvane_crownshield",
@@ -77,7 +77,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "d0f8be0fa683418a10e86603f2a669317e6c54e1fc01699655f880dc1dd727bb"
+                      "sha256":  "36708b2fcf621cbd8e86999033d2d59441e78df7131900e05a2302cbe2b25e3b"
                   },
                   {
                       "id":  "bram_forgewarden",
@@ -102,7 +102,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "5e5dfcc43d4659c7281999a9b6c4e8ffa8193be40b395243a2f191d036dbea6d"
+                      "sha256":  "2e65d0b67f6ed0e6abe7afa39a02cdbe7abd8e2180465c04a37419fb2ebdfd46"
                   },
                   {
                       "id":  "maelor_ironhand",
@@ -127,7 +127,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "41bef311d820bd185394a6be32d1221eb1d00d7122ac60eed11e2866da8f4717"
+                      "sha256":  "11ed7c521c94678b5d5814bac593e11736231130705544ebcb8384cf2cc8f05b"
                   },
                   {
                       "id":  "eira_thornpath",
@@ -152,7 +152,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "4f6ae891db64aef7a04033f749b13407e26fecfe479d7f5b5d3c86980434e9e9"
+                      "sha256":  "f77e3095f149c5c615276c0f8332f11a4dfc0fffc38e260c532e8ecd9ab56735"
                   },
                   {
                       "id":  "rowan_packmother",
@@ -177,7 +177,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "c3fe68dee9cc50b45c38fac8953a2e0d11458e078118018bf61168ee4172c957"
+                      "sha256":  "9c21f63563467e00579f46f92784f811c6d2b1cbe35ec4889d63d4df176b75ae"
                   },
                   {
                       "id":  "garran_moonfang",
@@ -202,7 +202,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "71e69f9c27045be255561b0c7d907b2ef1965cf8693a2666577bfb65d7006a59"
+                      "sha256":  "58ee113b5d7d58930ff59d19b9b3ade8884bdc9a38907cc8b27affec95fdb7d2"
                   },
                   {
                       "id":  "pip_briarwhistle",
@@ -227,7 +227,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "d5d5581c1abac4b42b1435ddd98ef6f320f1b1443302007f33f6d8b0970fdffd"
+                      "sha256":  "a6afa1f9a06f80d3494ec9f14709659f3129f5c4bbe9a01217d415f167fcff40"
                   },
                   {
                       "id":  "ysilde_whitehart",
@@ -252,7 +252,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "8928cd65d880e3ca859241d1adc4d78c67981a0cc51b3df18538a863d6ca95bd"
+                      "sha256":  "1ddb831a53ddb8c5b3c16048fc5fadfe1293ec0ac890a7aa92ca8e3ea1409b3b"
                   },
                   {
                       "id":  "oris_glassmoth",
@@ -277,7 +277,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "1a1b01097a7f06184c10e6a1b4df77646f45c7fb2b058940cde4a1bfd4bb70a9"
+                      "sha256":  "f4a2928c828536387918b70d1fd984cc51d24565e8540d6c1907e7f16af2112c"
                   },
                   {
                       "id":  "miravel_threadseer",
@@ -302,7 +302,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "d5fc6069e02d636c154a405f8bcadc9bd78ae87ba26bb38de0aed46dd7faeb2a"
+                      "sha256":  "44950625890b09201b51756f15e54e83e43a8214c520cb529c6a885fbca2b7de"
                   },
                   {
                       "id":  "veyra_nine_masks",
@@ -327,7 +327,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "610cf760417fc31ffe82dbc5a6b907c97f8afeb525f75a78bfdd8866a930d215"
+                      "sha256":  "aaf5c85f2dc95243b1d6121374e78bd7a4b4f5a4259d32f59abd425eb7fbeb92"
                   },
                   {
                       "id":  "fen_quill",
@@ -352,7 +352,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "5af9bba140f7210f3c871b6ee2507d4943a4bc886ebcbad7a0ccc371dc2fac2d"
+                      "sha256":  "06d9b89276de675c5c65d9d7648c151b356e0da2953aa3df9316c8bab7d7b639"
                   },
                   {
                       "id":  "the_lacquered_oracle",
@@ -377,7 +377,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "c742dd72a3595d71b34d5d053cf0e136f0ec37dd645602828bee4102ef1233ce"
+                      "sha256":  "a5248af89effd8c9288adf0cd7c8c0e952ac802649057f4b5424a56b17341cdf"
                   },
                   {
                       "id":  "morcant_bellkeeper",
@@ -402,7 +402,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "b331b2b5c9560f55171328932a2b1c1444a76c38576b253908cdf1793d169c66"
+                      "sha256":  "ab8f533f0e608257cb434ee494c3b1a96ff5004232aff9f15eabb00988af7a61"
                   },
                   {
                       "id":  "abbess_nhal",
@@ -427,7 +427,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "a3ba5ef9b6933a7c102b897f2c521008f3cb9d6cf51d41f18178c70bc750b159"
+                      "sha256":  "c78f0b14f71fcfa2e4d3c03ea5def72963eb3f867906aacb732d615ccef82b03"
                   },
                   {
                       "id":  "king_ossuary",
@@ -452,7 +452,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "d661f4ccea42ad88c4080a6a95740b8623bd4f7dc7639efdb2318057368877c1"
+                      "sha256":  "18a60066dee0f07ff6f94492c3b37724697eba3223d5249c7cf0221b76c3c90c"
                   },
                   {
                       "id":  "tallow_jack",
@@ -477,7 +477,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "ea5aefccf854712a1c4980b3d028fbef326345e956a43f8cc18d697cc7ea2035"
+                      "sha256":  "5e5b409350f9c1e1d64bde8dc2ee65a685695522a217be48b2a0056c5fa0158b"
                   },
                   {
                       "id":  "vel_mourningstar",
@@ -502,7 +502,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "4c63d23c9d3522e01f36bdba87536b642a9ba8fe6cf9b35784f03ddbc0655db5"
+                      "sha256":  "9924ddc2d80918f3fdafcf55958de3dad265fc45c470bdf5d855e478064719f8"
                   },
                   {
                       "id":  "cael_rookwing",
@@ -527,7 +527,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "9b52bb7c6b9e46560c559d76217ade0187481148f95ae46d23a9f56614b5a8c1"
+                      "sha256":  "1abe6290f46d0b9a0fb768d94f68830e0ebf17a499efa7e2b9b3e7d614411ffb"
                   },
                   {
                       "id":  "maris_cloudreel",
@@ -552,7 +552,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "befbc4ad479ace4018f10f8402b4b1f72df2682a8cf8f9692f46591ca901ec47"
+                      "sha256":  "45bdee49148741698263fa6cc40afc13710b120ce52826c452e48ef3bef0c093"
                   },
                   {
                       "id":  "duke_avorran",
@@ -577,7 +577,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "b549387ca4892c6dc3d2e0d9140f8a4caf5a93cbae26a322452cae8ac618e01b"
+                      "sha256":  "8decc2aa6dfb328ea29078654ae91a1b26158b2bfbba1034a4dc16bdc3921b90"
                   },
                   {
                       "id":  "tess_kestrel",
@@ -602,7 +602,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "47d90e74b5245660a0ebf7773edb3462bc53ca27c71134074e16d77454c87f1c"
+                      "sha256":  "bc7ae637fd207d64fb06ff587d49a0105797ef48f0411f87e22f2acf3979ae5e"
                   },
                   {
                       "id":  "saint_orien_of_the_gale",
@@ -627,7 +627,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "06d66023763456c669b404f6af68bb9a6deea05416469c2d6cb86645063d478f"
+                      "sha256":  "d3bd7f9fbde3f6e5ee1b8fb5c5f5681a89e10dec040c9cd4d4b650ad5d163e16"
                   },
                   {
                       "id":  "vaelor_runeclaw",
@@ -652,7 +652,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "d2ad0ecdab5a642ddc2daff6904a50cc79770934a27ca73f84abe5e98c03238c"
+                      "sha256":  "8260e5e20c956f08972bac48ba9b4c5f1e9065c91274b02076f8d9348d0832d8"
                   },
                   {
                       "id":  "syrra_hoardseer",
@@ -677,7 +677,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "41fd89cb7ec4b1cbd1ff92a4eb161218d64ea36fb0f647c35d649bf7abfc1ef8"
+                      "sha256":  "60fe7bf0a74d2619a2aa1d7a81970a18afb25f7311c1ea541601b3fb49d92a52"
                   },
                   {
                       "id":  "orrun_the_first_scale",
@@ -702,7 +702,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "f37718929661771bf4b337444790040ad596de3b389f92dd7f654a20f1c970eb"
+                      "sha256":  "5cf623e66ef83405f99752f64fdc0d607a414304c26cd1587266d7dccba872ae"
                   },
                   {
                       "id":  "kiva_emberledger",
@@ -727,7 +727,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "535cdf8739799d29b83139ab13cdae195cec9419a4ab4e628045986bad74ceb5"
+                      "sha256":  "7b55ea70140f2e73f2be191268addabe259ae6180103dac0234cf8f0aba7aed0"
                   },
                   {
                       "id":  "thalor_worldcoil",
@@ -752,7 +752,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "b2de2025d2a039bd2f08b43fce493efddb1dde7d0cdb61d85764b71dfa436b63"
+                      "sha256":  "ac8c9722c1cd89b9f684fcea90b0c7e7af51273379e5df1685afad18fc50c63c"
                   },
                   {
                       "id":  "ashen_page",
@@ -777,7 +777,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "898e0ccbccc2152f6300a896c8e302826b3506b9566f0fa86f2cc254e28776b2"
+                      "sha256":  "1e0836dcc04d3d8e6a01a0ebc8e5e922e8001e57754ae9a44d8d2b864f6fcc28"
                   },
                   {
                       "id":  "stoneward_hound",
@@ -802,7 +802,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "e2a45562bf6e6875014337ec4a572da2f2cf4b5fe8bf4860f7af033c09032d18"
+                      "sha256":  "3a7be5c34065e37821b5bc154a5a567b697606be503b29e432c1c07976239422"
                   },
                   {
                       "id":  "oathcarver_acolyte",
@@ -827,7 +827,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "14dc39e828a7d2c22ac01da3e289a13cff328588dc5b355e7165d913fdbe70bb"
+                      "sha256":  "a4ab67201fefe8c50735e75d943ed442340e52a29123d247c34143e014a26b29"
                   },
                   {
                       "id":  "rampart_arbalist",
@@ -852,7 +852,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "3978c4d9d160fbbaecd35e0556505540274e7078a75ce412c47f5d9cf3389673"
+                      "sha256":  "755ba5fbcfa74237077e1d770335bd1a3c3edde685090b2f101a08c0196e3a99"
                   },
                   {
                       "id":  "granite_bailiff",
@@ -877,7 +877,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "bb0d4a4523d127bbc52959cf9cb83e41169e2a976a7efa3f4cf5ee2ef00ce400"
+                      "sha256":  "4b6999ef45c75cb474cbe1fd72ede2378fb3375c8b1be50bcc3ad79aa390a8c1"
                   },
                   {
                       "id":  "colossus_of_the_first_wall",
@@ -902,7 +902,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "fb5924c27d7aceedbb228ded7507377319fb628e642a3534cd2a332f694370c6"
+                      "sha256":  "8ab2cc95b5588c16670ddc410cc4ae529a85de9421874d0224fd4323c44e7d88"
                   },
                   {
                       "id":  "lantern_squire",
@@ -927,7 +927,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "296d7ef9ddc8c37849be355512470653f87b23ca6138c1f1cbaa3c9d648c266c"
+                      "sha256":  "751c442b3ea7108911785705e47699423ab0e1db2e2edfe9b23e4cff4e60198a"
                   },
                   {
                       "id":  "moat_runner",
@@ -952,7 +952,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "e8331cf325a296af23384e69e4d412fef2f01a35501ae34bc76a7b793f5489e8"
+                      "sha256":  "170d59c3747d4e84d247c09a97b9f9b48e7dbef8488193053262821cd4d51453"
                   },
                   {
                       "id":  "crown_pike",
@@ -977,7 +977,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "7d21e88077a2f34aab30f51e3babc4041d46f533dac91e2a5e093feeec33001e"
+                      "sha256":  "a0ed2d0508fd5964c0add67d0021386c4e7e4849b493b22e515ba6f81a2dbdba"
                   },
                   {
                       "id":  "chapel_thaumaturge",
@@ -1002,7 +1002,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "87909f9390a33052cb92ac710ee9fd995e913138c813871926f8882ce8fbeaca"
+                      "sha256":  "1187c27f3b2a00991938d1549d4f54559c21da057f52dc5251475556d252d336"
                   },
                   {
                       "id":  "banner_chirurgeon",
@@ -1027,7 +1027,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "60b0d9ec62960fd0a8ec11a2813f3fda5c081cbc473113487158d6d298fb9ba7"
+                      "sha256":  "2acc33ca4761bd95a30e2e864c53e3ee413f14436c2660ad1cc243e50ffe8d6b"
                   },
                   {
                       "id":  "gilded_castellan",
@@ -1052,7 +1052,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "828a6aeabbc1269b9098ab7f021cdbe74db5b7d6902c3341a850136a34185297"
+                      "sha256":  "3e20b58dc3a7b65c17d6eabe9f0138f7b1c147b127763f20a85656e072a96291"
                   },
                   {
                       "id":  "levy_drummer",
@@ -1077,7 +1077,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "51fe79da700d9e5152188cf0443de743d70b66573cede0b275588378e93d1cc1"
+                      "sha256":  "59de179cf8a39c1efd604a968060e27c6139ae731467b93d9f522d0bc8274875"
                   },
                   {
                       "id":  "shield_clerk",
@@ -1102,7 +1102,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "52ca3d83d9587636145d36926b231e5dc2277aa1082ddf924b4896c0fe701a3c"
+                      "sha256":  "a1c8a2e4b23321dadcbd088ae07d9dcd8d1dddd3eb40e7cbb0ac1a46b00c9662"
                   },
                   {
                       "id":  "gatebolt_archer",
@@ -1127,7 +1127,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "4b943316b8b57c0d317fe4e1191154241bbab6217358f354ccc04b74b33f2596"
+                      "sha256":  "dbf599b66d8acc5383c4db8c0bbbe0a1bdd959879b6cd98d3ddfa70a3bc123a7"
                   },
                   {
                       "id":  "chain_magistrate",
@@ -1152,7 +1152,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "446e14de3f63372f540ec04ee059784397a63b69f41c6adb839a8309f99464c5"
+                      "sha256":  "85a60a15537a859af7174898ba59f14b38f54f4d1718c2e9889d430122eb762b"
                   },
                   {
                       "id":  "iron_vow_captain",
@@ -1177,7 +1177,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "5b2f960dc7038809563cf147fdbaa2938cc401752a068dbb71efb18aba3c36cc"
+                      "sha256":  "a3941f8d85dfb8d175d483ce60208b0641b4add6e85079de132697f696f212e6"
                   },
                   {
                       "id":  "citadel_behemoth",
@@ -1202,7 +1202,7 @@
                                      "crest":  "/assets/banners/crests/bastion_orders.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "94ab9b4247d0cdd3fc2f0b2979fa179c9e6d219b5bb604142f9678830e4d58aa"
+                      "sha256":  "b084201cebde2f83aad031a7f8399722d88a445ebc25f6ec2736b19708709429"
                   },
                   {
                       "id":  "seedling_wisp",
@@ -1227,7 +1227,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "5995e70a46f40d01f113d25a336119b5ece8c951535f5faa751b3001f0745d53"
+                      "sha256":  "46c898cd4c9188ddf708fb1992bf50ce3d3a62e860bbc92f5f44c379068068f2"
                   },
                   {
                       "id":  "fangroot_cub",
@@ -1252,7 +1252,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "efb72f2303b38bb21ddd32ffb9ea4a598f213ef5431d6ac11783f675870f5f4d"
+                      "sha256":  "ccbcd91ea4c0d8a609e94b3e0eb1df6b4cf857a8cfc7350639b5c1862eab4a2e"
                   },
                   {
                       "id":  "moss_oracle",
@@ -1277,7 +1277,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "6da8d2b6fca35f22579a744e4faca01586cb4351f3cc27656f3c02a06e2c14ee"
+                      "sha256":  "6431ce45335b0371d7906aab5fa27ca511f83bacab32ed4505154e7534a81b81"
                   },
                   {
                       "id":  "briar_dartling",
@@ -1302,7 +1302,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "577e689cf44368e6b02a5e14ad114f57c6e939978d05cbef8f60a6983172c8fd"
+                      "sha256":  "f78406d3461b2eed2ab5d97f1807c3bde02c21fe35d7745c56e555e02f8f9951"
                   },
                   {
                       "id":  "antler_guardian",
@@ -1327,7 +1327,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "0036d48b2a0e1928d31d263457ad031758f1ea3771ecaec2c0772492cc69bc4c"
+                      "sha256":  "cc6259b60bb9d66ed90ff2b751bb780542c0d903a33f6b4b412b1e20837238cc"
                   },
                   {
                       "id":  "elderhorn_colossus",
@@ -1352,7 +1352,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "ed5e45214e7564fe716c4d0caa7a048673f8394a979a339f4666c49782e43435"
+                      "sha256":  "e9087a011e30eb1b90cc7e1753af61344a8c28e6d931ef859fa9cb37942c555d"
                   },
                   {
                       "id":  "burrow_mouse",
@@ -1377,7 +1377,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "ff80820813fe27fef0a6d9886c89e059eb656fac0748c85f1352577fec266660"
+                      "sha256":  "eb31a2f349539302104804dda4c99e74a703fcdd65794e17dc0fd0d4711f9d00"
                   },
                   {
                       "id":  "thistle_runner",
@@ -1402,7 +1402,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "2cb165f5856fe347e0b2b0d62e994cdbeacf3a432dc2510002d6024682fec43b"
+                      "sha256":  "21dd9068d317fe8881e2f0248708fe3a31c5e9a6b29f81d36dc23218413429a2"
                   },
                   {
                       "id":  "moonclaw_stalker",
@@ -1427,7 +1427,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "af682f2638e4c8de2bd37946ddf846e6910f02b9ac0116ef95e5bf1e84b4ad13"
+                      "sha256":  "8c2ee352ca892fb72a3c02ab4f9bf40fbcf90fafd2c60d50e731d8cf0d06726b"
                   },
                   {
                       "id":  "spore_witch",
@@ -1452,7 +1452,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "abee5d33ba22cfe013d3a04d7a765ae4c23980d2a3b895b091e4a9f8f22158bc"
+                      "sha256":  "d9c4b9e953f5db43b5cda6e39a51db0c5b9f11bb4dcba59f39e343bf0c252dc6"
                   },
                   {
                       "id":  "grove_tender",
@@ -1477,7 +1477,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "24429ce9c2018f5ef5f73b7a4b2010528d52224e7a67dfada203615fd295c231"
+                      "sha256":  "fd31510eec160356da24fdbf142525584d1510583c138a59b0f46b9ab105b994"
                   },
                   {
                       "id":  "whitehart_ravager",
@@ -1502,7 +1502,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "d24166b9348c63eb886d0e47981c689ed50b39d3e35588949c58b5c235781352"
+                      "sha256":  "0a74e80945602589a92bb0ad4dc35a804a4ad9f2ed3c0412a7d1acbe03a2ed8c"
                   },
                   {
                       "id":  "twig_scout",
@@ -1527,7 +1527,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "dd777f4b82fe002ffc81527bb83fd5e7b7f59869a3d75f7e632b4e26ed6843fb"
+                      "sha256":  "351eae6ca581aa4c0966c9829376bcaf20c364262d0bb57cf1fe1e902d871c5e"
                   },
                   {
                       "id":  "pack_pup",
@@ -1552,7 +1552,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "c107e5f328e24321776b535a78a680209bc1aa05e0746293d54c316490d3fb3c"
+                      "sha256":  "45a2d723c2c3f4a513d1f7bf39e27ed3be2e8d9eada86ff5a1223254938abbf4"
                   },
                   {
                       "id":  "needlewing_hunter",
@@ -1577,7 +1577,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "6462af65583afa7cfd201a122a5fe3107118ff2ed9b864c0ce5bf9a4aee84f35"
+                      "sha256":  "42aae66232949e86c2344a1b0048a0a12883404e8d50fa3f064c74b0b639a354"
                   },
                   {
                       "id":  "rootsnare_druid",
@@ -1602,7 +1602,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "3661792119b7069c1a4b1b296a64e5e4a46e60b6e91b26d923e3a5b797d67d96"
+                      "sha256":  "cc728ec6d984024d607902a03df682c86e8709cc30bd0057989f96ffc9f33fd5"
                   },
                   {
                       "id":  "greatpaw_warden",
@@ -1627,7 +1627,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "d00c88c9d2cb5a5d8d964a291448cb8f2b42050a095ed69e60e94045142c0075"
+                      "sha256":  "ab1c54ba1fa1c1ac709b19a6cb369ebee8a3fc49d324439e6bb2aaf65fa81ea1"
                   },
                   {
                       "id":  "crowned_mammoth",
@@ -1652,7 +1652,7 @@
                                      "crest":  "/assets/banners/crests/wild_courts.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "9570313a6ce85a488328265f7598d4e12914d22fadd800f37204676073ef6448"
+                      "sha256":  "72148adf8fe520056d755d0054e96e6fe2f8a8c57472fe84eda1ed3cf3ec3dc9"
                   },
                   {
                       "id":  "paper_moth",
@@ -1677,7 +1677,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "bbedfdb79ecc20308e902798fabeff063c871938c6755e372e26a660a7b1e07e"
+                      "sha256":  "7bc17c3aec38907c3627697f99777c7a344b62e60e8870878f746208dace8994"
                   },
                   {
                       "id":  "glass_imp",
@@ -1702,7 +1702,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "097aa7a595a06dcac01f91b640491d67520c4e809c893a17c6360b02bfc28034"
+                      "sha256":  "c2070cc90b01586d1379a782ab14df57044051d33c8dd7d2c3bd7ef85f2c0bcc"
                   },
                   {
                       "id":  "threadling_seer",
@@ -1727,7 +1727,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "cd53bd546fe16b3fa764d027db16a1f680ca1f78c4915d8669a22c6b936dc315"
+                      "sha256":  "b31d00fc9f89c9febd42174ac5d212efccf3c28b2987e5c64b51f6887785c34c"
                   },
                   {
                       "id":  "prism_needler",
@@ -1752,7 +1752,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "73000dcc69b245f6c0b9eb7c6621c14f93e83b14c9bc2db892675711bff423fd"
+                      "sha256":  "26636ec9e2f49f3a7f8b8b74cbfc15dcde7b1c1d8d89ef3c7e8a0de1720e7f56"
                   },
                   {
                       "id":  "lacquered_sentinel",
@@ -1777,7 +1777,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "eb7f8909d590e90b5e8cef44d1d091bd6d99c7eeb9ea79431a2a804d8729ac72"
+                      "sha256":  "5116f395609f0d6a8e69e67ca61b81f3eb97ef734688d84f290d396c654a1db9"
                   },
                   {
                       "id":  "the_unremembered_face",
@@ -1802,7 +1802,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "8aaee68c097004964dca586b4f74d90f13dc86fc25621e7932c75cd7167015ab"
+                      "sha256":  "fb886bc124761fafecec495198dad90ffbc3e35a266476d710c703e372f39aa9"
                   },
                   {
                       "id":  "whisper_sprite",
@@ -1827,7 +1827,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "f62f9faabcee47d5aae95b717e98621d385a4592f0a57c8057ab512e75def0a2"
+                      "sha256":  "307c88a8aee4539715cb4c3fbb97adcf29c7643f180f9bfa99dc29ccee54d122"
                   },
                   {
                       "id":  "ribbon_fox",
@@ -1852,7 +1852,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "1e039e52566c0c162c4e36b067f84d9ea2e781fdd99a355553214dd30f23d50f"
+                      "sha256":  "f1a184841de494ae813451401b3b94752dbaa10927bddeff393f160f328acac8"
                   },
                   {
                       "id":  "masked_duelist",
@@ -1877,7 +1877,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "db5a1ac956faf100668d93f0bdef58b8f8d69d92082eab51083c80d9c49311b5"
+                      "sha256":  "21d8cf7b0b73725ce42bea37d6a516dbbd390bc8efa94c3b3d93befaefb64b33"
                   },
                   {
                       "id":  "moon_mirror_adept",
@@ -1902,7 +1902,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "8ef950bdac30067a49e4f9abe12f225f85d50b3d257e4786cf52eb0f6993df44"
+                      "sha256":  "340697ba33283d34b516f5e504e3596718296b2f6570aa91fbe6b2e6f4a01361"
                   },
                   {
                       "id":  "fate_stitcher",
@@ -1927,7 +1927,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "03750445bbc67af31be1d05909d6aac41f5dd35d1ff5b8f9d9c58f8f05e55c87"
+                      "sha256":  "070a598744751bcac6d33151b4e93d149a920a739fc233601d936817adf5948b"
                   },
                   {
                       "id":  "gloam_courtier",
@@ -1952,7 +1952,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "ee6290db54c99d5c3c26f83ac8e26f8b33cac2f55aa15e6f78f93b4a010f455a"
+                      "sha256":  "1dd6f5316ad580f9897f4148c1f6bac5f91c03a826317d015c73ebf68162374e"
                   },
                   {
                       "id":  "inkcap_familiar",
@@ -1977,7 +1977,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "2ddece35a5184afbf9d37b8d29d7b6cc9364d6b9a824b0ccb77afb70bdecddf7"
+                      "sha256":  "aac27ce9e700252b97fb2bc2a7b83cbf97c2cd9204c03d5deeb66c19ba0b9b02"
                   },
                   {
                       "id":  "silkknife_agent",
@@ -2002,7 +2002,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "c4fbe5debe66a6b63797fd3a33284540fe0ae4c413e496ef5e5f8c4dca6e69b2"
+                      "sha256":  "d2d54d1653fbe7365cbef6366d9cb438a9dc42dea22964bd5c08adfe74ff600f"
                   },
                   {
                       "id":  "glimmerbow_spy",
@@ -2027,7 +2027,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "ffff4cb46dac71cb2f3cfa6a72dc1403f04779bb5887572b744c8a0a3e321515"
+                      "sha256":  "4c5c0eac9c6bad9e63c4373f5f358c38eb9cb8b3af961ee6fdf22deec613cdbc"
                   },
                   {
                       "id":  "knotwitch",
@@ -2052,7 +2052,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "e2fc2c3cee4b2c1c8daf9af33f89e5418b22c173089692208ec51c5ee408303a"
+                      "sha256":  "ababba72ec3ccec0256c6f4ea1a3379d946a83d53c167a0d76df28ff0d2f40fb"
                   },
                   {
                       "id":  "mirrorblade_envoy",
@@ -2077,7 +2077,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "caeca9fc04112ed12c97a26a280c517f8b063d3d3bbc5f426d9203a15c382717"
+                      "sha256":  "f13e8cb9ed5102e78b409bddd488fb490dbc3d66194ebd823ecb99ca1bc4feed"
                   },
                   {
                       "id":  "palace_of_one",
@@ -2102,7 +2102,7 @@
                                      "crest":  "/assets/banners/crests/veil_covenant.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "bfdb5091900e9a09cf437ccdda6acf21773ac6f000cfc0c89a54037ae5ccb417"
+                      "sha256":  "29f44cafca730300023a184588382edf5dc05302722d87317e0a3632a6ba6409"
                   },
                   {
                       "id":  "candle_remnant",
@@ -2127,7 +2127,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "80fdc182c502e6059c9d2cb09cba508d3c1d0ec725fc53e507613ea5f5f73a23"
+                      "sha256":  "26265759c16184b7e34896e415537edbef593274b20c45644c1aadaf4216af28"
                   },
                   {
                       "id":  "bone_rat",
@@ -2152,7 +2152,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "e89fb3881e9d7529bb48ec410e56f00f513bd36d8d9388af4789c1413b9afd6f"
+                      "sha256":  "f636c1b0d37e6911cfc8b253c062d7c2c523a2a3dc8151079fbd4c89f8c11adb"
                   },
                   {
                       "id":  "grave_cantor",
@@ -2177,7 +2177,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "9a2859d810dde1bb6ff961b77cdbb44304c37e6b9935fb93c8e321df5e3f4d78"
+                      "sha256":  "407c907907bcdaa00d11958f0927a19cbac59a3bb3f0fae56a4ed35ed2e19034"
                   },
                   {
                       "id":  "coffin_dart",
@@ -2202,7 +2202,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "39cd39c91d5d3e195a1fa5402cfceb3ead4d63f8c726dfe743505fd5257b964d"
+                      "sha256":  "42425be4aaab747d90e1fdbf2e369dcc8e574148e92fe04a8d794cc73bfac9b3"
                   },
                   {
                       "id":  "ossuary_guard",
@@ -2227,7 +2227,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "79f222d26654b2e113a6522de8bf6d027a625d905e9681757603f5af74f7abb3"
+                      "sha256":  "ee6df02def344a3d64511d3fb8f18a9c9f05bf2cc39480d4bad42f6cf170b3d1"
                   },
                   {
                       "id":  "the_bell_beneath",
@@ -2252,7 +2252,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "dec45cf88bc1e4e34557064d62ecebf158279a71cb638aab6f3ae26754ec85e8"
+                      "sha256":  "d70eaf084da428bd6227cedab2f02cf607531101ce6dc71b738b5545d4dd9c7d"
                   },
                   {
                       "id":  "tallow_wisp",
@@ -2277,7 +2277,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "f5e147692940517f38ff9aa9936ccc152f0e419116b7230e1db2af4e671865ca"
+                      "sha256":  "c94f84e67f079e33c64e12556d3954465deb3e23a87b1e7f2eb0b26bfc06b143"
                   },
                   {
                       "id":  "crypt_scrabbler",
@@ -2302,7 +2302,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "6970e4a2570fa99813c8099ba0987d9989c4b5949264a6689bcd6d1dc314673c"
+                      "sha256":  "22ecc023611afb4d555ecca6a246dc65c73f4baf9f9c646b35b0afde6fcd18e8"
                   },
                   {
                       "id":  "mourning_pike",
@@ -2327,7 +2327,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "5e55d80fad72c5b091d729fc928b87c928ccb4dc9552141752627ea4409c51f9"
+                      "sha256":  "c604a660f28e2ddf1d9821d5831ec9ebc196903989ad01a0e33dff2582f44de4"
                   },
                   {
                       "id":  "pale_medium",
@@ -2352,7 +2352,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "a6d5ba812af82ff8c27dbaff54ef8fb161709c4aba1b4caf245fe01c60a622f8"
+                      "sha256":  "9de1184c7d3a482ffdb60da80ad57961fd454b37e24ca0a930a7605df9d6cb11"
                   },
                   {
                       "id":  "marrow_surgeon",
@@ -2377,7 +2377,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "5702101b3b5b2d9630189ae69778b267a71308303becfd441fa59a932f72d7c4"
+                      "sha256":  "6c2c6711a2b351d01a6de85abbe9e4d8ceb8f0b24e45432960cc582365f1715a"
                   },
                   {
                       "id":  "sepulcher_knight",
@@ -2402,7 +2402,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "5cd90133a41cf96b071d1289a04b526b099ccc025016df2aabbffeb0e4137aa7"
+                      "sha256":  "491ee0779ce64f5949b68c355d60eb8d2525bf855b9c9b5a41bc52913c7d3b03"
                   },
                   {
                       "id":  "grave_levy",
@@ -2427,7 +2427,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "7b1b973d60484c0948cd1744b3d2d5bafaa65cfdf38b2f334ef2ef939c06743d"
+                      "sha256":  "51578057a64b2607950b4884566af761beb96964da9da28fe3538d039cabbd67"
                   },
                   {
                       "id":  "rattleblade",
@@ -2452,7 +2452,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "b1da9b315e355e519fb62150661f6ac0de7aaaa11f6d42f0e060d008fb28a1bb"
+                      "sha256":  "92a587ba28c02c2c8cbe90a1531553c835063ec6bd9367079b05f5728df6c08c"
                   },
                   {
                       "id":  "ash_bolt_deadeye",
@@ -2477,7 +2477,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "b70665d98f7a7d0968e894313d551a6e92220572fed66399372a87cffc64d104"
+                      "sha256":  "00af34a60e3d79dd2a507b58269d8109fb05e3d966cf351fbd052f8e31a86689"
                   },
                   {
                       "id":  "debt_collector",
@@ -2502,7 +2502,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "15f9053c5089ad3c90fccc38b0cc768c987088cd348acbc55791352e478aecb9"
+                      "sha256":  "4b1f8a64c29ad81170b96c03e5621ee1cacbde9a61cd09fe29809ccf9cb6333a"
                   },
                   {
                       "id":  "black_bell_centurion",
@@ -2527,7 +2527,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "285e27bb88cc63140505a8c386e09078cc0ec90cbe9979bbd8f208c5a903ea09"
+                      "sha256":  "4547a5b37baa53d585af277a24f3d1b2c4364eecd0f2f90cd3a79e4499e02a2a"
                   },
                   {
                       "id":  "catacomb_sovereign",
@@ -2552,7 +2552,7 @@
                                      "crest":  "/assets/banners/crests/hollow_legions.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "3a083d7d21dffa36fe469b4feca909af30e677408c471881b50460609794b869"
+                      "sha256":  "03bb55a2d6cecf2e96a6cf47cebb71c21b97acd4c29149911d58729d4c43dd99"
                   },
                   {
                       "id":  "loose_feather",
@@ -2577,7 +2577,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "5b1fe5cb954eb8979083f8d11752e5ea3ba6837f6791c2b8a6dbdefc2dabc1cd"
+                      "sha256":  "46af447b54cd11656733747ea5ea3d5bd80f0a8457ef27f892f345342056e170"
                   },
                   {
                       "id":  "cliff_marten",
@@ -2602,7 +2602,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "60a70bad6de680839755fb8e970643e645d6f18220456af343479137ad523344"
+                      "sha256":  "2bc8ba14aa13323cca46d9035e846d03fc012b086c966caae01b46c9bac7b6a6"
                   },
                   {
                       "id":  "cloud_reader",
@@ -2627,7 +2627,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "3403960d7d3e21236518aea30e8146b14222b0aea4c00feb3efe937c85f3c8c7"
+                      "sha256":  "5e1bd3d552849efa27ea5efc5aa0e1a68ddd3a31b97c4a0f6865539ab6551caf"
                   },
                   {
                       "id":  "rookbow_scout",
@@ -2652,7 +2652,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "d18891a3e166e4b208122b775a8974af2e2b8d06aa7112f7c86f8dd5d6a25952"
+                      "sha256":  "7cde9330202e08ef269e4cdcc38374ebf481e080aaf9006c55a75e6e51cc37ba"
                   },
                   {
                       "id":  "griffin_warden",
@@ -2677,7 +2677,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "e8a45ec65ebb3ec13c8b550bd43aa239dc69f29953f71fe4ac6777a2bda54ef6"
+                      "sha256":  "1aafbf091c6cece4d0442f0e902874d01ee0c1804603beae00c08208fac13754"
                   },
                   {
                       "id":  "thunder_roc_ancient",
@@ -2702,7 +2702,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "51682f0f6b48253d05ffe81b42ec35381d7c684318e1e152d732e87d1fd924af"
+                      "sha256":  "da594cacb319289a9472891f76a6b17f07aa8469bea9edb0b69033f2172e1a21"
                   },
                   {
                       "id":  "kite_squire",
@@ -2727,7 +2727,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "87ae4dea3db525557e5b130c50ecf74135b6b4d19f5bc073659f11e96d95fbeb"
+                      "sha256":  "7254578460b88394f2f6c6d2f529757ca2da45a88bd688a0c1aefa910947dc44"
                   },
                   {
                       "id":  "eyrie_runner",
@@ -2752,7 +2752,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "b3b43a3865f97c62c0aec4d2bfa7d942013232dd1af72b108b1346a3248f4108"
+                      "sha256":  "2e7365933159964c502bebce24407c3e69d8d757ea84d4a1d33a93343c0c1e90"
                   },
                   {
                       "id":  "gale_lancer",
@@ -2777,7 +2777,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "5780284c3312eb99c7be3c86a790fe0650e61e50ef2acf4ddbc78aaa46195f09"
+                      "sha256":  "8ba7d57b480b87aba403e917c878b997fb5cc19236ea512815bf9995d92069b9"
                   },
                   {
                       "id":  "mistcaller",
@@ -2802,7 +2802,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "3d97f894f03d614bb0f8130692fcd1a4083d908e80647d4efc0f3ed2332ef132"
+                      "sha256":  "859c0de62ffc59a6d2e1e9d59332d889e7e2c753e1328d177724c0ef805d2a6f"
                   },
                   {
                       "id":  "wingmender",
@@ -2827,7 +2827,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "f3a45748e42fa5f6517bdad6e66058f68b7624e70c2e47e5c6743157fc251223"
+                      "sha256":  "48dab81e3ba4e535a3fd9540232f3baba5766dfe59024e3284499453021980a1"
                   },
                   {
                       "id":  "cloudhouse_champion",
@@ -2852,7 +2852,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "e7a3a181ac9c79ce48173dbbd1121a2fdcffaa0f612f92db290e35a4439d8992"
+                      "sha256":  "95f0a269aca6b87374270f553454e2c62eb220458f1554c61c5e41cf99122711"
                   },
                   {
                       "id":  "pennant_swift",
@@ -2877,7 +2877,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "b116ed10bf231307cb48c5419ee878243c18a04221fb8d1561d2043636762f44"
+                      "sha256":  "37e7ed40d25d91a4892e6f28f65914f5a9ef9ae2c509e37ed972492a87218b81"
                   },
                   {
                       "id":  "hookwing_recruit",
@@ -2902,7 +2902,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "2e12085cb5aaf204556111ae08001ff4033ace6edd65f3844a71b9e93f1ba7f1"
+                      "sha256":  "d074de8bab9e2a53127a698407eb046a3cf2764442021f483a79d7c6dc2f6d7d"
                   },
                   {
                       "id":  "stormglass_archer",
@@ -2927,7 +2927,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "6eba0e32c834201f20f8f3f0e17448319e54293dc38bee709cd96a1abb579b4a"
+                      "sha256":  "176742a8b72b28aa04a53a33468c8af97ed8a41010314d4ad15ac2009458e2bf"
                   },
                   {
                       "id":  "wind_magistrate",
@@ -2952,7 +2952,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "57191145e563dcad17f3ea747328e6c759ecfcf6b0e9c2b71f1918cfcc324058"
+                      "sha256":  "21b9f22103628ebcebecb5eb56325c7ab1214464e264003bb42ee8d2e78ba321"
                   },
                   {
                       "id":  "griffin_legionary",
@@ -2977,7 +2977,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "127f31a64a526671b1a9c5bf6fbc2f1e7b3dfcfb99597fad5ded46c36b1fc79d"
+                      "sha256":  "ec59a48978797ef29bfd62407b0873463c322f2bba596e1816b652da42e6aa02"
                   },
                   {
                       "id":  "tempest_crown_roc",
@@ -3002,7 +3002,7 @@
                                      "crest":  "/assets/banners/crests/skybound_houses.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "814a445cfb5013e1e1409edda61bfb7bbe303f4a2a3bd1366d6eea560e699b61"
+                      "sha256":  "4c7d883266425b8e12eb8a71be6713109f0d6d983f1c4d5ef91dc412d5825536"
                   },
                   {
                       "id":  "shed_scale",
@@ -3027,7 +3027,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "3100408e79cfd78aba6e4611e55af187b5761716f81942ef54d216523851f43e"
+                      "sha256":  "4792ff554d5a3c3b6c760b1947f220c0800b26d13436a0cc2eb97c91019577d4"
                   },
                   {
                       "id":  "cinder_gecko",
@@ -3052,7 +3052,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "ea7532b525780d219021585b0669c6208284afe36816fdbd1fffb1dcd7d98222"
+                      "sha256":  "dae07c34e4b57471dd30187feba2576b09f6babb0a01a38b7797ca13014a9b7c"
                   },
                   {
                       "id":  "rune_hatchling",
@@ -3077,7 +3077,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "c596e291c8f859baada50000f5b2bfcf66cf20a49d2711e971bfddccebe49a4f"
+                      "sha256":  "29dcfcb7536ea5477a279def4da9b5ec3eb2777654abc362616ca64d8e475e76"
                   },
                   {
                       "id":  "hoard_slinger",
@@ -3102,7 +3102,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "e7b2d1532f46b29d885495fde6d24b8601e96ddb3a793fbecdb18aeb7b63a0fb"
+                      "sha256":  "79fc47702fd25b64e9c1fffb2d607e0e0d7a8db1494461a54f2d245058633835"
                   },
                   {
                       "id":  "basalt_drake",
@@ -3127,7 +3127,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "f5a684f3631b8febfd79026b907cf3204d150dcaf0fe12396434330473e6315d"
+                      "sha256":  "82e608aca9b2daffd815f7bfe1b5fd7e96e5bfb5ddfe99388a97f34016dd4361"
                   },
                   {
                       "id":  "first_blood_wyrm",
@@ -3152,7 +3152,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "625cbbbe268f006d8367f97c0b55081070d60399797b088ca9301f81e8f4aa4d"
+                      "sha256":  "80a1411f31623fd41612d59f035ba1930aa0789dd92b43b1afe296d12c727f82"
                   },
                   {
                       "id":  "ember_newt",
@@ -3177,7 +3177,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "f32c4cd53d390c0c718456be6f4713b956bb059261428b514cdc1b378652b9df"
+                      "sha256":  "d681fd8059fd7d28b7a9040c104e344392dae07daf026415a8d092b2cb9d7416"
                   },
                   {
                       "id":  "copper_kobold",
@@ -3202,7 +3202,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "7cad04ae6e5f539fbf150bb4016abb30badad30f9f30a7fd8e578eae8627d75d"
+                      "sha256":  "e632fdd4fe3b2df6d434c22467d706dc797462f3fd412b0d5ed66e612d9b52ca"
                   },
                   {
                       "id":  "scaleclaw_raider",
@@ -3227,7 +3227,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "38e002151d3c9a106dd93bdf7ddac348699a99d3cb155fa1d89cea10d9f45d2e"
+                      "sha256":  "1bba99784fcc9c7f586daf130e044457c7b8526e5fa4bb062f38f16340962ce1"
                   },
                   {
                       "id":  "runespark_adept",
@@ -3252,7 +3252,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "7b9ea20f2afa8e3ff5fb9455d92d37babf0eab68a045a5d4d6bd95133c02601f"
+                      "sha256":  "9687ea2d1c38811ed8fee0ecbda33c83080845bf18d02d3b6fce1f5e8da85bb0"
                   },
                   {
                       "id":  "hoard_tender",
@@ -3277,7 +3277,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "4bbd22dbaf14b28124eeb27ba479de7d803b22ed34a16fc79b39cfe94a226aea"
+                      "sha256":  "04ad6da191334ec5caa967ed1712d5299c73bed6c32920f48ce5d854917ee556"
                   },
                   {
                       "id":  "ashen_drakeguard",
@@ -3302,7 +3302,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "d56a4c37081eafa7ffc4630c0c362bac37fe51add7e4fe60de01259bea751c40"
+                      "sha256":  "2377c9475165576e7314de2c85a1f0a3ec31a9c7dfb4d4dcdb5f301b05e6780e"
                   },
                   {
                       "id":  "coal_snout_recruit",
@@ -3327,7 +3327,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "cc57ac4ebff642dab3b21d9e138d1acfc44df2e594dd5df5c01ee4301ebb066d"
+                      "sha256":  "0891f566a073b92d01b5925bed8aad19072e3f8805f3d7a6a630877fa3188083"
                   },
                   {
                       "id":  "ironscale_skulk",
@@ -3352,7 +3352,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "21e21c63c87cf79008c4dfa81d962ef11acf35691996330bba8afde54d5d0663"
+                      "sha256":  "deb033b975d5182aa1646ed6eb0585bc120cba9a8c086552ab330abc976f0a41"
                   },
                   {
                       "id":  "runebow_clansman",
@@ -3377,7 +3377,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "ca42300a50b20285a90afb6aadee96d79c50926c1c438ffa3fc0e84ea9be2f51"
+                      "sha256":  "e3af9d7aea136cdea3afba6ace9edd2bc63d10d010a44381a417143c858229f7"
                   },
                   {
                       "id":  "bloodline_seer",
@@ -3402,7 +3402,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "ab6123b28d44283be93679602cb4544e606b301a4d078c4f614ddc4d03941938"
+                      "sha256":  "b000beb500c4084fc80f6498e4b9273e614d7b63e3159461af259ea0b46df255"
                   },
                   {
                       "id":  "elder_scale_guard",
@@ -3427,7 +3427,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "157f6b565e09f841156f631eb208c99083f30f96e920520b23249d3775d877f4"
+                      "sha256":  "40c8666413fbc8e560bdb4a65354d21a7e4bc66e701c2f346be59fc6c4f7ce3e"
                   },
                   {
                       "id":  "worldcoil_heir",
@@ -3452,7 +3452,7 @@
                                      "crest":  "/assets/banners/crests/wyrm_clans.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "de52e50d77830559ac9268d9c85b8aa2e774b75352ad1400cb9eb0de7cf82308"
+                      "sha256":  "629f5c5a22e680b3cff415e518181475a6f6e7d9b5dbad6a091a3e02cf59d65b"
                   },
                   {
                       "id":  "pebble_familiar",
@@ -3477,7 +3477,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "4fa0da6320eb1c3112c14780fbcf020dffdd1dc9ec7e11fe24f1d200f510a0c9"
+                      "sha256":  "01717a1de1c10410c0b1121afcd573a9171ccfafbd1eeb11e0fbfbde66814129"
                   },
                   {
                       "id":  "ruin_jackal",
@@ -3502,7 +3502,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "c13c81fb01c55ad88239f76728e351da56bea9fc04e7e52b5e08bb73017ff6ad"
+                      "sha256":  "68ba11ca5a8ed5b089e56eaa4fc6fe05821d1e619b262aced376312d2729f730"
                   },
                   {
                       "id":  "bronze_pilgrim",
@@ -3527,7 +3527,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "7ccfaf58aeb641d2ae4ebb7a7fc56c6cbadc2cc3864b10694714727dfa4cc842"
+                      "sha256":  "ad0840309ca53beb9bd5d6a14ad0d6cf63c5e3db0a287c7ded0f09744b4f4978"
                   },
                   {
                       "id":  "nameless_colossus",
@@ -3552,7 +3552,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/legendary.png"
                                  },
-                      "sha256":  "6f43eca9f8f47a52a204bf4bd2b7029eaedd0b07762a9d22525029f17aa45de7"
+                      "sha256":  "c9ca814b5ffeb1bdd969c12b00f463b207ea629e12882ceeb147f6c632baacbb"
                   },
                   {
                       "id":  "roadside_tinker",
@@ -3577,7 +3577,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "1e25bc542816e947bc7c4e7c6bda322968fd9db7ca7c817d23a48ec83bcbba5c"
+                      "sha256":  "286caca8765a31a626f19f3ab6143815aa8f90088b3d73f990f56c549cf72296"
                   },
                   {
                       "id":  "hedge_crossbowman",
@@ -3602,7 +3602,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "bdcf6f394dd5069ff61e2d59a6a48e8773e9a4c5aa9b8f2ba65f8cfe9c591b6d"
+                      "sha256":  "f770e2fe29272e80204aadfda24d926d2ca496835cdebe7cbf4a2f473e15d77f"
                   },
                   {
                       "id":  "contract_mender",
@@ -3627,7 +3627,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/rare.png"
                                  },
-                      "sha256":  "b67091da2fc7e0e76c28350bd5936cc11d747c374b6ee0fa1011c9f944f4ea12"
+                      "sha256":  "fbdb0bff9214afaf5e4e53a4f185467db7e2fa00752ad67e51a37dad22561e53"
                   },
                   {
                       "id":  "greycloak_duelist",
@@ -3652,7 +3652,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "ecbbd3b8b8e77740ab666ae5f2a470cde9f7c8f108c34146f30bb8fc7f88fbfc"
+                      "sha256":  "a975c6514a8015a7ce32f4beb65e41b1700087a529487eb95a285ab52edc42ed"
                   },
                   {
                       "id":  "camp_scavenger",
@@ -3677,7 +3677,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "b30159a5f0c27a02ce02fab3c03ab80ef258e285b9cd65a3b7341df70ab9f37c"
+                      "sha256":  "aa16017fdc1f7027f8cc615ed66981311a7a9ff1c4c663c57a7ceb186ca605aa"
                   },
                   {
                       "id":  "free_lance_archer",
@@ -3702,7 +3702,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/common.png"
                                  },
-                      "sha256":  "ba04a39bbe3c3a0f53b75dbf33db7fa337708e3c4cdb945ee76980d99979782d"
+                      "sha256":  "d66aab8203666014db2d5b136237b3f1177834ce0e1c9519e60c3bb29e233515"
                   },
                   {
                       "id":  "bannerless_veteran",
@@ -3727,7 +3727,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/uncommon.png"
                                  },
-                      "sha256":  "028a36efdec5784725cad3286341fcc42a0abdbee7e76f64b5b06d561d312841"
+                      "sha256":  "a6515a7b990fda23b746be66e40ca5c6c46cedde4a007f94f8ceeafda963182f"
                   },
                   {
                       "id":  "crownless_giant",
@@ -3752,7 +3752,7 @@
                                      "crest":  "/assets/banners/crests/wayfarer.png",
                                      "frame":  "/assets/raw/frames/epic.png"
                                  },
-                      "sha256":  "9909f5e4d167742f7d65862d5bdcbd8905305278b6a388750dce69f1c18aa921"
+                      "sha256":  "7d90e5384aecef71f1d3b47d8e1db3256aff38881d8f0f35e25034163b6ddaf6"
                   }
               ],
     "canvas":  {

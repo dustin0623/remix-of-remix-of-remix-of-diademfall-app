@@ -4,7 +4,8 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { BattleInput } from "@/game/battle-contract";
 import type { Database, Json } from "@/integrations/supabase/types";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { lockedTeam, rankedConfig, validateRankedTeam } from "@/game/ranked";
+import { lockedTeam, pickFromTeam, rankedConfig, validateRankedTeam } from "@/game/ranked";
+import type { TeamPick } from "@/game/match";
 import { SUMMONERS } from "@/game/catalog/summoners";
 
 const SUMMONER_IDS = new Set(SUMMONERS.map((s) => s.id));
@@ -32,7 +33,7 @@ export const joinRankedQueue = createServerFn({ method: "POST" })
     const { data: mine } = await context.supabase.from("player_card_stacks").select("card_id, copies").eq("player_id", context.userId).gt("copies", 0);
     const ids = (mine ?? []).flatMap((c) => (c.card_id ? [c.card_id] : []));
     if (!ids.some((id) => SUMMONER_IDS.has(id)) || !ids.some((id) => !SUMMONER_IDS.has(id)))
-      return { ok: false as const, error: "You need at least one summoner and one troop. Open packs in the Shop first." };
+      return { ok: false as const, error: "You need at least one commander and one troop. Open packs in the Shop first." };
     const admin = await loadAdmin();
     const { expireStale } = await import("./ranked.server");
     const { rolloverSeasonIfDue } = await import("./chests.server");
@@ -197,7 +198,7 @@ export const submitRankedTeam = createServerFn({ method: "POST" })
       supabase.from("player_card_stacks").select("card_id, level, copies").eq("player_id", userId).in("card_id", ids),
     ]);
     const type = new Map((cards ?? []).map((c) => [c.id, c.card_type]));
-    if (type.get(pick.summonerId) !== "summoner") return fail("That summoner isn't available.");
+    if (type.get(pick.summonerId) !== "summoner") return fail("That commander isn't available.");
     if (pick.unitIds.some((id) => type.get(id) !== "unit")) return fail("One of those units isn't available.");
     const levels = Object.fromEntries((owned ?? []).filter((c) => c.card_id && (c.copies ?? 0) > 0).map((c) => [c.card_id!, c.level ?? 1]));
     if (ids.some((id) => levels[id] === undefined)) return fail("You don't own every card in that team.");
@@ -219,6 +220,7 @@ export type HistoryRow = {
   matchId: string; status: string; result: string | null; reason: string | null;
   ratingBefore: number; ratingAfter: number | null;
   opponent: string; opponentRating: number; manaCap: number; rulesetIds: string[]; at: string;
+  player: string; teams: [TeamPick, TeamPick] | null; rounds: number | null;
 };
 
 export const getRankedHistory = createServerFn({ method: "POST" })
@@ -227,7 +229,7 @@ export const getRankedHistory = createServerFn({ method: "POST" })
   .handler(async ({ data, context }): Promise<HistoryRow[]> => {
     const { supabase, userId } = context;
     const { data: rows } = await supabase.from("matches")
-      .select(`id, status, created_at, completed_at, mana_cap, ruleset_ids, result, player1_id,
+      .select(`id, status, created_at, completed_at, mana_cap, ruleset_ids, result, player1_id, replay_input:replay->input,
         p1_rating_before, p1_rating_after, p1_result, p2_rating_before, p2_rating_after, p2_result,
         p1:profiles!matches_player1_id_fkey(username, display_name), p2:profiles!matches_player2_id_fkey(username, display_name)`)
       .or(`player1_id.eq.${userId},player2_id.eq.${userId}`)
@@ -238,12 +240,17 @@ export const getRankedHistory = createServerFn({ method: "POST" })
     };
     return (rows ?? []).map((r) => {
       const first = r.player1_id === userId;
-      const result = r.result as { reason?: string } | null;
+      const result = r.result as { reason?: string; rounds?: number } | null;
+      const input = r.status === "completed" ? r.replay_input as unknown as BattleInput | null : null;
+      const teams: HistoryRow["teams"] = input?.side1?.formation && input.side2?.formation
+        ? [pickFromTeam(first ? input.side1 : input.side2), pickFromTeam(first ? input.side2 : input.side1)]
+        : null;
       return {
         matchId: r.id, status: r.status, result: first ? r.p1_result : r.p2_result, reason: result?.reason ?? null,
         ratingBefore: (first ? r.p1_rating_before : r.p2_rating_before) ?? 0, ratingAfter: first ? r.p1_rating_after : r.p2_rating_after,
         opponent: name(first ? r.p2 : r.p1), opponentRating: (first ? r.p2_rating_before : r.p1_rating_before) ?? 0,
         manaCap: r.mana_cap, rulesetIds: r.ruleset_ids ?? [], at: r.completed_at ?? r.created_at,
+        player: name(first ? r.p1 : r.p2), teams, rounds: result?.rounds ?? null,
       };
     });
   });
@@ -299,7 +306,7 @@ export const getSummonerStats = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<SummonerStat[]> => {
     const { data, error } = await context.supabase.rpc("ladder_summoner_stats");
-    if (error) { console.error("[ranked] summoner stats failed", error); return []; }
+    if (error) { console.error("[ranked] commander stats failed", error); return []; }
     return (data ?? []).map((r) => ({ summonerId: r.summoner_card_id, games: Number(r.games), wins: Number(r.wins), draws: Number(r.draws) }))
       .sort((a, b) => b.games - a.games || b.wins - a.wins);
   });

@@ -1,0 +1,1368 @@
+{
+  "retiredAbilities": {
+    "runebreath": "ancient_scale",
+    "doom_count": "hexweave",
+    "makeshift_guard": "salvager",
+    "roadwise": "windread",
+    "last_pay": "shieldwall",
+    "packmark": "bloodscent"
+  },
+  "abilities": [
+    {
+      "id": "brace",
+      "name": "Brace",
+      "originalName": "Brace",
+      "category": "defense",
+      "timing": "damage_mitigation",
+      "mechanics": "Take 1 less melee and ranged damage from each attack.",
+      "values": {
+        "reduction": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Reduction applies before armor. An attack still deals at least 1 damage after all reductions."
+      ]
+    },
+    {
+      "id": "shieldwall",
+      "name": "Shieldwall",
+      "originalName": "Shieldwall",
+      "category": "defense",
+      "timing": "damage_mitigation",
+      "mechanics": "Adjacent allies take 1 less melee and ranged damage.",
+      "values": {
+        "reduction": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Does not protect the bearer. Multiple Shieldwalls do not stack. Broken Formation disables adjacency. An attack still deals at least 1 damage."
+      ]
+    },
+    {
+      "id": "forgeheart",
+      "name": "Forgeheart",
+      "originalName": "Forgeheart",
+      "category": "defense",
+      "timing": "damage_mitigation",
+      "mechanics": "Block the first attack that hits you each battle.",
+      "values": {
+        "usesPerBattle": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "A miss does not consume the ward. Blocks attack damage to health and armor, but not on-hit debuffs or direct damage. Revival does not restore the ward."
+      ]
+    },
+    {
+      "id": "ancient_scale",
+      "name": "Ancient Scale",
+      "originalName": "Ancient Scale",
+      "category": "defense",
+      "timing": "damage_mitigation",
+      "mechanics": "Take 1 less magic damage from each attack.",
+      "values": {
+        "reduction": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Does not stack with a commander’s Magic Ward. Magic still bypasses armor. An attack still deals at least 1 damage."
+      ]
+    },
+    {
+      "id": "bloodscent",
+      "name": "Bloodscent",
+      "originalName": "Bloodscent",
+      "category": "offense",
+      "timing": "damage_calculation",
+      "mechanics": "Deal +1 attack damage to wounded enemies.",
+      "values": {
+        "bonusDamage": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Wounded means below maximum health when the attack begins. Works with every attack type."
+      ]
+    },
+    {
+      "id": "moonrush",
+      "name": "Moonrush",
+      "originalName": "Moonrush",
+      "category": "offense",
+      "timing": "after_kill",
+      "mechanics": "After defeating an enemy with your attack, attack once more.",
+      "values": {
+        "extraAttacksPerTurn": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Uses a fresh legal target at full power. Extra attacks cannot trigger another Moonrush."
+      ]
+    },
+    {
+      "id": "pounce",
+      "name": "Pounce",
+      "originalName": "Pounce",
+      "category": "offense",
+      "timing": "battle_start",
+      "mechanics": "Make one extra attack before the first round.",
+      "values": {
+        "openingAttacks": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Uses normal attack positions and targeting. Resolves in formation order, alternating teams. Revival does not repeat it."
+      ]
+    },
+    {
+      "id": "wildshot",
+      "name": "Wildshot",
+      "originalName": "wildshot",
+      "category": "targeting",
+      "timing": "target_selection",
+      "mechanics": "Ranged and magic attacks target a random enemy.",
+      "values": {},
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Uses seeded battle randomness. Does not change attack-position restrictions. Duel at Dawn overrides it from position 1."
+      ]
+    },
+    {
+      "id": "flank",
+      "name": "Flank",
+      "originalName": "flank",
+      "category": "targeting",
+      "timing": "target_selection",
+      "mechanics": "Melee attacks can strike from any position and target the rearmost enemy.",
+      "values": {},
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Duel at Dawn overrides targeting from position 1."
+      ]
+    },
+    {
+      "id": "hunt",
+      "name": "Hunt",
+      "originalName": "hunt",
+      "category": "targeting",
+      "timing": "target_selection",
+      "mechanics": "Target the enemy with the lowest health; melee attacks can strike from any position.",
+      "values": {},
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Equal health favors the frontmost enemy. Targeting priority: Duel at Dawn, Wildshot, Flank, Spotter, Hunt."
+      ]
+    },
+    {
+      "id": "spotter",
+      "name": "Spotter",
+      "originalName": "Spotter",
+      "category": "targeting",
+      "timing": "target_selection",
+      "mechanics": "Ranged and magic attacks target the first backline enemy with ranged, magic or no attack.",
+      "values": {},
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Falls back to the front enemy when there is no eligible backline target. Does not bypass armor or improve accuracy."
+      ]
+    },
+    {
+      "id": "hexweave",
+      "name": "Hexweave",
+      "originalName": "Hexweave",
+      "category": "control",
+      "timing": "after_hit",
+      "mechanics": "Hits block the target’s healing through the end of the next round.",
+      "values": {
+        "durationRounds": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Refreshes without stacking. Does not prevent armor repair or revival."
+      ]
+    },
+    {
+      "id": "crosswind",
+      "name": "Crosswind",
+      "originalName": "Crosswind",
+      "category": "control",
+      "timing": "after_hit",
+      "mechanics": "Hits give the target -1 speed next round, up to -2.",
+      "values": {
+        "speedPenalty": 1,
+        "maximumPenalty": 2
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Speed cannot fall below 1. Misses do not slow. The current round’s turn order stays fixed."
+      ]
+    },
+    {
+      "id": "primal_mend",
+      "name": "Primal Mend",
+      "originalName": "Primal Mend",
+      "category": "restoration",
+      "timing": "turn_start",
+      "mechanics": "Restore 2 of your health at the start of your turn.",
+      "values": {
+        "healing": 2
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Cannot exceed maximum health. Healing prevention blocks it; Red Hour reduces it by 1."
+      ]
+    },
+    {
+      "id": "grave_recall",
+      "name": "Grave Recall",
+      "originalName": "Grave Recall",
+      "category": "restoration",
+      "timing": "after_self_defeated",
+      "mechanics": "Once per battle, revive with 1 health and no armor.",
+      "values": {
+        "health": 1,
+        "usesPerBattle": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Skip the rest of the current round. Attack power is unchanged. Healing prevention does not block revival."
+      ]
+    },
+    {
+      "id": "salvager",
+      "name": "Salvager",
+      "originalName": "Salvager",
+      "category": "restoration",
+      "timing": "turn_start",
+      "mechanics": "At the start of your turn, repair 2 armor on the ally missing the most armor.",
+      "values": {
+        "armorRestored": 2
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Ties favor the frontmost ally. May repair the bearer. Cannot exceed maximum armor. Gilded March prevents repair."
+      ]
+    },
+    {
+      "id": "field_ration",
+      "name": "Field Ration",
+      "originalName": "Field Ration",
+      "category": "restoration",
+      "timing": "turn_start",
+      "mechanics": "At the start of your turn, restore 2 health to the frontmost ally.",
+      "values": {
+        "healing": 2
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "May heal the bearer. Cannot exceed maximum health. Healing prevention blocks it; Red Hour reduces it by 1."
+      ]
+    },
+    {
+      "id": "windread",
+      "name": "Windread",
+      "originalName": "Windread",
+      "category": "support",
+      "timing": "continuous",
+      "mechanics": "Gain +1 speed.",
+      "values": {
+        "speedBonus": 1
+      },
+      "stacking": "Duplicate copies on one unit do not stack.",
+      "interactions": [
+        "Works from every position. Does not change attack positions or grant accuracy."
+      ]
+    }
+  ],
+  "commanders": [
+    {
+      "id": "aldric_stonebanner",
+      "name": "Aldric, the Last Standard",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "torvane_crownshield",
+      "name": "Torvane, the Unbroken Oath",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "grantAbility",
+            "target": "middle_allies",
+            "abilityId": "makeshift_guard"
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 2
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "maelor_ironhand",
+      "name": "Maelor, the Iron Queen",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "front_ally",
+            "abilityId": "shieldwall"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "front_two",
+            "abilityId": "forgeheart"
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "steel",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "eira_thornpath",
+      "name": "Eira, Keeper of Thornpaths",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "speed",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "steel",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "garran_moonfang",
+      "name": "Garran, the Mooncrowned",
+      "before": {
+        "mana": 6,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "steel_allies",
+            "stat": "steel",
+            "value": 1
+          },
+          {
+            "kind": "grantAbility",
+            "target": "highest_mana_ally",
+            "abilityId": "moonrush"
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "steel",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ysilde_whitehart",
+      "name": "Ysilde, the White Hart",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "steel_allies",
+            "abilityId": "bloodscent"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "highest_mana_ally",
+            "abilityId": "primal_mend"
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "oris_glassmoth",
+      "name": "Oris, the Glass Envoy",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "strongest_spell_ally",
+            "stat": "spell",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "spell",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "veyra_nine_masks",
+      "name": "Veyra of the Nine Faces",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "grantAbility",
+            "target": "rear_three",
+            "abilityId": "windread"
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "spell",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "spell",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "the_lacquered_oracle",
+      "name": "The Lacquered Oracle",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "front_two",
+            "abilityId": "hexweave"
+          },
+          {
+            "kind": "stat",
+            "target": "front_ally",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "magicResistance",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "morcant_bellkeeper",
+      "name": "Morcant of the Last Toll",
+      "before": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "speed",
+            "value": -1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "health",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "king_ossuary",
+      "name": "Ossyr, the Bone Sovereign",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "highest_mana_ally",
+            "abilityId": "grave_recall"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "front_ally",
+            "abilityId": "salvager"
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "health",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vel_mourningstar",
+      "name": "Vel, Marshal of Mourning",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "front_two",
+            "abilityId": "crosswind"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "highest_mana_ally",
+            "abilityId": "doom_count"
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "steel",
+            "value": -1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "cael_rookwing",
+      "name": "Cael, Captain of Highwatch",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "shot_allies",
+            "stat": "shot",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "accuracy",
+            "value": 5
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "shot",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "duke_avorran",
+      "name": "Avorran, Lord of the Eyrie",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "shot_allies",
+            "abilityId": "spotter"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "rear_three",
+            "abilityId": "windread"
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "shot",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "saint_orien_of_the_gale",
+      "name": "Orien, Saint of Storms",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "highest_speed_ally",
+            "abilityId": "spotter"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "shot_allies",
+            "abilityId": "hunt"
+          },
+          {
+            "kind": "stat",
+            "target": "shot_allies",
+            "stat": "speed",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "shot",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "shot",
+            "value": -1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vaelor_runeclaw",
+      "name": "Vaelor, Keeper of Firstfire",
+      "before": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 3,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "orrun_the_first_scale",
+      "name": "Orrun, First of the Flame",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "highest_mana_ally",
+            "abilityId": "ancient_scale"
+          },
+          {
+            "kind": "stat",
+            "target": "highest_mana_ally",
+            "stat": "attackPower",
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "mana": 5,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "health",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "magicResistance",
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "thalor_worldcoil",
+      "name": "Thalor, the Worldcoil",
+      "before": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "grantAbility",
+            "target": "front_ally",
+            "abilityId": "shieldwall"
+          },
+          {
+            "kind": "grantAbility",
+            "target": "steel_allies",
+            "abilityId": "bloodscent"
+          }
+        ]
+      },
+      "after": {
+        "mana": 4,
+        "effects": [
+          {
+            "kind": "stat",
+            "target": "all_allies",
+            "stat": "armor",
+            "value": 1
+          },
+          {
+            "kind": "stat",
+            "target": "all_enemies",
+            "stat": "spell",
+            "value": -1
+          }
+        ]
+      }
+    }
+  ],
+  "troops": [
+    {
+      "id": "stoneward_hound",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "rampart_arbalist",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "banner_chirurgeon",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "gilded_castellan",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "iron_vow_captain",
+      "abilityUnlocks": [
+        {
+          "abilityId": "flank",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "moss_oracle",
+      "abilityUnlocks": [
+        {
+          "abilityId": "bloodscent",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "briar_dartling",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "antler_guardian",
+      "abilityUnlocks": [
+        {
+          "abilityId": "primal_mend",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "bloodscent",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "elderhorn_colossus",
+      "abilityUnlocks": [
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "windread",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "burrow_mouse",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "thistle_runner",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "needlewing_hunter",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "crowned_mammoth",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "whisper_sprite",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "masked_duelist",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "moon_mirror_adept",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "inkcap_familiar",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "silkknife_agent",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "knotwitch",
+      "abilityUnlocks": [
+        {
+          "abilityId": "bloodscent",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "grave_cantor",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "ossuary_guard",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "the_bell_beneath",
+      "abilityUnlocks": [
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "tallow_wisp",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "sepulcher_knight",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "rattleblade",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "black_bell_centurion",
+      "abilityUnlocks": [
+        {
+          "abilityId": "field_ration",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "hexweave",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "catacomb_sovereign",
+      "abilityUnlocks": [
+        {
+          "abilityId": "grave_recall",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "bloodscent",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "loose_feather",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "thunder_roc_ancient",
+      "abilityUnlocks": [
+        {
+          "abilityId": "moonrush",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "eyrie_runner",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "mistcaller",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "wingmender",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "pennant_swift",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "stormglass_archer",
+      "abilityUnlocks": [
+        {
+          "abilityId": "bloodscent",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "griffin_legionary",
+      "abilityUnlocks": [
+        {
+          "abilityId": "pounce",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "ember_newt",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "copper_kobold",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "ashen_drakeguard",
+      "abilityUnlocks": [
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 2
+        },
+        {
+          "abilityId": "brace",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "coal_snout_recruit",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "ironscale_skulk",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "worldcoil_heir",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "windread",
+          "unlockLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "pebble_familiar",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 7
+        }
+      ]
+    },
+    {
+      "id": "ruin_jackal",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "bronze_pilgrim",
+      "abilityUnlocks": [
+        {
+          "abilityId": "salvager",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "hedge_crossbowman",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "greycloak_duelist",
+      "abilityUnlocks": [
+        {
+          "abilityId": "shieldwall",
+          "unlockLevel": 1
+        },
+        {
+          "abilityId": "ancient_scale",
+          "unlockLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "free_lance_archer",
+      "abilityUnlocks": [
+        {
+          "abilityId": "windread",
+          "unlockLevel": 7
+        }
+      ]
+    }
+  ]
+}

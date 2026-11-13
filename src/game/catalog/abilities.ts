@@ -6,18 +6,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Brace",
     "originalName": "Brace",
     "category": "defense",
-    "timing": "round_start",
-    "mechanics": "If this unit is in position 1 or 2, it gains 2 brace points. Each point prevents 1 Steel or Shot damage after armor and is then spent. Unspent points expire when the unit takes its turn.",
+    "timing": "damage_mitigation",
+    "mechanics": "Take 1 less melee and ranged damage from each attack.",
     "values": {
-      "bracePoints": 2,
-      "eligiblePositions": [
-        1,
-        2
-      ]
+      "reduction": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Does not prevent Spell or direct damage. Damage reduced to 0 does not trigger on-damage effects. A stunned unit still loses unspent points at its skipped turn."
+      "Reduction applies before armor. An attack still deals at least 1 damage after all reductions."
     ]
   },
   {
@@ -26,14 +22,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Shieldwall",
     "category": "defense",
     "timing": "damage_mitigation",
-    "mechanics": "While this unit has at least 1 armor, adjacent allies take 1 less Steel and Shot damage after their own armor. A unit can receive protection from both neighbors.",
+    "mechanics": "Adjacent allies take 1 less melee and ranged damage.",
     "values": {
-      "reductionPerNeighbor": 1,
-      "maximumReduction": 2
+      "reduction": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Broken Formation disables adjacency benefits. Does not protect the bearer. Reduction applies after armor absorption but before brace points."
+      "Does not protect the bearer. Multiple Shieldwalls do not stack. Broken Formation disables adjacency. An attack still deals at least 1 damage."
     ]
   },
   {
@@ -41,15 +36,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Forgeheart",
     "originalName": "Forgeheart",
     "category": "defense",
-    "timing": "after_damage",
-    "mechanics": "Once per battle, after an attack breaks your last armor, restore up to 2 armor if you survive the hit.",
+    "timing": "damage_mitigation",
+    "mechanics": "Block the first attack that hits you each battle.",
     "values": {
-      "restoredArmor": 2,
       "usesPerBattle": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Restoration cannot exceed maximum armor. Gilded March prevents restoration."
+      "A miss does not consume the ward. Blocks attack damage to health and armor, but not on-hit debuffs or direct damage. Revival does not restore the ward."
     ]
   },
   {
@@ -58,15 +52,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Ancient Scale",
     "category": "defense",
     "timing": "damage_mitigation",
-    "mechanics": "Once per round, reduce an attack that would deal at least 4 health damage after armor and other guards by 2.",
+    "mechanics": "Take 1 less magic damage from each attack.",
     "values": {
-      "triggerDamage": 4,
-      "reduction": 2,
-      "usesPerRound": 1
+      "reduction": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Does not reduce direct damage. No rage resource is generated."
+      "Does not stack with a commander’s Magic Ward. Magic still bypasses armor. An attack still deals at least 1 damage."
     ]
   },
   {
@@ -75,13 +67,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Bloodscent",
     "category": "offense",
     "timing": "damage_calculation",
-    "mechanics": "Deal +1 attack damage to a target that began the action below its maximum health.",
+    "mechanics": "Deal +1 attack damage to wounded enemies.",
     "values": {
       "bonusDamage": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Checked before the attack roll, not after reflected or linked damage. Applies to Steel, Shot, and Spell attacks. Temporary maximum-health loss can make a target wounded."
+      "Wounded means below maximum health when the attack begins. Works with every attack type."
     ]
   },
   {
@@ -89,15 +81,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Moonrush",
     "originalName": "Moonrush",
     "category": "offense",
-    "timing": "after_attack",
-    "mechanics": "In rounds 3, 6, 9 and so on, make one extra legal attack at half power, rounded down, minimum 1.",
+    "timing": "after_kill",
+    "mechanics": "After defeating an enemy with your attack, attack once more.",
     "values": {
-      "everyNthRound": 3,
-      "powerPercent": 50
+      "extraAttacksPerTurn": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Select a fresh target. The extra attack cannot trigger another extra attack."
+      "Uses a fresh legal target at full power. Extra attacks cannot trigger another Moonrush."
     ]
   },
   {
@@ -106,32 +97,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Pounce",
     "category": "offense",
     "timing": "battle_start",
-    "mechanics": "From positions 4-6, deal 1 direct damage to the rearmost enemy before round 1.",
+    "mechanics": "Make one extra attack before the first round.",
     "values": {
-      "damage": 1
+      "openingAttacks": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Each bearer triggers once, in formation order. Direct damage bypasses armor."
-    ]
-  },
-  {
-    "id": "runebreath",
-    "name": "Runebreath",
-    "originalName": "Runebreath",
-    "category": "offense",
-    "timing": "before_attack",
-    "mechanics": "Cycle attacks through Steel, Spell and Shot, using your highest printed attack power. These attacks can act from any position.",
-    "values": {
-      "sequence": [
-        "steel",
-        "spell",
-        "shot"
-      ]
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "The cycle advances on a hit or miss, including Moonrush attacks."
+      "Uses normal attack positions and targeting. Resolves in formation order, alternating teams. Revival does not repeat it."
     ]
   },
   {
@@ -140,11 +112,11 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "wildshot",
     "category": "targeting",
     "timing": "target_selection",
-    "mechanics": "Shot and Spell attacks select a seeded random living enemy instead of the front enemy.",
+    "mechanics": "Ranged and magic attacks target a random enemy.",
     "values": {},
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Normal attack-position restrictions apply. Duel at Dawn overrides this from position 1."
+      "Uses seeded battle randomness. Does not change attack-position restrictions. Duel at Dawn overrides it from position 1."
     ]
   },
   {
@@ -153,11 +125,11 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "flank",
     "category": "targeting",
     "timing": "target_selection",
-    "mechanics": "Steel attacks can act from any position and target the rearmost living enemy.",
+    "mechanics": "Melee attacks can strike from any position and target the rearmost enemy.",
     "values": {},
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Runebreath selects the attack channel first. Duel at Dawn overrides targeting from position 1."
+      "Duel at Dawn overrides targeting from position 1."
     ]
   },
   {
@@ -166,11 +138,11 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "hunt",
     "category": "targeting",
     "timing": "target_selection",
-    "mechanics": "Attack the living enemy with the lowest current health; ties favor the frontmost. Steel attacks can act from any position.",
+    "mechanics": "Target the enemy with the lowest health; melee attacks can strike from any position.",
     "values": {},
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Priority: Duel at Dawn, Wildshot for Shot/Spell, Flank for Steel, then Hunt."
+      "Equal health favors the frontmost enemy. Targeting priority: Duel at Dawn, Wildshot, Flank, Spotter, Hunt."
     ]
   },
   {
@@ -178,16 +150,12 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Spotter",
     "originalName": "Spotter",
     "category": "targeting",
-    "timing": "after_hit",
-    "mechanics": "Your first hit each round spots its target until round end. Allied Shot attacks against it ignore 1 armor and gain +5 accuracy.",
-    "values": {
-      "ignoredArmor": 1,
-      "accuracyBonus": 5,
-      "usesPerRound": 1
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "timing": "target_selection",
+    "mechanics": "Ranged and magic attacks target the first backline enemy with ranged, magic or no attack.",
+    "values": {},
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Ignored armor remains intact. Multiple marks refresh without stacking."
+      "Falls back to the front enemy when there is no eligible backline target. Does not bypass armor or improve accuracy."
     ]
   },
   {
@@ -196,30 +164,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Hexweave",
     "category": "control",
     "timing": "after_hit",
-    "mechanics": "Your first hit each round cycles a hex: -1 speed, -1 attack power, then healing lock. Each lasts through the next round.",
+    "mechanics": "Hits block the target’s healing through the end of the next round.",
     "values": {
-      "penalty": 1,
       "durationRounds": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Matching hexes refresh without stacking. Different hex types can coexist."
-    ]
-  },
-  {
-    "id": "doom_count",
-    "name": "Doom Count",
-    "originalName": "Doom Count",
-    "category": "control",
-    "timing": "after_hit",
-    "mechanics": "A hit places a 3-count doom on a target without one. At each round end, count down; at zero, deal 2 direct damage and clear doom.",
-    "values": {
-      "initialCount": 3,
-      "damage": 2
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "Cannot stack or refresh an active doom. Can be reapplied after it expires."
+      "Refreshes without stacking. Does not prevent armor repair or revival."
     ]
   },
   {
@@ -227,31 +178,15 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Crosswind",
     "originalName": "Crosswind",
     "category": "control",
-    "timing": "after_action",
-    "mechanics": "After attacking, give the next living enemy in the initiative queue -1 speed for the next round; if none remains, affect the fastest enemy.",
+    "timing": "after_hit",
+    "mechanics": "Hits give the target -1 speed next round, up to -2.",
     "values": {
       "speedPenalty": 1,
       "maximumPenalty": 2
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Multiple bearers can apply at most -2 speed. The current queue does not change."
-    ]
-  },
-  {
-    "id": "packmark",
-    "name": "Packmark",
-    "originalName": "Packmark",
-    "category": "control",
-    "timing": "after_hit",
-    "mechanics": "Your first hit each round marks its target until round end. Later allied attacks against that target gain +1 power, regardless of banner.",
-    "values": {
-      "damageBonus": 1,
-      "usesPerRound": 1
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "Multiple marks do not stack. The marking attack gets no bonus from its own new mark."
+      "Speed cannot fall below 1. Misses do not slow. The current round’s turn order stays fixed."
     ]
   },
   {
@@ -259,15 +194,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Primal Mend",
     "originalName": "Primal Mend",
     "category": "restoration",
-    "timing": "after_kill",
-    "mechanics": "On your first enemy defeat each round, heal the wounded ally with the lowest health percentage by 1; ties favor the frontmost.",
+    "timing": "turn_start",
+    "mechanics": "Restore 2 of your health at the start of your turn.",
     "values": {
-      "healing": 1,
-      "usesPerRound": 1
+      "healing": 2
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "May heal any allied banner or the bearer. Healing lock blocks it."
+      "Cannot exceed maximum health. Healing prevention blocks it; Red Hour reduces it by 1."
     ]
   },
   {
@@ -276,14 +210,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Grave Recall",
     "category": "restoration",
     "timing": "after_self_defeated",
-    "mechanics": "Once per battle, revive immediately with 1 health, no armor and -1 attack power. Skip the remainder of this round.",
+    "mechanics": "Once per battle, revive with 1 health and no armor.",
     "values": {
       "health": 1,
       "usesPerBattle": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Does not grant another Pounce. Cannot exceed maximum health."
+      "Skip the rest of the current round. Attack power is unchanged. Healing prevention does not block revival."
     ]
   },
   {
@@ -291,15 +225,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Salvager",
     "originalName": "Salvager",
     "category": "restoration",
-    "timing": "after_armor_break",
-    "mechanics": "Once per round, when another unit loses its last armor, restore 1 armor to yourself, up to your maximum.",
+    "timing": "turn_start",
+    "mechanics": "At the start of your turn, repair 2 armor on the ally missing the most armor.",
     "values": {
-      "armorRestored": 1,
-      "usesPerRound": 1
+      "armorRestored": 2
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "A bearer without maximum armor gains nothing. Gilded March prevents restoration."
+      "Ties favor the frontmost ally. May repair the bearer. Cannot exceed maximum armor. Gilded March prevents repair."
     ]
   },
   {
@@ -307,31 +240,14 @@ export const ABILITIES: AbilityDefinition[] = [
     "name": "Field Ration",
     "originalName": "Field Ration",
     "category": "restoration",
-    "timing": "round_end",
-    "mechanics": "At the end of rounds 3, 6, 9, and so on, restore 1 health to the wounded ally with the lowest health percentage; ties favor the frontmost.",
+    "timing": "turn_start",
+    "mechanics": "At the start of your turn, restore 2 health to the frontmost ally.",
     "values": {
-      "healing": 1,
-      "everyNthRound": 3
+      "healing": 2
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "The bearer may heal itself. Healing lock reduces the result to 0. Resolve before fatigue."
-    ]
-  },
-  {
-    "id": "makeshift_guard",
-    "name": "Makeshift Guard",
-    "originalName": "Makeshift Guard",
-    "category": "support",
-    "timing": "round_start",
-    "mechanics": "If an adjacent ally has 0 current armor, grant the frontmost such ally 1 temporary armor until round end.",
-    "values": {
-      "temporaryArmor": 1,
-      "targetsPerRound": 1
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "Broken Formation suppresses this ability. Temporary armor is removed before round-end damage. An ally whose printed maximum armor is 0 remains eligible."
+      "May heal the bearer. Cannot exceed maximum health. Healing prevention blocks it; Red Hour reduces it by 1."
     ]
   },
   {
@@ -340,52 +256,13 @@ export const ABILITIES: AbilityDefinition[] = [
     "originalName": "Windread",
     "category": "support",
     "timing": "continuous",
-    "mechanics": "While in position 4, 5, or 6, gain +1 speed and +10 accuracy.",
+    "mechanics": "Gain +1 speed.",
     "values": {
-      "speedBonus": 1,
-      "accuracyBonus": 10,
-      "eligiblePositions": [
-        4,
-        5,
-        6
-      ]
+      "speedBonus": 1
     },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
+    "stacking": "Duplicate copies on one unit do not stack.",
     "interactions": [
-      "Recalculates immediately after movement. Accuracy is on a 0–100 scale. Open Flanks adds after Windread."
-    ]
-  },
-  {
-    "id": "roadwise",
-    "name": "Roadwise",
-    "originalName": "Roadwise",
-    "category": "support",
-    "timing": "after_targeted",
-    "mechanics": "The first time an enemy ability targets you, gain +2 speed until after your next action.",
-    "values": {
-      "speedBonus": 2,
-      "usesPerBattle": 1
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "Ordinary attack targeting does not trigger it. Does not change the current initiative queue."
-    ]
-  },
-  {
-    "id": "last_pay",
-    "name": "Last Pay",
-    "originalName": "Last Pay",
-    "category": "support",
-    "timing": "after_self_defeated",
-    "mechanics": "When defeated, adjacent allies gain +1 speed and +5 accuracy through the end of the next round.",
-    "values": {
-      "speedBonus": 1,
-      "accuracyBonus": 5,
-      "maximumStacks": 2
-    },
-    "stacking": "Duplicate copies on one unit do not stack. Team effects follow the stated cap.",
-    "interactions": [
-      "Bonuses cap at +2 speed and +10 accuracy. Broken Formation prevents new grants."
+      "Works from every position. Does not change attack positions or grant accuracy."
     ]
   }
 ];

@@ -1,0 +1,37 @@
+[
+    {
+        "valid":  true,
+        "rarity":  "common",
+        "width":  96,
+        "sha256":  "2c5617dda676f13e7af8d07e06c4aec584ff5a678d12c90dc445c04592e11938",
+        "height":  96
+    },
+    {
+        "valid":  true,
+        "rarity":  "uncommon",
+        "width":  96,
+        "sha256":  "82b757221fc8d2096d35b0d79a46d6f17e3dd9b4758338dea2a42e0e8f3f922b",
+        "height":  96
+    },
+    {
+        "valid":  true,
+        "rarity":  "rare",
+        "width":  96,
+        "sha256":  "292078eda198eddd881bcc8e810e83c7170a0151f07171eaeff9056d051aa960",
+        "height":  96
+    },
+    {
+        "valid":  true,
+        "rarity":  "epic",
+        "width":  96,
+        "sha256":  "5a15a0557c3e09e30804ee65f9c0f333860b8ded13cd1eb22760bd748ddd8fde",
+        "height":  96
+    },
+    {
+        "valid":  true,
+        "rarity":  "legendary",
+        "width":  96,
+        "sha256":  "3cf9e091f1941afdedc5d2168df739706b8d7106c30e2a82cf87a6766e3046e6",
+        "height":  96
+    }
+]

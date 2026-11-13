@@ -1,0 +1,128 @@
+{
+  "methodology": "Identical rosters and drafter; previous and revised ability engines on matching seeds. Fresh validation seeds30001-30020.",
+  "stages": [
+    {
+      "stage": "level-1",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "before": 0.57,
+          "after": 0.5767,
+          "validation": 0.51
+        },
+        {
+          "banner": "wild_courts",
+          "before": 0.4517,
+          "after": 0.4733,
+          "validation": 0.59
+        },
+        {
+          "banner": "veil_covenant",
+          "before": 0.5483,
+          "after": 0.5083,
+          "validation": 0.4283
+        },
+        {
+          "banner": "hollow_legions",
+          "before": 0.5083,
+          "after": 0.52,
+          "validation": 0.57
+        },
+        {
+          "banner": "skybound_houses",
+          "before": 0.4633,
+          "after": 0.46,
+          "validation": 0.4517
+        },
+        {
+          "banner": "wyrm_clans",
+          "before": 0.4583,
+          "after": 0.4617,
+          "validation": 0.45
+        }
+      ]
+    },
+    {
+      "stage": "mid-level",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "before": 0.5133,
+          "after": 0.5283,
+          "validation": 0.5383
+        },
+        {
+          "banner": "wild_courts",
+          "before": 0.43,
+          "after": 0.4383,
+          "validation": 0.5733
+        },
+        {
+          "banner": "veil_covenant",
+          "before": 0.4883,
+          "after": 0.475,
+          "validation": 0.37
+        },
+        {
+          "banner": "hollow_legions",
+          "before": 0.515,
+          "after": 0.5117,
+          "validation": 0.5617
+        },
+        {
+          "banner": "skybound_houses",
+          "before": 0.6,
+          "after": 0.5983,
+          "validation": 0.5383
+        },
+        {
+          "banner": "wyrm_clans",
+          "before": 0.4533,
+          "after": 0.4483,
+          "validation": 0.4183
+        }
+      ]
+    },
+    {
+      "stage": "max-level",
+      "banners": [
+        {
+          "banner": "bastion_orders",
+          "before": 0.54,
+          "after": 0.5417,
+          "validation": 0.5983
+        },
+        {
+          "banner": "wild_courts",
+          "before": 0.4583,
+          "after": 0.455,
+          "validation": 0.56
+        },
+        {
+          "banner": "veil_covenant",
+          "before": 0.565,
+          "after": 0.55,
+          "validation": 0.425
+        },
+        {
+          "banner": "hollow_legions",
+          "before": 0.4783,
+          "after": 0.4833,
+          "validation": 0.55
+        },
+        {
+          "banner": "skybound_houses",
+          "before": 0.52,
+          "after": 0.5167,
+          "validation": 0.4533
+        },
+        {
+          "banner": "wyrm_clans",
+          "before": 0.4383,
+          "after": 0.4533,
+          "validation": 0.4133
+        }
+      ]
+    }
+  ]
+}

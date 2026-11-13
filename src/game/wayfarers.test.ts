@@ -56,7 +56,7 @@ describe("Wayfarer team limit", () => {
     expect(validateTeam(team(five.slice(0, 4)), cfgWith(["open_contract"]))).toBeNull();
     expect(validateTeam(team(five), cfgWith(["open_contract"]))).toMatch(/At most 4 Wayfarers/);
   });
-  it("any summoner can recruit Wayfarers in ranked, but not another Banner's troops", () => {
+  it("any commander can recruit Wayfarers in ranked, but not another Banner's troops", () => {
     const ok = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: two }, cfgWith([]));
     expect(ok).toBeNull();
     const bad = validateRankedTeam({ summonerId: summonerOf("wild_courts"), unitIds: ["ashen_page"] }, cfgWith([]));
@@ -78,43 +78,25 @@ describe("Wayfarer team limit", () => {
   });
 });
 
-describe("Wayfarer abilities fire in battle", () => {
-  /** Runs battles with the given player team against varied enemies until an event text matches. */
-  const fires = (player: TeamPick, label: string | RegExp, enemyBanner?: BannerId, rulesets: string[] = []) => {
-    for (let s = 1; s < 200; s++) {
-      const cfg = { ...cfgWith(rulesets, 60), seed: s * 7 + 3, banners: enemyBanner ? [enemyBanner] : ALL_BANNERS };
-      const r = simulateBattle(cfg, [player, aiDraft(cfg, s)]);
-      if (r.events.some((e) => (typeof label === "string" ? e.text.includes(label) : label.test(e.text)))) return true;
-    }
-    return false;
-  };
-  const bastion = summonerOf("bastion_orders");
 
-  it("Makeshift Guard props up an armorless neighbour", () => {
-    expect(fires({ summonerId: bastion, unitIds: ["bronze_pilgrim", "ashen_page"] }, "Makeshift Guard")).toBe(true);
+describe("Wayfarer support in the shared kit", () => {
+  it("uses the same healing, repair and defensive abilities as banner troops", () => {
+    expect(UNIT_BY_ID["bronze_pilgrim"]!.abilities).toContain("salvager");
+    expect(UNIT_BY_ID["bannerless_veteran"]!.abilities).toContain("salvager");
+    expect(UNIT_BY_ID["contract_mender"]!.abilities).toContain("field_ration");
+    expect(UNIT_BY_ID["ruin_jackal"]!.abilities).toContain("windread");
+    expect(UNIT_BY_ID["greycloak_duelist"]!.abilities).toContain("shieldwall");
   });
-  it("Field Ration heals a wounded ally every 3rd round", () => {
-    // Keep the wounded formation alive through round 3; this timing check must not depend on AI drafts.
-    const r = simulateBattle({ ...cfgWith([], 60), seed: 1 }, [
-      { summonerId: bastion, unitIds: ["bronze_pilgrim", "contract_mender", "citadel_behemoth"] },
-      { summonerId: bastion, unitIds: ["granite_bailiff", "contract_mender", "gatebolt_archer"] },
+  it("a Wayfarer heals and repairs a banner frontline in real catalog battles", () => {
+    const cfg = cfgWith([],60);
+    const result = simulateBattle(cfg,[
+      {summonerId:summonerOf("bastion_orders"),unitIds:["granite_bailiff","bronze_pilgrim","contract_mender"]},
+      {summonerId:summonerOf("wild_courts"),unitIds:["whitehart_ravager","grove_tender","needlewing_hunter"]},
     ]);
-    const healing = r.events.filter((e) => e.text.includes("Field Ration") && e.target?.startsWith("0-"));
-    expect(healing.some((e) => e.round === 3 && e.amount === 1)).toBe(true);
-    expect(healing.every((e) => e.round % 3 === 0)).toBe(true);
-  });
-  it("Salvager regains armor when a unit's armor breaks", () => {
-    expect(fires({ summonerId: bastion, unitIds: ["granite_bailiff", "bannerless_veteran", "gatebolt_archer"] }, "salvages 1 armor")).toBe(true);
-  });
-  it("Last Pay spurs neighbours when the bearer falls", () => {
-    expect(fires({ summonerId: bastion, unitIds: ["ashen_page", "greycloak_duelist", "lantern_squire"] }, "Last Pay")).toBe(true);
-  });
-  it("Roadwise reacts to an enemy ability (Pounce on the rearmost unit)", () => {
-    const pouncer = UNIT_BY_ID["palace_of_one"]!;
-    const enemy: TeamPick = { summonerId: summonerOf("veil_covenant"), unitIds: ["lacquered_sentinel", "mirrorblade_envoy", "gloam_courtier", pouncer.id], levels: { [pouncer.id]: pouncer.levelCap } };
-    const player: TeamPick = { summonerId: bastion, unitIds: ["granite_bailiff", "citadel_behemoth", "ruin_jackal"] };
-    const r = simulateBattle(cfgWith([], 60), [player, enemy]);
-    expect(r.events.some((e) => e.text.includes("pounces on Ruin Jackal"))).toBe(true);
-    expect(r.events.some((e) => e.text.includes("Ruin Jackal sidesteps the trap (Roadwise"))).toBe(true);
+    const repair=result.events.find(e=>e.actor?.includes("bronze_pilgrim") && e.text.includes("(Salvager)"));
+    const heal=result.events.find(e=>e.actor?.includes("contract_mender") && e.text.includes("Field Ration"));
+    expect(repair?.target).toContain("granite_bailiff");
+    expect(heal?.target).toContain("granite_bailiff");
+    expect(heal?.amount).toBeLessThanOrEqual(2);
   });
 });

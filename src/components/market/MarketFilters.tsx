@@ -78,7 +78,7 @@ export function MarketFilters({
           {(
             [
               ["all", "All"],
-              ["summoner", "Summoners"],
+              ["summoner", "Commanders"],
               ["troop", "Troops"],
             ] as const
           ).map(([id, label]) => (

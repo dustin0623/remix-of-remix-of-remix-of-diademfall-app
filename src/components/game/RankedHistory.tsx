@@ -4,8 +4,10 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Swords } from "lucide-react";
 import { rulesetName } from "@/game/catalogs";
+import { maxUnits } from "@/game/match";
 import { getRankedHistory, type HistoryRow } from "@/lib/ranked/ranked.functions";
-import { cn } from "@/lib/utils";
+import { BattleLineup } from "./BattleCardThumbnail";
+import { BattleMana } from "./BattleFlow";
 
 const ruleName = (ids: string[]) =>
   (ids.length ? ids : ["open_chronicle"]).map(rulesetName).join(", ");
@@ -80,59 +82,51 @@ export function RankedHistory({
           </button>
         </div>
       )}
-      <ul className="divide-y divide-border rounded-xl border border-border bg-card/60">
+      <ul className="match-history-list">
         {rows.map((h) => {
           const delta = h.ratingAfter !== null ? h.ratingAfter - h.ratingBefore : null;
           return (
-            <li key={h.matchId} className="flex items-center gap-4 px-4 py-2.5 text-sm">
-              <div className="w-20">
-                <div
-                  className={cn(
-                    "font-display font-bold uppercase",
-                    h.result === "win"
-                      ? "text-success"
-                      : h.result === "loss"
-                        ? "text-destructive"
-                        : "text-muted-foreground",
-                  )}
-                >
-                  {label(h)}
+            <li key={h.matchId} className="match-history-entry">
+              <div className="match-history-teams">
+                <section className="match-overview-team" data-side="you">
+                  <h3>
+                    {h.player ?? "You"} <small>{h.ratingBefore} rating</small>
+                  </h3>
+                  <BattleLineup team={h.teams?.[0]} slots={maxUnits(h.rulesetIds)} />
+                </section>
+                <div className="match-history-center" data-result={h.result ?? undefined}>
+                  <strong className="match-overview-vs">VS</strong>
+                  <span>
+                    {label(h)}
+                    {h.reason === "timeout" ? " by timeout" : ""}
+                  </span>
+                  <Link
+                    to="/ranked/$matchId"
+                    params={{ matchId: h.matchId }}
+                    className="match-quiet-button"
+                  >
+                    {h.status === "completed" && !h.reason ? "Replay" : "Open match"}
+                  </Link>
                 </div>
-                {h.reason === "timeout" && (
-                  <div className="text-[10px] text-muted-foreground">by timeout</div>
-                )}
+                <section className="match-overview-team" data-side="rival">
+                  <h3>
+                    {h.opponent} <small>{h.opponentRating} rating</small>
+                  </h3>
+                  <BattleLineup team={h.teams?.[1]} slots={maxUnits(h.rulesetIds)} />
+                </section>
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="truncate">
-                  vs <span className="font-semibold">{h.opponent}</span>{" "}
-                  <span className="text-xs text-muted-foreground">({h.opponentRating})</span>
-                </div>
-                <div className="truncate text-xs text-muted-foreground">
-                  Mana {h.manaCap} · {ruleName(h.rulesetIds)}
-                </div>
-              </div>
-              <span
-                className={cn(
-                  "w-14 text-right font-semibold tabular-nums",
-                  delta === null
-                    ? "text-muted-foreground"
-                    : delta >= 0
-                      ? "text-success"
-                      : "text-destructive",
+              <div className="match-overview-meta">
+                {h.rounds != null && <span>Rounds {h.rounds}</span>}
+                <BattleMana value={h.manaCap} />
+                <span>{ruleName(h.rulesetIds)}</span>
+                {delta !== null && (
+                  <span className={delta >= 0 ? "text-success" : "text-destructive"}>
+                    {delta >= 0 ? "+" : ""}
+                    {delta} rating
+                  </span>
                 )}
-              >
-                {delta === null ? "—" : `${delta >= 0 ? "+" : ""}${delta}`}
-              </span>
-              <span className="hidden w-36 text-right text-xs text-muted-foreground sm:block">
-                {new Date(h.at).toLocaleString()}
-              </span>
-              <Link
-                to="/ranked/$matchId"
-                params={{ matchId: h.matchId }}
-                className="w-14 text-right text-xs font-semibold text-primary hover:underline"
-              >
-                {h.status === "completed" && !h.reason ? "Replay" : "Open"}
-              </Link>
+                <time dateTime={h.at}>{new Date(h.at).toLocaleString()}</time>
+              </div>
             </li>
           );
         })}

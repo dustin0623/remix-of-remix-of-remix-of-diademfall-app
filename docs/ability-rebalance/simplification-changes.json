@@ -1,0 +1,418 @@
+[
+  {
+    "id": "brace",
+    "before": {
+      "mechanics": "If this unit is in position 1 or 2, it gains 2 brace points. Each point prevents 1 Steel or Shot damage after armor and is then spent. Unspent points expire when the unit takes its turn.",
+      "values": {
+        "bracePoints": 2,
+        "eligiblePositions": [
+          1,
+          2
+        ]
+      }
+    },
+    "after": {
+      "mechanics": "In the first two positions, block up to 2 melee or ranged damage each round before taking your turn.",
+      "values": {
+        "bracePoints": 2,
+        "eligiblePositions": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
+    "id": "shieldwall",
+    "before": {
+      "mechanics": "While this unit has at least 1 armor, adjacent allies take 1 less Steel and Shot damage after their own armor. A unit can receive protection from both neighbors.",
+      "values": {
+        "reductionPerNeighbor": 1,
+        "maximumReduction": 2
+      }
+    },
+    "after": {
+      "mechanics": "While armored, adjacent allies take 1 less melee and ranged damage.",
+      "values": {
+        "reductionPerNeighbor": 1,
+        "maximumReduction": 1
+      }
+    }
+  },
+  {
+    "id": "forgeheart",
+    "before": {
+      "mechanics": "Once per battle, after an attack breaks your last armor, restore up to 2 armor if you survive the hit.",
+      "values": {
+        "restoredArmor": 2,
+        "usesPerBattle": 1
+      }
+    },
+    "after": {
+      "mechanics": "Once per battle, restore up to 2 armor after surviving an attack that breaks your armor.",
+      "values": {
+        "restoredArmor": 2,
+        "usesPerBattle": 1
+      }
+    }
+  },
+  {
+    "id": "ancient_scale",
+    "before": {
+      "mechanics": "Once per round, reduce an attack that would deal at least 4 health damage after armor and other guards by 2.",
+      "values": {
+        "triggerDamage": 4,
+        "reduction": 2,
+        "usesPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "Once per round, reduce a hit of 4 or more health damage by 2.",
+      "values": {
+        "triggerDamage": 4,
+        "reduction": 2,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "bloodscent",
+    "before": {
+      "mechanics": "Deal +1 attack damage to a target that began the action below its maximum health.",
+      "values": {
+        "bonusDamage": 1
+      }
+    },
+    "after": {
+      "mechanics": "Deal +1 attack damage to wounded enemies.",
+      "values": {
+        "bonusDamage": 1
+      }
+    }
+  },
+  {
+    "id": "moonrush",
+    "before": {
+      "mechanics": "In rounds 3, 6, 9 and so on, make one extra legal attack at half power, rounded down, minimum 1.",
+      "values": {
+        "everyNthRound": 3,
+        "powerPercent": 50
+      }
+    },
+    "after": {
+      "mechanics": "Every third round, make one extra attack at half power, rounded down (minimum 1).",
+      "values": {
+        "everyNthRound": 3,
+        "powerPercent": 50
+      }
+    }
+  },
+  {
+    "id": "pounce",
+    "before": {
+      "mechanics": "From positions 4-6, deal 1 direct damage to the rearmost enemy before round 1.",
+      "values": {
+        "damage": 1
+      }
+    },
+    "after": {
+      "mechanics": "From the back three positions, deal 1 direct damage to the rearmost enemy before battle.",
+      "values": {
+        "damage": 1
+      }
+    }
+  },
+  {
+    "id": "runebreath",
+    "before": {
+      "mechanics": "Cycle attacks through Steel, Spell and Shot, using your highest printed attack power. These attacks can act from any position.",
+      "values": {
+        "sequence": [
+          "steel",
+          "spell",
+          "shot"
+        ]
+      }
+    },
+    "after": {
+      "mechanics": "Cycle attacks through melee, magic and ranged, using your highest printed attack power from any position.",
+      "values": {
+        "sequence": [
+          "steel",
+          "spell",
+          "shot"
+        ]
+      }
+    }
+  },
+  {
+    "id": "wildshot",
+    "before": {
+      "mechanics": "Shot and Spell attacks select a seeded random living enemy instead of the front enemy.",
+      "values": {}
+    },
+    "after": {
+      "mechanics": "Ranged and magic attacks target a random enemy.",
+      "values": {}
+    }
+  },
+  {
+    "id": "flank",
+    "before": {
+      "mechanics": "Steel attacks can act from any position and target the rearmost living enemy.",
+      "values": {}
+    },
+    "after": {
+      "mechanics": "Melee attacks can strike from any position and target the rearmost enemy.",
+      "values": {}
+    }
+  },
+  {
+    "id": "hunt",
+    "before": {
+      "mechanics": "Attack the living enemy with the lowest current health; ties favor the frontmost. Steel attacks can act from any position.",
+      "values": {}
+    },
+    "after": {
+      "mechanics": "Target the enemy with the lowest health; melee attacks can strike from any position.",
+      "values": {}
+    }
+  },
+  {
+    "id": "spotter",
+    "before": {
+      "mechanics": "Your first hit each round spots its target until round end. Allied Shot attacks against it ignore 1 armor and gain +5 accuracy.",
+      "values": {
+        "ignoredArmor": 1,
+        "accuracyBonus": 5,
+        "usesPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "Your first hit each round marks its target so allied ranged attacks ignore 1 armor that round.",
+      "values": {
+        "ignoredArmor": 1,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "hexweave",
+    "before": {
+      "mechanics": "Your first hit each round cycles a hex: -1 speed, -1 attack power, then healing lock. Each lasts through the next round.",
+      "values": {
+        "penalty": 1,
+        "durationRounds": 1
+      }
+    },
+    "after": {
+      "mechanics": "Your first hit each round blocks the target's healing through the end of the next round.",
+      "values": {
+        "healingBlocked": true,
+        "durationRounds": 1,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "doom_count",
+    "before": {
+      "mechanics": "A hit places a 3-count doom on a target without one. At each round end, count down; at zero, deal 2 direct damage and clear doom.",
+      "values": {
+        "initialCount": 3,
+        "damage": 2
+      }
+    },
+    "after": {
+      "mechanics": "Hits curse an unmarked target: after three round ends, it takes 2 direct damage.",
+      "values": {
+        "initialCount": 3,
+        "damage": 2
+      }
+    }
+  },
+  {
+    "id": "crosswind",
+    "before": {
+      "mechanics": "After attacking, give the next living enemy in the initiative queue -1 speed for the next round; if none remains, affect the fastest enemy.",
+      "values": {
+        "speedPenalty": 1,
+        "maximumPenalty": 2
+      }
+    },
+    "after": {
+      "mechanics": "Your first hit each round gives its target -1 speed for the next round.",
+      "values": {
+        "speedPenalty": 1,
+        "maximumPenalty": 2,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "packmark",
+    "before": {
+      "mechanics": "Your first hit each round marks its target until round end. Later allied attacks against that target gain +1 power, regardless of banner.",
+      "values": {
+        "damageBonus": 1,
+        "usesPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "Your first hit each round marks its target; later allied attacks deal +1 damage to it that round.",
+      "values": {
+        "damageBonus": 1,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "primal_mend",
+    "before": {
+      "mechanics": "On your first enemy defeat each round, heal the wounded ally with the lowest health percentage by 1; ties favor the frontmost.",
+      "values": {
+        "healing": 1,
+        "usesPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "On your first kill each round, heal the most wounded ally by 1.",
+      "values": {
+        "healing": 1,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "grave_recall",
+    "before": {
+      "mechanics": "Once per battle, revive immediately with 1 health, no armor and -1 attack power. Skip the remainder of this round.",
+      "values": {
+        "health": 1,
+        "usesPerBattle": 1
+      }
+    },
+    "after": {
+      "mechanics": "Once per battle, revive with 1 health, no armor and -1 attack power, then skip the rest of the round.",
+      "values": {
+        "health": 1,
+        "usesPerBattle": 1
+      }
+    }
+  },
+  {
+    "id": "salvager",
+    "before": {
+      "mechanics": "Once per round, when another unit loses its last armor, restore 1 armor to yourself, up to your maximum.",
+      "values": {
+        "armorRestored": 1,
+        "usesPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "Once per round, restore 1 of your missing armor when another unit's armor breaks.",
+      "values": {
+        "armorRestored": 1,
+        "usesPerRound": 1
+      }
+    }
+  },
+  {
+    "id": "field_ration",
+    "before": {
+      "mechanics": "At the end of rounds 3, 6, 9, and so on, restore 1 health to the wounded ally with the lowest health percentage; ties favor the frontmost.",
+      "values": {
+        "healing": 1,
+        "everyNthRound": 3
+      }
+    },
+    "after": {
+      "mechanics": "Every third round, heal the most wounded ally by 1 at round end.",
+      "values": {
+        "healing": 1,
+        "everyNthRound": 3
+      }
+    }
+  },
+  {
+    "id": "makeshift_guard",
+    "before": {
+      "mechanics": "If an adjacent ally has 0 current armor, grant the frontmost such ally 1 temporary armor until round end.",
+      "values": {
+        "temporaryArmor": 1,
+        "targetsPerRound": 1
+      }
+    },
+    "after": {
+      "mechanics": "At round start, give an armorless adjacent ally 1 temporary armor for that round.",
+      "values": {
+        "temporaryArmor": 1,
+        "targetsPerRound": 1,
+        "maximumTemporaryArmor": 1
+      }
+    }
+  },
+  {
+    "id": "windread",
+    "before": {
+      "mechanics": "While in position 4, 5, or 6, gain +1 speed and +10 accuracy.",
+      "values": {
+        "speedBonus": 1,
+        "accuracyBonus": 10,
+        "eligiblePositions": [
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "after": {
+      "mechanics": "In the back three positions, gain +1 speed and +10 accuracy.",
+      "values": {
+        "speedBonus": 1,
+        "accuracyBonus": 10,
+        "eligiblePositions": [
+          4,
+          5,
+          6
+        ]
+      }
+    }
+  },
+  {
+    "id": "roadwise",
+    "before": {
+      "mechanics": "The first time an enemy ability targets you, gain +2 speed until after your next action.",
+      "values": {
+        "speedBonus": 2,
+        "usesPerBattle": 1
+      }
+    },
+    "after": {
+      "mechanics": "Once per battle, gain +2 speed when an enemy ability targets you, lasting until your next turn ends.",
+      "values": {
+        "speedBonus": 2,
+        "usesPerBattle": 1
+      }
+    }
+  },
+  {
+    "id": "last_pay",
+    "before": {
+      "mechanics": "When defeated, adjacent allies gain +1 speed and +5 accuracy through the end of the next round.",
+      "values": {
+        "speedBonus": 1,
+        "accuracyBonus": 5,
+        "maximumStacks": 2
+      }
+    },
+    "after": {
+      "mechanics": "On defeat, adjacent allies gain +1 speed and +5 accuracy through the next round.",
+      "values": {
+        "speedBonus": 1,
+        "accuracyBonus": 5,
+        "maximumStacks": 2
+      }
+    }
+  }
+]

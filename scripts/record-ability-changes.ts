@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { TROOPS } from "../src/game/catalog/troops";
 import { SUMMONERS } from "../src/game/catalog/summoners";
 
@@ -53,23 +53,6 @@ writeFileSync(
         after: { mana: s.mana, effects: s.effects },
       };
     }),
-    null,
-    2,
-  ) + "\n",
-);
-const icons = JSON.parse(readFileSync("docs/ability-rebalance/icon-prompts.json", "utf8")).icons;
-writeFileSync(
-  "docs/ability-rebalance/icon-prompts.json",
-  JSON.stringify(
-    {
-      generator: "built-in image_gen",
-      canvas: { width: 150, height: 152 },
-      transparent: true,
-      icons: icons.map((icon: { id: string; prompt: string }) => ({
-        id: icon.id,
-        prompt: icon.prompt,
-      })),
-    },
     null,
     2,
   ) + "\n",

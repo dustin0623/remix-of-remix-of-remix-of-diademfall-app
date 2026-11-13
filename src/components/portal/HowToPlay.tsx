@@ -50,7 +50,7 @@ export function HowToPlay({
             <div>
               <h3>01 · Read the battlefield</h3>
               <p>
-                Check the mana cap, available Banners, and battle rules. Your summoner and troops
+                Check the mana cap, available Banners, and battle rules. Your commander and troops
                 share one mana budget.
               </p>
             </div>
@@ -60,7 +60,7 @@ export function HowToPlay({
             <div>
               <h3>02 · Assemble your warband</h3>
               <p>
-                Choose a summoner, then recruit troops from their Banner and eligible Wayfarers. The
+                Choose a commander, then recruit troops from their Banner and eligible Wayfarers. The
                 match rules decide the unit limit. Abilities are shared combat skills across all
                 Banners.
               </p>

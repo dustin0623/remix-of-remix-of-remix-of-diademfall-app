@@ -145,13 +145,15 @@ export function UnitCardView({
   );
 }
 
-export function summonerEffectText(s: SummonerDefinition) {
+export function summonerEffectText(s: Pick<SummonerDefinition, "effects">) {
   return s.effects.map((e) => {
-    const who = e.target.replace(/_/g, " ");
+    const who = e.target === "all_allies" ? "Allies" : e.target === "all_enemies" ? "Enemies" : e.target.replace(/_/g, " ");
+    if (e.stat === "magicResistance") return "Allies take 1 less magic damage";
     if (e.kind === "grantAbility")
       return `${who}: gain ${ABILITY_BY_ID[e.abilityId!]?.name ?? e.abilityId}`;
     const sign = (e.value ?? 0) > 0 ? "+" : "";
-    return `${who}: ${sign}${e.value} ${e.stat}${e.condition ? ` (${e.condition.replace(/([A-Z0-9]+)/g, " $1").toLowerCase()})` : ""}`;
+    const label = ({ steel: "melee damage", shot: "ranged damage", spell: "magic damage", health: "health", armor: "armor", speed: "speed" } as Record<string,string>)[e.stat ?? ""] ?? e.stat;
+    return `${who}: ${sign}${e.value} ${label}`;
   });
 }
 
@@ -168,7 +170,7 @@ export function SummonerCardView({
   size?: "sm" | "md";
 }) {
   return (
-    <Frame {...rest} label={s.name + ", " + s.rarity + " summoner"}>
+    <Frame {...rest} label={s.name + ", " + s.rarity + " commander"}>
       <CardFace
         card={s}
         mana={manaOverride ?? s.mana}

@@ -33,7 +33,7 @@ export async function saveTeam(userId: string, name: string, pick: TeamPick): Pr
   const clean = name.trim().slice(0, DECK_NAME_MAX);
   if (!clean) return "Give your team a name.";
   const summoner = SUMMONERS.find((s) => s.id === pick.summonerId);
-  if (!summoner || pick.unitIds.length === 0) return "Pick a summoner and at least one unit first.";
+  if (!summoner || pick.unitIds.length === 0) return "Pick a commander and at least one unit first.";
   const { error } = await supabase.from("decks")
     .upsert({
       player_id: userId, name: clean, banner_id: summoner.banner, summoner_card_id: summoner.id,

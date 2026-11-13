@@ -1,0 +1,23 @@
+{
+  "desktop": {
+    "cardHeight": 387.796875,
+    "cardWidth": 277,
+    "cornerRadius": "0px",
+    "documentWidth": 1289,
+    "skillGapAbove": 10.8125,
+    "skillGapBelow": 10.8125,
+    "viewport": 1304
+  },
+  "mobile": {
+    "bannerRemoved": true,
+    "cardHeight": 206.5,
+    "cardWidth": 147.5,
+    "cornerRadius": "0px",
+    "documentWidth": 377,
+    "leftOutsideFraction": 0.3333330796543797,
+    "rightOutsideFraction": 0.3333329274470075,
+    "skillGapAbove": 4.4375,
+    "skillGapBelow": 4.4375,
+    "viewport": 390
+  }
+}

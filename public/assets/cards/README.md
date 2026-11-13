@@ -6,7 +6,7 @@ Layout: {banner}/{rarity}/{summoner-or-normal}/regular_{catalog_id}.png
 
 Raw transparent portraits, transparent rarity frames and patterned backdrops live separately under public/assets/raw. Final textures layer those assets with a banner crest and empty mana badge. Names, live stat values, levels and abilities are rendered by the app.
 
-Every rarity uses the same silver rim, with clean chamfered top corners and a continuous top rail. Only the inner flame changes: white, green, blue, purple or ember. The flame seals follow the user's supplied frame references. No wooden banner or bottom panel is used.
+Every rarity uses the same silver frame with sharp square outer corners, simple inner-corner accents and a continuous top rail. Only the cleaned flame color changes: white, green, blue, purple or ember. Frame artwork matches the game's crests and characters.
 
 The existing manifest retains original generation prompts and source checksums, and records the final canvas, texture checksum and layer paths. Gold foil assets are not part of this pass.
 
