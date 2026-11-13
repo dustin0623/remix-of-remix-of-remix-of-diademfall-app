@@ -4,7 +4,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { cn } from "@/lib/utils";
 import { AbilityIcon } from "./AbilityIcon";
 
-/** Matches ref/SkillTooltipContent: copper border, painted header, icon/name and readable effect. */
+/** Presents an ability's icon, name and effect in the shared painted tooltip style. */
 export function AbilityTooltip({
   title,
   description,

@@ -75,8 +75,5 @@ use the editor.
 - Splinterlands-style page chrome (painted PageHero band, SegmentTabs, ornate buttons/panels) lives in src/components/portal and the portal utilities in src/styles.css; game pages reuse them instead of one-off headers (why: one consistent look across pages).
 - The Drizzle migration set starts empty after a remix; the database's existing schema (catalog, players, ranked, wallets, packs, economy) predates Drizzle, so new schema changes are added as new migrations on top and must keep matching the names and signatures the app calls (why: server functions and SQL procedures depend on them).
 
-# Reference code
-- ref/ holds a plain-file copy of github.com/dustin0623/official-boom-game-v1 (no nested .git); it is reference only, outside tsconfig/vitest includes and ignored by ESLint (why: never built, tested or imported by this app).
-
 # Build
 - vite.config.ts maps rpc-websockets and rc.1 @solana/codecs* to the importer's nearest dist/index.browser.mjs (why: they export only browser/node builds; the Worker build can't resolve them).

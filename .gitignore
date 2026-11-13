@@ -33,3 +33,6 @@ dist-ssr
 
 # Local asset production intermediates
 .asset-work/
+
+# External reference copy
+/ref/
