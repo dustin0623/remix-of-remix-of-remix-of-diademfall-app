@@ -2384,7 +2384,7 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
 }
 .play-dashboard-tabs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   height: auto;
   gap: 12px;
