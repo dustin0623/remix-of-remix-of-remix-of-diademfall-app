@@ -64,7 +64,7 @@ export function GameHeader() {
             ))}
             <NavigationMenu.Item value="realm">
               <NavigationMenu.Trigger
-                className={`hud-nav-link hud-play-trigger ${["/leaderboard", "/treasury", "/wallet", "/activity"].includes(path) ? "hud-nav-active" : ""}`}
+                className={`hud-nav-link hud-play-trigger ${["/treasury", "/activity"].includes(path) ? "hud-nav-active" : ""}`}
               >
                 <HudIcon name="ladder" />
                 <span>
@@ -74,9 +74,7 @@ export function GameHeader() {
               <NavigationMenu.Content className="hud-play-dropdown">
                 {(
                   [
-                    ["/leaderboard", "Leaderboard"],
                     ["/treasury", "Treasury"],
-                    ["/wallet", "Wallet"],
                     ["/activity", "Activity"],
                   ] as const
                 ).map(([to, label]) => (
