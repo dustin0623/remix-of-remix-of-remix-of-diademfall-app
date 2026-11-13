@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ProfileMenu } from "@/components/game/ProfileMenu";
 import { LoginDialog } from "@/components/auth/LoginDialog";
 import { WalletBadge } from "@/components/economy/WalletBadge";
 import { HudIcon } from "@/components/portal/HudIcon";
@@ -31,7 +31,6 @@ export function GameHeader() {
       active: collection,
       search: { section: "collection" as const },
     },
-    { to: "/codex", label: "Codex", icon: "codex", active: path === "/codex" },
   ] as const;
   return (
     <header className="game-header game-header-v4">
@@ -62,46 +61,25 @@ export function GameHeader() {
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
             ))}
-            <NavigationMenu.Item value="realm">
-              <NavigationMenu.Trigger
-                className={`hud-nav-link hud-play-trigger ${["/treasury", "/activity"].includes(path) ? "hud-nav-active" : ""}`}
-              >
-                <HudIcon name="ladder" />
-                <span>
-                  Realm <ChevronDown className="size-2.5" />
-                </span>
-              </NavigationMenu.Trigger>
-              <NavigationMenu.Content className="hud-play-dropdown">
-                {(
-                  [
-                    ["/treasury", "Treasury"],
-                    ["/activity", "Activity"],
-                  ] as const
-                ).map(([to, label]) => (
-                  <NavigationMenu.Link asChild key={to}>
-                    <Link to={to} onClick={() => setMenu("")}>
-                      {label}
-                    </Link>
-                  </NavigationMenu.Link>
-                ))}
-              </NavigationMenu.Content>
-            </NavigationMenu.Item>
           </NavigationMenu.List>
         </NavigationMenu.Root>
         <div className="hud-account-area">
           <WalletBadge />
-          <div className="hud-profile">
-            <HudIcon name="ranked" className="hud-profile-emblem" />
-            <div className="hud-profile-name">
-              <strong>{account?.displayName ?? (user ? "Adventurer" : "Log In")}</strong>
-              <span>
-                {account
-                  ? `${divisionFor(account.rating)} · ${account.rating}`
-                  : "Your legend starts here"}
-              </span>
+          {user ? (
+            <ProfileMenu
+              name={account?.displayName ?? "Adventurer"}
+              detail={account ? `${divisionFor(account.rating)} · ${account.rating}` : "Your legend starts here"}
+            />
+          ) : (
+            <div className="hud-profile">
+              <HudIcon name="ranked" className="hud-profile-emblem" />
+              <div className="hud-profile-name">
+                <strong>Log In</strong>
+                <span>Your legend starts here</span>
+              </div>
+              <LoginDialog triggerClassName="hud-account-trigger" label="Log in" />
             </div>
-            <LoginDialog triggerClassName="hud-account-trigger" label="Log in" />
-          </div>
+          )}
         </div>
       </div>
     </header>

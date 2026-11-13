@@ -20,6 +20,8 @@ import { Route as AuthenticatedActivityRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedLeaderboardRouteImport } from './routes/_authenticated/leaderboard'
 import { Route as AuthenticatedMarketRouteImport } from './routes/_authenticated/market'
 import { Route as AuthenticatedOpenRouteImport } from './routes/_authenticated/open'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
 import { Route as AuthenticatedShopRouteImport } from './routes/_authenticated/shop'
 import { Route as AuthenticatedWalletRouteImport } from './routes/_authenticated/wallet'
 import { Route as AuthenticatedAdminTreasuryRouteImport } from './routes/_authenticated/admin.treasury'
@@ -81,6 +83,16 @@ const AuthenticatedOpenRoute = AuthenticatedOpenRouteImport.update({
   path: '/open',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedShopRoute = AuthenticatedShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -121,6 +133,8 @@ export interface FileRoutesByFullPath {
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/shop': typeof AuthenticatedShopRoute
   '/wallet': typeof AuthenticatedWalletRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
@@ -138,6 +152,8 @@ export interface FileRoutesByTo {
   '/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/market': typeof AuthenticatedMarketRoute
   '/open': typeof AuthenticatedOpenRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/shop': typeof AuthenticatedShopRoute
   '/wallet': typeof AuthenticatedWalletRoute
   '/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
@@ -157,6 +173,8 @@ export interface FileRoutesById {
   '/_authenticated/leaderboard': typeof AuthenticatedLeaderboardRoute
   '/_authenticated/market': typeof AuthenticatedMarketRoute
   '/_authenticated/open': typeof AuthenticatedOpenRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/shop': typeof AuthenticatedShopRoute
   '/_authenticated/wallet': typeof AuthenticatedWalletRoute
   '/_authenticated/admin/treasury': typeof AuthenticatedAdminTreasuryRoute
@@ -176,6 +194,8 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/market'
     | '/open'
+    | '/profile'
+    | '/settings'
     | '/shop'
     | '/wallet'
     | '/admin/treasury'
@@ -193,6 +213,8 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/market'
     | '/open'
+    | '/profile'
+    | '/settings'
     | '/shop'
     | '/wallet'
     | '/admin/treasury'
@@ -211,6 +233,8 @@ export interface FileRouteTypes {
     | '/_authenticated/leaderboard'
     | '/_authenticated/market'
     | '/_authenticated/open'
+    | '/_authenticated/profile'
+    | '/_authenticated/settings'
     | '/_authenticated/shop'
     | '/_authenticated/wallet'
     | '/_authenticated/admin/treasury'
@@ -307,6 +331,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOpenRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/shop': {
       id: '/_authenticated/shop'
       path: '/shop'
@@ -350,6 +388,8 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedLeaderboardRoute: typeof AuthenticatedLeaderboardRoute
   AuthenticatedMarketRoute: typeof AuthenticatedMarketRoute
   AuthenticatedOpenRoute: typeof AuthenticatedOpenRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedShopRoute: typeof AuthenticatedShopRoute
   AuthenticatedWalletRoute: typeof AuthenticatedWalletRoute
   AuthenticatedAdminTreasuryRoute: typeof AuthenticatedAdminTreasuryRoute
@@ -362,6 +402,8 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedLeaderboardRoute: AuthenticatedLeaderboardRoute,
   AuthenticatedMarketRoute: AuthenticatedMarketRoute,
   AuthenticatedOpenRoute: AuthenticatedOpenRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedShopRoute: AuthenticatedShopRoute,
   AuthenticatedWalletRoute: AuthenticatedWalletRoute,
   AuthenticatedAdminTreasuryRoute: AuthenticatedAdminTreasuryRoute,

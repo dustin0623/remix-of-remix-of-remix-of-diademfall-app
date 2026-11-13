@@ -3322,3 +3322,62 @@ body { font-family: var(--font-sans); background-image: radial-gradient(ellipse 
     padding-inline: 16px;
   }
 }
+
+/* Header account menu (avatar dropdown) */
+.hud-profile-button {
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  color: inherit;
+}
+.hud-profile-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.hud-profile-chevron {
+  color: oklch(0.69 0.035 85);
+  transition: transform 0.15s ease;
+}
+.hud-profile-button[data-state="open"] .hud-profile-chevron {
+  transform: rotate(180deg);
+}
+.hud-profile-menu {
+  z-index: 70;
+  min-width: 200px;
+  padding: 5px 0;
+  background: oklch(0.17 0.025 270 / 98%);
+  border: 1px solid oklch(0.52 0.025 270);
+  border-radius: 3px;
+  box-shadow: 0 6px 20px oklch(0 0 0 / 55%);
+  animation: hud-menu-in 0.12s ease-out;
+}
+.hud-profile-menu > [role="menuitem"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: oklch(0.72 0.025 265);
+  cursor: pointer;
+  outline: none;
+}
+.hud-profile-menu > [role="menuitem"][data-highlighted],
+.hud-profile-menu > [data-status="active"] {
+  color: oklch(0.96 0.02 195);
+  background: linear-gradient(90deg, oklch(0.48 0.1 185 / 55%), transparent);
+}
+.hud-profile-menu-sep {
+  height: 1px;
+  margin: 5px 0;
+  background: oklch(0.52 0.025 270 / 50%);
+}
+.hud-profile-menu > .hud-profile-menu-logout {
+  color: oklch(0.72 0.12 25);
+}
+.hud-profile-menu > .hud-profile-menu-logout[data-highlighted] {
+  color: oklch(0.9 0.1 25);
+  background: linear-gradient(90deg, oklch(0.5 0.15 25 / 45%), transparent);
+}
